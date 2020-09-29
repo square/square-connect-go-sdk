@@ -1,7 +1,7 @@
 # square-connect-go-sdk
-Square Connect SDK generated using our open-api spec and Swagger
+Square Connect SDK generated using our [open-api spec](https://docs.connect.squareup.com/v2/api/specifications/open-api-3_square) and Swagger
 
-## Building
+## Build
 
 ```
 docker build -t square-connect-go-sdk .
