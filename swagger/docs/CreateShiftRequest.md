@@ -1,0 +1,10 @@
+# CreateShiftRequest
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**IdempotencyKey** | **string** | Unique string value to insure the idempotency of the operation. | [optional] [default to null]
+**Shift** | [***Shift**](Shift.md) |  | [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

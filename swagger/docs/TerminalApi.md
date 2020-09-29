@@ -1,0 +1,127 @@
+# {{classname}}
+
+All URIs are relative to *https://connect.squareup.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**CancelTerminalCheckout**](TerminalApi.md#CancelTerminalCheckout) | **Post** /v2/terminals/checkouts/{checkout_id}/cancel | CancelTerminalCheckout
+[**CreateTerminalCheckout**](TerminalApi.md#CreateTerminalCheckout) | **Post** /v2/terminals/checkouts | CreateTerminalCheckout
+[**GetTerminalCheckout**](TerminalApi.md#GetTerminalCheckout) | **Get** /v2/terminals/checkouts/{checkout_id} | GetTerminalCheckout
+[**SearchTerminalCheckouts**](TerminalApi.md#SearchTerminalCheckouts) | **Post** /v2/terminals/checkouts/search | SearchTerminalCheckouts
+
+# **CancelTerminalCheckout**
+> CancelTerminalCheckoutResponse CancelTerminalCheckout(ctx, checkoutId)
+CancelTerminalCheckout
+
+Cancels a Terminal checkout request, if the status of the request permits it.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **checkoutId** | **string**| Unique ID for the desired &#x60;TerminalCheckout&#x60; | 
+
+### Return type
+
+[**CancelTerminalCheckoutResponse**](CancelTerminalCheckoutResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CreateTerminalCheckout**
+> CreateTerminalCheckoutResponse CreateTerminalCheckout(ctx, body)
+CreateTerminalCheckout
+
+Creates a new Terminal checkout request and sends it to the specified device to take a payment for the requested amount.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**CreateTerminalCheckoutRequest**](CreateTerminalCheckoutRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
+
+### Return type
+
+[**CreateTerminalCheckoutResponse**](CreateTerminalCheckoutResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetTerminalCheckout**
+> GetTerminalCheckoutResponse GetTerminalCheckout(ctx, checkoutId)
+GetTerminalCheckout
+
+Retrieves a Terminal checkout request by checkout_id.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **checkoutId** | **string**| Unique ID for the desired &#x60;TerminalCheckout&#x60; | 
+
+### Return type
+
+[**GetTerminalCheckoutResponse**](GetTerminalCheckoutResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SearchTerminalCheckouts**
+> SearchTerminalCheckoutsResponse SearchTerminalCheckouts(ctx, body)
+SearchTerminalCheckouts
+
+Retrieves a filtered list of Terminal checkout requests created by the account making the request.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**SearchTerminalCheckoutsRequest**](SearchTerminalCheckoutsRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
+
+### Return type
+
+[**SearchTerminalCheckoutsResponse**](SearchTerminalCheckoutsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

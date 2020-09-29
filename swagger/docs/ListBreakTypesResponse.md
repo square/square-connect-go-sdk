@@ -1,0 +1,11 @@
+# ListBreakTypesResponse
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**BreakTypes** | [**[]BreakType**](BreakType.md) |  A page of &#x60;BreakType&#x60; results. | [optional] [default to null]
+**Cursor** | **string** | Value supplied in the subsequent request to fetch the next next page of Break Type results. | [optional] [default to null]
+**Errors** | [**[]ModelError**](Error.md) | Any errors that occurred during the request. | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
