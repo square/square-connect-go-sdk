@@ -1,4 +1,4 @@
-module github.com/squareup/square-connect-go-sdk
+module github.com/square/square-connect-go-sdk
 
 go 1.14
 
