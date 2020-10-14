@@ -38,4 +38,12 @@ type CatalogItem struct {
 	SkipModifierScreen bool `json:"skip_modifier_screen,omitempty"`
 	// List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options.
 	ItemOptions []CatalogItemOptionForItem `json:"item_options,omitempty"`
+	// hidden field
+	EcomUri string `json:"ecom_uri,omitempty"`
+	// hidden field
+	EcomImageUris []string `json:"ecom_image_uris,omitempty"`
+	// hidden field
+	EcomAvailable bool `json:"ecom_available,omitempty"`
+	// hidden field
+	EcomVisibility string `json:"ecom_visibility,omitempty"`
 }

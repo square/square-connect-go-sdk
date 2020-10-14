@@ -19010,6 +19010,20 @@ components:
           items:
             $ref: '#/components/schemas/CatalogItemOptionForItem'
           x-release-status: BETA
+        ecom_uri:
+          type: string
+          description: hidden field
+        ecom_image_uris:
+          type: array
+          description: hidden field
+          items:
+            type: string
+        ecom_available:
+          type: boolean
+          description: hidden field
+        ecom_visibility:
+          type: string
+          description: hidden field
       description: An [CatalogObject](#type-CatalogObject) instance of the `ITEM`
         type, also referred to as an item, in the catalog.
       example:

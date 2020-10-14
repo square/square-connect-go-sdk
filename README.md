@@ -5,5 +5,5 @@ Square Connect SDK generated using our [open-api spec](https://docs.connect.squa
 
 ```
 docker build -t square-connect-go-sdk .
-docker run --rm -it -v $PWD:/mnt square-connect-go-sdk -c "cp -r /build/square-connect-sdk/ /mnt/swagger"
+docker run --rm -it -v $PWD:/mnt square-connect-go-sdk -c "rm -fr /mnt/swagger; cp -r /build/square-connect-sdk/ /mnt/swagger"
 ```
