@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Cursor** | **string** | The pagination token, returned in the previous response, used to fetch the next batch of pending results. | [optional] [default to null]
 **Limit** | **int32** | The maximum number of results to return per page. The default value is 100. | [optional] [default to null]
 **SortOrder** | [***SortOrder**](SortOrder.md) |  | [optional] [default to null]
-**ProductTypes** | [**[]CatalogItemProductType**](CatalogItemProductType.md) | The product types query expression to return items or item variations having the specified product types. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values | [optional] [default to null]
+**ProductTypes** | [**[]CatalogItemProductType**](CatalogItemProductType.md) | The product types query expression to return items or item variations having the specified product types. | [optional] [default to null]
 **CustomAttributeFilters** | [**[]CustomAttributeFilter**](CustomAttributeFilter.md) | The customer-attribute filter to return items or item variations matching the specified custom attribute expressions. A maximum number of 10 custom attribute expressions are supported in a single call to the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

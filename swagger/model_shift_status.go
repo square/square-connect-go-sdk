@@ -14,6 +14,7 @@ type ShiftStatus string
 
 // List of ShiftStatus
 const (
-	OPEN_ShiftStatus   ShiftStatus = "OPEN"
-	CLOSED_ShiftStatus ShiftStatus = "CLOSED"
+	UNKNOWN_STATUS_ShiftStatus ShiftStatus = "UNKNOWN_STATUS"
+	OPEN_ShiftStatus           ShiftStatus = "OPEN"
+	CLOSED_ShiftStatus         ShiftStatus = "CLOSED"
 )

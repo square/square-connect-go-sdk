@@ -18,6 +18,6 @@ type BatchRetrieveInventoryCountsRequest struct {
 	UpdatedAfter string `json:"updated_after,omitempty"`
 	// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information.
 	Cursor string `json:"cursor,omitempty"`
-	// The filter to return results by `InventoryState`. The filter is only applicable when set. Ignored are untracked states of `NONE`, `SOLD`, and `UNLINKED_RETURN`. The default is null. See [InventoryState](#type-inventorystate) for possible values
+	// The filter to return results by `InventoryState`. The filter is only applicable when set. Ignored are untracked states of `NONE`, `SOLD`, and `UNLINKED_RETURN`. The default is null.
 	States []InventoryState `json:"states,omitempty"`
 }

@@ -14,7 +14,8 @@ type OrderState string
 
 // List of OrderState
 const (
-	OPEN_OrderState      OrderState = "OPEN"
-	COMPLETED_OrderState OrderState = "COMPLETED"
-	CANCELED_OrderState  OrderState = "CANCELED"
+	DO_NOT_USE_OrderState OrderState = "DO_NOT_USE"
+	OPEN_OrderState       OrderState = "OPEN"
+	COMPLETED_OrderState  OrderState = "COMPLETED"
+	CANCELED_OrderState   OrderState = "CANCELED"
 )

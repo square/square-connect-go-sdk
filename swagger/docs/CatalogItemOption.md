@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Description** | **string** | The item option&#x27;s human-readable description. Displayed in the Square Point of Sale app for the seller and in the Online Store or on receipts for the buyer. This is a searchable attribute for use in applicable query filters. | [optional] [default to null]
 **ShowColors** | **bool** | If true, display colors for entries in &#x60;values&#x60; when present. | [optional] [default to null]
 **Values** | [**[]CatalogObject**](CatalogObject.md) | A list of CatalogObjects containing the &#x60;CatalogItemOptionValue&#x60;s for this item. | [optional] [default to null]
-**ItemCount** | **int64** | The number of &#x60;CatalogItem&#x60;s currently associated with this item option. Present only if the &#x60;include_counts&#x60; was specified in the request. Any count over 100 will be returned as &#x60;100&#x60;. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

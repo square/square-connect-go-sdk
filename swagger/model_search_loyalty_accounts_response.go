@@ -15,6 +15,6 @@ type SearchLoyaltyAccountsResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The loyalty accounts that met the search criteria,   in order of creation date.
 	LoyaltyAccounts []LoyaltyAccount `json:"loyalty_accounts,omitempty"`
-	// The pagination cursor to use in a subsequent  request. If empty, this is the final response. For more information,  see [Pagination](https://developer.squareup.com/docs/docs/basics/api101/pagination).
+	// The pagination cursor to use in a subsequent  request. If empty, this is the final response. For more information,  see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

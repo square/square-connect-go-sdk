@@ -13,7 +13,7 @@ package swagger
 type SearchTeamMembersResponse struct {
 	// The filtered list of `TeamMember` objects.
 	TeamMembers []TeamMember `json:"team_members,omitempty"`
-	// The opaque cursor for fetching the next page. Read about [pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) with Square APIs for more information.
+	// The opaque cursor for fetching the next page. Read about [pagination](https://developer.squareup.com/docs/working-with-apis/pagination) with Square APIs for more information.
 	Cursor string `json:"cursor,omitempty"`
 	// The errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

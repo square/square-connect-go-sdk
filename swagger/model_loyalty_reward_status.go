@@ -14,7 +14,8 @@ type LoyaltyRewardStatus string
 
 // List of LoyaltyRewardStatus
 const (
-	ISSUED_LoyaltyRewardStatus   LoyaltyRewardStatus = "ISSUED"
-	REDEEMED_LoyaltyRewardStatus LoyaltyRewardStatus = "REDEEMED"
-	DELETED_LoyaltyRewardStatus  LoyaltyRewardStatus = "DELETED"
+	STATUS_DO_NOT_USE_LoyaltyRewardStatus LoyaltyRewardStatus = "STATUS_DO_NOT_USE"
+	ISSUED_LoyaltyRewardStatus            LoyaltyRewardStatus = "ISSUED"
+	REDEEMED_LoyaltyRewardStatus          LoyaltyRewardStatus = "REDEEMED"
+	DELETED_LoyaltyRewardStatus           LoyaltyRewardStatus = "DELETED"
 )

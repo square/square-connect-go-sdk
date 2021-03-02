@@ -14,11 +14,15 @@ type TenderType string
 
 // List of TenderType
 const (
-	CARD_TenderType             TenderType = "CARD"
-	CASH_TenderType             TenderType = "CASH"
-	THIRD_PARTY_CARD_TenderType TenderType = "THIRD_PARTY_CARD"
-	SQUARE_GIFT_CARD_TenderType TenderType = "SQUARE_GIFT_CARD"
-	NO_SALE_TenderType          TenderType = "NO_SALE"
-	BANK_TRANSFER_TenderType    TenderType = "BANK_TRANSFER"
-	OTHER_TenderType            TenderType = "OTHER"
+	CARD_TenderType                TenderType = "CARD"
+	CASH_TenderType                TenderType = "CASH"
+	THIRD_PARTY_CARD_TenderType    TenderType = "THIRD_PARTY_CARD"
+	SQUARE_GIFT_CARD_TenderType    TenderType = "SQUARE_GIFT_CARD"
+	NO_SALE_TenderType             TenderType = "NO_SALE"
+	CHECK_TenderType               TenderType = "CHECK"
+	MERCHANT_GIFT_CARD_TenderType  TenderType = "MERCHANT_GIFT_CARD"
+	THIRD_PARTY_E_MONEY_TenderType TenderType = "THIRD_PARTY_E_MONEY"
+	BANK_ACCOUNT_TenderType        TenderType = "BANK_ACCOUNT"
+	WALLET_TenderType              TenderType = "WALLET"
+	OTHER_TenderType               TenderType = "OTHER"
 )

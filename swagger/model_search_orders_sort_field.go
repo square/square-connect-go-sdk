@@ -14,6 +14,7 @@ type SearchOrdersSortField string
 
 // List of SearchOrdersSortField
 const (
+	DO_NOT_USE_SearchOrdersSortField SearchOrdersSortField = "DO_NOT_USE"
 	CREATED_AT_SearchOrdersSortField SearchOrdersSortField = "CREATED_AT"
 	UPDATED_AT_SearchOrdersSortField SearchOrdersSortField = "UPDATED_AT"
 	CLOSED_AT_SearchOrdersSortField  SearchOrdersSortField = "CLOSED_AT"

@@ -9,12 +9,13 @@
  */
 package swagger
 
-// InvoiceRequestType : Identifies the type of the payment request. For more information,  see [Payment request](TBD).
+// InvoiceRequestType : Indicates the type of the payment request. An invoice supports the following payment request combinations: - 1 balance - 1 deposit with 1 balance - 2 - 12 installments - 1 deposit with 2 - 12 installments  For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).
 type InvoiceRequestType string
 
 // List of InvoiceRequestType
 const (
-	BALANCE_InvoiceRequestType     InvoiceRequestType = "BALANCE"
-	DEPOSIT_InvoiceRequestType     InvoiceRequestType = "DEPOSIT"
-	INSTALLMENT_InvoiceRequestType InvoiceRequestType = "INSTALLMENT"
+	INVOICE_REQUEST_TYPE_DO_NOT_USE_InvoiceRequestType InvoiceRequestType = "INVOICE_REQUEST_TYPE_DO_NOT_USE"
+	BALANCE_InvoiceRequestType                         InvoiceRequestType = "BALANCE"
+	DEPOSIT_InvoiceRequestType                         InvoiceRequestType = "DEPOSIT"
+	INSTALLMENT_InvoiceRequestType                     InvoiceRequestType = "INSTALLMENT"
 )

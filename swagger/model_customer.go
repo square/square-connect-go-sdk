@@ -32,7 +32,7 @@ type Customer struct {
 	Address      *Address `json:"address,omitempty"`
 	// The 11-digit phone number associated with the customer profile.
 	PhoneNumber string `json:"phone_number,omitempty"`
-	// The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: `0000-09-01T00:00:00-00:00` indicates a birthday on September 1st. `1998-09-01T00:00:00-00:00` indications a birthday on September 1st __1998__.
+	// The birthday associated with the customer profile, in RFC 3339 format. Year is optional, timezone and times are not allowed. For example: `0000-09-01T00:00:00-00:00` indicates a birthday on September 1st. `1998-09-01T00:00:00-00:00` indications a birthday on September 1st __1998__.
 	Birthday string `json:"birthday,omitempty"`
 	// An optional, second ID used to associate the customer profile with an entity in another system.
 	ReferenceId string `json:"reference_id,omitempty"`

@@ -28,7 +28,7 @@ type InvoicesApiService service
 
 /*
 InvoicesApiService CancelInvoice
-Cancels an invoice. The seller cannot collect payments for  the canceled invoice.  You cannot cancel an invoice in a terminal state: &#x60;PAID&#x60;, &#x60;REFUNDED&#x60;, &#x60;CANCELED&#x60;, or &#x60;FAILED&#x60;.
+Cancels an invoice. The seller cannot collect payments for  the canceled invoice.  You cannot cancel an invoice in the &#x60;DRAFT&#x60; state or in a terminal state: &#x60;PAID&#x60;, &#x60;REFUNDED&#x60;, &#x60;CANCELED&#x60;, or &#x60;FAILED&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -208,7 +208,7 @@ func (a *InvoicesApiService) CreateInvoice(ctx context.Context, body CreateInvoi
 
 /*
 InvoicesApiService DeleteInvoice
-Deletes the specified invoice. When an invoice is deleted, the  associated Order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete an invoice scheduled for publication, or a  published invoice).
+Deletes the specified invoice. When an invoice is deleted, the  associated Order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete a published invoice, including one that is scheduled for processing).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param invoiceId The ID of the invoice to delete.
  * @param optional nil or *InvoicesApiDeleteInvoiceOpts - Optional Parameters:
@@ -394,7 +394,7 @@ Returns a list of invoices for a given location. The response  is paginated. If 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location for which to list invoices.
  * @param optional nil or *InvoicesApiListInvoicesOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination).
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
      * @param "Limit" (optional.Int32) -  The maximum number of invoices to return (200 is the maximum &#x60;limit&#x60;).  If not provided, the server  uses a default limit of 100 invoices.
 @return ListInvoicesResponse
 */
@@ -671,12 +671,12 @@ func (a *InvoicesApiService) SearchInvoices(ctx context.Context, body SearchInvo
 
 /*
 InvoicesApiService UpdateInvoice
-Updates an invoice by modifying field values, clearing field values, or both  as specified in the request.  There are no restrictions to updating an invoice in a draft state.  However, there are guidelines for updating a published invoice.
+Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse  &#x60;Invoice&#x60; object to add fields or change values, and use the &#x60;fields_to_clear&#x60; field to specify fields to clear.  However, some restrictions apply. For example, you cannot change the &#x60;order_id&#x60; or &#x60;location_id&#x60; field, and you  must provide the complete &#x60;custom_fields&#x60; list to update a custom field. Published invoices have additional restrictions.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param invoiceId The id of the invoice to update.
+ * @param invoiceId The ID of the invoice to update.
 @return UpdateInvoiceResponse
 */
 func (a *InvoicesApiService) UpdateInvoice(ctx context.Context, body UpdateInvoiceRequest, invoiceId string) (UpdateInvoiceResponse, *http.Response, error) {

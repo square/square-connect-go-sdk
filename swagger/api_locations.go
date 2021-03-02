@@ -27,7 +27,7 @@ type LocationsApiService service
 
 /*
 LocationsApiService CreateLocation
-Creates a location. For more information about locations, see [Locations API Overview](https://developer.squareup.com/docs/locations-api).
+Creates a location.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -116,7 +116,7 @@ func (a *LocationsApiService) CreateLocation(ctx context.Context, body CreateLoc
 
 /*
 LocationsApiService ListLocations
-Provides information of all locations of a business.  Most other Connect API endpoints have a required &#x60;location_id&#x60; path parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+Provides information of all locations of a business.  Many Square API endpoints require a &#x60;location_id&#x60; parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return ListLocationsResponse
 */
@@ -200,7 +200,7 @@ func (a *LocationsApiService) ListLocations(ctx context.Context) (ListLocationsR
 
 /*
 LocationsApiService RetrieveLocation
-Retrieves details of a location. You can specify \&quot;main\&quot;  as the location ID to retrieve details of the  main location. For more information,  see [Locations API Overview](https://developer.squareup.com/docs/docs/locations-api).
+Retrieves details of a location. You can specify \&quot;main\&quot;  as the location ID to retrieve details of the  main location.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location to retrieve. If you specify the string \&quot;main\&quot;, then the endpoint returns the main location.
 @return RetrieveLocationResponse

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CalculateOrder**](OrdersApi.md#CalculateOrder) | **Post** /v2/orders/calculate | CalculateOrder
 [**CreateOrder**](OrdersApi.md#CreateOrder) | **Post** /v2/orders | CreateOrder
 [**PayOrder**](OrdersApi.md#PayOrder) | **Post** /v2/orders/{order_id}/pay | PayOrder
+[**RetrieveOrder**](OrdersApi.md#RetrieveOrder) | **Get** /v2/orders/{order_id} | RetrieveOrder
 [**SearchOrders**](OrdersApi.md#SearchOrders) | **Post** /v2/orders/search | SearchOrders
 [**UpdateOrder**](OrdersApi.md#UpdateOrder) | **Put** /v2/orders/{order_id} | UpdateOrder
 
@@ -128,6 +129,34 @@ See the corresponding object definition for field details. |
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **RetrieveOrder**
+> RetrieveOrderResponse RetrieveOrder(ctx, orderId)
+RetrieveOrder
+
+Retrieves an [Order](#type-order) by ID.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **orderId** | **string**| The ID of the order to retrieve. | 
+
+### Return type
+
+[**RetrieveOrderResponse**](RetrieveOrderResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

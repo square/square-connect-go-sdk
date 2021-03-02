@@ -14,6 +14,7 @@ type CatalogCustomAttributeDefinitionSellerVisibility string
 
 // List of CatalogCustomAttributeDefinitionSellerVisibility
 const (
+	DO_NOT_USE_CatalogCustomAttributeDefinitionSellerVisibility        CatalogCustomAttributeDefinitionSellerVisibility = "SELLER_VISIBILITY_DO_NOT_USE"
 	HIDDEN_CatalogCustomAttributeDefinitionSellerVisibility            CatalogCustomAttributeDefinitionSellerVisibility = "SELLER_VISIBILITY_HIDDEN"
 	READ_WRITE_VALUES_CatalogCustomAttributeDefinitionSellerVisibility CatalogCustomAttributeDefinitionSellerVisibility = "SELLER_VISIBILITY_READ_WRITE_VALUES"
 )

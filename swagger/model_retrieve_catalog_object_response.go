@@ -10,9 +10,9 @@
 package swagger
 
 type RetrieveCatalogObjectResponse struct {
-	// Information on any errors encountered.
+	// Any errors that occurred during the request.
 	Errors []ModelError   `json:"errors,omitempty"`
 	Object *CatalogObject `json:"object,omitempty"`
-	// A list of CatalogObjects referenced by the object in the `object` field.
+	// A list of `CatalogObject`s referenced by the object in the `object` field.
 	RelatedObjects []CatalogObject `json:"related_objects,omitempty"`
 }

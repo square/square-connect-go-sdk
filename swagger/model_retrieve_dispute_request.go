@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines request parameters for the RetrieveDispute endpoint.
+// Defines the request parameters for the `RetrieveDispute` endpoint.
 type RetrieveDisputeRequest struct {
 }

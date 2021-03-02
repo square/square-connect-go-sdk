@@ -23,6 +23,6 @@ type CatalogProductSet struct {
 	QuantityMin int64 `json:"quantity_min,omitempty"`
 	// If set, the pricing rule will apply to a maximum of this many items from `products_any` or `products_all`.
 	QuantityMax int64 `json:"quantity_max,omitempty"`
-	// If set to `true`, the product set will include every item in the catalog.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.
+	// If set to `true`, the product set will include every item in the catalog. Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.
 	AllProducts bool `json:"all_products,omitempty"`
 }

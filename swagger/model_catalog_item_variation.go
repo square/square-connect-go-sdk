@@ -17,7 +17,7 @@ type CatalogItemVariation struct {
 	Name string `json:"name,omitempty"`
 	// The item variation's SKU, if any. This is a searchable attribute for use in applicable query filters.
 	Sku string `json:"sku,omitempty"`
-	// The item variation's UPC, if any. This is a searchable attribute for use in applicable query filters. It is only accessible through the Square API, and not exposed in the Square Seller Dashboard, Square Point of Sale or Retail Point of Sale apps.
+	// The universal product code (UPC) of the item variation, if any. This is a searchable attribute for use in applicable query filters.  The value of this attribute should be a number of 12-14 digits long.  This restriction is enforced on the Square Seller Dashboard,  Square Point of Sale or Retail Point of Sale apps, where this attribute shows in the GTIN field. If a non-compliant UPC value is assigned  to this attribute using the API, the value is not editable on the Seller Dashboard, Square Point of Sale or Retail Point of Sale apps  unless it is updated to fit the expected format.
 	Upc string `json:"upc,omitempty"`
 	// The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent `CatalogItem` is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
 	Ordinal     int32               `json:"ordinal,omitempty"`
@@ -34,8 +34,12 @@ type CatalogItemVariation struct {
 	UserData string `json:"user_data,omitempty"`
 	// If the `CatalogItem` that owns this item variation is of type `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value `1800000`, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
 	ServiceDuration int64 `json:"service_duration,omitempty"`
+	// If the `CatalogItem` that owns this item variation is of type `APPOINTMENTS_SERVICE`, a bool representing whether this service is available for booking.
+	AvailableForBooking bool `json:"available_for_booking,omitempty"`
 	// List of item option values associated with this item variation. Listed in the same order as the item options of the parent item.
 	ItemOptionValues []CatalogItemOptionValueForItemVariation `json:"item_option_values,omitempty"`
 	// ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
 	MeasurementUnitId string `json:"measurement_unit_id,omitempty"`
+	// Tokens of employees that can perform the service represented by this variation. Only valid for variations of type `APPOINTMENTS_SERVICE`.
+	TeamMemberIds []string `json:"team_member_ids,omitempty"`
 }

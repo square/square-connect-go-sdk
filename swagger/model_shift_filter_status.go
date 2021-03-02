@@ -14,6 +14,7 @@ type ShiftFilterStatus string
 
 // List of ShiftFilterStatus
 const (
-	OPEN_ShiftFilterStatus   ShiftFilterStatus = "OPEN"
-	CLOSED_ShiftFilterStatus ShiftFilterStatus = "CLOSED"
+	DO_NOT_USE_ShiftFilterStatus ShiftFilterStatus = "DO_NOT_USE"
+	OPEN_ShiftFilterStatus       ShiftFilterStatus = "OPEN"
+	CLOSED_ShiftFilterStatus     ShiftFilterStatus = "CLOSED"
 )

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Associates a loyalty account with the buyer's phone number. or more information, see  [Loyalty Overview](https://developer.squareup.com/docs/docs/loyalty/overview).
+// Associates a loyalty account with the buyer's phone number. For more information, see  [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
 type LoyaltyAccountMapping struct {
 	// The Square-assigned ID of the mapping.
 	Id    string                     `json:"id,omitempty"`

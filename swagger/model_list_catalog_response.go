@@ -10,7 +10,7 @@
 package swagger
 
 type ListCatalogResponse struct {
-	// Information on any errors encountered.
+	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`

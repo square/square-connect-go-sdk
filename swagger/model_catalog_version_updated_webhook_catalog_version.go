@@ -10,5 +10,6 @@
 package swagger
 
 type CatalogVersionUpdatedWebhookCatalogVersion struct {
+	// Last modification timestamp in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
 }

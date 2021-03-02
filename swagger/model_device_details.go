@@ -11,10 +11,10 @@ package swagger
 
 // Details about the device that took the payment.
 type DeviceDetails struct {
-	// Square-issued ID of the device.
+	// The Square-issued ID of the device.
 	DeviceId string `json:"device_id,omitempty"`
-	// Square-issued installation ID for the device.
+	// The Square-issued installation ID for the device.
 	DeviceInstallationId string `json:"device_installation_id,omitempty"`
-	// The name of the device set by the merchant.
+	// The name of the device set by the seller.
 	DeviceName string `json:"device_name,omitempty"`
 }

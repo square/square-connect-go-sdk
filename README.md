@@ -1,5 +1,13 @@
 # square-connect-go-sdk
-Square Connect SDK generated using our [open-api spec](https://docs.connect.squareup.com/v2/api/specifications/open-api-3_square) and Swagger
+Square Connect SDK generated using our [open-api spec](https://docs.connect.squareup.com/v2/api/specifications/open-api-3_square) and Swagger. Square updates the spec without bumping the version,
+so we keep a copy of open-api-3_square in this repo.
+
+## Upgrading
+
+```
+rm open-api-3_square
+wget https://docs.connect.squareup.com/v2/api/specifications/open-api-3_square
+```
 
 ## Build
 

@@ -19,6 +19,6 @@ type CatalogTax struct {
 	Percentage string `json:"percentage,omitempty"`
 	// If `true`, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular `CatalogItem`.
 	AppliesToCustomAmounts bool `json:"applies_to_custom_amounts,omitempty"`
-	// If `true`, the tax will be shown as enabled in the Square Point of Sale app.
+	// A Boolean flag to indicate whether the tax is displayed as enabled (`true`) in the Square Point of Sale app or not (`false`).
 	Enabled bool `json:"enabled,omitempty"`
 }

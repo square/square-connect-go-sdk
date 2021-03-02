@@ -9,11 +9,12 @@
  */
 package swagger
 
-// LoyaltyProgramStatus : Whether the program is currently active.
+// LoyaltyProgramStatus : Indicates whether the program is currently active.
 type LoyaltyProgramStatus string
 
 // List of LoyaltyProgramStatus
 const (
-	INACTIVE_LoyaltyProgramStatus LoyaltyProgramStatus = "INACTIVE"
-	ACTIVE_LoyaltyProgramStatus   LoyaltyProgramStatus = "ACTIVE"
+	STATUS_DO_NOT_USE_LoyaltyProgramStatus LoyaltyProgramStatus = "STATUS_DO_NOT_USE"
+	INACTIVE_LoyaltyProgramStatus          LoyaltyProgramStatus = "INACTIVE"
+	ACTIVE_LoyaltyProgramStatus            LoyaltyProgramStatus = "ACTIVE"
 )

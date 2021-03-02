@@ -14,6 +14,6 @@ type RetrieveInventoryCountResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The current calculated inventory counts for the requested object and locations.
 	Counts []InventoryCount `json:"counts,omitempty"`
-	// The pagination cursor to be used in a subsequent request. If unset, this is the final response.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information.
+	// The pagination cursor to be used in a subsequent request. If unset, this is the final response.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information.
 	Cursor string `json:"cursor,omitempty"`
 }

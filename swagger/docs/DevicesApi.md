@@ -86,6 +86,7 @@ Name | Type | Description  | Notes
  **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | 
  **locationId** | **optional.String**| If specified, only returns DeviceCodes of the specified location. Returns DeviceCodes of all locations if empty. | 
  **productType** | [**optional.Interface of ProductType**](.md)| If specified, only returns DeviceCodes targeting the specified product type. Returns DeviceCodes of all product types if empty. | 
+ **status** | [**optional.Interface of DeviceCodeStatus**](.md)| If specified, returns DeviceCodes with the specified statuses. Returns DeviceCodes of status &#x60;PAIRED&#x60; and &#x60;UNPAIRED&#x60; if empty. | 
 
 ### Return type
 

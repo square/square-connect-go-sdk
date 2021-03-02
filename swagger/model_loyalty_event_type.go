@@ -14,6 +14,8 @@ type LoyaltyEventType string
 
 // List of LoyaltyEventType
 const (
+	TYPE_DO_NOT_USE_LoyaltyEventType   LoyaltyEventType = "TYPE_DO_NOT_USE"
+	CREATE_ACCOUNT_LoyaltyEventType    LoyaltyEventType = "CREATE_ACCOUNT"
 	ACCUMULATE_POINTS_LoyaltyEventType LoyaltyEventType = "ACCUMULATE_POINTS"
 	CREATE_REWARD_LoyaltyEventType     LoyaltyEventType = "CREATE_REWARD"
 	REDEEM_REWARD_LoyaltyEventType     LoyaltyEventType = "REDEEM_REWARD"

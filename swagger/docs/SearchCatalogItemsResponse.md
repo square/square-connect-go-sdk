@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | [**[]ModelError**](Error.md) | Errors detected when the call to [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint fails. | [optional] [default to null]
+**Errors** | [**[]ModelError**](Error.md) | Any errors that occurred during the request. | [optional] [default to null]
 **Items** | [**[]CatalogObject**](CatalogObject.md) | Returned items matching the specified query expressions. | [optional] [default to null]
 **Cursor** | **string** | Pagination token used in the next request to return more of the search result. | [optional] [default to null]
 **MatchedVariationIds** | **[]string** | Ids of returned item variations matching the specified query expression. | [optional] [default to null]

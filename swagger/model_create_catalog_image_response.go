@@ -10,7 +10,7 @@
 package swagger
 
 type CreateCatalogImageResponse struct {
-	// Information on any errors encountered.
+	// Any errors that occurred during the request.
 	Errors []ModelError   `json:"errors,omitempty"`
 	Image  *CatalogObject `json:"image,omitempty"`
 }

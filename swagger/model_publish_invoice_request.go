@@ -13,6 +13,6 @@ package swagger
 type PublishInvoiceRequest struct {
 	// The version of the [Invoice](#type-invoice) to publish. This must match the current version of the invoice, otherwise the request is rejected.
 	Version int32 `json:"version"`
-	// A unique string that identifies the `PublishInvoice` request. If you do not  provide `idempotency_key` (or provide an empty string as the value), the endpoint  treats each request as independent.  For more information, see [Idempotency](https://developer.squareup.com/docs/docs/working-with-apis/idempotency).
+	// A unique string that identifies the `PublishInvoice` request. If you do not  provide `idempotency_key` (or provide an empty string as the value), the endpoint  treats each request as independent.  For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string `json:"idempotency_key,omitempty"`
 }

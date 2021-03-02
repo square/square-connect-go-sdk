@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines fields in a CreateDisputeEvidenceText response.
+// Defines the fields in a `CreateDisputeEvidenceText` response.
 type CreateDisputeEvidenceTextResponse struct {
 	// Any errors that occurred during the request.
 	Errors   []ModelError     `json:"errors,omitempty"`

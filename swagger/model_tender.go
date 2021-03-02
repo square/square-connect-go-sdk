@@ -25,11 +25,10 @@ type Tender struct {
 	TipMoney           *Money `json:"tip_money,omitempty"`
 	ProcessingFeeMoney *Money `json:"processing_fee_money,omitempty"`
 	// If the tender is associated with a customer or represents a customer's card on file, this is the ID of the associated customer.
-	CustomerId          string                     `json:"customer_id,omitempty"`
-	Type_               *TenderType                `json:"type"`
-	CardDetails         *TenderCardDetails         `json:"card_details,omitempty"`
-	CashDetails         *TenderCashDetails         `json:"cash_details,omitempty"`
-	BankTransferDetails *TenderBankTransferDetails `json:"bank_transfer_details,omitempty"`
+	CustomerId  string             `json:"customer_id,omitempty"`
+	Type_       *TenderType        `json:"type"`
+	CardDetails *TenderCardDetails `json:"card_details,omitempty"`
+	CashDetails *TenderCashDetails `json:"cash_details,omitempty"`
 	// Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.
 	AdditionalRecipients []AdditionalRecipient `json:"additional_recipients,omitempty"`
 	// The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.

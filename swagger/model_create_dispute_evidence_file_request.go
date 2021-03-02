@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Defines parameters for a CreateDisputeEvidenceFile request.
+// Defines the parameters for a `CreateDisputeEvidenceFile` request.
 type CreateDisputeEvidenceFileRequest struct {
-	// Unique ID. For more information, see [Idempotency](https://developer.squareup.com/docs/docs/working-with-apis/idempotency).
+	// The Unique ID. For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string               `json:"idempotency_key"`
 	EvidenceType   *DisputeEvidenceType `json:"evidence_type,omitempty"`
-	// The MIME type of the uploaded file. One of image/heic, image/heif, image/jpeg, application/pdf,  image/png, image/tiff.
+	// The MIME type of the uploaded file. The type can be image/heic, image/heif, image/jpeg, application/pdf, image/png, or image/tiff.
 	ContentType string `json:"content_type,omitempty"`
 }

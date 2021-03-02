@@ -9,12 +9,12 @@
  */
 package swagger
 
-// Defines fields in a ListDisputes response.
+// Defines fields in a `ListDisputes` response.
 type ListDisputesResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// The list of Disputes.
+	// The list of disputes.
 	Disputes []Dispute `json:"disputes,omitempty"`
-	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. For more information, see [Paginating](https://developer.squareup.com/docs/basics/api101/pagination).
+	// The pagination cursor to be used in a subsequent request. If unset, this is the final response. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

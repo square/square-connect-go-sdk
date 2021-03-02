@@ -207,7 +207,7 @@ Lists all events for a specific subscription. In the current implementation, onl
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param subscriptionId The ID of the subscription to retrieve the events for.
  * @param optional nil or *SubscriptionsApiListSubscriptionEventsOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination).
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
      * @param "Limit" (optional.Int32) -  The upper limit on the number of subscription events to return  in the response.   Default: &#x60;200&#x60;
 @return ListSubscriptionEventsResponse
 */
@@ -390,7 +390,7 @@ func (a *SubscriptionsApiService) RetrieveSubscription(ctx context.Context, subs
 
 /*
 SubscriptionsApiService SearchSubscriptions
-Searches for subscriptions.  Results are ordered chronologically by subscription creation date. If the request specifies more than one location ID,  the endpoint orders the result  by location ID, and then by creation date within each location. If no locations are given in the query, all locations are searched.  You can also optionally specify &#x60;customer_ids&#x60; to search by customer.  If left unset, all customers  associated with the specified locations are returned.  If the request specifies customer IDs, the endpoint orders results  first by location, within location by customer ID, and within  customer by subscription creation date.  For more information, see  [Retrieve subscriptions](https://developer.squareup.com/docs/docs/subscriptions-api/overview#retrieve-subscriptions).
+Searches for subscriptions.  Results are ordered chronologically by subscription creation date. If the request specifies more than one location ID,  the endpoint orders the result  by location ID, and then by creation date within each location. If no locations are given in the query, all locations are searched.  You can also optionally specify &#x60;customer_ids&#x60; to search by customer.  If left unset, all customers  associated with the specified locations are returned.  If the request specifies customer IDs, the endpoint orders results  first by location, within location by customer ID, and within  customer by subscription creation date.  For more information, see  [Retrieve subscriptions](https://developer.squareup.com/docs/subscriptions-api/overview#retrieve-subscriptions).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

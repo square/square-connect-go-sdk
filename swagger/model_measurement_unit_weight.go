@@ -14,6 +14,7 @@ type MeasurementUnitWeight string
 
 // List of MeasurementUnitWeight
 const (
+	INVALID_WEIGHT_MeasurementUnitWeight        MeasurementUnitWeight = "INVALID_WEIGHT"
 	IMPERIAL_WEIGHT_OUNCE_MeasurementUnitWeight MeasurementUnitWeight = "IMPERIAL_WEIGHT_OUNCE"
 	IMPERIAL_POUND_MeasurementUnitWeight        MeasurementUnitWeight = "IMPERIAL_POUND"
 	IMPERIAL_STONE_MeasurementUnitWeight        MeasurementUnitWeight = "IMPERIAL_STONE"

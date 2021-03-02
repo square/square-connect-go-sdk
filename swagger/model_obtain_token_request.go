@@ -24,4 +24,8 @@ type ObtainTokenRequest struct {
 	RefreshToken string `json:"refresh_token,omitempty"`
 	// Legacy OAuth access token obtained using a Connect API version prior to 2019-03-13. This parameter is required if `grant_type` is set to `migration_token` to indicate that the application wants to get a replacement OAuth access token. The response also returns a refresh token. For more information, see [Migrate to Using Refresh Tokens](https://developer.squareup.com/docs/authz/oauth/migration).
 	MigrationToken string `json:"migration_token,omitempty"`
+	// __OPTIONAL__  A JSON list of strings representing the permissions the application is requesting. For example: \"`[\"MERCHANT_PROFILE_READ\",\"PAYMENTS_READ\",\"BANK_ACCOUNTS_READ\"]`\" The access token returned in the response is granted the permissions that comprise the intersection between the requested list of permissions, and those that belong to the provided refresh token.
+	Scopes []string `json:"scopes,omitempty"`
+	// __OPTIONAL__  A boolean indicating a request for a short-lived access token. The short-lived access token returned in the response will expire in 24 hours.
+	ShortLived bool `json:"short_lived,omitempty"`
 }

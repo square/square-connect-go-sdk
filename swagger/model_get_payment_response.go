@@ -11,7 +11,7 @@ package swagger
 
 // Defines the fields that are included in the response body of a request to the [GetPayment](#endpoint-payments-getpayment) endpoint.
 type GetPaymentResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`
 	Payment *Payment     `json:"payment,omitempty"`
 }

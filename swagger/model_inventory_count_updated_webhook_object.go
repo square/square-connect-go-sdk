@@ -10,5 +10,6 @@
 package swagger
 
 type InventoryCountUpdatedWebhookObject struct {
+	// The inventory counts.
 	InventoryCounts []InventoryCount `json:"inventory_counts,omitempty"`
 }

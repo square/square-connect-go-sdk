@@ -5,11 +5,9 @@ All URIs are relative to *https://connect.squareup.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateRefund**](V1TransactionsApi.md#CreateRefund) | **Post** /v1/{location_id}/refunds | CreateRefund
-[**ListBankAccounts**](V1TransactionsApi.md#ListBankAccounts) | **Get** /v1/{location_id}/bank-accounts | ListBankAccounts
 [**ListPayments**](V1TransactionsApi.md#ListPayments) | **Get** /v1/{location_id}/payments | ListPayments
 [**ListRefunds**](V1TransactionsApi.md#ListRefunds) | **Get** /v1/{location_id}/refunds | ListRefunds
 [**ListSettlements**](V1TransactionsApi.md#ListSettlements) | **Get** /v1/{location_id}/settlements | ListSettlements
-[**RetrieveBankAccount**](V1TransactionsApi.md#RetrieveBankAccount) | **Get** /v1/{location_id}/bank-accounts/{bank_account_id} | RetrieveBankAccount
 [**RetrievePayment**](V1TransactionsApi.md#RetrievePayment) | **Get** /v1/{location_id}/payments/{payment_id} | RetrievePayment
 [**RetrieveSettlement**](V1TransactionsApi.md#RetrieveSettlement) | **Get** /v1/{location_id}/settlements/{settlement_id} | RetrieveSettlement
 
@@ -40,34 +38,6 @@ See the corresponding object definition for field details. |
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ListBankAccounts**
-> []V1BankAccount ListBankAccounts(ctx, locationId)
-ListBankAccounts
-
-Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **locationId** | **string**| The ID of the location to list bank accounts for. | 
-
-### Return type
-
-[**[]V1BankAccount**](V1BankAccount.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -132,7 +102,7 @@ Optional parameters are passed through a pointer to a V1TransactionsApiListRefun
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **order** | [**optional.Interface of SortOrder**](.md)| TThe order in which payments are listed in the response. | 
+ **order** | [**optional.Interface of SortOrder**](.md)| The order in which payments are listed in the response. | 
  **beginTime** | **optional.String**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | 
  **endTime** | **optional.String**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | 
  **limit** | **optional.Int32**| The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. | 
@@ -182,35 +152,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]V1Settlement**](V1Settlement.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **RetrieveBankAccount**
-> V1BankAccount RetrieveBankAccount(ctx, locationId, bankAccountId)
-RetrieveBankAccount
-
-Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **locationId** | **string**| The ID of the bank account&#x27;s associated location. | 
-  **bankAccountId** | **string**| The bank account&#x27;s Square-issued ID. You obtain this value from Settlement objects returned. | 
-
-### Return type
-
-[**V1BankAccount**](V1BankAccount.md)
 
 ### Authorization
 

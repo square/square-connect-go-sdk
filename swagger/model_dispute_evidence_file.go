@@ -13,6 +13,6 @@ package swagger
 type DisputeEvidenceFile struct {
 	// The file name including the file extension. For example: \"receipt.tiff\".
 	Filename string `json:"filename,omitempty"`
-	// Dispute evidence files must one of application/pdf, image/heic, image/heif, image/jpeg, image/png, image/tiff formats.
+	// Dispute evidence files must be application/pdf, image/heic, image/heif, image/jpeg, image/png, or image/tiff formats.
 	Filetype string `json:"filetype,omitempty"`
 }

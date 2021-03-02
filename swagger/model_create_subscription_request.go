@@ -11,11 +11,11 @@ package swagger
 
 // Defines parameters in a  [CreateSubscription](#endpoint-subscriptions-createsubscription) endpoint request.
 type CreateSubscriptionRequest struct {
-	// A unique string that identifies this `CreateSubscription` request. If you do not provide a unique string (or provide an empty string as the value), the endpoint treats each request as independent.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/docs/working-with-apis/idempotency).
+	// A unique string that identifies this `CreateSubscription` request. If you do not provide a unique string (or provide an empty string as the value), the endpoint treats each request as independent.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string `json:"idempotency_key"`
 	// The ID of the location the subscription is associated with.
 	LocationId string `json:"location_id"`
-	// The ID of the subscription plan. For more information, see  [Subscription Plan Overview](https://developer.squareup.com/docs/docs/subscriptions/overview).
+	// The ID of the subscription plan. For more information, see  [Subscription Plan Overview](https://developer.squareup.com/docs/subscriptions/overview).
 	PlanId string `json:"plan_id"`
 	// The ID of the [customer](#type-customer) profile.
 	CustomerId string `json:"customer_id"`
@@ -26,7 +26,7 @@ type CreateSubscriptionRequest struct {
 	// The tax to add when billing the subscription. The percentage is expressed in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. For example, a value of 7.5 corresponds to 7.5%.
 	TaxPercentage      string `json:"tax_percentage,omitempty"`
 	PriceOverrideMoney *Money `json:"price_override_money,omitempty"`
-	// The ID of the [customer](#type-customer) [card](#type-card) to charge. If not specified, Square sends an invoice via email. For an example to create a customer and add a card on file, see [Subscriptions Walkthrough](https://developer.squareup.com/docs/docs/subscriptions-api/walkthrough).
+	// The ID of the [customer](#type-customer) [card](#type-card) to charge. If not specified, Square sends an invoice via email. For an example to create a customer and add a card on file, see [Subscriptions Walkthrough](https://developer.squareup.com/docs/subscriptions-api/walkthrough).
 	CardId string `json:"card_id,omitempty"`
 	// The timezone that is used in date calculations for the subscription. If unset, defaults to the location timezone. If a timezone is not configured for the location, defaults to \"America/New_York\". Format: the IANA Timezone Database identifier for the location timezone. For a list of time zones, see [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 	Timezone string `json:"timezone,omitempty"`

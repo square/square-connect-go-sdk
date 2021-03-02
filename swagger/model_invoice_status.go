@@ -14,14 +14,15 @@ type InvoiceStatus string
 
 // List of InvoiceStatus
 const (
-	DRAFT_InvoiceStatus              InvoiceStatus = "DRAFT"
-	UNPAID_InvoiceStatus             InvoiceStatus = "UNPAID"
-	SCHEDULED_InvoiceStatus          InvoiceStatus = "SCHEDULED"
-	PARTIALLY_PAID_InvoiceStatus     InvoiceStatus = "PARTIALLY_PAID"
-	PAID_InvoiceStatus               InvoiceStatus = "PAID"
-	PARTIALLY_REFUNDED_InvoiceStatus InvoiceStatus = "PARTIALLY_REFUNDED"
-	REFUNDED_InvoiceStatus           InvoiceStatus = "REFUNDED"
-	CANCELED_InvoiceStatus           InvoiceStatus = "CANCELED"
-	FAILED_InvoiceStatus             InvoiceStatus = "FAILED"
-	PAYMENT_PENDING_InvoiceStatus    InvoiceStatus = "PAYMENT_PENDING"
+	INVOICE_STATUS_DO_NOT_USE_InvoiceStatus InvoiceStatus = "INVOICE_STATUS_DO_NOT_USE"
+	DRAFT_InvoiceStatus                     InvoiceStatus = "DRAFT"
+	UNPAID_InvoiceStatus                    InvoiceStatus = "UNPAID"
+	SCHEDULED_InvoiceStatus                 InvoiceStatus = "SCHEDULED"
+	PARTIALLY_PAID_InvoiceStatus            InvoiceStatus = "PARTIALLY_PAID"
+	PAID_InvoiceStatus                      InvoiceStatus = "PAID"
+	PARTIALLY_REFUNDED_InvoiceStatus        InvoiceStatus = "PARTIALLY_REFUNDED"
+	REFUNDED_InvoiceStatus                  InvoiceStatus = "REFUNDED"
+	CANCELED_InvoiceStatus                  InvoiceStatus = "CANCELED"
+	FAILED_InvoiceStatus                    InvoiceStatus = "FAILED"
+	PAYMENT_PENDING_InvoiceStatus           InvoiceStatus = "PAYMENT_PENDING"
 )

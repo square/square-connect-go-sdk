@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines parameters for a SubmitEvidence request.
+// Defines the parameters for a `SubmitEvidence` request.
 type SubmitEvidenceRequest struct {
 }

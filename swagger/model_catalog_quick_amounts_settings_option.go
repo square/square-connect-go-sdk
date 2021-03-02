@@ -14,7 +14,8 @@ type CatalogQuickAmountsSettingsOption string
 
 // List of CatalogQuickAmountsSettingsOption
 const (
-	DISABLED_CatalogQuickAmountsSettingsOption CatalogQuickAmountsSettingsOption = "DISABLED"
-	MANUAL_CatalogQuickAmountsSettingsOption   CatalogQuickAmountsSettingsOption = "MANUAL"
-	AUTO_CatalogQuickAmountsSettingsOption     CatalogQuickAmountsSettingsOption = "AUTO"
+	QUICK_AMOUNTS_SETTINGS_OPTION_DO_NOT_USE_CatalogQuickAmountsSettingsOption CatalogQuickAmountsSettingsOption = "QUICK_AMOUNTS_SETTINGS_OPTION_DO_NOT_USE"
+	DISABLED_CatalogQuickAmountsSettingsOption                                 CatalogQuickAmountsSettingsOption = "DISABLED"
+	MANUAL_CatalogQuickAmountsSettingsOption                                   CatalogQuickAmountsSettingsOption = "MANUAL"
+	AUTO_CatalogQuickAmountsSettingsOption                                     CatalogQuickAmountsSettingsOption = "AUTO"
 )

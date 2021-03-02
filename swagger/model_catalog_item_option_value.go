@@ -21,6 +21,4 @@ type CatalogItemOptionValue struct {
 	Color string `json:"color,omitempty"`
 	// Determines where this option value appears in a list of option values.
 	Ordinal int32 `json:"ordinal,omitempty"`
-	// The number of `CatalogItemVariation`s that currently use this item option value. Present only if `retrieve_counts` was specified on the request used to retrieve the parent item option of this value.
-	ItemVariationCount int64 `json:"item_variation_count,omitempty"`
 }

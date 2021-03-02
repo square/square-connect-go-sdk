@@ -14,5 +14,6 @@ type LoyaltyAccountMappingType string
 
 // List of LoyaltyAccountMappingType
 const (
-	PHONE_LoyaltyAccountMappingType LoyaltyAccountMappingType = "PHONE"
+	TYPE_DO_NOT_USE_LoyaltyAccountMappingType LoyaltyAccountMappingType = "TYPE_DO_NOT_USE"
+	PHONE_LoyaltyAccountMappingType           LoyaltyAccountMappingType = "PHONE"
 )

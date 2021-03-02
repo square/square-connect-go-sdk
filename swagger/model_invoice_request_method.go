@@ -9,12 +9,14 @@
  */
 package swagger
 
-// InvoiceRequestMethod : Specifies the action for Square to take for processing the invoice. For example,  email the invoice, charge a customer's card on file, or do nothing.
+// InvoiceRequestMethod : Specifies the action for Square to take for processing the invoice. For example,  email the invoice, charge a customer's card on file, or do nothing. DEPRECATED at version 2021-01-21. The corresponding `request_method` field is replaced by the `Invoice.delivery_method` and `InvoicePaymentRequest.automatic_payment_source` fields.
 type InvoiceRequestMethod string
 
 // List of InvoiceRequestMethod
 const (
-	EMAIL_InvoiceRequestMethod               InvoiceRequestMethod = "EMAIL"
-	CHARGE_CARD_ON_FILE_InvoiceRequestMethod InvoiceRequestMethod = "CHARGE_CARD_ON_FILE"
-	SHARE_MANUALLY_InvoiceRequestMethod      InvoiceRequestMethod = "SHARE_MANUALLY"
+	INVOICE_REQUEST_METHOD_DO_NOT_USE_InvoiceRequestMethod InvoiceRequestMethod = "INVOICE_REQUEST_METHOD_DO_NOT_USE"
+	EMAIL_InvoiceRequestMethod                             InvoiceRequestMethod = "EMAIL"
+	CHARGE_CARD_ON_FILE_InvoiceRequestMethod               InvoiceRequestMethod = "CHARGE_CARD_ON_FILE"
+	SHARE_MANUALLY_InvoiceRequestMethod                    InvoiceRequestMethod = "SHARE_MANUALLY"
+	CHARGE_BANK_ON_FILE_InvoiceRequestMethod               InvoiceRequestMethod = "CHARGE_BANK_ON_FILE"
 )

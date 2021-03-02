@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a phase in a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](https://developer.squareup.com/docs/docs/subscriptions-api/setup-plan).
+// Describes a phase in a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](https://developer.squareup.com/docs/subscriptions-api/setup-plan).
 type SubscriptionPhase struct {
 	// The Square-assigned ID of the subscription phase. This field cannot be changed after a `SubscriptionPhase` is created.
 	Uid     string               `json:"uid,omitempty"`

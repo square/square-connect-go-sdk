@@ -10,7 +10,7 @@
 package swagger
 
 type UpsertCatalogObjectResponse struct {
-	// Information on any errors encountered.
+	// Any errors that occurred during the request.
 	Errors        []ModelError   `json:"errors,omitempty"`
 	CatalogObject *CatalogObject `json:"catalog_object,omitempty"`
 	// The mapping between client and server IDs for this upsert.

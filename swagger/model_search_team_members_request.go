@@ -14,6 +14,6 @@ type SearchTeamMembersRequest struct {
 	Query *SearchTeamMembersQuery `json:"query,omitempty"`
 	// The maximum number of `TeamMember` objects in a page (25 by default).
 	Limit int32 `json:"limit,omitempty"`
-	// The opaque cursor for fetching the next page. Read about [pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) with Square APIs for more information.
+	// The opaque cursor for fetching the next page. Read about [pagination](https://developer.squareup.com/docs/working-with-apis/pagination) with Square APIs for more information.
 	Cursor string `json:"cursor,omitempty"`
 }

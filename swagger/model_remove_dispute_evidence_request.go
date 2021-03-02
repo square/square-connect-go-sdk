@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines parameters for a RemoveDisputeEvidence request.
+// Defines the parameters for a `RemoveDisputeEvidence` request.
 type RemoveDisputeEvidenceRequest struct {
 }

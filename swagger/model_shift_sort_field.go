@@ -14,6 +14,7 @@ type ShiftSortField string
 
 // List of ShiftSortField
 const (
+	DO_NOT_USE_ShiftSortField ShiftSortField = "DO_NOT_USE"
 	START_AT_ShiftSortField   ShiftSortField = "START_AT"
 	END_AT_ShiftSortField     ShiftSortField = "END_AT"
 	CREATED_AT_ShiftSortField ShiftSortField = "CREATED_AT"

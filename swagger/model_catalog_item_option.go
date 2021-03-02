@@ -21,6 +21,4 @@ type CatalogItemOption struct {
 	ShowColors bool `json:"show_colors,omitempty"`
 	// A list of CatalogObjects containing the `CatalogItemOptionValue`s for this item.
 	Values []CatalogObject `json:"values,omitempty"`
-	// The number of `CatalogItem`s currently associated with this item option. Present only if the `include_counts` was specified in the request. Any count over 100 will be returned as `100`.
-	ItemCount int64 `json:"item_count,omitempty"`
 }

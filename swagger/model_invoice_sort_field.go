@@ -14,5 +14,6 @@ type InvoiceSortField string
 
 // List of InvoiceSortField
 const (
-	DATE_InvoiceSortField InvoiceSortField = "INVOICE_SORT_DATE"
+	FIELD_DO_NOT_USE_InvoiceSortField InvoiceSortField = "INVOICE_SORT_FIELD_DO_NOT_USE"
+	DATE_InvoiceSortField             InvoiceSortField = "INVOICE_SORT_DATE"
 )

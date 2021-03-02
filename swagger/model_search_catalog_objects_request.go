@@ -12,7 +12,7 @@ package swagger
 type SearchCatalogObjectsRequest struct {
 	// The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
-	// The desired set of object types to appear in the search results. The legal values are taken from the CatalogObjectType enum: `\"ITEM\"`, `\"ITEM_VARIATION\"`, `\"CATEGORY\"`, `\"DISCOUNT\"`, `\"TAX\"`, `\"MODIFIER\"`, or `\"MODIFIER_LIST\"`. See [CatalogObjectType](#type-catalogobjecttype) for possible values
+	// The desired set of object types to appear in the search results.
 	ObjectTypes []CatalogObjectType `json:"object_types,omitempty"`
 	// If `true`, deleted objects will be included in the results. Deleted objects will have their `is_deleted` field set to `true`.
 	IncludeDeletedObjects bool `json:"include_deleted_objects,omitempty"`

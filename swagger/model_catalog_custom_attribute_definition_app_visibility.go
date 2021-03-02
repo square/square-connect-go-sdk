@@ -14,6 +14,7 @@ type CatalogCustomAttributeDefinitionAppVisibility string
 
 // List of CatalogCustomAttributeDefinitionAppVisibility
 const (
+	DO_NOT_USE_CatalogCustomAttributeDefinitionAppVisibility        CatalogCustomAttributeDefinitionAppVisibility = "APP_VISIBILITY_DO_NOT_USE"
 	HIDDEN_CatalogCustomAttributeDefinitionAppVisibility            CatalogCustomAttributeDefinitionAppVisibility = "APP_VISIBILITY_HIDDEN"
 	READ_ONLY_CatalogCustomAttributeDefinitionAppVisibility         CatalogCustomAttributeDefinitionAppVisibility = "APP_VISIBILITY_READ_ONLY"
 	READ_WRITE_VALUES_CatalogCustomAttributeDefinitionAppVisibility CatalogCustomAttributeDefinitionAppVisibility = "APP_VISIBILITY_READ_WRITE_VALUES"

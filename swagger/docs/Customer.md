@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **EmailAddress** | **string** | The email address associated with the customer profile. | [optional] [default to null]
 **Address** | [***Address**](Address.md) |  | [optional] [default to null]
 **PhoneNumber** | **string** | The 11-digit phone number associated with the customer profile. | [optional] [default to null]
-**Birthday** | **string** | The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__. | [optional] [default to null]
+**Birthday** | **string** | The birthday associated with the customer profile, in RFC 3339 format. Year is optional, timezone and times are not allowed. For example: &#x60;0000-09-01T00:00:00-00:00&#x60; indicates a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; indications a birthday on September 1st __1998__. | [optional] [default to null]
 **ReferenceId** | **string** | An optional, second ID used to associate the customer profile with an entity in another system. | [optional] [default to null]
 **Note** | **string** | A custom note associated with the customer profile. | [optional] [default to null]
 **Preferences** | [***CustomerPreferences**](CustomerPreferences.md) |  | [optional] [default to null]

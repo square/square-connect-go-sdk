@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines request parameters for the AcceptDispute endpoint.
+// Defines the request parameters for the `AcceptDispute` endpoint.
 type AcceptDisputeRequest struct {
 }

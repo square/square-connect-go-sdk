@@ -1,10 +1,9 @@
 --- original/square-connect-openapi.json	2020-10-14 10:38:22.000000000 -0700
 +++ square-connect-openapi.json	2020-10-14 10:41:09.000000000 -0700
-@@ -11407,7 +11407,26 @@
+@@ -23844,6 +23844,25 @@
              },
              "description": "List of item options IDs for this item. Used to manage and group item\nvariations in a specified order.\n\nMaximum: 6 item options.",
              "x-release-status": "BETA"
--          }
 +          },
 +          "ecom_uri": {
 +            "type": "string",
@@ -24,7 +23,6 @@
 +          "ecom_visibility": {
 +            "type": "string",
 +            "description": "hidden field"
-+          }
+           }
          },
-         "description": "An [CatalogObject](#type-CatalogObject) instance of the `ITEM` type, also referred to as an item, in the catalog.",
-         "x-release-status": "PUBLIC",
+         "x-property-order": [

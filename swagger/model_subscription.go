@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a customer subscription to a subscription plan. For an overview of the `Subscription` type, see  [Subscription object](https://developer.squareup.com/docs/docs/subscriptions-api/overview#subscription-object-overview).
+// Represents a customer subscription to a subscription plan. For an overview of the `Subscription` type, see  [Subscription object](https://developer.squareup.com/docs/subscriptions-api/overview#subscription-object-overview).
 type Subscription struct {
 	// The Square-assigned ID of the subscription.
 	Id string `json:"id,omitempty"`

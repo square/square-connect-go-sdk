@@ -14,6 +14,7 @@ type SearchCatalogItemsRequestStockLevel string
 
 // List of SearchCatalogItemsRequestStockLevel
 const (
-	OUT_SearchCatalogItemsRequestStockLevel SearchCatalogItemsRequestStockLevel = "OUT"
-	LOW_SearchCatalogItemsRequestStockLevel SearchCatalogItemsRequestStockLevel = "LOW"
+	STOCK_LEVEL_DO_NOT_USE_SearchCatalogItemsRequestStockLevel SearchCatalogItemsRequestStockLevel = "STOCK_LEVEL_DO_NOT_USE"
+	OUT_SearchCatalogItemsRequestStockLevel                    SearchCatalogItemsRequestStockLevel = "OUT"
+	LOW_SearchCatalogItemsRequestStockLevel                    SearchCatalogItemsRequestStockLevel = "LOW"
 )

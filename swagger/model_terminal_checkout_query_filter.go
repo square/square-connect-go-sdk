@@ -13,6 +13,6 @@ type TerminalCheckoutQueryFilter struct {
 	// `TerminalCheckout`s associated with a specific device. If no device is specified then all `TerminalCheckout`s for the merchant will be displayed.
 	DeviceId  string     `json:"device_id,omitempty"`
 	CreatedAt *TimeRange `json:"created_at,omitempty"`
-	// Filtered results with the desired status of the `TerminalCheckout` Options: PENDING, IN\\_PROGRESS, CANCELED, COMPLETED
+	// Filtered results with the desired status of the `TerminalCheckout` Options: PENDING, IN_PROGRESS, CANCELED, COMPLETED
 	Status string `json:"status,omitempty"`
 }

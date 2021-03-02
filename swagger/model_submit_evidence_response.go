@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Defines fields in a SubmitEvidence response.
+// Defines the fields in a `SubmitEvidence` response.
 type SubmitEvidenceResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`
 	Dispute *Dispute     `json:"dispute,omitempty"`
 }

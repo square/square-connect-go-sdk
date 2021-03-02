@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > AuthorizeResponse Authorize(ctx, clientId, optional)
 Authorize
 
-Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint. See the [OAuth Build Guide](https://developer.squareup.com/docs/oauth-api/build-with-oauth) for more information.  In the event of an error, Authorize returns an error response (`error` and `error_description`). If the failure is a result of the user denying the request, the value is `access_denied` with a description of `user_denied`.
+Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint.  In the event of an error, Authorize returns an error response (`error` and `error_description`). If the failure is a result of the user denying the request, the value is `access_denied` with a description of `user_denied`.
 
 ### Required Parameters
 
@@ -52,7 +52,7 @@ No authorization required
 > ObtainTokenResponse ObtainToken(ctx, body)
 ObtainToken
 
-Returns an OAuth access token.  The endpoint supports distinct methods of obtaining OAuth access tokens. Applications specify a method by adding the `grant_type` parameter in the request and also provide relevant information. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management).  __Note:__ Regardless of the method application specified, the endpoint always returns two items; an OAuth access token and a refresh token in the response.  __OAuth tokens should only live on secure servers. Application clients should never interact directly with OAuth tokens__.
+Returns an OAuth access token.  The endpoint supports distinct methods of obtaining OAuth access tokens. Applications specify a method by adding the `grant_type` parameter in the request and also provide relevant information.  __Note:__ Regardless of the method application specified, the endpoint always returns two items; an OAuth access token and a refresh token in the response.  __OAuth tokens should only live on secure servers. Application clients should never interact directly with OAuth tokens__.
 
 ### Required Parameters
 
@@ -113,7 +113,7 @@ See the corresponding object definition for field details. |
 > RevokeTokenResponse RevokeToken(ctx, body)
 RevokeToken
 
-Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The `Authorization` header for this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with the application secret on the Credentials page in the [application dashboard](https://connect.squareup.com/apps).
+Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The `Authorization` header for this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with the application secret on the Credentials page in the [Developer Dashboard](https://developer.squareup.com/apps).
 
 ### Required Parameters
 

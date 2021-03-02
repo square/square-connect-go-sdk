@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Represents Square processing fee.
+// Represents the Square processing fee.
 type ProcessingFee struct {
-	// Timestamp of when the fee takes effect, in RFC 3339 format.
+	// The timestamp of when the fee takes effect, in RFC 3339 format.
 	EffectiveAt string `json:"effective_at,omitempty"`
-	// The type of fee assessed or adjusted. Can be one of: `INITIAL`, `ADJUSTMENT`.
+	// The type of fee assessed or adjusted. The fee type can be `INITIAL` or `ADJUSTMENT`.
 	Type_       string `json:"type,omitempty"`
 	AmountMoney *Money `json:"amount_money,omitempty"`
 }

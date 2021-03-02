@@ -11,7 +11,7 @@ package swagger
 
 // Defines the response body returned from the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint.
 type SearchCatalogItemsResponse struct {
-	// Errors detected when the call to [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint fails.
+	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// Returned items matching the specified query expressions.
 	Items []CatalogObject `json:"items,omitempty"`

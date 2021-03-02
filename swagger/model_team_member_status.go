@@ -14,6 +14,7 @@ type TeamMemberStatus string
 
 // List of TeamMemberStatus
 const (
-	ACTIVE_TeamMemberStatus   TeamMemberStatus = "ACTIVE"
-	INACTIVE_TeamMemberStatus TeamMemberStatus = "INACTIVE"
+	STATUS_DO_NOT_USE_TeamMemberStatus TeamMemberStatus = "STATUS_DO_NOT_USE"
+	ACTIVE_TeamMemberStatus            TeamMemberStatus = "ACTIVE"
+	INACTIVE_TeamMemberStatus          TeamMemberStatus = "INACTIVE"
 )

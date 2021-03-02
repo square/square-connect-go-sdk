@@ -14,6 +14,7 @@ type InventoryAlertType string
 
 // List of InventoryAlertType
 const (
-	NONE_InventoryAlertType         InventoryAlertType = "NONE"
-	LOW_QUANTITY_InventoryAlertType InventoryAlertType = "LOW_QUANTITY"
+	INVENTORY_ALERT_TYPE_DO_NOT_USE_InventoryAlertType InventoryAlertType = "INVENTORY_ALERT_TYPE_DO_NOT_USE"
+	NONE_InventoryAlertType                            InventoryAlertType = "NONE"
+	LOW_QUANTITY_InventoryAlertType                    InventoryAlertType = "LOW_QUANTITY"
 )

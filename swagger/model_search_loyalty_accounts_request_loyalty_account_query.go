@@ -11,6 +11,8 @@ package swagger
 
 // The search criteria for the loyalty accounts.
 type SearchLoyaltyAccountsRequestLoyaltyAccountQuery struct {
-	// The set of mappings to use in the loyalty account search.
+	// The set of mappings to use in the loyalty account search.    This cannot be combined with `customer_ids`.    Max: 30 mappings
 	Mappings []LoyaltyAccountMapping `json:"mappings,omitempty"`
+	// The set of customer IDs to use in the loyalty account search.    This cannot be combined with `mappings`.    Max: 30 customer IDs
+	CustomerIds []string `json:"customer_ids,omitempty"`
 }

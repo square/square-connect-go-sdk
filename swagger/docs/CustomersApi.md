@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 > ListCustomersResponse ListCustomers(ctx, optional)
 ListCustomers
 
-Lists customer profiles associated with a Square account.  Under normal operating conditions, newly created or updated customer profiles become available  for the listing operation in well under 30 seconds. Occasionally, propagation of the new or updated  profiles can take closer to one minute or longer, espeically during network incidents and outages.
+Lists customer profiles associated with a Square account.  Under normal operating conditions, newly created or updated customer profiles become available for the listing operation in well under 30 seconds. Occasionally, propagation of the new or updated profiles can take closer to one minute or longer, especially during network incidents and outages.
 
 ### Required Parameters
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 > SearchCustomersResponse SearchCustomers(ctx, body)
 SearchCustomers
 
-Searches the customer profiles associated with a Square account using  one or more supported query filters.   Calling `SearchCustomers` without any explicit query filter returns all customer profiles ordered alphabetically based on `given_name` and `family_name`.  Under normal operating conditions, newly created or updated customer profiles become available  for the search operation in well under 30 seconds. Occasionally, propagation of the new or updated  profiles can take closer to one minute or longer, espeically during network incidents and outages.
+Searches the customer profiles associated with a Square account using a supported query filter.  Calling `SearchCustomers` without any explicit query filter returns all customer profiles ordered alphabetically based on `given_name` and `family_name`.  Under normal operating conditions, newly created or updated customer profiles become available for the search operation in well under 30 seconds. Occasionally, propagation of the new or updated profiles can take closer to one minute or longer, especially during network incidents and outages.
 
 ### Required Parameters
 
@@ -289,7 +289,7 @@ See the corresponding object definition for field details. |
 > UpdateCustomerResponse UpdateCustomer(ctx, body, customerId)
 UpdateCustomer
 
-Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new `customer_id`. You must use the new `customer_id` to update merged profiles.  You cannot edit a customer's cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new `customer_id`. You must use the new `customer_id` to update merged profiles.  You cannot edit a customer's cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-Customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-Customers-createcustomercard) endpoint.
 
 ### Required Parameters
 

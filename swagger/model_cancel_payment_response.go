@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Return value from the [CancelPayment](#endpoint-payments-cancelpayment) endpoint.
+// The return value from the [CancelPayment](#endpoint-payments-cancelpayment) endpoint.
 type CancelPaymentResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`
 	Payment *Payment     `json:"payment,omitempty"`
 }

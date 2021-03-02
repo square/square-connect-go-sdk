@@ -14,6 +14,7 @@ type ExcludeStrategy string
 
 // List of ExcludeStrategy
 const (
-	LEAST_EXPENSIVE_ExcludeStrategy ExcludeStrategy = "LEAST_EXPENSIVE"
-	MOST_EXPENSIVE_ExcludeStrategy  ExcludeStrategy = "MOST_EXPENSIVE"
+	EXCLUDE_STRATEGY_DO_NOT_USE_ExcludeStrategy ExcludeStrategy = "EXCLUDE_STRATEGY_DO_NOT_USE"
+	LEAST_EXPENSIVE_ExcludeStrategy             ExcludeStrategy = "LEAST_EXPENSIVE"
+	MOST_EXPENSIVE_ExcludeStrategy              ExcludeStrategy = "MOST_EXPENSIVE"
 )

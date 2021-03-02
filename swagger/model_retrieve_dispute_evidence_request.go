@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines parameters for a RetrieveDisputeEvidence request.
+// Defines the parameters for a `RetrieveDisputeEvidence` request.
 type RetrieveDisputeEvidenceRequest struct {
 }

@@ -14,7 +14,8 @@ type JobAssignmentPayType string
 
 // List of JobAssignmentPayType
 const (
-	NONE_JobAssignmentPayType   JobAssignmentPayType = "NONE"
-	HOURLY_JobAssignmentPayType JobAssignmentPayType = "HOURLY"
-	SALARY_JobAssignmentPayType JobAssignmentPayType = "SALARY"
+	STATUS_DO_NOT_USE_JobAssignmentPayType JobAssignmentPayType = "STATUS_DO_NOT_USE"
+	NONE_JobAssignmentPayType              JobAssignmentPayType = "NONE"
+	HOURLY_JobAssignmentPayType            JobAssignmentPayType = "HOURLY"
+	SALARY_JobAssignmentPayType            JobAssignmentPayType = "SALARY"
 )

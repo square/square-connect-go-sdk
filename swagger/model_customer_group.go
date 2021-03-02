@@ -17,6 +17,6 @@ type CustomerGroup struct {
 	Name string `json:"name"`
 	// The timestamp when the customer group was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The timesamp when the customer group was last updated, in RFC 3339 format.
+	// The timestamp when the customer group was last updated, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
 }

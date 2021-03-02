@@ -9,7 +9,7 @@
  */
 package swagger
 
-// TransactionType : Transaction type used in the disputed payment.
+// TransactionType : The transaction type used in the disputed payment.
 type TransactionType string
 
 // List of TransactionType

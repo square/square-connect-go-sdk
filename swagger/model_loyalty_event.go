@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Provides information about a loyalty event.  For more information, see [Loyalty events](https://developer.squareup.com/docs/docs/loyalty-api/overview/#loyalty-events).
+// Provides information about a loyalty event.  For more information, see [Loyalty events](https://developer.squareup.com/docs/loyalty-api/overview/#loyalty-events).
 type LoyaltyEvent struct {
 	// The Square-assigned ID of the loyalty event.
 	Id    string            `json:"id"`

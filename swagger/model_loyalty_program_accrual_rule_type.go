@@ -14,8 +14,9 @@ type LoyaltyProgramAccrualRuleType string
 
 // List of LoyaltyProgramAccrualRuleType
 const (
-	VISIT_LoyaltyProgramAccrualRuleType          LoyaltyProgramAccrualRuleType = "VISIT"
-	SPEND_LoyaltyProgramAccrualRuleType          LoyaltyProgramAccrualRuleType = "SPEND"
-	ITEM_VARIATION_LoyaltyProgramAccrualRuleType LoyaltyProgramAccrualRuleType = "ITEM_VARIATION"
-	CATEGORY_LoyaltyProgramAccrualRuleType       LoyaltyProgramAccrualRuleType = "CATEGORY"
+	TYPE_DO_NOT_USE_LoyaltyProgramAccrualRuleType LoyaltyProgramAccrualRuleType = "TYPE_DO_NOT_USE"
+	VISIT_LoyaltyProgramAccrualRuleType           LoyaltyProgramAccrualRuleType = "VISIT"
+	SPEND_LoyaltyProgramAccrualRuleType           LoyaltyProgramAccrualRuleType = "SPEND"
+	ITEM_VARIATION_LoyaltyProgramAccrualRuleType  LoyaltyProgramAccrualRuleType = "ITEM_VARIATION"
+	CATEGORY_LoyaltyProgramAccrualRuleType        LoyaltyProgramAccrualRuleType = "CATEGORY"
 )

@@ -9,11 +9,12 @@
  */
 package swagger
 
-// DisputeEvidenceType : Type of the dispute evidence.
+// DisputeEvidenceType : The type of the dispute evidence.
 type DisputeEvidenceType string
 
 // List of DisputeEvidenceType
 const (
+	UNKNOWN_TYPE_DisputeEvidenceType                         DisputeEvidenceType = "UNKNOWN_TYPE"
 	GENERIC_EVIDENCE_DisputeEvidenceType                     DisputeEvidenceType = "GENERIC_EVIDENCE"
 	ONLINE_OR_APP_ACCESS_LOG_DisputeEvidenceType             DisputeEvidenceType = "ONLINE_OR_APP_ACCESS_LOG"
 	AUTHORIZATION_DOCUMENTATION_DisputeEvidenceType          DisputeEvidenceType = "AUTHORIZATION_DOCUMENTATION"

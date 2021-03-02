@@ -14,6 +14,11 @@ type OrderFulfillmentType string
 
 // List of OrderFulfillmentType
 const (
-	PICKUP_OrderFulfillmentType   OrderFulfillmentType = "PICKUP"
-	SHIPMENT_OrderFulfillmentType OrderFulfillmentType = "SHIPMENT"
+	FULFILLMENT_TYPE_DO_NOT_USE_OrderFulfillmentType OrderFulfillmentType = "FULFILLMENT_TYPE_DO_NOT_USE"
+	CUSTOM_OrderFulfillmentType                      OrderFulfillmentType = "CUSTOM"
+	PICKUP_OrderFulfillmentType                      OrderFulfillmentType = "PICKUP"
+	MANAGED_DELIVERY_OrderFulfillmentType            OrderFulfillmentType = "MANAGED_DELIVERY"
+	SHIPMENT_OrderFulfillmentType                    OrderFulfillmentType = "SHIPMENT"
+	DIGITAL_OrderFulfillmentType                     OrderFulfillmentType = "DIGITAL"
+	DELIVERY_OrderFulfillmentType                    OrderFulfillmentType = "DELIVERY"
 )

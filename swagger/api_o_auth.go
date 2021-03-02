@@ -28,7 +28,7 @@ type OAuthApiService service
 
 /*
 OAuthApiService Authorize
-Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint. See the [OAuth Build Guide](https://developer.squareup.com/docs/oauth-api/build-with-oauth) for more information.  In the event of an error, Authorize returns an error response (&#x60;error&#x60; and &#x60;error_description&#x60;). If the failure is a result of the user denying the request, the value is &#x60;access_denied&#x60; with a description of &#x60;user_denied&#x60;.
+Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint.  In the event of an error, Authorize returns an error response (&#x60;error&#x60; and &#x60;error_description&#x60;). If the failure is a result of the user denying the request, the value is &#x60;access_denied&#x60; with a description of &#x60;user_denied&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param clientId The Square-issued ID of the application requesting permissions.
  * @param optional nil or *OAuthApiAuthorizeOpts - Optional Parameters:
@@ -139,7 +139,7 @@ func (a *OAuthApiService) Authorize(ctx context.Context, clientId string, localV
 
 /*
 OAuthApiService ObtainToken
-Returns an OAuth access token.  The endpoint supports distinct methods of obtaining OAuth access tokens. Applications specify a method by adding the &#x60;grant_type&#x60; parameter in the request and also provide relevant information. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management).  __Note:__ Regardless of the method application specified, the endpoint always returns two items; an OAuth access token and a refresh token in the response.  __OAuth tokens should only live on secure servers. Application clients should never interact directly with OAuth tokens__.
+Returns an OAuth access token.  The endpoint supports distinct methods of obtaining OAuth access tokens. Applications specify a method by adding the &#x60;grant_type&#x60; parameter in the request and also provide relevant information.  __Note:__ Regardless of the method application specified, the endpoint always returns two items; an OAuth access token and a refresh token in the response.  __OAuth tokens should only live on secure servers. Application clients should never interact directly with OAuth tokens__.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -332,7 +332,7 @@ func (a *OAuthApiService) RenewToken(ctx context.Context, body RenewTokenRequest
 
 /*
 OAuthApiService RevokeToken
-Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The &#x60;Authorization&#x60; header for this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Client APPLICATION_SECRET &#x60;&#x60;&#x60;  Replace &#x60;APPLICATION_SECRET&#x60; with the application secret on the Credentials page in the [application dashboard](https://connect.squareup.com/apps).
+Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The &#x60;Authorization&#x60; header for this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Client APPLICATION_SECRET &#x60;&#x60;&#x60;  Replace &#x60;APPLICATION_SECRET&#x60; with the application secret on the Credentials page in the [Developer Dashboard](https://developer.squareup.com/apps).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

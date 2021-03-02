@@ -13,5 +13,6 @@ type MeasurementUnitGeneric string
 
 // List of MeasurementUnitGeneric
 const (
-	UNIT_MeasurementUnitGeneric MeasurementUnitGeneric = "UNIT"
+	INVALID_GENERIC_UNIT_MeasurementUnitGeneric MeasurementUnitGeneric = "INVALID_GENERIC_UNIT"
+	UNIT_MeasurementUnitGeneric                 MeasurementUnitGeneric = "UNIT"
 )

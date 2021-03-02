@@ -14,6 +14,7 @@ type MeasurementUnitArea string
 
 // List of MeasurementUnitArea
 const (
+	INVALID_AREA_MeasurementUnitArea             MeasurementUnitArea = "INVALID_AREA"
 	IMPERIAL_ACRE_MeasurementUnitArea            MeasurementUnitArea = "IMPERIAL_ACRE"
 	IMPERIAL_SQUARE_INCH_MeasurementUnitArea     MeasurementUnitArea = "IMPERIAL_SQUARE_INCH"
 	IMPERIAL_SQUARE_FOOT_MeasurementUnitArea     MeasurementUnitArea = "IMPERIAL_SQUARE_FOOT"

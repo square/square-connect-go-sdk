@@ -15,4 +15,6 @@ type ListDeviceCodesRequest struct {
 	// If specified, only returns DeviceCodes of the specified location. Returns DeviceCodes of all locations if empty.
 	LocationId  string       `json:"location_id,omitempty"`
 	ProductType *ProductType `json:"product_type,omitempty"`
+	// If specified, returns DeviceCodes with the specified statuses. Returns DeviceCodes of status `PAIRED` and `UNPAIRED` if empty. See [DeviceCodeStatus](#type-devicecodestatus) for possible values
+	Status []DeviceCodeStatus `json:"status,omitempty"`
 }

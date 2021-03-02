@@ -9,8 +9,8 @@
  */
 package swagger
 
-// Defines fields in a RemoveDisputeEvidence response.
+// Defines the fields in a `RemoveDisputeEvidence` response.
 type RemoveDisputeEvidenceResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

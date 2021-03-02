@@ -10,7 +10,7 @@
 package swagger
 
 type DeleteCatalogObjectResponse struct {
-	// Information on any errors encountered.
+	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// The IDs of all catalog objects deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a catalog item variation will be deleted (and its ID included in this field) when its parent catalog item is deleted.
 	DeletedObjectIds []string `json:"deleted_object_ids,omitempty"`

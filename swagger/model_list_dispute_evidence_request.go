@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines parameters for a ListDisputeEvidence request.
+// Defines the parameters for a `ListDisputeEvidence` request.
 type ListDisputeEvidenceRequest struct {
 }

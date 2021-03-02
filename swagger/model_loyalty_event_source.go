@@ -14,6 +14,7 @@ type LoyaltyEventSource string
 
 // List of LoyaltyEventSource
 const (
-	SQUARE_LoyaltyEventSource      LoyaltyEventSource = "SQUARE"
-	LOYALTY_API_LoyaltyEventSource LoyaltyEventSource = "LOYALTY_API"
+	SOURCE_DO_NOT_USE_LoyaltyEventSource LoyaltyEventSource = "SOURCE_DO_NOT_USE"
+	SQUARE_LoyaltyEventSource            LoyaltyEventSource = "SQUARE"
+	LOYALTY_API_LoyaltyEventSource       LoyaltyEventSource = "LOYALTY_API"
 )

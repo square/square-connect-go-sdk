@@ -9,17 +9,17 @@
  */
 package swagger
 
-// Supported custom attribute query expressions for calling the  [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems)  endpoint to search for items or item variations.
+// Supported custom attribute query expressions for calling the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint to search for items or item variations.
 type CustomAttributeFilter struct {
-	// A query expression to filter items or item variations by matching their custom attributes'  `custom_attribute_definition_id`   property value against the the specified id.
+	// A query expression to filter items or item variations by matching their custom attributes' `custom_attribute_definition_id` property value against the the specified id.
 	CustomAttributeDefinitionId string `json:"custom_attribute_definition_id,omitempty"`
-	// A query expression to filter items or item variations by matching their custom attributes' `key` property value against  the specified key.
+	// A query expression to filter items or item variations by matching their custom attributes' `key` property value against the specified key.
 	Key string `json:"key,omitempty"`
-	// A query expression to filter items or item variations by matching their custom attributes'  `string_value`  property value  against the specified text.
+	// A query expression to filter items or item variations by matching their custom attributes' `string_value`  property value against the specified text.
 	StringFilter string      `json:"string_filter,omitempty"`
 	NumberFilter *ModelRange `json:"number_filter,omitempty"`
-	// A query expression to filter items or item variations by matching  their custom attributes'  `selection_uid_values`  values against the specified selection uids.
+	// A query expression to filter items or item variations by matching  their custom attributes' `selection_uid_values` values against the specified selection uids.
 	SelectionUidsFilter []string `json:"selection_uids_filter,omitempty"`
-	// A query expression to filter items or item variations by matching their custom attributes' `boolean_value` property values  against the specified Boolean expression.
+	// A query expression to filter items or item variations by matching their custom attributes' `boolean_value` property values against the specified Boolean expression.
 	BoolFilter bool `json:"bool_filter,omitempty"`
 }

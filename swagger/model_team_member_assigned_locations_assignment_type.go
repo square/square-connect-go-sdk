@@ -14,6 +14,7 @@ type TeamMemberAssignedLocationsAssignmentType string
 
 // List of TeamMemberAssignedLocationsAssignmentType
 const (
+	DO_NOT_USE_TeamMemberAssignedLocationsAssignmentType                       TeamMemberAssignedLocationsAssignmentType = "DO_NOT_USE"
 	ALL_CURRENT_AND_FUTURE_LOCATIONS_TeamMemberAssignedLocationsAssignmentType TeamMemberAssignedLocationsAssignmentType = "ALL_CURRENT_AND_FUTURE_LOCATIONS"
 	EXPLICIT_LOCATIONS_TeamMemberAssignedLocationsAssignmentType               TeamMemberAssignedLocationsAssignmentType = "EXPLICIT_LOCATIONS"
 )

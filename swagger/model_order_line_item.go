@@ -31,11 +31,12 @@ type OrderLineItem struct {
 	// The list of references to taxes applied to this line item. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderLineItemTax` applied to the line item. On reads, the amount applied is populated.  An `OrderLineItemAppliedTax` will be automatically created on every line item for all `ORDER` scoped taxes added to the order. `OrderLineItemAppliedTax` records for `LINE_ITEM` scoped taxes must be added in requests for the tax to apply to any line items.  To change the amount of a tax, modify the referenced top-level tax.
 	AppliedTaxes []OrderLineItemAppliedTax `json:"applied_taxes,omitempty"`
 	// The list of references to discounts applied to this line item. Each `OrderLineItemAppliedDiscount` has a `discount_uid` that references the `uid` of a top-level `OrderLineItemDiscounts` applied to the line item. On reads, the amount applied is populated.  An `OrderLineItemAppliedDiscount` will be automatically created on every line item for all `ORDER` scoped discounts that are added to the order. `OrderLineItemAppliedDiscount` records for `LINE_ITEM` scoped discounts must be added in requests for the discount to apply to any line items.  To change the amount of a discount, modify the referenced top-level discount.
-	AppliedDiscounts         []OrderLineItemAppliedDiscount `json:"applied_discounts,omitempty"`
-	BasePriceMoney           *Money                         `json:"base_price_money,omitempty"`
-	VariationTotalPriceMoney *Money                         `json:"variation_total_price_money,omitempty"`
-	GrossSalesMoney          *Money                         `json:"gross_sales_money,omitempty"`
-	TotalTaxMoney            *Money                         `json:"total_tax_money,omitempty"`
-	TotalDiscountMoney       *Money                         `json:"total_discount_money,omitempty"`
-	TotalMoney               *Money                         `json:"total_money,omitempty"`
+	AppliedDiscounts         []OrderLineItemAppliedDiscount  `json:"applied_discounts,omitempty"`
+	BasePriceMoney           *Money                          `json:"base_price_money,omitempty"`
+	VariationTotalPriceMoney *Money                          `json:"variation_total_price_money,omitempty"`
+	GrossSalesMoney          *Money                          `json:"gross_sales_money,omitempty"`
+	TotalTaxMoney            *Money                          `json:"total_tax_money,omitempty"`
+	TotalDiscountMoney       *Money                          `json:"total_discount_money,omitempty"`
+	TotalMoney               *Money                          `json:"total_money,omitempty"`
+	PricingBlocklists        *OrderLineItemPricingBlocklists `json:"pricing_blocklists,omitempty"`
 }

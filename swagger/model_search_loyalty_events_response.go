@@ -15,6 +15,6 @@ type SearchLoyaltyEventsResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The loyalty events that satisfy the search criteria.
 	Events []LoyaltyEvent `json:"events,omitempty"`
-	// The pagination cursor to be used in a subsequent  request. If empty, this is the final response.  For more information,  see [Pagination](https://developer.squareup.com/docs/docs/basics/api101/pagination).
+	// The pagination cursor to be used in a subsequent  request. If empty, this is the final response.  For more information,  see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

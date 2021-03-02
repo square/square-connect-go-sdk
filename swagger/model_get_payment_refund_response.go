@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [GetRefund](#endpoint-refunds-getpaymentrefund) endpoint.  Note: if there are errors processing the request, the refund field may not be present, or it may be present in a FAILED state.
+// Defines the fields that are included in the response body of a request to the [GetRefund](#endpoint-refunds-getpaymentrefund) endpoint.  Note: If there are errors processing the request, the refund field might not be present or it might be present in a FAILED state.
 type GetPaymentRefundResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors []ModelError   `json:"errors,omitempty"`
 	Refund *PaymentRefund `json:"refund,omitempty"`
 }

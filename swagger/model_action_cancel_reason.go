@@ -13,7 +13,8 @@ type ActionCancelReason string
 
 // List of ActionCancelReason
 const (
-	BUYER_CANCELED_ActionCancelReason  ActionCancelReason = "BUYER_CANCELED"
-	SELLER_CANCELED_ActionCancelReason ActionCancelReason = "SELLER_CANCELED"
-	TIMED_OUT_ActionCancelReason       ActionCancelReason = "TIMED_OUT"
+	TERMINAL_CHECKOUT_CANCEL_REASON_DO_NOT_USE_ActionCancelReason ActionCancelReason = "TERMINAL_CHECKOUT_CANCEL_REASON_DO_NOT_USE"
+	BUYER_CANCELED_ActionCancelReason                             ActionCancelReason = "BUYER_CANCELED"
+	SELLER_CANCELED_ActionCancelReason                            ActionCancelReason = "SELLER_CANCELED"
+	TIMED_OUT_ActionCancelReason                                  ActionCancelReason = "TIMED_OUT"
 )

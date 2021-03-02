@@ -14,10 +14,11 @@ type OrderFulfillmentState string
 
 // List of OrderFulfillmentState
 const (
-	PROPOSED_OrderFulfillmentState  OrderFulfillmentState = "PROPOSED"
-	RESERVED_OrderFulfillmentState  OrderFulfillmentState = "RESERVED"
-	PREPARED_OrderFulfillmentState  OrderFulfillmentState = "PREPARED"
-	COMPLETED_OrderFulfillmentState OrderFulfillmentState = "COMPLETED"
-	CANCELED_OrderFulfillmentState  OrderFulfillmentState = "CANCELED"
-	FAILED_OrderFulfillmentState    OrderFulfillmentState = "FAILED"
+	FULFILLMENT_STATE_DO_NOT_USE_OrderFulfillmentState OrderFulfillmentState = "FULFILLMENT_STATE_DO_NOT_USE"
+	PROPOSED_OrderFulfillmentState                     OrderFulfillmentState = "PROPOSED"
+	RESERVED_OrderFulfillmentState                     OrderFulfillmentState = "RESERVED"
+	PREPARED_OrderFulfillmentState                     OrderFulfillmentState = "PREPARED"
+	COMPLETED_OrderFulfillmentState                    OrderFulfillmentState = "COMPLETED"
+	CANCELED_OrderFulfillmentState                     OrderFulfillmentState = "CANCELED"
+	FAILED_OrderFulfillmentState                       OrderFulfillmentState = "FAILED"
 )

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **InclusionType** | [***TaxInclusionType**](TaxInclusionType.md) |  | [optional] [default to null]
 **Percentage** | **string** | The percentage of the tax in decimal form, using a &#x60;&#x27;.&#x27;&#x60; as the decimal separator and without a &#x60;&#x27;%&#x27;&#x60; sign. A value of &#x60;7.5&#x60; corresponds to 7.5%. | [optional] [default to null]
 **AppliesToCustomAmounts** | **bool** | If &#x60;true&#x60;, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular &#x60;CatalogItem&#x60;. | [optional] [default to null]
-**Enabled** | **bool** | If &#x60;true&#x60;, the tax will be shown as enabled in the Square Point of Sale app. | [optional] [default to null]
+**Enabled** | **bool** | A Boolean flag to indicate whether the tax is displayed as enabled (&#x60;true&#x60;) in the Square Point of Sale app or not (&#x60;false&#x60;). | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

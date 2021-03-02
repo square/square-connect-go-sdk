@@ -24,7 +24,7 @@ type SearchCatalogItemsRequest struct {
 	// The maximum number of results to return per page. The default value is 100.
 	Limit     int32      `json:"limit,omitempty"`
 	SortOrder *SortOrder `json:"sort_order,omitempty"`
-	// The product types query expression to return items or item variations having the specified product types. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
+	// The product types query expression to return items or item variations having the specified product types.
 	ProductTypes []CatalogItemProductType `json:"product_types,omitempty"`
 	// The customer-attribute filter to return items or item variations matching the specified custom attribute expressions. A maximum number of 10 custom attribute expressions are supported in a single call to the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint.
 	CustomAttributeFilters []CustomAttributeFilter `json:"custom_attribute_filters,omitempty"`

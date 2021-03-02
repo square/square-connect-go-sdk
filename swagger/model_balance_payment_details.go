@@ -11,8 +11,8 @@ package swagger
 
 // Reflects the current status of a balance payment.
 type BalancePaymentDetails struct {
-	// ID for the account used to fund the payment.
+	// The ID of the account used to fund the payment.
 	AccountId string `json:"account_id,omitempty"`
-	// The balance payment’s current state. Can be `COMPLETED` or `FAILED`.
+	// The balance payment’s current state. The state can be COMPLETED or FAILED.
 	Status string `json:"status,omitempty"`
 }

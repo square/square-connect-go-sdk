@@ -9,20 +9,21 @@
  */
 package swagger
 
-// Describes a specific payment request in an invoice. You can have  up to nine payment requests for an invoice.
+// Represents a payment request for an [invoice](#type-Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types.  For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).
 type InvoicePaymentRequest struct {
 	// The Square-generated ID of the payment request in an [invoice](#type-invoice).
 	Uid           string                `json:"uid,omitempty"`
 	RequestMethod *InvoiceRequestMethod `json:"request_method,omitempty"`
 	RequestType   *InvoiceRequestType   `json:"request_type,omitempty"`
-	// The due date (in the invoice location's time zone) for the payment request.  After this date, the invoice becomes overdue.
+	// The due date (in the invoice location's time zone) for the payment request, in `YYYY-MM-DD` format.  After this date, the invoice becomes overdue. This field is required to create a payment request.
 	DueDate                   string `json:"due_date,omitempty"`
 	FixedAmountRequestedMoney *Money `json:"fixed_amount_requested_money,omitempty"`
 	// Specifies the amount for the payment request in percentage:  - When the payment `request_type` is `DEPOSIT`, it is the percentage of the order total amount. - When the payment `request_type` is `INSTALLMENT`, it is the percentage of the order total less  the deposit, if requested. The sum of the `percentage_requested` in all installment  payment requests must be equal to 100.  You cannot specify this when the payment `request_type` is `BALANCE` or when the  payment request specifies the `fixed_amount_requested_money` field.
 	PercentageRequested string `json:"percentage_requested,omitempty"`
 	// If set to true, the Square-hosted invoice page (the `public_url` field of the invoice)  provides a place for the customer to pay a tip.   This field is allowed only on the final payment request   and the payment `request_type` must be `BALANCE` or `INSTALLMENT`.
-	TippingEnabled bool `json:"tipping_enabled,omitempty"`
-	// If the request method is `CHARGE_CARD_ON_FILE`, this field provides the  card to charge.
+	TippingEnabled         bool                           `json:"tipping_enabled,omitempty"`
+	AutomaticPaymentSource *InvoiceAutomaticPaymentSource `json:"automatic_payment_source,omitempty"`
+	// The ID of the card on file to charge for the payment request. To get the customer’s card on file, use the `customer_id` of the invoice recipient to call [RetrieveCustomer](#endpoint-Customers-RetrieveCustomer) in the Customers API. Then, get the ID of the target card from the `cards` field in the response.
 	CardId string `json:"card_id,omitempty"`
 	// A list of one or more reminders to send for the payment request.
 	Reminders                       []InvoicePaymentReminder `json:"reminders,omitempty"`

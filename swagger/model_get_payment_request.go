@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Retrieve details for a specific Payment.
+// Retrieve details for a specific payment.
 type GetPaymentRequest struct {
 }

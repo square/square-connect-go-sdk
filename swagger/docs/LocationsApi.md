@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > CreateLocationResponse CreateLocation(ctx, body)
 CreateLocation
 
-Creates a location. For more information about locations, see [Locations API Overview](https://developer.squareup.com/docs/locations-api).
+Creates a location.
 
 ### Required Parameters
 
@@ -43,7 +43,7 @@ See the corresponding object definition for field details. |
 > ListLocationsResponse ListLocations(ctx, )
 ListLocations
 
-Provides information of all locations of a business.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
+Provides information of all locations of a business.  Many Square API endpoints require a `location_id` parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
 
 ### Required Parameters
 This endpoint does not need any parameter.
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 > RetrieveLocationResponse RetrieveLocation(ctx, locationId)
 RetrieveLocation
 
-Retrieves details of a location. You can specify \"main\"  as the location ID to retrieve details of the  main location. For more information,  see [Locations API Overview](https://developer.squareup.com/docs/docs/locations-api).
+Retrieves details of a location. You can specify \"main\"  as the location ID to retrieve details of the  main location.
 
 ### Required Parameters
 

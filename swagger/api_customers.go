@@ -470,7 +470,7 @@ func (a *CustomersApiService) DeleteCustomerCard(ctx context.Context, customerId
 
 /*
 CustomersApiService ListCustomers
-Lists customer profiles associated with a Square account.  Under normal operating conditions, newly created or updated customer profiles become available  for the listing operation in well under 30 seconds. Occasionally, propagation of the new or updated  profiles can take closer to one minute or longer, espeically during network incidents and outages.
+Lists customer profiles associated with a Square account.  Under normal operating conditions, newly created or updated customer profiles become available for the listing operation in well under 30 seconds. Occasionally, propagation of the new or updated profiles can take closer to one minute or longer, especially during network incidents and outages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomersApiListCustomersOpts - Optional Parameters:
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
@@ -748,7 +748,7 @@ func (a *CustomersApiService) RetrieveCustomer(ctx context.Context, customerId s
 
 /*
 CustomersApiService SearchCustomers
-Searches the customer profiles associated with a Square account using  one or more supported query filters.   Calling &#x60;SearchCustomers&#x60; without any explicit query filter returns all customer profiles ordered alphabetically based on &#x60;given_name&#x60; and &#x60;family_name&#x60;.  Under normal operating conditions, newly created or updated customer profiles become available  for the search operation in well under 30 seconds. Occasionally, propagation of the new or updated  profiles can take closer to one minute or longer, espeically during network incidents and outages.
+Searches the customer profiles associated with a Square account using a supported query filter.  Calling &#x60;SearchCustomers&#x60; without any explicit query filter returns all customer profiles ordered alphabetically based on &#x60;given_name&#x60; and &#x60;family_name&#x60;.  Under normal operating conditions, newly created or updated customer profiles become available for the search operation in well under 30 seconds. Occasionally, propagation of the new or updated profiles can take closer to one minute or longer, especially during network incidents and outages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -837,7 +837,7 @@ func (a *CustomersApiService) SearchCustomers(ctx context.Context, body SearchCu
 
 /*
 CustomersApiService UpdateCustomer
-Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#x27;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.
+Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#x27;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-Customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-Customers-createcustomercard) endpoint.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

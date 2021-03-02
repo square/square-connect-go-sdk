@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](https://developer.squareup.com/docs/docs/subscriptions-api/setup-plan).
+// Describes a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](https://developer.squareup.com/docs/subscriptions-api/setup-plan).
 type CatalogSubscriptionPlan struct {
 	// The name of the plan.
 	Name string `json:"name,omitempty"`

@@ -14,8 +14,9 @@ type EcomVisibility string
 
 // List of EcomVisibility
 const (
-	UNINDEXED_EcomVisibility   EcomVisibility = "UNINDEXED"
-	UNAVAILABLE_EcomVisibility EcomVisibility = "UNAVAILABLE"
-	HIDDEN_EcomVisibility      EcomVisibility = "HIDDEN"
-	VISIBLE_EcomVisibility     EcomVisibility = "VISIBLE"
+	ECOM_VISIBILITY_DO_NOT_USE_EcomVisibility EcomVisibility = "ECOM_VISIBILITY_DO_NOT_USE"
+	UNINDEXED_EcomVisibility                  EcomVisibility = "UNINDEXED"
+	UNAVAILABLE_EcomVisibility                EcomVisibility = "UNAVAILABLE"
+	HIDDEN_EcomVisibility                     EcomVisibility = "HIDDEN"
+	VISIBLE_EcomVisibility                    EcomVisibility = "VISIBLE"
 )

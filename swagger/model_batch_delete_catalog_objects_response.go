@@ -10,7 +10,7 @@
 package swagger
 
 type BatchDeleteCatalogObjectsResponse struct {
-	// The set of Errors encountered.
+	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// The IDs of all CatalogObjects deleted by this request.
 	DeletedObjectIds []string `json:"deleted_object_ids,omitempty"`

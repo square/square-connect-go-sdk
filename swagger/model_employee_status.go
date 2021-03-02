@@ -14,6 +14,7 @@ type EmployeeStatus string
 
 // List of EmployeeStatus
 const (
-	ACTIVE_EmployeeStatus   EmployeeStatus = "ACTIVE"
-	INACTIVE_EmployeeStatus EmployeeStatus = "INACTIVE"
+	DO_NOT_USE_EmployeeStatus EmployeeStatus = "DO_NOT_USE"
+	ACTIVE_EmployeeStatus     EmployeeStatus = "ACTIVE"
+	INACTIVE_EmployeeStatus   EmployeeStatus = "INACTIVE"
 )

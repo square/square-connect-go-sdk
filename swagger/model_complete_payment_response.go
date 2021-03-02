@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Return value from a [CompletePayment](#endpoint-payments-completepayment) call.
+// The return value from a [CompletePayment](#endpoint-payments-completepayment) call.
 type CompletePaymentResponse struct {
-	// Information on errors encountered during the request
+	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`
 	Payment *Payment     `json:"payment,omitempty"`
 }

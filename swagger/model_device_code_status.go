@@ -14,6 +14,8 @@ type DeviceCodeStatus string
 
 // List of DeviceCodeStatus
 const (
+	UNKNOWN_DeviceCodeStatus  DeviceCodeStatus = "UNKNOWN"
 	UNPAIRED_DeviceCodeStatus DeviceCodeStatus = "UNPAIRED"
 	PAIRED_DeviceCodeStatus   DeviceCodeStatus = "PAIRED"
+	EXPIRED_DeviceCodeStatus  DeviceCodeStatus = "EXPIRED"
 )

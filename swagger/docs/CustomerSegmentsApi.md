@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a CustomerSegmentsApiListCustomerSegmentsOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **optional.String**| A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/docs/working-with-apis/pagination) for more information. | 
+ **cursor** | **optional.String**| A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information. | 
 
 ### Return type
 

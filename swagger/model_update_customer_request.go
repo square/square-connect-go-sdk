@@ -28,6 +28,6 @@ type UpdateCustomerRequest struct {
 	ReferenceId string `json:"reference_id,omitempty"`
 	// A custom note associated with the customer profile.
 	Note string `json:"note,omitempty"`
-	// The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: `0000-09-01T00:00:00-00:00` indicates a birthday on September 1st. `1998-09-01T00:00:00-00:00` indications a birthday on September 1st __1998__.
+	// The birthday associated with the customer profile, in RFC 3339 format. Year is optional, timezone and times are not allowed. For example: `0000-09-01T00:00:00-00:00` indicates a birthday on September 1st. `1998-09-01T00:00:00-00:00` indications a birthday on September 1st __1998__.
 	Birthday string `json:"birthday,omitempty"`
 }

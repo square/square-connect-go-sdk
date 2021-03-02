@@ -14,9 +14,10 @@ type MeasurementUnitTime string
 
 // List of MeasurementUnitTime
 const (
-	MILLISECOND_MeasurementUnitTime MeasurementUnitTime = "GENERIC_MILLISECOND"
-	SECOND_MeasurementUnitTime      MeasurementUnitTime = "GENERIC_SECOND"
-	MINUTE_MeasurementUnitTime      MeasurementUnitTime = "GENERIC_MINUTE"
-	HOUR_MeasurementUnitTime        MeasurementUnitTime = "GENERIC_HOUR"
-	DAY_MeasurementUnitTime         MeasurementUnitTime = "GENERIC_DAY"
+	INVALID_TIME_MeasurementUnitTime        MeasurementUnitTime = "INVALID_TIME"
+	GENERIC_MILLISECOND_MeasurementUnitTime MeasurementUnitTime = "GENERIC_MILLISECOND"
+	GENERIC_SECOND_MeasurementUnitTime      MeasurementUnitTime = "GENERIC_SECOND"
+	GENERIC_MINUTE_MeasurementUnitTime      MeasurementUnitTime = "GENERIC_MINUTE"
+	GENERIC_HOUR_MeasurementUnitTime        MeasurementUnitTime = "GENERIC_HOUR"
+	GENERIC_DAY_MeasurementUnitTime         MeasurementUnitTime = "GENERIC_DAY"
 )

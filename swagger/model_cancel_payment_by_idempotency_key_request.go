@@ -9,8 +9,8 @@
  */
 package swagger
 
-// Specifies idempotency key of a payment to cancel.
+// Specifies the idempotency key of a payment to cancel.
 type CancelPaymentByIdempotencyKeyRequest struct {
-	// `idempotency_key` identifying the payment to be canceled.
+	// The `idempotency_key` identifying the payment to be canceled.
 	IdempotencyKey string `json:"idempotency_key"`
 }

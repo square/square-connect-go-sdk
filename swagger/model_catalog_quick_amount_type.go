@@ -14,6 +14,7 @@ type CatalogQuickAmountType string
 
 // List of CatalogQuickAmountType
 const (
-	MANUAL_CatalogQuickAmountType CatalogQuickAmountType = "QUICK_AMOUNT_TYPE_MANUAL"
-	AUTO_CatalogQuickAmountType   CatalogQuickAmountType = "QUICK_AMOUNT_TYPE_AUTO"
+	DO_NOT_USE_CatalogQuickAmountType CatalogQuickAmountType = "QUICK_AMOUNT_TYPE_DO_NOT_USE"
+	MANUAL_CatalogQuickAmountType     CatalogQuickAmountType = "QUICK_AMOUNT_TYPE_MANUAL"
+	AUTO_CatalogQuickAmountType       CatalogQuickAmountType = "QUICK_AMOUNT_TYPE_AUTO"
 )

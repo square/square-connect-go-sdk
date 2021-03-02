@@ -26,6 +26,14 @@ Class | Method | HTTP request | Description
 *BankAccountsApi* | [**GetBankAccount**](docs/BankAccountsApi.md#getbankaccount) | **Get** /v2/bank-accounts/{bank_account_id} | GetBankAccount
 *BankAccountsApi* | [**GetBankAccountByV1Id**](docs/BankAccountsApi.md#getbankaccountbyv1id) | **Get** /v2/bank-accounts/by-v1-id/{v1_bank_account_id} | GetBankAccountByV1Id
 *BankAccountsApi* | [**ListBankAccounts**](docs/BankAccountsApi.md#listbankaccounts) | **Get** /v2/bank-accounts | ListBankAccounts
+*BookingsApi* | [**CancelBooking**](docs/BookingsApi.md#cancelbooking) | **Post** /v2/bookings/{booking_id}/cancel | CancelBooking
+*BookingsApi* | [**CreateBooking**](docs/BookingsApi.md#createbooking) | **Post** /v2/bookings | CreateBooking
+*BookingsApi* | [**ListTeamMemberBookingProfiles**](docs/BookingsApi.md#listteammemberbookingprofiles) | **Get** /v2/bookings/team-member-booking-profiles | ListTeamMemberBookingProfiles
+*BookingsApi* | [**RetrieveBooking**](docs/BookingsApi.md#retrievebooking) | **Get** /v2/bookings/{booking_id} | RetrieveBooking
+*BookingsApi* | [**RetrieveBusinessBookingProfile**](docs/BookingsApi.md#retrievebusinessbookingprofile) | **Get** /v2/bookings/business-booking-profile | RetrieveBusinessBookingProfile
+*BookingsApi* | [**RetrieveTeamMemberBookingProfile**](docs/BookingsApi.md#retrieveteammemberbookingprofile) | **Get** /v2/bookings/team-member-booking-profiles/{team_member_id} | RetrieveTeamMemberBookingProfile
+*BookingsApi* | [**SearchAvailability**](docs/BookingsApi.md#searchavailability) | **Post** /v2/bookings/availability/search | SearchAvailability
+*BookingsApi* | [**UpdateBooking**](docs/BookingsApi.md#updatebooking) | **Put** /v2/bookings/{booking_id} | UpdateBooking
 *CashDrawersApi* | [**ListCashDrawerShiftEvents**](docs/CashDrawersApi.md#listcashdrawershiftevents) | **Get** /v2/cash-drawers/shifts/{shift_id}/events | ListCashDrawerShiftEvents
 *CashDrawersApi* | [**ListCashDrawerShifts**](docs/CashDrawersApi.md#listcashdrawershifts) | **Get** /v2/cash-drawers/shifts | ListCashDrawerShifts
 *CashDrawersApi* | [**RetrieveCashDrawerShift**](docs/CashDrawersApi.md#retrievecashdrawershift) | **Get** /v2/cash-drawers/shifts/{shift_id} | RetrieveCashDrawerShift
@@ -133,6 +141,7 @@ Class | Method | HTTP request | Description
 *OrdersApi* | [**CalculateOrder**](docs/OrdersApi.md#calculateorder) | **Post** /v2/orders/calculate | CalculateOrder
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **Post** /v2/orders | CreateOrder
 *OrdersApi* | [**PayOrder**](docs/OrdersApi.md#payorder) | **Post** /v2/orders/{order_id}/pay | PayOrder
+*OrdersApi* | [**RetrieveOrder**](docs/OrdersApi.md#retrieveorder) | **Get** /v2/orders/{order_id} | RetrieveOrder
 *OrdersApi* | [**SearchOrders**](docs/OrdersApi.md#searchorders) | **Post** /v2/orders/search | SearchOrders
 *OrdersApi* | [**UpdateOrder**](docs/OrdersApi.md#updateorder) | **Put** /v2/orders/{order_id} | UpdateOrder
 *PaymentsApi* | [**CancelPayment**](docs/PaymentsApi.md#cancelpayment) | **Post** /v2/payments/{payment_id}/cancel | CancelPayment
@@ -161,9 +170,13 @@ Class | Method | HTTP request | Description
 *TeamApi* | [**UpdateTeamMember**](docs/TeamApi.md#updateteammember) | **Put** /v2/team-members/{team_member_id} | UpdateTeamMember
 *TeamApi* | [**UpdateWageSetting**](docs/TeamApi.md#updatewagesetting) | **Put** /v2/team-members/{team_member_id}/wage-setting | UpdateWageSetting
 *TerminalApi* | [**CancelTerminalCheckout**](docs/TerminalApi.md#cancelterminalcheckout) | **Post** /v2/terminals/checkouts/{checkout_id}/cancel | CancelTerminalCheckout
+*TerminalApi* | [**CancelTerminalRefund**](docs/TerminalApi.md#cancelterminalrefund) | **Post** /v2/terminals/refunds/{terminal_refund_id}/cancel | CancelTerminalRefund
 *TerminalApi* | [**CreateTerminalCheckout**](docs/TerminalApi.md#createterminalcheckout) | **Post** /v2/terminals/checkouts | CreateTerminalCheckout
+*TerminalApi* | [**CreateTerminalRefund**](docs/TerminalApi.md#createterminalrefund) | **Post** /v2/terminals/refunds | CreateTerminalRefund
 *TerminalApi* | [**GetTerminalCheckout**](docs/TerminalApi.md#getterminalcheckout) | **Get** /v2/terminals/checkouts/{checkout_id} | GetTerminalCheckout
+*TerminalApi* | [**GetTerminalRefund**](docs/TerminalApi.md#getterminalrefund) | **Get** /v2/terminals/refunds/{terminal_refund_id} | GetTerminalRefund
 *TerminalApi* | [**SearchTerminalCheckouts**](docs/TerminalApi.md#searchterminalcheckouts) | **Post** /v2/terminals/checkouts/search | SearchTerminalCheckouts
+*TerminalApi* | [**SearchTerminalRefunds**](docs/TerminalApi.md#searchterminalrefunds) | **Post** /v2/terminals/refunds/search | SearchTerminalRefunds
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **Post** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
 *TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **Post** /v2/locations/{location_id}/transactions | Charge
 *TransactionsApi* | [**CreateRefund**](docs/TransactionsApi.md#createrefund) | **Post** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
@@ -174,69 +187,16 @@ Class | Method | HTTP request | Description
 *V1BatchingApi* | [**V1SubmitBatch**](docs/V1BatchingApi.md#v1submitbatch) | **Post** /v1/batch | V1SubmitBatch
 *V1EmployeesApi* | [**CreateEmployee**](docs/V1EmployeesApi.md#createemployee) | **Post** /v1/me/employees | CreateEmployee
 *V1EmployeesApi* | [**CreateEmployeeRole**](docs/V1EmployeesApi.md#createemployeerole) | **Post** /v1/me/roles | CreateEmployeeRole
-*V1EmployeesApi* | [**CreateTimecard**](docs/V1EmployeesApi.md#createtimecard) | **Post** /v1/me/timecards | CreateTimecard
-*V1EmployeesApi* | [**DeleteTimecard**](docs/V1EmployeesApi.md#deletetimecard) | **Delete** /v1/me/timecards/{timecard_id} | DeleteTimecard
-*V1EmployeesApi* | [**ListCashDrawerShifts**](docs/V1EmployeesApi.md#listcashdrawershifts) | **Get** /v1/{location_id}/cash-drawer-shifts | ListCashDrawerShifts
 *V1EmployeesApi* | [**ListEmployeeRoles**](docs/V1EmployeesApi.md#listemployeeroles) | **Get** /v1/me/roles | ListEmployeeRoles
 *V1EmployeesApi* | [**ListEmployees**](docs/V1EmployeesApi.md#listemployees) | **Get** /v1/me/employees | ListEmployees
-*V1EmployeesApi* | [**ListTimecardEvents**](docs/V1EmployeesApi.md#listtimecardevents) | **Get** /v1/me/timecards/{timecard_id}/events | ListTimecardEvents
-*V1EmployeesApi* | [**ListTimecards**](docs/V1EmployeesApi.md#listtimecards) | **Get** /v1/me/timecards | ListTimecards
-*V1EmployeesApi* | [**RetrieveCashDrawerShift**](docs/V1EmployeesApi.md#retrievecashdrawershift) | **Get** /v1/{location_id}/cash-drawer-shifts/{shift_id} | RetrieveCashDrawerShift
 *V1EmployeesApi* | [**RetrieveEmployee**](docs/V1EmployeesApi.md#retrieveemployee) | **Get** /v1/me/employees/{employee_id} | RetrieveEmployee
 *V1EmployeesApi* | [**RetrieveEmployeeRole**](docs/V1EmployeesApi.md#retrieveemployeerole) | **Get** /v1/me/roles/{role_id} | RetrieveEmployeeRole
-*V1EmployeesApi* | [**RetrieveTimecard**](docs/V1EmployeesApi.md#retrievetimecard) | **Get** /v1/me/timecards/{timecard_id} | RetrieveTimecard
 *V1EmployeesApi* | [**UpdateEmployee**](docs/V1EmployeesApi.md#updateemployee) | **Put** /v1/me/employees/{employee_id} | UpdateEmployee
 *V1EmployeesApi* | [**UpdateEmployeeRole**](docs/V1EmployeesApi.md#updateemployeerole) | **Put** /v1/me/roles/{role_id} | UpdateEmployeeRole
-*V1EmployeesApi* | [**UpdateTimecard**](docs/V1EmployeesApi.md#updatetimecard) | **Put** /v1/me/timecards/{timecard_id} | UpdateTimecard
-*V1ItemsApi* | [**AdjustInventory**](docs/V1ItemsApi.md#adjustinventory) | **Post** /v1/{location_id}/inventory/{variation_id} | AdjustInventory
-*V1ItemsApi* | [**ApplyFee**](docs/V1ItemsApi.md#applyfee) | **Put** /v1/{location_id}/items/{item_id}/fees/{fee_id} | ApplyFee
-*V1ItemsApi* | [**ApplyModifierList**](docs/V1ItemsApi.md#applymodifierlist) | **Put** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | ApplyModifierList
-*V1ItemsApi* | [**CreateCategory**](docs/V1ItemsApi.md#createcategory) | **Post** /v1/{location_id}/categories | CreateCategory
-*V1ItemsApi* | [**CreateDiscount**](docs/V1ItemsApi.md#creatediscount) | **Post** /v1/{location_id}/discounts | CreateDiscount
-*V1ItemsApi* | [**CreateFee**](docs/V1ItemsApi.md#createfee) | **Post** /v1/{location_id}/fees | CreateFee
-*V1ItemsApi* | [**CreateItem**](docs/V1ItemsApi.md#createitem) | **Post** /v1/{location_id}/items | CreateItem
-*V1ItemsApi* | [**CreateModifierList**](docs/V1ItemsApi.md#createmodifierlist) | **Post** /v1/{location_id}/modifier-lists | CreateModifierList
-*V1ItemsApi* | [**CreateModifierOption**](docs/V1ItemsApi.md#createmodifieroption) | **Post** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options | CreateModifierOption
-*V1ItemsApi* | [**CreatePage**](docs/V1ItemsApi.md#createpage) | **Post** /v1/{location_id}/pages | CreatePage
-*V1ItemsApi* | [**CreateVariation**](docs/V1ItemsApi.md#createvariation) | **Post** /v1/{location_id}/items/{item_id}/variations | CreateVariation
-*V1ItemsApi* | [**DeleteCategory**](docs/V1ItemsApi.md#deletecategory) | **Delete** /v1/{location_id}/categories/{category_id} | DeleteCategory
-*V1ItemsApi* | [**DeleteDiscount**](docs/V1ItemsApi.md#deletediscount) | **Delete** /v1/{location_id}/discounts/{discount_id} | DeleteDiscount
-*V1ItemsApi* | [**DeleteFee**](docs/V1ItemsApi.md#deletefee) | **Delete** /v1/{location_id}/fees/{fee_id} | DeleteFee
-*V1ItemsApi* | [**DeleteItem**](docs/V1ItemsApi.md#deleteitem) | **Delete** /v1/{location_id}/items/{item_id} | DeleteItem
-*V1ItemsApi* | [**DeleteModifierList**](docs/V1ItemsApi.md#deletemodifierlist) | **Delete** /v1/{location_id}/modifier-lists/{modifier_list_id} | DeleteModifierList
-*V1ItemsApi* | [**DeleteModifierOption**](docs/V1ItemsApi.md#deletemodifieroption) | **Delete** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | DeleteModifierOption
-*V1ItemsApi* | [**DeletePage**](docs/V1ItemsApi.md#deletepage) | **Delete** /v1/{location_id}/pages/{page_id} | DeletePage
-*V1ItemsApi* | [**DeletePageCell**](docs/V1ItemsApi.md#deletepagecell) | **Delete** /v1/{location_id}/pages/{page_id}/cells | DeletePageCell
-*V1ItemsApi* | [**DeleteVariation**](docs/V1ItemsApi.md#deletevariation) | **Delete** /v1/{location_id}/items/{item_id}/variations/{variation_id} | DeleteVariation
-*V1ItemsApi* | [**ListCategories**](docs/V1ItemsApi.md#listcategories) | **Get** /v1/{location_id}/categories | ListCategories
-*V1ItemsApi* | [**ListDiscounts**](docs/V1ItemsApi.md#listdiscounts) | **Get** /v1/{location_id}/discounts | ListDiscounts
-*V1ItemsApi* | [**ListFees**](docs/V1ItemsApi.md#listfees) | **Get** /v1/{location_id}/fees | ListFees
-*V1ItemsApi* | [**ListInventory**](docs/V1ItemsApi.md#listinventory) | **Get** /v1/{location_id}/inventory | ListInventory
-*V1ItemsApi* | [**ListItems**](docs/V1ItemsApi.md#listitems) | **Get** /v1/{location_id}/items | ListItems
-*V1ItemsApi* | [**ListModifierLists**](docs/V1ItemsApi.md#listmodifierlists) | **Get** /v1/{location_id}/modifier-lists | ListModifierLists
-*V1ItemsApi* | [**ListPages**](docs/V1ItemsApi.md#listpages) | **Get** /v1/{location_id}/pages | ListPages
-*V1ItemsApi* | [**RemoveFee**](docs/V1ItemsApi.md#removefee) | **Delete** /v1/{location_id}/items/{item_id}/fees/{fee_id} | RemoveFee
-*V1ItemsApi* | [**RemoveModifierList**](docs/V1ItemsApi.md#removemodifierlist) | **Delete** /v1/{location_id}/items/{item_id}/modifier-lists/{modifier_list_id} | RemoveModifierList
-*V1ItemsApi* | [**RetrieveItem**](docs/V1ItemsApi.md#retrieveitem) | **Get** /v1/{location_id}/items/{item_id} | RetrieveItem
-*V1ItemsApi* | [**RetrieveModifierList**](docs/V1ItemsApi.md#retrievemodifierlist) | **Get** /v1/{location_id}/modifier-lists/{modifier_list_id} | RetrieveModifierList
-*V1ItemsApi* | [**UpdateCategory**](docs/V1ItemsApi.md#updatecategory) | **Put** /v1/{location_id}/categories/{category_id} | UpdateCategory
-*V1ItemsApi* | [**UpdateDiscount**](docs/V1ItemsApi.md#updatediscount) | **Put** /v1/{location_id}/discounts/{discount_id} | UpdateDiscount
-*V1ItemsApi* | [**UpdateFee**](docs/V1ItemsApi.md#updatefee) | **Put** /v1/{location_id}/fees/{fee_id} | UpdateFee
-*V1ItemsApi* | [**UpdateItem**](docs/V1ItemsApi.md#updateitem) | **Put** /v1/{location_id}/items/{item_id} | UpdateItem
-*V1ItemsApi* | [**UpdateModifierList**](docs/V1ItemsApi.md#updatemodifierlist) | **Put** /v1/{location_id}/modifier-lists/{modifier_list_id} | UpdateModifierList
-*V1ItemsApi* | [**UpdateModifierOption**](docs/V1ItemsApi.md#updatemodifieroption) | **Put** /v1/{location_id}/modifier-lists/{modifier_list_id}/modifier-options/{modifier_option_id} | UpdateModifierOption
-*V1ItemsApi* | [**UpdatePage**](docs/V1ItemsApi.md#updatepage) | **Put** /v1/{location_id}/pages/{page_id} | UpdatePage
-*V1ItemsApi* | [**UpdatePageCell**](docs/V1ItemsApi.md#updatepagecell) | **Put** /v1/{location_id}/pages/{page_id}/cells | UpdatePageCell
-*V1ItemsApi* | [**UpdateVariation**](docs/V1ItemsApi.md#updatevariation) | **Put** /v1/{location_id}/items/{item_id}/variations/{variation_id} | UpdateVariation
-*V1ItemsApi* | [**UploadItemImage**](docs/V1ItemsApi.md#uploaditemimage) | **Post** /v1/{location_id}/items/{item_id}/image | UploadItemImage
-*V1LocationsApi* | [**ListLocations**](docs/V1LocationsApi.md#listlocations) | **Get** /v1/me/locations | ListLocations
-*V1LocationsApi* | [**RetrieveBusiness**](docs/V1LocationsApi.md#retrievebusiness) | **Get** /v1/me | RetrieveBusiness
 *V1TransactionsApi* | [**CreateRefund**](docs/V1TransactionsApi.md#createrefund) | **Post** /v1/{location_id}/refunds | CreateRefund
-*V1TransactionsApi* | [**ListBankAccounts**](docs/V1TransactionsApi.md#listbankaccounts) | **Get** /v1/{location_id}/bank-accounts | ListBankAccounts
 *V1TransactionsApi* | [**ListPayments**](docs/V1TransactionsApi.md#listpayments) | **Get** /v1/{location_id}/payments | ListPayments
 *V1TransactionsApi* | [**ListRefunds**](docs/V1TransactionsApi.md#listrefunds) | **Get** /v1/{location_id}/refunds | ListRefunds
 *V1TransactionsApi* | [**ListSettlements**](docs/V1TransactionsApi.md#listsettlements) | **Get** /v1/{location_id}/settlements | ListSettlements
-*V1TransactionsApi* | [**RetrieveBankAccount**](docs/V1TransactionsApi.md#retrievebankaccount) | **Get** /v1/{location_id}/bank-accounts/{bank_account_id} | RetrieveBankAccount
 *V1TransactionsApi* | [**RetrievePayment**](docs/V1TransactionsApi.md#retrievepayment) | **Get** /v1/{location_id}/payments/{payment_id} | RetrievePayment
 *V1TransactionsApi* | [**RetrieveSettlement**](docs/V1TransactionsApi.md#retrievesettlement) | **Get** /v1/{location_id}/settlements/{settlement_id} | RetrieveSettlement
 *V1WebhooksApi* | [**ListWebhooks**](docs/V1WebhooksApi.md#listwebhooks) | **Get** /v1/{location_id}/webhooks | ListWebhooks
@@ -257,8 +217,10 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [AdjustLoyaltyPointsRequest](docs/AdjustLoyaltyPointsRequest.md)
  - [AdjustLoyaltyPointsResponse](docs/AdjustLoyaltyPointsResponse.md)
+ - [AppointmentSegment](docs/AppointmentSegment.md)
  - [AuthorizeRequest](docs/AuthorizeRequest.md)
  - [AuthorizeResponse](docs/AuthorizeResponse.md)
+ - [Availability](docs/Availability.md)
  - [BalancePaymentDetails](docs/BalancePaymentDetails.md)
  - [BankAccount](docs/BankAccount.md)
  - [BankAccountCreatedWebhook](docs/BankAccountCreatedWebhook.md)
@@ -291,17 +253,35 @@ Class | Method | HTTP request | Description
  - [BatchUpsertCatalogObjectsResponse](docs/BatchUpsertCatalogObjectsResponse.md)
  - [Body](docs/Body.md)
  - [Body1](docs/Body1.md)
+ - [Booking](docs/Booking.md)
+ - [BookingCreatedWebhook](docs/BookingCreatedWebhook.md)
+ - [BookingCreatedWebhookData](docs/BookingCreatedWebhookData.md)
+ - [BookingCreatedWebhookObject](docs/BookingCreatedWebhookObject.md)
+ - [BookingStatus](docs/BookingStatus.md)
+ - [BookingUpdatedWebhook](docs/BookingUpdatedWebhook.md)
+ - [BookingUpdatedWebhookData](docs/BookingUpdatedWebhookData.md)
+ - [BookingUpdatedWebhookObject](docs/BookingUpdatedWebhookObject.md)
  - [BreakType](docs/BreakType.md)
  - [BulkCreateTeamMembersRequest](docs/BulkCreateTeamMembersRequest.md)
  - [BulkCreateTeamMembersResponse](docs/BulkCreateTeamMembersResponse.md)
  - [BulkUpdateTeamMembersRequest](docs/BulkUpdateTeamMembersRequest.md)
  - [BulkUpdateTeamMembersResponse](docs/BulkUpdateTeamMembersResponse.md)
+ - [BusinessAppointmentSettings](docs/BusinessAppointmentSettings.md)
+ - [BusinessAppointmentSettingsAlignmentTime](docs/BusinessAppointmentSettingsAlignmentTime.md)
+ - [BusinessAppointmentSettingsBookingLocationType](docs/BusinessAppointmentSettingsBookingLocationType.md)
+ - [BusinessAppointmentSettingsCancellationPolicy](docs/BusinessAppointmentSettingsCancellationPolicy.md)
+ - [BusinessAppointmentSettingsMaxAppointmentsPerDayLimitType](docs/BusinessAppointmentSettingsMaxAppointmentsPerDayLimitType.md)
+ - [BusinessBookingProfile](docs/BusinessBookingProfile.md)
+ - [BusinessBookingProfileBookingPolicy](docs/BusinessBookingProfileBookingPolicy.md)
+ - [BusinessBookingProfileCustomerTimezoneChoice](docs/BusinessBookingProfileCustomerTimezoneChoice.md)
  - [BusinessHours](docs/BusinessHours.md)
  - [BusinessHoursPeriod](docs/BusinessHoursPeriod.md)
  - [CalculateLoyaltyPointsRequest](docs/CalculateLoyaltyPointsRequest.md)
  - [CalculateLoyaltyPointsResponse](docs/CalculateLoyaltyPointsResponse.md)
  - [CalculateOrderRequest](docs/CalculateOrderRequest.md)
  - [CalculateOrderResponse](docs/CalculateOrderResponse.md)
+ - [CancelBookingRequest](docs/CancelBookingRequest.md)
+ - [CancelBookingResponse](docs/CancelBookingResponse.md)
  - [CancelInvoiceRequest](docs/CancelInvoiceRequest.md)
  - [CancelInvoiceResponse](docs/CancelInvoiceResponse.md)
  - [CancelPaymentByIdempotencyKeyRequest](docs/CancelPaymentByIdempotencyKeyRequest.md)
@@ -312,11 +292,14 @@ Class | Method | HTTP request | Description
  - [CancelSubscriptionResponse](docs/CancelSubscriptionResponse.md)
  - [CancelTerminalCheckoutRequest](docs/CancelTerminalCheckoutRequest.md)
  - [CancelTerminalCheckoutResponse](docs/CancelTerminalCheckoutResponse.md)
+ - [CancelTerminalRefundRequest](docs/CancelTerminalRefundRequest.md)
+ - [CancelTerminalRefundResponse](docs/CancelTerminalRefundResponse.md)
  - [CaptureTransactionRequest](docs/CaptureTransactionRequest.md)
  - [CaptureTransactionResponse](docs/CaptureTransactionResponse.md)
  - [Card](docs/Card.md)
  - [CardBrand](docs/CardBrand.md)
  - [CardPaymentDetails](docs/CardPaymentDetails.md)
+ - [CardPaymentTimeline](docs/CardPaymentTimeline.md)
  - [CardPrepaidType](docs/CardPrepaidType.md)
  - [CardSquareProduct](docs/CardSquareProduct.md)
  - [CardType](docs/CardType.md)
@@ -359,6 +342,7 @@ Class | Method | HTTP request | Description
  - [CatalogModifierOverride](docs/CatalogModifierOverride.md)
  - [CatalogObject](docs/CatalogObject.md)
  - [CatalogObjectBatch](docs/CatalogObjectBatch.md)
+ - [CatalogObjectReference](docs/CatalogObjectReference.md)
  - [CatalogObjectType](docs/CatalogObjectType.md)
  - [CatalogPricingRule](docs/CatalogPricingRule.md)
  - [CatalogPricingType](docs/CatalogPricingType.md)
@@ -371,6 +355,7 @@ Class | Method | HTTP request | Description
  - [CatalogQueryItemsForTax](docs/CatalogQueryItemsForTax.md)
  - [CatalogQueryPrefix](docs/CatalogQueryPrefix.md)
  - [CatalogQueryRange](docs/CatalogQueryRange.md)
+ - [CatalogQuerySet](docs/CatalogQuerySet.md)
  - [CatalogQuerySortedAttribute](docs/CatalogQuerySortedAttribute.md)
  - [CatalogQueryText](docs/CatalogQueryText.md)
  - [CatalogQuickAmount](docs/CatalogQuickAmount.md)
@@ -388,11 +373,15 @@ Class | Method | HTTP request | Description
  - [ChargeRequest](docs/ChargeRequest.md)
  - [ChargeRequestAdditionalRecipient](docs/ChargeRequestAdditionalRecipient.md)
  - [ChargeResponse](docs/ChargeResponse.md)
+ - [CheckAppointmentsOnboardedRequest](docs/CheckAppointmentsOnboardedRequest.md)
+ - [CheckAppointmentsOnboardedResponse](docs/CheckAppointmentsOnboardedResponse.md)
  - [Checkout](docs/Checkout.md)
  - [CompletePaymentRequest](docs/CompletePaymentRequest.md)
  - [CompletePaymentResponse](docs/CompletePaymentResponse.md)
  - [Coordinates](docs/Coordinates.md)
  - [Country](docs/Country.md)
+ - [CreateBookingRequest](docs/CreateBookingRequest.md)
+ - [CreateBookingResponse](docs/CreateBookingResponse.md)
  - [CreateBreakTypeRequest](docs/CreateBreakTypeRequest.md)
  - [CreateBreakTypeResponse](docs/CreateBreakTypeResponse.md)
  - [CreateCatalogImageRequest](docs/CreateCatalogImageRequest.md)
@@ -435,11 +424,23 @@ Class | Method | HTTP request | Description
  - [CreateTeamMemberResponse](docs/CreateTeamMemberResponse.md)
  - [CreateTerminalCheckoutRequest](docs/CreateTerminalCheckoutRequest.md)
  - [CreateTerminalCheckoutResponse](docs/CreateTerminalCheckoutResponse.md)
+ - [CreateTerminalRefundRequest](docs/CreateTerminalRefundRequest.md)
+ - [CreateTerminalRefundResponse](docs/CreateTerminalRefundResponse.md)
  - [Currency](docs/Currency.md)
  - [CustomAttributeFilter](docs/CustomAttributeFilter.md)
  - [Customer](docs/Customer.md)
+ - [CustomerCreatedWebhook](docs/CustomerCreatedWebhook.md)
+ - [CustomerCreatedWebhookData](docs/CustomerCreatedWebhookData.md)
+ - [CustomerCreatedWebhookEventContext](docs/CustomerCreatedWebhookEventContext.md)
+ - [CustomerCreatedWebhookEventContextMerge](docs/CustomerCreatedWebhookEventContextMerge.md)
+ - [CustomerCreatedWebhookObject](docs/CustomerCreatedWebhookObject.md)
  - [CustomerCreationSource](docs/CustomerCreationSource.md)
  - [CustomerCreationSourceFilter](docs/CustomerCreationSourceFilter.md)
+ - [CustomerDeletedWebhook](docs/CustomerDeletedWebhook.md)
+ - [CustomerDeletedWebhookData](docs/CustomerDeletedWebhookData.md)
+ - [CustomerDeletedWebhookEventContext](docs/CustomerDeletedWebhookEventContext.md)
+ - [CustomerDeletedWebhookEventContextMerge](docs/CustomerDeletedWebhookEventContextMerge.md)
+ - [CustomerDeletedWebhookObject](docs/CustomerDeletedWebhookObject.md)
  - [CustomerFilter](docs/CustomerFilter.md)
  - [CustomerGroup](docs/CustomerGroup.md)
  - [CustomerGroupInfo](docs/CustomerGroupInfo.md)
@@ -450,6 +451,9 @@ Class | Method | HTTP request | Description
  - [CustomerSort](docs/CustomerSort.md)
  - [CustomerSortField](docs/CustomerSortField.md)
  - [CustomerTextFilter](docs/CustomerTextFilter.md)
+ - [CustomerUpdatedWebhook](docs/CustomerUpdatedWebhook.md)
+ - [CustomerUpdatedWebhookData](docs/CustomerUpdatedWebhookData.md)
+ - [CustomerUpdatedWebhookObject](docs/CustomerUpdatedWebhookObject.md)
  - [DateRange](docs/DateRange.md)
  - [DayOfWeek](docs/DayOfWeek.md)
  - [DeleteBreakTypeRequest](docs/DeleteBreakTypeRequest.md)
@@ -525,6 +529,9 @@ Class | Method | HTTP request | Description
  - [GetTeamMemberWageResponse](docs/GetTeamMemberWageResponse.md)
  - [GetTerminalCheckoutRequest](docs/GetTerminalCheckoutRequest.md)
  - [GetTerminalCheckoutResponse](docs/GetTerminalCheckoutResponse.md)
+ - [GetTerminalRefundRequest](docs/GetTerminalRefundRequest.md)
+ - [GetTerminalRefundResponse](docs/GetTerminalRefundResponse.md)
+ - [InlineTypes](docs/InlineTypes.md)
  - [InventoryAdjustment](docs/InventoryAdjustment.md)
  - [InventoryAlertType](docs/InventoryAlertType.md)
  - [InventoryChange](docs/InventoryChange.md)
@@ -537,14 +544,18 @@ Class | Method | HTTP request | Description
  - [InventoryState](docs/InventoryState.md)
  - [InventoryTransfer](docs/InventoryTransfer.md)
  - [Invoice](docs/Invoice.md)
+ - [InvoiceAutomaticPaymentSource](docs/InvoiceAutomaticPaymentSource.md)
  - [InvoiceCanceledWebhook](docs/InvoiceCanceledWebhook.md)
  - [InvoiceCanceledWebhookData](docs/InvoiceCanceledWebhookData.md)
  - [InvoiceCanceledWebhookObject](docs/InvoiceCanceledWebhookObject.md)
  - [InvoiceCreatedWebhook](docs/InvoiceCreatedWebhook.md)
  - [InvoiceCreatedWebhookData](docs/InvoiceCreatedWebhookData.md)
  - [InvoiceCreatedWebhookObject](docs/InvoiceCreatedWebhookObject.md)
+ - [InvoiceCustomField](docs/InvoiceCustomField.md)
+ - [InvoiceCustomFieldPlacement](docs/InvoiceCustomFieldPlacement.md)
  - [InvoiceDeletedWebhook](docs/InvoiceDeletedWebhook.md)
  - [InvoiceDeletedWebhookData](docs/InvoiceDeletedWebhookData.md)
+ - [InvoiceDeliveryMethod](docs/InvoiceDeliveryMethod.md)
  - [InvoiceFilter](docs/InvoiceFilter.md)
  - [InvoicePaymentMadeWebhook](docs/InvoicePaymentMadeWebhook.md)
  - [InvoicePaymentMadeWebhookData](docs/InvoicePaymentMadeWebhookData.md)
@@ -628,6 +639,8 @@ Class | Method | HTTP request | Description
  - [ListRefundsResponse](docs/ListRefundsResponse.md)
  - [ListSubscriptionEventsRequest](docs/ListSubscriptionEventsRequest.md)
  - [ListSubscriptionEventsResponse](docs/ListSubscriptionEventsResponse.md)
+ - [ListTeamMemberBookingProfilesRequest](docs/ListTeamMemberBookingProfilesRequest.md)
+ - [ListTeamMemberBookingProfilesResponse](docs/ListTeamMemberBookingProfilesResponse.md)
  - [ListTeamMemberWagesRequest](docs/ListTeamMemberWagesRequest.md)
  - [ListTeamMemberWagesResponse](docs/ListTeamMemberWagesResponse.md)
  - [ListTransactionsRequest](docs/ListTransactionsRequest.md)
@@ -636,8 +649,12 @@ Class | Method | HTTP request | Description
  - [ListWorkweekConfigsResponse](docs/ListWorkweekConfigsResponse.md)
  - [Location](docs/Location.md)
  - [LocationCapability](docs/LocationCapability.md)
+ - [LocationCreatedWebhook](docs/LocationCreatedWebhook.md)
+ - [LocationCreatedWebhookData](docs/LocationCreatedWebhookData.md)
  - [LocationStatus](docs/LocationStatus.md)
  - [LocationType](docs/LocationType.md)
+ - [LocationUpdatedWebhook](docs/LocationUpdatedWebhook.md)
+ - [LocationUpdatedWebhookData](docs/LocationUpdatedWebhookData.md)
  - [LoyaltyAccount](docs/LoyaltyAccount.md)
  - [LoyaltyAccountCreatedWebhook](docs/LoyaltyAccountCreatedWebhook.md)
  - [LoyaltyAccountCreatedWebhookData](docs/LoyaltyAccountCreatedWebhookData.md)
@@ -703,6 +720,8 @@ Class | Method | HTTP request | Description
  - [OauthAuthorizationRevokedWebhookRevokerType](docs/OauthAuthorizationRevokedWebhookRevokerType.md)
  - [ObtainTokenRequest](docs/ObtainTokenRequest.md)
  - [ObtainTokenResponse](docs/ObtainTokenResponse.md)
+ - [OnboardAppointmentsRequest](docs/OnboardAppointmentsRequest.md)
+ - [OnboardAppointmentsResponse](docs/OnboardAppointmentsResponse.md)
  - [Order](docs/Order.md)
  - [OrderCreated](docs/OrderCreated.md)
  - [OrderCreatedObject](docs/OrderCreatedObject.md)
@@ -729,6 +748,9 @@ Class | Method | HTTP request | Description
  - [OrderLineItemDiscountScope](docs/OrderLineItemDiscountScope.md)
  - [OrderLineItemDiscountType](docs/OrderLineItemDiscountType.md)
  - [OrderLineItemModifier](docs/OrderLineItemModifier.md)
+ - [OrderLineItemPricingBlocklists](docs/OrderLineItemPricingBlocklists.md)
+ - [OrderLineItemPricingBlocklistsBlockedDiscount](docs/OrderLineItemPricingBlocklistsBlockedDiscount.md)
+ - [OrderLineItemPricingBlocklistsBlockedTax](docs/OrderLineItemPricingBlocklistsBlockedTax.md)
  - [OrderLineItemTax](docs/OrderLineItemTax.md)
  - [OrderLineItemTaxScope](docs/OrderLineItemTaxScope.md)
  - [OrderLineItemTaxType](docs/OrderLineItemTaxType.md)
@@ -788,6 +810,10 @@ Class | Method | HTTP request | Description
  - [RemoveGroupFromCustomerResponse](docs/RemoveGroupFromCustomerResponse.md)
  - [RenewTokenRequest](docs/RenewTokenRequest.md)
  - [RenewTokenResponse](docs/RenewTokenResponse.md)
+ - [RetrieveBookingRequest](docs/RetrieveBookingRequest.md)
+ - [RetrieveBookingResponse](docs/RetrieveBookingResponse.md)
+ - [RetrieveBusinessBookingProfileRequest](docs/RetrieveBusinessBookingProfileRequest.md)
+ - [RetrieveBusinessBookingProfileResponse](docs/RetrieveBusinessBookingProfileResponse.md)
  - [RetrieveCashDrawerShiftRequest](docs/RetrieveCashDrawerShiftRequest.md)
  - [RetrieveCashDrawerShiftResponse](docs/RetrieveCashDrawerShiftResponse.md)
  - [RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)
@@ -820,8 +846,14 @@ Class | Method | HTTP request | Description
  - [RetrieveLoyaltyRewardResponse](docs/RetrieveLoyaltyRewardResponse.md)
  - [RetrieveMerchantRequest](docs/RetrieveMerchantRequest.md)
  - [RetrieveMerchantResponse](docs/RetrieveMerchantResponse.md)
+ - [RetrieveObsMigrationProfileRequest](docs/RetrieveObsMigrationProfileRequest.md)
+ - [RetrieveObsMigrationProfileResponse](docs/RetrieveObsMigrationProfileResponse.md)
+ - [RetrieveOrderRequest](docs/RetrieveOrderRequest.md)
+ - [RetrieveOrderResponse](docs/RetrieveOrderResponse.md)
  - [RetrieveSubscriptionRequest](docs/RetrieveSubscriptionRequest.md)
  - [RetrieveSubscriptionResponse](docs/RetrieveSubscriptionResponse.md)
+ - [RetrieveTeamMemberBookingProfileRequest](docs/RetrieveTeamMemberBookingProfileRequest.md)
+ - [RetrieveTeamMemberBookingProfileResponse](docs/RetrieveTeamMemberBookingProfileResponse.md)
  - [RetrieveTeamMemberRequest](docs/RetrieveTeamMemberRequest.md)
  - [RetrieveTeamMemberResponse](docs/RetrieveTeamMemberResponse.md)
  - [RetrieveTransactionRequest](docs/RetrieveTransactionRequest.md)
@@ -830,6 +862,12 @@ Class | Method | HTTP request | Description
  - [RetrieveWageSettingResponse](docs/RetrieveWageSettingResponse.md)
  - [RevokeTokenRequest](docs/RevokeTokenRequest.md)
  - [RevokeTokenResponse](docs/RevokeTokenResponse.md)
+ - [RiskEvaluation](docs/RiskEvaluation.md)
+ - [RiskEvaluationRiskLevel](docs/RiskEvaluationRiskLevel.md)
+ - [SearchAvailabilityFilter](docs/SearchAvailabilityFilter.md)
+ - [SearchAvailabilityQuery](docs/SearchAvailabilityQuery.md)
+ - [SearchAvailabilityRequest](docs/SearchAvailabilityRequest.md)
+ - [SearchAvailabilityResponse](docs/SearchAvailabilityResponse.md)
  - [SearchCatalogItemsRequest](docs/SearchCatalogItemsRequest.md)
  - [SearchCatalogItemsRequestStockLevel](docs/SearchCatalogItemsRequestStockLevel.md)
  - [SearchCatalogItemsResponse](docs/SearchCatalogItemsResponse.md)
@@ -870,6 +908,9 @@ Class | Method | HTTP request | Description
  - [SearchTeamMembersResponse](docs/SearchTeamMembersResponse.md)
  - [SearchTerminalCheckoutsRequest](docs/SearchTerminalCheckoutsRequest.md)
  - [SearchTerminalCheckoutsResponse](docs/SearchTerminalCheckoutsResponse.md)
+ - [SearchTerminalRefundsRequest](docs/SearchTerminalRefundsRequest.md)
+ - [SearchTerminalRefundsResponse](docs/SearchTerminalRefundsResponse.md)
+ - [SegmentFilter](docs/SegmentFilter.md)
  - [Shift](docs/Shift.md)
  - [ShiftFilter](docs/ShiftFilter.md)
  - [ShiftFilterStatus](docs/ShiftFilterStatus.md)
@@ -903,11 +944,10 @@ Class | Method | HTTP request | Description
  - [TeamMember](docs/TeamMember.md)
  - [TeamMemberAssignedLocations](docs/TeamMemberAssignedLocations.md)
  - [TeamMemberAssignedLocationsAssignmentType](docs/TeamMemberAssignedLocationsAssignmentType.md)
+ - [TeamMemberBookingProfile](docs/TeamMemberBookingProfile.md)
  - [TeamMemberStatus](docs/TeamMemberStatus.md)
  - [TeamMemberWage](docs/TeamMemberWage.md)
  - [Tender](docs/Tender.md)
- - [TenderBankTransferDetails](docs/TenderBankTransferDetails.md)
- - [TenderBankTransferDetailsStatus](docs/TenderBankTransferDetailsStatus.md)
  - [TenderCardDetails](docs/TenderCardDetails.md)
  - [TenderCardDetailsEntryMethod](docs/TenderCardDetailsEntryMethod.md)
  - [TenderCardDetailsStatus](docs/TenderCardDetailsStatus.md)
@@ -923,11 +963,23 @@ Class | Method | HTTP request | Description
  - [TerminalCheckoutUpdatedWebhook](docs/TerminalCheckoutUpdatedWebhook.md)
  - [TerminalCheckoutUpdatedWebhookData](docs/TerminalCheckoutUpdatedWebhookData.md)
  - [TerminalCheckoutUpdatedWebhookObject](docs/TerminalCheckoutUpdatedWebhookObject.md)
+ - [TerminalRefund](docs/TerminalRefund.md)
+ - [TerminalRefundCreatedWebhook](docs/TerminalRefundCreatedWebhook.md)
+ - [TerminalRefundCreatedWebhookData](docs/TerminalRefundCreatedWebhookData.md)
+ - [TerminalRefundCreatedWebhookObject](docs/TerminalRefundCreatedWebhookObject.md)
+ - [TerminalRefundQuery](docs/TerminalRefundQuery.md)
+ - [TerminalRefundQueryFilter](docs/TerminalRefundQueryFilter.md)
+ - [TerminalRefundQuerySort](docs/TerminalRefundQuerySort.md)
+ - [TerminalRefundUpdatedWebhook](docs/TerminalRefundUpdatedWebhook.md)
+ - [TerminalRefundUpdatedWebhookData](docs/TerminalRefundUpdatedWebhookData.md)
+ - [TerminalRefundUpdatedWebhookObject](docs/TerminalRefundUpdatedWebhookObject.md)
  - [TimeRange](docs/TimeRange.md)
  - [TipSettings](docs/TipSettings.md)
  - [Transaction](docs/Transaction.md)
  - [TransactionProduct](docs/TransactionProduct.md)
  - [TransactionType](docs/TransactionType.md)
+ - [UpdateBookingRequest](docs/UpdateBookingRequest.md)
+ - [UpdateBookingResponse](docs/UpdateBookingResponse.md)
  - [UpdateBreakTypeRequest](docs/UpdateBreakTypeRequest.md)
  - [UpdateBreakTypeResponse](docs/UpdateBreakTypeResponse.md)
  - [UpdateCustomerGroupRequest](docs/UpdateCustomerGroupRequest.md)
@@ -956,83 +1008,19 @@ Class | Method | HTTP request | Description
  - [UpdateWorkweekConfigResponse](docs/UpdateWorkweekConfigResponse.md)
  - [UpsertCatalogObjectRequest](docs/UpsertCatalogObjectRequest.md)
  - [UpsertCatalogObjectResponse](docs/UpsertCatalogObjectResponse.md)
- - [V1AdjustInventoryRequest](docs/V1AdjustInventoryRequest.md)
- - [V1AdjustInventoryRequestAdjustmentType](docs/V1AdjustInventoryRequestAdjustmentType.md)
- - [V1ApplyFeeRequest](docs/V1ApplyFeeRequest.md)
- - [V1ApplyModifierListRequest](docs/V1ApplyModifierListRequest.md)
- - [V1BankAccount](docs/V1BankAccount.md)
- - [V1BankAccountType](docs/V1BankAccountType.md)
- - [V1CashDrawerEvent](docs/V1CashDrawerEvent.md)
- - [V1CashDrawerEventEventType](docs/V1CashDrawerEventEventType.md)
- - [V1CashDrawerShift](docs/V1CashDrawerShift.md)
- - [V1CashDrawerShiftEventType](docs/V1CashDrawerShiftEventType.md)
- - [V1Category](docs/V1Category.md)
- - [V1CreateCategoryRequest](docs/V1CreateCategoryRequest.md)
- - [V1CreateDiscountRequest](docs/V1CreateDiscountRequest.md)
  - [V1CreateEmployeeRoleRequest](docs/V1CreateEmployeeRoleRequest.md)
- - [V1CreateFeeRequest](docs/V1CreateFeeRequest.md)
- - [V1CreateItemRequest](docs/V1CreateItemRequest.md)
- - [V1CreateModifierListRequest](docs/V1CreateModifierListRequest.md)
- - [V1CreateModifierOptionRequest](docs/V1CreateModifierOptionRequest.md)
- - [V1CreatePageRequest](docs/V1CreatePageRequest.md)
  - [V1CreateRefundRequest](docs/V1CreateRefundRequest.md)
  - [V1CreateRefundRequestType](docs/V1CreateRefundRequestType.md)
- - [V1CreateVariationRequest](docs/V1CreateVariationRequest.md)
- - [V1DeleteCategoryRequest](docs/V1DeleteCategoryRequest.md)
- - [V1DeleteDiscountRequest](docs/V1DeleteDiscountRequest.md)
- - [V1DeleteFeeRequest](docs/V1DeleteFeeRequest.md)
- - [V1DeleteItemRequest](docs/V1DeleteItemRequest.md)
- - [V1DeleteModifierListRequest](docs/V1DeleteModifierListRequest.md)
- - [V1DeleteModifierOptionRequest](docs/V1DeleteModifierOptionRequest.md)
- - [V1DeletePageCellRequest](docs/V1DeletePageCellRequest.md)
- - [V1DeletePageRequest](docs/V1DeletePageRequest.md)
- - [V1DeleteTimecardRequest](docs/V1DeleteTimecardRequest.md)
- - [V1DeleteTimecardResponse](docs/V1DeleteTimecardResponse.md)
- - [V1DeleteVariationRequest](docs/V1DeleteVariationRequest.md)
- - [V1Discount](docs/V1Discount.md)
- - [V1DiscountColor](docs/V1DiscountColor.md)
- - [V1DiscountDiscountType](docs/V1DiscountDiscountType.md)
  - [V1Employee](docs/V1Employee.md)
  - [V1EmployeeRole](docs/V1EmployeeRole.md)
  - [V1EmployeeRolePermissions](docs/V1EmployeeRolePermissions.md)
  - [V1EmployeeStatus](docs/V1EmployeeStatus.md)
- - [V1Fee](docs/V1Fee.md)
- - [V1FeeAdjustmentType](docs/V1FeeAdjustmentType.md)
- - [V1FeeCalculationPhase](docs/V1FeeCalculationPhase.md)
- - [V1FeeInclusionType](docs/V1FeeInclusionType.md)
- - [V1FeeType](docs/V1FeeType.md)
- - [V1InventoryEntry](docs/V1InventoryEntry.md)
  - [V1InventoryUpdatedWebhook](docs/V1InventoryUpdatedWebhook.md)
- - [V1Item](docs/V1Item.md)
- - [V1ItemColor](docs/V1ItemColor.md)
- - [V1ItemImage](docs/V1ItemImage.md)
- - [V1ItemType](docs/V1ItemType.md)
- - [V1ItemVisibility](docs/V1ItemVisibility.md)
- - [V1ListBankAccountsRequest](docs/V1ListBankAccountsRequest.md)
- - [V1ListBankAccountsResponse](docs/V1ListBankAccountsResponse.md)
- - [V1ListCashDrawerShiftsRequest](docs/V1ListCashDrawerShiftsRequest.md)
- - [V1ListCashDrawerShiftsResponse](docs/V1ListCashDrawerShiftsResponse.md)
- - [V1ListCategoriesRequest](docs/V1ListCategoriesRequest.md)
- - [V1ListCategoriesResponse](docs/V1ListCategoriesResponse.md)
- - [V1ListDiscountsRequest](docs/V1ListDiscountsRequest.md)
- - [V1ListDiscountsResponse](docs/V1ListDiscountsResponse.md)
  - [V1ListEmployeeRolesRequest](docs/V1ListEmployeeRolesRequest.md)
  - [V1ListEmployeeRolesResponse](docs/V1ListEmployeeRolesResponse.md)
  - [V1ListEmployeesRequest](docs/V1ListEmployeesRequest.md)
  - [V1ListEmployeesRequestStatus](docs/V1ListEmployeesRequestStatus.md)
  - [V1ListEmployeesResponse](docs/V1ListEmployeesResponse.md)
- - [V1ListFeesRequest](docs/V1ListFeesRequest.md)
- - [V1ListFeesResponse](docs/V1ListFeesResponse.md)
- - [V1ListInventoryRequest](docs/V1ListInventoryRequest.md)
- - [V1ListInventoryResponse](docs/V1ListInventoryResponse.md)
- - [V1ListItemsRequest](docs/V1ListItemsRequest.md)
- - [V1ListItemsResponse](docs/V1ListItemsResponse.md)
- - [V1ListLocationsRequest](docs/V1ListLocationsRequest.md)
- - [V1ListLocationsResponse](docs/V1ListLocationsResponse.md)
- - [V1ListModifierListsRequest](docs/V1ListModifierListsRequest.md)
- - [V1ListModifierListsResponse](docs/V1ListModifierListsResponse.md)
- - [V1ListPagesRequest](docs/V1ListPagesRequest.md)
- - [V1ListPagesResponse](docs/V1ListPagesResponse.md)
  - [V1ListPaymentsRequest](docs/V1ListPaymentsRequest.md)
  - [V1ListPaymentsResponse](docs/V1ListPaymentsResponse.md)
  - [V1ListRefundsRequest](docs/V1ListRefundsRequest.md)
@@ -1040,24 +1028,9 @@ Class | Method | HTTP request | Description
  - [V1ListSettlementsRequest](docs/V1ListSettlementsRequest.md)
  - [V1ListSettlementsRequestStatus](docs/V1ListSettlementsRequestStatus.md)
  - [V1ListSettlementsResponse](docs/V1ListSettlementsResponse.md)
- - [V1ListTimecardEventsRequest](docs/V1ListTimecardEventsRequest.md)
- - [V1ListTimecardEventsResponse](docs/V1ListTimecardEventsResponse.md)
- - [V1ListTimecardsRequest](docs/V1ListTimecardsRequest.md)
- - [V1ListTimecardsResponse](docs/V1ListTimecardsResponse.md)
  - [V1ListWebhooksRequest](docs/V1ListWebhooksRequest.md)
  - [V1ListWebhooksResponse](docs/V1ListWebhooksResponse.md)
- - [V1Merchant](docs/V1Merchant.md)
- - [V1MerchantAccountType](docs/V1MerchantAccountType.md)
- - [V1MerchantBusinessType](docs/V1MerchantBusinessType.md)
- - [V1MerchantLocationDetails](docs/V1MerchantLocationDetails.md)
- - [V1ModifierList](docs/V1ModifierList.md)
- - [V1ModifierListSelectionType](docs/V1ModifierListSelectionType.md)
- - [V1ModifierOption](docs/V1ModifierOption.md)
  - [V1Money](docs/V1Money.md)
- - [V1Page](docs/V1Page.md)
- - [V1PageCell](docs/V1PageCell.md)
- - [V1PageCellObjectType](docs/V1PageCellObjectType.md)
- - [V1PageCellPlaceholderType](docs/V1PageCellPlaceholderType.md)
  - [V1Payment](docs/V1Payment.md)
  - [V1PaymentDiscount](docs/V1PaymentDiscount.md)
  - [V1PaymentItemDetail](docs/V1PaymentItemDetail.md)
@@ -1072,18 +1045,10 @@ Class | Method | HTTP request | Description
  - [V1PhoneNumber](docs/V1PhoneNumber.md)
  - [V1Refund](docs/V1Refund.md)
  - [V1RefundType](docs/V1RefundType.md)
- - [V1RemoveFeeRequest](docs/V1RemoveFeeRequest.md)
- - [V1RemoveModifierListRequest](docs/V1RemoveModifierListRequest.md)
- - [V1RetrieveBankAccountRequest](docs/V1RetrieveBankAccountRequest.md)
- - [V1RetrieveBusinessRequest](docs/V1RetrieveBusinessRequest.md)
- - [V1RetrieveCashDrawerShiftRequest](docs/V1RetrieveCashDrawerShiftRequest.md)
  - [V1RetrieveEmployeeRequest](docs/V1RetrieveEmployeeRequest.md)
  - [V1RetrieveEmployeeRoleRequest](docs/V1RetrieveEmployeeRoleRequest.md)
- - [V1RetrieveItemRequest](docs/V1RetrieveItemRequest.md)
- - [V1RetrieveModifierListRequest](docs/V1RetrieveModifierListRequest.md)
  - [V1RetrievePaymentRequest](docs/V1RetrievePaymentRequest.md)
  - [V1RetrieveSettlementRequest](docs/V1RetrieveSettlementRequest.md)
- - [V1RetrieveTimecardRequest](docs/V1RetrieveTimecardRequest.md)
  - [V1Settlement](docs/V1Settlement.md)
  - [V1SettlementEntry](docs/V1SettlementEntry.md)
  - [V1SettlementEntryType](docs/V1SettlementEntryType.md)
@@ -1094,29 +1059,11 @@ Class | Method | HTTP request | Description
  - [V1TenderCardBrand](docs/V1TenderCardBrand.md)
  - [V1TenderEntryMethod](docs/V1TenderEntryMethod.md)
  - [V1TenderType](docs/V1TenderType.md)
- - [V1Timecard](docs/V1Timecard.md)
- - [V1TimecardEvent](docs/V1TimecardEvent.md)
- - [V1TimecardEventEventType](docs/V1TimecardEventEventType.md)
  - [V1TimecardUpdatedWebhook](docs/V1TimecardUpdatedWebhook.md)
- - [V1UpdateCategoryRequest](docs/V1UpdateCategoryRequest.md)
- - [V1UpdateDiscountRequest](docs/V1UpdateDiscountRequest.md)
  - [V1UpdateEmployeeRequest](docs/V1UpdateEmployeeRequest.md)
  - [V1UpdateEmployeeRoleRequest](docs/V1UpdateEmployeeRoleRequest.md)
- - [V1UpdateFeeRequest](docs/V1UpdateFeeRequest.md)
- - [V1UpdateItemRequest](docs/V1UpdateItemRequest.md)
- - [V1UpdateModifierListRequest](docs/V1UpdateModifierListRequest.md)
- - [V1UpdateModifierListRequestSelectionType](docs/V1UpdateModifierListRequestSelectionType.md)
- - [V1UpdateModifierOptionRequest](docs/V1UpdateModifierOptionRequest.md)
- - [V1UpdatePageCellRequest](docs/V1UpdatePageCellRequest.md)
- - [V1UpdatePageRequest](docs/V1UpdatePageRequest.md)
- - [V1UpdateTimecardRequest](docs/V1UpdateTimecardRequest.md)
- - [V1UpdateVariationRequest](docs/V1UpdateVariationRequest.md)
  - [V1UpdateWebhooksRequest](docs/V1UpdateWebhooksRequest.md)
  - [V1UpdateWebhooksResponse](docs/V1UpdateWebhooksResponse.md)
- - [V1UploadItemImageRequest](docs/V1UploadItemImageRequest.md)
- - [V1Variation](docs/V1Variation.md)
- - [V1VariationInventoryAlertType](docs/V1VariationInventoryAlertType.md)
- - [V1VariationPricingType](docs/V1VariationPricingType.md)
  - [V1WebhooksEvents](docs/V1WebhooksEvents.md)
  - [VoidTransactionRequest](docs/VoidTransactionRequest.md)
  - [VoidTransactionResponse](docs/VoidTransactionResponse.md)

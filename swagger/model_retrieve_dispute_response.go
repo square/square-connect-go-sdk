@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Defines fields in a RetrieveDispute response.
+// Defines fields in a `RetrieveDispute` response.
 type RetrieveDisputeResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`
 	Dispute *Dispute     `json:"dispute,omitempty"`
 }

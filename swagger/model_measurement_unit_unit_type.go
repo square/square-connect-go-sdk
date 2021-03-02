@@ -14,10 +14,12 @@ type MeasurementUnitUnitType string
 
 // List of MeasurementUnitUnitType
 const (
-	CUSTOM_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_CUSTOM"
-	AREA_MeasurementUnitUnitType    MeasurementUnitUnitType = "TYPE_AREA"
-	LENGTH_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_LENGTH"
-	VOLUME_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_VOLUME"
-	WEIGHT_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_WEIGHT"
-	GENERIC_MeasurementUnitUnitType MeasurementUnitUnitType = "TYPE_GENERIC"
+	INVALID_TYPE_MeasurementUnitUnitType MeasurementUnitUnitType = "INVALID_TYPE"
+	TYPE_CUSTOM_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_CUSTOM"
+	TYPE_AREA_MeasurementUnitUnitType    MeasurementUnitUnitType = "TYPE_AREA"
+	TYPE_LENGTH_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_LENGTH"
+	TYPE_VOLUME_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_VOLUME"
+	TYPE_WEIGHT_MeasurementUnitUnitType  MeasurementUnitUnitType = "TYPE_WEIGHT"
+	TYPE_TIME_MeasurementUnitUnitType    MeasurementUnitUnitType = "TYPE_TIME"
+	TYPE_GENERIC_MeasurementUnitUnitType MeasurementUnitUnitType = "TYPE_GENERIC"
 )

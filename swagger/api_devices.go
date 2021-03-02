@@ -209,6 +209,7 @@ Lists all DeviceCodes associated with the merchant.
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
      * @param "LocationId" (optional.String) -  If specified, only returns DeviceCodes of the specified location. Returns DeviceCodes of all locations if empty.
      * @param "ProductType" (optional.Interface of ProductType) -  If specified, only returns DeviceCodes targeting the specified product type. Returns DeviceCodes of all product types if empty.
+     * @param "Status" (optional.Interface of DeviceCodeStatus) -  If specified, returns DeviceCodes with the specified statuses. Returns DeviceCodes of status &#x60;PAIRED&#x60; and &#x60;UNPAIRED&#x60; if empty.
 @return ListDeviceCodesResponse
 */
 
@@ -216,6 +217,7 @@ type DevicesApiListDeviceCodesOpts struct {
 	Cursor      optional.String
 	LocationId  optional.String
 	ProductType optional.Interface
+	Status      optional.Interface
 }
 
 func (a *DevicesApiService) ListDeviceCodes(ctx context.Context, localVarOptionals *DevicesApiListDeviceCodesOpts) (ListDeviceCodesResponse, *http.Response, error) {
@@ -242,6 +244,9 @@ func (a *DevicesApiService) ListDeviceCodes(ctx context.Context, localVarOptiona
 	}
 	if localVarOptionals != nil && localVarOptionals.ProductType.IsSet() {
 		localVarQueryParams.Add("product_type", parameterToString(localVarOptionals.ProductType.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Status.IsSet() {
+		localVarQueryParams.Add("status", parameterToString(localVarOptionals.Status.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}

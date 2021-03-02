@@ -14,11 +14,12 @@ type Weekday string
 
 // List of Weekday
 const (
-	MON_Weekday Weekday = "MON"
-	TUE_Weekday Weekday = "TUE"
-	WED_Weekday Weekday = "WED"
-	THU_Weekday Weekday = "THU"
-	FRI_Weekday Weekday = "FRI"
-	SAT_Weekday Weekday = "SAT"
-	SUN_Weekday Weekday = "SUN"
+	UNKNOWN_WEEKDAY_Weekday Weekday = "UNKNOWN_WEEKDAY"
+	MON_Weekday             Weekday = "MON"
+	TUE_Weekday             Weekday = "TUE"
+	WED_Weekday             Weekday = "WED"
+	THU_Weekday             Weekday = "THU"
+	FRI_Weekday             Weekday = "FRI"
+	SAT_Weekday             Weekday = "SAT"
+	SUN_Weekday             Weekday = "SUN"
 )

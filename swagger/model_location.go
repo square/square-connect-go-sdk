@@ -12,7 +12,7 @@ package swagger
 type Location struct {
 	// The Square-issued ID of the location.
 	Id string `json:"id,omitempty"`
-	// The name of the location. This information appears in the dashboard as the nickname.
+	// The name of the location. This information appears in the dashboard as the nickname. A location name must be unique within a seller account.
 	Name    string   `json:"name,omitempty"`
 	Address *Address `json:"address,omitempty"`
 	// The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.
@@ -47,10 +47,12 @@ type Location struct {
 	// The Facebook profile URL of the location. The URL should begin with 'facebook.com/'.
 	FacebookUrl string       `json:"facebook_url,omitempty"`
 	Coordinates *Coordinates `json:"coordinates,omitempty"`
-	// The URL of the logo image for the location.
+	// The URL of the logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image should have an aspect ratio close to 1:1 and is recommended to be at least 200x200 pixels.
 	LogoUrl string `json:"logo_url,omitempty"`
 	// The URL of the Point of Sale background image for the location.
 	PosBackgroundUrl string `json:"pos_background_url,omitempty"`
 	// The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.
 	Mcc string `json:"mcc,omitempty"`
+	// The URL of a full-format logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image can have an aspect ratio of 2:1 or greater and is recommended to be at least 1280x648 pixels.
+	FullFormatLogoUrl string `json:"full_format_logo_url,omitempty"`
 }

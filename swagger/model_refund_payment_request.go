@@ -11,11 +11,11 @@ package swagger
 
 // Refunds a payment.
 type RefundPaymentRequest struct {
-	//  A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/working-with-apis/idempotency).
+	//  A unique string that identifies this `RefundPayment` request. The key can be any valid string but must be unique for every `RefundPayment` request.  For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string `json:"idempotency_key"`
 	AmountMoney    *Money `json:"amount_money"`
 	AppFeeMoney    *Money `json:"app_fee_money,omitempty"`
-	// Unique ID of the payment being refunded.
+	// The unique ID of the payment being refunded.
 	PaymentId string `json:"payment_id"`
 	// A description of the reason for the refund.
 	Reason string `json:"reason,omitempty"`

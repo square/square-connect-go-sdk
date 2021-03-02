@@ -9,11 +9,12 @@
  */
 package swagger
 
-// LoyaltyProgramRewardDefinitionType : The type of discount the reward tier offers.
+// LoyaltyProgramRewardDefinitionType : The type of discount the reward tier offers. DEPRECATED at version 2020-12-16. Discount details are now defined using a catalog pricing rule and other catalog objects. For more information, see [Get discount details for the reward](https://developer.squareup.com/docs/loyalty-api/overview#get-discount-details).
 type LoyaltyProgramRewardDefinitionType string
 
 // List of LoyaltyProgramRewardDefinitionType
 const (
-	AMOUNT_LoyaltyProgramRewardDefinitionType     LoyaltyProgramRewardDefinitionType = "FIXED_AMOUNT"
-	PERCENTAGE_LoyaltyProgramRewardDefinitionType LoyaltyProgramRewardDefinitionType = "FIXED_PERCENTAGE"
+	TYPE_DO_NOT_USE_LoyaltyProgramRewardDefinitionType  LoyaltyProgramRewardDefinitionType = "TYPE_DO_NOT_USE"
+	FIXED_AMOUNT_LoyaltyProgramRewardDefinitionType     LoyaltyProgramRewardDefinitionType = "FIXED_AMOUNT"
+	FIXED_PERCENTAGE_LoyaltyProgramRewardDefinitionType LoyaltyProgramRewardDefinitionType = "FIXED_PERCENTAGE"
 )

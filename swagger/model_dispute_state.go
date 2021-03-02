@@ -9,7 +9,7 @@
  */
 package swagger
 
-// DisputeState : List of possible dispute states.
+// DisputeState : The list of possible dispute states.
 type DisputeState string
 
 // List of DisputeState

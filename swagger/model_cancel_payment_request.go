@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Cancels (voids) a payment before it has been completed. Note: only payments created with `autocomplete` set to false can be canceled.
+// Cancels (voids) a payment before it has been completed. Note: Only payments created with `autocomplete` set to `false` can be canceled.
 type CancelPaymentRequest struct {
 }

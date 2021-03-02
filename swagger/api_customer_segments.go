@@ -31,7 +31,7 @@ CustomerSegmentsApiService ListCustomerSegments
 Retrieves the list of customer segments of a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomerSegmentsApiListCustomerSegmentsOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/docs/working-with-apis/pagination) for more information.
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
 @return ListCustomerSegmentsResponse
 */
 

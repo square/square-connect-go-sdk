@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Errors** | [**[]ModelError**](Error.md) | Information on any errors encountered. | [optional] [default to null]
+**Errors** | [**[]ModelError**](Error.md) | Any errors that occurred during the request. | [optional] [default to null]
 **CatalogObject** | [***CatalogObject**](CatalogObject.md) |  | [optional] [default to null]
 **IdMappings** | [**[]CatalogIdMapping**](CatalogIdMapping.md) | The mapping between client and server IDs for this upsert. | [optional] [default to null]
 

@@ -14,6 +14,7 @@ type OrderFulfillmentPickupDetailsScheduleType string
 
 // List of OrderFulfillmentPickupDetailsScheduleType
 const (
-	SCHEDULED_OrderFulfillmentPickupDetailsScheduleType OrderFulfillmentPickupDetailsScheduleType = "SCHEDULED"
-	ASAP_OrderFulfillmentPickupDetailsScheduleType      OrderFulfillmentPickupDetailsScheduleType = "ASAP"
+	FULFILLMENT_PICKUP_DETAILS_SCHEDULE_TYPE_DO_NOT_USE_OrderFulfillmentPickupDetailsScheduleType OrderFulfillmentPickupDetailsScheduleType = "FULFILLMENT_PICKUP_DETAILS_SCHEDULE_TYPE_DO_NOT_USE"
+	SCHEDULED_OrderFulfillmentPickupDetailsScheduleType                                           OrderFulfillmentPickupDetailsScheduleType = "SCHEDULED"
+	ASAP_OrderFulfillmentPickupDetailsScheduleType                                                OrderFulfillmentPickupDetailsScheduleType = "ASAP"
 )

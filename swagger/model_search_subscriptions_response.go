@@ -15,6 +15,6 @@ type SearchSubscriptionsResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The search result.
 	Subscriptions []Subscription `json:"subscriptions,omitempty"`
-	// When a response is truncated, it includes a cursor that you can  use in a subsequent request to fetch the next set of subscriptions.  If empty, this is the final response.  For more information, see [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination).
+	// When a response is truncated, it includes a cursor that you can  use in a subsequent request to fetch the next set of subscriptions.  If empty, this is the final response.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

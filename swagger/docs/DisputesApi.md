@@ -18,14 +18,14 @@ Method | HTTP request | Description
 > AcceptDisputeResponse AcceptDispute(ctx, disputeId)
 AcceptDispute
 
-Accepts loss on a dispute. Square returns the disputed amount to the cardholder and updates the dispute state to ACCEPTED.  Square debits the disputed amount from the seller’s Square account. If the Square account balance does not have sufficient funds, Square debits the associated bank account.
+Accepts the loss on a dispute. Square returns the disputed amount to the cardholder and updates the dispute state to ACCEPTED.  Square debits the disputed amount from the seller’s Square account. If the Square account does not have sufficient funds, Square debits the associated bank account.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **disputeId** | **string**| ID of the dispute you want to accept. | 
+  **disputeId** | **string**| The ID of the dispute you want to accept. | 
 
 ### Return type
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **request** | [**CreateDisputeEvidenceFileRequest**](.md)|  | 
   **imageFile** | ***os.File*****os.File**|  | 
-  **disputeId** | **string**| ID of the dispute you want to upload evidence for. | 
+  **disputeId** | **string**| The ID of the dispute you want to upload evidence for. | 
 
 ### Return type
 
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a DisputesApiListDisputesOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query. For more information, see [Paginating](https://developer.squareup.com/docs/basics/api101/pagination). | 
- **states** | [**optional.Interface of DisputeState**](.md)| The dispute states to filter the result. If not specified, the endpoint returns all open disputes (dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;). | 
- **locationId** | **optional.String**| The ID of the location for which to return  a list of disputes. If not specified, the endpoint returns all open disputes (dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or  &#x60;LOST&#x60;) associated with all locations. | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination). | 
+ **states** | [**optional.Interface of DisputeState**](.md)| The dispute states to filter the result. If not specified, the endpoint returns all open disputes (the dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;). | 
+ **locationId** | **optional.String**| The ID of the location for which to return a list of disputes. If not specified, the endpoint returns all open disputes (the dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;) associated with all locations. | 
 
 ### Return type
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 > RetrieveDisputeResponse RetrieveDispute(ctx, disputeId)
 RetrieveDispute
 
-Returns details of a specific dispute.
+Returns details about a specific dispute.
 
 ### Required Parameters
 
@@ -257,14 +257,14 @@ Name | Type | Description  | Notes
 > SubmitEvidenceResponse SubmitEvidence(ctx, disputeId)
 SubmitEvidence
 
-Submits evidence to the cardholder's bank.  Before submitting evidence, Square compiles all available evidence. This includes evidence uploaded using the [CreateDisputeEvidenceFile](https://developer.squareup.com/docs/reference/square/disputes-api/create-dispute-evidence-file) and [CreateDisputeEvidenceText](https://developer.squareup.com/docs/reference/square/disputes-api/create-dispute-evidence-text) endpoints, and evidence automatically provided by Square, when available.
+Submits evidence to the cardholder's bank.  Before submitting evidence, Square compiles all available evidence. This includes evidence uploaded using the [CreateDisputeEvidenceFile](https://developer.squareup.com/docs/reference/square/disputes-api/create-dispute-evidence-file) and [CreateDisputeEvidenceText](https://developer.squareup.com/docs/reference/square/disputes-api/create-dispute-evidence-text) endpoints and evidence automatically provided by Square, when available.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **disputeId** | **string**| The ID of the dispute you want to submit evidence for. | 
+  **disputeId** | **string**| The ID of the dispute that you want to submit evidence for. | 
 
 ### Return type
 

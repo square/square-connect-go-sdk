@@ -14,6 +14,7 @@ type ShiftWorkdayMatcher string
 
 // List of ShiftWorkdayMatcher
 const (
+	DO_NOT_USE_ShiftWorkdayMatcher   ShiftWorkdayMatcher = "DO_NOT_USE"
 	START_AT_ShiftWorkdayMatcher     ShiftWorkdayMatcher = "START_AT"
 	END_AT_ShiftWorkdayMatcher       ShiftWorkdayMatcher = "END_AT"
 	INTERSECTION_ShiftWorkdayMatcher ShiftWorkdayMatcher = "INTERSECTION"

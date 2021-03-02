@@ -14,6 +14,7 @@ type Product string
 
 // List of Product
 const (
+	PRODUCT_DO_NOT_USE_Product  Product = "PRODUCT_DO_NOT_USE"
 	SQUARE_POS_Product          Product = "SQUARE_POS"
 	EXTERNAL_API_Product        Product = "EXTERNAL_API"
 	BILLING_Product             Product = "BILLING"

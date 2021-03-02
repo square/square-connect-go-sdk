@@ -9,18 +9,26 @@
  */
 package swagger
 
-// DisputeReason : List of possible reasons why a cardholder might initiate a dispute with their bank.
+// DisputeReason : The list of possible reasons why a cardholder might initiate a dispute with their bank.
 type DisputeReason string
 
 // List of DisputeReason
 const (
+	UNKNOWN_REASON_DisputeReason           DisputeReason = "UNKNOWN_REASON"
 	AMOUNT_DIFFERS_DisputeReason           DisputeReason = "AMOUNT_DIFFERS"
 	CANCELLED_DisputeReason                DisputeReason = "CANCELLED"
+	COMPLIANCE_DisputeReason               DisputeReason = "COMPLIANCE"
+	DISSATISFIED_DisputeReason             DisputeReason = "DISSATISFIED"
 	DUPLICATE_DisputeReason                DisputeReason = "DUPLICATE"
+	FRAUD_DisputeReason                    DisputeReason = "FRAUD"
 	NO_KNOWLEDGE_DisputeReason             DisputeReason = "NO_KNOWLEDGE"
 	NOT_AS_DESCRIBED_DisputeReason         DisputeReason = "NOT_AS_DESCRIBED"
 	NOT_RECEIVED_DisputeReason             DisputeReason = "NOT_RECEIVED"
 	PAID_BY_OTHER_MEANS_DisputeReason      DisputeReason = "PAID_BY_OTHER_MEANS"
 	CUSTOMER_REQUESTS_CREDIT_DisputeReason DisputeReason = "CUSTOMER_REQUESTS_CREDIT"
+	UNAUTHORIZED_DisputeReason             DisputeReason = "UNAUTHORIZED"
+	RETURNED_DisputeReason                 DisputeReason = "RETURNED"
+	INSUFFICIENT_RESPONSE_DisputeReason    DisputeReason = "INSUFFICIENT_RESPONSE"
+	REQUEST_DOCUMENTATION_DisputeReason    DisputeReason = "REQUEST_DOCUMENTATION"
 	EMV_LIABILITY_SHIFT_DisputeReason      DisputeReason = "EMV_LIABILITY_SHIFT"
 )

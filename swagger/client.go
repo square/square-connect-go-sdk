@@ -49,6 +49,8 @@ type APIClient struct {
 
 	BankAccountsApi *BankAccountsApiService
 
+	BookingsApi *BookingsApiService
+
 	CashDrawersApi *CashDrawersApiService
 
 	CatalogApi *CatalogApiService
@@ -103,10 +105,6 @@ type APIClient struct {
 
 	V1EmployeesApi *V1EmployeesApiService
 
-	V1ItemsApi *V1ItemsApiService
-
-	V1LocationsApi *V1LocationsApiService
-
 	V1TransactionsApi *V1TransactionsApiService
 
 	V1WebhooksApi *V1WebhooksApiService
@@ -130,6 +128,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.ApplePayApi = (*ApplePayApiService)(&c.common)
 	c.BankAccountsApi = (*BankAccountsApiService)(&c.common)
+	c.BookingsApi = (*BookingsApiService)(&c.common)
 	c.CashDrawersApi = (*CashDrawersApiService)(&c.common)
 	c.CatalogApi = (*CatalogApiService)(&c.common)
 	c.CheckoutApi = (*CheckoutApiService)(&c.common)
@@ -157,8 +156,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.TransactionsApi = (*TransactionsApiService)(&c.common)
 	c.V1BatchingApi = (*V1BatchingApiService)(&c.common)
 	c.V1EmployeesApi = (*V1EmployeesApiService)(&c.common)
-	c.V1ItemsApi = (*V1ItemsApiService)(&c.common)
-	c.V1LocationsApi = (*V1LocationsApiService)(&c.common)
 	c.V1TransactionsApi = (*V1TransactionsApiService)(&c.common)
 	c.V1WebhooksApi = (*V1WebhooksApiService)(&c.common)
 

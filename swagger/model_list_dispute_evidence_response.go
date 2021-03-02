@@ -9,10 +9,10 @@
  */
 package swagger
 
-// Defines fields in a ListDisputeEvidence response.
+// Defines the fields in a `ListDisputeEvidence` response.
 type ListDisputeEvidenceResponse struct {
 	// The list of evidence previously uploaded to the specified dispute.
 	Evidence []DisputeEvidence `json:"evidence,omitempty"`
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

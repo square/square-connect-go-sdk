@@ -9,7 +9,7 @@
  */
 package swagger
 
-// An [CatalogObject](#type-CatalogObject) instance of the `ITEM` type, also referred to as an item, in the catalog.
+// A [CatalogObject](#type-CatalogObject) instance of the `ITEM` type, also referred to as an item, in the catalog.
 type CatalogItem struct {
 	// The item's name. This is a searchable attribute for use in applicable query filters, its value must not be empty, and the length is of Unicode code points.
 	Name string `json:"name,omitempty"`
@@ -31,6 +31,8 @@ type CatalogItem struct {
 	TaxIds []string `json:"tax_ids,omitempty"`
 	// A set of `CatalogItemModifierListInfo` objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using `UpdateItemModifierLists`.
 	ModifierListInfo []CatalogItemModifierListInfo `json:"modifier_list_info,omitempty"`
+	// __Retired__. The URL of an image representing this item. Retired in favor of `image_id` in [`CatalogObject`](#type-catalogobject).
+	ImageUrl string `json:"image_url,omitempty"`
 	// A list of CatalogObjects containing the `CatalogItemVariation`s for this item.
 	Variations  []CatalogObject         `json:"variations,omitempty"`
 	ProductType *CatalogItemProductType `json:"product_type,omitempty"`

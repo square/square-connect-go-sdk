@@ -14,6 +14,7 @@ type MeasurementUnitVolume string
 
 // List of MeasurementUnitVolume
 const (
+	INVALID_VOLUME_MeasurementUnitVolume      MeasurementUnitVolume = "INVALID_VOLUME"
 	GENERIC_FLUID_OUNCE_MeasurementUnitVolume MeasurementUnitVolume = "GENERIC_FLUID_OUNCE"
 	GENERIC_SHOT_MeasurementUnitVolume        MeasurementUnitVolume = "GENERIC_SHOT"
 	GENERIC_CUP_MeasurementUnitVolume         MeasurementUnitVolume = "GENERIC_CUP"

@@ -14,6 +14,6 @@ type V1PaymentModifier struct {
 	// The modifier option's name.
 	Name         string   `json:"name,omitempty"`
 	AppliedMoney *V1Money `json:"applied_money,omitempty"`
-	// TThe ID of the applied modifier option, if available. Modifier options applied in older versions of Square Register might not have an ID.
+	// The ID of the applied modifier option, if available. Modifier options applied in older versions of Square Register might not have an ID.
 	ModifierOptionId string `json:"modifier_option_id,omitempty"`
 }

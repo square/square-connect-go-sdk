@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > CancelInvoiceResponse CancelInvoice(ctx, body, invoiceId)
 CancelInvoice
 
-Cancels an invoice. The seller cannot collect payments for  the canceled invoice.  You cannot cancel an invoice in a terminal state: `PAID`, `REFUNDED`, `CANCELED`, or `FAILED`.
+Cancels an invoice. The seller cannot collect payments for  the canceled invoice.  You cannot cancel an invoice in the `DRAFT` state or in a terminal state: `PAID`, `REFUNDED`, `CANCELED`, or `FAILED`.
 
 ### Required Parameters
 
@@ -78,7 +78,7 @@ See the corresponding object definition for field details. |
 > DeleteInvoiceResponse DeleteInvoice(ctx, invoiceId, optional)
 DeleteInvoice
 
-Deletes the specified invoice. When an invoice is deleted, the  associated Order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete an invoice scheduled for publication, or a  published invoice).
+Deletes the specified invoice. When an invoice is deleted, the  associated Order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete a published invoice, including one that is scheduled for processing).
 
 ### Required Parameters
 
@@ -157,7 +157,7 @@ Optional parameters are passed through a pointer to a InvoicesApiListInvoicesOpt
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination). | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination). | 
  **limit** | **optional.Int32**| The maximum number of invoices to return (200 is the maximum &#x60;limit&#x60;).  If not provided, the server  uses a default limit of 100 invoices. | 
 
 ### Return type
@@ -240,7 +240,7 @@ See the corresponding object definition for field details. |
 > UpdateInvoiceResponse UpdateInvoice(ctx, body, invoiceId)
 UpdateInvoice
 
-Updates an invoice by modifying field values, clearing field values, or both  as specified in the request.  There are no restrictions to updating an invoice in a draft state.  However, there are guidelines for updating a published invoice.
+Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse  `Invoice` object to add fields or change values, and use the `fields_to_clear` field to specify fields to clear.  However, some restrictions apply. For example, you cannot change the `order_id` or `location_id` field, and you  must provide the complete `custom_fields` list to update a custom field. Published invoices have additional restrictions.
 
 ### Required Parameters
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
   **body** | [**UpdateInvoiceRequest**](UpdateInvoiceRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **invoiceId** | **string**| The id of the invoice to update. | 
+  **invoiceId** | **string**| The ID of the invoice to update. | 
 
 ### Return type
 

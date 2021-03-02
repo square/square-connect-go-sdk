@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The Square-issued ID of the location. | [optional] [default to null]
-**Name** | **string** | The name of the location. This information appears in the dashboard as the nickname. | [optional] [default to null]
+**Name** | **string** | The name of the location. This information appears in the dashboard as the nickname. A location name must be unique within a seller account. | [optional] [default to null]
 **Address** | [***Address**](Address.md) |  | [optional] [default to null]
 **Timezone** | **string** | The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location. | [optional] [default to null]
 **Capabilities** | [**[]LocationCapability**](LocationCapability.md) | The Square features that are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values | [optional] [default to null]
@@ -25,9 +25,10 @@ Name | Type | Description | Notes
 **InstagramUsername** | **string** | The Instagram username of the location without the &#x27;@&#x27; symbol. | [optional] [default to null]
 **FacebookUrl** | **string** | The Facebook profile URL of the location. The URL should begin with &#x27;facebook.com/&#x27;. | [optional] [default to null]
 **Coordinates** | [***Coordinates**](Coordinates.md) |  | [optional] [default to null]
-**LogoUrl** | **string** | The URL of the logo image for the location. | [optional] [default to null]
+**LogoUrl** | **string** | The URL of the logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image should have an aspect ratio close to 1:1 and is recommended to be at least 200x200 pixels. | [optional] [default to null]
 **PosBackgroundUrl** | **string** | The URL of the Point of Sale background image for the location. | [optional] [default to null]
 **Mcc** | **string** | The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location. | [optional] [default to null]
+**FullFormatLogoUrl** | **string** | The URL of a full-format logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image can have an aspect ratio of 2:1 or greater and is recommended to be at least 1280x648 pixels. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

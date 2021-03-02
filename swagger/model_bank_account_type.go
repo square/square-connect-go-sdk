@@ -14,6 +14,7 @@ type BankAccountType string
 
 // List of BankAccountType
 const (
+	UNKNOWN_BankAccountType           BankAccountType = "UNKNOWN"
 	CHECKING_BankAccountType          BankAccountType = "CHECKING"
 	SAVINGS_BankAccountType           BankAccountType = "SAVINGS"
 	INVESTMENT_BankAccountType        BankAccountType = "INVESTMENT"

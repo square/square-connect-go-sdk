@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a loyalty account. For more information, see  [Loyalty Overview](https://developer.squareup.com/docs/docs/loyalty/overview).
+// Describes a loyalty account. For more information, see  [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
 type LoyaltyAccount struct {
 	// The Square-assigned ID of the loyalty account.
 	Id string `json:"id,omitempty"`
@@ -17,7 +17,7 @@ type LoyaltyAccount struct {
 	Mappings []LoyaltyAccountMapping `json:"mappings"`
 	// The Square-assigned ID of the [loyalty program](#type-LoyaltyProgram) to which the account belongs.
 	ProgramId string `json:"program_id"`
-	// The available point balance in the loyalty account.
+	// The available point balance in the loyalty account.    Your application should be able to handle loyalty accounts that have a negative point balance (`balance` is less than 0). This might occur if a seller makes a manual adjustment or as a result of a refund or exchange.
 	Balance int32 `json:"balance,omitempty"`
 	// The total points accrued during the lifetime of the account.
 	LifetimePoints int32 `json:"lifetime_points,omitempty"`

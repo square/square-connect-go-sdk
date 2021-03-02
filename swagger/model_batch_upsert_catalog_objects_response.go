@@ -10,7 +10,7 @@
 package swagger
 
 type BatchUpsertCatalogObjectsResponse struct {
-	// Information on any errors that encountered.
+	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// The created successfully created CatalogObjects.
 	Objects []CatalogObject `json:"objects,omitempty"`

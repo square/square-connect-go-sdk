@@ -14,8 +14,10 @@ type CatalogCustomAttributeDefinitionType string
 
 // List of CatalogCustomAttributeDefinitionType
 const (
-	STRING__CatalogCustomAttributeDefinitionType   CatalogCustomAttributeDefinitionType = "STRING"
-	BOOLEAN_CatalogCustomAttributeDefinitionType   CatalogCustomAttributeDefinitionType = "BOOLEAN"
-	NUMBER_CatalogCustomAttributeDefinitionType    CatalogCustomAttributeDefinitionType = "NUMBER"
-	SELECTION_CatalogCustomAttributeDefinitionType CatalogCustomAttributeDefinitionType = "SELECTION"
+	ATTRIBUTE_TYPE_DO_NOT_USE_CatalogCustomAttributeDefinitionType CatalogCustomAttributeDefinitionType = "ATTRIBUTE_TYPE_DO_NOT_USE"
+	STRING__CatalogCustomAttributeDefinitionType                   CatalogCustomAttributeDefinitionType = "STRING"
+	INTEGER_CatalogCustomAttributeDefinitionType                   CatalogCustomAttributeDefinitionType = "INTEGER"
+	BOOLEAN_CatalogCustomAttributeDefinitionType                   CatalogCustomAttributeDefinitionType = "BOOLEAN"
+	NUMBER_CatalogCustomAttributeDefinitionType                    CatalogCustomAttributeDefinitionType = "NUMBER"
+	SELECTION_CatalogCustomAttributeDefinitionType                 CatalogCustomAttributeDefinitionType = "SELECTION"
 )

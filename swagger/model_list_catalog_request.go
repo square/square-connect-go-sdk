@@ -14,4 +14,6 @@ type ListCatalogRequest struct {
 	Cursor string `json:"cursor,omitempty"`
 	// An optional case-insensitive, comma-separated list of object types to retrieve, for example `ITEM,ITEM_VARIATION,CATEGORY,IMAGE`.  The legal values are taken from the CatalogObjectType enum: `ITEM`, `ITEM_VARIATION`, `CATEGORY`, `DISCOUNT`, `TAX`, `MODIFIER`, `MODIFIER_LIST`, or `IMAGE`.
 	Types string `json:"types,omitempty"`
+	// The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](#type-catalogobject)s' `version` attribute.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
 }

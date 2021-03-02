@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **TotalTaxMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **TotalDiscountMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **TotalMoney** | [***Money**](Money.md) |  | [optional] [default to null]
+**PricingBlocklists** | [***OrderLineItemPricingBlocklists**](OrderLineItemPricingBlocklists.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -14,7 +14,8 @@ type InvoicePaymentReminderStatus string
 
 // List of InvoicePaymentReminderStatus
 const (
-	PENDING_InvoicePaymentReminderStatus        InvoicePaymentReminderStatus = "PENDING"
-	NOT_APPLICABLE_InvoicePaymentReminderStatus InvoicePaymentReminderStatus = "NOT_APPLICABLE"
-	SENT_InvoicePaymentReminderStatus           InvoicePaymentReminderStatus = "SENT"
+	INVOICE_PAYMENT_REMINDER_STATUS_DO_NOT_USE_InvoicePaymentReminderStatus InvoicePaymentReminderStatus = "INVOICE_PAYMENT_REMINDER_STATUS_DO_NOT_USE"
+	PENDING_InvoicePaymentReminderStatus                                    InvoicePaymentReminderStatus = "PENDING"
+	NOT_APPLICABLE_InvoicePaymentReminderStatus                             InvoicePaymentReminderStatus = "NOT_APPLICABLE"
+	SENT_InvoicePaymentReminderStatus                                       InvoicePaymentReminderStatus = "SENT"
 )

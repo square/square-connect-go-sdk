@@ -19,5 +19,6 @@ type LoyaltyProgramRewardTier struct {
 	Name       string                          `json:"name"`
 	Definition *LoyaltyProgramRewardDefinition `json:"definition"`
 	// The timestamp when the reward tier was created, in RFC 3339 format.
-	CreatedAt string `json:"created_at"`
+	CreatedAt            string                  `json:"created_at"`
+	PricingRuleReference *CatalogObjectReference `json:"pricing_rule_reference,omitempty"`
 }

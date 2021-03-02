@@ -14,7 +14,9 @@ type InventoryChangeType string
 
 // List of InventoryChangeType
 const (
-	PHYSICAL_COUNT_InventoryChangeType InventoryChangeType = "PHYSICAL_COUNT"
-	ADJUSTMENT_InventoryChangeType     InventoryChangeType = "ADJUSTMENT"
-	TRANSFER_InventoryChangeType       InventoryChangeType = "TRANSFER"
+	INVENTORY_CHANGE_TYPE_DO_NOT_USE_InventoryChangeType InventoryChangeType = "INVENTORY_CHANGE_TYPE_DO_NOT_USE"
+	PHYSICAL_COUNT_InventoryChangeType                   InventoryChangeType = "PHYSICAL_COUNT"
+	ADJUSTMENT_InventoryChangeType                       InventoryChangeType = "ADJUSTMENT"
+	TRANSFER_InventoryChangeType                         InventoryChangeType = "TRANSFER"
+	AVAILABILITY_InventoryChangeType                     InventoryChangeType = "AVAILABILITY"
 )

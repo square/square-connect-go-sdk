@@ -10,7 +10,7 @@
 package swagger
 
 type CatalogInfoResponse struct {
-	// The set of errors encountered.
+	// Any errors that occurred during the request.
 	Errors                       []ModelError                  `json:"errors,omitempty"`
 	Limits                       *CatalogInfoResponseLimits    `json:"limits,omitempty"`
 	StandardUnitDescriptionGroup *StandardUnitDescriptionGroup `json:"standard_unit_description_group,omitempty"`

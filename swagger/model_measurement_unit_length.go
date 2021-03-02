@@ -14,6 +14,7 @@ type MeasurementUnitLength string
 
 // List of MeasurementUnitLength
 const (
+	INVALID_LENGTH_MeasurementUnitLength    MeasurementUnitLength = "INVALID_LENGTH"
 	IMPERIAL_INCH_MeasurementUnitLength     MeasurementUnitLength = "IMPERIAL_INCH"
 	IMPERIAL_FOOT_MeasurementUnitLength     MeasurementUnitLength = "IMPERIAL_FOOT"
 	IMPERIAL_YARD_MeasurementUnitLength     MeasurementUnitLength = "IMPERIAL_YARD"

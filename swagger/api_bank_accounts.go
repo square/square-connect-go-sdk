@@ -28,7 +28,7 @@ type BankAccountsApiService service
 
 /*
 BankAccountsApiService GetBankAccount
-Returns details of a [BankAccount](#type-bankaccount)  linked to a Square account. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+Returns details of a [BankAccount](#type-bankaccount)  linked to a Square account.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param bankAccountId Square-issued ID of the desired &#x60;BankAccount&#x60;.
 @return GetBankAccountResponse
@@ -114,9 +114,9 @@ func (a *BankAccountsApiService) GetBankAccount(ctx context.Context, bankAccount
 
 /*
 BankAccountsApiService GetBankAccountByV1Id
-Returns details of a [BankAccount](#type-bankaccount) identified by V1 bank account ID.  For more information, see  [Retrieve a bank account by using an ID issued by V1 Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api#retrieve-a-bank-account-by-using-an-id-issued-by-the-v1-bank-accounts-api).
+Returns details of a [BankAccount](#type-bankaccount) identified by V1 bank account ID.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param v1BankAccountId Connect V1 ID of the desired &#x60;BankAccount&#x60;. For more information, see  [Retrieve a bank account by using an ID issued by V1 Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api#retrieve-a-bank-account-by-using-an-id-issued-by-v1-bank-accounts-api).
+ * @param v1BankAccountId Connect V1 ID of the desired &#x60;BankAccount&#x60;. For more information, see  [Retrieve a bank account by using an ID issued by V1 Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api#retrieve-a-bank-account-by-using-an-id-issued-by-v1-bank-accounts-api).
 @return GetBankAccountByV1IdResponse
 */
 func (a *BankAccountsApiService) GetBankAccountByV1Id(ctx context.Context, v1BankAccountId string) (GetBankAccountByV1IdResponse, *http.Response, error) {
@@ -200,10 +200,10 @@ func (a *BankAccountsApiService) GetBankAccountByV1Id(ctx context.Context, v1Ban
 
 /*
 BankAccountsApiService ListBankAccounts
-Returns a list of [BankAccount](#type-bankaccount) objects linked to a Square account.  For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+Returns a list of [BankAccount](#type-bankaccount) objects linked to a Square account.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *BankAccountsApiListBankAccountsOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  The pagination cursor returned by a previous call to this endpoint. Use it in the next &#x60;ListBankAccounts&#x60; request to retrieve the next set  of results.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information.
+     * @param "Cursor" (optional.String) -  The pagination cursor returned by a previous call to this endpoint. Use it in the next &#x60;ListBankAccounts&#x60; request to retrieve the next set  of results.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information.
      * @param "Limit" (optional.Int32) -  Upper limit on the number of bank accounts to return in the response.  Currently, 1000 is the largest supported limit. You can specify a limit  of up to 1000 bank accounts. This is also the default limit.
      * @param "LocationId" (optional.String) -  Location ID. You can specify this optional filter  to retrieve only the linked bank accounts belonging to a specific location.
 @return ListBankAccountsResponse

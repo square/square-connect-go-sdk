@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a bank account. For more information about  linking a bank account to a Square account, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+// Represents a bank account. For more information about  linking a bank account to a Square account, see  [Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api).
 type BankAccount struct {
 	// The unique, Square-issued identifier for the bank account.
 	Id string `json:"id"`
@@ -20,9 +20,9 @@ type BankAccount struct {
 	AccountType         *BankAccountType `json:"account_type"`
 	// Name of the account holder. This name must match the name  on the targeted bank account record.
 	HolderName string `json:"holder_name"`
-	// Primary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+	// Primary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api).
 	PrimaryBankIdentificationNumber string `json:"primary_bank_identification_number"`
-	// Secondary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/docs/bank-accounts-api).
+	// Secondary identifier for the bank. For more information, see  [Bank Accounts API](https://developer.squareup.com/docs/bank-accounts-api).
 	SecondaryBankIdentificationNumber string `json:"secondary_bank_identification_number,omitempty"`
 	// Reference identifier that will be displayed to UK bank account owners when collecting direct debit authorization. Only required for UK bank accounts.
 	DebitMandateReferenceId string `json:"debit_mandate_reference_id,omitempty"`

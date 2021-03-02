@@ -9,12 +9,13 @@
  */
 package swagger
 
-// LoyaltyProgramRewardDefinitionScope : Indicates the scope of the reward tier.
+// LoyaltyProgramRewardDefinitionScope : Indicates the scope of the reward tier. DEPRECATED at version 2020-12-16. Discount details are now defined using a catalog pricing rule and other catalog objects. For more information, see [Get discount details for the reward](https://developer.squareup.com/docs/loyalty-api/overview#get-discount-details).
 type LoyaltyProgramRewardDefinitionScope string
 
 // List of LoyaltyProgramRewardDefinitionScope
 const (
-	ORDER_LoyaltyProgramRewardDefinitionScope          LoyaltyProgramRewardDefinitionScope = "ORDER"
-	ITEM_VARIATION_LoyaltyProgramRewardDefinitionScope LoyaltyProgramRewardDefinitionScope = "ITEM_VARIATION"
-	CATEGORY_LoyaltyProgramRewardDefinitionScope       LoyaltyProgramRewardDefinitionScope = "CATEGORY"
+	SCOPE_DO_NOT_USE_LoyaltyProgramRewardDefinitionScope LoyaltyProgramRewardDefinitionScope = "SCOPE_DO_NOT_USE"
+	ORDER_LoyaltyProgramRewardDefinitionScope            LoyaltyProgramRewardDefinitionScope = "ORDER"
+	ITEM_VARIATION_LoyaltyProgramRewardDefinitionScope   LoyaltyProgramRewardDefinitionScope = "ITEM_VARIATION"
+	CATEGORY_LoyaltyProgramRewardDefinitionScope         LoyaltyProgramRewardDefinitionScope = "CATEGORY"
 )

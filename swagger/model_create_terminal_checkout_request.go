@@ -10,7 +10,7 @@
 package swagger
 
 type CreateTerminalCheckoutRequest struct {
-	// A unique string that identifies this CreateCheckout request. Keys can be any valid string but must be unique for every CreateCheckout request.  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
+	// A unique string that identifies this `CreateCheckout` request. Keys can be any valid string but must be unique for every `CreateCheckout` request.  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
 	IdempotencyKey string            `json:"idempotency_key"`
 	Checkout       *TerminalCheckout `json:"checkout"`
 }

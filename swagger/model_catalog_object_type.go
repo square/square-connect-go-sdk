@@ -22,6 +22,9 @@ const (
 	DISCOUNT_CatalogObjectType                    CatalogObjectType = "DISCOUNT"
 	MODIFIER_LIST_CatalogObjectType               CatalogObjectType = "MODIFIER_LIST"
 	MODIFIER_CatalogObjectType                    CatalogObjectType = "MODIFIER"
+	DINING_OPTION_CatalogObjectType               CatalogObjectType = "DINING_OPTION"
+	TAX_EXEMPTION_CatalogObjectType               CatalogObjectType = "TAX_EXEMPTION"
+	SERVICE_CHARGE_CatalogObjectType              CatalogObjectType = "SERVICE_CHARGE"
 	PRICING_RULE_CatalogObjectType                CatalogObjectType = "PRICING_RULE"
 	PRODUCT_SET_CatalogObjectType                 CatalogObjectType = "PRODUCT_SET"
 	TIME_PERIOD_CatalogObjectType                 CatalogObjectType = "TIME_PERIOD"
@@ -31,4 +34,8 @@ const (
 	ITEM_OPTION_VAL_CatalogObjectType             CatalogObjectType = "ITEM_OPTION_VAL"
 	CUSTOM_ATTRIBUTE_DEFINITION_CatalogObjectType CatalogObjectType = "CUSTOM_ATTRIBUTE_DEFINITION"
 	QUICK_AMOUNTS_SETTINGS_CatalogObjectType      CatalogObjectType = "QUICK_AMOUNTS_SETTINGS"
+	COMPONENT_CatalogObjectType                   CatalogObjectType = "COMPONENT"
+	COMPOSITION_CatalogObjectType                 CatalogObjectType = "COMPOSITION"
+	RESOURCE_CatalogObjectType                    CatalogObjectType = "RESOURCE"
+	CHECKOUT_LINK_CatalogObjectType               CatalogObjectType = "CHECKOUT_LINK"
 )

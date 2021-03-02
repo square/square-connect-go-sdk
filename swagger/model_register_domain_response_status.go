@@ -14,6 +14,7 @@ type RegisterDomainResponseStatus string
 
 // List of RegisterDomainResponseStatus
 const (
-	PENDING_RegisterDomainResponseStatus  RegisterDomainResponseStatus = "PENDING"
-	VERIFIED_RegisterDomainResponseStatus RegisterDomainResponseStatus = "VERIFIED"
+	PENDING_RegisterDomainResponseStatus    RegisterDomainResponseStatus = "PENDING"
+	VERIFIED_RegisterDomainResponseStatus   RegisterDomainResponseStatus = "VERIFIED"
+	DO_NOT_USE_RegisterDomainResponseStatus RegisterDomainResponseStatus = "DO_NOT_USE"
 )

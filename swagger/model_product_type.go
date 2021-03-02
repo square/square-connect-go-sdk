@@ -13,5 +13,11 @@ type ProductType string
 
 // List of ProductType
 const (
-	API_ProductType ProductType = "TERMINAL_API"
+	UNKNOWN_ProductType      ProductType = "UNKNOWN"
+	REGISTER_ProductType     ProductType = "REGISTER"
+	RESTAURANT_ProductType   ProductType = "RESTAURANT"
+	RETAIL_ProductType       ProductType = "RETAIL"
+	PAY_SDK_ProductType      ProductType = "PAY_SDK"
+	TERMINAL_API_ProductType ProductType = "TERMINAL_API"
+	KDS_ProductType          ProductType = "KDS"
 )
