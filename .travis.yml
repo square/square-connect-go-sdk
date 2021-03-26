@@ -1,8 +1,4 @@
 language: go
 
-install:
-  - go get -d -v .
-
 script:
-  - go build -v ./
-
+  - env GO111MODULE=on go test -v .
