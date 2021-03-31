@@ -18,9 +18,11 @@ func TestEcomPatch(t *testing.T) {
 }
 
 func TestModelCatalogCustomAttributeValuePatch(t *testing.T) {
+	strValue := ""
+	boolValue := false
 	s := swagger.CatalogCustomAttributeValue{
-		StringValue:  "",
-		BooleanValue: false,
+		StringValue:  &strValue,
+		BooleanValue: &boolValue,
 	}
 	// Ensure that omitempty has been removed
 	json, err := json.Marshal(s)
