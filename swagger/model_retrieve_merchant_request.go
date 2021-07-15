@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Request object for the [RetrieveMerchant](#endpoint-retrievemerchant) endpoint.
+// Request object for the [RetrieveMerchant](api-endpoint:Merchants-RetrieveMerchant) endpoint.
 type RetrieveMerchantRequest struct {
 }

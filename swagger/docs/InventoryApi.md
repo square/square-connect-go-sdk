@@ -76,7 +76,7 @@ See the corresponding object definition for field details. |
 > BatchRetrieveInventoryCountsResponse BatchRetrieveInventoryCounts(ctx, body)
 BatchRetrieveInventoryCounts
 
-Returns current counts for the provided [CatalogObject](#type-catalogobject)s at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their `calculated_at` timestamp (newest first).  When `updated_after` is specified, only counts that have changed since that time (based on the server timestamp for the most recent change) are returned. This allows clients to perform a \"sync\" operation, for example in response to receiving a Webhook notification.
+Returns current counts for the provided [CatalogObject](entity:CatalogObject)s at the requested [Location](entity:Location)s.  Results are paginated and sorted in descending order according to their `calculated_at` timestamp (newest first).  When `updated_after` is specified, only counts that have changed since that time (based on the server timestamp for the most recent change) are returned. This allows clients to perform a \"sync\" operation, for example in response to receiving a Webhook notification.
 
 ### Required Parameters
 
@@ -106,14 +106,14 @@ See the corresponding object definition for field details. |
 > RetrieveInventoryAdjustmentResponse RetrieveInventoryAdjustment(ctx, adjustmentId)
 RetrieveInventoryAdjustment
 
-Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided `adjustment_id`.
+Returns the [InventoryAdjustment](entity:InventoryAdjustment) object with the provided `adjustment_id`.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **adjustmentId** | **string**| ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve. | 
+  **adjustmentId** | **string**| ID of the [InventoryAdjustment](entity:InventoryAdjustment) to retrieve. | 
 
 ### Return type
 
@@ -134,14 +134,14 @@ Name | Type | Description  | Notes
 > RetrieveInventoryChangesResponse RetrieveInventoryChanges(ctx, catalogObjectId, optional)
 RetrieveInventoryChanges
 
-Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their `occurred_at` timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be  used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
+Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](entity:CatalogObject) at the requested [Location](entity:Location)s.  Results are paginated and sorted in descending order according to their `occurred_at` timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be  used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **catalogObjectId** | **string**| ID of the [CatalogObject](#type-catalogobject) to retrieve. | 
+  **catalogObjectId** | **string**| ID of the [CatalogObject](entity:CatalogObject) to retrieve. | 
  **optional** | ***InventoryApiRetrieveInventoryChangesOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -149,7 +149,7 @@ Optional parameters are passed through a pointer to a InventoryApiRetrieveInvent
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **locationIds** | **optional.String**| The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. | 
+ **locationIds** | **optional.String**| The [Location](entity:Location) IDs to look up as a comma-separated list. An empty list queries all locations. | 
  **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information. | 
 
 ### Return type
@@ -171,14 +171,14 @@ Name | Type | Description  | Notes
 > RetrieveInventoryCountResponse RetrieveInventoryCount(ctx, catalogObjectId, optional)
 RetrieveInventoryCount
 
-Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
+Retrieves the current calculated stock count for a given [CatalogObject](entity:CatalogObject) at a given set of [Location](entity:Location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **catalogObjectId** | **string**| ID of the [CatalogObject](#type-catalogobject) to retrieve. | 
+  **catalogObjectId** | **string**| ID of the [CatalogObject](entity:CatalogObject) to retrieve. | 
  **optional** | ***InventoryApiRetrieveInventoryCountOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -186,7 +186,7 @@ Optional parameters are passed through a pointer to a InventoryApiRetrieveInvent
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **locationIds** | **optional.String**| The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. | 
+ **locationIds** | **optional.String**| The [Location](entity:Location) IDs to look up as a comma-separated list. An empty list queries all locations. | 
  **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information. | 
 
 ### Return type
@@ -208,14 +208,14 @@ Name | Type | Description  | Notes
 > RetrieveInventoryPhysicalCountResponse RetrieveInventoryPhysicalCount(ctx, physicalCountId)
 RetrieveInventoryPhysicalCount
 
-Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided `physical_count_id`.
+Returns the [InventoryPhysicalCount](entity:InventoryPhysicalCount) object with the provided `physical_count_id`.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **physicalCountId** | **string**| ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve. | 
+  **physicalCountId** | **string**| ID of the [InventoryPhysicalCount](entity:InventoryPhysicalCount) to retrieve. | 
 
 ### Return type
 

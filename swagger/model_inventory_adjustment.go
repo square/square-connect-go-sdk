@@ -19,32 +19,33 @@ type InventoryAdjustment struct {
 	ToStatus    *InventoryState `json:"to_status,omitempty"`
 	FromState   *InventoryState `json:"from_state,omitempty"`
 	ToState     *InventoryState `json:"to_state,omitempty"`
-	// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked before the adjustment. Replaced by `from_location_id` in `InventoryTransfer`.
+	// The Square-generated ID of the [Location](entity:Location) where the related quantity of items is being tracked before the adjustment. Replaced by `from_location_id` of [InventoryTransfer](entity:InventoryTransfer).
 	FromLocationId string `json:"from_location_id,omitempty"`
-	// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked after the adjustment. Replaced by `to_location_id` in `InventoryTransfer`.
+	// The Square-generated ID of the [Location](entity:Location) where the related quantity of items is being tracked after the adjustment. Replaced by `to_location_id` of [InventoryTransfer](entity:InventoryTransfer).
 	ToLocationId string `json:"to_location_id,omitempty"`
-	// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked.
+	// The Square-generated ID of the [Location](entity:Location) where the related quantity of items is being tracked.
 	LocationId string `json:"location_id,omitempty"`
-	// The Square generated ID of the `CatalogObject` being tracked.
+	// The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The `CatalogObjectType` of the `CatalogObject` being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
 	CatalogObjectType string `json:"catalog_object_type,omitempty"`
 	// The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.
 	Quantity        string `json:"quantity,omitempty"`
 	TotalPriceMoney *Money `json:"total_price_money,omitempty"`
-	// A client-generated timestamp in RFC 3339 format that indicates when the adjustment took place. For write actions, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
+	// A client-generated RFC 3339-formatted timestamp that indicates when the inventory adjustment took place. For inventory adjustment updates, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
 	OccurredAt string `json:"occurred_at,omitempty"`
-	// A read-only timestamp in RFC 3339 format that indicates when Square received the adjustment.
+	// An RFC 3339-formatted timestamp that indicates when the inventory adjustment is received.
 	CreatedAt string             `json:"created_at,omitempty"`
 	Source    *SourceApplication `json:"source,omitempty"`
-	// The Square ID of the [Employee](#type-employee) responsible for the inventory adjustment.
+	// The Square-generated ID of the [Employee](entity:Employee) responsible for the inventory adjustment.
 	EmployeeId string `json:"employee_id,omitempty"`
-	// The read-only Square ID of the [Transaction][#type-transaction] that caused the adjustment. Only relevant for payment-related state transitions.
+	// The Square-generated ID of the [Transaction][#type-transaction] that caused the adjustment. Only relevant for payment-related state transitions.
 	TransactionId string `json:"transaction_id,omitempty"`
-	// The read-only Square ID of the [Refund][#type-refund] that caused the adjustment. Only relevant for refund-related state transitions.
+	// The Square-generated ID of the [Refund][#type-refund] that caused the adjustment. Only relevant for refund-related state transitions.
 	RefundId string `json:"refund_id,omitempty"`
-	// The read-only Square ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
+	// The Square-generated ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
 	PurchaseOrderId string `json:"purchase_order_id,omitempty"`
-	// The read-only Square ID of the Square goods receipt that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
-	GoodsReceiptId string `json:"goods_receipt_id,omitempty"`
+	// The Square-generated ID of the goods receipt that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
+	GoodsReceiptId  string                    `json:"goods_receipt_id,omitempty"`
+	AdjustmentGroup *InventoryAdjustmentGroup `json:"adjustment_group,omitempty"`
 }

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**ListLoyaltyPrograms**](LoyaltyApi.md#ListLoyaltyPrograms) | **Get** /v2/loyalty/programs | ListLoyaltyPrograms
 [**RedeemLoyaltyReward**](LoyaltyApi.md#RedeemLoyaltyReward) | **Post** /v2/loyalty/rewards/{reward_id}/redeem | RedeemLoyaltyReward
 [**RetrieveLoyaltyAccount**](LoyaltyApi.md#RetrieveLoyaltyAccount) | **Get** /v2/loyalty/accounts/{account_id} | RetrieveLoyaltyAccount
+[**RetrieveLoyaltyProgram**](LoyaltyApi.md#RetrieveLoyaltyProgram) | **Get** /v2/loyalty/programs/{program_id} | RetrieveLoyaltyProgram
 [**RetrieveLoyaltyReward**](LoyaltyApi.md#RetrieveLoyaltyReward) | **Get** /v2/loyalty/rewards/{reward_id} | RetrieveLoyaltyReward
 [**SearchLoyaltyAccounts**](LoyaltyApi.md#SearchLoyaltyAccounts) | **Post** /v2/loyalty/accounts/search | SearchLoyaltyAccounts
 [**SearchLoyaltyEvents**](LoyaltyApi.md#SearchLoyaltyEvents) | **Post** /v2/loyalty/events/search | SearchLoyaltyEvents
@@ -22,7 +23,7 @@ Method | HTTP request | Description
 > AccumulateLoyaltyPointsResponse AccumulateLoyaltyPoints(ctx, body, accountId)
 AccumulateLoyaltyPoints
 
-Adds points to a loyalty account.  - If you are using the Orders API to manage orders, you only provide the `order_id`.  The endpoint reads the order to compute points to add to the buyer's account. - If you are not using the Orders API to manage orders,  you first perform a client-side computation to compute the points.   For spend-based and visit-based programs, you can call  [CalculateLoyaltyPoints](#endpoint-Loyalty-CalculateLoyaltyPoints) to compute the points. For more information,  see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview).  You then provide the points in a request to this endpoint.
+Adds points to a loyalty account.  - If you are using the Orders API to manage orders, you only provide the `order_id`.  The endpoint reads the order to compute points to add to the buyer's account. - If you are not using the Orders API to manage orders,  you first perform a client-side computation to compute the points.   For spend-based and visit-based programs, you can call  [CalculateLoyaltyPoints](api-endpoint:Loyalty-CalculateLoyaltyPoints) to compute the points. For more information,  see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview).  You then provide the points in a request to this endpoint.
 
 ### Required Parameters
 
@@ -32,7 +33,7 @@ Name | Type | Description  | Notes
   **body** | [**AccumulateLoyaltyPointsRequest**](AccumulateLoyaltyPointsRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **accountId** | **string**| The [loyalty account](#type-LoyaltyAccount) ID to which to add the points. | 
+  **accountId** | **string**| The [loyalty account](entity:LoyaltyAccount) ID to which to add the points. | 
 
 ### Return type
 
@@ -53,7 +54,7 @@ See the corresponding object definition for field details. |
 > AdjustLoyaltyPointsResponse AdjustLoyaltyPoints(ctx, body, accountId)
 AdjustLoyaltyPoints
 
-Adds points to or subtracts points from a buyer's account.   Use this endpoint only when you need to manually adjust points. Otherwise, in your application flow, you call  [AccumulateLoyaltyPoints](#endpoint-Loyalty-AccumulateLoyaltyPoints)  to add points when a buyer pays for the purchase.
+Adds points to or subtracts points from a buyer's account.   Use this endpoint only when you need to manually adjust points. Otherwise, in your application flow, you call  [AccumulateLoyaltyPoints](api-endpoint:Loyalty-AccumulateLoyaltyPoints)  to add points when a buyer pays for the purchase.
 
 ### Required Parameters
 
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
   **body** | [**AdjustLoyaltyPointsRequest**](AdjustLoyaltyPointsRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **accountId** | **string**| The ID of the [loyalty account](#type-LoyaltyAccount) in which to adjust the points. | 
+  **accountId** | **string**| The ID of the [loyalty account](entity:LoyaltyAccount) in which to adjust the points. | 
 
 ### Return type
 
@@ -94,7 +95,7 @@ Name | Type | Description  | Notes
   **body** | [**CalculateLoyaltyPointsRequest**](CalculateLoyaltyPointsRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **programId** | **string**| The [loyalty program](#type-LoyaltyProgram) ID, which defines the rules for accruing points. | 
+  **programId** | **string**| The [loyalty program](entity:LoyaltyProgram) ID, which defines the rules for accruing points. | 
 
 ### Return type
 
@@ -115,7 +116,7 @@ See the corresponding object definition for field details. |
 > CreateLoyaltyAccountResponse CreateLoyaltyAccount(ctx, body)
 CreateLoyaltyAccount
 
-Creates a loyalty account.
+Creates a loyalty account. To create a loyalty account, you must provide the `program_id` and a `mapping` with the `phone_number` of the buyer.
 
 ### Required Parameters
 
@@ -175,14 +176,14 @@ See the corresponding object definition for field details. |
 > DeleteLoyaltyRewardResponse DeleteLoyaltyReward(ctx, rewardId)
 DeleteLoyaltyReward
 
-Deletes a loyalty reward by doing the following:  - Returns the loyalty points back to the loyalty account. - If an order ID was specified when the reward was created  (see [CreateLoyaltyReward](#endpoint-Loyalty-CreateLoyaltyReward)),  it updates the order by removing the reward and related  discounts.  You cannot delete a reward that has reached the terminal state (REDEEMED).
+Deletes a loyalty reward by doing the following:  - Returns the loyalty points back to the loyalty account. - If an order ID was specified when the reward was created  (see [CreateLoyaltyReward](api-endpoint:Loyalty-CreateLoyaltyReward)),  it updates the order by removing the reward and related  discounts.  You cannot delete a reward that has reached the terminal state (REDEEMED).
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **rewardId** | **string**| The ID of the [loyalty reward](#type-LoyaltyReward) to delete. | 
+  **rewardId** | **string**| The ID of the [loyalty reward](entity:LoyaltyReward) to delete. | 
 
 ### Return type
 
@@ -203,7 +204,7 @@ Name | Type | Description  | Notes
 > ListLoyaltyProgramsResponse ListLoyaltyPrograms(ctx, )
 ListLoyaltyPrograms
 
-Returns a list of loyalty programs in the seller's account. Currently, a seller can only have one loyalty program.
+Returns a list of loyalty programs in the seller's account. Loyalty programs define how buyers can earn points and redeem points for rewards. Square sellers can have only one loyalty program, which is created and managed from the Seller Dashboard. For more information, see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview).   Replaced with [RetrieveLoyaltyProgram](api-endpoint:Loyalty-RetrieveLoyaltyProgram) when used with the keyword `main`.
 
 ### Required Parameters
 This endpoint does not need any parameter.
@@ -237,7 +238,7 @@ Name | Type | Description  | Notes
   **body** | [**RedeemLoyaltyRewardRequest**](RedeemLoyaltyRewardRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **rewardId** | **string**| The ID of the [loyalty reward](#type-LoyaltyReward) to redeem. | 
+  **rewardId** | **string**| The ID of the [loyalty reward](entity:LoyaltyReward) to redeem. | 
 
 ### Return type
 
@@ -265,11 +266,39 @@ Retrieves a loyalty account.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **accountId** | **string**| The ID of the [loyalty account](#type-LoyaltyAccount) to retrieve. | 
+  **accountId** | **string**| The ID of the [loyalty account](entity:LoyaltyAccount) to retrieve. | 
 
 ### Return type
 
 [**RetrieveLoyaltyAccountResponse**](RetrieveLoyaltyAccountResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **RetrieveLoyaltyProgram**
+> RetrieveLoyaltyProgramResponse RetrieveLoyaltyProgram(ctx, programId)
+RetrieveLoyaltyProgram
+
+Retrieves the loyalty program in a seller's account, specified by the program ID or the keyword `main`.   Loyalty programs define how buyers can earn points and redeem points for rewards. Square sellers can have only one loyalty program, which is created and managed from the Seller Dashboard. For more information, see [Loyalty Program Overview](https://developer.squareup.com/docs/loyalty/overview).
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **programId** | **string**| The ID of the loyalty program or the keyword &#x60;main&#x60;. Either value can be used to retrieve the single loyalty program that belongs to the seller. | 
+
+### Return type
+
+[**RetrieveLoyaltyProgramResponse**](RetrieveLoyaltyProgramResponse.md)
 
 ### Authorization
 
@@ -293,7 +322,7 @@ Retrieves a loyalty reward.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **rewardId** | **string**| The ID of the [loyalty reward](#type-LoyaltyReward) to retrieve. | 
+  **rewardId** | **string**| The ID of the [loyalty reward](entity:LoyaltyReward) to retrieve. | 
 
 ### Return type
 
@@ -344,7 +373,7 @@ See the corresponding object definition for field details. |
 > SearchLoyaltyEventsResponse SearchLoyaltyEvents(ctx, body)
 SearchLoyaltyEvents
 
-Searches for loyalty events.  A Square loyalty program maintains a ledger of events that occur during the lifetime of a  buyer's loyalty account. Each change in the point balance  (for example, points earned, points redeemed, and points expired) is  recorded in the ledger. Using this endpoint, you can search the ledger for events.
+Searches for loyalty events.  A Square loyalty program maintains a ledger of events that occur during the lifetime of a  buyer's loyalty account. Each change in the point balance  (for example, points earned, points redeemed, and points expired) is  recorded in the ledger. Using this endpoint, you can search the ledger for events.  Search results are sorted by `created_at` in descending order.
 
 ### Required Parameters
 
@@ -374,7 +403,7 @@ See the corresponding object definition for field details. |
 > SearchLoyaltyRewardsResponse SearchLoyaltyRewards(ctx, body)
 SearchLoyaltyRewards
 
-Searches for loyalty rewards in a loyalty account.   In the current implementation, the endpoint supports search by the reward `status`.  If you know a reward ID, use the  [RetrieveLoyaltyReward](#endpoint-Loyalty-RetrieveLoyaltyReward) endpoint.
+Searches for loyalty rewards in a loyalty account.   In the current implementation, the endpoint supports search by the reward `status`.  If you know a reward ID, use the  [RetrieveLoyaltyReward](api-endpoint:Loyalty-RetrieveLoyaltyReward) endpoint.  Search results are sorted by `updated_at` in descending order.
 
 ### Required Parameters
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LoyaltyProgramId** | **string** | The Square-assigned ID of the [loyalty program](#type-LoyaltyProgram). | [optional] [default to null]
+**LoyaltyProgramId** | **string** | The Square-assigned ID of the [loyalty program](entity:LoyaltyProgram). | [optional] [default to null]
 **Points** | **int32** | The number of points added or removed. | [default to null]
 **Reason** | **string** | The reason for the adjustment of points. | [optional] [default to null]
 

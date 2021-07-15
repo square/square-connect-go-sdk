@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response object returned by the [RetrieveMerchant](#endpoint-retrieveMerchant) endpoint.
+// The response object returned by the [RetrieveMerchant](api-endpoint:Merchants-RetrieveMerchant) endpoint.
 type RetrieveMerchantResponse struct {
 	// Information on errors encountered during the request.
 	Errors   []ModelError `json:"errors,omitempty"`

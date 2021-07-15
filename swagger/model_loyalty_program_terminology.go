@@ -9,6 +9,7 @@
  */
 package swagger
 
+// Represents the naming used for loyalty points.
 type LoyaltyProgramTerminology struct {
 	// A singular unit for a point (for example, 1 point is called 1 star).
 	One string `json:"one"`

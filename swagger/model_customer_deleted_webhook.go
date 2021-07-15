@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [customer](#type-Customer) is deleted.  For more information, see [Use Customer Webhooks](https://developer.squareup.com/docs/customers-api/use-the-api/customer-webhooks).  The `customer` object in the event notification does not include the following fields: `cards`, `group_ids`, `segment_ids`, and `groups` (deprecated).
+// Published when a [customer](entity:Customer) is deleted.  For more information, see [Use Customer Webhooks](https://developer.squareup.com/docs/customers-api/use-the-api/customer-webhooks).  The `customer` object in the event notification does not include the following fields: `cards`, `group_ids`, and `segment_ids`.
 type CustomerDeletedWebhook struct {
 	// The ID of the seller associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

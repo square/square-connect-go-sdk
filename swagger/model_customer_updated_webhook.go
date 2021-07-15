@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [customer](#type-Customer) is updated. For more information, see [Use Customer Webhooks](https://developer.squareup.com/docs/customers-api/use-the-api/customer-webhooks).  Updates to the following customer fields do not invoke a `customer.updated` event: `cards`, `segment_ids`, and `groups` (deprecated). In addition, the `customer` object in the event notification does not include these fields.
+// Published when a [customer](entity:Customer) is updated. For more information, see [Use Customer Webhooks](https://developer.squareup.com/docs/customers-api/use-the-api/customer-webhooks).  Updates to the following customer fields do not invoke a `customer.updated` event: `cards` and `segment_ids`. In addition, the `customer` object in the event notification does not include these fields.
 type CustomerUpdatedWebhook struct {
 	// The ID of the seller associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

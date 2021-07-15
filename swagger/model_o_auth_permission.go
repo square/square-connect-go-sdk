@@ -39,4 +39,13 @@ const (
 	TIMECARDS_WRITE_OAuthPermission                      OAuthPermission = "TIMECARDS_WRITE"
 	TIMECARDS_SETTINGS_READ_OAuthPermission              OAuthPermission = "TIMECARDS_SETTINGS_READ"
 	TIMECARDS_SETTINGS_WRITE_OAuthPermission             OAuthPermission = "TIMECARDS_SETTINGS_WRITE"
+	APPOINTMENTS_READ_OAuthPermission                    OAuthPermission = "APPOINTMENTS_READ"
+	APPOINTMENTS_WRITE_OAuthPermission                   OAuthPermission = "APPOINTMENTS_WRITE"
+	APPOINTMENTS_BUSINESS_SETTINGS_READ_OAuthPermission  OAuthPermission = "APPOINTMENTS_BUSINESS_SETTINGS_READ"
+	INVOICES_READ_OAuthPermission                        OAuthPermission = "INVOICES_READ"
+	INVOICES_WRITE_OAuthPermission                       OAuthPermission = "INVOICES_WRITE"
+	SUBSCRIPTIONS_READ_OAuthPermission                   OAuthPermission = "SUBSCRIPTIONS_READ"
+	SUBSCRIPTIONS_WRITE_OAuthPermission                  OAuthPermission = "SUBSCRIPTIONS_WRITE"
+	DISPUTES_READ_OAuthPermission                        OAuthPermission = "DISPUTES_READ"
+	DISPUTES_WRITE_OAuthPermission                       OAuthPermission = "DISPUTES_WRITE"
 )

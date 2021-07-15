@@ -10,9 +10,9 @@
 package swagger
 
 type SearchTerminalRefundsResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// The requested search result of `TerminalRefund`s.
+	// The requested search result of `TerminalRefund` objects.
 	Refunds []TerminalRefund `json:"refunds,omitempty"`
 	// The pagination cursor to be used in a subsequent request. If empty, this is the final response.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Refunds a payment.
+// Describes a request to refund a payment using [RefundPayment](api-endpoint:Refunds-RefundPayment).
 type RefundPaymentRequest struct {
 	//  A unique string that identifies this `RefundPayment` request. The key can be any valid string but must be unique for every `RefundPayment` request.  For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string `json:"idempotency_key"`

@@ -11,11 +11,11 @@ package swagger
 
 // A line item modifier being returned.
 type OrderReturnLineItemModifier struct {
-	// Unique ID that identifies the return modifier only within this order.
+	// A unique ID that identifies the return modifier only within this order.
 	Uid string `json:"uid,omitempty"`
-	// `uid` of the Modifier from the LineItem from the Order which contains the original sale of this line item modifier.
+	// The modifier `uid` from the order's line item that contains the original sale of this line item modifier.
 	SourceModifierUid string `json:"source_modifier_uid,omitempty"`
-	// The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
+	// The catalog object ID referencing [CatalogModifier](entity:CatalogModifier).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
 	// The name of the item modifier.
 	Name            string `json:"name,omitempty"`

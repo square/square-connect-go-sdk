@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Filtering criteria to use for a SearchOrders request. Multiple filters will be ANDed together.
+// Filtering criteria to use for a `SearchOrders` request. Multiple filters are ANDed together.
 type SearchOrdersFilter struct {
 	StateFilter       *SearchOrdersStateFilter       `json:"state_filter,omitempty"`
 	DateTimeFilter    *SearchOrdersDateTimeFilter    `json:"date_time_filter,omitempty"`

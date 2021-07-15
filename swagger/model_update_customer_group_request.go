@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the body parameters that can be provided in a request to the [UpdateCustomerGroup](#endpoint-updatecustomergroup) endpoint.
+// Defines the body parameters that can be included in a request to the [UpdateCustomerGroup](api-endpoint:CustomerGroups-UpdateCustomerGroup) endpoint.
 type UpdateCustomerGroupRequest struct {
 	Group *CustomerGroup `json:"group"`
 }

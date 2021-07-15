@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [UpdateOrder](#endpoint-orders-updateorder) endpoint.
+// Defines the fields that are included in the response body of a request to the [UpdateOrder](api-endpoint:Orders-UpdateOrder) endpoint.
 type UpdateOrderResponse struct {
 	Order *Order `json:"order,omitempty"`
 	// Any errors that occurred during the request.

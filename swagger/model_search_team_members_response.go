@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Represents a response from a search request, containing a filtered list of `TeamMember` objects.
+// Represents a response from a search request containing a filtered list of `TeamMember` objects.
 type SearchTeamMembersResponse struct {
 	// The filtered list of `TeamMember` objects.
 	TeamMembers []TeamMember `json:"team_members,omitempty"`
-	// The opaque cursor for fetching the next page. Read about [pagination](https://developer.squareup.com/docs/working-with-apis/pagination) with Square APIs for more information.
+	// The opaque cursor for fetching the next page. For more information, see [pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 	Cursor string `json:"cursor,omitempty"`
 	// The errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

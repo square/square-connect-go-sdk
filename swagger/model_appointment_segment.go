@@ -13,9 +13,9 @@ package swagger
 type AppointmentSegment struct {
 	// The time span in minutes of an appointment segment.
 	DurationMinutes int32 `json:"duration_minutes"`
-	// The ID of the [CatalogItemVariation](#type-CatalogItemVariation) object representing the service booked in this segment.
+	// The ID of the [CatalogItemVariation](entity:CatalogItemVariation) object representing the service booked in this segment.
 	ServiceVariationId string `json:"service_variation_id"`
-	// The ID of the [TeamMember](#type-TeamMember) object representing the team member booked in this segment.
+	// The ID of the [TeamMember](entity:TeamMember) object representing the team member booked in this segment.
 	TeamMemberId string `json:"team_member_id"`
 	// The current version of the item variation representing the service booked in this segment.
 	ServiceVariationVersion int64 `json:"service_variation_version"`

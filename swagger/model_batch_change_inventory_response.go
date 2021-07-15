@@ -14,4 +14,6 @@ type BatchChangeInventoryResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The current counts for all objects referenced in the request.
 	Counts []InventoryCount `json:"counts,omitempty"`
+	// Changes created for the request.
+	Changes []InventoryChange `json:"changes,omitempty"`
 }

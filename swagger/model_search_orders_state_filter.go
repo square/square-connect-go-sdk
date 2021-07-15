@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Filter by current Order `state`.
+// Filter by the current order `state`.
 type SearchOrdersStateFilter struct {
 	// States to filter for. See [OrderState](#type-orderstate) for possible values
 	States []OrderState `json:"states"`

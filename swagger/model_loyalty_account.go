@@ -9,24 +9,25 @@
  */
 package swagger
 
-// Describes a loyalty account. For more information, see  [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
+// Describes a loyalty account. For more information, see [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
 type LoyaltyAccount struct {
 	// The Square-assigned ID of the loyalty account.
 	Id string `json:"id,omitempty"`
-	// The list of mappings that the account is associated with.  Currently, a buyer can only be mapped to a loyalty account using  a phone number. Therefore, the list can only have one mapping.
-	Mappings []LoyaltyAccountMapping `json:"mappings"`
-	// The Square-assigned ID of the [loyalty program](#type-LoyaltyProgram) to which the account belongs.
+	// The list of mappings that the account is associated with.  Currently, a buyer can only be mapped to a loyalty account using  a phone number. Therefore, the list can only have one mapping. RETIRED at version 2021-05-13. Replaced by the `mapping` field.
+	Mappings []LoyaltyAccountMapping `json:"mappings,omitempty"`
+	// The Square-assigned ID of the [loyalty program](entity:LoyaltyProgram) to which the account belongs.
 	ProgramId string `json:"program_id"`
 	// The available point balance in the loyalty account.    Your application should be able to handle loyalty accounts that have a negative point balance (`balance` is less than 0). This might occur if a seller makes a manual adjustment or as a result of a refund or exchange.
 	Balance int32 `json:"balance,omitempty"`
 	// The total points accrued during the lifetime of the account.
 	LifetimePoints int32 `json:"lifetime_points,omitempty"`
-	// The Square-assigned ID of the [customer](#type-Customer) that is associated with the account.
+	// The Square-assigned ID of the [customer](entity:Customer) that is associated with the account.
 	CustomerId string `json:"customer_id,omitempty"`
 	// The timestamp when enrollment occurred, in RFC 3339 format.
 	EnrolledAt string `json:"enrolled_at,omitempty"`
 	// The timestamp when the loyalty account was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp when the loyalty account was last updated, in RFC 3339 format.
-	UpdatedAt string `json:"updated_at,omitempty"`
+	UpdatedAt string                 `json:"updated_at,omitempty"`
+	Mapping   *LoyaltyAccountMapping `json:"mapping,omitempty"`
 }

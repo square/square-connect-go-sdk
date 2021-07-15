@@ -20,4 +20,6 @@ const (
 	BOOLEAN_CatalogCustomAttributeDefinitionType                   CatalogCustomAttributeDefinitionType = "BOOLEAN"
 	NUMBER_CatalogCustomAttributeDefinitionType                    CatalogCustomAttributeDefinitionType = "NUMBER"
 	SELECTION_CatalogCustomAttributeDefinitionType                 CatalogCustomAttributeDefinitionType = "SELECTION"
+	STRING_INT_CatalogCustomAttributeDefinitionType                CatalogCustomAttributeDefinitionType = "STRING_INT"
+	TOKEN_INT_CatalogCustomAttributeDefinitionType                 CatalogCustomAttributeDefinitionType = "TOKEN_INT"
 )

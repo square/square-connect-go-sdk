@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a refund is applied towards a payment of an [Invoice](#type-Invoice).
+// Published when a refund is applied towards a payment of an [Invoice](entity:Invoice).
 type InvoiceRefundedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

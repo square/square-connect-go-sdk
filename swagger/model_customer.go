@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a Square customer profile, which can have one or more cards on file associated with it.
+// Represents a Square customer profile in the Customer Directory of a Square seller.
 type Customer struct {
 	// A unique Square-assigned ID for the customer profile.
 	Id string `json:"id,omitempty"`
@@ -17,7 +17,7 @@ type Customer struct {
 	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp when the customer profile was last updated, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
-	// Payment details of cards stored on file for the customer profile.
+	// Payment details of the credit, debit, and gift cards stored on file for the customer profile.   DEPRECATED at version 2021-06-16. Replaced by calling [ListCards](api-endpoint:Cards-ListCards) (for credit and debit cards on file)  or [ListGiftCards](api-endpoint:GiftCards-ListGiftCards) (for gift cards on file) and including the `customer_id` query parameter.  For more information, see [Migrate to the Cards API and Gift Cards API](https://developer.squareup.com/docs/customers-api/use-the-api/integrate-with-other-services#migrate-customer-cards).
 	Cards []Card `json:"cards,omitempty"`
 	// The given (i.e., first) name associated with the customer profile.
 	GivenName string `json:"given_name,omitempty"`
@@ -32,9 +32,9 @@ type Customer struct {
 	Address      *Address `json:"address,omitempty"`
 	// The 11-digit phone number associated with the customer profile.
 	PhoneNumber string `json:"phone_number,omitempty"`
-	// The birthday associated with the customer profile, in RFC 3339 format. Year is optional, timezone and times are not allowed. For example: `0000-09-01T00:00:00-00:00` indicates a birthday on September 1st. `1998-09-01T00:00:00-00:00` indications a birthday on September 1st __1998__.
+	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998.
 	Birthday string `json:"birthday,omitempty"`
-	// An optional, second ID used to associate the customer profile with an entity in another system.
+	// An optional second ID used to associate the customer profile with an entity in another system.
 	ReferenceId string `json:"reference_id,omitempty"`
 	// A custom note associated with the customer profile.
 	Note        string               `json:"note,omitempty"`
@@ -46,4 +46,6 @@ type Customer struct {
 	GroupIds []string `json:"group_ids,omitempty"`
 	// The IDs of segments the customer belongs to.
 	SegmentIds []string `json:"segment_ids,omitempty"`
+	// The Square-assigned version number of the customer profile. The version number is incremented each time an update is committed to the customer profile, except for changes to customer segment membership and cards on file.
+	Version int64 `json:"version,omitempty"`
 }

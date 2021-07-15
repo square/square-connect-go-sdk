@@ -10,6 +10,5 @@
 package swagger
 
 type TerminalCheckoutQuerySort struct {
-	// The order in which results are listed. - `ASC` - oldest to newest - `DESC` - newest to oldest (default).
-	SortOrder string `json:"sort_order,omitempty"`
+	SortOrder *SortOrder `json:"sort_order,omitempty"`
 }

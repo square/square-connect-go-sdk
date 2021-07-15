@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a response from an update request, containing the updated `TeamMember` object or error messages.
+// Represents a response from an update request containing the updated `TeamMember` object or error messages.
 type UpdateTeamMemberResponse struct {
 	TeamMember *TeamMember `json:"team_member,omitempty"`
 	// The errors that occurred during the request.

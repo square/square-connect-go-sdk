@@ -1,9 +1,10 @@
---- original/square-connect-openapi.json	2020-10-14 10:38:22.000000000 -0700
-+++ square-connect-openapi.json	2020-10-14 10:41:09.000000000 -0700
-@@ -23844,6 +23844,25 @@
-             },
-             "description": "List of item options IDs for this item. Used to manage and group item\nvariations in a specified order.\n\nMaximum: 6 item options.",
+--- original/square-connect-openapi.json	2021-07-14 20:40:06.000000000 -0700
++++ square-connect-openapi.json	2021-07-14 20:42:12.000000000 -0700
+@@ -26016,7 +26016,26 @@
+             "type": "string",
+             "description": "A name to sort the item by. If this name is unspecified, namely, the `sort_name` field is absent, the regular `name` field is used for sorting.\n\nIt is currently supported for sellers of the Japanese locale only.",
              "x-release-status": "BETA"
+-          }
 +          },
 +          "ecom_uri": {
 +            "type": "string",
@@ -21,8 +22,9 @@
 +            "description": "hidden field"
 +          },
 +          "ecom_visibility": {
-+            "type": "string",
++           "type": "string",
 +            "description": "hidden field"
-           }
++           }
          },
-         "x-property-order": [
+          "x-property-order": [
+                    "name",

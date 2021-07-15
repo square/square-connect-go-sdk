@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when an [OrderFulfillment](#type-OrderFulfillment) is created or updated. This event is triggered only by the [UpdateOrder](#endpoint-Orders-CreateOrder) endpoint call.
+// Published when an [OrderFulfillment](entity:OrderFulfillment) is created or updated. This event is triggered only by the [UpdateOrder](api-endpoint:Orders-UpdateOrder) endpoint call.
 type OrderFulfillmentUpdatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

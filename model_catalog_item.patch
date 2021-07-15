@@ -1,7 +1,7 @@
---- original/model_catalog_item.go	2021-03-31 16:43:52.000000000 -0700
-+++ model_catalog_item.go	2021-03-31 16:43:18.000000000 -0700
+--- original/model_catalog_item.go	2021-07-14 19:37:42.000000000 -0700
++++ model_catalog_item.go	2021-07-14 20:04:50.000000000 -0700
 @@ -12,9 +12,9 @@
- // A [CatalogObject](#type-CatalogObject) instance of the `ITEM` type, also referred to as an item, in the catalog.
+ // A [CatalogObject](entity:CatalogObject) instance of the `ITEM` type, also referred to as an item, in the catalog.
  type CatalogItem struct {
  	// The item's name. This is a searchable attribute for use in applicable query filters, its value must not be empty, and the length is of Unicode code points.
 -	Name string `json:"name,omitempty"`

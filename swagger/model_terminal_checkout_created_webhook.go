@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [TerminalCheckout](#type-TerminalCheckout) is created.
+// Published when a [TerminalCheckout](entity:TerminalCheckout) is created.
 type TerminalCheckoutCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

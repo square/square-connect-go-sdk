@@ -9,7 +9,7 @@
  */
 package swagger
 
-// InvoiceAutomaticPaymentSource : Indicates the automatic payment method for an [invoice payment request](#type-InvoicePaymentRequest).
+// InvoiceAutomaticPaymentSource : Indicates the automatic payment method for an [invoice payment request](entity:InvoicePaymentRequest).
 type InvoiceAutomaticPaymentSource string
 
 // List of InvoiceAutomaticPaymentSource

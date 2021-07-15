@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Published when a [Location](#type-location) is created.
+// Published when a [Location](entity:Location) is created.
 type LocationCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`
-	// The ID of the [Location](#type-location) associated with the event.
+	// The ID of the [Location](entity:Location) associated with the event.
 	LocationId string `json:"location_id,omitempty"`
 	// The type of event this represents, `\"location.created\"`.
 	Type_ string `json:"type,omitempty"`

@@ -9,12 +9,12 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [ListTransactions](#endpoint-listtransactions) endpoint.  One of `errors` or `transactions` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [ListTransactions](api-endpoint:Transactions-ListTransactions) endpoint.  One of `errors` or `transactions` is present in a given response (never both).
 type ListTransactionsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// An array of transactions that match your query.
 	Transactions []Transaction `json:"transactions,omitempty"`
-	// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the `cursor` parameter in a subsequent request to this endpoint.  See [Paginating results](#paginatingresults) for more information.
+	// A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the `cursor` parameter in a subsequent request to this endpoint.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
 }

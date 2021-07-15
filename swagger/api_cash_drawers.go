@@ -247,7 +247,7 @@ func (a *CashDrawersApiService) ListCashDrawerShifts(ctx context.Context, locati
 
 /*
 CashDrawersApiService RetrieveCashDrawerShift
-Provides the summary details for a single cash drawer shift. See [ListCashDrawerShiftEvents](#endpoint-CashDrawers-ListCashDrawerShiftEvents) for a list of cash drawer shift events.
+Provides the summary details for a single cash drawer shift. See [ListCashDrawerShiftEvents](api-endpoint:CashDrawers-ListCashDrawerShiftEvents) for a list of cash drawer shift events.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location to retrieve cash drawer shifts from.
  * @param shiftId The shift ID.

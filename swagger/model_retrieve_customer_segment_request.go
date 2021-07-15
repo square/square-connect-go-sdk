@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the valid parameters for requests to __RetrieveCustomerSegmentRequest__.
+// Defines the valid parameters for requests to the `RetrieveCustomerSegmentRequest` endpoint.
 type RetrieveCustomerSegmentRequest struct {
 }

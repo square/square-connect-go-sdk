@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
   **body** | [**CancelInvoiceRequest**](CancelInvoiceRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **invoiceId** | **string**| The ID of the [invoice](#type-invoice) to cancel. | 
+  **invoiceId** | **string**| The ID of the [invoice](entity:Invoice) to cancel. | 
 
 ### Return type
 
@@ -48,7 +48,7 @@ See the corresponding object definition for field details. |
 > CreateInvoiceResponse CreateInvoice(ctx, body)
 CreateInvoice
 
-Creates a draft [invoice](#type-invoice)  for an order created using the Orders API.  A draft invoice remains in your account and no action is taken.  You must publish the invoice before Square can process it (send it to the customer's email address or charge the customer’s card on file).
+Creates a draft [invoice](entity:Invoice)  for an order created using the Orders API.  A draft invoice remains in your account and no action is taken.  You must publish the invoice before Square can process it (send it to the customer's email address or charge the customer’s card on file).
 
 ### Required Parameters
 
@@ -78,7 +78,7 @@ See the corresponding object definition for field details. |
 > DeleteInvoiceResponse DeleteInvoice(ctx, invoiceId, optional)
 DeleteInvoice
 
-Deletes the specified invoice. When an invoice is deleted, the  associated Order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete a published invoice, including one that is scheduled for processing).
+Deletes the specified invoice. When an invoice is deleted, the  associated order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete a published invoice, including one that is scheduled for processing).
 
 ### Required Parameters
 
@@ -93,7 +93,7 @@ Optional parameters are passed through a pointer to a InvoicesApiDeleteInvoiceOp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **version** | **optional.Int32**| The version of the [invoice](#type-invoice) to delete. If you do not know the version, you can call [GetInvoice](#endpoint-Invoices-GetInvoice) or  [ListInvoices](#endpoint-Invoices-ListInvoices). | 
+ **version** | **optional.Int32**| The version of the [invoice](entity:Invoice) to delete. If you do not know the version, you can call [GetInvoice](api-endpoint:Invoices-GetInvoice) or  [ListInvoices](api-endpoint:Invoices-ListInvoices). | 
 
 ### Return type
 
@@ -121,7 +121,7 @@ Retrieves an invoice by invoice ID.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **invoiceId** | **string**| The id of the invoice to retrieve. | 
+  **invoiceId** | **string**| The ID of the invoice to retrieve. | 
 
 ### Return type
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 > ListInvoicesResponse ListInvoices(ctx, locationId, optional)
 ListInvoices
 
-Returns a list of invoices for a given location. The response  is paginated. If truncated, the response includes a `cursor` that you     use in a subsequent request to fetch the next set of invoices.
+Returns a list of invoices for a given location. The response  is paginated. If truncated, the response includes a `cursor` that you     use in a subsequent request to retrieve the next set of invoices.
 
 ### Required Parameters
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination). | 
- **limit** | **optional.Int32**| The maximum number of invoices to return (200 is the maximum &#x60;limit&#x60;).  If not provided, the server  uses a default limit of 100 invoices. | 
+ **limit** | **optional.Int32**| The maximum number of invoices to return (200 is the maximum &#x60;limit&#x60;).  If not provided, the server uses a default limit of 100 invoices. | 
 
 ### Return type
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 > PublishInvoiceResponse PublishInvoice(ctx, body, invoiceId)
 PublishInvoice
 
-Publishes the specified draft invoice.   After an invoice is published, Square  follows up based on the invoice configuration. For example, Square  sends the invoice to the customer's email address, charges the customer's card on file, or does  nothing. Square also makes the invoice available on a Square-hosted invoice page.   The invoice `status` also changes from `DRAFT` to a status  based on the invoice configuration. For example, the status changes to `UNPAID` if  Square emails the invoice or `PARTIALLY_PAID` if Square charge a card on file for a portion of the  invoice amount).
+Publishes the specified draft invoice.   After an invoice is published, Square  follows up based on the invoice configuration. For example, Square  sends the invoice to the customer's email address, charges the customer's card on file, or does  nothing. Square also makes the invoice available on a Square-hosted invoice page.   The invoice `status` also changes from `DRAFT` to a status  based on the invoice configuration. For example, the status changes to `UNPAID` if  Square emails the invoice or `PARTIALLY_PAID` if Square charge a card on file for a portion of the  invoice amount.
 
 ### Required Parameters
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
   **body** | [**PublishInvoiceRequest**](PublishInvoiceRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **invoiceId** | **string**| The id of the invoice to publish. | 
+  **invoiceId** | **string**| The ID of the invoice to publish. | 
 
 ### Return type
 
@@ -210,7 +210,7 @@ See the corresponding object definition for field details. |
 > SearchInvoicesResponse SearchInvoices(ctx, body)
 SearchInvoices
 
-Searches for invoices from a location specified in  the filter. You can optionally specify customers in the filter for whom to  retrieve invoices. In the current implementation, you can only specify one location and  optionally one customer.  The response is paginated. If truncated, the response includes a `cursor`  that you use in a subsequent request to fetch the next set of invoices.
+Searches for invoices from a location specified in  the filter. You can optionally specify customers in the filter for whom to  retrieve invoices. In the current implementation, you can only specify one location and  optionally one customer.  The response is paginated. If truncated, the response includes a `cursor`  that you use in a subsequent request to retrieve the next set of invoices.
 
 ### Required Parameters
 
@@ -240,7 +240,7 @@ See the corresponding object definition for field details. |
 > UpdateInvoiceResponse UpdateInvoice(ctx, body, invoiceId)
 UpdateInvoice
 
-Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse  `Invoice` object to add fields or change values, and use the `fields_to_clear` field to specify fields to clear.  However, some restrictions apply. For example, you cannot change the `order_id` or `location_id` field, and you  must provide the complete `custom_fields` list to update a custom field. Published invoices have additional restrictions.
+Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse  `Invoice` object to add fields or change values and use the `fields_to_clear` field to specify fields to clear.  However, some restrictions apply. For example, you cannot change the `order_id` or `location_id` field and you  must provide the complete `custom_fields` list to update a custom field. Published invoices have additional restrictions.
 
 ### Required Parameters
 

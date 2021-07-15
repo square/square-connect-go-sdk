@@ -28,14 +28,14 @@ type OAuthApiService service
 
 /*
 OAuthApiService Authorize
-Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint.  In the event of an error, Authorize returns an error response (&#x60;error&#x60; and &#x60;error_description&#x60;). If the failure is a result of the user denying the request, the value is &#x60;access_denied&#x60; with a description of &#x60;user_denied&#x60;.
+Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint.  __Important:__ The access code is returned as a query paramater to the redirect URL that you set in the OAuth page of your app in the [developer dashboard](https://developer.squareup.com/apps):  In the event of an error, Authorize returns an error response (&#x60;error&#x60; and &#x60;error_description&#x60;). If the failure is a result of the user denying the request, the value is &#x60;access_denied&#x60; with a description of &#x60;user_denied&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param clientId The Square-issued ID of the application requesting permissions.
+ * @param clientId The Square issued ID for your application, available from the [developer dashboard](https://developer.squareup.com/apps).
  * @param optional nil or *OAuthApiAuthorizeOpts - Optional Parameters:
-     * @param "Scope" (optional.Interface of OAuthPermission) -  __OPTIONAL__  A space-separated list of the permissions the application is requesting. Default: \&quot;&#x60;MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ&#x60;\&quot;
-     * @param "Locale" (optional.String) -  __OPTIONAL__  The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, &#x60;ja-JP&#x60;.
+     * @param "Scope" (optional.Interface of OAuthPermission) -  A space-separated list of the permissions the application is requesting. Default: \&quot;&#x60;MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ&#x60;\&quot;
+     * @param "Locale" (optional.String) -  The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-IE&#x60;, &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, &#x60;ja-JP&#x60;.
      * @param "Session" (optional.Bool) -  If &#x60;false&#x60;, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. Default: &#x60;true&#x60;
-     * @param "State" (optional.String) -  __OPTIONAL__  When provided, &#x60;state&#x60; is passed along to the configured Redirect URL after the Permission Request form is submitted. You can include state and verify its value to help protect against cross-site request forgery.
+     * @param "State" (optional.String) -  When provided, &#x60;state&#x60; is passed along to the configured Redirect URL after the Permission Request form is submitted. You can include state and verify its value to help protect against cross-site request forgery.
 @return AuthorizeResponse
 */
 
@@ -228,12 +228,12 @@ func (a *OAuthApiService) ObtainToken(ctx context.Context, body ObtainTokenReque
 
 /*
 OAuthApiService RenewToken
-&#x60;RenewToken&#x60; is deprecated. For information about refreshing OAuth access tokens, see [Renew OAuth Token](https://developer.squareup.com/docs/oauth-api/cookbook/renew-oauth-tokens).   Renews an OAuth access token before it expires.  OAuth access tokens besides your application&#x27;s personal access token expire after __30 days__. You can also renew expired tokens within __15 days__ of their expiration. You cannot renew an access token that has been expired for more than 15 days. Instead, the associated user must re-complete the OAuth flow from the beginning.  __Important:__ The &#x60;Authorization&#x60; header for this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Client APPLICATION_SECRET &#x60;&#x60;&#x60;  Replace &#x60;APPLICATION_SECRET&#x60; with the application secret on the Credentials page in the [application dashboard](https://connect.squareup.com/apps).
+&#x60;RenewToken&#x60; is deprecated. For information about refreshing OAuth access tokens, see [Migrate from Renew to Refresh OAuth Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).   Renews an OAuth access token before it expires.  OAuth access tokens besides your application&#x27;s personal access token expire after __30 days__. You can also renew expired tokens within __15 days__ of their expiration. You cannot renew an access token that has been expired for more than 15 days. Instead, the associated user must re-complete the OAuth flow from the beginning.  __Important:__ The &#x60;Authorization&#x60; header for this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Client APPLICATION_SECRET &#x60;&#x60;&#x60;  Replace &#x60;APPLICATION_SECRET&#x60; with the application secret on the Credentials page in the [developer dashboard](https://developer.squareup.com/apps).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param clientId Your application ID, available from the [application dashboard](https://connect.squareup.com/apps).
+ * @param clientId Your application ID, available from the [developer dashboard](https://developer.squareup.com/apps).
 @return RenewTokenResponse
 */
 func (a *OAuthApiService) RenewToken(ctx context.Context, body RenewTokenRequest, clientId string) (RenewTokenResponse, *http.Response, error) {
@@ -332,7 +332,7 @@ func (a *OAuthApiService) RenewToken(ctx context.Context, body RenewTokenRequest
 
 /*
 OAuthApiService RevokeToken
-Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The &#x60;Authorization&#x60; header for this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Client APPLICATION_SECRET &#x60;&#x60;&#x60;  Replace &#x60;APPLICATION_SECRET&#x60; with the application secret on the Credentials page in the [Developer Dashboard](https://developer.squareup.com/apps).
+Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The &#x60;Authorization&#x60; header for this endpoint must have the following format:  &#x60;&#x60;&#x60; Authorization: Client APPLICATION_SECRET &#x60;&#x60;&#x60;  Replace &#x60;APPLICATION_SECRET&#x60; with the application secret on the OAuth page in the [developer dashboard](https://developer.squareup.com/apps).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

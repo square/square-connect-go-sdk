@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that are included in requests to the RetrieveCustomer endpoint.
+// Defines the fields that are included in requests to the `RetrieveCustomer` endpoint.
 type RetrieveCustomerRequest struct {
 }

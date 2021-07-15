@@ -206,7 +206,7 @@ func (a *InventoryApiService) BatchRetrieveInventoryChanges(ctx context.Context,
 
 /*
 InventoryApiService BatchRetrieveInventoryCounts
-Returns current counts for the provided [CatalogObject](#type-catalogobject)s at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;calculated_at&#x60; timestamp (newest first).  When &#x60;updated_after&#x60; is specified, only counts that have changed since that time (based on the server timestamp for the most recent change) are returned. This allows clients to perform a \&quot;sync\&quot; operation, for example in response to receiving a Webhook notification.
+Returns current counts for the provided [CatalogObject](entity:CatalogObject)s at the requested [Location](entity:Location)s.  Results are paginated and sorted in descending order according to their &#x60;calculated_at&#x60; timestamp (newest first).  When &#x60;updated_after&#x60; is specified, only counts that have changed since that time (based on the server timestamp for the most recent change) are returned. This allows clients to perform a \&quot;sync\&quot; operation, for example in response to receiving a Webhook notification.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -295,9 +295,9 @@ func (a *InventoryApiService) BatchRetrieveInventoryCounts(ctx context.Context, 
 
 /*
 InventoryApiService RetrieveInventoryAdjustment
-Returns the [InventoryAdjustment](#type-inventoryadjustment) object with the provided &#x60;adjustment_id&#x60;.
+Returns the [InventoryAdjustment](entity:InventoryAdjustment) object with the provided &#x60;adjustment_id&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param adjustmentId ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.
+ * @param adjustmentId ID of the [InventoryAdjustment](entity:InventoryAdjustment) to retrieve.
 @return RetrieveInventoryAdjustmentResponse
 */
 func (a *InventoryApiService) RetrieveInventoryAdjustment(ctx context.Context, adjustmentId string) (RetrieveInventoryAdjustmentResponse, *http.Response, error) {
@@ -381,11 +381,11 @@ func (a *InventoryApiService) RetrieveInventoryAdjustment(ctx context.Context, a
 
 /*
 InventoryApiService RetrieveInventoryChanges
-Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](#type-catalogobject) at the requested [Location](#type-location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be  used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
+Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](entity:CatalogObject) at the requested [Location](entity:Location)s.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be  used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param catalogObjectId ID of the [CatalogObject](#type-catalogobject) to retrieve.
+ * @param catalogObjectId ID of the [CatalogObject](entity:CatalogObject) to retrieve.
  * @param optional nil or *InventoryApiRetrieveInventoryChangesOpts - Optional Parameters:
-     * @param "LocationIds" (optional.String) -  The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations.
+     * @param "LocationIds" (optional.String) -  The [Location](entity:Location) IDs to look up as a comma-separated list. An empty list queries all locations.
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information.
 @return RetrieveInventoryChangesResponse
 */
@@ -482,11 +482,11 @@ func (a *InventoryApiService) RetrieveInventoryChanges(ctx context.Context, cata
 
 /*
 InventoryApiService RetrieveInventoryCount
-Retrieves the current calculated stock count for a given [CatalogObject](#type-catalogobject) at a given set of [Location](#type-location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
+Retrieves the current calculated stock count for a given [CatalogObject](entity:CatalogObject) at a given set of [Location](entity:Location)s. Responses are paginated and unsorted. For more sophisticated queries, use a batch endpoint.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param catalogObjectId ID of the [CatalogObject](#type-catalogobject) to retrieve.
+ * @param catalogObjectId ID of the [CatalogObject](entity:CatalogObject) to retrieve.
  * @param optional nil or *InventoryApiRetrieveInventoryCountOpts - Optional Parameters:
-     * @param "LocationIds" (optional.String) -  The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations.
+     * @param "LocationIds" (optional.String) -  The [Location](entity:Location) IDs to look up as a comma-separated list. An empty list queries all locations.
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination) guide for more information.
 @return RetrieveInventoryCountResponse
 */
@@ -583,9 +583,9 @@ func (a *InventoryApiService) RetrieveInventoryCount(ctx context.Context, catalo
 
 /*
 InventoryApiService RetrieveInventoryPhysicalCount
-Returns the [InventoryPhysicalCount](#type-inventoryphysicalcount) object with the provided &#x60;physical_count_id&#x60;.
+Returns the [InventoryPhysicalCount](entity:InventoryPhysicalCount) object with the provided &#x60;physical_count_id&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param physicalCountId ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.
+ * @param physicalCountId ID of the [InventoryPhysicalCount](entity:InventoryPhysicalCount) to retrieve.
 @return RetrieveInventoryPhysicalCountResponse
 */
 func (a *InventoryApiService) RetrieveInventoryPhysicalCount(ctx context.Context, physicalCountId string) (RetrieveInventoryPhysicalCountResponse, *http.Response, error) {

@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that are included in requests to the DeleteCustomerCard endpoint.
+// Defines the fields that are included in requests to the `DeleteCustomerCard` endpoint.
 type DeleteCustomerCardRequest struct {
 }

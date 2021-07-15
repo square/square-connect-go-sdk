@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Refund](#type-PaymentRefund) is updated. Typically the `refund.status` changes when a refund is completed.
+// Published when a [Refund](entity:PaymentRefund) is updated. Typically the `refund.status` changes when a refund is completed.
 type RefundUpdatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

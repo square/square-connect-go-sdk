@@ -9,7 +9,7 @@
  */
 package swagger
 
-// InvoiceDeliveryMethod : Indicates how Square delivers the [invoice](#type-Invoice) to the customer.
+// InvoiceDeliveryMethod : Indicates how Square delivers the [invoice](entity:Invoice) to the customer.
 type InvoiceDeliveryMethod string
 
 // List of InvoiceDeliveryMethod
@@ -17,4 +17,5 @@ const (
 	INVOICE_DELIVERY_METHOD_DO_NOT_USE_InvoiceDeliveryMethod InvoiceDeliveryMethod = "INVOICE_DELIVERY_METHOD_DO_NOT_USE"
 	EMAIL_InvoiceDeliveryMethod                              InvoiceDeliveryMethod = "EMAIL"
 	SHARE_MANUALLY_InvoiceDeliveryMethod                     InvoiceDeliveryMethod = "SHARE_MANUALLY"
+	SMS_InvoiceDeliveryMethod                                InvoiceDeliveryMethod = "SMS"
 )

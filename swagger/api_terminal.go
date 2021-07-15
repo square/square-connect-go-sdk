@@ -32,7 +32,7 @@ Cancels a Terminal checkout request if the status of the request permits it.
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param checkoutId Unique ID for the desired &#x60;TerminalCheckout&#x60;
+ * @param checkoutId The unique ID for the desired &#x60;TerminalCheckout&#x60;.
 @return CancelTerminalCheckoutResponse
 */
 func (a *TerminalApiService) CancelTerminalCheckout(ctx context.Context, body CancelTerminalCheckoutRequest, checkoutId string) (CancelTerminalCheckoutResponse, *http.Response, error) {
@@ -118,12 +118,12 @@ func (a *TerminalApiService) CancelTerminalCheckout(ctx context.Context, body Ca
 
 /*
 TerminalApiService CancelTerminalRefund
-Cancels an Interac terminal refund request by refund request ID if the status of the request permits it.
+Cancels an Interac Terminal refund request by refund request ID if the status of the request permits it.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param terminalRefundId Unique ID for the desired &#x60;TerminalRefund&#x60;
+ * @param terminalRefundId The unique ID for the desired &#x60;TerminalRefund&#x60;.
 @return CancelTerminalRefundResponse
 */
 func (a *TerminalApiService) CancelTerminalRefund(ctx context.Context, body CancelTerminalRefundRequest, terminalRefundId string) (CancelTerminalRefundResponse, *http.Response, error) {
@@ -209,7 +209,7 @@ func (a *TerminalApiService) CancelTerminalRefund(ctx context.Context, body Canc
 
 /*
 TerminalApiService CreateTerminalCheckout
-Creates a new Terminal checkout request and sends it to the specified device to take a payment for the requested amount.
+Creates a Terminal checkout request and sends it to the specified device to take a payment for the requested amount.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -387,9 +387,9 @@ func (a *TerminalApiService) CreateTerminalRefund(ctx context.Context, body Crea
 
 /*
 TerminalApiService GetTerminalCheckout
-Retrieves a Terminal checkout request by checkout_id.
+Retrieves a Terminal checkout request by &#x60;checkout_id&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param checkoutId Unique ID for the desired &#x60;TerminalCheckout&#x60;
+ * @param checkoutId The unique ID for the desired &#x60;TerminalCheckout&#x60;.
 @return GetTerminalCheckoutResponse
 */
 func (a *TerminalApiService) GetTerminalCheckout(ctx context.Context, checkoutId string) (GetTerminalCheckoutResponse, *http.Response, error) {
@@ -473,9 +473,9 @@ func (a *TerminalApiService) GetTerminalCheckout(ctx context.Context, checkoutId
 
 /*
 TerminalApiService GetTerminalRefund
-Retrieves an Interac terminal refund object by ID.
+Retrieves an Interac Terminal refund object by ID.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param terminalRefundId Unique ID for the desired &#x60;TerminalRefund&#x60;
+ * @param terminalRefundId The unique ID for the desired &#x60;TerminalRefund&#x60;.
 @return GetTerminalRefundResponse
 */
 func (a *TerminalApiService) GetTerminalRefund(ctx context.Context, terminalRefundId string) (GetTerminalRefundResponse, *http.Response, error) {
@@ -648,7 +648,7 @@ func (a *TerminalApiService) SearchTerminalCheckouts(ctx context.Context, body S
 
 /*
 TerminalApiService SearchTerminalRefunds
-Retrieves a filtered list of Terminal Interac refund requests created by the seller making the request.
+Retrieves a filtered list of Interac Terminal refund requests created by the seller making the request.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

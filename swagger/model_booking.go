@@ -16,19 +16,19 @@ type Booking struct {
 	// The revision number for the booking used for optimistic concurrency.
 	Version int32          `json:"version,omitempty"`
 	Status  *BookingStatus `json:"status,omitempty"`
-	// The timestamp specifying the creation time of this booking.
+	// The timestamp specifying the creation time of this booking, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The timestamp specifying the most recent update time of this booking.
+	// The timestamp specifying the most recent update time of this booking, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
-	// The timestamp specifying the starting time of this booking.
+	// The timestamp specifying the starting time of this booking, in RFC 3339 format.
 	StartAt string `json:"start_at,omitempty"`
-	// The ID of the [Location](#type-location) object representing the location where the booked service is provided.
+	// The ID of the [Location](entity:Location) object representing the location where the booked service is provided.
 	LocationId string `json:"location_id,omitempty"`
-	// The ID of the [Customer](#type-Customer) object representing the customer attending this booking
+	// The ID of the [Customer](entity:Customer) object representing the customer attending this booking
 	CustomerId string `json:"customer_id,omitempty"`
-	// The free-text field for the customer to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a relevant [CatalogObject](#type-CatalogObject) instance.
+	// The free-text field for the customer to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a relevant [CatalogObject](entity:CatalogObject) instance.
 	CustomerNote string `json:"customer_note,omitempty"`
-	// The free-text field for the seller to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a specific [CatalogObject](#type-CatalogObject) instance. This field should not be visible to customers.
+	// The free-text field for the seller to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a specific [CatalogObject](entity:CatalogObject) instance. This field should not be visible to customers.
 	SellerNote string `json:"seller_note,omitempty"`
 	// A list of appointment segments for this booking.
 	AppointmentSegments []AppointmentSegment `json:"appointment_segments,omitempty"`

@@ -31,6 +31,6 @@ type Tender struct {
 	CashDetails *TenderCashDetails `json:"cash_details,omitempty"`
 	// Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.
 	AdditionalRecipients []AdditionalRecipient `json:"additional_recipients,omitempty"`
-	// The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
+	// The ID of the [Payment](entity:Payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
 	PaymentId string `json:"payment_id,omitempty"`
 }

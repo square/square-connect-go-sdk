@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the CreateOrder endpoint.  One of `errors` or `order` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the `CreateOrder` endpoint.  Either `errors` or `order` is present in a given response, but never both.
 type CreateOrderResponse struct {
 	Order *Order `json:"order,omitempty"`
 	// Any errors that occurred during the request.

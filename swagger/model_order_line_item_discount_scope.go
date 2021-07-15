@@ -9,7 +9,7 @@
  */
 package swagger
 
-// OrderLineItemDiscountScope : Indicates whether this is a line item or order level discount.
+// OrderLineItemDiscountScope : Indicates whether this is a line-item or order-level discount.
 type OrderLineItemDiscountScope string
 
 // List of OrderLineItemDiscountScope

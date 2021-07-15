@@ -17,7 +17,7 @@ Method | HTTP request | Description
 > BulkCreateTeamMembersResponse BulkCreateTeamMembers(ctx, body)
 BulkCreateTeamMembers
 
-Creates multiple `TeamMember` objects. The created `TeamMember` objects will be returned on successful creates. This process is non-transactional and will process as much of the request as is possible. If one of the creates in the request cannot be successfully processed, the request will NOT be marked as failed, but the body of the response will contain explicit error information for this particular create.  Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#bulkcreateteammembers).
+Creates multiple `TeamMember` objects. The created `TeamMember` objects are returned on successful creates. This process is non-transactional and processes as much of the request as possible. If one of the creates in the request cannot be successfully processed, the request is not marked as failed, but the body of the response contains explicit error information for the failed create.  Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#bulk-create-team-members).
 
 ### Required Parameters
 
@@ -47,7 +47,7 @@ See the corresponding object definition for field details. |
 > BulkUpdateTeamMembersResponse BulkUpdateTeamMembers(ctx, body)
 BulkUpdateTeamMembers
 
-Updates multiple `TeamMember` objects. The updated `TeamMember` objects will be returned on successful updates. This process is non-transactional and will process as much of the request as is possible. If one of the updates in the request cannot be successfully processed, the request will NOT be marked as failed, but the body of the response will contain explicit error information for this particular update. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#bulkupdateteammembers).
+Updates multiple `TeamMember` objects. The updated `TeamMember` objects are returned on successful updates. This process is non-transactional and processes as much of the request as possible. If one of the updates in the request cannot be successfully processed, the request is not marked as failed, but the body of the response contains explicit error information for the failed update. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#bulk-update-team-members).
 
 ### Required Parameters
 
@@ -77,7 +77,7 @@ See the corresponding object definition for field details. |
 > CreateTeamMemberResponse CreateTeamMember(ctx, body)
 CreateTeamMember
 
-Creates a single `TeamMember` object. The `TeamMember` will be returned on successful creates. You must provide the following values in your request to this endpoint: - `given_name` - `family_name`  Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#createteammember).
+Creates a single `TeamMember` object. The `TeamMember` object is returned on successful creates. You must provide the following values in your request to this endpoint: - `given_name` - `family_name`  Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#createteammember).
 
 ### Required Parameters
 
@@ -107,7 +107,7 @@ See the corresponding object definition for field details. |
 > RetrieveTeamMemberResponse RetrieveTeamMember(ctx, teamMemberId)
 RetrieveTeamMember
 
-Retrieve a `TeamMember` object for the given `TeamMember.id`. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#retrieveteammember).
+Retrieves a `TeamMember` object for the given `TeamMember.id`. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#retrieve-a-team-member).
 
 ### Required Parameters
 
@@ -135,14 +135,14 @@ Name | Type | Description  | Notes
 > RetrieveWageSettingResponse RetrieveWageSetting(ctx, teamMemberId)
 RetrieveWageSetting
 
-Retrieve a `WageSetting` object for a team member specified by `TeamMember.id`. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#retrievewagesetting).
+Retrieves a `WageSetting` object for a team member specified by `TeamMember.id`. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#retrievewagesetting).
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **teamMemberId** | **string**| The ID of the team member to retrieve wage setting for | 
+  **teamMemberId** | **string**| The ID of the team member for which to retrieve the wage setting. | 
 
 ### Return type
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 > SearchTeamMembersResponse SearchTeamMembers(ctx, body)
 SearchTeamMembers
 
-Returns a paginated list of `TeamMember` objects for a business. The list to be returned can be filtered by: - location IDs **and** - `status`
+Returns a paginated list of `TeamMember` objects for a business. The list can be filtered by the following: - location IDs - `status`
 
 ### Required Parameters
 
@@ -193,7 +193,7 @@ See the corresponding object definition for field details. |
 > UpdateTeamMemberResponse UpdateTeamMember(ctx, body, teamMemberId)
 UpdateTeamMember
 
-Updates a single `TeamMember` object. The `TeamMember` will be returned on successful updates. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#updateteammember).
+Updates a single `TeamMember` object. The `TeamMember` object is returned on successful updates. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#update-a-team-member).
 
 ### Required Parameters
 
@@ -224,7 +224,7 @@ See the corresponding object definition for field details. |
 > UpdateWageSettingResponse UpdateWageSetting(ctx, body, teamMemberId)
 UpdateWageSetting
 
-Creates or updates a `WageSetting` object. The object is created if a `WageSetting` with the specified `team_member_id` does not exist. Otherwise, it fully replaces the `WageSetting` object for the team member. The `WageSetting` will be returned upon successful update. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#updatewagesetting).
+Creates or updates a `WageSetting` object. The object is created if a `WageSetting` with the specified `team_member_id` does not exist. Otherwise, it fully replaces the `WageSetting` object for the team member. The `WageSetting` is returned on a successful update. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#create-or-update-a-wage-setting).
 
 ### Required Parameters
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
   **body** | [**UpdateWageSettingRequest**](UpdateWageSettingRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **teamMemberId** | **string**| The ID of the team member to update the &#x60;WageSetting&#x60; object for. | 
+  **teamMemberId** | **string**| The ID of the team member for which to update the &#x60;WageSetting&#x60; object. | 
 
 ### Return type
 

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Retrieves a list of payments taken by the account making the request.  The maximum results per page is 100.
+// Describes a request to list payments using  [ListPayments](api-endpoint:Payments-ListPayments).  The maximum results per page is 100.
 type ListPaymentsRequest struct {
 	// The timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year.
 	BeginTime string `json:"begin_time,omitempty"`

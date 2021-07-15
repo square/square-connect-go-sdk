@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response from the [RetrieveSubscription](#endpoint-subscriptions-retrievesubscription) endpoint.
+// Defines the fields that are included in the response from the [RetrieveSubscription](api-endpoint:Subscriptions-RetrieveSubscription) endpoint.
 type RetrieveSubscriptionResponse struct {
 	// Information about errors encountered during the request.
 	Errors       []ModelError  `json:"errors,omitempty"`

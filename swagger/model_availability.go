@@ -11,7 +11,7 @@ package swagger
 
 // Describes a slot available for booking, encapsulating appointment segments, the location and starting time.
 type Availability struct {
-	// The RFC-3339 timestamp specifying the beginning time of the slot available for booking.
+	// The RFC 3339 timestamp specifying the beginning time of the slot available for booking.
 	StartAt string `json:"start_at,omitempty"`
 	// The ID of the location available for booking.
 	LocationId string `json:"location_id,omitempty"`

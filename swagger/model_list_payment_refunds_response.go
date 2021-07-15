@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [ListPaymentRefunds](#endpoint-refunds-listpaymentrefunds) endpoint.  Either `errors` or `refunds` is present in a given response (never both).
+// Defines the response returned by [ListPaymentRefunds](api-endpoint:Refunds-ListPaymentRefunds).  Either `errors` or `refunds` is present in a given response (never both).
 type ListPaymentRefundsResponse struct {
 	// Information about errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`

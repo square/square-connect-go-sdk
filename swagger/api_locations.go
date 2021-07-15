@@ -116,7 +116,7 @@ func (a *LocationsApiService) CreateLocation(ctx context.Context, body CreateLoc
 
 /*
 LocationsApiService ListLocations
-Provides information of all locations of a business.  Many Square API endpoints require a &#x60;location_id&#x60; parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](#type-location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+Provides information of all locations of a business.  Many Square API endpoints require a &#x60;location_id&#x60; parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](entity:Location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return ListLocationsResponse
 */

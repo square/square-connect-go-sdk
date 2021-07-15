@@ -12,7 +12,7 @@ package swagger
 // Describes a subscription plan. For more information, see [Set Up and Manage a Subscription Plan](https://developer.squareup.com/docs/subscriptions-api/setup-plan).
 type CatalogSubscriptionPlan struct {
 	// The name of the plan.
-	Name string `json:"name,omitempty"`
-	// A list of SubscriptionPhase containing the [SubscriptionPhase](#type-SubscriptionPhase) for this plan.
-	Phases []SubscriptionPhase `json:"phases,omitempty"`
+	Name string `json:"name"`
+	// A list of SubscriptionPhase containing the [SubscriptionPhase](entity:SubscriptionPhase) for this plan.
+	Phases []SubscriptionPhase `json:"phases"`
 }

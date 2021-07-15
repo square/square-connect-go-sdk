@@ -18,4 +18,5 @@ const (
 	OPEN_OrderState       OrderState = "OPEN"
 	COMPLETED_OrderState  OrderState = "COMPLETED"
 	CANCELED_OrderState   OrderState = "CANCELED"
+	DRAFT_OrderState      OrderState = "DRAFT"
 )

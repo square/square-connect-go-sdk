@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines parameters in a  [RetrieveSubscription](#endpoint-subscriptions-retrievesubscription) endpoint request.
+// Defines parameters in a [RetrieveSubscription](api-endpoint:Subscriptions-RetrieveSubscription) endpoint request.
 type RetrieveSubscriptionRequest struct {
 }

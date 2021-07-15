@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a reward that may be applied to an order if the necessary reward tier criteria are met. Rewards are created through the Loyalty API.
+// Represents a reward that can be applied to an order if the necessary reward tier criteria are met. Rewards are created through the Loyalty API.
 type OrderReward struct {
 	// The identifier of the reward.
 	Id string `json:"id"`

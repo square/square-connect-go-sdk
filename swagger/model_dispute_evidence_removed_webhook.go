@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when evidence is removed from a [Dispute](#type-Dispute) from the Disputes Dashboard in the Seller Dashboard, the Square Point of Sale app, or by calling [RemoveDisputeEvidence](#endpoint-Disputes-RemoveDisputeEvidence).
+// Published when evidence is removed from a [Dispute](entity:Dispute) from the Disputes Dashboard in the Seller Dashboard, the Square Point of Sale app, or by calling [DeleteDisputeEvidence](api-endpoint:Disputes-DeleteDisputeEvidence).
 type DisputeEvidenceRemovedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

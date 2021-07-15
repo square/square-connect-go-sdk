@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique Square-generated ID for the customer group. | [optional] [default to null]
-**Name** | **string** | Name of the customer group. | [default to null]
+**Id** | **string** | A unique Square-generated ID for the customer group. | [optional] [default to null]
+**Name** | **string** | The name of the customer group. | [default to null]
 **CreatedAt** | **string** | The timestamp when the customer group was created, in RFC 3339 format. | [optional] [default to null]
 **UpdatedAt** | **string** | The timestamp when the customer group was last updated, in RFC 3339 format. | [optional] [default to null]
 

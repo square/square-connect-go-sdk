@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when an [Order](#type-Order) is created. This event is triggered only by the [CreateOrder](#endpoint-Orders-CreateOrder) endpoint call.  Creating an order in the Point of Sale app will **not** publish this event.
+// Published when an [Order](entity:Order) is created. This event is triggered only by the [CreateOrder](api-endpoint:Orders-CreateOrder) endpoint call.  Creating an order in the Point of Sale app will **not** publish this event.
 type OrderCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

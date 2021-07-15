@@ -11,6 +11,6 @@ package swagger
 
 // Filter events by location.
 type LoyaltyEventLocationFilter struct {
-	// The [location](#type-Location) IDs for loyalty events to query. If multiple values are specified, the endpoint uses  a logical OR to combine them.
+	// The [location](entity:Location) IDs for loyalty events to query. If multiple values are specified, the endpoint uses  a logical OR to combine them.
 	LocationIds []string `json:"location_ids"`
 }

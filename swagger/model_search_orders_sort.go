@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Sorting criteria for a SearchOrders request. Results can only be sorted by a timestamp field.
+// Sorting criteria for a `SearchOrders` request. Results can only be sorted by a timestamp field.
 type SearchOrdersSort struct {
 	SortField *SearchOrdersSortField `json:"sort_field"`
 	SortOrder *SortOrder             `json:"sort_order,omitempty"`

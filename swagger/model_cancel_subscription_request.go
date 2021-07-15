@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines parameters in a  [CancelSubscription](#endpoint-subscriptions-cancelsubscription) endpoint request.
+// Defines parameters in a [CancelSubscription](api-endpoint:Subscriptions-CancelSubscription) endpoint request.
 type CancelSubscriptionRequest struct {
 }

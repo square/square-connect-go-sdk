@@ -28,7 +28,7 @@ type CustomerGroupsApiService service
 
 /*
 CustomerGroupsApiService CreateCustomerGroup
-Creates a new customer group for a business.   The request must include the &#x60;name&#x60; value of the group.
+Creates a new customer group for a business.  The request must include the &#x60;name&#x60; value of the group.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -206,7 +206,7 @@ CustomerGroupsApiService ListCustomerGroups
 Retrieves the list of customer groups of a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomerGroupsApiListCustomerGroupsOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 @return ListCustomerGroupsResponse
 */
 

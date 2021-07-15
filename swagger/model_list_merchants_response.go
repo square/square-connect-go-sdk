@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response object returned by the [ListMerchant](#endpoint-listmerchant) endpoint.
+// The response object returned by the [ListMerchant](api-endpoint:Merchants-ListMerchants) endpoint.
 type ListMerchantsResponse struct {
 	// Information on errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`

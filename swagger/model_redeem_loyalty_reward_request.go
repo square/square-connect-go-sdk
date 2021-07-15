@@ -13,6 +13,6 @@ package swagger
 type RedeemLoyaltyRewardRequest struct {
 	// A unique string that identifies this `RedeemLoyaltyReward` request.  Keys can be any valid string, but must be unique for every request.
 	IdempotencyKey string `json:"idempotency_key"`
-	// The ID of the [location](#type-Location) where the reward is redeemed.
+	// The ID of the [location](entity:Location) where the reward is redeemed.
 	LocationId string `json:"location_id"`
 }

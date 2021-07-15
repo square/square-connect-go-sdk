@@ -12,8 +12,13 @@ package swagger
 type DisputeEvidence struct {
 	// The Square-generated ID of the evidence.
 	EvidenceId string `json:"evidence_id,omitempty"`
+	// The Square-generated ID of the evidence.
+	Id string `json:"id,omitempty"`
 	// The ID of the dispute the evidence is associated with.
-	DisputeId string `json:"dispute_id,omitempty"`
+	DisputeId    string               `json:"dispute_id,omitempty"`
+	EvidenceFile *DisputeEvidenceFile `json:"evidence_file,omitempty"`
+	// Raw text
+	EvidenceText string `json:"evidence_text,omitempty"`
 	// The time when the next action is due, in RFC 3339 format.
 	UploadedAt   string               `json:"uploaded_at,omitempty"`
 	EvidenceType *DisputeEvidenceType `json:"evidence_type,omitempty"`

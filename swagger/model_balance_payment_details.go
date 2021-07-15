@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Reflects the current status of a balance payment.
+// Reflects the current status of a balance payment. Contains only non-confidential information.
 type BalancePaymentDetails struct {
 	// The ID of the account used to fund the payment.
 	AccountId string `json:"account_id,omitempty"`

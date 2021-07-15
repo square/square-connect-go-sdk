@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents an error encountered during a request to the Connect API.  See [Handling errors](#handlingerrors) for more information.
+// Represents an error encountered during a request to the Connect API.  See [Handling errors](https://developer.squareup.com/docs/build-basics/handling-errors) for more information.
 type ModelError struct {
 	Category *ErrorCategory `json:"category"`
 	Code     *ErrorCode     `json:"code"`

@@ -9,10 +9,10 @@
  */
 package swagger
 
-// Filter based on [Order Fulfillment](#type-orderfulfillment) information.
+// Filter based on [order fulfillment](entity:OrderFulfillment) information.
 type SearchOrdersFulfillmentFilter struct {
-	// List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+	// A list of [fulfillment types](entity:OrderFulfillmentType) to filter for. The list returns orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
 	FulfillmentTypes []OrderFulfillmentType `json:"fulfillment_types,omitempty"`
-	// List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+	// A list of [fulfillment states](entity:OrderFulfillmentState) to filter for. The list returns orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
 	FulfillmentStates []OrderFulfillmentState `json:"fulfillment_states,omitempty"`
 }

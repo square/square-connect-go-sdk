@@ -11,9 +11,13 @@ Name | Type | Description | Notes
 **CardholderName** | **string** | The name of the cardholder. | [optional] [default to null]
 **BillingAddress** | [***Address**](Address.md) |  | [optional] [default to null]
 **Fingerprint** | **string** | __Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application. | [optional] [default to null]
+**CustomerId** | **string** | The ID of a customer created using the Customers API to be associated with the card. | [optional] [default to null]
+**ReferenceId** | **string** | An optional user-defined reference ID that associates this card with another entity in an external system. For example, a customer ID from an external customer management system. | [optional] [default to null]
+**Enabled** | **bool** | Indicates whether or not a card can be used for payments. | [optional] [default to null]
 **CardType** | [***CardType**](CardType.md) |  | [optional] [default to null]
 **PrepaidType** | [***CardPrepaidType**](CardPrepaidType.md) |  | [optional] [default to null]
 **Bin** | **string** | The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field. | [optional] [default to null]
+**Version** | **int64** | Current version number of the card. Increments with each card update. Requests to update an existing Card object will be rejected unless the version in the request matches the current version for the Card. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

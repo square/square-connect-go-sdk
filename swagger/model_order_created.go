@@ -12,11 +12,11 @@ package swagger
 type OrderCreated struct {
 	// The order's unique ID.
 	OrderId string `json:"order_id,omitempty"`
-	// Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](https://developer.squareup.com/docs/orders-api/manage-orders#update-orders)
+	// The version number, which is incremented each time an update is committed to the order. Orders that were not created through the API do not include a version number and therefore cannot be updated.  [Read more about working with versions.](https://developer.squareup.com/docs/orders-api/manage-orders#update-orders)
 	Version int32 `json:"version,omitempty"`
-	// The ID of the merchant location this order is associated with.
+	// The ID of the seller location that this order is associated with.
 	LocationId string      `json:"location_id,omitempty"`
 	State      *OrderState `json:"state,omitempty"`
-	// Timestamp for when the order was created in RFC 3339 format.
+	// The timestamp for when the order was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
 }

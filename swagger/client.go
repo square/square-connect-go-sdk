@@ -51,6 +51,8 @@ type APIClient struct {
 
 	BookingsApi *BookingsApiService
 
+	CardsApi *CardsApiService
+
 	CashDrawersApi *CashDrawersApiService
 
 	CatalogApi *CatalogApiService
@@ -68,6 +70,10 @@ type APIClient struct {
 	DisputesApi *DisputesApiService
 
 	EmployeesApi *EmployeesApiService
+
+	GiftCardActivitiesApi *GiftCardActivitiesApiService
+
+	GiftCardsApi *GiftCardsApiService
 
 	InventoryApi *InventoryApiService
 
@@ -92,6 +98,10 @@ type APIClient struct {
 	RefundsApi *RefundsApiService
 
 	ReportingApi *ReportingApiService
+
+	SitesApi *SitesApiService
+
+	SnippetsApi *SnippetsApiService
 
 	SubscriptionsApi *SubscriptionsApiService
 
@@ -129,6 +139,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ApplePayApi = (*ApplePayApiService)(&c.common)
 	c.BankAccountsApi = (*BankAccountsApiService)(&c.common)
 	c.BookingsApi = (*BookingsApiService)(&c.common)
+	c.CardsApi = (*CardsApiService)(&c.common)
 	c.CashDrawersApi = (*CashDrawersApiService)(&c.common)
 	c.CatalogApi = (*CatalogApiService)(&c.common)
 	c.CheckoutApi = (*CheckoutApiService)(&c.common)
@@ -138,6 +149,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DevicesApi = (*DevicesApiService)(&c.common)
 	c.DisputesApi = (*DisputesApiService)(&c.common)
 	c.EmployeesApi = (*EmployeesApiService)(&c.common)
+	c.GiftCardActivitiesApi = (*GiftCardActivitiesApiService)(&c.common)
+	c.GiftCardsApi = (*GiftCardsApiService)(&c.common)
 	c.InventoryApi = (*InventoryApiService)(&c.common)
 	c.InvoicesApi = (*InvoicesApiService)(&c.common)
 	c.LaborApi = (*LaborApiService)(&c.common)
@@ -150,6 +163,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PaymentsApi = (*PaymentsApiService)(&c.common)
 	c.RefundsApi = (*RefundsApiService)(&c.common)
 	c.ReportingApi = (*ReportingApiService)(&c.common)
+	c.SitesApi = (*SitesApiService)(&c.common)
+	c.SnippetsApi = (*SnippetsApiService)(&c.common)
 	c.SubscriptionsApi = (*SubscriptionsApiService)(&c.common)
 	c.TeamApi = (*TeamApiService)(&c.common)
 	c.TerminalApi = (*TerminalApiService)(&c.common)

@@ -27,7 +27,7 @@ type CheckoutApiService service
 
 /*
 CheckoutApiService CreateCheckout
-Links a &#x60;checkoutId&#x60; to a &#x60;checkout_page_url&#x60; that customers will be directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
+Links a &#x60;checkoutId&#x60; to a &#x60;checkout_page_url&#x60; that customers are directed to in order to provide their payment information using a payment processing workflow hosted on connect.squareup.com.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

@@ -29,4 +29,5 @@ const (
 	UNLINKED_RETURN_InventoryState            InventoryState = "UNLINKED_RETURN"
 	COMPOSED_InventoryState                   InventoryState = "COMPOSED"
 	DECOMPOSED_InventoryState                 InventoryState = "DECOMPOSED"
+	SUPPORTED_BY_NEWER_VERSION_InventoryState InventoryState = "SUPPORTED_BY_NEWER_VERSION"
 )

@@ -18,4 +18,5 @@ const (
 	PENDING_SubscriptionStatus                                SubscriptionStatus = "PENDING"
 	ACTIVE_SubscriptionStatus                                 SubscriptionStatus = "ACTIVE"
 	CANCELED_SubscriptionStatus                               SubscriptionStatus = "CANCELED"
+	DEACTIVATED_SubscriptionStatus                            SubscriptionStatus = "DEACTIVATED"
 )

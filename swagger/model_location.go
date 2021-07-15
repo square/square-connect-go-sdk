@@ -17,7 +17,7 @@ type Location struct {
 	Address *Address `json:"address,omitempty"`
 	// The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.
 	Timezone string `json:"timezone,omitempty"`
-	// The Square features that are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values
+	// The Square features that are enabled for the location. See [LocationCapability](entity:LocationCapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values
 	Capabilities []LocationCapability `json:"capabilities,omitempty"`
 	Status       *LocationStatus      `json:"status,omitempty"`
 	// The time when the location was created, in RFC 3339 format.

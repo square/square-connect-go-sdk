@@ -19,4 +19,7 @@ const (
 	CHARGE_CARD_ON_FILE_InvoiceRequestMethod               InvoiceRequestMethod = "CHARGE_CARD_ON_FILE"
 	SHARE_MANUALLY_InvoiceRequestMethod                    InvoiceRequestMethod = "SHARE_MANUALLY"
 	CHARGE_BANK_ON_FILE_InvoiceRequestMethod               InvoiceRequestMethod = "CHARGE_BANK_ON_FILE"
+	SMS_InvoiceRequestMethod                               InvoiceRequestMethod = "SMS"
+	SMS_CHARGE_CARD_ON_FILE_InvoiceRequestMethod           InvoiceRequestMethod = "SMS_CHARGE_CARD_ON_FILE"
+	SMS_CHARGE_BANK_ON_FILE_InvoiceRequestMethod           InvoiceRequestMethod = "SMS_CHARGE_BANK_ON_FILE"
 )

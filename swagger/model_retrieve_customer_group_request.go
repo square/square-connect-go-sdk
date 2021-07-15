@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that can be provided in a request to the [RetrieveCustomerGroup](#endpoint-retrievecustomergroup) endpoint.
+// Defines the fields that can be included in a request to the [RetrieveCustomerGroup](api-endpoint:CustomerGroups-RetrieveCustomerGroup) endpoint.
 type RetrieveCustomerGroupRequest struct {
 }

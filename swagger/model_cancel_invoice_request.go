@@ -11,6 +11,6 @@ package swagger
 
 // Describes a `CancelInvoice` request.
 type CancelInvoiceRequest struct {
-	// The version of the [invoice](#type-invoice) to cancel. If you do not know the version, you can call  [GetInvoice](#endpoint-Invoices-GetInvoice) or [ListInvoices](#endpoint-Invoices-ListInvoices).
+	// The version of the [invoice](entity:Invoice) to cancel. If you do not know the version, you can call  [GetInvoice](api-endpoint:Invoices-GetInvoice) or [ListInvoices](api-endpoint:Invoices-ListInvoices).
 	Version int32 `json:"version"`
 }

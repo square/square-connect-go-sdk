@@ -9,13 +9,15 @@
  */
 package swagger
 
-// Associates a loyalty account with the buyer's phone number. For more information, see  [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
+// Represents the mapping that associates a loyalty account with a buyer.   Currently, a loyalty account can only be mapped to a buyer by phone number. For more information, see  [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
 type LoyaltyAccountMapping struct {
 	// The Square-assigned ID of the mapping.
 	Id    string                     `json:"id,omitempty"`
-	Type_ *LoyaltyAccountMappingType `json:"type"`
-	// The phone number, in E.164 format. For example, \"+14155551111\".
-	Value string `json:"value"`
+	Type_ *LoyaltyAccountMappingType `json:"type,omitempty"`
+	// The mapping value, which is used with `type` to represent a phone number mapping. The value can be a phone number in E.164 format. For example, \"+14155551111\". RETIRED at version 2021-05-13. When specifying a mapping, use the `phone_number` field instead.
+	Value string `json:"value,omitempty"`
 	// The timestamp when the mapping was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
+	// The phone number of the buyer, in E.164 format. For example, \"+14155551111\".
+	PhoneNumber string `json:"phone_number,omitempty"`
 }

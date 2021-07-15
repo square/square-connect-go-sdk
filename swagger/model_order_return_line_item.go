@@ -9,28 +9,29 @@
  */
 package swagger
 
-// The line item being returned in an Order.
+// The line item being returned in an order.
 type OrderReturnLineItem struct {
-	// Unique identifier for this return line item entry.
+	// A unique ID for this return line-item entry.
 	Uid string `json:"uid,omitempty"`
-	// `uid` of the LineItem in the original sale Order.
+	// The `uid` of the line item in the original sale order.
 	SourceLineItemUid string `json:"source_line_item_uid,omitempty"`
 	// The name of the line item.
 	Name string `json:"name,omitempty"`
-	// The quantity returned, formatted as a decimal number. For example: `\"3\"`.  Line items with a `quantity_unit` can have non-integer quantities. For example: `\"1.70000\"`.
+	// The quantity returned, formatted as a decimal number. For example, `\"3\"`.  Line items with a `quantity_unit` can have non-integer quantities. For example, `\"1.70000\"`.
 	Quantity     string             `json:"quantity"`
 	QuantityUnit *OrderQuantityUnit `json:"quantity_unit,omitempty"`
-	// The note of the returned line item.
+	// The note of the return line item.
 	Note string `json:"note,omitempty"`
-	// The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item.
+	// The [CatalogItemVariation](entity:CatalogItemVariation) ID applied to this return line item.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The name of the variation applied to this returned line item.
-	VariationName string `json:"variation_name,omitempty"`
-	// The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
+	// The name of the variation applied to this return line item.
+	VariationName string                 `json:"variation_name,omitempty"`
+	ItemType      *OrderLineItemItemType `json:"item_type,omitempty"`
+	// The [CatalogModifier](entity:CatalogModifier)s applied to this line item.
 	ReturnModifiers []OrderReturnLineItemModifier `json:"return_modifiers,omitempty"`
-	// The list of references to `OrderReturnTax` entities applied to the returned line item. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` applied to the returned line item. On reads, the amount applied is populated.
+	// The list of references to `OrderReturnTax` entities applied to the return line item. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` applied to the return line item. On reads, the applied amount is populated.
 	AppliedTaxes []OrderLineItemAppliedTax `json:"applied_taxes,omitempty"`
-	// The list of references to `OrderReturnDiscount` entities applied to the returned line item. Each `OrderLineItemAppliedDiscount` has a `discount_uid` that references the `uid` of a top-level `OrderReturnDiscount` applied to the returned line item. On reads, the amount applied is populated.
+	// The list of references to `OrderReturnDiscount` entities applied to the return line item. Each `OrderLineItemAppliedDiscount` has a `discount_uid` that references the `uid` of a top-level `OrderReturnDiscount` applied to the return line item. On reads, the applied amount is populated.
 	AppliedDiscounts         []OrderLineItemAppliedDiscount `json:"applied_discounts,omitempty"`
 	BasePriceMoney           *Money                         `json:"base_price_money,omitempty"`
 	VariationTotalPriceMoney *Money                         `json:"variation_total_price_money,omitempty"`

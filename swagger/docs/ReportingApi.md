@@ -11,7 +11,7 @@ Method | HTTP request | Description
 > ListAdditionalRecipientReceivableRefundsResponse ListAdditionalRecipientReceivableRefunds(ctx, locationId, optional)
 ListAdditionalRecipientReceivableRefunds
 
-Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the `additional_recipients` field in a transaction.  Max results per [page](#paginatingresults): 50
+Returns a list of refunded transactions (across all possible originating locations) relating to monies credited to the provided location ID by another Square account using the `additional_recipients` field in a transaction.  Max results per [page](https://developer.squareup.com/docs/working-with-apis/pagination): 50
 
 ### Required Parameters
 
@@ -26,10 +26,10 @@ Optional parameters are passed through a pointer to a ReportingApiListAdditional
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **beginTime** | **optional.String**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | 
- **endTime** | **optional.String**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | 
+ **beginTime** | **optional.String**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](https://developer.squareup.com/docs/build-basics/working-with-dates) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | 
+ **endTime** | **optional.String**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](https://developer.squareup.com/docs/build-basics/working-with-dates) for details on date inclusivity/exclusivity.  Default value: The current time. | 
  **sortOrder** | [**optional.Interface of SortOrder**](.md)| The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; | 
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information. | 
 
 ### Return type
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 > ListAdditionalRecipientReceivablesResponse ListAdditionalRecipientReceivables(ctx, locationId, optional)
 ListAdditionalRecipientReceivables
 
-Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the `additional_recipients` field in a transaction.  Max results per [page](#paginatingresults): 50
+Returns a list of receivables (across all possible sending locations) representing monies credited to the provided location ID by another Square account using the `additional_recipients` field in a transaction.  Max results per [page](https://developer.squareup.com/docs/working-with-apis/pagination): 50
 
 ### Required Parameters
 
@@ -65,10 +65,10 @@ Optional parameters are passed through a pointer to a ReportingApiListAdditional
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **beginTime** | **optional.String**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | 
- **endTime** | **optional.String**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | 
+ **beginTime** | **optional.String**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](https://developer.squareup.com/docs/build-basics/working-with-dates) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | 
+ **endTime** | **optional.String**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](https://developer.squareup.com/docs/build-basics/working-with-dates) for details on date inclusivity/exclusivity.  Default value: The current time. | 
  **sortOrder** | [**optional.Interface of SortOrder**](.md)| The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; | 
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information. | 
 
 ### Return type
 

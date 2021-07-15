@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when an automatic scheduled payment for an [Invoice](#type-Invoice) has failed.
+// Published when an automatic scheduled payment for an [Invoice](entity:Invoice) has failed.
 type InvoiceScheduledChargeFailedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

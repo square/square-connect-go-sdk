@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a response from a retrieve request, containing the specified `WageSetting` object or error messages.
+// Represents a response from a retrieve request containing the specified `WageSetting` object or error messages.
 type RetrieveWageSettingResponse struct {
 	WageSetting *WageSetting `json:"wage_setting,omitempty"`
 	// The errors that occurred during the request.

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines fields that are included in a  [CancelSubscription](#endpoint-subscriptions-cancelsubscription) response.
+// Defines fields that are included in a [CancelSubscription](api-endpoint:Subscriptions-CancelSubscription) response.
 type CancelSubscriptionResponse struct {
 	// Information about errors encountered during the request.
 	Errors       []ModelError  `json:"errors,omitempty"`

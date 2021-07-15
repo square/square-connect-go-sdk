@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a response from a bulk create request, containing the created `TeamMember` objects or error messages.
+// Represents a response from a bulk create request containing the created `TeamMember` objects or error messages.
 type BulkCreateTeamMembersResponse struct {
 	// The successfully created `TeamMember` objects. Each key is the `idempotency_key` that maps to the `CreateTeamMemberRequest`.
 	TeamMembers map[string]CreateTeamMemberResponse `json:"team_members,omitempty"`

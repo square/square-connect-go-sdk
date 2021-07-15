@@ -14,6 +14,6 @@ type ListDeviceCodesResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The queried DeviceCode.
 	DeviceCodes []DeviceCode `json:"device_codes,omitempty"`
-	// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  See [Paginating results](#paginatingresults) for more information.
+	// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
 }

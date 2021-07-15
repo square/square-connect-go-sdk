@@ -12,8 +12,8 @@ package swagger
 type BatchRetrieveCatalogObjectsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// A list of [CatalogObject](#type-catalogobject)s returned.
+	// A list of [CatalogObject](entity:CatalogObject)s returned.
 	Objects []CatalogObject `json:"objects,omitempty"`
-	// A list of [CatalogObject](#type-catalogobject)s referenced by the object in the `objects` field.
+	// A list of [CatalogObject](entity:CatalogObject)s referenced by the object in the `objects` field.
 	RelatedObjects []CatalogObject `json:"related_objects,omitempty"`
 }

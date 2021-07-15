@@ -11,6 +11,6 @@ package swagger
 
 type CreateOrderRequest struct {
 	Order *Order `json:"order,omitempty"`
-	// A value you specify that uniquely identifies this order among orders you've created.  If you're unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
+	// A value you specify that uniquely identifies this order among orders you have created.  If you are unsure whether a particular order was created successfully, you can try it again with the same idempotency key without worrying about creating duplicate orders.  For more information, see [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency).
 	IdempotencyKey string `json:"idempotency_key,omitempty"`
 }

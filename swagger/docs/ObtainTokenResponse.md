@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **SubscriptionId** | **string** | __LEGACY FIELD__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization. | [optional] [default to null]
 **PlanId** | **string** | __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization. | [optional] [default to null]
 **IdToken** | **string** | Then OpenID token belonging to this this person. Only present if the OPENID scope is included in the authorize request. | [optional] [default to null]
-**RefreshToken** | **string** | A refresh token. OAuth refresh tokens are 64 bytes long. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management). | [optional] [default to null]
+**RefreshToken** | **string** | A refresh token. OAuth refresh tokens are 64 bytes long. For more information, see [OAuth access token management](https://developer.squareup.com/docs/oauth-api/how-it-works#oauth-access-token-management). | [optional] [default to null]
 **ShortLived** | **bool** | A boolean indicating the access token is a short-lived access token. The short-lived access token returned in the response will expire in 24 hours. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

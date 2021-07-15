@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The return value from a [CompletePayment](#endpoint-payments-completepayment) call.
+// Defines the response returned by[CompletePayment](api-endpoint:Payments-CompletePayment).
 type CompletePaymentResponse struct {
 	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`

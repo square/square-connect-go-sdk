@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the BatchRetrieveOrders endpoint.
+// Defines the fields that are included in the response body of a request to the `BatchRetrieveOrders` endpoint.
 type BatchRetrieveOrdersResponse struct {
 	// The requested orders. This will omit any requested orders that do not exist.
 	Orders []Order `json:"orders,omitempty"`

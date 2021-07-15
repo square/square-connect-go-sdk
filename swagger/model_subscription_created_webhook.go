@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Subscription](#type-Subscription) is created.
+// Published when a [Subscription](entity:Subscription) is created.
 type SubscriptionCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

@@ -21,9 +21,9 @@ type LoyaltyEvent struct {
 	RedeemReward     *LoyaltyEventRedeemReward     `json:"redeem_reward,omitempty"`
 	DeleteReward     *LoyaltyEventDeleteReward     `json:"delete_reward,omitempty"`
 	AdjustPoints     *LoyaltyEventAdjustPoints     `json:"adjust_points,omitempty"`
-	// The ID of the [loyalty account](#type-LoyaltyAccount) in which the event occurred.
+	// The ID of the [loyalty account](entity:LoyaltyAccount) in which the event occurred.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
-	// The ID of the [location](#type-Location) where the event occurred.
+	// The ID of the [location](entity:Location) where the event occurred.
 	LocationId   string                    `json:"location_id,omitempty"`
 	Source       *LoyaltyEventSource       `json:"source"`
 	ExpirePoints *LoyaltyEventExpirePoints `json:"expire_points,omitempty"`

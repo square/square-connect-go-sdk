@@ -9,7 +9,7 @@
  */
 package swagger
 
-// SearchOrdersSortField : Specifies which timestamp to use to sort SearchOrder results.
+// SearchOrdersSortField : Specifies which timestamp to use to sort `SearchOrder` results.
 type SearchOrdersSortField string
 
 // List of SearchOrdersSortField
