@@ -17841,6 +17841,9 @@ components:
       - SUBSCRIPTIONS_WRITE
       - DISPUTES_READ
       - DISPUTES_WRITE
+      - ONLINE_STORE_SITE_READ
+      - ONLINE_STORE_SNIPPETS_READ
+      - ONLINE_STORE_SNIPPETS_WRITE
       x-enum-elements:
       - name: BANK_ACCOUNTS_READ
         description: |-
@@ -18077,6 +18080,24 @@ components:
 
           Grants write access to dispute information. For example, to call the SubmitEvidence
           endpoint.
+        x-release-status: PUBLIC
+      - name: ONLINE_STORE_SITE_READ
+        description: |-
+          __HTTP Method__: `GET`, `POST`
+
+          Read access to ECOM online store site details.
+        x-release-status: PUBLIC
+      - name: ONLINE_STORE_SNIPPETS_READ
+        description: |-
+          __HTTP Method__: `GET`, `POST`
+
+          Read access to ECOM online store snippets on published websites.
+        x-release-status: PUBLIC
+      - name: ONLINE_STORE_SNIPPETS_WRITE
+        description: |-
+          __HTTP Method__: `POST`, `PUT`, `DELETE`
+
+            Write access to ECOM online store snippets on published websites.
         x-release-status: PUBLIC
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/GO/repos/square/browse
@@ -33211,6 +33232,20 @@ components:
           items:
             $ref: '#/components/schemas/CatalogItemOptionForItem'
           x-release-status: BETA
+        ecom_uri:
+          type: string
+          description: hidden field
+        ecom_image_uris:
+          type: array
+          description: hidden field
+          items:
+            type: string
+        ecom_available:
+          type: boolean
+          description: hidden field
+        ecom_visibility:
+          type: string
+          description: hidden field
         sort_name:
           type: string
           description: |-
@@ -54042,6 +54077,18 @@ components:
 
               Grants write access to dispute information. For example, to call the SubmitEvidence
               endpoint.
+            ONLINE_STORE_SITE_READ: |-
+              __HTTP Method__: `GET`, `POST`
+
+              Read access to ECOM online store site details.
+            ONLINE_STORE_SNIPPETS_READ: |-
+              __HTTP Method__: `GET`, `POST`
+
+              Read access to ECOM online store snippets on published websites.
+            ONLINE_STORE_SNIPPETS_WRITE: |-
+              __HTTP Method__: `POST`, `PUT`, `DELETE`
+
+                Write access to ECOM online store snippets on published websites.
       x-additional-headers:
       - name: Square-Version
         description: Square Connect API versions

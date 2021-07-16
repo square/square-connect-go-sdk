@@ -48,4 +48,7 @@ const (
 	SUBSCRIPTIONS_WRITE_OAuthPermission                  OAuthPermission = "SUBSCRIPTIONS_WRITE"
 	DISPUTES_READ_OAuthPermission                        OAuthPermission = "DISPUTES_READ"
 	DISPUTES_WRITE_OAuthPermission                       OAuthPermission = "DISPUTES_WRITE"
+	ONLINE_STORE_SITE_READ_OAuthPermission               OAuthPermission = "ONLINE_STORE_SITE_READ"
+	ONLINE_STORE_SNIPPETS_READ_OAuthPermission           OAuthPermission = "ONLINE_STORE_SNIPPETS_READ"
+	ONLINE_STORE_SNIPPETS_WRITE_OAuthPermission          OAuthPermission = "ONLINE_STORE_SNIPPETS_WRITE"
 )
