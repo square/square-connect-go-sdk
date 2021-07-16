@@ -17,6 +17,13 @@ func TestEcomPatch(t *testing.T) {
 	s.EcomVisibility = "xyz"
 }
 
+func TestOAuthPermissionPatch(t *testing.T) {
+	// Snippet API Oauth permissions are available. As long as the test compiles we are good and don't need any assertions.
+	_ = swagger.ONLINE_STORE_SITE_READ_OAuthPermission
+	_ = swagger.ONLINE_STORE_SNIPPETS_READ_OAuthPermission
+	_ = swagger.ONLINE_STORE_SNIPPETS_WRITE_OAuthPermission
+}
+
 func TestModelCatalogCustomAttributeValuePatch(t *testing.T) {
 	strValue := ""
 	boolValue := false
