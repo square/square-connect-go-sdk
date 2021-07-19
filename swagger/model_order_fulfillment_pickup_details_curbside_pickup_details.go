@@ -11,8 +11,8 @@ package swagger
 
 // Specific details for curbside pickup.
 type OrderFulfillmentPickupDetailsCurbsidePickupDetails struct {
-	// Specific details for curbside pickup, such as parking number, vehicle model, etc.
+	// Specific details for curbside pickup, such as parking number and vehicle model.
 	CurbsideDetails string `json:"curbside_details,omitempty"`
-	// The [timestamp](#workingwithdates) in RFC 3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the buyer arrived and is waiting for pickup.
+	// The [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates)  indicating when the buyer arrived and is waiting for pickup. The timestamp must be in RFC 3339 format (for example, \"2016-09-04T23:59:33.123Z\").
 	BuyerArrivedAt string `json:"buyer_arrived_at,omitempty"`
 }

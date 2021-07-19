@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
   **body** | [**CancelTerminalCheckoutRequest**](CancelTerminalCheckoutRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **checkoutId** | **string**| Unique ID for the desired &#x60;TerminalCheckout&#x60; | 
+  **checkoutId** | **string**| The unique ID for the desired &#x60;TerminalCheckout&#x60;. | 
 
 ### Return type
 
@@ -48,7 +48,7 @@ See the corresponding object definition for field details. |
 > CancelTerminalRefundResponse CancelTerminalRefund(ctx, body, terminalRefundId)
 CancelTerminalRefund
 
-Cancels an Interac terminal refund request by refund request ID if the status of the request permits it.
+Cancels an Interac Terminal refund request by refund request ID if the status of the request permits it.
 
 ### Required Parameters
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
   **body** | [**CancelTerminalRefundRequest**](CancelTerminalRefundRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **terminalRefundId** | **string**| Unique ID for the desired &#x60;TerminalRefund&#x60; | 
+  **terminalRefundId** | **string**| The unique ID for the desired &#x60;TerminalRefund&#x60;. | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ See the corresponding object definition for field details. |
 > CreateTerminalCheckoutResponse CreateTerminalCheckout(ctx, body)
 CreateTerminalCheckout
 
-Creates a new Terminal checkout request and sends it to the specified device to take a payment for the requested amount.
+Creates a Terminal checkout request and sends it to the specified device to take a payment for the requested amount.
 
 ### Required Parameters
 
@@ -139,14 +139,14 @@ See the corresponding object definition for field details. |
 > GetTerminalCheckoutResponse GetTerminalCheckout(ctx, checkoutId)
 GetTerminalCheckout
 
-Retrieves a Terminal checkout request by checkout_id.
+Retrieves a Terminal checkout request by `checkout_id`.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **checkoutId** | **string**| Unique ID for the desired &#x60;TerminalCheckout&#x60; | 
+  **checkoutId** | **string**| The unique ID for the desired &#x60;TerminalCheckout&#x60;. | 
 
 ### Return type
 
@@ -167,14 +167,14 @@ Name | Type | Description  | Notes
 > GetTerminalRefundResponse GetTerminalRefund(ctx, terminalRefundId)
 GetTerminalRefund
 
-Retrieves an Interac terminal refund object by ID.
+Retrieves an Interac Terminal refund object by ID.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **terminalRefundId** | **string**| Unique ID for the desired &#x60;TerminalRefund&#x60; | 
+  **terminalRefundId** | **string**| The unique ID for the desired &#x60;TerminalRefund&#x60;. | 
 
 ### Return type
 
@@ -225,7 +225,7 @@ See the corresponding object definition for field details. |
 > SearchTerminalRefundsResponse SearchTerminalRefunds(ctx, body)
 SearchTerminalRefunds
 
-Retrieves a filtered list of Terminal Interac refund requests created by the seller making the request.
+Retrieves a filtered list of Interac Terminal refund requests created by the seller making the request.
 
 ### Required Parameters
 

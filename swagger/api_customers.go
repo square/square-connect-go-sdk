@@ -28,7 +28,7 @@ type CustomersApiService service
 
 /*
 CustomersApiService AddGroupToCustomer
-Adds a group membership to a customer.   The customer is identified by the &#x60;customer_id&#x60; value  and the customer group is identified by the &#x60;group_id&#x60; value.
+Adds a group membership to a customer.  The customer is identified by the &#x60;customer_id&#x60; value and the customer group is identified by the &#x60;group_id&#x60; value.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the customer to add to a group.
  * @param groupId The ID of the customer group to add the customer to.
@@ -116,7 +116,7 @@ func (a *CustomersApiService) AddGroupToCustomer(ctx context.Context, customerId
 
 /*
 CustomersApiService CreateCustomer
-Creates a new customer for a business, which can have associated cards on file.  You must provide __at least one__ of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;
+Creates a new customer for a business.  You must provide at least one of the following values in your request to this endpoint:  - &#x60;given_name&#x60; - &#x60;family_name&#x60; - &#x60;company_name&#x60; - &#x60;email_address&#x60; - &#x60;phone_number&#x60;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -296,12 +296,19 @@ func (a *CustomersApiService) CreateCustomerCard(ctx context.Context, body Creat
 
 /*
 CustomersApiService DeleteCustomer
-Deletes a customer from a business, along with any linked cards on file. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to delete merged profiles.
+Deletes a customer profile from a business. This operation also unlinks any associated cards on file.   As a best practice, you should include the &#x60;version&#x60; field in the request to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. The value must be set to the current version of the customer profile.   To delete a customer profile that was created by merging existing profiles, you must use the ID of the newly created profile.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the customer to delete.
+ * @param optional nil or *CustomersApiDeleteCustomerOpts - Optional Parameters:
+     * @param "Version" (optional.Int64) -  The current version of the customer profile.   As a best practice, you should include this parameter to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control.  For more information, see [Delete a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#delete-customer-profile).
 @return DeleteCustomerResponse
 */
-func (a *CustomersApiService) DeleteCustomer(ctx context.Context, customerId string) (DeleteCustomerResponse, *http.Response, error) {
+
+type CustomersApiDeleteCustomerOpts struct {
+	Version optional.Int64
+}
+
+func (a *CustomersApiService) DeleteCustomer(ctx context.Context, customerId string, localVarOptionals *CustomersApiDeleteCustomerOpts) (DeleteCustomerResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Delete")
 		localVarPostBody    interface{}
@@ -318,6 +325,9 @@ func (a *CustomersApiService) DeleteCustomer(ctx context.Context, customerId str
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Version.IsSet() {
+		localVarQueryParams.Add("version", parameterToString(localVarOptionals.Version.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
 
@@ -473,9 +483,9 @@ CustomersApiService ListCustomers
 Lists customer profiles associated with a Square account.  Under normal operating conditions, newly created or updated customer profiles become available for the listing operation in well under 30 seconds. Occasionally, propagation of the new or updated profiles can take closer to one minute or longer, especially during network incidents and outages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomersApiListCustomersOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
-     * @param "SortField" (optional.Interface of CustomerSortField) -  Indicates how Customers should be sorted.  Default: &#x60;DEFAULT&#x60;.
-     * @param "SortOrder" (optional.Interface of SortOrder) -  Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order.  Default: &#x60;ASC&#x60;.
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+     * @param "SortField" (optional.Interface of CustomerSortField) -  Indicates how customers should be sorted.  Default: &#x60;DEFAULT&#x60;.
+     * @param "SortOrder" (optional.Interface of SortOrder) -  Indicates whether customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order.  Default: &#x60;ASC&#x60;.
 @return ListCustomersResponse
 */
 
@@ -574,7 +584,7 @@ func (a *CustomersApiService) ListCustomers(ctx context.Context, localVarOptiona
 
 /*
 CustomersApiService RemoveGroupFromCustomer
-Removes a group membership from a customer.   The customer is identified by the &#x60;customer_id&#x60; value  and the customer group is identified by the &#x60;group_id&#x60; value.
+Removes a group membership from a customer.  The customer is identified by the &#x60;customer_id&#x60; value and the customer group is identified by the &#x60;group_id&#x60; value.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the customer to remove from the group.
  * @param groupId The ID of the customer group to remove the customer from.
@@ -837,7 +847,7 @@ func (a *CustomersApiService) SearchCustomers(ctx context.Context, body SearchCu
 
 /*
 CustomersApiService UpdateCustomer
-Updates the details of an existing customer. When two profiles are merged into a single profile, that profile is assigned a new &#x60;customer_id&#x60;. You must use the new &#x60;customer_id&#x60; to update merged profiles.  You cannot edit a customer&#x27;s cards on file with this endpoint. To make changes to a card on file, you must delete the existing card on file with the [DeleteCustomerCard](#endpoint-Customers-deletecustomercard) endpoint, then create a new one with the [CreateCustomerCard](#endpoint-Customers-createcustomercard) endpoint.
+Updates a customer profile. To change an attribute, specify the new value. To remove an attribute, specify the value as an empty string or empty object.  As a best practice, you should include the &#x60;version&#x60; field in the request to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. The value must be set to the current version of the customer profile.  To update a customer profile that was created by merging existing profiles, you must use the ID of the newly created profile.  You cannot use this endpoint to change cards on file. To make changes, use the [Cards API](api:Cards) or [Gift Cards API](api:GiftCards).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Completes (captures) a payment.  By default, payments are set to `autocomplete` immediately after they are created. To complete payments manually, set `autocomplete` to `false`.
+// Describes a request to complete (capture) a payment using  [CompletePayment](api-endpoint:Payments-CompletePayment).  By default, payments are set to `autocomplete` immediately after they are created. To complete payments manually, set `autocomplete` to `false`.
 type CompletePaymentRequest struct {
 }

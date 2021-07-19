@@ -11,6 +11,6 @@ package swagger
 
 // Represents a bulk create request for `TeamMember` objects.
 type BulkCreateTeamMembersRequest struct {
-	// The data which will be used to create the `TeamMember` objects. Each key is the `idempotency_key` that maps to the `CreateTeamMemberRequest`.
+	// The data used to create the `TeamMember` objects. Each key is the `idempotency_key` that maps to the `CreateTeamMemberRequest`.
 	TeamMembers map[string]CreateTeamMemberRequest `json:"team_members"`
 }

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Response object returned by the [CreateLocation](#endpoint-createlocation) endpoint.
+// Response object returned by the [CreateLocation](api-endpoint:Locations-CreateLocation) endpoint.
 type CreateLocationResponse struct {
 	// Information on errors encountered during the request.
 	Errors   []ModelError `json:"errors,omitempty"`

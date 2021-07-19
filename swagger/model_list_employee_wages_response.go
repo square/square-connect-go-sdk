@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response to a request for a set of `EmployeeWage` objects. Contains  a set of `EmployeeWage`.
+// The response to a request for a set of `EmployeeWage` objects. Contains a set of `EmployeeWage`.
 type ListEmployeeWagesResponse struct {
 	// A page of Employee Wage results.
 	EmployeeWages []EmployeeWage `json:"employee_wages,omitempty"`

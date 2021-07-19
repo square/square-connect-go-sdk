@@ -29,7 +29,7 @@ type CatalogApiService service
 
 /*
 CatalogApiService BatchDeleteCatalogObjects
-Deletes a set of [CatalogItem](#type-catalogitem)s based on the provided list of target IDs and returns a set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a CatalogItem will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.  &#x60;BatchDeleteCatalogObjects&#x60; succeeds even if only a portion of the targeted IDs can be deleted. The response will only include IDs that were actually deleted.
+Deletes a set of [CatalogItem](entity:CatalogItem)s based on the provided list of target IDs and returns a set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a CatalogItem will also delete all of its [CatalogItemVariation](entity:CatalogItemVariation) children.  &#x60;BatchDeleteCatalogObjects&#x60; succeeds even if only a portion of the targeted IDs can be deleted. The response will only include IDs that were actually deleted.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -118,7 +118,7 @@ func (a *CatalogApiService) BatchDeleteCatalogObjects(ctx context.Context, body 
 
 /*
 CatalogApiService BatchRetrieveCatalogObjects
-Returns a set of objects based on the provided ID. Each [CatalogItem](#type-catalogitem) returned in the set includes all of its child information including: all of its [CatalogItemVariation](#type-catalogitemvariation) objects, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
+Returns a set of objects based on the provided ID. Each [CatalogItem](entity:CatalogItem) returned in the set includes all of its child information including: all of its [CatalogItemVariation](entity:CatalogItemVariation) objects, references to its [CatalogModifierList](entity:CatalogModifierList) objects, and the ids of any [CatalogTax](entity:CatalogTax) objects that apply to it.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -380,7 +380,7 @@ func (a *CatalogApiService) CatalogInfo(ctx context.Context) (CatalogInfoRespons
 
 /*
 CatalogApiService CreateCatalogImage
-Uploads an image file to be represented by a [CatalogImage](#type-catalogimage) object linked to an existing [CatalogObject](#type-catalogobject) instance. A call to this endpoint can upload an image, link an image to a catalog object, or do both.  This &#x60;CreateCatalogImage&#x60; endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
+Uploads an image file to be represented by a [CatalogImage](entity:CatalogImage) object linked to an existing [CatalogObject](entity:CatalogObject) instance. A call to this endpoint can upload an image, link an image to a catalog object, or do both.  This &#x60;CreateCatalogImage&#x60; endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param request
  * @param imageFile
@@ -474,7 +474,7 @@ func (a *CatalogApiService) CreateCatalogImage(ctx context.Context, request Crea
 
 /*
 CatalogApiService DeleteCatalogObject
-Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
+Deletes a single [CatalogObject](entity:CatalogObject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](entity:CatalogItem) will also delete all of its [CatalogItemVariation](entity:CatalogItemVariation) children.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param objectId The ID of the catalog object to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a catalog item will delete its catalog item variations).
 @return DeleteCatalogObjectResponse
@@ -560,12 +560,12 @@ func (a *CatalogApiService) DeleteCatalogObject(ctx context.Context, objectId st
 
 /*
 CatalogApiService ListCatalog
-Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;IMAGE&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use [SearchCatalogObjects](#endpoint-Catalog-SearchCatalogObjects)  and set the &#x60;include_deleted_objects&#x60; attribute value to &#x60;true&#x60;.
+Returns a list of [CatalogObject](entity:CatalogObject)s that includes all objects of a set of desired types (for example, all [CatalogItem](entity:CatalogItem) and [CatalogTax](entity:CatalogTax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](entity:CatalogObject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;IMAGE&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects) and set the &#x60;include_deleted_objects&#x60; attribute value to &#x60;true&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CatalogApiListCatalogOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
-     * @param "Types" (optional.String) -  An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the CatalogObjectType enum: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;.
-     * @param "CatalogVersion" (optional.Int64) -  The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](#type-catalogobject)s&#x27; &#x60;version&#x60; attribute.
+     * @param "Cursor" (optional.String) -  The pagination cursor returned in the previous response. Leave unset for an initial request. The page size is currently set to be 100. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+     * @param "Types" (optional.String) -  An optional case-insensitive, comma-separated list of object types to retrieve.  The valid values are defined in the [CatalogObjectType](entity:CatalogObjectType) enum, including &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;.  If this is unspecified, the operation returns objects of all the types at the version of the Square API used to make the request.
+     * @param "CatalogVersion" (optional.Int64) -  The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](entity:CatalogObject)s&#x27; &#x60;version&#x60; attribute.
 @return ListCatalogResponse
 */
 
@@ -664,12 +664,12 @@ func (a *CatalogApiService) ListCatalog(ctx context.Context, localVarOptionals *
 
 /*
 CatalogApiService RetrieveCatalogObject
-Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
+Returns a single [CatalogItem](entity:CatalogItem) as a [CatalogObject](entity:CatalogObject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](entity:CatalogItem) information including: [CatalogItemVariation](entity:CatalogItemVariation) children, references to its [CatalogModifierList](entity:CatalogModifierList) objects, and the ids of any [CatalogTax](entity:CatalogTax) objects that apply to it.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param objectId The object ID of any type of catalog objects to be retrieved.
  * @param optional nil or *CatalogApiRetrieveCatalogObjectOpts - Optional Parameters:
      * @param "IncludeRelatedObjects" (optional.Bool) -  If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory&#x60;, &#x60;CatalogTax&#x60;, &#x60;CatalogImage&#x60; and &#x60;CatalogModifierList&#x60; objects will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of the response.  Default value: &#x60;false&#x60;
-     * @param "CatalogVersion" (optional.Int64) -  Requests objects as of a specific version of the catalog. This allows you to retrieve historical versions of objects. The value to retrieve a specific version of an object can be found in the version field of [CatalogObject](#type-catalogobject)s.
+     * @param "CatalogVersion" (optional.Int64) -  Requests objects as of a specific version of the catalog. This allows you to retrieve historical versions of objects. The value to retrieve a specific version of an object can be found in the version field of [CatalogObject](entity:CatalogObject)s.
 @return RetrieveCatalogObjectResponse
 */
 
@@ -765,7 +765,7 @@ func (a *CatalogApiService) RetrieveCatalogObject(ctx context.Context, objectId 
 
 /*
 CatalogApiService SearchCatalogItems
-Searches for catalog items or item variations by matching supported search attribute values, including custom attribute values, against one or more of the specified query expressions.  This (&#x60;SearchCatalogItems&#x60;) endpoint differs from the [SearchCatalogObjects](#endpoint-Catalog-SearchCatalogObjects) endpoint in the following aspects:  - &#x60;SearchCatalogItems&#x60; can only search for items or item variations, whereas &#x60;SearchCatalogObjects&#x60; can search for any type of catalog objects. - &#x60;SearchCatalogItems&#x60; supports the custom attribute query filters to return items or item variations that contain custom attribute values, where &#x60;SearchCatalogObjects&#x60; does not. - &#x60;SearchCatalogItems&#x60; does not support the &#x60;include_deleted_objects&#x60; filter to search for deleted items or item variations, whereas &#x60;SearchCatalogObjects&#x60; does. - The both endpoints use different call conventions, including the query filter formats.
+Searches for catalog items or item variations by matching supported search attribute values, including custom attribute values, against one or more of the specified query expressions.  This (&#x60;SearchCatalogItems&#x60;) endpoint differs from the [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects) endpoint in the following aspects:  - &#x60;SearchCatalogItems&#x60; can only search for items or item variations, whereas &#x60;SearchCatalogObjects&#x60; can search for any type of catalog objects. - &#x60;SearchCatalogItems&#x60; supports the custom attribute query filters to return items or item variations that contain custom attribute values, where &#x60;SearchCatalogObjects&#x60; does not. - &#x60;SearchCatalogItems&#x60; does not support the &#x60;include_deleted_objects&#x60; filter to search for deleted items or item variations, whereas &#x60;SearchCatalogObjects&#x60; does. - The both endpoints use different call conventions, including the query filter formats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -854,7 +854,7 @@ func (a *CatalogApiService) SearchCatalogItems(ctx context.Context, body SearchC
 
 /*
 CatalogApiService SearchCatalogObjects
-Searches for [CatalogObject](#type-CatalogObject) of any type by matching supported search attribute values, excluding custom attribute values on items or item variations, against one or more of the specified query expressions.  This (&#x60;SearchCatalogObjects&#x60;) endpoint differs from the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint in the following aspects:  - &#x60;SearchCatalogItems&#x60; can only search for items or item variations, whereas &#x60;SearchCatalogObjects&#x60; can search for any type of catalog objects. - &#x60;SearchCatalogItems&#x60; supports the custom attribute query filters to return items or item variations that contain custom attribute values, where &#x60;SearchCatalogObjects&#x60; does not. - &#x60;SearchCatalogItems&#x60; does not support the &#x60;include_deleted_objects&#x60; filter to search for deleted items or item variations, whereas &#x60;SearchCatalogObjects&#x60; does. - The both endpoints have different call conventions, including the query filter formats.
+Searches for [CatalogObject](entity:CatalogObject) of any type by matching supported search attribute values, excluding custom attribute values on items or item variations, against one or more of the specified query expressions.  This (&#x60;SearchCatalogObjects&#x60;) endpoint differs from the [SearchCatalogItems](api-endpoint:Catalog-SearchCatalogItems) endpoint in the following aspects:  - &#x60;SearchCatalogItems&#x60; can only search for items or item variations, whereas &#x60;SearchCatalogObjects&#x60; can search for any type of catalog objects. - &#x60;SearchCatalogItems&#x60; supports the custom attribute query filters to return items or item variations that contain custom attribute values, where &#x60;SearchCatalogObjects&#x60; does not. - &#x60;SearchCatalogItems&#x60; does not support the &#x60;include_deleted_objects&#x60; filter to search for deleted items or item variations, whereas &#x60;SearchCatalogObjects&#x60; does. - The both endpoints have different call conventions, including the query filter formats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -943,7 +943,7 @@ func (a *CatalogApiService) SearchCatalogObjects(ctx context.Context, body Searc
 
 /*
 CatalogApiService UpdateItemModifierLists
-Updates the [CatalogModifierList](#type-catalogmodifierlist) objects that apply to the targeted [CatalogItem](#type-catalogitem) without having to perform an upsert on the entire item.
+Updates the [CatalogModifierList](entity:CatalogModifierList) objects that apply to the targeted [CatalogItem](entity:CatalogItem) without having to perform an upsert on the entire item.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -1032,7 +1032,7 @@ func (a *CatalogApiService) UpdateItemModifierLists(ctx context.Context, body Up
 
 /*
 CatalogApiService UpdateItemTaxes
-Updates the [CatalogTax](#type-catalogtax) objects that apply to the targeted [CatalogItem](#type-catalogitem) without having to perform an upsert on the entire item.
+Updates the [CatalogTax](entity:CatalogTax) objects that apply to the targeted [CatalogItem](entity:CatalogItem) without having to perform an upsert on the entire item.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -1121,7 +1121,7 @@ func (a *CatalogApiService) UpdateItemTaxes(ctx context.Context, body UpdateItem
 
 /*
 CatalogApiService UpsertCatalogObject
-Creates or updates the target [CatalogObject](#type-catalogobject).
+Creates or updates the target [CatalogObject](entity:CatalogObject).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

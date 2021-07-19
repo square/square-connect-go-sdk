@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FulfillmentUid** | **string** | Unique ID that identifies the fulfillment only within this order. | [optional] [default to null]
+**FulfillmentUid** | **string** | A unique ID that identifies the fulfillment only within this order. | [optional] [default to null]
 **OldState** | [***OrderFulfillmentState**](OrderFulfillmentState.md) |  | [optional] [default to null]
 **NewState** | [***OrderFulfillmentState**](OrderFulfillmentState.md) |  | [optional] [default to null]
 

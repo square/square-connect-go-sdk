@@ -33,7 +33,7 @@ Cancels an existing booking.
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param bookingId The ID of the [Booking](#type-booking) object representing the to-be-cancelled booking.
+ * @param bookingId The ID of the [Booking](entity:Booking) object representing the to-be-cancelled booking.
 @return CancelBookingResponse
 */
 func (a *BookingsApiService) CancelBooking(ctx context.Context, body CancelBookingRequest, bookingId string) (CancelBookingResponse, *http.Response, error) {
@@ -319,7 +319,7 @@ func (a *BookingsApiService) ListTeamMemberBookingProfiles(ctx context.Context, 
 BookingsApiService RetrieveBooking
 Retrieves a booking.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param bookingId The ID of the [Booking](#type-booking) object representing the to-be-retrieved booking.
+ * @param bookingId The ID of the [Booking](entity:Booking) object representing the to-be-retrieved booking.
 @return RetrieveBookingResponse
 */
 func (a *BookingsApiService) RetrieveBooking(ctx context.Context, bookingId string) (RetrieveBookingResponse, *http.Response, error) {
@@ -667,7 +667,7 @@ Updates a booking.
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param bookingId The ID of the [Booking](#type-booking) object representing the to-be-updated booking.
+ * @param bookingId The ID of the [Booking](entity:Booking) object representing the to-be-updated booking.
 @return UpdateBookingResponse
 */
 func (a *BookingsApiService) UpdateBooking(ctx context.Context, body UpdateBookingRequest, bookingId string) (UpdateBookingResponse, *http.Response, error) {

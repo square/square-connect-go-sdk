@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Pricing options for an order. The options affect how the order's price is calculated. They can be used, for example, to apply automatic price adjustments that are based on pre-configured [pricing rules](https://developer.squareup.com/docs/reference/square/objects/CatalogPricingRule).
+// Pricing options for an order. The options affect how the order's price is calculated. They can be used, for example, to apply automatic price adjustments that are based on preconfigured [pricing rules](entity:CatalogPricingRule).
 type OrderPricingOptions struct {
 	// The option to determine whether pricing rule-based discounts are automatically applied to an order.
 	AutoApplyDiscounts bool `json:"auto_apply_discounts,omitempty"`

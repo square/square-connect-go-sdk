@@ -11,6 +11,6 @@ package swagger
 
 // Filter events by loyalty account.
 type LoyaltyEventLoyaltyAccountFilter struct {
-	// The ID of the [loyalty account](#type-LoyaltyAccount) associated with loyalty events.
+	// The ID of the [loyalty account](entity:LoyaltyAccount) associated with loyalty events.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
 }

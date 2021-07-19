@@ -33,7 +33,7 @@ Cancels an invoice. The seller cannot collect payments for  the canceled invoice
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param invoiceId The ID of the [invoice](#type-invoice) to cancel.
+ * @param invoiceId The ID of the [invoice](entity:Invoice) to cancel.
 @return CancelInvoiceResponse
 */
 func (a *InvoicesApiService) CancelInvoice(ctx context.Context, body CancelInvoiceRequest, invoiceId string) (CancelInvoiceResponse, *http.Response, error) {
@@ -119,7 +119,7 @@ func (a *InvoicesApiService) CancelInvoice(ctx context.Context, body CancelInvoi
 
 /*
 InvoicesApiService CreateInvoice
-Creates a draft [invoice](#type-invoice)  for an order created using the Orders API.  A draft invoice remains in your account and no action is taken.  You must publish the invoice before Square can process it (send it to the customer&#x27;s email address or charge the customer’s card on file).
+Creates a draft [invoice](entity:Invoice)  for an order created using the Orders API.  A draft invoice remains in your account and no action is taken.  You must publish the invoice before Square can process it (send it to the customer&#x27;s email address or charge the customer’s card on file).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -208,11 +208,11 @@ func (a *InvoicesApiService) CreateInvoice(ctx context.Context, body CreateInvoi
 
 /*
 InvoicesApiService DeleteInvoice
-Deletes the specified invoice. When an invoice is deleted, the  associated Order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete a published invoice, including one that is scheduled for processing).
+Deletes the specified invoice. When an invoice is deleted, the  associated order status changes to CANCELED. You can only delete a draft  invoice (you cannot delete a published invoice, including one that is scheduled for processing).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param invoiceId The ID of the invoice to delete.
  * @param optional nil or *InvoicesApiDeleteInvoiceOpts - Optional Parameters:
-     * @param "Version" (optional.Int32) -  The version of the [invoice](#type-invoice) to delete. If you do not know the version, you can call [GetInvoice](#endpoint-Invoices-GetInvoice) or  [ListInvoices](#endpoint-Invoices-ListInvoices).
+     * @param "Version" (optional.Int32) -  The version of the [invoice](entity:Invoice) to delete. If you do not know the version, you can call [GetInvoice](api-endpoint:Invoices-GetInvoice) or  [ListInvoices](api-endpoint:Invoices-ListInvoices).
 @return DeleteInvoiceResponse
 */
 
@@ -306,7 +306,7 @@ func (a *InvoicesApiService) DeleteInvoice(ctx context.Context, invoiceId string
 InvoicesApiService GetInvoice
 Retrieves an invoice by invoice ID.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param invoiceId The id of the invoice to retrieve.
+ * @param invoiceId The ID of the invoice to retrieve.
 @return GetInvoiceResponse
 */
 func (a *InvoicesApiService) GetInvoice(ctx context.Context, invoiceId string) (GetInvoiceResponse, *http.Response, error) {
@@ -390,12 +390,12 @@ func (a *InvoicesApiService) GetInvoice(ctx context.Context, invoiceId string) (
 
 /*
 InvoicesApiService ListInvoices
-Returns a list of invoices for a given location. The response  is paginated. If truncated, the response includes a &#x60;cursor&#x60; that you     use in a subsequent request to fetch the next set of invoices.
+Returns a list of invoices for a given location. The response  is paginated. If truncated, the response includes a &#x60;cursor&#x60; that you     use in a subsequent request to retrieve the next set of invoices.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location for which to list invoices.
  * @param optional nil or *InvoicesApiListInvoicesOpts - Optional Parameters:
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
-     * @param "Limit" (optional.Int32) -  The maximum number of invoices to return (200 is the maximum &#x60;limit&#x60;).  If not provided, the server  uses a default limit of 100 invoices.
+     * @param "Limit" (optional.Int32) -  The maximum number of invoices to return (200 is the maximum &#x60;limit&#x60;).  If not provided, the server uses a default limit of 100 invoices.
 @return ListInvoicesResponse
 */
 
@@ -491,12 +491,12 @@ func (a *InvoicesApiService) ListInvoices(ctx context.Context, locationId string
 
 /*
 InvoicesApiService PublishInvoice
-Publishes the specified draft invoice.   After an invoice is published, Square  follows up based on the invoice configuration. For example, Square  sends the invoice to the customer&#x27;s email address, charges the customer&#x27;s card on file, or does  nothing. Square also makes the invoice available on a Square-hosted invoice page.   The invoice &#x60;status&#x60; also changes from &#x60;DRAFT&#x60; to a status  based on the invoice configuration. For example, the status changes to &#x60;UNPAID&#x60; if  Square emails the invoice or &#x60;PARTIALLY_PAID&#x60; if Square charge a card on file for a portion of the  invoice amount).
+Publishes the specified draft invoice.   After an invoice is published, Square  follows up based on the invoice configuration. For example, Square  sends the invoice to the customer&#x27;s email address, charges the customer&#x27;s card on file, or does  nothing. Square also makes the invoice available on a Square-hosted invoice page.   The invoice &#x60;status&#x60; also changes from &#x60;DRAFT&#x60; to a status  based on the invoice configuration. For example, the status changes to &#x60;UNPAID&#x60; if  Square emails the invoice or &#x60;PARTIALLY_PAID&#x60; if Square charge a card on file for a portion of the  invoice amount.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param invoiceId The id of the invoice to publish.
+ * @param invoiceId The ID of the invoice to publish.
 @return PublishInvoiceResponse
 */
 func (a *InvoicesApiService) PublishInvoice(ctx context.Context, body PublishInvoiceRequest, invoiceId string) (PublishInvoiceResponse, *http.Response, error) {
@@ -582,7 +582,7 @@ func (a *InvoicesApiService) PublishInvoice(ctx context.Context, body PublishInv
 
 /*
 InvoicesApiService SearchInvoices
-Searches for invoices from a location specified in  the filter. You can optionally specify customers in the filter for whom to  retrieve invoices. In the current implementation, you can only specify one location and  optionally one customer.  The response is paginated. If truncated, the response includes a &#x60;cursor&#x60;  that you use in a subsequent request to fetch the next set of invoices.
+Searches for invoices from a location specified in  the filter. You can optionally specify customers in the filter for whom to  retrieve invoices. In the current implementation, you can only specify one location and  optionally one customer.  The response is paginated. If truncated, the response includes a &#x60;cursor&#x60;  that you use in a subsequent request to retrieve the next set of invoices.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -671,7 +671,7 @@ func (a *InvoicesApiService) SearchInvoices(ctx context.Context, body SearchInvo
 
 /*
 InvoicesApiService UpdateInvoice
-Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse  &#x60;Invoice&#x60; object to add fields or change values, and use the &#x60;fields_to_clear&#x60; field to specify fields to clear.  However, some restrictions apply. For example, you cannot change the &#x60;order_id&#x60; or &#x60;location_id&#x60; field, and you  must provide the complete &#x60;custom_fields&#x60; list to update a custom field. Published invoices have additional restrictions.
+Updates an invoice by modifying fields, clearing fields, or both. For most updates, you can use a sparse  &#x60;Invoice&#x60; object to add fields or change values and use the &#x60;fields_to_clear&#x60; field to specify fields to clear.  However, some restrictions apply. For example, you cannot change the &#x60;order_id&#x60; or &#x60;location_id&#x60; field and you  must provide the complete &#x60;custom_fields&#x60; list to update a custom field. Published invoices have additional restrictions.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

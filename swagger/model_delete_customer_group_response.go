@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [DeleteCustomerGroup](#endpoint-deletecustomergroup) endpoint.
+// Defines the fields that are included in the response body of a request to the [DeleteCustomerGroup](api-endpoint:CustomerGroups-DeleteCustomerGroup) endpoint.
 type DeleteCustomerGroupResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

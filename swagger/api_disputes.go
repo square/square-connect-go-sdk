@@ -132,7 +132,7 @@ func (a *DisputesApiService) CreateDisputeEvidenceFile(ctx context.Context, requ
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/v2/disputes/{dispute_id}/evidence_file"
+	localVarPath := a.client.cfg.BasePath + "/v2/disputes/{dispute_id}/evidence-files"
 	localVarPath = strings.Replace(localVarPath, "{"+"dispute_id"+"}", fmt.Sprintf("%v", disputeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -229,7 +229,7 @@ func (a *DisputesApiService) CreateDisputeEvidenceText(ctx context.Context, body
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/v2/disputes/{dispute_id}/evidence_text"
+	localVarPath := a.client.cfg.BasePath + "/v2/disputes/{dispute_id}/evidence-text"
 	localVarPath = strings.Replace(localVarPath, "{"+"dispute_id"+"}", fmt.Sprintf("%v", disputeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -301,13 +301,108 @@ func (a *DisputesApiService) CreateDisputeEvidenceText(ctx context.Context, body
 }
 
 /*
+DisputesApiService DeleteDisputeEvidence
+Removes specified evidence from a dispute.  Square does not send the bank any evidence that is removed. Also, you cannot remove evidence after submitting it to the bank using [SubmitEvidence](api-endpoint:Disputes-SubmitEvidence).
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param disputeId The ID of the dispute you want to remove evidence from.
+ * @param evidenceId The ID of the evidence you want to remove.
+@return DeleteDisputeEvidenceResponse
+*/
+func (a *DisputesApiService) DeleteDisputeEvidence(ctx context.Context, disputeId string, evidenceId string) (DeleteDisputeEvidenceResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Delete")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue DeleteDisputeEvidenceResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/v2/disputes/{dispute_id}/evidence/{evidence_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dispute_id"+"}", fmt.Sprintf("%v", disputeId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"evidence_id"+"}", fmt.Sprintf("%v", evidenceId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v DeleteDisputeEvidenceResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
 DisputesApiService ListDisputeEvidence
 Returns a list of evidence associated with a dispute.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param disputeId The ID of the dispute.
+ * @param optional nil or *DisputesApiListDisputeEvidenceOpts - Optional Parameters:
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
 @return ListDisputeEvidenceResponse
 */
-func (a *DisputesApiService) ListDisputeEvidence(ctx context.Context, disputeId string) (ListDisputeEvidenceResponse, *http.Response, error) {
+
+type DisputesApiListDisputeEvidenceOpts struct {
+	Cursor optional.String
+}
+
+func (a *DisputesApiService) ListDisputeEvidence(ctx context.Context, disputeId string, localVarOptionals *DisputesApiListDisputeEvidenceOpts) (ListDisputeEvidenceResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -324,6 +419,9 @@ func (a *DisputesApiService) ListDisputeEvidence(ctx context.Context, disputeId 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Cursor.IsSet() {
+		localVarQueryParams.Add("cursor", parameterToString(localVarOptionals.Cursor.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
 
@@ -491,94 +589,6 @@ func (a *DisputesApiService) ListDisputes(ctx context.Context, localVarOptionals
 }
 
 /*
-DisputesApiService RemoveDisputeEvidence
-Removes specified evidence from a dispute.  Square does not send the bank any evidence that is removed. Also, you cannot remove evidence after submitting it to the bank using [SubmitEvidence](https://developer.squareup.com/docs/reference/square/disputes-api/submit-evidence).
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param disputeId The ID of the dispute you want to remove evidence from.
- * @param evidenceId The ID of the evidence you want to remove.
-@return RemoveDisputeEvidenceResponse
-*/
-func (a *DisputesApiService) RemoveDisputeEvidence(ctx context.Context, disputeId string, evidenceId string) (RemoveDisputeEvidenceResponse, *http.Response, error) {
-	var (
-		localVarHttpMethod  = strings.ToUpper("Delete")
-		localVarPostBody    interface{}
-		localVarFileName    string
-		localVarFileBytes   []byte
-		localVarReturnValue RemoveDisputeEvidenceResponse
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/v2/disputes/{dispute_id}/evidence/{evidence_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dispute_id"+"}", fmt.Sprintf("%v", disputeId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"evidence_id"+"}", fmt.Sprintf("%v", evidenceId), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode < 300 {
-		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-		if err == nil {
-			return localVarReturnValue, localVarHttpResponse, err
-		}
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v RemoveDisputeEvidenceResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 DisputesApiService RetrieveDispute
 Returns details about a specific dispute.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -666,7 +676,7 @@ func (a *DisputesApiService) RetrieveDispute(ctx context.Context, disputeId stri
 
 /*
 DisputesApiService RetrieveDisputeEvidence
-Returns the specific evidence metadata associated with a specific dispute.  You must maintain a copy of the evidence you upload if you want to reference it later. You cannot download the evidence after you upload it.
+Returns the evidence metadata specified by the evidence ID in the request URL path  You must maintain a copy of the evidence you upload if you want to reference it later. You cannot download the evidence after you upload it.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param disputeId The ID of the dispute that you want to retrieve evidence from.
  * @param evidenceId The ID of the evidence to retrieve.
@@ -754,7 +764,7 @@ func (a *DisputesApiService) RetrieveDisputeEvidence(ctx context.Context, disput
 
 /*
 DisputesApiService SubmitEvidence
-Submits evidence to the cardholder&#x27;s bank.  Before submitting evidence, Square compiles all available evidence. This includes evidence uploaded using the [CreateDisputeEvidenceFile](https://developer.squareup.com/docs/reference/square/disputes-api/create-dispute-evidence-file) and [CreateDisputeEvidenceText](https://developer.squareup.com/docs/reference/square/disputes-api/create-dispute-evidence-text) endpoints and evidence automatically provided by Square, when available.
+Submits evidence to the cardholder&#x27;s bank.  Before submitting evidence, Square compiles all available evidence. This includes evidence uploaded using the [CreateDisputeEvidenceFile](api-endpoint:Disputes-CreateDisputeEvidenceFile) and [CreateDisputeEvidenceText](api-endpoint:Disputes-CreateDisputeEvidenceText) endpoints and evidence automatically provided by Square, when available.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param disputeId The ID of the dispute that you want to submit evidence for.
 @return SubmitEvidenceResponse

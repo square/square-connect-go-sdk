@@ -9,7 +9,7 @@
  */
 package swagger
 
-// SubscriptionCadence : Determines the billing cadence of a [Subscription](#type-Subscription)
+// SubscriptionCadence : Determines the billing cadence of a [Subscription](entity:Subscription)
 type SubscriptionCadence string
 
 // List of SubscriptionCadence

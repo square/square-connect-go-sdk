@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [AddGroupToCustomer](#endpoint-addgrouptocustomer) endpoint.
+// Defines the fields that are included in the response body of a request to the [AddGroupToCustomer](api-endpoint:Customers-AddGroupToCustomer) endpoint.
 type AddGroupToCustomerResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

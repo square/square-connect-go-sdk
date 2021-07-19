@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LocationId** | **string** | The ID of the &#x60;Location&#x60;. | [optional] [default to null]
+**LocationId** | **string** | The ID of the &#x60;Location&#x60;. This can include locations that are deactivated. | [optional] [default to null]
 **PriceMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **PricingType** | [***CatalogPricingType**](CatalogPricingType.md) |  | [optional] [default to null]
 **TrackInventory** | **bool** | If &#x60;true&#x60;, inventory tracking is active for the &#x60;CatalogItemVariation&#x60; at this &#x60;Location&#x60;. | [optional] [default to null]

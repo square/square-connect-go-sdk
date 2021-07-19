@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [CreatePayment](#endpoint-payments-createpayment) endpoint.  Note: If there are errors processing the request, the payment field might not be present, or it might be present with a status of `FAILED`.
+// Defines the response returned by [CreatePayment](api-endpoint:Payments-CreatePayment).  If there are errors processing the request, the `payment` field might not be present, or it might be present with a status of `FAILED`.
 type CreatePaymentResponse struct {
 	// Information about errors encountered during the request.
 	Errors  []ModelError `json:"errors,omitempty"`

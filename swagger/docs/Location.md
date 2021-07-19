@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the location. This information appears in the dashboard as the nickname. A location name must be unique within a seller account. | [optional] [default to null]
 **Address** | [***Address**](Address.md) |  | [optional] [default to null]
 **Timezone** | **string** | The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location. | [optional] [default to null]
-**Capabilities** | [**[]LocationCapability**](LocationCapability.md) | The Square features that are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values | [optional] [default to null]
+**Capabilities** | [**[]LocationCapability**](LocationCapability.md) | The Square features that are enabled for the location. See [LocationCapability](entity:LocationCapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values | [optional] [default to null]
 **Status** | [***LocationStatus**](LocationStatus.md) |  | [optional] [default to null]
 **CreatedAt** | **string** | The time when the location was created, in RFC 3339 format. | [optional] [default to null]
 **MerchantId** | **string** | The ID of the merchant that owns the location. | [optional] [default to null]

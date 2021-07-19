@@ -11,7 +11,7 @@ package swagger
 
 // Information about fulfillment updates.
 type OrderFulfillmentUpdatedUpdate struct {
-	// Unique ID that identifies the fulfillment only within this order.
+	// A unique ID that identifies the fulfillment only within this order.
 	FulfillmentUid string                 `json:"fulfillment_uid,omitempty"`
 	OldState       *OrderFulfillmentState `json:"old_state,omitempty"`
 	NewState       *OrderFulfillmentState `json:"new_state,omitempty"`

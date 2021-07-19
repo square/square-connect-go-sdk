@@ -11,9 +11,9 @@ package swagger
 
 // Provides metadata when the event `type` is `DELETE_REWARD`.
 type LoyaltyEventDeleteReward struct {
-	// The ID of the [loyalty program](#type-LoyaltyProgram).
+	// The ID of the [loyalty program](entity:LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id"`
-	// The ID of the deleted [loyalty reward](#type-LoyaltyReward). This field is returned only if the event source is `LOYALTY_API`.
+	// The ID of the deleted [loyalty reward](entity:LoyaltyReward). This field is returned only if the event source is `LOYALTY_API`.
 	RewardId string `json:"reward_id,omitempty"`
 	// The number of points returned to the loyalty account.
 	Points int32 `json:"points"`

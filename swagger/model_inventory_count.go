@@ -9,18 +9,20 @@
  */
 package swagger
 
-// Represents Square's estimated quantity of items in a particular state at a particular location based on the known history of physical counts and inventory adjustments.
+// Represents Square-estimated quantity of items in a particular state at a particular seller location based on the known history of physical counts and inventory adjustments.
 type InventoryCount struct {
-	// The Square generated ID of the `CatalogObject` being tracked.
+	// The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The `CatalogObjectType` of the `CatalogObject` being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
 	CatalogObjectType string          `json:"catalog_object_type,omitempty"`
 	Status            *InventoryState `json:"status,omitempty"`
 	State             *InventoryState `json:"state,omitempty"`
-	// The Square ID of the [Location](#type-location) where the related quantity of items are being tracked.
+	// The Square-generated ID of the [Location](entity:Location) where the related quantity of items is being tracked.
 	LocationId string `json:"location_id,omitempty"`
 	// The number of items affected by the estimated count as a decimal string. Can support up to 5 digits after the decimal point.
 	Quantity string `json:"quantity,omitempty"`
-	// A read-only timestamp in RFC 3339 format that indicates when Square received the most recent physical count or adjustment that had an affect on the estimated count.
+	// An RFC 3339-formatted timestamp that indicates when the most recent physical count or adjustment affecting the estimated count is received.
 	CalculatedAt string `json:"calculated_at,omitempty"`
+	// Whether the inventory count is for composed variation (TRUE) or not (FALSE). If true, the inventory count will not be present in the response of any of these endpoints: [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory),  [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges),  [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts), and  [RetrieveInventoryChanges](api-endpoint:Inventory-RetrieveInventoryChanges).
+	IsEstimated bool `json:"is_estimated,omitempty"`
 }

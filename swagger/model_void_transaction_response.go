@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [VoidTransaction](#endpoint-voidtransaction) endpoint.
+// Defines the fields that are included in the response body of a request to the [VoidTransaction](api-endpoint:Transactions-VoidTransaction) endpoint.
 type VoidTransactionResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

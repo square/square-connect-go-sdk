@@ -17,5 +17,6 @@ type SubscriptionEvent struct {
 	// The date, in YYYY-MM-DD format (for example, 2013-01-15), when the subscription event went into effect.
 	EffectiveDate string `json:"effective_date"`
 	// The ID of the subscription plan associated with the subscription.
-	PlanId string `json:"plan_id"`
+	PlanId string                 `json:"plan_id"`
+	Info   *SubscriptionEventInfo `json:"info,omitempty"`
 }

@@ -1,0 +1,74 @@
+--- original/square-connect-openapi.json	2021-07-14 20:40:06.000000000 -0700
++++ square-connect-openapi.json	2021-07-14 20:42:12.000000000 -0700
+@@ -187,7 +187,10 @@
+               "SUBSCRIPTIONS_READ": "__HTTP Method__: `GET`, `POST`\n\nGrants read access to subscription information. For example, to call the RetrieveSubscription\nendpoint.",
+               "SUBSCRIPTIONS_WRITE": "__HTTP Method__: `POST`, `PUT`, `DELETE`\n\nGrants write access to subscription information. For example, to call the CreateSubscription\nendpoint.",
+               "DISPUTES_READ": "__HTTP Method__: `GET`\n\nGrants read access to dispute information. For example, to call the RetrieveDispute\nendpoint.",
+-              "DISPUTES_WRITE": "__HTTP Method__: `POST`, `PUT`, `DELETE`\n\nGrants write access to dispute information. For example, to call the SubmitEvidence\nendpoint."
++              "DISPUTES_WRITE": "__HTTP Method__: `POST`, `PUT`, `DELETE`\n\nGrants write access to dispute information. For example, to call the SubmitEvidence\nendpoint.",
++              "ONLINE_STORE_SITE_READ": "__HTTP Method__: `GET`, `POST`\n\nRead access to ECOM online store site details.",
++              "ONLINE_STORE_SNIPPETS_READ": "__HTTP Method__: `GET`, `POST`\n\nRead access to ECOM online store snippets on published websites.",
++              "ONLINE_STORE_SNIPPETS_WRITE": "__HTTP Method__: `POST`, `PUT`, `DELETE`\n\n  Write access to ECOM online store snippets on published websites."
+             }
+           }
+         }
+@@ -8885,7 +8888,10 @@
+           "SUBSCRIPTIONS_READ",
+           "SUBSCRIPTIONS_WRITE",
+           "DISPUTES_READ",
+-          "DISPUTES_WRITE"
++          "DISPUTES_WRITE",
++          "ONLINE_STORE_SITE_READ",
++          "ONLINE_STORE_SNIPPETS_READ",
++          "ONLINE_STORE_SNIPPETS_WRITE"
+         ],
+         "x-enum-elements": [
+           {
+@@ -9057,6 +9063,21 @@
+             "name": "DISPUTES_WRITE",
+             "description": "__HTTP Method__: `POST`, `PUT`, `DELETE`\n\nGrants write access to dispute information. For example, to call the SubmitEvidence\nendpoint.",
+             "x-release-status": "PUBLIC"
++          },
++          {
++            "name": "ONLINE_STORE_SITE_READ",
++            "description": "__HTTP Method__: `GET`, `POST`\n\nRead access to ECOM online store site details.",
++            "x-release-status": "PUBLIC"
++          },
++          {
++            "name": "ONLINE_STORE_SNIPPETS_READ",
++            "description": "__HTTP Method__: `GET`, `POST`\n\nRead access to ECOM online store snippets on published websites.",
++            "x-release-status": "PUBLIC"
++          },
++          {
++            "name": "ONLINE_STORE_SNIPPETS_WRITE",
++            "description": "__HTTP Method__: `POST`, `PUT`, `DELETE`\n\n  Write access to ECOM online store snippets on published websites.",
++            "x-release-status": "PUBLIC"
+           }
+         ],
+         "description": "When you direct your user to the permissions form, you specify the\nscope of the permissions your application will have. Personal access tokens\nhave all available permissions (at the time the application was created) by default.\n\n<aside class=\"important\">\nNever request more than the minimum permissions required for your application\nto function properly.\n</aside>",
+@@ -26012,6 +26033,25 @@
+             "description": "List of item options IDs for this item. Used to manage and group item\nvariations in a specified order.\n\nMaximum: 6 item options.",
+             "x-release-status": "BETA"
+           },
++          "ecom_uri": {
++          "type": "string",
++           "description": "hidden field"
++          },
++          "ecom_image_uris": {
++            "type": "array",
++            "items": {
++             "type": "string"
++            },
++            "description": "hidden field"
++          },
++          "ecom_available": {
++            "type": "boolean",
++            "description": "hidden field"
++          },
++          "ecom_visibility": {
++           "type": "string",
++           "description": "hidden field"
++          },
+           "sort_name": {
+             "type": "string",
+             "description": "A name to sort the item by. If this name is unspecified, namely, the `sort_name` field is absent, the regular `name` field is used for sorting.\n\nIt is currently supported for sellers of the Japanese locale only.",

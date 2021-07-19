@@ -10,19 +10,20 @@ Method | HTTP request | Description
 [**CreatePayment**](PaymentsApi.md#CreatePayment) | **Post** /v2/payments | CreatePayment
 [**GetPayment**](PaymentsApi.md#GetPayment) | **Get** /v2/payments/{payment_id} | GetPayment
 [**ListPayments**](PaymentsApi.md#ListPayments) | **Get** /v2/payments | ListPayments
+[**UpdatePayment**](PaymentsApi.md#UpdatePayment) | **Put** /v2/payments/{payment_id} | UpdatePayment
 
 # **CancelPayment**
 > CancelPaymentResponse CancelPayment(ctx, paymentId)
 CancelPayment
 
-Cancels (voids) a payment. If you set `autocomplete` to `false` when creating a payment,  you can cancel the payment using this endpoint.
+Cancels (voids) a payment. You can use this endpoint to cancel a payment with  the APPROVED `status`.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **paymentId** | **string**| The &#x60;payment_id&#x60; identifying the payment to be canceled. | 
+  **paymentId** | **string**| The ID of the payment to cancel. | 
 
 ### Return type
 
@@ -43,7 +44,7 @@ Name | Type | Description  | Notes
 > CancelPaymentByIdempotencyKeyResponse CancelPaymentByIdempotencyKey(ctx, body)
 CancelPaymentByIdempotencyKey
 
-Cancels (voids) a payment identified by the idempotency key that is specified in the request.  Use this method when the status of a `CreatePayment` request is unknown (for example, after you send a `CreatePayment` request, a network error occurs and you do not get a response). In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your `CreatePayment` request that you want to cancel. After canceling the payment, you can submit your `CreatePayment` request again.  Note that if no payment with the specified idempotency key is found, no action is taken and the endpoint  returns successfully.
+Cancels (voids) a payment identified by the idempotency key that is specified in the request.  Use this method when the status of a `CreatePayment` request is unknown (for example, after you send a `CreatePayment` request, a network error occurs and you do not get a response). In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your `CreatePayment` request that you want to cancel. After canceling the payment, you can submit your `CreatePayment` request again.  Note that if no payment with the specified idempotency key is found, no action is taken and the endpoint returns successfully.
 
 ### Required Parameters
 
@@ -73,7 +74,7 @@ See the corresponding object definition for field details. |
 > CompletePaymentResponse CompletePayment(ctx, body, paymentId)
 CompletePayment
 
-Completes (captures) a payment.  By default, payments are set to complete immediately after they are created.  If you set `autocomplete` to `false` when creating a payment, you can complete (capture)  the payment using this endpoint.
+Completes (captures) a payment. By default, payments are set to complete immediately after they are created.  You can use this endpoint to complete a payment with the APPROVED `status`.
 
 ### Required Parameters
 
@@ -104,7 +105,7 @@ See the corresponding object definition for field details. |
 > CreatePaymentResponse CreatePayment(ctx, body)
 CreatePayment
 
-Charges a payment source (for example, a card  represented by customer's card on file or a card nonce). In addition  to the payment source, the request must include the  amount to accept for the payment.  There are several optional parameters that you can include in the request  (for example, tip money, whether to autocomplete the payment, or a reference ID  to correlate this payment with another system).   The `PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS` OAuth permission is required to enable application fees.
+Creates a payment using the provided source. You can use this endpoint  to charge a card (credit/debit card or     Square gift card) or record a payment that the seller received outside of Square  (cash payment from a buyer or a payment that an external entity  processed on behalf of the seller).  The endpoint creates a  `Payment` object and returns it in the response.
 
 ### Required Parameters
 
@@ -162,7 +163,7 @@ Name | Type | Description  | Notes
 > ListPaymentsResponse ListPayments(ctx, optional)
 ListPayments
 
-Retrieves a list of payments taken by the account making the request.  The maximum results per page is 100.
+Retrieves a list of payments taken by the account making the request.  Results are eventually consistent, and new payments or changes to payments might take several seconds to appear.  The maximum results per page is 100.
 
 ### Required Parameters
 
@@ -196,6 +197,37 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **UpdatePayment**
+> UpdatePaymentResponse UpdatePayment(ctx, body, paymentId)
+UpdatePayment
+
+Updates a payment with the APPROVED status. You can update the `amount_money` and `tip_money` using this endpoint.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**UpdatePaymentRequest**](UpdatePaymentRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
+  **paymentId** | **string**| The ID of the payment to update. | 
+
+### Return type
+
+[**UpdatePaymentResponse**](UpdatePaymentResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [RegisterDomain](#endpoint-registerdomain) endpoint.  Either `errors` or `status` will be present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [RegisterDomain](api-endpoint:ApplePay-RegisterDomain) endpoint.  Either `errors` or `status` are present in a given response (never both).
 type RegisterDomainResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError                  `json:"errors,omitempty"`

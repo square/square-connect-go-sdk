@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **CardDetails** | [***TenderCardDetails**](TenderCardDetails.md) |  | [optional] [default to null]
 **CashDetails** | [***TenderCashDetails**](TenderCashDetails.md) |  | [optional] [default to null]
 **AdditionalRecipients** | [**[]AdditionalRecipient**](AdditionalRecipient.md) | Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration. | [optional] [default to null]
-**PaymentId** | **string** | The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API. | [optional] [default to null]
+**PaymentId** | **string** | The ID of the [Payment](entity:Payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

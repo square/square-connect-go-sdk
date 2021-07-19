@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Specifies the idempotency key of a payment to cancel.
+// Describes a request to cancel a payment using  [CancelPaymentByIdempotencyKey](api-endpoint:Payments-CancelPaymentByIdempotencyKey).
 type CancelPaymentByIdempotencyKeyRequest struct {
 	// The `idempotency_key` identifying the payment to be canceled.
 	IdempotencyKey string `json:"idempotency_key"`

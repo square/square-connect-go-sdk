@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when an [Invoice](#type-Invoice) transitions from a draft to a non-draft status.
+// Published when an [Invoice](entity:Invoice) transitions from a draft to a non-draft status.
 type InvoicePublishedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

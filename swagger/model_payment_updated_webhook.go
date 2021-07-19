@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Payment](#type-Payment) is updated. Typically the `payment.status`, or `card_details.status` fields are updated as a payment is canceled, authorized, or completed.
+// Published when a [Payment](entity:Payment) is updated. Typically the `payment.status`, or `card_details.status` fields are updated as a payment is canceled, authorized, or completed.
 type PaymentUpdatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

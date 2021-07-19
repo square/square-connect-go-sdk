@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Shift](#type-Shift) is deleted.
+// Published when a [Shift](entity:Shift) is deleted.
 type LaborShiftDeletedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

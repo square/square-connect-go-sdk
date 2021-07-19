@@ -14,6 +14,6 @@ type AccumulateLoyaltyPointsRequest struct {
 	AccumulatePoints *LoyaltyEventAccumulatePoints `json:"accumulate_points"`
 	// A unique string that identifies the `AccumulateLoyaltyPoints` request.  Keys can be any valid string but must be unique for every request.
 	IdempotencyKey string `json:"idempotency_key"`
-	// The [location](#type-Location) where the purchase was made.
+	// The [location](entity:Location) where the purchase was made.
 	LocationId string `json:"location_id"`
 }

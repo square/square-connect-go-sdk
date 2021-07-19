@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the request body for the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint.
+// Defines the request body for the [SearchCatalogItems](api-endpoint:Catalog-SearchCatalogItems) endpoint.
 type SearchCatalogItemsRequest struct {
 	// The text filter expression to return items or item variations containing specified text in the `name`, `description`, or `abbreviation` attribute value of an item, or in the `name`, `sku`, or `upc` attribute value of an item variation.
 	TextFilter string `json:"text_filter,omitempty"`
@@ -26,6 +26,6 @@ type SearchCatalogItemsRequest struct {
 	SortOrder *SortOrder `json:"sort_order,omitempty"`
 	// The product types query expression to return items or item variations having the specified product types.
 	ProductTypes []CatalogItemProductType `json:"product_types,omitempty"`
-	// The customer-attribute filter to return items or item variations matching the specified custom attribute expressions. A maximum number of 10 custom attribute expressions are supported in a single call to the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint.
+	// The customer-attribute filter to return items or item variations matching the specified custom attribute expressions. A maximum number of 10 custom attribute expressions are supported in a single call to the [SearchCatalogItems](api-endpoint:Catalog-SearchCatalogItems) endpoint.
 	CustomAttributeFilters []CustomAttributeFilter `json:"custom_attribute_filters,omitempty"`
 }

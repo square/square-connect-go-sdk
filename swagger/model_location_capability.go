@@ -14,5 +14,6 @@ type LocationCapability string
 
 // List of LocationCapability
 const (
-	PROCESSING_LocationCapability LocationCapability = "CREDIT_CARD_PROCESSING"
+	CREDIT_CARD_PROCESSING_LocationCapability LocationCapability = "CREDIT_CARD_PROCESSING"
+	AUTOMATIC_TRANSFERS_LocationCapability    LocationCapability = "AUTOMATIC_TRANSFERS"
 )

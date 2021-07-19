@@ -11,9 +11,9 @@ package swagger
 
 // Provides metadata when the event `type` is `CREATE_REWARD`.
 type LoyaltyEventCreateReward struct {
-	// The ID of the [loyalty program](#type-LoyaltyProgram).
+	// The ID of the [loyalty program](entity:LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id"`
-	// The Square-assigned ID of the created [loyalty reward](#type-LoyaltyReward). This field is returned only if the event source is `LOYALTY_API`.
+	// The Square-assigned ID of the created [loyalty reward](entity:LoyaltyReward). This field is returned only if the event source is `LOYALTY_API`.
 	RewardId string `json:"reward_id,omitempty"`
 	// The loyalty points used to create the reward.
 	Points int32 `json:"points"`

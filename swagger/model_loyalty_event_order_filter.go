@@ -11,6 +11,6 @@ package swagger
 
 // Filter events by the order associated with the event.
 type LoyaltyEventOrderFilter struct {
-	// The ID of the [order](#type-Order) associated with the event.
+	// The ID of the [order](entity:Order) associated with the event.
 	OrderId string `json:"order_id"`
 }

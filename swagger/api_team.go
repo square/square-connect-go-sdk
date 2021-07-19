@@ -27,7 +27,7 @@ type TeamApiService service
 
 /*
 TeamApiService BulkCreateTeamMembers
-Creates multiple &#x60;TeamMember&#x60; objects. The created &#x60;TeamMember&#x60; objects will be returned on successful creates. This process is non-transactional and will process as much of the request as is possible. If one of the creates in the request cannot be successfully processed, the request will NOT be marked as failed, but the body of the response will contain explicit error information for this particular create.  Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#bulkcreateteammembers).
+Creates multiple &#x60;TeamMember&#x60; objects. The created &#x60;TeamMember&#x60; objects are returned on successful creates. This process is non-transactional and processes as much of the request as possible. If one of the creates in the request cannot be successfully processed, the request is not marked as failed, but the body of the response contains explicit error information for the failed create.  Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#bulk-create-team-members).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -116,7 +116,7 @@ func (a *TeamApiService) BulkCreateTeamMembers(ctx context.Context, body BulkCre
 
 /*
 TeamApiService BulkUpdateTeamMembers
-Updates multiple &#x60;TeamMember&#x60; objects. The updated &#x60;TeamMember&#x60; objects will be returned on successful updates. This process is non-transactional and will process as much of the request as is possible. If one of the updates in the request cannot be successfully processed, the request will NOT be marked as failed, but the body of the response will contain explicit error information for this particular update. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#bulkupdateteammembers).
+Updates multiple &#x60;TeamMember&#x60; objects. The updated &#x60;TeamMember&#x60; objects are returned on successful updates. This process is non-transactional and processes as much of the request as possible. If one of the updates in the request cannot be successfully processed, the request is not marked as failed, but the body of the response contains explicit error information for the failed update. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#bulk-update-team-members).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -205,7 +205,7 @@ func (a *TeamApiService) BulkUpdateTeamMembers(ctx context.Context, body BulkUpd
 
 /*
 TeamApiService CreateTeamMember
-Creates a single &#x60;TeamMember&#x60; object. The &#x60;TeamMember&#x60; will be returned on successful creates. You must provide the following values in your request to this endpoint: - &#x60;given_name&#x60; - &#x60;family_name&#x60;  Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#createteammember).
+Creates a single &#x60;TeamMember&#x60; object. The &#x60;TeamMember&#x60; object is returned on successful creates. You must provide the following values in your request to this endpoint: - &#x60;given_name&#x60; - &#x60;family_name&#x60;  Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#createteammember).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -294,7 +294,7 @@ func (a *TeamApiService) CreateTeamMember(ctx context.Context, body CreateTeamMe
 
 /*
 TeamApiService RetrieveTeamMember
-Retrieve a &#x60;TeamMember&#x60; object for the given &#x60;TeamMember.id&#x60;. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#retrieveteammember).
+Retrieves a &#x60;TeamMember&#x60; object for the given &#x60;TeamMember.id&#x60;. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#retrieve-a-team-member).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamMemberId The ID of the team member to retrieve.
 @return RetrieveTeamMemberResponse
@@ -380,9 +380,9 @@ func (a *TeamApiService) RetrieveTeamMember(ctx context.Context, teamMemberId st
 
 /*
 TeamApiService RetrieveWageSetting
-Retrieve a &#x60;WageSetting&#x60; object for a team member specified by &#x60;TeamMember.id&#x60;. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#retrievewagesetting).
+Retrieves a &#x60;WageSetting&#x60; object for a team member specified by &#x60;TeamMember.id&#x60;. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#retrievewagesetting).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param teamMemberId The ID of the team member to retrieve wage setting for
+ * @param teamMemberId The ID of the team member for which to retrieve the wage setting.
 @return RetrieveWageSettingResponse
 */
 func (a *TeamApiService) RetrieveWageSetting(ctx context.Context, teamMemberId string) (RetrieveWageSettingResponse, *http.Response, error) {
@@ -466,7 +466,7 @@ func (a *TeamApiService) RetrieveWageSetting(ctx context.Context, teamMemberId s
 
 /*
 TeamApiService SearchTeamMembers
-Returns a paginated list of &#x60;TeamMember&#x60; objects for a business. The list to be returned can be filtered by: - location IDs **and** - &#x60;status&#x60;
+Returns a paginated list of &#x60;TeamMember&#x60; objects for a business. The list can be filtered by the following: - location IDs - &#x60;status&#x60;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -555,7 +555,7 @@ func (a *TeamApiService) SearchTeamMembers(ctx context.Context, body SearchTeamM
 
 /*
 TeamApiService UpdateTeamMember
-Updates a single &#x60;TeamMember&#x60; object. The &#x60;TeamMember&#x60; will be returned on successful updates. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#updateteammember).
+Updates a single &#x60;TeamMember&#x60; object. The &#x60;TeamMember&#x60; object is returned on successful updates. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#update-a-team-member).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -646,12 +646,12 @@ func (a *TeamApiService) UpdateTeamMember(ctx context.Context, body UpdateTeamMe
 
 /*
 TeamApiService UpdateWageSetting
-Creates or updates a &#x60;WageSetting&#x60; object. The object is created if a &#x60;WageSetting&#x60; with the specified &#x60;team_member_id&#x60; does not exist. Otherwise, it fully replaces the &#x60;WageSetting&#x60; object for the team member. The &#x60;WageSetting&#x60; will be returned upon successful update. Learn about [Troubleshooting the Teams API](https://developer.squareup.com/docs/team/troubleshooting#updatewagesetting).
+Creates or updates a &#x60;WageSetting&#x60; object. The object is created if a &#x60;WageSetting&#x60; with the specified &#x60;team_member_id&#x60; does not exist. Otherwise, it fully replaces the &#x60;WageSetting&#x60; object for the team member. The &#x60;WageSetting&#x60; is returned on a successful update. Learn about [Troubleshooting the Team API](https://developer.squareup.com/docs/team/troubleshooting#create-or-update-a-wage-setting).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param teamMemberId The ID of the team member to update the &#x60;WageSetting&#x60; object for.
+ * @param teamMemberId The ID of the team member for which to update the &#x60;WageSetting&#x60; object.
 @return UpdateWageSettingResponse
 */
 func (a *TeamApiService) UpdateWageSetting(ctx context.Context, body UpdateWageSettingRequest, teamMemberId string) (UpdateWageSettingResponse, *http.Response, error) {

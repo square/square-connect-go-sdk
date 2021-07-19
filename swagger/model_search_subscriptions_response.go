@@ -9,12 +9,12 @@
  */
 package swagger
 
-// Defines the fields that are included in the response from the [SearchSubscriptions](#endpoint-subscriptions-searchsubscriptions) endpoint.
+// Defines the fields that are included in the response from the [SearchSubscriptions](api-endpoint:Subscriptions-SearchSubscriptions) endpoint.
 type SearchSubscriptionsResponse struct {
 	// Information about errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 	// The search result.
 	Subscriptions []Subscription `json:"subscriptions,omitempty"`
-	// When a response is truncated, it includes a cursor that you can  use in a subsequent request to fetch the next set of subscriptions.  If empty, this is the final response.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+	// When a response is truncated, it includes a cursor that you can use in a subsequent request to fetch the next set of subscriptions. If empty, this is the final response.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

@@ -9,17 +9,18 @@
  */
 package swagger
 
+// Represents a contract to redeem loyalty points for a [reward tier](entity:LoyaltyProgramRewardTier) discount. Loyalty rewards can be in an ISSUED, REDEEMED, or DELETED state. For more information, see [Redeem loyalty rewards](https://developer.squareup.com/docs/loyalty-api/overview#redeem-loyalty-rewards).
 type LoyaltyReward struct {
 	// The Square-assigned ID of the loyalty reward.
 	Id     string               `json:"id,omitempty"`
 	Status *LoyaltyRewardStatus `json:"status,omitempty"`
-	// The Square-assigned ID of the [loyalty account](#type-LoyaltyAccount) to which the reward belongs.
+	// The Square-assigned ID of the [loyalty account](entity:LoyaltyAccount) to which the reward belongs.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
-	// The Square-assigned ID of the [reward tier](#type-LoyaltyProgramRewardTier) used to create the reward.
+	// The Square-assigned ID of the [reward tier](entity:LoyaltyProgramRewardTier) used to create the reward.
 	RewardTierId string `json:"reward_tier_id"`
 	// The number of loyalty points used for the reward.
 	Points int32 `json:"points,omitempty"`
-	// The Square-assigned ID of the [order](#type-Order) to which the reward is attached.
+	// The Square-assigned ID of the [order](entity:Order) to which the reward is attached.
 	OrderId string `json:"order_id,omitempty"`
 	// The timestamp when the reward was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`

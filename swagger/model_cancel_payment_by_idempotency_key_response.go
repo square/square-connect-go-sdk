@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The return value from the [CancelPaymentByIdempotencyKey](#endpoint-payments-cancelpaymentbyidempotencykey) endpoint. On success, `errors` is empty.
+// Defines the response returned by  [CancelPaymentByIdempotencyKey](api-endpoint:Payments-CancelPaymentByIdempotencyKey). On success, `errors` is empty.
 type CancelPaymentByIdempotencyKeyResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

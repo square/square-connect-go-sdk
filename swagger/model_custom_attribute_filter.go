@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Supported custom attribute query expressions for calling the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint to search for items or item variations.
+// Supported custom attribute query expressions for calling the [SearchCatalogItems](api-endpoint:Catalog-SearchCatalogItems) endpoint to search for items or item variations.
 type CustomAttributeFilter struct {
 	// A query expression to filter items or item variations by matching their custom attributes' `custom_attribute_definition_id` property value against the the specified id.
 	CustomAttributeDefinitionId string `json:"custom_attribute_definition_id,omitempty"`

@@ -14,8 +14,8 @@ type AdditionalRecipient struct {
 	// The location ID for a recipient (other than the merchant) receiving a portion of this tender.
 	LocationId string `json:"location_id"`
 	// The description of the additional recipient.
-	Description string `json:"description"`
+	Description string `json:"description,omitempty"`
 	AmountMoney *Money `json:"amount_money"`
-	// The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server.
+	// The unique ID for this [AdditionalRecipientReceivable](entity:AdditionalRecipientReceivable), assigned by the server.
 	ReceivableId string `json:"receivable_id,omitempty"`
 }

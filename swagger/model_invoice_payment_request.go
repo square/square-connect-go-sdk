@@ -9,21 +9,21 @@
  */
 package swagger
 
-// Represents a payment request for an [invoice](#type-Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types.  For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).
+// Represents a payment request for an [invoice](entity:Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types.  For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).
 type InvoicePaymentRequest struct {
-	// The Square-generated ID of the payment request in an [invoice](#type-invoice).
+	// The Square-generated ID of the payment request in an [invoice](entity:Invoice).
 	Uid           string                `json:"uid,omitempty"`
 	RequestMethod *InvoiceRequestMethod `json:"request_method,omitempty"`
 	RequestType   *InvoiceRequestType   `json:"request_type,omitempty"`
-	// The due date (in the invoice location's time zone) for the payment request, in `YYYY-MM-DD` format.  After this date, the invoice becomes overdue. This field is required to create a payment request.
+	// The due date (in the invoice's time zone) for the payment request, in `YYYY-MM-DD` format. This field is required to create a payment request.  After this date, the invoice becomes overdue. For example, a payment `due_date` of 2021-03-09 with a `timezone` of America/Los\\_Angeles becomes overdue at midnight on March 9 in America/Los\\_Angeles (which equals a UTC timestamp of 2021-03-10T08:00:00Z).
 	DueDate                   string `json:"due_date,omitempty"`
 	FixedAmountRequestedMoney *Money `json:"fixed_amount_requested_money,omitempty"`
-	// Specifies the amount for the payment request in percentage:  - When the payment `request_type` is `DEPOSIT`, it is the percentage of the order total amount. - When the payment `request_type` is `INSTALLMENT`, it is the percentage of the order total less  the deposit, if requested. The sum of the `percentage_requested` in all installment  payment requests must be equal to 100.  You cannot specify this when the payment `request_type` is `BALANCE` or when the  payment request specifies the `fixed_amount_requested_money` field.
+	// Specifies the amount for the payment request in percentage:  - When the payment `request_type` is `DEPOSIT`, it is the percentage of the order's total amount. - When the payment `request_type` is `INSTALLMENT`, it is the percentage of the order's total less  the deposit, if requested. The sum of the `percentage_requested` in all installment  payment requests must be equal to 100.  You cannot specify this when the payment `request_type` is `BALANCE` or when the  payment request specifies the `fixed_amount_requested_money` field.
 	PercentageRequested string `json:"percentage_requested,omitempty"`
 	// If set to true, the Square-hosted invoice page (the `public_url` field of the invoice)  provides a place for the customer to pay a tip.   This field is allowed only on the final payment request   and the payment `request_type` must be `BALANCE` or `INSTALLMENT`.
 	TippingEnabled         bool                           `json:"tipping_enabled,omitempty"`
 	AutomaticPaymentSource *InvoiceAutomaticPaymentSource `json:"automatic_payment_source,omitempty"`
-	// The ID of the card on file to charge for the payment request. To get the customer’s card on file, use the `customer_id` of the invoice recipient to call [RetrieveCustomer](#endpoint-Customers-RetrieveCustomer) in the Customers API. Then, get the ID of the target card from the `cards` field in the response.
+	// The ID of the credit or debit card on file to charge for the payment request. To get the cards on file for a customer, call [ListCards](api-endpoint:Cards-ListCards) and include the `customer_id` of the invoice recipient.
 	CardId string `json:"card_id,omitempty"`
 	// A list of one or more reminders to send for the payment request.
 	Reminders                       []InvoicePaymentReminder `json:"reminders,omitempty"`

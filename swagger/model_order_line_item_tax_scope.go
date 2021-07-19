@@ -9,7 +9,7 @@
  */
 package swagger
 
-// OrderLineItemTaxScope : Indicates whether this is a line item or order level tax.
+// OrderLineItemTaxScope : Indicates whether this is a line-item or order-level tax.
 type OrderLineItemTaxScope string
 
 // List of OrderLineItemTaxScope

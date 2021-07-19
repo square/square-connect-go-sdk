@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SellerId** | **string** | The ID of the seller, obtainable using the Merchants API. | [optional] [default to null]
-**CreatedAt** | **string** | The RFC-3339 timestamp specifying the booking&#x27;s creation time. | [optional] [default to null]
+**CreatedAt** | **string** | The RFC 3339 timestamp specifying the booking&#x27;s creation time. | [optional] [default to null]
 **BookingEnabled** | **bool** | Indicates whether the seller is open for booking. | [optional] [default to null]
 **CustomerTimezoneChoice** | [***BusinessBookingProfileCustomerTimezoneChoice**](BusinessBookingProfileCustomerTimezoneChoice.md) |  | [optional] [default to null]
 **BookingPolicy** | [***BusinessBookingProfileBookingPolicy**](BusinessBookingProfileBookingPolicy.md) |  | [optional] [default to null]

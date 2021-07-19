@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a worker starts a [Shift](#type-Shift).
+// Published when a worker starts a [Shift](entity:Shift).
 type LaborShiftCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

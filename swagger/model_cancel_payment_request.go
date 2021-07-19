@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Cancels (voids) a payment before it has been completed. Note: Only payments created with `autocomplete` set to `false` can be canceled.
+// Describes the request to cancel (void) a payment using  [CancelPayment](api-endpoint:Payments-CancelPayment).  You can only cancel a payment that is approved (not completed). For more information, see  [Delayed capture of a payment](https://developer.squareup.com/docs/payments-api/take-payments/card-payments#delayed-capture-of-a-card-payment).
 type CancelPaymentRequest struct {
 }

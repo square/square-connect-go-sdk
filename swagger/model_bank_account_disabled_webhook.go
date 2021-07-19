@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when Square sets the status of a [BankAccount](#type-BankAccount) to `DISABLED`.
+// Published when Square sets the status of a [BankAccount](entity:BankAccount) to `DISABLED`.
 type BankAccountDisabledWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

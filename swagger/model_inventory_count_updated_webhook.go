@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when the quantity is updated for a [CatalogItemVariation](#type-CatalogItemVariation).
+// Published when the quantity is updated for a [CatalogItemVariation](entity:CatalogItemVariation).
 type InventoryCountUpdatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

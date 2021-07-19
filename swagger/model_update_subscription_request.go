@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines parameters in a [UpdateSubscription](#endpoint-subscriptions-updatesubscription) endpoint  request.
+// Defines parameters in a [UpdateSubscription](api-endpoint:Subscriptions-UpdateSubscription) endpoint request.
 type UpdateSubscriptionRequest struct {
 	Subscription *Subscription `json:"subscription,omitempty"`
 }

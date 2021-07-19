@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Refund](#type-PaymentRefund) is created.
+// Published when a [Refund](entity:PaymentRefund) is created.
 type RefundCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

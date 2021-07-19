@@ -11,10 +11,10 @@ package swagger
 
 // Provides metadata when the event `type` is `REDEEM_REWARD`.
 type LoyaltyEventRedeemReward struct {
-	// The ID of the [loyalty program](#type-LoyaltyProgram).
+	// The ID of the [loyalty program](entity:LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id"`
-	// The ID of the redeemed [loyalty reward](#type-LoyaltyReward). This field is returned only if the event source is `LOYALTY_API`.
+	// The ID of the redeemed [loyalty reward](entity:LoyaltyReward). This field is returned only if the event source is `LOYALTY_API`.
 	RewardId string `json:"reward_id,omitempty"`
-	// The ID of the [order](#type-Order) that redeemed the reward. This field is returned only if the Orders API is used to process orders.
+	// The ID of the [order](entity:Order) that redeemed the reward. This field is returned only if the Orders API is used to process orders.
 	OrderId string `json:"order_id,omitempty"`
 }

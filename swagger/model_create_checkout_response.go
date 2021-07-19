@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the __CreateCheckout__ endpoint.
+// Defines the fields that are included in the response body of a request to the `CreateCheckout` endpoint.
 type CreateCheckoutResponse struct {
 	Checkout *Checkout `json:"checkout,omitempty"`
 	// Any errors that occurred during the request.

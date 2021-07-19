@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when an [Invoice](#type-Invoice) is created.
+// Published when an [Invoice](entity:Invoice) is created.
 type InvoiceCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Payment](#type-Payment) is created.
+// Published when a [Payment](entity:Payment) is created.
 type PaymentCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

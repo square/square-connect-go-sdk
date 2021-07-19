@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Defines the body parameters that can be included in a request to the [CreateRefund](#endpoint-createrefund) endpoint.  Deprecated - recommend using [RefundPayment](#endpoint-refunds-refundpayment)
+// Defines the body parameters that can be included in a request to the [CreateRefund](api-endpoint:Transactions-CreateRefund) endpoint.  Deprecated - recommend using [RefundPayment](api-endpoint:Refunds-RefundPayment)
 type CreateRefundRequest struct {
-	// A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency keys](#idempotencykeys) for more information.
+	// A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency keys](https://developer.squareup.com/docs/working-with-apis/idempotency) for more information.
 	IdempotencyKey string `json:"idempotency_key"`
-	// The ID of the tender to refund.  A [`Transaction`](#type-transaction) has one or more `tenders` (i.e., methods of payment) associated with it, and you refund each tender separately with the Connect API.
+	// The ID of the tender to refund.  A [`Transaction`](entity:Transaction) has one or more `tenders` (i.e., methods of payment) associated with it, and you refund each tender separately with the Connect API.
 	TenderId string `json:"tender_id"`
 	// A description of the reason for the refund.  Default value: `Refund via API`
 	Reason      string `json:"reason,omitempty"`

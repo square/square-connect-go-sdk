@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Defines the body parameters that can be provided in a request to the [CreateCustomerGroup](#endpoint-createcustomegroup) endpoint.
+// Defines the body parameters that can be included in a request to the [CreateCustomerGroup](api-endpoint:CustomerGroups-CreateCustomerGroup) endpoint.
 type CreateCustomerGroupRequest struct {
-	// The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.
+	// The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency).
 	IdempotencyKey string         `json:"idempotency_key,omitempty"`
 	Group          *CustomerGroup `json:"group"`
 }

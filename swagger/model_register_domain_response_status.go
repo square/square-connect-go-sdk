@@ -9,7 +9,7 @@
  */
 package swagger
 
-// RegisterDomainResponseStatus : The status of domain registration.
+// RegisterDomainResponseStatus : The status of the domain registration.
 type RegisterDomainResponseStatus string
 
 // List of RegisterDomainResponseStatus

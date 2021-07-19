@@ -9,7 +9,7 @@
  */
 package swagger
 
-// A refund of an [AdditionalRecipientReceivable](#type-additionalrecipientreceivable). This includes the ID of the additional recipient receivable associated to this object, as well as a reference to the [Refund](#type-refund) that created this receivable refund.
+// A refund of an [AdditionalRecipientReceivable](entity:AdditionalRecipientReceivable). This includes the ID of the additional recipient receivable associated to this object, as well as a reference to the [Refund](entity:Refund) that created this receivable refund.
 type AdditionalRecipientReceivableRefund struct {
 	// The receivable refund's unique ID, issued by Square payments servers.
 	Id string `json:"id"`

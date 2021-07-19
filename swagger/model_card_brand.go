@@ -27,4 +27,5 @@ const (
 	INTERAC_CardBrand             CardBrand = "INTERAC"
 	EFTPOS_CardBrand              CardBrand = "EFTPOS"
 	FELICA_CardBrand              CardBrand = "FELICA"
+	EBT_CardBrand                 CardBrand = "EBT"
 )

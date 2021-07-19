@@ -12,7 +12,7 @@ package swagger
 // Provides information about the application used to generate a change.
 type SourceApplication struct {
 	Product *Product `json:"product,omitempty"`
-	// Read-only Square ID assigned to the application. Only used for [Product](#type-product) type `EXTERNAL_API`.
+	// Read-only Square ID assigned to the application. Only used for [Product](entity:Product) type `EXTERNAL_API`.
 	ApplicationId string `json:"application_id,omitempty"`
 	// Read-only display name assigned to the application (e.g. `\"Custom Application\"`, `\"Square POS 4.74 for Android\"`).
 	Name string `json:"name,omitempty"`

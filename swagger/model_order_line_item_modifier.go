@@ -9,11 +9,11 @@
  */
 package swagger
 
-// A [CatalogModifier](#type-catalogmodifier).
+// A [CatalogModifier](entity:CatalogModifier).
 type OrderLineItemModifier struct {
-	// Unique ID that identifies the modifier only within this order.
+	// A unique ID that identifies the modifier only within this order.
 	Uid string `json:"uid,omitempty"`
-	// The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
+	// The catalog object ID referencing [CatalogModifier](entity:CatalogModifier).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
 	// The name of the item modifier.
 	Name            string `json:"name,omitempty"`

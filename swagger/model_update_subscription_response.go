@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response from the [UpdateSubscription](#endpoint-subscriptions-updatesubscription) endpoint.
+// Defines the fields that are included in the response from the [UpdateSubscription](api-endpoint:Subscriptions-UpdateSubscription) endpoint.
 type UpdateSubscriptionResponse struct {
 	// Information about errors encountered during the request.
 	Errors       []ModelError  `json:"errors,omitempty"`

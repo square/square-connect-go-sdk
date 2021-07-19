@@ -11,10 +11,10 @@ package swagger
 
 // Provides metadata when the event `type` is `ACCUMULATE_POINTS`.
 type LoyaltyEventAccumulatePoints struct {
-	// The ID of the [loyalty program](#type-LoyaltyProgram).
+	// The ID of the [loyalty program](entity:LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id,omitempty"`
 	// The number of points accumulated by the event.
 	Points int32 `json:"points,omitempty"`
-	// The ID of the [order](#type-Order) for which the buyer accumulated the points. This field is returned only if the Orders API is used to process orders.
+	// The ID of the [order](entity:Order) for which the buyer accumulated the points. This field is returned only if the Orders API is used to process orders.
 	OrderId string `json:"order_id,omitempty"`
 }

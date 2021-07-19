@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Identifies the  sort field and sort order.
+// Identifies the sort field and sort order.
 type InvoiceSort struct {
 	Field *InvoiceSortField `json:"field"`
 	Order *SortOrder        `json:"order,omitempty"`

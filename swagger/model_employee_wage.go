@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The hourly wage rate that an employee will earn on a `Shift` for doing the job specified by the `title` property of this object. Deprecated at verison 2020-08-26. Use `TeamMemberWage` instead.
+// The hourly wage rate that an employee will earn on a `Shift` for doing the job specified by the `title` property of this object. Deprecated at version 2020-08-26. Use `TeamMemberWage` instead.
 type EmployeeWage struct {
 	// UUID for this object.
 	Id string `json:"id,omitempty"`

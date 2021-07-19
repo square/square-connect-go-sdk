@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > GetBankAccountResponse GetBankAccount(ctx, bankAccountId)
 GetBankAccount
 
-Returns details of a [BankAccount](#type-bankaccount)  linked to a Square account.
+Returns details of a [BankAccount](entity:BankAccount) linked to a Square account.
 
 ### Required Parameters
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 > GetBankAccountByV1IdResponse GetBankAccountByV1Id(ctx, v1BankAccountId)
 GetBankAccountByV1Id
 
-Returns details of a [BankAccount](#type-bankaccount) identified by V1 bank account ID.
+Returns details of a [BankAccount](entity:BankAccount) identified by V1 bank account ID.
 
 ### Required Parameters
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 > ListBankAccountsResponse ListBankAccounts(ctx, optional)
 ListBankAccounts
 
-Returns a list of [BankAccount](#type-bankaccount) objects linked to a Square account.
+Returns a list of [BankAccount](entity:BankAccount) objects linked to a Square account.
 
 ### Required Parameters
 

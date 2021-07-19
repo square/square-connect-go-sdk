@@ -11,11 +11,11 @@ package swagger
 
 // Represents a tax being returned that applies to one or more return line items in an order.  Fixed-amount, order-scoped taxes are distributed across all non-zero return line item totals. The amount distributed to each return line item is relative to that item’s contribution to the order subtotal.
 type OrderReturnTax struct {
-	// Unique ID that identifies the return tax only within this order.
+	// A unique ID that identifies the returned tax only within this order.
 	Uid string `json:"uid,omitempty"`
-	// `uid` of the Tax from the Order which contains the original charge of this tax.
+	// The tax `uid` from the order that contains the original tax charge.
 	SourceTaxUid string `json:"source_tax_uid,omitempty"`
-	// The catalog object id referencing [CatalogTax](#type-catalogtax).
+	// The catalog object ID referencing [CatalogTax](entity:CatalogTax).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
 	// The tax's name.
 	Name  string                `json:"name,omitempty"`

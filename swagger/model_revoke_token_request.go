@@ -10,7 +10,7 @@
 package swagger
 
 type RevokeTokenRequest struct {
-	// The Square issued ID for your application, available from the [application dashboard](https://connect.squareup.com/apps).
+	// The Square issued ID for your application, available from the [developer dashboard](https://developer.squareup.com/apps).
 	ClientId string `json:"client_id,omitempty"`
 	// The access token of the merchant whose token you want to revoke. Do not provide a value for merchant_id if you provide this parameter.
 	AccessToken string `json:"access_token,omitempty"`

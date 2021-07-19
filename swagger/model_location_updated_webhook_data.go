@@ -12,6 +12,6 @@ package swagger
 type LocationUpdatedWebhookData struct {
 	// Name of the affected object’s type, `\"location\"`.
 	Type_ string `json:"type,omitempty"`
-	// ID of the updated [Location](#type-location).
+	// ID of the updated [Location](entity:Location).
 	Id string `json:"id,omitempty"`
 }

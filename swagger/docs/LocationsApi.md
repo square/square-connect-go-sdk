@@ -43,7 +43,7 @@ See the corresponding object definition for field details. |
 > ListLocationsResponse ListLocations(ctx, )
 ListLocations
 
-Provides information of all locations of a business.  Many Square API endpoints require a `location_id` parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
+Provides information of all locations of a business.  Many Square API endpoints require a `location_id` parameter. The `id` field of the [`Location`](entity:Location) objects returned by this endpoint correspond to that `location_id` parameter.
 
 ### Required Parameters
 This endpoint does not need any parameter.

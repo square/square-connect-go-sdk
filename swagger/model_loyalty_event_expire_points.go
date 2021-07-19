@@ -11,7 +11,7 @@ package swagger
 
 // Provides metadata when the event `type` is `EXPIRE_POINTS`.
 type LoyaltyEventExpirePoints struct {
-	// The Square-assigned ID of the [loyalty program](#type-LoyaltyProgram).
+	// The Square-assigned ID of the [loyalty program](entity:LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id"`
 	// The number of points expired.
 	Points int32 `json:"points"`

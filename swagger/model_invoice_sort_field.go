@@ -9,7 +9,7 @@
  */
 package swagger
 
-// InvoiceSortField : Field to use for sorting.
+// InvoiceSortField : The field to use for sorting.
 type InvoiceSortField string
 
 // List of InvoiceSortField

@@ -24,7 +24,7 @@ type ObtainTokenResponse struct {
 	PlanId string `json:"plan_id,omitempty"`
 	// Then OpenID token belonging to this this person. Only present if the OPENID scope is included in the authorize request.
 	IdToken string `json:"id_token,omitempty"`
-	// A refresh token. OAuth refresh tokens are 64 bytes long. For more information, see [OAuth access token management](https://developer.squareup.com/docs/authz/oauth/how-it-works#oauth-access-token-management).
+	// A refresh token. OAuth refresh tokens are 64 bytes long. For more information, see [OAuth access token management](https://developer.squareup.com/docs/oauth-api/how-it-works#oauth-access-token-management).
 	RefreshToken string `json:"refresh_token,omitempty"`
 	// A boolean indicating the access token is a short-lived access token. The short-lived access token returned in the response will expire in 24 hours.
 	ShortLived bool `json:"short_lived,omitempty"`

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a response from a create request, containing the created `TeamMember` object or error messages.
+// Represents a response from a create request containing the created `TeamMember` object or error messages.
 type CreateTeamMemberResponse struct {
 	TeamMember *TeamMember `json:"team_member,omitempty"`
 	// The errors that occurred during the request.

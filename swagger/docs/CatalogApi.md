@@ -22,7 +22,7 @@ Method | HTTP request | Description
 > BatchDeleteCatalogObjectsResponse BatchDeleteCatalogObjects(ctx, body)
 BatchDeleteCatalogObjects
 
-Deletes a set of [CatalogItem](#type-catalogitem)s based on the provided list of target IDs and returns a set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a CatalogItem will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.  `BatchDeleteCatalogObjects` succeeds even if only a portion of the targeted IDs can be deleted. The response will only include IDs that were actually deleted.
+Deletes a set of [CatalogItem](entity:CatalogItem)s based on the provided list of target IDs and returns a set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a CatalogItem will also delete all of its [CatalogItemVariation](entity:CatalogItemVariation) children.  `BatchDeleteCatalogObjects` succeeds even if only a portion of the targeted IDs can be deleted. The response will only include IDs that were actually deleted.
 
 ### Required Parameters
 
@@ -52,7 +52,7 @@ See the corresponding object definition for field details. |
 > BatchRetrieveCatalogObjectsResponse BatchRetrieveCatalogObjects(ctx, body)
 BatchRetrieveCatalogObjects
 
-Returns a set of objects based on the provided ID. Each [CatalogItem](#type-catalogitem) returned in the set includes all of its child information including: all of its [CatalogItemVariation](#type-catalogitemvariation) objects, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
+Returns a set of objects based on the provided ID. Each [CatalogItem](entity:CatalogItem) returned in the set includes all of its child information including: all of its [CatalogItemVariation](entity:CatalogItemVariation) objects, references to its [CatalogModifierList](entity:CatalogModifierList) objects, and the ids of any [CatalogTax](entity:CatalogTax) objects that apply to it.
 
 ### Required Parameters
 
@@ -136,7 +136,7 @@ This endpoint does not need any parameter.
 > CreateCatalogImageResponse CreateCatalogImage(ctx, request, imageFile)
 CreateCatalogImage
 
-Uploads an image file to be represented by a [CatalogImage](#type-catalogimage) object linked to an existing [CatalogObject](#type-catalogobject) instance. A call to this endpoint can upload an image, link an image to a catalog object, or do both.  This `CreateCatalogImage` endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
+Uploads an image file to be represented by a [CatalogImage](entity:CatalogImage) object linked to an existing [CatalogObject](entity:CatalogObject) instance. A call to this endpoint can upload an image, link an image to a catalog object, or do both.  This `CreateCatalogImage` endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
 
 ### Required Parameters
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 > DeleteCatalogObjectResponse DeleteCatalogObject(ctx, objectId)
 DeleteCatalogObject
 
-Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](#type-catalogitem) will also delete all of its [CatalogItemVariation](#type-catalogitemvariation) children.
+Deletes a single [CatalogObject](entity:CatalogObject) based on the provided ID and returns the set of successfully deleted IDs in the response. Deletion is a cascading event such that all children of the targeted object are also deleted. For example, deleting a [CatalogItem](entity:CatalogItem) will also delete all of its [CatalogItemVariation](entity:CatalogItemVariation) children.
 
 ### Required Parameters
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 > ListCatalogResponse ListCatalog(ctx, optional)
 ListCatalog
 
-Returns a list of [CatalogObject](#type-catalogobject)s that includes all objects of a set of desired types (for example, all [CatalogItem](#type-catalogitem) and [CatalogTax](#type-catalogtax) objects) in the catalog. The `types` parameter is specified as a comma-separated list of valid [CatalogObject](#type-catalogobject) types: `ITEM`, `ITEM_VARIATION`, `MODIFIER`, `MODIFIER_LIST`, `CATEGORY`, `DISCOUNT`, `TAX`, `IMAGE`.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use [SearchCatalogObjects](#endpoint-Catalog-SearchCatalogObjects)  and set the `include_deleted_objects` attribute value to `true`.
+Returns a list of [CatalogObject](entity:CatalogObject)s that includes all objects of a set of desired types (for example, all [CatalogItem](entity:CatalogItem) and [CatalogTax](entity:CatalogTax) objects) in the catalog. The `types` parameter is specified as a comma-separated list of valid [CatalogObject](entity:CatalogObject) types: `ITEM`, `ITEM_VARIATION`, `MODIFIER`, `MODIFIER_LIST`, `CATEGORY`, `DISCOUNT`, `TAX`, `IMAGE`.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects) and set the `include_deleted_objects` attribute value to `true`.
 
 ### Required Parameters
 
@@ -206,9 +206,9 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a CatalogApiListCatalogOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **optional.String**| The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | 
- **types** | **optional.String**| An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY,IMAGE&#x60;.  The legal values are taken from the CatalogObjectType enum: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;. | 
- **catalogVersion** | **optional.Int64**| The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](#type-catalogobject)s&#x27; &#x60;version&#x60; attribute. | 
+ **cursor** | **optional.String**| The pagination cursor returned in the previous response. Leave unset for an initial request. The page size is currently set to be 100. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | 
+ **types** | **optional.String**| An optional case-insensitive, comma-separated list of object types to retrieve.  The valid values are defined in the [CatalogObjectType](entity:CatalogObjectType) enum, including &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;.  If this is unspecified, the operation returns objects of all the types at the version of the Square API used to make the request. | 
+ **catalogVersion** | **optional.Int64**| The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](entity:CatalogObject)s&#x27; &#x60;version&#x60; attribute. | 
 
 ### Return type
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 > RetrieveCatalogObjectResponse RetrieveCatalogObject(ctx, objectId, optional)
 RetrieveCatalogObject
 
-Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-catalogobject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](#type-catalogitem) information including: [CatalogItemVariation](#type-catalogitemvariation) children, references to its [CatalogModifierList](#type-catalogmodifierlist) objects, and the ids of any [CatalogTax](#type-catalogtax) objects that apply to it.
+Returns a single [CatalogItem](entity:CatalogItem) as a [CatalogObject](entity:CatalogObject) based on the provided ID. The returned object includes all of the relevant [CatalogItem](entity:CatalogItem) information including: [CatalogItemVariation](entity:CatalogItemVariation) children, references to its [CatalogModifierList](entity:CatalogModifierList) objects, and the ids of any [CatalogTax](entity:CatalogTax) objects that apply to it.
 
 ### Required Parameters
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **includeRelatedObjects** | **optional.Bool**| If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory&#x60;, &#x60;CatalogTax&#x60;, &#x60;CatalogImage&#x60; and &#x60;CatalogModifierList&#x60; objects will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of the response.  Default value: &#x60;false&#x60; | [default to false]
- **catalogVersion** | **optional.Int64**| Requests objects as of a specific version of the catalog. This allows you to retrieve historical versions of objects. The value to retrieve a specific version of an object can be found in the version field of [CatalogObject](#type-catalogobject)s. | 
+ **catalogVersion** | **optional.Int64**| Requests objects as of a specific version of the catalog. This allows you to retrieve historical versions of objects. The value to retrieve a specific version of an object can be found in the version field of [CatalogObject](entity:CatalogObject)s. | 
 
 ### Return type
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 > SearchCatalogItemsResponse SearchCatalogItems(ctx, body)
 SearchCatalogItems
 
-Searches for catalog items or item variations by matching supported search attribute values, including custom attribute values, against one or more of the specified query expressions.  This (`SearchCatalogItems`) endpoint differs from the [SearchCatalogObjects](#endpoint-Catalog-SearchCatalogObjects) endpoint in the following aspects:  - `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects. - `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not. - `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does. - The both endpoints use different call conventions, including the query filter formats.
+Searches for catalog items or item variations by matching supported search attribute values, including custom attribute values, against one or more of the specified query expressions.  This (`SearchCatalogItems`) endpoint differs from the [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects) endpoint in the following aspects:  - `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects. - `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not. - `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does. - The both endpoints use different call conventions, including the query filter formats.
 
 ### Required Parameters
 
@@ -296,7 +296,7 @@ See the corresponding object definition for field details. |
 > SearchCatalogObjectsResponse SearchCatalogObjects(ctx, body)
 SearchCatalogObjects
 
-Searches for [CatalogObject](#type-CatalogObject) of any type by matching supported search attribute values, excluding custom attribute values on items or item variations, against one or more of the specified query expressions.  This (`SearchCatalogObjects`) endpoint differs from the [SearchCatalogItems](#endpoint-Catalog-SearchCatalogItems) endpoint in the following aspects:  - `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects. - `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not. - `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does. - The both endpoints have different call conventions, including the query filter formats.
+Searches for [CatalogObject](entity:CatalogObject) of any type by matching supported search attribute values, excluding custom attribute values on items or item variations, against one or more of the specified query expressions.  This (`SearchCatalogObjects`) endpoint differs from the [SearchCatalogItems](api-endpoint:Catalog-SearchCatalogItems) endpoint in the following aspects:  - `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects. - `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not. - `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does. - The both endpoints have different call conventions, including the query filter formats.
 
 ### Required Parameters
 
@@ -326,7 +326,7 @@ See the corresponding object definition for field details. |
 > UpdateItemModifierListsResponse UpdateItemModifierLists(ctx, body)
 UpdateItemModifierLists
 
-Updates the [CatalogModifierList](#type-catalogmodifierlist) objects that apply to the targeted [CatalogItem](#type-catalogitem) without having to perform an upsert on the entire item.
+Updates the [CatalogModifierList](entity:CatalogModifierList) objects that apply to the targeted [CatalogItem](entity:CatalogItem) without having to perform an upsert on the entire item.
 
 ### Required Parameters
 
@@ -356,7 +356,7 @@ See the corresponding object definition for field details. |
 > UpdateItemTaxesResponse UpdateItemTaxes(ctx, body)
 UpdateItemTaxes
 
-Updates the [CatalogTax](#type-catalogtax) objects that apply to the targeted [CatalogItem](#type-catalogitem) without having to perform an upsert on the entire item.
+Updates the [CatalogTax](entity:CatalogTax) objects that apply to the targeted [CatalogItem](entity:CatalogItem) without having to perform an upsert on the entire item.
 
 ### Required Parameters
 
@@ -386,7 +386,7 @@ See the corresponding object definition for field details. |
 > UpsertCatalogObjectResponse UpsertCatalogObject(ctx, body)
 UpsertCatalogObject
 
-Creates or updates the target [CatalogObject](#type-catalogobject).
+Creates or updates the target [CatalogObject](entity:CatalogObject).
 
 ### Required Parameters
 

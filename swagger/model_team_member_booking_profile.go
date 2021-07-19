@@ -11,7 +11,7 @@ package swagger
 
 // The booking profile of a seller's team member, including the team member's ID, display name, description and whether the team member can be booked as a service provider.
 type TeamMemberBookingProfile struct {
-	// The ID of the [TeamMember](#type-TeamMember) object for the team member associated with the booking profile.
+	// The ID of the [TeamMember](entity:TeamMember) object for the team member associated with the booking profile.
 	TeamMemberId string `json:"team_member_id,omitempty"`
 	// The description of the team member.
 	Description string `json:"description,omitempty"`

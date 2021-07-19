@@ -206,7 +206,7 @@ DevicesApiService ListDeviceCodes
 Lists all DeviceCodes associated with the merchant.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DevicesApiListDeviceCodesOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
      * @param "LocationId" (optional.String) -  If specified, only returns DeviceCodes of the specified location. Returns DeviceCodes of all locations if empty.
      * @param "ProductType" (optional.Interface of ProductType) -  If specified, only returns DeviceCodes targeting the specified product type. Returns DeviceCodes of all product types if empty.
      * @param "Status" (optional.Interface of DeviceCodeStatus) -  If specified, returns DeviceCodes with the specified statuses. Returns DeviceCodes of status &#x60;PAIRED&#x60; and &#x60;UNPAIRED&#x60; if empty.

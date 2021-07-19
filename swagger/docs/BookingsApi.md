@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
   **body** | [**CancelBookingRequest**](CancelBookingRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **bookingId** | **string**| The ID of the [Booking](#type-booking) object representing the to-be-cancelled booking. | 
+  **bookingId** | **string**| The ID of the [Booking](entity:Booking) object representing the to-be-cancelled booking. | 
 
 ### Return type
 
@@ -122,7 +122,7 @@ Retrieves a booking.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **bookingId** | **string**| The ID of the [Booking](#type-booking) object representing the to-be-retrieved booking. | 
+  **bookingId** | **string**| The ID of the [Booking](entity:Booking) object representing the to-be-retrieved booking. | 
 
 ### Return type
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
   **body** | [**UpdateBookingRequest**](UpdateBookingRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **bookingId** | **string**| The ID of the [Booking](#type-booking) object representing the to-be-updated booking. | 
+  **bookingId** | **string**| The ID of the [Booking](entity:Booking) object representing the to-be-updated booking. | 
 
 ### Return type
 

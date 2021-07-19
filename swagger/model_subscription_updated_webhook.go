@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Subscription](#type-Subscription) is updated. Typically the `subscription.status` is updated as subscriptions become active or cancelled.
+// Published when a [Subscription](entity:Subscription) is updated. Typically the `subscription.status` is updated as subscriptions become active or cancelled.
 type SubscriptionUpdatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

@@ -34,6 +34,10 @@ Class | Method | HTTP request | Description
 *BookingsApi* | [**RetrieveTeamMemberBookingProfile**](docs/BookingsApi.md#retrieveteammemberbookingprofile) | **Get** /v2/bookings/team-member-booking-profiles/{team_member_id} | RetrieveTeamMemberBookingProfile
 *BookingsApi* | [**SearchAvailability**](docs/BookingsApi.md#searchavailability) | **Post** /v2/bookings/availability/search | SearchAvailability
 *BookingsApi* | [**UpdateBooking**](docs/BookingsApi.md#updatebooking) | **Put** /v2/bookings/{booking_id} | UpdateBooking
+*CardsApi* | [**CreateCard**](docs/CardsApi.md#createcard) | **Post** /v2/cards | CreateCard
+*CardsApi* | [**DisableCard**](docs/CardsApi.md#disablecard) | **Post** /v2/cards/{card_id}/disable | DisableCard
+*CardsApi* | [**ListCards**](docs/CardsApi.md#listcards) | **Get** /v2/cards | ListCards
+*CardsApi* | [**RetrieveCard**](docs/CardsApi.md#retrievecard) | **Get** /v2/cards/{card_id} | RetrieveCard
 *CashDrawersApi* | [**ListCashDrawerShiftEvents**](docs/CashDrawersApi.md#listcashdrawershiftevents) | **Get** /v2/cash-drawers/shifts/{shift_id}/events | ListCashDrawerShiftEvents
 *CashDrawersApi* | [**ListCashDrawerShifts**](docs/CashDrawersApi.md#listcashdrawershifts) | **Get** /v2/cash-drawers/shifts | ListCashDrawerShifts
 *CashDrawersApi* | [**RetrieveCashDrawerShift**](docs/CashDrawersApi.md#retrievecashdrawershift) | **Get** /v2/cash-drawers/shifts/{shift_id} | RetrieveCashDrawerShift
@@ -72,16 +76,25 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**GetDeviceCode**](docs/DevicesApi.md#getdevicecode) | **Get** /v2/devices/codes/{id} | GetDeviceCode
 *DevicesApi* | [**ListDeviceCodes**](docs/DevicesApi.md#listdevicecodes) | **Get** /v2/devices/codes | ListDeviceCodes
 *DisputesApi* | [**AcceptDispute**](docs/DisputesApi.md#acceptdispute) | **Post** /v2/disputes/{dispute_id}/accept | AcceptDispute
-*DisputesApi* | [**CreateDisputeEvidenceFile**](docs/DisputesApi.md#createdisputeevidencefile) | **Post** /v2/disputes/{dispute_id}/evidence_file | CreateDisputeEvidenceFile
-*DisputesApi* | [**CreateDisputeEvidenceText**](docs/DisputesApi.md#createdisputeevidencetext) | **Post** /v2/disputes/{dispute_id}/evidence_text | CreateDisputeEvidenceText
+*DisputesApi* | [**CreateDisputeEvidenceFile**](docs/DisputesApi.md#createdisputeevidencefile) | **Post** /v2/disputes/{dispute_id}/evidence-files | CreateDisputeEvidenceFile
+*DisputesApi* | [**CreateDisputeEvidenceText**](docs/DisputesApi.md#createdisputeevidencetext) | **Post** /v2/disputes/{dispute_id}/evidence-text | CreateDisputeEvidenceText
+*DisputesApi* | [**DeleteDisputeEvidence**](docs/DisputesApi.md#deletedisputeevidence) | **Delete** /v2/disputes/{dispute_id}/evidence/{evidence_id} | DeleteDisputeEvidence
 *DisputesApi* | [**ListDisputeEvidence**](docs/DisputesApi.md#listdisputeevidence) | **Get** /v2/disputes/{dispute_id}/evidence | ListDisputeEvidence
 *DisputesApi* | [**ListDisputes**](docs/DisputesApi.md#listdisputes) | **Get** /v2/disputes | ListDisputes
-*DisputesApi* | [**RemoveDisputeEvidence**](docs/DisputesApi.md#removedisputeevidence) | **Delete** /v2/disputes/{dispute_id}/evidence/{evidence_id} | RemoveDisputeEvidence
 *DisputesApi* | [**RetrieveDispute**](docs/DisputesApi.md#retrievedispute) | **Get** /v2/disputes/{dispute_id} | RetrieveDispute
 *DisputesApi* | [**RetrieveDisputeEvidence**](docs/DisputesApi.md#retrievedisputeevidence) | **Get** /v2/disputes/{dispute_id}/evidence/{evidence_id} | RetrieveDisputeEvidence
 *DisputesApi* | [**SubmitEvidence**](docs/DisputesApi.md#submitevidence) | **Post** /v2/disputes/{dispute_id}/submit-evidence | SubmitEvidence
 *EmployeesApi* | [**ListEmployees**](docs/EmployeesApi.md#listemployees) | **Get** /v2/employees | ListEmployees
 *EmployeesApi* | [**RetrieveEmployee**](docs/EmployeesApi.md#retrieveemployee) | **Get** /v2/employees/{id} | RetrieveEmployee
+*GiftCardActivitiesApi* | [**CreateGiftCardActivity**](docs/GiftCardActivitiesApi.md#creategiftcardactivity) | **Post** /v2/gift-cards/activities | CreateGiftCardActivity
+*GiftCardActivitiesApi* | [**ListGiftCardActivities**](docs/GiftCardActivitiesApi.md#listgiftcardactivities) | **Get** /v2/gift-cards/activities | ListGiftCardActivities
+*GiftCardsApi* | [**CreateGiftCard**](docs/GiftCardsApi.md#creategiftcard) | **Post** /v2/gift-cards | CreateGiftCard
+*GiftCardsApi* | [**LinkCustomerToGiftCard**](docs/GiftCardsApi.md#linkcustomertogiftcard) | **Post** /v2/gift-cards/{gift_card_id}/link-customer | LinkCustomerToGiftCard
+*GiftCardsApi* | [**ListGiftCards**](docs/GiftCardsApi.md#listgiftcards) | **Get** /v2/gift-cards | ListGiftCards
+*GiftCardsApi* | [**RetrieveGiftCard**](docs/GiftCardsApi.md#retrievegiftcard) | **Get** /v2/gift-cards/{id} | RetrieveGiftCard
+*GiftCardsApi* | [**RetrieveGiftCardFromGAN**](docs/GiftCardsApi.md#retrievegiftcardfromgan) | **Post** /v2/gift-cards/from-gan | RetrieveGiftCardFromGAN
+*GiftCardsApi* | [**RetrieveGiftCardFromNonce**](docs/GiftCardsApi.md#retrievegiftcardfromnonce) | **Post** /v2/gift-cards/from-nonce | RetrieveGiftCardFromNonce
+*GiftCardsApi* | [**UnlinkCustomerFromGiftCard**](docs/GiftCardsApi.md#unlinkcustomerfromgiftcard) | **Post** /v2/gift-cards/{gift_card_id}/unlink-customer | UnlinkCustomerFromGiftCard
 *InventoryApi* | [**BatchChangeInventory**](docs/InventoryApi.md#batchchangeinventory) | **Post** /v2/inventory/batch-change | BatchChangeInventory
 *InventoryApi* | [**BatchRetrieveInventoryChanges**](docs/InventoryApi.md#batchretrieveinventorychanges) | **Post** /v2/inventory/batch-retrieve-changes | BatchRetrieveInventoryChanges
 *InventoryApi* | [**BatchRetrieveInventoryCounts**](docs/InventoryApi.md#batchretrieveinventorycounts) | **Post** /v2/inventory/batch-retrieve-counts | BatchRetrieveInventoryCounts
@@ -126,6 +139,7 @@ Class | Method | HTTP request | Description
 *LoyaltyApi* | [**ListLoyaltyPrograms**](docs/LoyaltyApi.md#listloyaltyprograms) | **Get** /v2/loyalty/programs | ListLoyaltyPrograms
 *LoyaltyApi* | [**RedeemLoyaltyReward**](docs/LoyaltyApi.md#redeemloyaltyreward) | **Post** /v2/loyalty/rewards/{reward_id}/redeem | RedeemLoyaltyReward
 *LoyaltyApi* | [**RetrieveLoyaltyAccount**](docs/LoyaltyApi.md#retrieveloyaltyaccount) | **Get** /v2/loyalty/accounts/{account_id} | RetrieveLoyaltyAccount
+*LoyaltyApi* | [**RetrieveLoyaltyProgram**](docs/LoyaltyApi.md#retrieveloyaltyprogram) | **Get** /v2/loyalty/programs/{program_id} | RetrieveLoyaltyProgram
 *LoyaltyApi* | [**RetrieveLoyaltyReward**](docs/LoyaltyApi.md#retrieveloyaltyreward) | **Get** /v2/loyalty/rewards/{reward_id} | RetrieveLoyaltyReward
 *LoyaltyApi* | [**SearchLoyaltyAccounts**](docs/LoyaltyApi.md#searchloyaltyaccounts) | **Post** /v2/loyalty/accounts/search | SearchLoyaltyAccounts
 *LoyaltyApi* | [**SearchLoyaltyEvents**](docs/LoyaltyApi.md#searchloyaltyevents) | **Post** /v2/loyalty/events/search | SearchLoyaltyEvents
@@ -150,14 +164,20 @@ Class | Method | HTTP request | Description
 *PaymentsApi* | [**CreatePayment**](docs/PaymentsApi.md#createpayment) | **Post** /v2/payments | CreatePayment
 *PaymentsApi* | [**GetPayment**](docs/PaymentsApi.md#getpayment) | **Get** /v2/payments/{payment_id} | GetPayment
 *PaymentsApi* | [**ListPayments**](docs/PaymentsApi.md#listpayments) | **Get** /v2/payments | ListPayments
+*PaymentsApi* | [**UpdatePayment**](docs/PaymentsApi.md#updatepayment) | **Put** /v2/payments/{payment_id} | UpdatePayment
 *RefundsApi* | [**GetPaymentRefund**](docs/RefundsApi.md#getpaymentrefund) | **Get** /v2/refunds/{refund_id} | GetPaymentRefund
 *RefundsApi* | [**ListPaymentRefunds**](docs/RefundsApi.md#listpaymentrefunds) | **Get** /v2/refunds | ListPaymentRefunds
 *RefundsApi* | [**RefundPayment**](docs/RefundsApi.md#refundpayment) | **Post** /v2/refunds | RefundPayment
 *ReportingApi* | [**ListAdditionalRecipientReceivableRefunds**](docs/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **Get** /v2/locations/{location_id}/additional-recipient-receivable-refunds | ListAdditionalRecipientReceivableRefunds
 *ReportingApi* | [**ListAdditionalRecipientReceivables**](docs/ReportingApi.md#listadditionalrecipientreceivables) | **Get** /v2/locations/{location_id}/additional-recipient-receivables | ListAdditionalRecipientReceivables
+*SitesApi* | [**ListSites**](docs/SitesApi.md#listsites) | **Get** /v2/sites | ListSites
+*SnippetsApi* | [**DeleteSnippet**](docs/SnippetsApi.md#deletesnippet) | **Delete** /v2/sites/{site_id}/snippet | DeleteSnippet
+*SnippetsApi* | [**RetrieveSnippet**](docs/SnippetsApi.md#retrievesnippet) | **Get** /v2/sites/{site_id}/snippet | RetrieveSnippet
+*SnippetsApi* | [**UpsertSnippet**](docs/SnippetsApi.md#upsertsnippet) | **Post** /v2/sites/{site_id}/snippet | UpsertSnippet
 *SubscriptionsApi* | [**CancelSubscription**](docs/SubscriptionsApi.md#cancelsubscription) | **Post** /v2/subscriptions/{subscription_id}/cancel | CancelSubscription
 *SubscriptionsApi* | [**CreateSubscription**](docs/SubscriptionsApi.md#createsubscription) | **Post** /v2/subscriptions | CreateSubscription
 *SubscriptionsApi* | [**ListSubscriptionEvents**](docs/SubscriptionsApi.md#listsubscriptionevents) | **Get** /v2/subscriptions/{subscription_id}/events | ListSubscriptionEvents
+*SubscriptionsApi* | [**ResumeSubscription**](docs/SubscriptionsApi.md#resumesubscription) | **Post** /v2/subscriptions/{subscription_id}/resume | ResumeSubscription
 *SubscriptionsApi* | [**RetrieveSubscription**](docs/SubscriptionsApi.md#retrievesubscription) | **Get** /v2/subscriptions/{subscription_id} | RetrieveSubscription
 *SubscriptionsApi* | [**SearchSubscriptions**](docs/SubscriptionsApi.md#searchsubscriptions) | **Post** /v2/subscriptions/search | SearchSubscriptions
 *SubscriptionsApi* | [**UpdateSubscription**](docs/SubscriptionsApi.md#updatesubscription) | **Put** /v2/subscriptions/{subscription_id} | UpdateSubscription
@@ -208,6 +228,7 @@ Class | Method | HTTP request | Description
  - [AcceptDisputeResponse](docs/AcceptDisputeResponse.md)
  - [AccumulateLoyaltyPointsRequest](docs/AccumulateLoyaltyPointsRequest.md)
  - [AccumulateLoyaltyPointsResponse](docs/AccumulateLoyaltyPointsResponse.md)
+ - [AchDetails](docs/AchDetails.md)
  - [ActionCancelReason](docs/ActionCancelReason.md)
  - [AddGroupToCustomerRequest](docs/AddGroupToCustomerRequest.md)
  - [AddGroupToCustomerResponse](docs/AddGroupToCustomerResponse.md)
@@ -229,6 +250,7 @@ Class | Method | HTTP request | Description
  - [BankAccountDisabledWebhook](docs/BankAccountDisabledWebhook.md)
  - [BankAccountDisabledWebhookData](docs/BankAccountDisabledWebhookData.md)
  - [BankAccountDisabledWebhookObject](docs/BankAccountDisabledWebhookObject.md)
+ - [BankAccountPaymentDetails](docs/BankAccountPaymentDetails.md)
  - [BankAccountStatus](docs/BankAccountStatus.md)
  - [BankAccountType](docs/BankAccountType.md)
  - [BankAccountVerifiedWebhook](docs/BankAccountVerifiedWebhook.md)
@@ -297,18 +319,35 @@ Class | Method | HTTP request | Description
  - [CaptureTransactionRequest](docs/CaptureTransactionRequest.md)
  - [CaptureTransactionResponse](docs/CaptureTransactionResponse.md)
  - [Card](docs/Card.md)
+ - [CardAutomaticallyUpdatedWebhook](docs/CardAutomaticallyUpdatedWebhook.md)
+ - [CardAutomaticallyUpdatedWebhookData](docs/CardAutomaticallyUpdatedWebhookData.md)
+ - [CardAutomaticallyUpdatedWebhookObject](docs/CardAutomaticallyUpdatedWebhookObject.md)
  - [CardBrand](docs/CardBrand.md)
+ - [CardCreatedWebhook](docs/CardCreatedWebhook.md)
+ - [CardCreatedWebhookData](docs/CardCreatedWebhookData.md)
+ - [CardCreatedWebhookObject](docs/CardCreatedWebhookObject.md)
+ - [CardDisabledWebhook](docs/CardDisabledWebhook.md)
+ - [CardDisabledWebhookData](docs/CardDisabledWebhookData.md)
+ - [CardDisabledWebhookObject](docs/CardDisabledWebhookObject.md)
+ - [CardForgottenWebhook](docs/CardForgottenWebhook.md)
+ - [CardForgottenWebhookCard](docs/CardForgottenWebhookCard.md)
+ - [CardForgottenWebhookData](docs/CardForgottenWebhookData.md)
+ - [CardForgottenWebhookObject](docs/CardForgottenWebhookObject.md)
  - [CardPaymentDetails](docs/CardPaymentDetails.md)
  - [CardPaymentTimeline](docs/CardPaymentTimeline.md)
  - [CardPrepaidType](docs/CardPrepaidType.md)
  - [CardSquareProduct](docs/CardSquareProduct.md)
  - [CardType](docs/CardType.md)
+ - [CardUpdatedWebhook](docs/CardUpdatedWebhook.md)
+ - [CardUpdatedWebhookData](docs/CardUpdatedWebhookData.md)
+ - [CardUpdatedWebhookObject](docs/CardUpdatedWebhookObject.md)
  - [CashDrawerDevice](docs/CashDrawerDevice.md)
  - [CashDrawerEventType](docs/CashDrawerEventType.md)
  - [CashDrawerShift](docs/CashDrawerShift.md)
  - [CashDrawerShiftEvent](docs/CashDrawerShiftEvent.md)
  - [CashDrawerShiftState](docs/CashDrawerShiftState.md)
  - [CashDrawerShiftSummary](docs/CashDrawerShiftSummary.md)
+ - [CashPaymentDetails](docs/CashPaymentDetails.md)
  - [CatalogCategory](docs/CatalogCategory.md)
  - [CatalogCustomAttributeDefinition](docs/CatalogCustomAttributeDefinition.md)
  - [CatalogCustomAttributeDefinitionAppVisibility](docs/CatalogCustomAttributeDefinitionAppVisibility.md)
@@ -362,6 +401,7 @@ Class | Method | HTTP request | Description
  - [CatalogQuickAmountType](docs/CatalogQuickAmountType.md)
  - [CatalogQuickAmountsSettings](docs/CatalogQuickAmountsSettings.md)
  - [CatalogQuickAmountsSettingsOption](docs/CatalogQuickAmountsSettingsOption.md)
+ - [CatalogStockConversion](docs/CatalogStockConversion.md)
  - [CatalogSubscriptionPlan](docs/CatalogSubscriptionPlan.md)
  - [CatalogTax](docs/CatalogTax.md)
  - [CatalogTimePeriod](docs/CatalogTimePeriod.md)
@@ -374,8 +414,8 @@ Class | Method | HTTP request | Description
  - [ChargeRequestAdditionalRecipient](docs/ChargeRequestAdditionalRecipient.md)
  - [ChargeResponse](docs/ChargeResponse.md)
  - [CheckAppointmentsOnboardedRequest](docs/CheckAppointmentsOnboardedRequest.md)
- - [CheckAppointmentsOnboardedResponse](docs/CheckAppointmentsOnboardedResponse.md)
  - [Checkout](docs/Checkout.md)
+ - [CheckoutOptionsPaymentType](docs/CheckoutOptionsPaymentType.md)
  - [CompletePaymentRequest](docs/CompletePaymentRequest.md)
  - [CompletePaymentResponse](docs/CompletePaymentResponse.md)
  - [Coordinates](docs/Coordinates.md)
@@ -384,6 +424,8 @@ Class | Method | HTTP request | Description
  - [CreateBookingResponse](docs/CreateBookingResponse.md)
  - [CreateBreakTypeRequest](docs/CreateBreakTypeRequest.md)
  - [CreateBreakTypeResponse](docs/CreateBreakTypeResponse.md)
+ - [CreateCardRequest](docs/CreateCardRequest.md)
+ - [CreateCardResponse](docs/CreateCardResponse.md)
  - [CreateCatalogImageRequest](docs/CreateCatalogImageRequest.md)
  - [CreateCatalogImageResponse](docs/CreateCatalogImageResponse.md)
  - [CreateCheckoutRequest](docs/CreateCheckoutRequest.md)
@@ -400,6 +442,10 @@ Class | Method | HTTP request | Description
  - [CreateDisputeEvidenceFileResponse](docs/CreateDisputeEvidenceFileResponse.md)
  - [CreateDisputeEvidenceTextRequest](docs/CreateDisputeEvidenceTextRequest.md)
  - [CreateDisputeEvidenceTextResponse](docs/CreateDisputeEvidenceTextResponse.md)
+ - [CreateGiftCardActivityRequest](docs/CreateGiftCardActivityRequest.md)
+ - [CreateGiftCardActivityResponse](docs/CreateGiftCardActivityResponse.md)
+ - [CreateGiftCardRequest](docs/CreateGiftCardRequest.md)
+ - [CreateGiftCardResponse](docs/CreateGiftCardResponse.md)
  - [CreateInvoiceRequest](docs/CreateInvoiceRequest.md)
  - [CreateInvoiceResponse](docs/CreateInvoiceResponse.md)
  - [CreateLocationRequest](docs/CreateLocationRequest.md)
@@ -466,12 +512,20 @@ Class | Method | HTTP request | Description
  - [DeleteCustomerGroupResponse](docs/DeleteCustomerGroupResponse.md)
  - [DeleteCustomerRequest](docs/DeleteCustomerRequest.md)
  - [DeleteCustomerResponse](docs/DeleteCustomerResponse.md)
+ - [DeleteDisputeEvidenceRequest](docs/DeleteDisputeEvidenceRequest.md)
+ - [DeleteDisputeEvidenceResponse](docs/DeleteDisputeEvidenceResponse.md)
  - [DeleteInvoiceRequest](docs/DeleteInvoiceRequest.md)
  - [DeleteInvoiceResponse](docs/DeleteInvoiceResponse.md)
  - [DeleteLoyaltyRewardRequest](docs/DeleteLoyaltyRewardRequest.md)
  - [DeleteLoyaltyRewardResponse](docs/DeleteLoyaltyRewardResponse.md)
  - [DeleteShiftRequest](docs/DeleteShiftRequest.md)
  - [DeleteShiftResponse](docs/DeleteShiftResponse.md)
+ - [DeleteSnippetRequest](docs/DeleteSnippetRequest.md)
+ - [DeleteSnippetResponse](docs/DeleteSnippetResponse.md)
+ - [DeprecatedCreateDisputeEvidenceFileRequest](docs/DeprecatedCreateDisputeEvidenceFileRequest.md)
+ - [DeprecatedCreateDisputeEvidenceFileResponse](docs/DeprecatedCreateDisputeEvidenceFileResponse.md)
+ - [DeprecatedCreateDisputeEvidenceTextRequest](docs/DeprecatedCreateDisputeEvidenceTextRequest.md)
+ - [DeprecatedCreateDisputeEvidenceTextResponse](docs/DeprecatedCreateDisputeEvidenceTextResponse.md)
  - [Device](docs/Device.md)
  - [DeviceCheckoutOptions](docs/DeviceCheckoutOptions.md)
  - [DeviceCode](docs/DeviceCode.md)
@@ -480,6 +534,8 @@ Class | Method | HTTP request | Description
  - [DeviceCodePairedWebhookObject](docs/DeviceCodePairedWebhookObject.md)
  - [DeviceCodeStatus](docs/DeviceCodeStatus.md)
  - [DeviceDetails](docs/DeviceDetails.md)
+ - [DisableCardRequest](docs/DisableCardRequest.md)
+ - [DisableCardResponse](docs/DisableCardResponse.md)
  - [Dispute](docs/Dispute.md)
  - [DisputeCreatedWebhook](docs/DisputeCreatedWebhook.md)
  - [DisputeCreatedWebhookData](docs/DisputeCreatedWebhookData.md)
@@ -488,6 +544,12 @@ Class | Method | HTTP request | Description
  - [DisputeEvidenceAddedWebhook](docs/DisputeEvidenceAddedWebhook.md)
  - [DisputeEvidenceAddedWebhookData](docs/DisputeEvidenceAddedWebhookData.md)
  - [DisputeEvidenceAddedWebhookObject](docs/DisputeEvidenceAddedWebhookObject.md)
+ - [DisputeEvidenceCreatedWebhook](docs/DisputeEvidenceCreatedWebhook.md)
+ - [DisputeEvidenceCreatedWebhookData](docs/DisputeEvidenceCreatedWebhookData.md)
+ - [DisputeEvidenceCreatedWebhookObject](docs/DisputeEvidenceCreatedWebhookObject.md)
+ - [DisputeEvidenceDeletedWebhook](docs/DisputeEvidenceDeletedWebhook.md)
+ - [DisputeEvidenceDeletedWebhookData](docs/DisputeEvidenceDeletedWebhookData.md)
+ - [DisputeEvidenceDeletedWebhookObject](docs/DisputeEvidenceDeletedWebhookObject.md)
  - [DisputeEvidenceFile](docs/DisputeEvidenceFile.md)
  - [DisputeEvidenceRemovedWebhook](docs/DisputeEvidenceRemovedWebhook.md)
  - [DisputeEvidenceRemovedWebhookData](docs/DisputeEvidenceRemovedWebhookData.md)
@@ -498,6 +560,9 @@ Class | Method | HTTP request | Description
  - [DisputeStateChangedWebhook](docs/DisputeStateChangedWebhook.md)
  - [DisputeStateChangedWebhookData](docs/DisputeStateChangedWebhookData.md)
  - [DisputeStateChangedWebhookObject](docs/DisputeStateChangedWebhookObject.md)
+ - [DisputeStateUpdatedWebhook](docs/DisputeStateUpdatedWebhook.md)
+ - [DisputeStateUpdatedWebhookData](docs/DisputeStateUpdatedWebhookData.md)
+ - [DisputeStateUpdatedWebhookObject](docs/DisputeStateUpdatedWebhookObject.md)
  - [DisputedPayment](docs/DisputedPayment.md)
  - [EcomVisibility](docs/EcomVisibility.md)
  - [Employee](docs/Employee.md)
@@ -506,6 +571,7 @@ Class | Method | HTTP request | Description
  - [ErrorCategory](docs/ErrorCategory.md)
  - [ErrorCode](docs/ErrorCode.md)
  - [ExcludeStrategy](docs/ExcludeStrategy.md)
+ - [ExternalPaymentDetails](docs/ExternalPaymentDetails.md)
  - [FilterValue](docs/FilterValue.md)
  - [GetBankAccountByV1IdRequest](docs/GetBankAccountByV1IdRequest.md)
  - [GetBankAccountByV1IdResponse](docs/GetBankAccountByV1IdResponse.md)
@@ -531,8 +597,49 @@ Class | Method | HTTP request | Description
  - [GetTerminalCheckoutResponse](docs/GetTerminalCheckoutResponse.md)
  - [GetTerminalRefundRequest](docs/GetTerminalRefundRequest.md)
  - [GetTerminalRefundResponse](docs/GetTerminalRefundResponse.md)
+ - [GiftCard](docs/GiftCard.md)
+ - [GiftCardActivity](docs/GiftCardActivity.md)
+ - [GiftCardActivityActivate](docs/GiftCardActivityActivate.md)
+ - [GiftCardActivityAdjustDecrement](docs/GiftCardActivityAdjustDecrement.md)
+ - [GiftCardActivityAdjustDecrementReason](docs/GiftCardActivityAdjustDecrementReason.md)
+ - [GiftCardActivityAdjustIncrement](docs/GiftCardActivityAdjustIncrement.md)
+ - [GiftCardActivityAdjustIncrementReason](docs/GiftCardActivityAdjustIncrementReason.md)
+ - [GiftCardActivityBlock](docs/GiftCardActivityBlock.md)
+ - [GiftCardActivityBlockReason](docs/GiftCardActivityBlockReason.md)
+ - [GiftCardActivityClearBalance](docs/GiftCardActivityClearBalance.md)
+ - [GiftCardActivityClearBalanceReason](docs/GiftCardActivityClearBalanceReason.md)
+ - [GiftCardActivityCreatedWebhook](docs/GiftCardActivityCreatedWebhook.md)
+ - [GiftCardActivityCreatedWebhookData](docs/GiftCardActivityCreatedWebhookData.md)
+ - [GiftCardActivityCreatedWebhookObject](docs/GiftCardActivityCreatedWebhookObject.md)
+ - [GiftCardActivityDeactivate](docs/GiftCardActivityDeactivate.md)
+ - [GiftCardActivityDeactivateReason](docs/GiftCardActivityDeactivateReason.md)
+ - [GiftCardActivityImport](docs/GiftCardActivityImport.md)
+ - [GiftCardActivityImportReversal](docs/GiftCardActivityImportReversal.md)
+ - [GiftCardActivityLoad](docs/GiftCardActivityLoad.md)
+ - [GiftCardActivityRedeem](docs/GiftCardActivityRedeem.md)
+ - [GiftCardActivityRefund](docs/GiftCardActivityRefund.md)
+ - [GiftCardActivityType](docs/GiftCardActivityType.md)
+ - [GiftCardActivityUnblock](docs/GiftCardActivityUnblock.md)
+ - [GiftCardActivityUnblockReason](docs/GiftCardActivityUnblockReason.md)
+ - [GiftCardActivityUnlinkedActivityRefund](docs/GiftCardActivityUnlinkedActivityRefund.md)
+ - [GiftCardCreatedWebhook](docs/GiftCardCreatedWebhook.md)
+ - [GiftCardCreatedWebhookData](docs/GiftCardCreatedWebhookData.md)
+ - [GiftCardCreatedWebhookObject](docs/GiftCardCreatedWebhookObject.md)
+ - [GiftCardCustomerLinkedWebhook](docs/GiftCardCustomerLinkedWebhook.md)
+ - [GiftCardCustomerLinkedWebhookData](docs/GiftCardCustomerLinkedWebhookData.md)
+ - [GiftCardCustomerLinkedWebhookObject](docs/GiftCardCustomerLinkedWebhookObject.md)
+ - [GiftCardCustomerUnlinkedWebhook](docs/GiftCardCustomerUnlinkedWebhook.md)
+ - [GiftCardCustomerUnlinkedWebhookData](docs/GiftCardCustomerUnlinkedWebhookData.md)
+ - [GiftCardCustomerUnlinkedWebhookObject](docs/GiftCardCustomerUnlinkedWebhookObject.md)
+ - [GiftCardGanSource](docs/GiftCardGanSource.md)
+ - [GiftCardStatus](docs/GiftCardStatus.md)
+ - [GiftCardType](docs/GiftCardType.md)
+ - [GiftCardUpdatedWebhook](docs/GiftCardUpdatedWebhook.md)
+ - [GiftCardUpdatedWebhookData](docs/GiftCardUpdatedWebhookData.md)
+ - [GiftCardUpdatedWebhookObject](docs/GiftCardUpdatedWebhookObject.md)
  - [InlineTypes](docs/InlineTypes.md)
  - [InventoryAdjustment](docs/InventoryAdjustment.md)
+ - [InventoryAdjustmentGroup](docs/InventoryAdjustmentGroup.md)
  - [InventoryAlertType](docs/InventoryAlertType.md)
  - [InventoryChange](docs/InventoryChange.md)
  - [InventoryChangeType](docs/InventoryChangeType.md)
@@ -544,6 +651,7 @@ Class | Method | HTTP request | Description
  - [InventoryState](docs/InventoryState.md)
  - [InventoryTransfer](docs/InventoryTransfer.md)
  - [Invoice](docs/Invoice.md)
+ - [InvoiceAcceptedPaymentMethods](docs/InvoiceAcceptedPaymentMethods.md)
  - [InvoiceAutomaticPaymentSource](docs/InvoiceAutomaticPaymentSource.md)
  - [InvoiceCanceledWebhook](docs/InvoiceCanceledWebhook.md)
  - [InvoiceCanceledWebhookData](docs/InvoiceCanceledWebhookData.md)
@@ -593,6 +701,8 @@ Class | Method | HTTP request | Description
  - [LaborShiftUpdatedWebhook](docs/LaborShiftUpdatedWebhook.md)
  - [LaborShiftUpdatedWebhookData](docs/LaborShiftUpdatedWebhookData.md)
  - [LaborShiftUpdatedWebhookObject](docs/LaborShiftUpdatedWebhookObject.md)
+ - [LinkCustomerToGiftCardRequest](docs/LinkCustomerToGiftCardRequest.md)
+ - [LinkCustomerToGiftCardResponse](docs/LinkCustomerToGiftCardResponse.md)
  - [ListAdditionalRecipientReceivableRefundsRequest](docs/ListAdditionalRecipientReceivableRefundsRequest.md)
  - [ListAdditionalRecipientReceivableRefundsResponse](docs/ListAdditionalRecipientReceivableRefundsResponse.md)
  - [ListAdditionalRecipientReceivablesRequest](docs/ListAdditionalRecipientReceivablesRequest.md)
@@ -601,6 +711,8 @@ Class | Method | HTTP request | Description
  - [ListBankAccountsResponse](docs/ListBankAccountsResponse.md)
  - [ListBreakTypesRequest](docs/ListBreakTypesRequest.md)
  - [ListBreakTypesResponse](docs/ListBreakTypesResponse.md)
+ - [ListCardsRequest](docs/ListCardsRequest.md)
+ - [ListCardsResponse](docs/ListCardsResponse.md)
  - [ListCashDrawerShiftEventsRequest](docs/ListCashDrawerShiftEventsRequest.md)
  - [ListCashDrawerShiftEventsResponse](docs/ListCashDrawerShiftEventsResponse.md)
  - [ListCashDrawerShiftsRequest](docs/ListCashDrawerShiftsRequest.md)
@@ -623,6 +735,10 @@ Class | Method | HTTP request | Description
  - [ListEmployeeWagesResponse](docs/ListEmployeeWagesResponse.md)
  - [ListEmployeesRequest](docs/ListEmployeesRequest.md)
  - [ListEmployeesResponse](docs/ListEmployeesResponse.md)
+ - [ListGiftCardActivitiesRequest](docs/ListGiftCardActivitiesRequest.md)
+ - [ListGiftCardActivitiesResponse](docs/ListGiftCardActivitiesResponse.md)
+ - [ListGiftCardsRequest](docs/ListGiftCardsRequest.md)
+ - [ListGiftCardsResponse](docs/ListGiftCardsResponse.md)
  - [ListInvoicesRequest](docs/ListInvoicesRequest.md)
  - [ListInvoicesResponse](docs/ListInvoicesResponse.md)
  - [ListLocationsRequest](docs/ListLocationsRequest.md)
@@ -637,6 +753,8 @@ Class | Method | HTTP request | Description
  - [ListPaymentsResponse](docs/ListPaymentsResponse.md)
  - [ListRefundsRequest](docs/ListRefundsRequest.md)
  - [ListRefundsResponse](docs/ListRefundsResponse.md)
+ - [ListSitesRequest](docs/ListSitesRequest.md)
+ - [ListSitesResponse](docs/ListSitesResponse.md)
  - [ListSubscriptionEventsRequest](docs/ListSubscriptionEventsRequest.md)
  - [ListSubscriptionEventsResponse](docs/ListSubscriptionEventsResponse.md)
  - [ListTeamMemberBookingProfilesRequest](docs/ListTeamMemberBookingProfilesRequest.md)
@@ -686,6 +804,9 @@ Class | Method | HTTP request | Description
  - [LoyaltyProgram](docs/LoyaltyProgram.md)
  - [LoyaltyProgramAccrualRule](docs/LoyaltyProgramAccrualRule.md)
  - [LoyaltyProgramAccrualRuleType](docs/LoyaltyProgramAccrualRuleType.md)
+ - [LoyaltyProgramCreatedWebhook](docs/LoyaltyProgramCreatedWebhook.md)
+ - [LoyaltyProgramCreatedWebhookData](docs/LoyaltyProgramCreatedWebhookData.md)
+ - [LoyaltyProgramCreatedWebhookObject](docs/LoyaltyProgramCreatedWebhookObject.md)
  - [LoyaltyProgramExpirationPolicy](docs/LoyaltyProgramExpirationPolicy.md)
  - [LoyaltyProgramRewardDefinition](docs/LoyaltyProgramRewardDefinition.md)
  - [LoyaltyProgramRewardDefinitionScope](docs/LoyaltyProgramRewardDefinitionScope.md)
@@ -721,7 +842,6 @@ Class | Method | HTTP request | Description
  - [ObtainTokenRequest](docs/ObtainTokenRequest.md)
  - [ObtainTokenResponse](docs/ObtainTokenResponse.md)
  - [OnboardAppointmentsRequest](docs/OnboardAppointmentsRequest.md)
- - [OnboardAppointmentsResponse](docs/OnboardAppointmentsResponse.md)
  - [Order](docs/Order.md)
  - [OrderCreated](docs/OrderCreated.md)
  - [OrderCreatedObject](docs/OrderCreatedObject.md)
@@ -747,6 +867,7 @@ Class | Method | HTTP request | Description
  - [OrderLineItemDiscount](docs/OrderLineItemDiscount.md)
  - [OrderLineItemDiscountScope](docs/OrderLineItemDiscountScope.md)
  - [OrderLineItemDiscountType](docs/OrderLineItemDiscountType.md)
+ - [OrderLineItemItemType](docs/OrderLineItemItemType.md)
  - [OrderLineItemModifier](docs/OrderLineItemModifier.md)
  - [OrderLineItemPricingBlocklists](docs/OrderLineItemPricingBlocklists.md)
  - [OrderLineItemPricingBlocklistsBlockedDiscount](docs/OrderLineItemPricingBlocklistsBlockedDiscount.md)
@@ -789,6 +910,7 @@ Class | Method | HTTP request | Description
  - [ProductType](docs/ProductType.md)
  - [PublishInvoiceRequest](docs/PublishInvoiceRequest.md)
  - [PublishInvoiceResponse](docs/PublishInvoiceResponse.md)
+ - [QuantityRatio](docs/QuantityRatio.md)
  - [RedeemLoyaltyRewardRequest](docs/RedeemLoyaltyRewardRequest.md)
  - [RedeemLoyaltyRewardResponse](docs/RedeemLoyaltyRewardResponse.md)
  - [Refund](docs/Refund.md)
@@ -804,16 +926,18 @@ Class | Method | HTTP request | Description
  - [RegisterDomainRequest](docs/RegisterDomainRequest.md)
  - [RegisterDomainResponse](docs/RegisterDomainResponse.md)
  - [RegisterDomainResponseStatus](docs/RegisterDomainResponseStatus.md)
- - [RemoveDisputeEvidenceRequest](docs/RemoveDisputeEvidenceRequest.md)
- - [RemoveDisputeEvidenceResponse](docs/RemoveDisputeEvidenceResponse.md)
  - [RemoveGroupFromCustomerRequest](docs/RemoveGroupFromCustomerRequest.md)
  - [RemoveGroupFromCustomerResponse](docs/RemoveGroupFromCustomerResponse.md)
  - [RenewTokenRequest](docs/RenewTokenRequest.md)
  - [RenewTokenResponse](docs/RenewTokenResponse.md)
+ - [ResumeSubscriptionRequest](docs/ResumeSubscriptionRequest.md)
+ - [ResumeSubscriptionResponse](docs/ResumeSubscriptionResponse.md)
  - [RetrieveBookingRequest](docs/RetrieveBookingRequest.md)
  - [RetrieveBookingResponse](docs/RetrieveBookingResponse.md)
  - [RetrieveBusinessBookingProfileRequest](docs/RetrieveBusinessBookingProfileRequest.md)
  - [RetrieveBusinessBookingProfileResponse](docs/RetrieveBusinessBookingProfileResponse.md)
+ - [RetrieveCardRequest](docs/RetrieveCardRequest.md)
+ - [RetrieveCardResponse](docs/RetrieveCardResponse.md)
  - [RetrieveCashDrawerShiftRequest](docs/RetrieveCashDrawerShiftRequest.md)
  - [RetrieveCashDrawerShiftResponse](docs/RetrieveCashDrawerShiftResponse.md)
  - [RetrieveCatalogObjectRequest](docs/RetrieveCatalogObjectRequest.md)
@@ -830,6 +954,12 @@ Class | Method | HTTP request | Description
  - [RetrieveDisputeResponse](docs/RetrieveDisputeResponse.md)
  - [RetrieveEmployeeRequest](docs/RetrieveEmployeeRequest.md)
  - [RetrieveEmployeeResponse](docs/RetrieveEmployeeResponse.md)
+ - [RetrieveGiftCardFromGanRequest](docs/RetrieveGiftCardFromGanRequest.md)
+ - [RetrieveGiftCardFromGanResponse](docs/RetrieveGiftCardFromGanResponse.md)
+ - [RetrieveGiftCardFromNonceRequest](docs/RetrieveGiftCardFromNonceRequest.md)
+ - [RetrieveGiftCardFromNonceResponse](docs/RetrieveGiftCardFromNonceResponse.md)
+ - [RetrieveGiftCardRequest](docs/RetrieveGiftCardRequest.md)
+ - [RetrieveGiftCardResponse](docs/RetrieveGiftCardResponse.md)
  - [RetrieveInventoryAdjustmentRequest](docs/RetrieveInventoryAdjustmentRequest.md)
  - [RetrieveInventoryAdjustmentResponse](docs/RetrieveInventoryAdjustmentResponse.md)
  - [RetrieveInventoryChangesRequest](docs/RetrieveInventoryChangesRequest.md)
@@ -842,14 +972,17 @@ Class | Method | HTTP request | Description
  - [RetrieveLocationResponse](docs/RetrieveLocationResponse.md)
  - [RetrieveLoyaltyAccountRequest](docs/RetrieveLoyaltyAccountRequest.md)
  - [RetrieveLoyaltyAccountResponse](docs/RetrieveLoyaltyAccountResponse.md)
+ - [RetrieveLoyaltyProgramRequest](docs/RetrieveLoyaltyProgramRequest.md)
+ - [RetrieveLoyaltyProgramResponse](docs/RetrieveLoyaltyProgramResponse.md)
  - [RetrieveLoyaltyRewardRequest](docs/RetrieveLoyaltyRewardRequest.md)
  - [RetrieveLoyaltyRewardResponse](docs/RetrieveLoyaltyRewardResponse.md)
  - [RetrieveMerchantRequest](docs/RetrieveMerchantRequest.md)
  - [RetrieveMerchantResponse](docs/RetrieveMerchantResponse.md)
  - [RetrieveObsMigrationProfileRequest](docs/RetrieveObsMigrationProfileRequest.md)
- - [RetrieveObsMigrationProfileResponse](docs/RetrieveObsMigrationProfileResponse.md)
  - [RetrieveOrderRequest](docs/RetrieveOrderRequest.md)
  - [RetrieveOrderResponse](docs/RetrieveOrderResponse.md)
+ - [RetrieveSnippetRequest](docs/RetrieveSnippetRequest.md)
+ - [RetrieveSnippetResponse](docs/RetrieveSnippetResponse.md)
  - [RetrieveSubscriptionRequest](docs/RetrieveSubscriptionRequest.md)
  - [RetrieveSubscriptionResponse](docs/RetrieveSubscriptionResponse.md)
  - [RetrieveTeamMemberBookingProfileRequest](docs/RetrieveTeamMemberBookingProfileRequest.md)
@@ -921,6 +1054,9 @@ Class | Method | HTTP request | Description
  - [ShiftWage](docs/ShiftWage.md)
  - [ShiftWorkday](docs/ShiftWorkday.md)
  - [ShiftWorkdayMatcher](docs/ShiftWorkdayMatcher.md)
+ - [Site](docs/Site.md)
+ - [Snippet](docs/Snippet.md)
+ - [SnippetResponse](docs/SnippetResponse.md)
  - [SortOrder](docs/SortOrder.md)
  - [SourceApplication](docs/SourceApplication.md)
  - [StandardUnitDescription](docs/StandardUnitDescription.md)
@@ -933,6 +1069,8 @@ Class | Method | HTTP request | Description
  - [SubscriptionCreatedWebhookData](docs/SubscriptionCreatedWebhookData.md)
  - [SubscriptionCreatedWebhookObject](docs/SubscriptionCreatedWebhookObject.md)
  - [SubscriptionEvent](docs/SubscriptionEvent.md)
+ - [SubscriptionEventInfo](docs/SubscriptionEventInfo.md)
+ - [SubscriptionEventInfoCode](docs/SubscriptionEventInfoCode.md)
  - [SubscriptionEventSubscriptionEventType](docs/SubscriptionEventSubscriptionEventType.md)
  - [SubscriptionPhase](docs/SubscriptionPhase.md)
  - [SubscriptionStatus](docs/SubscriptionStatus.md)
@@ -945,8 +1083,18 @@ Class | Method | HTTP request | Description
  - [TeamMemberAssignedLocations](docs/TeamMemberAssignedLocations.md)
  - [TeamMemberAssignedLocationsAssignmentType](docs/TeamMemberAssignedLocationsAssignmentType.md)
  - [TeamMemberBookingProfile](docs/TeamMemberBookingProfile.md)
+ - [TeamMemberCreatedWebhook](docs/TeamMemberCreatedWebhook.md)
+ - [TeamMemberCreatedWebhookData](docs/TeamMemberCreatedWebhookData.md)
+ - [TeamMemberCreatedWebhookObject](docs/TeamMemberCreatedWebhookObject.md)
+ - [TeamMemberInvitationStatus](docs/TeamMemberInvitationStatus.md)
  - [TeamMemberStatus](docs/TeamMemberStatus.md)
+ - [TeamMemberUpdatedWebhook](docs/TeamMemberUpdatedWebhook.md)
+ - [TeamMemberUpdatedWebhookData](docs/TeamMemberUpdatedWebhookData.md)
+ - [TeamMemberUpdatedWebhookObject](docs/TeamMemberUpdatedWebhookObject.md)
  - [TeamMemberWage](docs/TeamMemberWage.md)
+ - [TeamMemberWageSettingUpdatedWebhook](docs/TeamMemberWageSettingUpdatedWebhook.md)
+ - [TeamMemberWageSettingUpdatedWebhookData](docs/TeamMemberWageSettingUpdatedWebhookData.md)
+ - [TeamMemberWageSettingUpdatedWebhookObject](docs/TeamMemberWageSettingUpdatedWebhookObject.md)
  - [Tender](docs/Tender.md)
  - [TenderCardDetails](docs/TenderCardDetails.md)
  - [TenderCardDetailsEntryMethod](docs/TenderCardDetailsEntryMethod.md)
@@ -978,6 +1126,8 @@ Class | Method | HTTP request | Description
  - [Transaction](docs/Transaction.md)
  - [TransactionProduct](docs/TransactionProduct.md)
  - [TransactionType](docs/TransactionType.md)
+ - [UnlinkCustomerFromGiftCardRequest](docs/UnlinkCustomerFromGiftCardRequest.md)
+ - [UnlinkCustomerFromGiftCardResponse](docs/UnlinkCustomerFromGiftCardResponse.md)
  - [UpdateBookingRequest](docs/UpdateBookingRequest.md)
  - [UpdateBookingResponse](docs/UpdateBookingResponse.md)
  - [UpdateBreakTypeRequest](docs/UpdateBreakTypeRequest.md)
@@ -996,6 +1146,8 @@ Class | Method | HTTP request | Description
  - [UpdateLocationResponse](docs/UpdateLocationResponse.md)
  - [UpdateOrderRequest](docs/UpdateOrderRequest.md)
  - [UpdateOrderResponse](docs/UpdateOrderResponse.md)
+ - [UpdatePaymentRequest](docs/UpdatePaymentRequest.md)
+ - [UpdatePaymentResponse](docs/UpdatePaymentResponse.md)
  - [UpdateShiftRequest](docs/UpdateShiftRequest.md)
  - [UpdateShiftResponse](docs/UpdateShiftResponse.md)
  - [UpdateSubscriptionRequest](docs/UpdateSubscriptionRequest.md)
@@ -1008,6 +1160,8 @@ Class | Method | HTTP request | Description
  - [UpdateWorkweekConfigResponse](docs/UpdateWorkweekConfigResponse.md)
  - [UpsertCatalogObjectRequest](docs/UpsertCatalogObjectRequest.md)
  - [UpsertCatalogObjectResponse](docs/UpsertCatalogObjectResponse.md)
+ - [UpsertSnippetRequest](docs/UpsertSnippetRequest.md)
+ - [UpsertSnippetResponse](docs/UpsertSnippetResponse.md)
  - [V1CreateEmployeeRoleRequest](docs/V1CreateEmployeeRoleRequest.md)
  - [V1CreateRefundRequest](docs/V1CreateRefundRequest.md)
  - [V1CreateRefundRequestType](docs/V1CreateRefundRequestType.md)

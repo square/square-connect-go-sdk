@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when the state of a [Dispute](#type-Dispute) changes. This includes the dispute resolution (WON, LOST) reported by the bank. The event data includes details of what changed.
+// Published when the state of a [Dispute](entity:Dispute) changes. This includes the dispute resolution (WON, LOST) reported by the bank. The event data includes details of what changed.
 type DisputeStateChangedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

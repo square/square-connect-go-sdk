@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Request object for the [UpdateLocation](#endpoint-updatelocation) endpoint.
+// Request object for the [UpdateLocation](api-endpoint:Locations-UpdateLocation) endpoint.
 type UpdateLocationRequest struct {
 	Location *Location `json:"location,omitempty"`
 }

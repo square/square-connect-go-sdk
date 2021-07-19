@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Represents a retrieve request for the wage setting of a team member
+// Represents a retrieve request for the wage setting of a team member.
 type RetrieveWageSettingRequest struct {
 }

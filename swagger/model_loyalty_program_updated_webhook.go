@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [loyalty program](#type-LoyaltyProgram) is updated.
+// Published when a [loyalty program](entity:LoyaltyProgram) is updated.
 type LoyaltyProgramUpdatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

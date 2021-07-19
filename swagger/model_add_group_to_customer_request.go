@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that are included in the request body of a request to the [AddGroupToCustomer](#endpoint-addgrouptocustomer) endpoint.
+// Defines the fields that are included in the request body of a request to the [AddGroupToCustomer](api-endpoint:Customers-AddGroupToCustomer) endpoint.
 type AddGroupToCustomerRequest struct {
 }

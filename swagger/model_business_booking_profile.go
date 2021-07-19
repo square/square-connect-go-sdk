@@ -12,7 +12,7 @@ package swagger
 type BusinessBookingProfile struct {
 	// The ID of the seller, obtainable using the Merchants API.
 	SellerId string `json:"seller_id,omitempty"`
-	// The RFC-3339 timestamp specifying the booking's creation time.
+	// The RFC 3339 timestamp specifying the booking's creation time.
 	CreatedAt string `json:"created_at,omitempty"`
 	// Indicates whether the seller is open for booking.
 	BookingEnabled         bool                                          `json:"booking_enabled,omitempty"`

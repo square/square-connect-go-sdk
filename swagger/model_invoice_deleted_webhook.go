@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a draft [Invoice](#type-Invoice) is deleted.
+// Published when a draft [Invoice](entity:Invoice) is deleted.
 type InvoiceDeletedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

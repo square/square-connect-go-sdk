@@ -14,7 +14,7 @@ Method | HTTP request | Description
 > CreateCustomerGroupResponse CreateCustomerGroup(ctx, body)
 CreateCustomerGroup
 
-Creates a new customer group for a business.   The request must include the `name` value of the group.
+Creates a new customer group for a business.  The request must include the `name` value of the group.
 
 ### Required Parameters
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a CustomerGroupsApiListCustomerGroupsOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information. | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination). | 
 
 ### Return type
 

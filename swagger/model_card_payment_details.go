@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Reflects the current status of a card payment.
+// Reflects the current status of a card payment. Contains only non-confidential information.
 type CardPaymentDetails struct {
 	// The card payment's current state. The state can be AUTHORIZED, CAPTURED, VOIDED, or FAILED.
 	Status string `json:"status,omitempty"`

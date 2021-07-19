@@ -11,7 +11,7 @@ package swagger
 
 // Price and inventory alerting overrides for a `CatalogItemVariation` at a specific `Location`.
 type ItemVariationLocationOverrides struct {
-	// The ID of the `Location`.
+	// The ID of the `Location`. This can include locations that are deactivated.
 	LocationId  string              `json:"location_id,omitempty"`
 	PriceMoney  *Money              `json:"price_money,omitempty"`
 	PricingType *CatalogPricingType `json:"pricing_type,omitempty"`

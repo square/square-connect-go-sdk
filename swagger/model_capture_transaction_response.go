@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [CaptureTransaction](#endpoint-capturetransaction) endpoint.
+// Defines the fields that are included in the response body of a request to the [CaptureTransaction](api-endpoint:Transactions-CaptureTransaction) endpoint.
 type CaptureTransactionResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

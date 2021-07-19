@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **CategoryId** | **string** | The ID of the item&#x27;s category, if any. | [optional] [default to null]
 **TaxIds** | **[]string** | A set of IDs indicating the taxes enabled for this item. When updating an item, any taxes listed here will be added to the item. Taxes may also be added to or deleted from an item using &#x60;UpdateItemTaxes&#x60;. | [optional] [default to null]
 **ModifierListInfo** | [**[]CatalogItemModifierListInfo**](CatalogItemModifierListInfo.md) | A set of &#x60;CatalogItemModifierListInfo&#x60; objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using &#x60;UpdateItemModifierLists&#x60;. | [optional] [default to null]
-**ImageUrl** | **string** | __Retired__. The URL of an image representing this item. Retired in favor of &#x60;image_id&#x60; in [&#x60;CatalogObject&#x60;](#type-catalogobject). | [optional] [default to null]
-**Variations** | [**[]CatalogObject**](CatalogObject.md) | A list of CatalogObjects containing the &#x60;CatalogItemVariation&#x60;s for this item. | [optional] [default to null]
+**ImageUrl** | **string** | __Retired__. The URL of an image representing this item. Retired in favor of &#x60;image_id&#x60; in [CatalogObject](entity:CatalogObject). | [optional] [default to null]
+**Variations** | [**[]CatalogObject**](CatalogObject.md) | A list of [CatalogItemVariation](entity:CatalogItemVariation) objects for this item. An item must have at least one variation. | [optional] [default to null]
 **ProductType** | [***CatalogItemProductType**](CatalogItemProductType.md) |  | [optional] [default to null]
 **SkipModifierScreen** | **bool** | If &#x60;false&#x60;, the Square Point of Sale app will present the &#x60;CatalogItem&#x60;&#x27;s details screen immediately, allowing the merchant to choose &#x60;CatalogModifier&#x60;s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#x27;s details.  Third-party clients are encouraged to implement similar behaviors. | [optional] [default to null]
 **ItemOptions** | [**[]CatalogItemOptionForItem**](CatalogItemOptionForItem.md) | List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options. | [optional] [default to null]
@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **EcomImageUris** | **[]string** | hidden field | [optional] [default to null]
 **EcomAvailable** | **bool** | hidden field | [optional] [default to null]
 **EcomVisibility** | **string** | hidden field | [optional] [default to null]
+**SortName** | **string** | A name to sort the item by. If this name is unspecified, namely, the &#x60;sort_name&#x60; field is absent, the regular &#x60;name&#x60; field is used for sorting.  It is currently supported for sellers of the Japanese locale only. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

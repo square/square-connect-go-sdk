@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Retrieve details for a specific payment.
+// Describes a request to retrieve a payment using  [GetPayment](api-endpoint:Payments-GetPayment).
 type GetPaymentRequest struct {
 }

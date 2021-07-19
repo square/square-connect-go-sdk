@@ -15,15 +15,15 @@ type Invoice struct {
 	Id string `json:"id,omitempty"`
 	// The Square-assigned version number, which is incremented each time an update is committed to the invoice.
 	Version int32 `json:"version,omitempty"`
-	// The ID of the location that this invoice is associated with. This field is required when creating an invoice.
+	// The ID of the location that this invoice is associated with.   If specified in a `CreateInvoice` request, the value must match the `location_id` of the associated order.
 	LocationId string `json:"location_id,omitempty"`
-	// The ID of the [order](#type-order) for which the invoice is created.  This order must be in the `OPEN` state and must belong to the `location_id` specified for this invoice. This field is required when creating an invoice.
+	// The ID of the [order](entity:Order) for which the invoice is created.  This field is required when creating an invoice, and the order must be in the `OPEN` state.  To view the line items and other information for the associated order, call the  [RetrieveOrder](api-endpoint:Orders-RetrieveOrder) endpoint using the order ID.
 	OrderId          string            `json:"order_id,omitempty"`
 	PrimaryRecipient *InvoiceRecipient `json:"primary_recipient,omitempty"`
 	// The payment schedule for the invoice, represented by one or more payment requests that define payment settings, such as amount due and due date. You can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types. For more information, see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).  This field is required when creating an invoice. It must contain at least one payment request.
 	PaymentRequests []InvoicePaymentRequest `json:"payment_requests,omitempty"`
 	DeliveryMethod  *InvoiceDeliveryMethod  `json:"delivery_method,omitempty"`
-	// A user-friendly invoice number. The value is unique within a location. If not provided when creating an invoice, Square assigns a value. It increments from 1 and padded with zeros making it 7 characters long for example, 0000001, 0000002.
+	// A user-friendly invoice number. The value is unique within a location. If not provided when creating an invoice, Square assigns a value. It increments from 1 and padded with zeros making it 7 characters long (for example, 0000001 and 0000002).
 	InvoiceNumber string `json:"invoice_number,omitempty"`
 	// The title of the invoice.
 	Title string `json:"title,omitempty"`
@@ -35,12 +35,15 @@ type Invoice struct {
 	PublicUrl              string         `json:"public_url,omitempty"`
 	NextPaymentAmountMoney *Money         `json:"next_payment_amount_money,omitempty"`
 	Status                 *InvoiceStatus `json:"status,omitempty"`
-	// The time zone of the date values (for example, `due_date`) specified in the invoice.
+	// The time zone used to interpret calendar dates on the invoice, such as `due_date`. When an invoice is created, this field is set to the `timezone` specified for the seller location. The value cannot be changed.  For example, a payment `due_date` of 2021-03-09 with a `timezone` of America/Los\\_Angeles becomes overdue at midnight on March 9 in America/Los\\_Angeles (which equals a UTC timestamp of 2021-03-10T08:00:00Z).
 	Timezone string `json:"timezone,omitempty"`
 	// The timestamp when the invoice was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp when the invoice was last updated, in RFC 3339 format.
-	UpdatedAt string `json:"updated_at,omitempty"`
+	UpdatedAt              string                         `json:"updated_at,omitempty"`
+	AcceptedPaymentMethods *InvoiceAcceptedPaymentMethods `json:"accepted_payment_methods,omitempty"`
 	// Additional seller-defined fields to render on the invoice. These fields are visible to sellers and buyers on the Square-hosted invoice page and in emailed or PDF copies of invoices. For more information, see [Custom fields](https://developer.squareup.com/docs/invoices-api/overview#custom-fields).  Max: 2 custom fields
 	CustomFields []InvoiceCustomField `json:"custom_fields,omitempty"`
+	// The ID of the [subscription](entity:Subscription) associated with the invoice. This field is present only on subscription billing invoices.
+	SubscriptionId string `json:"subscription_id,omitempty"`
 }

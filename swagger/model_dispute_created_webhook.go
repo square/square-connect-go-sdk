@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [Dispute](#type-Dispute) is created.
+// Published when a [Dispute](entity:Dispute) is created.
 type DisputeCreatedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

@@ -9,12 +9,12 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [ListCustomerGroups](#endpoint-listcustomergroups) endpoint.  One of `errors` or `groups` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [ListCustomerGroups](api-endpoint:CustomerGroups-ListCustomerGroups) endpoint.  Either `errors` or `groups` is present in a given response (never both).
 type ListCustomerGroupsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// A list of customer groups belonging to the current merchant.
+	// A list of customer groups belonging to the current seller.
 	Groups []CustomerGroup `json:"groups,omitempty"`
-	// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
+	// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

@@ -9,13 +9,13 @@
  */
 package swagger
 
-// Defines the query parameters that can be included in a request to the [ListAdditionalRecipientReceivableRefunds](#endpoint-listadditionalrecipientreceivablerefunds) endpoint.
+// Defines the query parameters that can be included in a request to the [ListAdditionalRecipientReceivableRefunds](api-endpoint:Reporting-ListAdditionalRecipientReceivableRefunds) endpoint.
 type ListAdditionalRecipientReceivableRefundsRequest struct {
-	// The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
+	// The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](https://developer.squareup.com/docs/build-basics/working-with-dates) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
 	BeginTime string `json:"begin_time,omitempty"`
-	// The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
+	// The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](https://developer.squareup.com/docs/build-basics/working-with-dates) for details on date inclusivity/exclusivity.  Default value: The current time.
 	EndTime   string     `json:"end_time,omitempty"`
 	SortOrder *SortOrder `json:"sort_order,omitempty"`
-	// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+	// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
 	Cursor string `json:"cursor,omitempty"`
 }

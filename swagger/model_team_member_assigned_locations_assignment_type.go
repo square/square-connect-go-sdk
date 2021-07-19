@@ -9,7 +9,7 @@
  */
 package swagger
 
-// TeamMemberAssignedLocationsAssignmentType : Enumerates the possible assignment types the team member can have
+// TeamMemberAssignedLocationsAssignmentType : Enumerates the possible assignment types that the team member can have.
 type TeamMemberAssignedLocationsAssignmentType string
 
 // List of TeamMemberAssignedLocationsAssignmentType

@@ -9,10 +9,13 @@
  */
 package swagger
 
-// Represents a single physical count, inventory, adjustment, or transfer that is part of the history of inventory changes for a particular `CatalogObject`.
+// Represents a single physical count, inventory, adjustment, or transfer that is part of the history of inventory changes for a particular [CatalogObject](entity:CatalogObject) instance.
 type InventoryChange struct {
-	Type_         *InventoryChangeType    `json:"type,omitempty"`
-	PhysicalCount *InventoryPhysicalCount `json:"physical_count,omitempty"`
-	Adjustment    *InventoryAdjustment    `json:"adjustment,omitempty"`
-	Transfer      *InventoryTransfer      `json:"transfer,omitempty"`
+	Type_           *InventoryChangeType    `json:"type,omitempty"`
+	PhysicalCount   *InventoryPhysicalCount `json:"physical_count,omitempty"`
+	Adjustment      *InventoryAdjustment    `json:"adjustment,omitempty"`
+	Transfer        *InventoryTransfer      `json:"transfer,omitempty"`
+	MeasurementUnit *CatalogMeasurementUnit `json:"measurement_unit,omitempty"`
+	// The ID of the [CatalogMeasurementUnit](entity:CatalogMeasurementUnit) object representing the catalog measurement unit associated with the inventory change.
+	MeasurementUnitId string `json:"measurement_unit_id,omitempty"`
 }

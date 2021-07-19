@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a monetary distribution of part of a [Transaction](#type-transaction)'s amount for Transactions which included additional recipients. The location of this receivable is that same as the one specified in the [AdditionalRecipient](#type-additionalrecipient).
+// Represents a monetary distribution of part of a [Transaction](entity:Transaction)'s amount for Transactions which included additional recipients. The location of this receivable is that same as the one specified in the [AdditionalRecipient](entity:AdditionalRecipient).
 type AdditionalRecipientReceivable struct {
 	// The additional recipient receivable's unique ID, issued by Square payments servers.
 	Id string `json:"id"`

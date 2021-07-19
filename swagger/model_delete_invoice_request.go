@@ -11,6 +11,6 @@ package swagger
 
 // Describes a `DeleteInvoice` request.
 type DeleteInvoiceRequest struct {
-	// The version of the [invoice](#type-invoice) to delete. If you do not know the version, you can call [GetInvoice](#endpoint-Invoices-GetInvoice) or  [ListInvoices](#endpoint-Invoices-ListInvoices).
+	// The version of the [invoice](entity:Invoice) to delete. If you do not know the version, you can call [GetInvoice](api-endpoint:Invoices-GetInvoice) or  [ListInvoices](api-endpoint:Invoices-ListInvoices).
 	Version int32 `json:"version,omitempty"`
 }

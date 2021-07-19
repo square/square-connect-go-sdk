@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when Square sets the status of a [BankAccount](#type-BankAccount) to `VERIFIED`.
+// Published when Square sets the status of a [BankAccount](entity:BankAccount) to `VERIFIED`.
 type BankAccountVerifiedWebhook struct {
 	// The ID of the target merchant associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

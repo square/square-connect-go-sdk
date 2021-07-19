@@ -11,7 +11,7 @@ package swagger
 
 // The set of search requirements.
 type SearchLoyaltyRewardsRequestLoyaltyRewardQuery struct {
-	// The ID of the [loyalty account](#type-LoyaltyAccount) to which the loyalty reward belongs.
+	// The ID of the [loyalty account](entity:LoyaltyAccount) to which the loyalty reward belongs.
 	LoyaltyAccountId string               `json:"loyalty_account_id"`
 	Status           *LoyaltyRewardStatus `json:"status,omitempty"`
 }

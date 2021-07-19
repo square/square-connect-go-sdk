@@ -11,7 +11,7 @@ package swagger
 
 // Provides metadata when the event `type` is `OTHER`.
 type LoyaltyEventOther struct {
-	// The Square-assigned ID of the [loyalty program](#type-LoyaltyProgram).
+	// The Square-assigned ID of the [loyalty program](entity:LoyaltyProgram).
 	LoyaltyProgramId string `json:"loyalty_program_id"`
 	// The number of points added or removed.
 	Points int32 `json:"points"`

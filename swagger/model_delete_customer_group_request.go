@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that can be provided in a request to the [DeleteCustomerGroup](#endpoint-deletecustomergroup) endpoint.
+// Defines the fields that can be included in a request to the [DeleteCustomerGroup](api-endpoint:CustomerGroups-DeleteCustomerGroup) endpoint.
 type DeleteCustomerGroupRequest struct {
 }

@@ -10,7 +10,7 @@
 package swagger
 
 type CancelTerminalRefundResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors []ModelError    `json:"errors,omitempty"`
 	Refund *TerminalRefund `json:"refund,omitempty"`
 }

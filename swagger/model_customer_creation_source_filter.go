@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Creation source filter.  If one or more creation sources are set, customer profiles are included in, or excluded from, the result if they match at least one of the filter criteria.
+// The creation source filter.  If one or more creation sources are set, customer profiles are included in, or excluded from, the result if they match at least one of the filter criteria.
 type CustomerCreationSourceFilter struct {
 	// The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values
 	Values []CustomerCreationSource    `json:"values,omitempty"`
