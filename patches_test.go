@@ -24,6 +24,18 @@ func TestOAuthPermissionPatch(t *testing.T) {
 	_ = swagger.ONLINE_STORE_SNIPPETS_WRITE_OAuthPermission
 }
 
+func TestModelCatalogItemPatch(t *testing.T) {
+	strValue := ""
+	s := swagger.CatalogItem{
+		Description:  &strValue,
+		Name: &strValue,
+	}
+	// Ensure that omitempty has been removed
+	json, err := json.Marshal(s)
+	require.NoError(t, err)
+	require.Equal(t, "{\"name\":\"\",\"description\":\"\"}", string(json))
+}
+
 func TestModelCatalogCustomAttributeValuePatch(t *testing.T) {
 	strValue := ""
 	boolValue := false
