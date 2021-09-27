@@ -14,7 +14,7 @@ type Order struct {
 	// The order's unique ID.
 	Id string `json:"id,omitempty"`
 	// The ID of the seller location that this order is associated with.
-	LocationId string `json:"location_id"`
+	LocationId string `json:"location_id,omitempty"`
 	// A client-specified ID to associate an entity in another system with this order.
 	ReferenceId string       `json:"reference_id,omitempty"`
 	Source      *OrderSource `json:"source,omitempty"`
