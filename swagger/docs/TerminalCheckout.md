@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **AppId** | **string** | The ID of the application that created the checkout. | [optional] [default to null]
 **LocationId** | **string** | The location of the device where the &#x60;TerminalCheckout&#x60; was directed. | [optional] [default to null]
 **PaymentType** | [***CheckoutOptionsPaymentType**](CheckoutOptionsPaymentType.md) |  | [optional] [default to null]
+**CustomerId** | **string** | An optional ID of the customer associated with the checkout. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

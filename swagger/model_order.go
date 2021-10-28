@@ -49,13 +49,15 @@ type Order struct {
 	ClosedAt string      `json:"closed_at,omitempty"`
 	State    *OrderState `json:"state,omitempty"`
 	// The version number, which is incremented each time an update is committed to the order. Orders not created through the API do not include a version number and therefore cannot be updated.  [Read more about working with versions](https://developer.squareup.com/docs/orders-api/manage-orders#update-orders).
-	Version                 int32                `json:"version,omitempty"`
-	TotalMoney              *Money               `json:"total_money,omitempty"`
-	TotalTaxMoney           *Money               `json:"total_tax_money,omitempty"`
-	TotalDiscountMoney      *Money               `json:"total_discount_money,omitempty"`
-	TotalTipMoney           *Money               `json:"total_tip_money,omitempty"`
-	TotalServiceChargeMoney *Money               `json:"total_service_charge_money,omitempty"`
-	PricingOptions          *OrderPricingOptions `json:"pricing_options,omitempty"`
+	Version                 int32  `json:"version,omitempty"`
+	TotalMoney              *Money `json:"total_money,omitempty"`
+	TotalTaxMoney           *Money `json:"total_tax_money,omitempty"`
+	TotalDiscountMoney      *Money `json:"total_discount_money,omitempty"`
+	TotalTipMoney           *Money `json:"total_tip_money,omitempty"`
+	TotalServiceChargeMoney *Money `json:"total_service_charge_money,omitempty"`
+	// A short-term identifier for the order (such as a customer first name, table number, or auto-generated order number that resets daily). For orders created in Square Point of Sale, the `ticket_name` is printed on in-person tickets and stubs. It converts to the `kitchen_printing.name` field in the bill cart feature details.
+	TicketName     string               `json:"ticket_name,omitempty"`
+	PricingOptions *OrderPricingOptions `json:"pricing_options,omitempty"`
 	// A set-like list of Rewards that have been added to the Order.
 	Rewards []OrderReward `json:"rewards,omitempty"`
 }

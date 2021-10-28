@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Address** | [***Address**](Address.md) |  | [optional] [default to null]
 **PhoneNumber** | **string** | The recipient&#x27;s phone number. | [optional] [default to null]
 **CompanyName** | **string** | The name of the recipient&#x27;s company. | [optional] [default to null]
+**TaxIds** | [***InvoiceRecipientTaxIds**](InvoiceRecipientTaxIds.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

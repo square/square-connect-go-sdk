@@ -9,7 +9,7 @@
  */
 package swagger
 
-// InventoryChangeType : Indicates how the inventory change was applied to a tracked quantity of items.
+// InventoryChangeType : Indicates how the inventory change was applied to a tracked product quantity.
 type InventoryChangeType string
 
 // List of InventoryChangeType

@@ -13,14 +13,14 @@ Method | HTTP request | Description
 > AuthorizeResponse Authorize(ctx, clientId, optional)
 Authorize
 
-Presents a Permission Request form that returns an access code to be exchanged during the OAuth flow for a valid OAuth access token. To send users to the Permission Request form and start the OAuth flow, configure a link with the desired permissions that directs users to the OAuth Authorization endpoint.  __Important:__ The access code is returned as a query paramater to the redirect URL that you set in the OAuth page of your app in the [developer dashboard](https://developer.squareup.com/apps):  In the event of an error, Authorize returns an error response (`error` and `error_description`). If the failure is a result of the user denying the request, the value is `access_denied` with a description of `user_denied`.
+As part of a URL sent to a seller to authorize permissions for  the developer, `Authorize` displays an authorization page and a  list of requested permissions. This is not a callable API endpoint.  The completed URL looks similar to the following example: https://connect.squareup.com/oauth2/authorize?client_id={YOUR_APP_ID}&scope=CUSTOMERS_WRITE+CUSTOMERS_READ&session=False&state=82201dd8d83d23cc8a48caf52b  The seller can approve or deny the permissions. If approved,` Authorize`  returns an `AuthorizeResponse` that is sent to the redirect URL and includes  a state string and an authorization code. The code is used in the `ObtainToken`  call to obtain an access token and a refresh token that the developer uses  to manage resources on behalf of the seller.  __Important:__ The `AuthorizeResponse` is sent to the redirect URL that you set on  the OAuth page of your application in the Developer Dashboard.  If an error occurs or the seller denies the request, `Authorize` returns an  error response that includes `error` and `error_description` values. If the  error is due to the seller denying the request, the error value is `access_denied`  and the error_description is `user_denied`.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **clientId** | **string**| The Square issued ID for your application, available from the [developer dashboard](https://developer.squareup.com/apps). | 
+  **clientId** | **string**| The Square-issued ID for your application, available from  the OAuth page for your application on the Developer Dashboard. | 
  **optional** | ***OAuthApiAuthorizeOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -30,7 +30,7 @@ Name | Type | Description  | Notes
 
  **scope** | [**optional.Interface of OAuthPermission**](.md)| A space-separated list of the permissions the application is requesting. Default: \&quot;&#x60;MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ&#x60;\&quot; | 
  **locale** | **optional.String**| The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-IE&#x60;, &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, &#x60;ja-JP&#x60;. | 
- **session** | **optional.Bool**| If &#x60;false&#x60;, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. Default: &#x60;true&#x60; | [default to false]
+ **session** | **optional.Bool**| If &#x60;false&#x60;, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. This value has no effect in Sandbox. Default: &#x60;true&#x60; | [default to false]
  **state** | **optional.String**| When provided, &#x60;state&#x60; is passed along to the configured Redirect URL after the Permission Request form is submitted. You can include state and verify its value to help protect against cross-site request forgery. | 
 
 ### Return type
@@ -52,7 +52,7 @@ No authorization required
 > ObtainTokenResponse ObtainToken(ctx, body)
 ObtainToken
 
-Returns an OAuth access token.  The endpoint supports distinct methods of obtaining OAuth access tokens. Applications specify a method by adding the `grant_type` parameter in the request and also provide relevant information.  __Note:__ Regardless of the method application specified, the endpoint always returns two items; an OAuth access token and a refresh token in the response.  __OAuth tokens should only live on secure servers. Application clients should never interact directly with OAuth tokens__.
+Returns an OAuth access token and a refresh token unless the  `short_lived` parameter is set to `true`, in which case the endpoint  returns only an access token.  The `grant_type` parameter specifies the type of OAuth request. If  `grant_type` is `authorization_code`, you must include the authorization  code you received when a seller granted you authorization. If `grant_type`  is `refresh_token`, you must provide a valid refresh token. If you are using  an old version of the Square APIs (prior to March 13, 2019), `grant_type`  can be `migration_token` and you must provide a valid migration token.  You can use the `scopes` parameter to limit the set of permissions granted  to the access token and refresh token. You can use the `short_lived` parameter  to create an access token that expires in 24 hours.  __Note:__ OAuth tokens should be encrypted and stored on a secure server.  Application clients should never interact directly with OAuth tokens.
 
 ### Required Parameters
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
   **body** | [**RenewTokenRequest**](RenewTokenRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **clientId** | **string**| Your application ID, available from the [developer dashboard](https://developer.squareup.com/apps). | 
+  **clientId** | **string**| Your application ID, available from the OAuth page for your  application on the Developer Dashboard. | 
 
 ### Return type
 
@@ -113,7 +113,7 @@ See the corresponding object definition for field details. |
 > RevokeTokenResponse RevokeToken(ctx, body)
 RevokeToken
 
-Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The `Authorization` header for this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with the application secret on the OAuth page in the [developer dashboard](https://developer.squareup.com/apps).
+Revokes an access token generated with the OAuth flow.  If an account has more than one OAuth access token for your application, this endpoint revokes all of them, regardless of which token you specify. When an OAuth access token is revoked, all of the active subscriptions associated with that OAuth token are canceled immediately.  __Important:__ The `Authorization` header for this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with the application secret on the OAuth page for your application on the Developer Dashboard.
 
 ### Required Parameters
 

@@ -20,4 +20,5 @@ const (
 	STOP_SUBSCRIPTION_SubscriptionEventSubscriptionEventType                          SubscriptionEventSubscriptionEventType = "STOP_SUBSCRIPTION"
 	DEACTIVATE_SUBSCRIPTION_SubscriptionEventSubscriptionEventType                    SubscriptionEventSubscriptionEventType = "DEACTIVATE_SUBSCRIPTION"
 	RESUME_SUBSCRIPTION_SubscriptionEventSubscriptionEventType                        SubscriptionEventSubscriptionEventType = "RESUME_SUBSCRIPTION"
+	PAUSE_SUBSCRIPTION_SubscriptionEventSubscriptionEventType                         SubscriptionEventSubscriptionEventType = "PAUSE_SUBSCRIPTION"
 )

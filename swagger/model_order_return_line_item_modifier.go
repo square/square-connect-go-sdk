@@ -17,6 +17,8 @@ type OrderReturnLineItemModifier struct {
 	SourceModifierUid string `json:"source_modifier_uid,omitempty"`
 	// The catalog object ID referencing [CatalogModifier](entity:CatalogModifier).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
+	// The version of the catalog object that this line item modifier references.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
 	// The name of the item modifier.
 	Name            string `json:"name,omitempty"`
 	BasePriceMoney  *Money `json:"base_price_money,omitempty"`

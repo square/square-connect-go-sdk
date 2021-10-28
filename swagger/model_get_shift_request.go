@@ -9,6 +9,6 @@
  */
 package swagger
 
-// A request to get a `Shift` by ID
+// A request to get a `Shift` by ID.
 type GetShiftRequest struct {
 }

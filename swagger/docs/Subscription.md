@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **CardId** | **string** | The ID of the [customer](entity:Customer) [card](entity:Card) that is charged for the subscription. | [optional] [default to null]
 **PaidUntilDate** | **string** | The date up to which the customer is invoiced for the subscription, in YYYY-MM-DD format (for example, 2013-01-15).  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a customer gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31. | [optional] [default to null]
 **Timezone** | **string** | Timezone that will be used in date calculations for the subscription. Defaults to the timezone of the location based on &#x60;location_id&#x60;. Format: the IANA Timezone Database identifier for the location timezone (for example, &#x60;America/Los_Angeles&#x60;). | [optional] [default to null]
+**Source** | [***SubscriptionSource**](SubscriptionSource.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

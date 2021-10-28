@@ -207,11 +207,13 @@ Retrieves the list of customer groups of a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomerGroupsApiListCustomerGroupsOpts - Optional Parameters:
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+     * @param "Limit" (optional.Int32) -  The maximum number of results to return in a single page. This limit is advisory. The response might contain more or fewer results. The limit is ignored if it is less than 1 or greater than 50. The default value is 50.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 @return ListCustomerGroupsResponse
 */
 
 type CustomerGroupsApiListCustomerGroupsOpts struct {
 	Cursor optional.String
+	Limit  optional.Int32
 }
 
 func (a *CustomerGroupsApiService) ListCustomerGroups(ctx context.Context, localVarOptionals *CustomerGroupsApiListCustomerGroupsOpts) (ListCustomerGroupsResponse, *http.Response, error) {
@@ -232,6 +234,9 @@ func (a *CustomerGroupsApiService) ListCustomerGroups(ctx context.Context, local
 
 	if localVarOptionals != nil && localVarOptionals.Cursor.IsSet() {
 		localVarQueryParams.Add("cursor", parameterToString(localVarOptionals.Cursor.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
+		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}

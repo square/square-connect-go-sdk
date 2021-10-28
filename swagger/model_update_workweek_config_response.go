@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response to a request to update a `WorkweekConfig` object. Contains the updated `WorkweekConfig` object. May contain a set of `Error` objects if the request resulted in errors.
+// The response to a request to update a `WorkweekConfig` object. The response contains the updated `WorkweekConfig` object and might contain a set of `Error` objects if the request resulted in errors.
 type UpdateWorkweekConfigResponse struct {
 	WorkweekConfig *WorkweekConfig `json:"workweek_config,omitempty"`
 	// Any errors that occurred during the request.

@@ -14,5 +14,5 @@ type CreateCatalogImageRequest struct {
 	IdempotencyKey string `json:"idempotency_key"`
 	// Unique ID of the `CatalogObject` to attach to this `CatalogImage`. Leave this field empty to create unattached images, for example if you are building an integration where these images can be attached to catalog items at a later time.
 	ObjectId string         `json:"object_id,omitempty"`
-	Image    *CatalogObject `json:"image,omitempty"`
+	Image    *CatalogObject `json:"image"`
 }

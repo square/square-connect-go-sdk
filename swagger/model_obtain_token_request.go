@@ -10,13 +10,13 @@
 package swagger
 
 type ObtainTokenRequest struct {
-	// The Square-issued ID of your application, available from the [developer dashboard](https://developer.squareup.com/apps).
+	// The Square-issued ID of your application, available from the OAuth page  for your application on the Developer Dashboard.
 	ClientId string `json:"client_id"`
-	// The Square-issued application secret for your application, available from the [developer dashboard](https://developer.squareup.com/apps).
+	// The Square-issued application secret for your application, available from the OAuth page for your application on the Developer Dashboard.
 	ClientSecret string `json:"client_secret"`
 	// The authorization code to exchange. This is required if `grant_type` is set to `authorization_code`, to indicate that the application wants to exchange an authorization code for an OAuth access token.
 	Code string `json:"code,omitempty"`
-	// The redirect URL assigned in the [developer dashboard](https://developer.squareup.com/apps).
+	// The redirect URL assigned in the OAuth page for your application on the Developer Dashboard.
 	RedirectUri string `json:"redirect_uri,omitempty"`
 	// Specifies the method to request an OAuth access token. Valid values are: `authorization_code`, `refresh_token`, and `migration_token`
 	GrantType string `json:"grant_type"`
@@ -26,6 +26,6 @@ type ObtainTokenRequest struct {
 	MigrationToken string `json:"migration_token,omitempty"`
 	// A JSON list of strings representing the permissions the application is requesting. For example: \"`[\"MERCHANT_PROFILE_READ\",\"PAYMENTS_READ\",\"BANK_ACCOUNTS_READ\"]`\" The access token returned in the response is granted the permissions that comprise the intersection between the requested list of permissions, and those that belong to the provided refresh token.
 	Scopes []string `json:"scopes,omitempty"`
-	// A boolean indicating a request for a short-lived access token. The short-lived access token returned in the response will expire in 24 hours.
+	// A boolean indicating a request for a short-lived access token. The short-lived access token returned in the response expires in 24 hours.
 	ShortLived bool `json:"short_lived,omitempty"`
 }

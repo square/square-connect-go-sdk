@@ -19,4 +19,5 @@ const (
 	ACTIVE_SubscriptionStatus                                 SubscriptionStatus = "ACTIVE"
 	CANCELED_SubscriptionStatus                               SubscriptionStatus = "CANCELED"
 	DEACTIVATED_SubscriptionStatus                            SubscriptionStatus = "DEACTIVATED"
+	PAUSED_SubscriptionStatus                                 SubscriptionStatus = "PAUSED"
 )

@@ -9,11 +9,11 @@
  */
 package swagger
 
-// The response to a request for a set of `EmployeeWage` objects. Contains a set of `EmployeeWage`.
+// The response to a request for a set of `EmployeeWage` objects. The response contains a set of `EmployeeWage` objects.
 type ListEmployeeWagesResponse struct {
-	// A page of Employee Wage results.
+	// A page of `EmployeeWage` results.
 	EmployeeWages []EmployeeWage `json:"employee_wages,omitempty"`
-	// Value supplied in the subsequent request to fetch the next next page of Employee Wage results.
+	// The value supplied in the subsequent request to fetch the next page of `EmployeeWage` results.
 	Cursor string `json:"cursor,omitempty"`
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

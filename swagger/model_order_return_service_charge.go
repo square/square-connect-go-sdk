@@ -19,6 +19,8 @@ type OrderReturnServiceCharge struct {
 	Name string `json:"name,omitempty"`
 	// The catalog object ID of the associated [OrderServiceCharge](entity:OrderServiceCharge).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
+	// The version of the catalog object that this service charge references.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
 	// The percentage of the service charge, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.  Either `percentage` or `amount_money` should be set, but not both.
 	Percentage       string                              `json:"percentage,omitempty"`
 	AmountMoney      *Money                              `json:"amount_money,omitempty"`

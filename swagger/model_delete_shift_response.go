@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response to a request to delete a `Shift`. May contain a set of  `Error` objects if the request resulted in errors.
+// The response to a request to delete a `Shift`. The response might contain a set of  `Error` objects if the request resulted in errors.
 type DeleteShiftResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

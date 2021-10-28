@@ -11,13 +11,13 @@ package swagger
 
 // A record of an employee's break during a shift.
 type ModelBreak struct {
-	// UUID for this object
+	// The UUID for this object.
 	Id string `json:"id,omitempty"`
-	// RFC 3339; follows same timezone info as `Shift`. Precision up to the minute is respected; seconds are truncated.
+	// RFC 3339; follows the same timezone information as `Shift`. Precision up to the minute is respected; seconds are truncated.
 	StartAt string `json:"start_at"`
-	// RFC 3339; follows same timezone info as `Shift`. Precision up to the minute is respected; seconds are truncated.
+	// RFC 3339; follows the same timezone information as `Shift`. Precision up to the minute is respected; seconds are truncated.
 	EndAt string `json:"end_at,omitempty"`
-	// The `BreakType` this `Break` was templated on.
+	// The `BreakType` that this `Break` was templated on.
 	BreakTypeId string `json:"break_type_id"`
 	// A human-readable name.
 	Name string `json:"name"`

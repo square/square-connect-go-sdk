@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **GroupIds** | **[]string** | The IDs of customer groups the customer belongs to. | [optional] [default to null]
 **SegmentIds** | **[]string** | The IDs of segments the customer belongs to. | [optional] [default to null]
 **Version** | **int64** | The Square-assigned version number of the customer profile. The version number is incremented each time an update is committed to the customer profile, except for changes to customer segment membership and cards on file. | [optional] [default to null]
+**TaxIds** | [***CustomerTaxIds**](CustomerTaxIds.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

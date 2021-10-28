@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **AppFeeMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **PaymentId** | **string** | The unique ID of the payment being refunded. | [default to null]
 **Reason** | **string** | A description of the reason for the refund. | [optional] [default to null]
+**PaymentVersionToken** | **string** |  Used for optimistic concurrency. This opaque token identifies the current &#x60;Payment&#x60;  version that the caller expects. If the server has a different version of the Payment,  the update fails and a response with a VERSION_MISMATCH error is returned.  If the versions match, or the field is not provided, the refund proceeds as normal. | [optional] [default to null]
+**TeamMemberId** | **string** | An optional [TeamMember](entity:TeamMember) ID to associate with this refund. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

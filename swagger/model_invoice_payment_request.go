@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a payment request for an [invoice](entity:Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types.  For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).
+// Represents a payment request for an [invoice](entity:Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types. For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).  Adding `INSTALLMENT` payment requests to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).
 type InvoicePaymentRequest struct {
 	// The Square-generated ID of the payment request in an [invoice](entity:Invoice).
 	Uid           string                `json:"uid,omitempty"`

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Provides customer data that Square uses to deliver an invoice.
+// Represents a snapshot of customer data. This object stores customer data that is displayed on the invoice  and that Square uses to deliver the invoice.  When you provide a customer ID for a draft invoice, Square retrieves the associated customer profile and populates  the remaining `InvoiceRecipient` fields. You cannot update these fields after the invoice is published.  Square updates the customer ID in response to a merge operation, but does not update other fields.
 type InvoiceRecipient struct {
 	// The ID of the customer. This is the customer profile ID that  you provide when creating a draft invoice.
 	CustomerId string `json:"customer_id,omitempty"`
@@ -23,5 +23,6 @@ type InvoiceRecipient struct {
 	// The recipient's phone number.
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// The name of the recipient's company.
-	CompanyName string `json:"company_name,omitempty"`
+	CompanyName string                  `json:"company_name,omitempty"`
+	TaxIds      *InvoiceRecipientTaxIds `json:"tax_ids,omitempty"`
 }

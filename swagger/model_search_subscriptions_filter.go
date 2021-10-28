@@ -15,4 +15,6 @@ type SearchSubscriptionsFilter struct {
 	CustomerIds []string `json:"customer_ids,omitempty"`
 	// A filter to select subscriptions based the location.
 	LocationIds []string `json:"location_ids,omitempty"`
+	// A filter to select subscriptions based on the source application.
+	SourceNames []string `json:"source_names,omitempty"`
 }

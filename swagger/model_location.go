@@ -9,6 +9,7 @@
  */
 package swagger
 
+// Represents one of a business's locations.
 type Location struct {
 	// The Square-issued ID of the location.
 	Id string `json:"id,omitempty"`
@@ -20,31 +21,31 @@ type Location struct {
 	// The Square features that are enabled for the location. See [LocationCapability](entity:LocationCapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values
 	Capabilities []LocationCapability `json:"capabilities,omitempty"`
 	Status       *LocationStatus      `json:"status,omitempty"`
-	// The time when the location was created, in RFC 3339 format.
+	// The time when the location was created, in RFC 3339 format. For more information, see [Working with Dates](https://developer.squareup.com/docs/build-basics/working-with-dates).
 	CreatedAt string `json:"created_at,omitempty"`
 	// The ID of the merchant that owns the location.
 	MerchantId string   `json:"merchant_id,omitempty"`
 	Country    *Country `json:"country,omitempty"`
-	// The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
+	// The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A). For more information, see [Location language code](https://developer.squareup.com/docs/locations-api#location-language-code).
 	LanguageCode string    `json:"language_code,omitempty"`
 	Currency     *Currency `json:"currency,omitempty"`
-	// The phone number of the location in human readable format.
+	// The phone number of the location in human readable format. For example, `+353 80 0 098 8099`.
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts.
 	BusinessName string        `json:"business_name,omitempty"`
 	Type_        *LocationType `json:"type,omitempty"`
-	// The website URL of the location.
+	// The website URL of the location.  For example, `https://squareup.com`.
 	WebsiteUrl    string         `json:"website_url,omitempty"`
 	BusinessHours *BusinessHours `json:"business_hours,omitempty"`
-	// The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts.
+	// The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts. For example, `help@squareup.com`.
 	BusinessEmail string `json:"business_email,omitempty"`
 	// The description of the location.
 	Description string `json:"description,omitempty"`
-	// The Twitter username of the location without the '@' symbol.
+	// The Twitter username of the location without the '@' symbol. For example, `Square`.
 	TwitterUsername string `json:"twitter_username,omitempty"`
-	// The Instagram username of the location without the '@' symbol.
+	// The Instagram username of the location without the '@' symbol. For example, `square`.
 	InstagramUsername string `json:"instagram_username,omitempty"`
-	// The Facebook profile URL of the location. The URL should begin with 'facebook.com/'.
+	// The Facebook profile URL of the location. The URL should begin with 'facebook.com/'. For example, `https://www.facebook.com/square`.
 	FacebookUrl string       `json:"facebook_url,omitempty"`
 	Coordinates *Coordinates `json:"coordinates,omitempty"`
 	// The URL of the logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image should have an aspect ratio close to 1:1 and is recommended to be at least 200x200 pixels.
@@ -54,5 +55,6 @@ type Location struct {
 	// The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.
 	Mcc string `json:"mcc,omitempty"`
 	// The URL of a full-format logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image can have an aspect ratio of 2:1 or greater and is recommended to be at least 1280x648 pixels.
-	FullFormatLogoUrl string `json:"full_format_logo_url,omitempty"`
+	FullFormatLogoUrl string  `json:"full_format_logo_url,omitempty"`
+	TaxIds            *TaxIds `json:"tax_ids,omitempty"`
 }

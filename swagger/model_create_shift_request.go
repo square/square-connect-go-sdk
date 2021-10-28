@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Represents a request to create a `Shift`
+// Represents a request to create a `Shift`.
 type CreateShiftRequest struct {
-	// Unique string value to insure the idempotency of the operation.
+	// A unique string value to ensure the idempotency of the operation.
 	IdempotencyKey string `json:"idempotency_key,omitempty"`
 	Shift          *Shift `json:"shift"`
 }

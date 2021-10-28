@@ -19,4 +19,5 @@ const (
 	CUSTOMER_DELETED_SubscriptionEventInfoCode               SubscriptionEventInfoCode = "CUSTOMER_DELETED"
 	CUSTOMER_NO_EMAIL_SubscriptionEventInfoCode              SubscriptionEventInfoCode = "CUSTOMER_NO_EMAIL"
 	CUSTOMER_NO_NAME_SubscriptionEventInfoCode               SubscriptionEventInfoCode = "CUSTOMER_NO_NAME"
+	USER_PROVIDED_SubscriptionEventInfoCode                  SubscriptionEventInfoCode = "USER_PROVIDED"
 )

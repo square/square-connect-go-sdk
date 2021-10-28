@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a set of `CustomerQuery` filters used to limit the set of `Customers` returned by `SearchCustomers`.
+// Represents a set of `CustomerQuery` filters used to limit the set of customers returned by the [SearchCustomers](api-endpoint:Customers-SearchCustomers) endpoint.
 type CustomerFilter struct {
 	CreationSource *CustomerCreationSourceFilter `json:"creation_source,omitempty"`
 	CreatedAt      *TimeRange                    `json:"created_at,omitempty"`

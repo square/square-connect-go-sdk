@@ -9,6 +9,6 @@
  */
 package swagger
 
-// A request to get an `EmployeeWage`
+// A request to get an `EmployeeWage`.
 type GetEmployeeWageRequest struct {
 }

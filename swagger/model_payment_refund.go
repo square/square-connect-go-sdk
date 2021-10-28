@@ -31,4 +31,6 @@ type PaymentRefund struct {
 	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp of when the refund was last updated, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
+	// An optional ID of the team member associated with taking the payment.
+	TeamMemberId string `json:"team_member_id,omitempty"`
 }

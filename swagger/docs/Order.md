@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **TotalDiscountMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **TotalTipMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **TotalServiceChargeMoney** | [***Money**](Money.md) |  | [optional] [default to null]
+**TicketName** | **string** | A short-term identifier for the order (such as a customer first name, table number, or auto-generated order number that resets daily). For orders created in Square Point of Sale, the &#x60;ticket_name&#x60; is printed on in-person tickets and stubs. It converts to the &#x60;kitchen_printing.name&#x60; field in the bill cart feature details. | [optional] [default to null]
 **PricingOptions** | [***OrderPricingOptions**](OrderPricingOptions.md) |  | [optional] [default to null]
 **Rewards** | [**[]OrderReward**](OrderReward.md) | A set-like list of Rewards that have been added to the Order. | [optional] [default to null]
 

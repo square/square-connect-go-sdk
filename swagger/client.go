@@ -113,8 +113,6 @@ type APIClient struct {
 
 	V1BatchingApi *V1BatchingApiService
 
-	V1EmployeesApi *V1EmployeesApiService
-
 	V1TransactionsApi *V1TransactionsApiService
 
 	V1WebhooksApi *V1WebhooksApiService
@@ -170,7 +168,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.TerminalApi = (*TerminalApiService)(&c.common)
 	c.TransactionsApi = (*TransactionsApiService)(&c.common)
 	c.V1BatchingApi = (*V1BatchingApiService)(&c.common)
-	c.V1EmployeesApi = (*V1EmployeesApiService)(&c.common)
 	c.V1TransactionsApi = (*V1TransactionsApiService)(&c.common)
 	c.V1WebhooksApi = (*V1WebhooksApiService)(&c.common)
 

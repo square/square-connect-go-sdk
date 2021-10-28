@@ -11,7 +11,7 @@ package swagger
 
 // Defines the body parameters that can be included in a request to the `CreateCustomer` endpoint.
 type CreateCustomerRequest struct {
-	// The idempotency key for the request. For more information, see  [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
+	// The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
 	IdempotencyKey string `json:"idempotency_key,omitempty"`
 	// The given name (that is, the first name) associated with the customer profile.
 	GivenName string `json:"given_name,omitempty"`
@@ -30,6 +30,7 @@ type CreateCustomerRequest struct {
 	ReferenceId string `json:"reference_id,omitempty"`
 	// A custom note associated with the customer profile.
 	Note string `json:"note,omitempty"`
-	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998.  You can also specify this value in `YYYY-MM-DD` format.
-	Birthday string `json:"birthday,omitempty"`
+	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998. You can also specify this value in `YYYY-MM-DD` format.
+	Birthday string          `json:"birthday,omitempty"`
+	TaxIds   *CustomerTaxIds `json:"tax_ids,omitempty"`
 }

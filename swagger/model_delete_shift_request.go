@@ -9,6 +9,6 @@
  */
 package swagger
 
-// A request to delete a `Shift`
+// A request to delete a `Shift`.
 type DeleteShiftRequest struct {
 }

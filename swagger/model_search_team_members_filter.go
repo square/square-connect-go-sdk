@@ -14,4 +14,6 @@ type SearchTeamMembersFilter struct {
 	// When present, filters by team members assigned to the specified locations. When empty, includes team members assigned to any location.
 	LocationIds []string          `json:"location_ids,omitempty"`
 	Status      *TeamMemberStatus `json:"status,omitempty"`
+	// When present and set to true, returns the team member who is the owner of the Square account.
+	IsOwner bool `json:"is_owner,omitempty"`
 }

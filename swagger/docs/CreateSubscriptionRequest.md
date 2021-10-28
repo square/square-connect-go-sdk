@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **PriceOverrideMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **CardId** | **string** | The ID of the [customer](entity:Customer) [card](entity:Card) to charge. If not specified, Square sends an invoice via email. For an example to create a customer and add a card on file, see [Subscriptions Walkthrough](https://developer.squareup.com/docs/subscriptions-api/walkthrough). | [optional] [default to null]
 **Timezone** | **string** | The timezone that is used in date calculations for the subscription. If unset, defaults to the location timezone. If a timezone is not configured for the location, defaults to \&quot;America/New_York\&quot;. Format: the IANA Timezone Database identifier for the location timezone. For a list of time zones, see [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). | [optional] [default to null]
+**Source** | [***SubscriptionSource**](SubscriptionSource.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

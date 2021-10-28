@@ -9,7 +9,7 @@
  */
 package swagger
 
-// ShiftStatus : Enumerates the possible status of a `Shift`
+// ShiftStatus : Enumerates the possible status of a `Shift`.
 type ShiftStatus string
 
 // List of ShiftStatus

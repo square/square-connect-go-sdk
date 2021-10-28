@@ -9,7 +9,7 @@
  */
 package swagger
 
-// OAuthPermission : When you direct your user to the permissions form, you specify the scope of the permissions your application will have. Personal access tokens have all available permissions (at the time the application was created) by default.  <aside class=\"important\"> Never request more than the minimum permissions required for your application to function properly. </aside>
+// OAuthPermission : When you direct your user to the permissions form, you specify the scope of the permissions your application will have. Personal access tokens have all available permissions (at the time the application was created) by default.  __Important:__ Never request more than the minimum permissions required for your application to function properly.
 type OAuthPermission string
 
 // List of OAuthPermission
@@ -48,7 +48,10 @@ const (
 	SUBSCRIPTIONS_WRITE_OAuthPermission                  OAuthPermission = "SUBSCRIPTIONS_WRITE"
 	DISPUTES_READ_OAuthPermission                        OAuthPermission = "DISPUTES_READ"
 	DISPUTES_WRITE_OAuthPermission                       OAuthPermission = "DISPUTES_WRITE"
-	ONLINE_STORE_SITE_READ_OAuthPermission               OAuthPermission = "ONLINE_STORE_SITE_READ"
-	ONLINE_STORE_SNIPPETS_READ_OAuthPermission           OAuthPermission = "ONLINE_STORE_SNIPPETS_READ"
+	GIFTCARDS_READ_OAuthPermission                       OAuthPermission = "GIFTCARDS_READ"
+	GIFTCARDS_WRITE_OAuthPermission                      OAuthPermission = "GIFTCARDS_WRITE"
 	ONLINE_STORE_SNIPPETS_WRITE_OAuthPermission          OAuthPermission = "ONLINE_STORE_SNIPPETS_WRITE"
+	ONLINE_STORE_SNIPPETS_READ_OAuthPermission           OAuthPermission = "ONLINE_STORE_SNIPPETS_READ"
+	ONLINE_STORE_SITE_READ_OAuthPermission               OAuthPermission = "ONLINE_STORE_SITE_READ"
+	PAYMENTS_WRITE_SHARED_ONFILE_OAuthPermission         OAuthPermission = "PAYMENTS_WRITE_SHARED_ONFILE"
 )

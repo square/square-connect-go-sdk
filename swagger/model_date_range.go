@@ -11,8 +11,8 @@ package swagger
 
 // A range defined by two dates. Used for filtering a query for Connect v2 objects that have date properties.
 type DateRange struct {
-	// String in `YYYY-MM-DD` format, e.g. `2017-10-31` per the ISO 8601 extended format for calendar dates. The beginning of a date range (inclusive)
+	// A string in `YYYY-MM-DD` format, such as `2017-10-31`, per the ISO 8601 extended format for calendar dates. The beginning of a date range (inclusive).
 	StartDate string `json:"start_date,omitempty"`
-	// String in `YYYY-MM-DD` format, e.g. `2017-10-31` per the ISO 8601 extended format for calendar dates. The end of a date range (inclusive)
+	// A string in `YYYY-MM-DD` format, such as `2017-10-31`, per the ISO 8601 extended format for calendar dates. The end of a date range (inclusive).
 	EndDate string `json:"end_date,omitempty"`
 }

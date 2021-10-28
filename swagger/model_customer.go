@@ -47,5 +47,6 @@ type Customer struct {
 	// The IDs of segments the customer belongs to.
 	SegmentIds []string `json:"segment_ids,omitempty"`
 	// The Square-assigned version number of the customer profile. The version number is incremented each time an update is committed to the customer profile, except for changes to customer segment membership and cards on file.
-	Version int64 `json:"version,omitempty"`
+	Version int64           `json:"version,omitempty"`
+	TaxIds  *CustomerTaxIds `json:"tax_ids,omitempty"`
 }

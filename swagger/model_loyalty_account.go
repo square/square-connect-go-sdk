@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a loyalty account. For more information, see [Loyalty Overview](https://developer.squareup.com/docs/loyalty/overview).
+// Describes a loyalty account. For more information, see [Manage Loyalty Accounts Using the Loyalty API](https://developer.squareup.com/docs/loyalty-api/overview).
 type LoyaltyAccount struct {
 	// The Square-assigned ID of the loyalty account.
 	Id string `json:"id,omitempty"`
@@ -17,7 +17,7 @@ type LoyaltyAccount struct {
 	Mappings []LoyaltyAccountMapping `json:"mappings,omitempty"`
 	// The Square-assigned ID of the [loyalty program](entity:LoyaltyProgram) to which the account belongs.
 	ProgramId string `json:"program_id"`
-	// The available point balance in the loyalty account.    Your application should be able to handle loyalty accounts that have a negative point balance (`balance` is less than 0). This might occur if a seller makes a manual adjustment or as a result of a refund or exchange.
+	// The available point balance in the loyalty account. If points are scheduled to expire, they are listed in the `expiring_point_deadlines` field.  Your application should be able to handle loyalty accounts that have a negative point balance (`balance` is less than 0). This might occur if a seller makes a manual adjustment or as a result of a refund or exchange.
 	Balance int32 `json:"balance,omitempty"`
 	// The total points accrued during the lifetime of the account.
 	LifetimePoints int32 `json:"lifetime_points,omitempty"`
@@ -30,4 +30,6 @@ type LoyaltyAccount struct {
 	// The timestamp when the loyalty account was last updated, in RFC 3339 format.
 	UpdatedAt string                 `json:"updated_at,omitempty"`
 	Mapping   *LoyaltyAccountMapping `json:"mapping,omitempty"`
+	// The schedule for when points expire in the loyalty account balance. This field is present only if the account has points that are scheduled to expire.   The total number of points in this field equals the number of points in the `balance` field.
+	ExpiringPointDeadlines []LoyaltyAccountExpiringPointDeadline `json:"expiring_point_deadlines,omitempty"`
 }

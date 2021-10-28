@@ -9,9 +9,9 @@
  */
 package swagger
 
-// A request to create a new `BreakType`
+// A request to create a new `BreakType`.
 type CreateBreakTypeRequest struct {
-	// Unique string value to insure idempotency of the operation
+	// A unique string value to ensure the idempotency of the operation.
 	IdempotencyKey string     `json:"idempotency_key,omitempty"`
 	BreakType      *BreakType `json:"break_type"`
 }

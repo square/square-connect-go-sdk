@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BatchRetrieveOrders**](OrdersApi.md#BatchRetrieveOrders) | **Post** /v2/orders/batch-retrieve | BatchRetrieveOrders
 [**CalculateOrder**](OrdersApi.md#CalculateOrder) | **Post** /v2/orders/calculate | CalculateOrder
+[**CloneOrder**](OrdersApi.md#CloneOrder) | **Post** /v2/orders/clone | CloneOrder
 [**CreateOrder**](OrdersApi.md#CreateOrder) | **Post** /v2/orders | CreateOrder
 [**PayOrder**](OrdersApi.md#PayOrder) | **Post** /v2/orders/{order_id}/pay | PayOrder
 [**RetrieveOrder**](OrdersApi.md#RetrieveOrder) | **Get** /v2/orders/{order_id} | RetrieveOrder
@@ -60,6 +61,36 @@ See the corresponding object definition for field details. |
 ### Return type
 
 [**CalculateOrderResponse**](CalculateOrderResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CloneOrder**
+> CloneOrderResponse CloneOrder(ctx, body)
+CloneOrder
+
+Creates a new order, in the `DRAFT` state, by duplicating an existing order. The newly created order has  only the core fields (such as line items, taxes, and discounts) copied from the original order.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**CloneOrderRequest**](CloneOrderRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
+
+### Return type
+
+[**CloneOrderResponse**](CloneOrderResponse.md)
 
 ### Authorization
 
