@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response to the request to create a `Shift`. Contains the created `Shift` object. May contain a set of `Error` objects if the request resulted in errors.
+// The response to a request to create a `Shift`. The response contains the created `Shift` object and might contain a set of `Error` objects if the request resulted in errors.
 type CreateShiftResponse struct {
 	Shift *Shift `json:"shift,omitempty"`
 	// Any errors that occurred during the request.

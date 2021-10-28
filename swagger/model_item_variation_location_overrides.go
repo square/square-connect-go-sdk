@@ -20,4 +20,5 @@ type ItemVariationLocationOverrides struct {
 	InventoryAlertType *InventoryAlertType `json:"inventory_alert_type,omitempty"`
 	// If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type` is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.  This value is always an integer.
 	InventoryAlertThreshold int64 `json:"inventory_alert_threshold,omitempty"`
+	SoldOut                 Body  `json:"sold_out"`
 }

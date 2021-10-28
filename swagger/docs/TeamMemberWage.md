@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | UUID for this object. | [optional] [default to null]
-**TeamMemberId** | **string** | The &#x60;Team Member&#x60; that this wage is assigned to. | [optional] [default to null]
+**Id** | **string** | The UUID for this object. | [optional] [default to null]
+**TeamMemberId** | **string** | The &#x60;TeamMember&#x60; that this wage is assigned to. | [optional] [default to null]
 **Title** | **string** | The job title that this wage relates to. | [optional] [default to null]
 **HourlyRate** | [***Money**](Money.md) |  | [optional] [default to null]
 

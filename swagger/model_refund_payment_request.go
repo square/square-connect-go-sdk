@@ -19,4 +19,8 @@ type RefundPaymentRequest struct {
 	PaymentId string `json:"payment_id"`
 	// A description of the reason for the refund.
 	Reason string `json:"reason,omitempty"`
+	//  Used for optimistic concurrency. This opaque token identifies the current `Payment`  version that the caller expects. If the server has a different version of the Payment,  the update fails and a response with a VERSION_MISMATCH error is returned.  If the versions match, or the field is not provided, the refund proceeds as normal.
+	PaymentVersionToken string `json:"payment_version_token,omitempty"`
+	// An optional [TeamMember](entity:TeamMember) ID to associate with this refund.
+	TeamMemberId string `json:"team_member_id,omitempty"`
 }

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// A response to a request to get a `TeamMemberWage`. Contains the requested `TeamMemberWage` objects. May contain a set of `Error` objects if the request resulted in errors.
+// A response to a request to get a `TeamMemberWage`. The response contains the requested `TeamMemberWage` objects and might contain a set of `Error` objects if the request resulted in errors.
 type GetTeamMemberWageResponse struct {
 	TeamMemberWage *TeamMemberWage `json:"team_member_wage,omitempty"`
 	// Any errors that occurred during the request.

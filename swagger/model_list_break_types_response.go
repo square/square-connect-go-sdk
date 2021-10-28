@@ -9,11 +9,11 @@
  */
 package swagger
 
-// The response to a request for a set of `BreakTypes`. Contains the requested `BreakType` objects. May contain a set of `Error` objects if the request resulted in errors.
+// The response to a request for a set of `BreakType` objects. The response contains the requested `BreakType` objects and might contain a set of `Error` objects if the request resulted in errors.
 type ListBreakTypesResponse struct {
 	//  A page of `BreakType` results.
 	BreakTypes []BreakType `json:"break_types,omitempty"`
-	// Value supplied in the subsequent request to fetch the next next page of Break Type results.
+	// The value supplied in the subsequent request to fetch the next page of `BreakType` results.
 	Cursor string `json:"cursor,omitempty"`
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

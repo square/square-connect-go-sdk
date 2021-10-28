@@ -28,7 +28,7 @@ type LaborApiService service
 
 /*
 LaborApiService CreateBreakType
-Creates a new &#x60;BreakType&#x60;.  A &#x60;BreakType&#x60; is a template for creating &#x60;Break&#x60; objects. You must provide the following values in your request to this endpoint:  - &#x60;location_id&#x60; - &#x60;break_name&#x60; - &#x60;expected_duration&#x60; - &#x60;is_paid&#x60;  You can only have 3 &#x60;BreakType&#x60; instances per location. If you attempt to add a 4th &#x60;BreakType&#x60; for a location, an &#x60;INVALID_REQUEST_ERROR&#x60; \&quot;Exceeded limit of 3 breaks per location.\&quot; is returned.
+Creates a new &#x60;BreakType&#x60;.  A &#x60;BreakType&#x60; is a template for creating &#x60;Break&#x60; objects. You must provide the following values in your request to this endpoint:  - &#x60;location_id&#x60; - &#x60;break_name&#x60; - &#x60;expected_duration&#x60; - &#x60;is_paid&#x60;  You can only have three &#x60;BreakType&#x60; instances per location. If you attempt to add a fourth &#x60;BreakType&#x60; for a location, an &#x60;INVALID_REQUEST_ERROR&#x60; \&quot;Exceeded limit of 3 breaks per location.\&quot; is returned.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -117,7 +117,7 @@ func (a *LaborApiService) CreateBreakType(ctx context.Context, body CreateBreakT
 
 /*
 LaborApiService CreateShift
-Creates a new &#x60;Shift&#x60;.  A &#x60;Shift&#x60; represents a complete work day for a single employee. You must provide the following values in your request to this endpoint:  - &#x60;location_id&#x60; - &#x60;employee_id&#x60; - &#x60;start_at&#x60;  An attempt to create a new &#x60;Shift&#x60; can result in a &#x60;BAD_REQUEST&#x60; error when: - The &#x60;status&#x60; of the new &#x60;Shift&#x60; is &#x60;OPEN&#x60; and the employee has another shift with an &#x60;OPEN&#x60; status. - The &#x60;start_at&#x60; date is in the future - the &#x60;start_at&#x60; or &#x60;end_at&#x60; overlaps another shift for the same employee - If &#x60;Break&#x60;s are set in the request, a break &#x60;start_at&#x60; must not be before the &#x60;Shift.start_at&#x60;. A break &#x60;end_at&#x60; must not be after the &#x60;Shift.end_at&#x60;
+Creates a new &#x60;Shift&#x60;.  A &#x60;Shift&#x60; represents a complete workday for a single employee. You must provide the following values in your request to this endpoint:  - &#x60;location_id&#x60; - &#x60;employee_id&#x60; - &#x60;start_at&#x60;  An attempt to create a new &#x60;Shift&#x60; can result in a &#x60;BAD_REQUEST&#x60; error when: - The &#x60;status&#x60; of the new &#x60;Shift&#x60; is &#x60;OPEN&#x60; and the employee has another shift with an &#x60;OPEN&#x60; status. - The &#x60;start_at&#x60; date is in the future. - The &#x60;start_at&#x60; or &#x60;end_at&#x60; date overlaps another shift for the same employee. - The &#x60;Break&#x60; instances are set in the request and a break &#x60;start_at&#x60; is before the &#x60;Shift.start_at&#x60;, a break &#x60;end_at&#x60; is after the &#x60;Shift.end_at&#x60;, or both.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -208,7 +208,7 @@ func (a *LaborApiService) CreateShift(ctx context.Context, body CreateShiftReque
 LaborApiService DeleteBreakType
 Deletes an existing &#x60;BreakType&#x60;.  A &#x60;BreakType&#x60; can be deleted even if it is referenced from a &#x60;Shift&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id UUID for the &#x60;BreakType&#x60; being deleted.
+ * @param id The UUID for the &#x60;BreakType&#x60; being deleted.
 @return DeleteBreakTypeResponse
 */
 func (a *LaborApiService) DeleteBreakType(ctx context.Context, id string) (DeleteBreakTypeResponse, *http.Response, error) {
@@ -294,7 +294,7 @@ func (a *LaborApiService) DeleteBreakType(ctx context.Context, id string) (Delet
 LaborApiService DeleteShift
 Deletes a &#x60;Shift&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id UUID for the &#x60;Shift&#x60; being deleted.
+ * @param id The UUID for the &#x60;Shift&#x60; being deleted.
 @return DeleteShiftResponse
 */
 func (a *LaborApiService) DeleteShift(ctx context.Context, id string) (DeleteShiftResponse, *http.Response, error) {
@@ -378,9 +378,9 @@ func (a *LaborApiService) DeleteShift(ctx context.Context, id string) (DeleteShi
 
 /*
 LaborApiService GetBreakType
-Returns a single &#x60;BreakType&#x60; specified by id.
+Returns a single &#x60;BreakType&#x60; specified by &#x60;id&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id UUID for the &#x60;BreakType&#x60; being retrieved.
+ * @param id The UUID for the &#x60;BreakType&#x60; being retrieved.
 @return GetBreakTypeResponse
 */
 func (a *LaborApiService) GetBreakType(ctx context.Context, id string) (GetBreakTypeResponse, *http.Response, error) {
@@ -464,9 +464,9 @@ func (a *LaborApiService) GetBreakType(ctx context.Context, id string) (GetBreak
 
 /*
 LaborApiService GetEmployeeWage
-Returns a single &#x60;EmployeeWage&#x60; specified by id.
+Returns a single &#x60;EmployeeWage&#x60; specified by &#x60;id&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id UUID for the &#x60;EmployeeWage&#x60; being retrieved.
+ * @param id The UUID for the &#x60;EmployeeWage&#x60; being retrieved.
 @return GetEmployeeWageResponse
 */
 func (a *LaborApiService) GetEmployeeWage(ctx context.Context, id string) (GetEmployeeWageResponse, *http.Response, error) {
@@ -550,9 +550,9 @@ func (a *LaborApiService) GetEmployeeWage(ctx context.Context, id string) (GetEm
 
 /*
 LaborApiService GetShift
-Returns a single &#x60;Shift&#x60; specified by id.
+Returns a single &#x60;Shift&#x60; specified by &#x60;id&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id UUID for the &#x60;Shift&#x60; being retrieved.
+ * @param id The UUID for the &#x60;Shift&#x60; being retrieved.
 @return GetShiftResponse
 */
 func (a *LaborApiService) GetShift(ctx context.Context, id string) (GetShiftResponse, *http.Response, error) {
@@ -636,9 +636,9 @@ func (a *LaborApiService) GetShift(ctx context.Context, id string) (GetShiftResp
 
 /*
 LaborApiService GetTeamMemberWage
-Returns a single &#x60;TeamMemberWage&#x60; specified by id.
+Returns a single &#x60;TeamMemberWage&#x60; specified by &#x60;id &#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id UUID for the &#x60;TeamMemberWage&#x60; being retrieved.
+ * @param id The UUID for the &#x60;TeamMemberWage&#x60; being retrieved.
 @return GetTeamMemberWageResponse
 */
 func (a *LaborApiService) GetTeamMemberWage(ctx context.Context, id string) (GetTeamMemberWageResponse, *http.Response, error) {
@@ -725,9 +725,9 @@ LaborApiService ListBreakTypes
 Returns a paginated list of &#x60;BreakType&#x60; instances for a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LaborApiListBreakTypesOpts - Optional Parameters:
-     * @param "LocationId" (optional.String) -  Filter Break Types returned to only those that are associated with the specified location.
-     * @param "Limit" (optional.Int32) -  Maximum number of Break Types to return per page. Can range between 1 and 200. The default is the maximum at 200.
-     * @param "Cursor" (optional.String) -  Pointer to the next page of Break Type results to fetch.
+     * @param "LocationId" (optional.String) -  Filter the returned &#x60;BreakType&#x60; results to only those that are associated with the specified location.
+     * @param "Limit" (optional.Int32) -  The maximum number of &#x60;BreakType&#x60; results to return per page. The number can range between 1 and 200. The default is 200.
+     * @param "Cursor" (optional.String) -  A pointer to the next page of &#x60;BreakType&#x60; results to fetch.
 @return ListBreakTypesResponse
 */
 
@@ -829,9 +829,9 @@ LaborApiService ListEmployeeWages
 Returns a paginated list of &#x60;EmployeeWage&#x60; instances for a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LaborApiListEmployeeWagesOpts - Optional Parameters:
-     * @param "EmployeeId" (optional.String) -  Filter wages returned to only those that are associated with the specified employee.
-     * @param "Limit" (optional.Int32) -  Maximum number of Employee Wages to return per page. Can range between 1 and 200. The default is the maximum at 200.
-     * @param "Cursor" (optional.String) -  Pointer to the next page of Employee Wage results to fetch.
+     * @param "EmployeeId" (optional.String) -  Filter the returned wages to only those that are associated with the specified employee.
+     * @param "Limit" (optional.Int32) -  The maximum number of &#x60;EmployeeWage&#x60; results to return per page. The number can range between 1 and 200. The default is 200.
+     * @param "Cursor" (optional.String) -  A pointer to the next page of &#x60;EmployeeWage&#x60; results to fetch.
 @return ListEmployeeWagesResponse
 */
 
@@ -933,9 +933,9 @@ LaborApiService ListTeamMemberWages
 Returns a paginated list of &#x60;TeamMemberWage&#x60; instances for a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LaborApiListTeamMemberWagesOpts - Optional Parameters:
-     * @param "TeamMemberId" (optional.String) -  Filter wages returned to only those that are associated with the specified team member.
-     * @param "Limit" (optional.Int32) -  Maximum number of Team Member Wages to return per page. Can range between 1 and 200. The default is the maximum at 200.
-     * @param "Cursor" (optional.String) -  Pointer to the next page of Employee Wage results to fetch.
+     * @param "TeamMemberId" (optional.String) -  Filter the returned wages to only those that are associated with the specified team member.
+     * @param "Limit" (optional.Int32) -  The maximum number of &#x60;TeamMemberWage&#x60; results to return per page. The number can range between 1 and 200. The default is 200.
+     * @param "Cursor" (optional.String) -  A pointer to the next page of &#x60;EmployeeWage&#x60; results to fetch.
 @return ListTeamMemberWagesResponse
 */
 
@@ -1037,8 +1037,8 @@ LaborApiService ListWorkweekConfigs
 Returns a list of &#x60;WorkweekConfig&#x60; instances for a business.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LaborApiListWorkweekConfigsOpts - Optional Parameters:
-     * @param "Limit" (optional.Int32) -  Maximum number of Workweek Configs to return per page.
-     * @param "Cursor" (optional.String) -  Pointer to the next page of Workweek Config results to fetch.
+     * @param "Limit" (optional.Int32) -  The maximum number of &#x60;WorkweekConfigs&#x60; results to return per page.
+     * @param "Cursor" (optional.String) -  A pointer to the next page of &#x60;WorkweekConfig&#x60; results to fetch.
 @return ListWorkweekConfigsResponse
 */
 
@@ -1133,7 +1133,7 @@ func (a *LaborApiService) ListWorkweekConfigs(ctx context.Context, localVarOptio
 
 /*
 LaborApiService SearchShifts
-Returns a paginated list of &#x60;Shift&#x60; records for a business. The list to be returned can be filtered by: - Location IDs **and** - employee IDs **and** - shift status (&#x60;OPEN&#x60;, &#x60;CLOSED&#x60;) **and** - shift start **and** - shift end **and** - work day details  The list can be sorted by: - &#x60;start_at&#x60; - &#x60;end_at&#x60; - &#x60;created_at&#x60; - &#x60;updated_at&#x60;
+Returns a paginated list of &#x60;Shift&#x60; records for a business. The list to be returned can be filtered by: - Location IDs. - Employee IDs. - Shift status (&#x60;OPEN&#x60; and &#x60;CLOSED&#x60;). - Shift start. - Shift end. - Workday details.  The list can be sorted by: - &#x60;start_at&#x60;. - &#x60;end_at&#x60;. - &#x60;created_at&#x60;. - &#x60;updated_at&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -1227,7 +1227,7 @@ Updates an existing &#x60;BreakType&#x60;.
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param id UUID for the &#x60;BreakType&#x60; being updated.
+ * @param id  The UUID for the &#x60;BreakType&#x60; being updated.
 @return UpdateBreakTypeResponse
 */
 func (a *LaborApiService) UpdateBreakType(ctx context.Context, body UpdateBreakTypeRequest, id string) (UpdateBreakTypeResponse, *http.Response, error) {
@@ -1313,12 +1313,12 @@ func (a *LaborApiService) UpdateBreakType(ctx context.Context, body UpdateBreakT
 
 /*
 LaborApiService UpdateShift
-Updates an existing &#x60;Shift&#x60;.  When adding a &#x60;Break&#x60; to a &#x60;Shift&#x60;, any earlier &#x60;Breaks&#x60; in the &#x60;Shift&#x60; have the &#x60;end_at&#x60; property set to a valid RFC-3339 datetime string.  When closing a &#x60;Shift&#x60;, all &#x60;Break&#x60; instances in the shift must be complete with &#x60;end_at&#x60; set on each &#x60;Break&#x60;.
+Updates an existing &#x60;Shift&#x60;.  When adding a &#x60;Break&#x60; to a &#x60;Shift&#x60;, any earlier &#x60;Break&#x60; instances in the &#x60;Shift&#x60; have the &#x60;end_at&#x60; property set to a valid RFC-3339 datetime string.  When closing a &#x60;Shift&#x60;, all &#x60;Break&#x60; instances in the &#x60;Shift&#x60; must be complete with &#x60;end_at&#x60; set on each &#x60;Break&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param id ID of the object being updated.
+ * @param id The ID of the object being updated.
 @return UpdateShiftResponse
 */
 func (a *LaborApiService) UpdateShift(ctx context.Context, body UpdateShiftRequest, id string) (UpdateShiftResponse, *http.Response, error) {
@@ -1409,7 +1409,7 @@ Updates a &#x60;WorkweekConfig&#x60;.
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param id UUID for the &#x60;WorkweekConfig&#x60; object being updated.
+ * @param id The UUID for the &#x60;WorkweekConfig&#x60; object being updated.
 @return UpdateWorkweekConfigResponse
 */
 func (a *LaborApiService) UpdateWorkweekConfig(ctx context.Context, body UpdateWorkweekConfigRequest, id string) (UpdateWorkweekConfigResponse, *http.Response, error) {

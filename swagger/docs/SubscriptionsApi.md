@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ResumeSubscription**
-> ResumeSubscriptionResponse ResumeSubscription(ctx, subscriptionId)
+> ResumeSubscriptionResponse ResumeSubscription(ctx, body, subscriptionId)
 ResumeSubscription
 
 Resumes a deactivated subscription.
@@ -118,6 +118,9 @@ Resumes a deactivated subscription.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**ResumeSubscriptionRequest**](ResumeSubscriptionRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
   **subscriptionId** | **string**| The ID of the subscription to resume. | 
 
 ### Return type
@@ -130,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

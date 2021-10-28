@@ -15,6 +15,8 @@ type OrderLineItemTax struct {
 	Uid string `json:"uid,omitempty"`
 	// The catalog object ID referencing [CatalogTax](entity:CatalogTax).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
+	// The version of the catalog object that this tax references.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
 	// The tax's name.
 	Name  string                `json:"name,omitempty"`
 	Type_ *OrderLineItemTaxType `json:"type,omitempty"`

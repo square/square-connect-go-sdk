@@ -40,5 +40,6 @@ type Subscription struct {
 	// The date up to which the customer is invoiced for the subscription, in YYYY-MM-DD format (for example, 2013-01-15).  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a customer gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31.
 	PaidUntilDate string `json:"paid_until_date,omitempty"`
 	// Timezone that will be used in date calculations for the subscription. Defaults to the timezone of the location based on `location_id`. Format: the IANA Timezone Database identifier for the location timezone (for example, `America/Los_Angeles`).
-	Timezone string `json:"timezone,omitempty"`
+	Timezone string              `json:"timezone,omitempty"`
+	Source   *SubscriptionSource `json:"source,omitempty"`
 }

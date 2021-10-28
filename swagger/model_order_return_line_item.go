@@ -24,6 +24,8 @@ type OrderReturnLineItem struct {
 	Note string `json:"note,omitempty"`
 	// The [CatalogItemVariation](entity:CatalogItemVariation) ID applied to this return line item.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
+	// The version of the catalog object that this line item references.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
 	// The name of the variation applied to this return line item.
 	VariationName string                 `json:"variation_name,omitempty"`
 	ItemType      *OrderLineItemItemType `json:"item_type,omitempty"`

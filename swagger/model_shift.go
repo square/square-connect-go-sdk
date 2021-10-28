@@ -9,30 +9,30 @@
  */
 package swagger
 
-// A record of the hourly rate, start, and end times for a single work shift for an employee. May include a record of the start and end times for breaks taken during the shift.
+// A record of the hourly rate, start, and end times for a single work shift for an employee. This might include a record of the start and end times for breaks taken during the shift.
 type Shift struct {
-	// UUID for this object
+	// The UUID for this object.
 	Id string `json:"id,omitempty"`
-	// The ID of the employee this shift belongs to. DEPRECATED at version 2020-08-26. Use `team_member_id` instead
+	// The ID of the employee this shift belongs to. DEPRECATED at version 2020-08-26. Use `team_member_id` instead.
 	EmployeeId string `json:"employee_id,omitempty"`
-	// The ID of the location this shift occurred at. Should be based on where the employee clocked in.
+	// The ID of the location this shift occurred at. The location should be based on where the employee clocked in.
 	LocationId string `json:"location_id,omitempty"`
-	// Read-only convenience value that is calculated from the location based on `location_id`. Format: the IANA Timezone Database identifier for the location timezone.
+	// The read-only convenience value that is calculated from the location based on the `location_id`. Format: the IANA timezone database identifier for the location timezone.
 	Timezone string `json:"timezone,omitempty"`
-	// RFC 3339; shifted to location timezone + offset. Precision up to the minute is respected; seconds are truncated.
+	// RFC 3339; shifted to the location timezone + offset. Precision up to the minute is respected; seconds are truncated.
 	StartAt string `json:"start_at"`
-	// RFC 3339; shifted to timezone + offset. Precision up to the minute is respected; seconds are truncated.
+	// RFC 3339; shifted to the timezone + offset. Precision up to the minute is respected; seconds are truncated.
 	EndAt string     `json:"end_at,omitempty"`
 	Wage  *ShiftWage `json:"wage,omitempty"`
-	// A list of any paid or unpaid breaks that were taken during this shift.
+	// A list of all the paid or unpaid breaks that were taken during this shift.
 	Breaks []ModelBreak `json:"breaks,omitempty"`
 	Status *ShiftStatus `json:"status,omitempty"`
-	// Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write.
+	// Used for resolving concurrency issues. The request fails if the version provided does not match the server version at the time of the request. If not provided, Square executes a blind write; potentially overwriting data from another write.
 	Version int32 `json:"version,omitempty"`
 	// A read-only timestamp in RFC 3339 format; presented in UTC.
 	CreatedAt string `json:"created_at,omitempty"`
 	// A read-only timestamp in RFC 3339 format; presented in UTC.
 	UpdatedAt string `json:"updated_at,omitempty"`
-	// The ID of the team member this shift belongs to. Replaced `employee_id` at version \"2020-08-26\"
+	// The ID of the team member this shift belongs to. Replaced `employee_id` at version \"2020-08-26\".
 	TeamMemberId string `json:"team_member_id,omitempty"`
 }

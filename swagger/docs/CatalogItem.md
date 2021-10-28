@@ -18,10 +18,6 @@ Name | Type | Description | Notes
 **ProductType** | [***CatalogItemProductType**](CatalogItemProductType.md) |  | [optional] [default to null]
 **SkipModifierScreen** | **bool** | If &#x60;false&#x60;, the Square Point of Sale app will present the &#x60;CatalogItem&#x60;&#x27;s details screen immediately, allowing the merchant to choose &#x60;CatalogModifier&#x60;s before adding the item to the cart.  This is the default behavior.  If &#x60;true&#x60;, the Square Point of Sale app will immediately add the item to the cart with the pre-selected modifiers, and merchants can edit modifiers by drilling down onto the item&#x27;s details.  Third-party clients are encouraged to implement similar behaviors. | [optional] [default to null]
 **ItemOptions** | [**[]CatalogItemOptionForItem**](CatalogItemOptionForItem.md) | List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options. | [optional] [default to null]
-**EcomUri** | **string** | hidden field | [optional] [default to null]
-**EcomImageUris** | **[]string** | hidden field | [optional] [default to null]
-**EcomAvailable** | **bool** | hidden field | [optional] [default to null]
-**EcomVisibility** | **string** | hidden field | [optional] [default to null]
 **SortName** | **string** | A name to sort the item by. If this name is unspecified, namely, the &#x60;sort_name&#x60; field is absent, the regular &#x60;name&#x60; field is used for sorting.  It is currently supported for sellers of the Japanese locale only. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -95,13 +95,19 @@ Class | Method | HTTP request | Description
 *GiftCardsApi* | [**RetrieveGiftCardFromGAN**](docs/GiftCardsApi.md#retrievegiftcardfromgan) | **Post** /v2/gift-cards/from-gan | RetrieveGiftCardFromGAN
 *GiftCardsApi* | [**RetrieveGiftCardFromNonce**](docs/GiftCardsApi.md#retrievegiftcardfromnonce) | **Post** /v2/gift-cards/from-nonce | RetrieveGiftCardFromNonce
 *GiftCardsApi* | [**UnlinkCustomerFromGiftCard**](docs/GiftCardsApi.md#unlinkcustomerfromgiftcard) | **Post** /v2/gift-cards/{gift_card_id}/unlink-customer | UnlinkCustomerFromGiftCard
-*InventoryApi* | [**BatchChangeInventory**](docs/InventoryApi.md#batchchangeinventory) | **Post** /v2/inventory/batch-change | BatchChangeInventory
-*InventoryApi* | [**BatchRetrieveInventoryChanges**](docs/InventoryApi.md#batchretrieveinventorychanges) | **Post** /v2/inventory/batch-retrieve-changes | BatchRetrieveInventoryChanges
-*InventoryApi* | [**BatchRetrieveInventoryCounts**](docs/InventoryApi.md#batchretrieveinventorycounts) | **Post** /v2/inventory/batch-retrieve-counts | BatchRetrieveInventoryCounts
-*InventoryApi* | [**RetrieveInventoryAdjustment**](docs/InventoryApi.md#retrieveinventoryadjustment) | **Get** /v2/inventory/adjustment/{adjustment_id} | RetrieveInventoryAdjustment
+*InventoryApi* | [**BatchChangeInventory**](docs/InventoryApi.md#batchchangeinventory) | **Post** /v2/inventory/changes/batch-create | BatchChangeInventory
+*InventoryApi* | [**BatchRetrieveInventoryChanges**](docs/InventoryApi.md#batchretrieveinventorychanges) | **Post** /v2/inventory/changes/batch-retrieve | BatchRetrieveInventoryChanges
+*InventoryApi* | [**BatchRetrieveInventoryCounts**](docs/InventoryApi.md#batchretrieveinventorycounts) | **Post** /v2/inventory/counts/batch-retrieve | BatchRetrieveInventoryCounts
+*InventoryApi* | [**DeprecatedBatchChangeInventory**](docs/InventoryApi.md#deprecatedbatchchangeinventory) | **Post** /v2/inventory/batch-change | DeprecatedBatchChangeInventory
+*InventoryApi* | [**DeprecatedBatchRetrieveInventoryChanges**](docs/InventoryApi.md#deprecatedbatchretrieveinventorychanges) | **Post** /v2/inventory/batch-retrieve-changes | DeprecatedBatchRetrieveInventoryChanges
+*InventoryApi* | [**DeprecatedBatchRetrieveInventoryCounts**](docs/InventoryApi.md#deprecatedbatchretrieveinventorycounts) | **Post** /v2/inventory/batch-retrieve-counts | DeprecatedBatchRetrieveInventoryCounts
+*InventoryApi* | [**DeprecatedRetrieveInventoryAdjustment**](docs/InventoryApi.md#deprecatedretrieveinventoryadjustment) | **Get** /v2/inventory/adjustment/{adjustment_id} | DeprecatedRetrieveInventoryAdjustment
+*InventoryApi* | [**DeprecatedRetrieveInventoryPhysicalCount**](docs/InventoryApi.md#deprecatedretrieveinventoryphysicalcount) | **Get** /v2/inventory/physical-count/{physical_count_id} | DeprecatedRetrieveInventoryPhysicalCount
+*InventoryApi* | [**RetrieveInventoryAdjustment**](docs/InventoryApi.md#retrieveinventoryadjustment) | **Get** /v2/inventory/adjustments/{adjustment_id} | RetrieveInventoryAdjustment
 *InventoryApi* | [**RetrieveInventoryChanges**](docs/InventoryApi.md#retrieveinventorychanges) | **Get** /v2/inventory/{catalog_object_id}/changes | RetrieveInventoryChanges
 *InventoryApi* | [**RetrieveInventoryCount**](docs/InventoryApi.md#retrieveinventorycount) | **Get** /v2/inventory/{catalog_object_id} | RetrieveInventoryCount
-*InventoryApi* | [**RetrieveInventoryPhysicalCount**](docs/InventoryApi.md#retrieveinventoryphysicalcount) | **Get** /v2/inventory/physical-count/{physical_count_id} | RetrieveInventoryPhysicalCount
+*InventoryApi* | [**RetrieveInventoryPhysicalCount**](docs/InventoryApi.md#retrieveinventoryphysicalcount) | **Get** /v2/inventory/physical-counts/{physical_count_id} | RetrieveInventoryPhysicalCount
+*InventoryApi* | [**RetrieveInventoryTransfer**](docs/InventoryApi.md#retrieveinventorytransfer) | **Get** /v2/inventory/transfers/{transfer_id} | RetrieveInventoryTransfer
 *InvoicesApi* | [**CancelInvoice**](docs/InvoicesApi.md#cancelinvoice) | **Post** /v2/invoices/{invoice_id}/cancel | CancelInvoice
 *InvoicesApi* | [**CreateInvoice**](docs/InvoicesApi.md#createinvoice) | **Post** /v2/invoices | CreateInvoice
 *InvoicesApi* | [**DeleteInvoice**](docs/InvoicesApi.md#deleteinvoice) | **Delete** /v2/invoices/{invoice_id} | DeleteInvoice
@@ -153,6 +159,7 @@ Class | Method | HTTP request | Description
 *OAuthApi* | [**RevokeToken**](docs/OAuthApi.md#revoketoken) | **Post** /oauth2/revoke | RevokeToken
 *OrdersApi* | [**BatchRetrieveOrders**](docs/OrdersApi.md#batchretrieveorders) | **Post** /v2/orders/batch-retrieve | BatchRetrieveOrders
 *OrdersApi* | [**CalculateOrder**](docs/OrdersApi.md#calculateorder) | **Post** /v2/orders/calculate | CalculateOrder
+*OrdersApi* | [**CloneOrder**](docs/OrdersApi.md#cloneorder) | **Post** /v2/orders/clone | CloneOrder
 *OrdersApi* | [**CreateOrder**](docs/OrdersApi.md#createorder) | **Post** /v2/orders | CreateOrder
 *OrdersApi* | [**PayOrder**](docs/OrdersApi.md#payorder) | **Post** /v2/orders/{order_id}/pay | PayOrder
 *OrdersApi* | [**RetrieveOrder**](docs/OrdersApi.md#retrieveorder) | **Get** /v2/orders/{order_id} | RetrieveOrder
@@ -198,21 +205,10 @@ Class | Method | HTTP request | Description
 *TerminalApi* | [**SearchTerminalCheckouts**](docs/TerminalApi.md#searchterminalcheckouts) | **Post** /v2/terminals/checkouts/search | SearchTerminalCheckouts
 *TerminalApi* | [**SearchTerminalRefunds**](docs/TerminalApi.md#searchterminalrefunds) | **Post** /v2/terminals/refunds/search | SearchTerminalRefunds
 *TransactionsApi* | [**CaptureTransaction**](docs/TransactionsApi.md#capturetransaction) | **Post** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
-*TransactionsApi* | [**Charge**](docs/TransactionsApi.md#charge) | **Post** /v2/locations/{location_id}/transactions | Charge
-*TransactionsApi* | [**CreateRefund**](docs/TransactionsApi.md#createrefund) | **Post** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
-*TransactionsApi* | [**ListRefunds**](docs/TransactionsApi.md#listrefunds) | **Get** /v2/locations/{location_id}/refunds | ListRefunds
 *TransactionsApi* | [**ListTransactions**](docs/TransactionsApi.md#listtransactions) | **Get** /v2/locations/{location_id}/transactions | ListTransactions
 *TransactionsApi* | [**RetrieveTransaction**](docs/TransactionsApi.md#retrievetransaction) | **Get** /v2/locations/{location_id}/transactions/{transaction_id} | RetrieveTransaction
 *TransactionsApi* | [**VoidTransaction**](docs/TransactionsApi.md#voidtransaction) | **Post** /v2/locations/{location_id}/transactions/{transaction_id}/void | VoidTransaction
 *V1BatchingApi* | [**V1SubmitBatch**](docs/V1BatchingApi.md#v1submitbatch) | **Post** /v1/batch | V1SubmitBatch
-*V1EmployeesApi* | [**CreateEmployee**](docs/V1EmployeesApi.md#createemployee) | **Post** /v1/me/employees | CreateEmployee
-*V1EmployeesApi* | [**CreateEmployeeRole**](docs/V1EmployeesApi.md#createemployeerole) | **Post** /v1/me/roles | CreateEmployeeRole
-*V1EmployeesApi* | [**ListEmployeeRoles**](docs/V1EmployeesApi.md#listemployeeroles) | **Get** /v1/me/roles | ListEmployeeRoles
-*V1EmployeesApi* | [**ListEmployees**](docs/V1EmployeesApi.md#listemployees) | **Get** /v1/me/employees | ListEmployees
-*V1EmployeesApi* | [**RetrieveEmployee**](docs/V1EmployeesApi.md#retrieveemployee) | **Get** /v1/me/employees/{employee_id} | RetrieveEmployee
-*V1EmployeesApi* | [**RetrieveEmployeeRole**](docs/V1EmployeesApi.md#retrieveemployeerole) | **Get** /v1/me/roles/{role_id} | RetrieveEmployeeRole
-*V1EmployeesApi* | [**UpdateEmployee**](docs/V1EmployeesApi.md#updateemployee) | **Put** /v1/me/employees/{employee_id} | UpdateEmployee
-*V1EmployeesApi* | [**UpdateEmployeeRole**](docs/V1EmployeesApi.md#updateemployeerole) | **Put** /v1/me/roles/{role_id} | UpdateEmployeeRole
 *V1TransactionsApi* | [**CreateRefund**](docs/V1TransactionsApi.md#createrefund) | **Post** /v1/{location_id}/refunds | CreateRefund
 *V1TransactionsApi* | [**ListPayments**](docs/V1TransactionsApi.md#listpayments) | **Get** /v1/{location_id}/payments | ListPayments
 *V1TransactionsApi* | [**ListRefunds**](docs/V1TransactionsApi.md#listrefunds) | **Get** /v1/{location_id}/refunds | ListRefunds
@@ -238,11 +234,12 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [AdjustLoyaltyPointsRequest](docs/AdjustLoyaltyPointsRequest.md)
  - [AdjustLoyaltyPointsResponse](docs/AdjustLoyaltyPointsResponse.md)
+ - [ApplicationDetails](docs/ApplicationDetails.md)
+ - [ApplicationDetailsExternalSquareProduct](docs/ApplicationDetailsExternalSquareProduct.md)
  - [AppointmentSegment](docs/AppointmentSegment.md)
  - [AuthorizeRequest](docs/AuthorizeRequest.md)
  - [AuthorizeResponse](docs/AuthorizeResponse.md)
  - [Availability](docs/Availability.md)
- - [BalancePaymentDetails](docs/BalancePaymentDetails.md)
  - [BankAccount](docs/BankAccount.md)
  - [BankAccountCreatedWebhook](docs/BankAccountCreatedWebhook.md)
  - [BankAccountCreatedWebhookData](docs/BankAccountCreatedWebhookData.md)
@@ -416,6 +413,8 @@ Class | Method | HTTP request | Description
  - [CheckAppointmentsOnboardedRequest](docs/CheckAppointmentsOnboardedRequest.md)
  - [Checkout](docs/Checkout.md)
  - [CheckoutOptionsPaymentType](docs/CheckoutOptionsPaymentType.md)
+ - [CloneOrderRequest](docs/CloneOrderRequest.md)
+ - [CloneOrderResponse](docs/CloneOrderResponse.md)
  - [CompletePaymentRequest](docs/CompletePaymentRequest.md)
  - [CompletePaymentResponse](docs/CompletePaymentResponse.md)
  - [Coordinates](docs/Coordinates.md)
@@ -496,6 +495,7 @@ Class | Method | HTTP request | Description
  - [CustomerSegment](docs/CustomerSegment.md)
  - [CustomerSort](docs/CustomerSort.md)
  - [CustomerSortField](docs/CustomerSortField.md)
+ - [CustomerTaxIds](docs/CustomerTaxIds.md)
  - [CustomerTextFilter](docs/CustomerTextFilter.md)
  - [CustomerUpdatedWebhook](docs/CustomerUpdatedWebhook.md)
  - [CustomerUpdatedWebhookData](docs/CustomerUpdatedWebhookData.md)
@@ -534,6 +534,7 @@ Class | Method | HTTP request | Description
  - [DeviceCodePairedWebhookObject](docs/DeviceCodePairedWebhookObject.md)
  - [DeviceCodeStatus](docs/DeviceCodeStatus.md)
  - [DeviceDetails](docs/DeviceDetails.md)
+ - [DigitalWalletDetails](docs/DigitalWalletDetails.md)
  - [DisableCardRequest](docs/DisableCardRequest.md)
  - [DisableCardResponse](docs/DisableCardResponse.md)
  - [Dispute](docs/Dispute.md)
@@ -637,7 +638,6 @@ Class | Method | HTTP request | Description
  - [GiftCardUpdatedWebhook](docs/GiftCardUpdatedWebhook.md)
  - [GiftCardUpdatedWebhookData](docs/GiftCardUpdatedWebhookData.md)
  - [GiftCardUpdatedWebhookObject](docs/GiftCardUpdatedWebhookObject.md)
- - [InlineTypes](docs/InlineTypes.md)
  - [InventoryAdjustment](docs/InventoryAdjustment.md)
  - [InventoryAdjustmentGroup](docs/InventoryAdjustmentGroup.md)
  - [InventoryAlertType](docs/InventoryAlertType.md)
@@ -676,6 +676,7 @@ Class | Method | HTTP request | Description
  - [InvoicePublishedWebhookObject](docs/InvoicePublishedWebhookObject.md)
  - [InvoiceQuery](docs/InvoiceQuery.md)
  - [InvoiceRecipient](docs/InvoiceRecipient.md)
+ - [InvoiceRecipientTaxIds](docs/InvoiceRecipientTaxIds.md)
  - [InvoiceRefundedWebhook](docs/InvoiceRefundedWebhook.md)
  - [InvoiceRefundedWebhookData](docs/InvoiceRefundedWebhookData.md)
  - [InvoiceRefundedWebhookObject](docs/InvoiceRefundedWebhookObject.md)
@@ -778,6 +779,7 @@ Class | Method | HTTP request | Description
  - [LoyaltyAccountCreatedWebhookData](docs/LoyaltyAccountCreatedWebhookData.md)
  - [LoyaltyAccountDeletedWebhook](docs/LoyaltyAccountDeletedWebhook.md)
  - [LoyaltyAccountDeletedWebhookData](docs/LoyaltyAccountDeletedWebhookData.md)
+ - [LoyaltyAccountExpiringPointDeadline](docs/LoyaltyAccountExpiringPointDeadline.md)
  - [LoyaltyAccountMapping](docs/LoyaltyAccountMapping.md)
  - [LoyaltyAccountMappingType](docs/LoyaltyAccountMappingType.md)
  - [LoyaltyAccountUpdatedWebhook](docs/LoyaltyAccountUpdatedWebhook.md)
@@ -888,6 +890,7 @@ Class | Method | HTTP request | Description
  - [OrderRoundingAdjustment](docs/OrderRoundingAdjustment.md)
  - [OrderServiceCharge](docs/OrderServiceCharge.md)
  - [OrderServiceChargeCalculationPhase](docs/OrderServiceChargeCalculationPhase.md)
+ - [OrderServiceChargeType](docs/OrderServiceChargeType.md)
  - [OrderSource](docs/OrderSource.md)
  - [OrderState](docs/OrderState.md)
  - [OrderUpdated](docs/OrderUpdated.md)
@@ -968,6 +971,8 @@ Class | Method | HTTP request | Description
  - [RetrieveInventoryCountResponse](docs/RetrieveInventoryCountResponse.md)
  - [RetrieveInventoryPhysicalCountRequest](docs/RetrieveInventoryPhysicalCountRequest.md)
  - [RetrieveInventoryPhysicalCountResponse](docs/RetrieveInventoryPhysicalCountResponse.md)
+ - [RetrieveInventoryTransferRequest](docs/RetrieveInventoryTransferRequest.md)
+ - [RetrieveInventoryTransferResponse](docs/RetrieveInventoryTransferResponse.md)
  - [RetrieveLocationRequest](docs/RetrieveLocationRequest.md)
  - [RetrieveLocationResponse](docs/RetrieveLocationResponse.md)
  - [RetrieveLoyaltyAccountRequest](docs/RetrieveLoyaltyAccountRequest.md)
@@ -1073,11 +1078,13 @@ Class | Method | HTTP request | Description
  - [SubscriptionEventInfoCode](docs/SubscriptionEventInfoCode.md)
  - [SubscriptionEventSubscriptionEventType](docs/SubscriptionEventSubscriptionEventType.md)
  - [SubscriptionPhase](docs/SubscriptionPhase.md)
+ - [SubscriptionSource](docs/SubscriptionSource.md)
  - [SubscriptionStatus](docs/SubscriptionStatus.md)
  - [SubscriptionUpdatedWebhook](docs/SubscriptionUpdatedWebhook.md)
  - [SubscriptionUpdatedWebhookData](docs/SubscriptionUpdatedWebhookData.md)
  - [SubscriptionUpdatedWebhookObject](docs/SubscriptionUpdatedWebhookObject.md)
  - [TaxCalculationPhase](docs/TaxCalculationPhase.md)
+ - [TaxIds](docs/TaxIds.md)
  - [TaxInclusionType](docs/TaxInclusionType.md)
  - [TeamMember](docs/TeamMember.md)
  - [TeamMemberAssignedLocations](docs/TeamMemberAssignedLocations.md)
@@ -1111,6 +1118,7 @@ Class | Method | HTTP request | Description
  - [TerminalCheckoutUpdatedWebhook](docs/TerminalCheckoutUpdatedWebhook.md)
  - [TerminalCheckoutUpdatedWebhookData](docs/TerminalCheckoutUpdatedWebhookData.md)
  - [TerminalCheckoutUpdatedWebhookObject](docs/TerminalCheckoutUpdatedWebhookObject.md)
+ - [TerminalDeviceCheckoutOptions](docs/TerminalDeviceCheckoutOptions.md)
  - [TerminalRefund](docs/TerminalRefund.md)
  - [TerminalRefundCreatedWebhook](docs/TerminalRefundCreatedWebhook.md)
  - [TerminalRefundCreatedWebhookData](docs/TerminalRefundCreatedWebhookData.md)
@@ -1162,19 +1170,9 @@ Class | Method | HTTP request | Description
  - [UpsertCatalogObjectResponse](docs/UpsertCatalogObjectResponse.md)
  - [UpsertSnippetRequest](docs/UpsertSnippetRequest.md)
  - [UpsertSnippetResponse](docs/UpsertSnippetResponse.md)
- - [V1CreateEmployeeRoleRequest](docs/V1CreateEmployeeRoleRequest.md)
  - [V1CreateRefundRequest](docs/V1CreateRefundRequest.md)
  - [V1CreateRefundRequestType](docs/V1CreateRefundRequestType.md)
- - [V1Employee](docs/V1Employee.md)
- - [V1EmployeeRole](docs/V1EmployeeRole.md)
- - [V1EmployeeRolePermissions](docs/V1EmployeeRolePermissions.md)
- - [V1EmployeeStatus](docs/V1EmployeeStatus.md)
  - [V1InventoryUpdatedWebhook](docs/V1InventoryUpdatedWebhook.md)
- - [V1ListEmployeeRolesRequest](docs/V1ListEmployeeRolesRequest.md)
- - [V1ListEmployeeRolesResponse](docs/V1ListEmployeeRolesResponse.md)
- - [V1ListEmployeesRequest](docs/V1ListEmployeesRequest.md)
- - [V1ListEmployeesRequestStatus](docs/V1ListEmployeesRequestStatus.md)
- - [V1ListEmployeesResponse](docs/V1ListEmployeesResponse.md)
  - [V1ListPaymentsRequest](docs/V1ListPaymentsRequest.md)
  - [V1ListPaymentsResponse](docs/V1ListPaymentsResponse.md)
  - [V1ListRefundsRequest](docs/V1ListRefundsRequest.md)
@@ -1199,8 +1197,6 @@ Class | Method | HTTP request | Description
  - [V1PhoneNumber](docs/V1PhoneNumber.md)
  - [V1Refund](docs/V1Refund.md)
  - [V1RefundType](docs/V1RefundType.md)
- - [V1RetrieveEmployeeRequest](docs/V1RetrieveEmployeeRequest.md)
- - [V1RetrieveEmployeeRoleRequest](docs/V1RetrieveEmployeeRoleRequest.md)
  - [V1RetrievePaymentRequest](docs/V1RetrievePaymentRequest.md)
  - [V1RetrieveSettlementRequest](docs/V1RetrieveSettlementRequest.md)
  - [V1Settlement](docs/V1Settlement.md)
@@ -1214,8 +1210,6 @@ Class | Method | HTTP request | Description
  - [V1TenderEntryMethod](docs/V1TenderEntryMethod.md)
  - [V1TenderType](docs/V1TenderType.md)
  - [V1TimecardUpdatedWebhook](docs/V1TimecardUpdatedWebhook.md)
- - [V1UpdateEmployeeRequest](docs/V1UpdateEmployeeRequest.md)
- - [V1UpdateEmployeeRoleRequest](docs/V1UpdateEmployeeRoleRequest.md)
  - [V1UpdateWebhooksRequest](docs/V1UpdateWebhooksRequest.md)
  - [V1UpdateWebhooksResponse](docs/V1UpdateWebhooksResponse.md)
  - [V1WebhooksEvents](docs/V1WebhooksEvents.md)

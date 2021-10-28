@@ -23,7 +23,7 @@ type Card struct {
 	// The name of the cardholder.
 	CardholderName string   `json:"cardholder_name,omitempty"`
 	BillingAddress *Address `json:"billing_address,omitempty"`
-	// __Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.
+	// Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.
 	Fingerprint string `json:"fingerprint,omitempty"`
 	// The ID of a customer created using the Customers API to be associated with the card.
 	CustomerId string `json:"customer_id,omitempty"`

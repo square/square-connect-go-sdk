@@ -15,6 +15,8 @@ type OrderLineItemDiscount struct {
 	Uid string `json:"uid,omitempty"`
 	// The catalog object ID referencing [CatalogDiscount](entity:CatalogDiscount).
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
+	// The version of the catalog object that this discount references.
+	CatalogVersion int64 `json:"catalog_version,omitempty"`
 	// The discount's name.
 	Name  string                     `json:"name,omitempty"`
 	Type_ *OrderLineItemDiscountType `json:"type,omitempty"`

@@ -28,8 +28,9 @@ type UpdateCustomerRequest struct {
 	ReferenceId string `json:"reference_id,omitempty"`
 	// A custom note associated with the customer profile.
 	Note string `json:"note,omitempty"`
-	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998.  You can also specify this value in `YYYY-MM-DD` format.
+	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998. You can also specify this value in `YYYY-MM-DD` format.
 	Birthday string `json:"birthday,omitempty"`
-	// The current version of the customer profile.   As a best practice, you should include this field to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. For more information, see [Update a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#update-a-customer-profile).
-	Version int64 `json:"version,omitempty"`
+	// The current version of the customer profile.  As a best practice, you should include this field to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. For more information, see [Update a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#update-a-customer-profile).
+	Version int64           `json:"version,omitempty"`
+	TaxIds  *CustomerTaxIds `json:"tax_ids,omitempty"`
 }

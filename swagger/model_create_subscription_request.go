@@ -29,5 +29,6 @@ type CreateSubscriptionRequest struct {
 	// The ID of the [customer](entity:Customer) [card](entity:Card) to charge. If not specified, Square sends an invoice via email. For an example to create a customer and add a card on file, see [Subscriptions Walkthrough](https://developer.squareup.com/docs/subscriptions-api/walkthrough).
 	CardId string `json:"card_id,omitempty"`
 	// The timezone that is used in date calculations for the subscription. If unset, defaults to the location timezone. If a timezone is not configured for the location, defaults to \"America/New_York\". Format: the IANA Timezone Database identifier for the location timezone. For a list of time zones, see [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
-	Timezone string `json:"timezone,omitempty"`
+	Timezone string              `json:"timezone,omitempty"`
+	Source   *SubscriptionSource `json:"source,omitempty"`
 }

@@ -34,4 +34,6 @@ type TerminalCheckout struct {
 	// The location of the device where the `TerminalCheckout` was directed.
 	LocationId  string                      `json:"location_id,omitempty"`
 	PaymentType *CheckoutOptionsPaymentType `json:"payment_type,omitempty"`
+	// An optional ID of the customer associated with the checkout.
+	CustomerId string `json:"customer_id,omitempty"`
 }

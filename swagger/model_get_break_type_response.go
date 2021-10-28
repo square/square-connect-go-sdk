@@ -9,7 +9,7 @@
  */
 package swagger
 
-// The response to a request to get a `BreakType`. Contains the requested `BreakType` objects. May contain a set of `Error` objects if the request resulted in errors.
+// The response to a request to get a `BreakType`. The response contains the requested `BreakType` objects and might contain a set of `Error` objects if the request resulted in errors.
 type GetBreakTypeResponse struct {
 	BreakType *BreakType `json:"break_type,omitempty"`
 	// Any errors that occurred during the request.

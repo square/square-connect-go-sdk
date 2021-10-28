@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **QuantityUnit** | [***OrderQuantityUnit**](OrderQuantityUnit.md) |  | [optional] [default to null]
 **Note** | **string** | The note of the return line item. | [optional] [default to null]
 **CatalogObjectId** | **string** | The [CatalogItemVariation](entity:CatalogItemVariation) ID applied to this return line item. | [optional] [default to null]
+**CatalogVersion** | **int64** | The version of the catalog object that this line item references. | [optional] [default to null]
 **VariationName** | **string** | The name of the variation applied to this return line item. | [optional] [default to null]
 **ItemType** | [***OrderLineItemItemType**](OrderLineItemItemType.md) |  | [optional] [default to null]
 **ReturnModifiers** | [**[]OrderReturnLineItemModifier**](OrderReturnLineItemModifier.md) | The [CatalogModifier](entity:CatalogModifier)s applied to this line item. | [optional] [default to null]

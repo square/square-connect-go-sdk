@@ -9,6 +9,6 @@
  */
 package swagger
 
-// A request to GET a `BreakType` by ID
+// A request to get a `BreakType` by ID.
 type GetBreakTypeRequest struct {
 }

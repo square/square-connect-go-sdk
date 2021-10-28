@@ -17,4 +17,5 @@ const (
 	BUYER_CANCELED_ActionCancelReason                  ActionCancelReason = "BUYER_CANCELED"
 	SELLER_CANCELED_ActionCancelReason                 ActionCancelReason = "SELLER_CANCELED"
 	TIMED_OUT_ActionCancelReason                       ActionCancelReason = "TIMED_OUT"
+	UNSUPPORTED_ActionCancelReason                     ActionCancelReason = "UNSUPPORTED"
 )

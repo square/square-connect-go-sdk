@@ -9,12 +9,12 @@
  */
 package swagger
 
-// A request for a set of `EmployeeWage` objects
+// A request for a set of `EmployeeWage` objects.
 type ListEmployeeWagesRequest struct {
-	// Filter wages returned to only those that are associated with the specified employee.
+	// Filter the returned wages to only those that are associated with the specified employee.
 	EmployeeId string `json:"employee_id,omitempty"`
-	// Maximum number of Employee Wages to return per page. Can range between 1 and 200. The default is the maximum at 200.
+	// The maximum number of `EmployeeWage` results to return per page. The number can range between 1 and 200. The default is 200.
 	Limit int32 `json:"limit,omitempty"`
-	// Pointer to the next page of Employee Wage results to fetch.
+	// A pointer to the next page of `EmployeeWage` results to fetch.
 	Cursor string `json:"cursor,omitempty"`
 }

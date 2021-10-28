@@ -306,10 +306,13 @@ func (a *SubscriptionsApiService) ListSubscriptionEvents(ctx context.Context, su
 SubscriptionsApiService ResumeSubscription
 Resumes a deactivated subscription.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details.
  * @param subscriptionId The ID of the subscription to resume.
 @return ResumeSubscriptionResponse
 */
-func (a *SubscriptionsApiService) ResumeSubscription(ctx context.Context, subscriptionId string) (ResumeSubscriptionResponse, *http.Response, error) {
+func (a *SubscriptionsApiService) ResumeSubscription(ctx context.Context, body ResumeSubscriptionRequest, subscriptionId string) (ResumeSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -327,7 +330,7 @@ func (a *SubscriptionsApiService) ResumeSubscription(ctx context.Context, subscr
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -343,6 +346,8 @@ func (a *SubscriptionsApiService) ResumeSubscription(ctx context.Context, subscr
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	// body params
+	localVarPostBody = &body
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

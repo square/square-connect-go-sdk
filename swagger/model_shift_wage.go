@@ -11,7 +11,7 @@ package swagger
 
 // The hourly wage rate used to compensate an employee for this shift.
 type ShiftWage struct {
-	// The name of the job performed during this shift. Square labor-reporting UIs may group shifts together by title.
+	// The name of the job performed during this shift. Square labor-reporting UIs might group shifts together by title.
 	Title      string `json:"title,omitempty"`
 	HourlyRate *Money `json:"hourly_rate,omitempty"`
 }

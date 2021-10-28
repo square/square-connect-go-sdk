@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Reason** | **string** | The reason for the refund. | [optional] [default to null]
 **CreatedAt** | **string** | The timestamp of when the refund was created, in RFC 3339 format. | [optional] [default to null]
 **UpdatedAt** | **string** | The timestamp of when the refund was last updated, in RFC 3339 format. | [optional] [default to null]
+**TeamMemberId** | **string** | An optional ID of the team member associated with taking the payment. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

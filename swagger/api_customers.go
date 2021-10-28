@@ -300,7 +300,7 @@ Deletes a customer profile from a business. This operation also unlinks any asso
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the customer to delete.
  * @param optional nil or *CustomersApiDeleteCustomerOpts - Optional Parameters:
-     * @param "Version" (optional.Int64) -  The current version of the customer profile.   As a best practice, you should include this parameter to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control.  For more information, see [Delete a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#delete-customer-profile).
+     * @param "Version" (optional.Int64) -  The current version of the customer profile.  As a best practice, you should include this parameter to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control.  For more information, see [Delete a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#delete-customer-profile).
 @return DeleteCustomerResponse
 */
 
@@ -484,13 +484,15 @@ Lists customer profiles associated with a Square account.  Under normal operatin
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomersApiListCustomersOpts - Optional Parameters:
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for your original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
-     * @param "SortField" (optional.Interface of CustomerSortField) -  Indicates how customers should be sorted.  Default: &#x60;DEFAULT&#x60;.
-     * @param "SortOrder" (optional.Interface of SortOrder) -  Indicates whether customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order.  Default: &#x60;ASC&#x60;.
+     * @param "Limit" (optional.Int32) -  The maximum number of results to return in a single page. This limit is advisory. The response might contain more or fewer results. The limit is ignored if it is less than 1 or greater than 100. The default value is 100.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+     * @param "SortField" (optional.Interface of CustomerSortField) -  Indicates how customers should be sorted.  The default value is &#x60;DEFAULT&#x60;.
+     * @param "SortOrder" (optional.Interface of SortOrder) -  Indicates whether customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order.  The default value is &#x60;ASC&#x60;.
 @return ListCustomersResponse
 */
 
 type CustomersApiListCustomersOpts struct {
 	Cursor    optional.String
+	Limit     optional.Int32
 	SortField optional.Interface
 	SortOrder optional.Interface
 }
@@ -513,6 +515,9 @@ func (a *CustomersApiService) ListCustomers(ctx context.Context, localVarOptiona
 
 	if localVarOptionals != nil && localVarOptionals.Cursor.IsSet() {
 		localVarQueryParams.Add("cursor", parameterToString(localVarOptionals.Cursor.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
+		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.SortField.IsSet() {
 		localVarQueryParams.Add("sort_field", parameterToString(localVarOptionals.SortField.Value(), ""))

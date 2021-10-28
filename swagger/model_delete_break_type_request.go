@@ -9,6 +9,6 @@
  */
 package swagger
 
-// A request to delete a `BreakType`
+// A request to delete a `BreakType`.
 type DeleteBreakTypeRequest struct {
 }

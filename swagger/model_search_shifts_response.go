@@ -9,11 +9,11 @@
  */
 package swagger
 
-// The response to a request for `Shift` objects. Contains the requested `Shift` objects. May contain a set of `Error` objects if the request resulted in errors.
+// The response to a request for `Shift` objects. The response contains the requested `Shift` objects and might contain a set of `Error` objects if the request resulted in errors.
 type SearchShiftsResponse struct {
-	// Shifts
+	// Shifts.
 	Shifts []Shift `json:"shifts,omitempty"`
-	// Opaque cursor for fetching the next page.
+	// An opaque cursor for fetching the next page.
 	Cursor string `json:"cursor,omitempty"`
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
