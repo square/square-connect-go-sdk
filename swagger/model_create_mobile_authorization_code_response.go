@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the __CreateMobileAuthorizationCode__ endpoint.
+// Defines the fields that are included in the response body of a request to the `CreateMobileAuthorizationCode` endpoint.
 type CreateMobileAuthorizationCodeResponse struct {
-	// Generated authorization code that connects a mobile application instance to a Square account.
+	// The generated authorization code that connects a mobile application instance to a Square account.
 	AuthorizationCode string `json:"authorization_code,omitempty"`
-	// The timestamp when `authorization_code` expires in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, e.g., \"2016-09-04T23:59:33.123Z\".
+	// The timestamp when `authorization_code` expires, in [RFC 3339](https://tools.ietf.org/html/rfc3339) format (for example, \"2016-09-04T23:59:33.123Z\").
 	ExpiresAt string      `json:"expires_at,omitempty"`
 	Error_    *ModelError `json:"error,omitempty"`
 }

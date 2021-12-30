@@ -46,7 +46,7 @@ See the corresponding object definition for field details. |
 > LinkCustomerToGiftCardResponse LinkCustomerToGiftCard(ctx, body, giftCardId)
 LinkCustomerToGiftCard
 
-Links a customer to a gift card
+Links a customer to a gift card, which is also referred to as adding a card on file.
 
 ### Required Parameters
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
   **body** | [**LinkCustomerToGiftCardRequest**](LinkCustomerToGiftCardRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **giftCardId** | **string**| The ID of the gift card to link. | 
+  **giftCardId** | **string**| The ID of the gift card to be linked. | 
 
 ### Return type
 
@@ -90,11 +90,11 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a GiftCardsApiListGiftCardsOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_** | **optional.String**| If a type is provided, gift cards of this type are returned  (see [GiftCardType](entity:GiftCardType)). If no type is provided, it returns gift cards of all types. | 
- **state** | **optional.String**| If the state is provided, it returns the gift cards in the specified state  (see [GiftCardStatus](entity:GiftCardStatus)). Otherwise, it returns the gift cards of all states. | 
- **limit** | **optional.Int32**| If a value is provided, it returns only that number of results per page. The maximum number of results allowed per page is 50. The default value is 30. | 
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, it returns the first page of the results.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination). | 
- **customerId** | **optional.String**| If a value is provided, returns only the gift cards linked to the specified customer | 
+ **type_** | **optional.String**| If a [type](entity:GiftCardType) is provided, the endpoint returns gift cards of the specified type. Otherwise, the endpoint returns gift cards of all types. | 
+ **state** | **optional.String**| If a [state](entity:GiftCardStatus) is provided, the endpoint returns the gift cards in the specified state. Otherwise, the endpoint returns the gift cards of all states. | 
+ **limit** | **optional.Int32**| If a limit is provided, the endpoint returns only the specified number of results per page. The maximum value is 50. The default value is 30. For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination). | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, the endpoint returns the first page of the results.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination). | 
+ **customerId** | **optional.String**| If a customer ID is provided, the endpoint returns only the gift cards linked to the specified customer. | 
 
 ### Return type
 
@@ -173,7 +173,7 @@ See the corresponding object definition for field details. |
 > RetrieveGiftCardFromNonceResponse RetrieveGiftCardFromNonce(ctx, body)
 RetrieveGiftCardFromNonce
 
-Retrieves a gift card using a nonce (a secure token) that represents the gift card.
+Retrieves a gift card using a secure payment token that represents the gift card.
 
 ### Required Parameters
 
@@ -203,7 +203,7 @@ See the corresponding object definition for field details. |
 > UnlinkCustomerFromGiftCardResponse UnlinkCustomerFromGiftCard(ctx, body, giftCardId)
 UnlinkCustomerFromGiftCard
 
-Unlinks a customer from a gift card
+Unlinks a customer from a gift card, which is also referred to as removing a card on file.
 
 ### Required Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
   **body** | [**UnlinkCustomerFromGiftCardRequest**](UnlinkCustomerFromGiftCardRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **giftCardId** | **string**|  | 
+  **giftCardId** | **string**| The ID of the gift card to be unlinked. | 
 
 ### Return type
 

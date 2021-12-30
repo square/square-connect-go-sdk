@@ -9,9 +9,11 @@
  */
 package swagger
 
-// Defines parameters in a [ResumeSubscription](api-endpoint:Subscriptions-ResumeSubscription) endpoint response.
+// Defines output parameters in a response from the  [ResumeSubscription](api-endpoint:Subscriptions-ResumeSubscription) endpoint.
 type ResumeSubscriptionResponse struct {
-	// Information about errors encountered during the request.
+	// Errors encountered during the request.
 	Errors       []ModelError  `json:"errors,omitempty"`
 	Subscription *Subscription `json:"subscription,omitempty"`
+	// A list of `RESUME` actions created by the request and scheduled for the subscription.
+	Actions []SubscriptionAction `json:"actions,omitempty"`
 }

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > AuthorizeResponse Authorize(ctx, clientId, optional)
 Authorize
 
-As part of a URL sent to a seller to authorize permissions for  the developer, `Authorize` displays an authorization page and a  list of requested permissions. This is not a callable API endpoint.  The completed URL looks similar to the following example: https://connect.squareup.com/oauth2/authorize?client_id={YOUR_APP_ID}&scope=CUSTOMERS_WRITE+CUSTOMERS_READ&session=False&state=82201dd8d83d23cc8a48caf52b  The seller can approve or deny the permissions. If approved,` Authorize`  returns an `AuthorizeResponse` that is sent to the redirect URL and includes  a state string and an authorization code. The code is used in the `ObtainToken`  call to obtain an access token and a refresh token that the developer uses  to manage resources on behalf of the seller.  __Important:__ The `AuthorizeResponse` is sent to the redirect URL that you set on  the OAuth page of your application in the Developer Dashboard.  If an error occurs or the seller denies the request, `Authorize` returns an  error response that includes `error` and `error_description` values. If the  error is due to the seller denying the request, the error value is `access_denied`  and the error_description is `user_denied`.
+As part of a URL sent to a seller to authorize permissions for  the developer, `Authorize` displays an authorization page and a  list of requested permissions. This is not a callable API endpoint.  The completed URL looks similar to the following example: https://connect.squareup.com/oauth2/authorize?client_id={YOUR_APP_ID}&scope=CUSTOMERS_WRITE+CUSTOMERS_READ&session=False&state=82201dd8d83d23cc8a48caf52b  The seller can approve or deny the permissions. If approved,` Authorize`  returns an `AuthorizeResponse` that is sent to the redirect URL and includes  a state string and an authorization code. The code is used in the `ObtainToken`  call to obtain an access token and a refresh token that the developer uses  to manage resources on behalf of the seller.  __Important:__ The `AuthorizeResponse` is sent to the redirect URL that you set on  the OAuth page of your application in the Developer Dashboard.  If an error occurs or the seller denies the request, `Authorize` returns an  error response that includes `error` and `error_description` values. If the  error is due to the seller denying the request, the error value is `access_denied`  and the `error_description` is `user_denied`.
 
 ### Required Parameters
 
@@ -28,10 +28,10 @@ Optional parameters are passed through a pointer to a OAuthApiAuthorizeOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **scope** | [**optional.Interface of OAuthPermission**](.md)| A space-separated list of the permissions the application is requesting. Default: \&quot;&#x60;MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ&#x60;\&quot; | 
- **locale** | **optional.String**| The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-IE&#x60;, &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, &#x60;ja-JP&#x60;. | 
+ **scope** | [**optional.Interface of OAuthPermission**](.md)| A space-separated list of the permissions that the application is requesting. Default: \&quot;&#x60;MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ&#x60;\&quot; | 
+ **locale** | **optional.String**| The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-IE&#x60;, &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, and &#x60;ja-JP&#x60;. | 
  **session** | **optional.Bool**| If &#x60;false&#x60;, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. This value has no effect in Sandbox. Default: &#x60;true&#x60; | [default to false]
- **state** | **optional.String**| When provided, &#x60;state&#x60; is passed along to the configured Redirect URL after the Permission Request form is submitted. You can include state and verify its value to help protect against cross-site request forgery. | 
+ **state** | **optional.String**| When provided, &#x60;state&#x60; is passed to the configured redirect URL after the Permission Request form is submitted. You can include &#x60;state&#x60; and verify its value to help protect against cross-site request forgery. | 
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 > RenewTokenResponse RenewToken(ctx, body, clientId)
 RenewToken
 
-`RenewToken` is deprecated. For information about refreshing OAuth access tokens, see [Migrate from Renew to Refresh OAuth Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).   Renews an OAuth access token before it expires.  OAuth access tokens besides your application's personal access token expire after __30 days__. You can also renew expired tokens within __15 days__ of their expiration. You cannot renew an access token that has been expired for more than 15 days. Instead, the associated user must re-complete the OAuth flow from the beginning.  __Important:__ The `Authorization` header for this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with the application secret on the Credentials page in the [developer dashboard](https://developer.squareup.com/apps).
+`RenewToken` is deprecated. For information about refreshing OAuth access tokens, see [Migrate from Renew to Refresh OAuth Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).  Renews an OAuth access token before it expires.  OAuth access tokens besides your application's personal access token expire after 30 days. You can also renew expired tokens within 15 days of their expiration. You cannot renew an access token that has been expired for more than 15 days. Instead, the associated user must recomplete the OAuth flow from the beginning.  __Important:__ The `Authorization` header for this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with the application secret on the Credentials page in the [Developer Dashboard](https://developer.squareup.com/apps).
 
 ### Required Parameters
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
   **body** | [**RenewTokenRequest**](RenewTokenRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **clientId** | **string**| Your application ID, available from the OAuth page for your  application on the Developer Dashboard. | 
+  **clientId** | **string**| Your application ID, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps). | 
 
 ### Return type
 

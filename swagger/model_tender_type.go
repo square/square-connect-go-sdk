@@ -24,5 +24,6 @@ const (
 	THIRD_PARTY_E_MONEY_TenderType TenderType = "THIRD_PARTY_E_MONEY"
 	BANK_ACCOUNT_TenderType        TenderType = "BANK_ACCOUNT"
 	WALLET_TenderType              TenderType = "WALLET"
+	BUY_NOW_PAY_LATER_TenderType   TenderType = "BUY_NOW_PAY_LATER"
 	OTHER_TenderType               TenderType = "OTHER"
 )

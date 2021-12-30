@@ -12,6 +12,6 @@ package swagger
 // Describes a request to update a payment using  [UpdatePayment](api-endpoint:Payments-UpdatePayment).
 type UpdatePaymentRequest struct {
 	Payment *Payment `json:"payment,omitempty"`
-	// A unique string that identifies this `UpdatePayment` request. Keys can be any valid string but must be unique for every `UpdatePayment` request.  The maximum is 45 characters.  For more information, see [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency).
+	// A unique string that identifies this `UpdatePayment` request. Keys can be any valid string but must be unique for every `UpdatePayment` request.  For more information, see [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency).
 	IdempotencyKey string `json:"idempotency_key"`
 }

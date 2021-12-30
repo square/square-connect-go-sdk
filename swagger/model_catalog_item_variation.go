@@ -42,6 +42,8 @@ type CatalogItemVariation struct {
 	MeasurementUnitId string `json:"measurement_unit_id,omitempty"`
 	// Whether stock is counted directly on this variation (TRUE) or only on its components (FALSE). For backward compatibility missing values will be interpreted as TRUE.
 	Stockable bool `json:"stockable,omitempty"`
+	// The IDs of images associated with this `CatalogItemVariation` instance. These images will be shown to customers in Square Online Store.
+	ImageIds []string `json:"image_ids,omitempty"`
 	// Tokens of employees that can perform the service represented by this variation. Only valid for variations of type `APPOINTMENTS_SERVICE`.
 	TeamMemberIds       []string                `json:"team_member_ids,omitempty"`
 	StockableConversion *CatalogStockConversion `json:"stockable_conversion,omitempty"`

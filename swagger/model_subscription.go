@@ -9,21 +9,21 @@
  */
 package swagger
 
-// Represents a customer subscription to a subscription plan. For an overview of the `Subscription` type, see [Subscription object](https://developer.squareup.com/docs/subscriptions-api/overview#subscription-object-overview).
+// Represents a subscription to a subscription plan by a subscriber.  For an overview of the `Subscription` type, see [Subscription object](https://developer.squareup.com/docs/subscriptions-api/overview#subscription-object-overview).
 type Subscription struct {
 	// The Square-assigned ID of the subscription.
 	Id string `json:"id,omitempty"`
 	// The ID of the location associated with the subscription.
 	LocationId string `json:"location_id,omitempty"`
-	// The ID of the associated [subscription plan](entity:CatalogSubscriptionPlan).
+	// The ID of the subscribed-to [subscription plan](entity:CatalogSubscriptionPlan).
 	PlanId string `json:"plan_id,omitempty"`
-	// The ID of the associated [customer](entity:Customer) profile.
+	// The ID of the subscribing [customer](entity:Customer) profile.
 	CustomerId string `json:"customer_id,omitempty"`
-	// The start date of the subscription, in YYYY-MM-DD format (for example, 2013-01-15).
+	// The `YYYY-MM-DD`-formatted date (for example, 2013-01-15) to start the subscription.
 	StartDate string `json:"start_date,omitempty"`
-	// The subscription cancellation date, in YYYY-MM-DD format (for example, 2013-01-15). On this date, the subscription status changes to `CANCELED` and the subscription billing stops. If you don't set this field, the subscription plan dictates if and when subscription ends.  You cannot update this field, you can only clear it.
+	// The `YYYY-MM-DD`-formatted date (for example, 2013-01-15) to cancel the subscription,  when the subscription status changes to `CANCELED` and the subscription billing stops.  If this field is not set, the subscription ends according its subscription plan.  This field cannot be updated, other than being cleared.
 	CanceledDate string `json:"canceled_date,omitempty"`
-	// The date up to which the customer is invoiced for the subscription, in YYYY-MM-DD format (for example, 2013-01-15).  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a customer gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31.
+	// The `YYYY-MM-DD`-formatted date up to when the subscriber is invoiced for the subscription.  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a subscriber gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31.
 	ChargedThroughDate string              `json:"charged_through_date,omitempty"`
 	Status             *SubscriptionStatus `json:"status,omitempty"`
 	// The tax amount applied when billing the subscription. The percentage is expressed in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. For example, a value of `7.5` corresponds to 7.5%.
@@ -35,11 +35,13 @@ type Subscription struct {
 	Version int64 `json:"version,omitempty"`
 	// The timestamp when the subscription was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The ID of the [customer](entity:Customer) [card](entity:Card) that is charged for the subscription.
+	// The ID of the [subscriber's](entity:Customer) [card](entity:Card) used to charge for the subscription.
 	CardId string `json:"card_id,omitempty"`
-	// The date up to which the customer is invoiced for the subscription, in YYYY-MM-DD format (for example, 2013-01-15).  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a customer gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31.
+	// The `YYYY-MM-DD`-formatted date (for example, 2013-01-15) up to when the subscriber is invoiced for the subscription.  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a subscriber gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31.
 	PaidUntilDate string `json:"paid_until_date,omitempty"`
 	// Timezone that will be used in date calculations for the subscription. Defaults to the timezone of the location based on `location_id`. Format: the IANA Timezone Database identifier for the location timezone (for example, `America/Los_Angeles`).
 	Timezone string              `json:"timezone,omitempty"`
 	Source   *SubscriptionSource `json:"source,omitempty"`
+	// The list of scheduled actions on this subscription. It is set only in the response from   [RetrieveSubscription](api-endpoint:Subscriptions-RetrieveSubscription) with the query parameter of `include=actions` or from  [SearchSubscriptions](api-endpoint:Subscriptions-SearchSubscriptions) with the input parameter  of `include:[\"actions\"]`.
+	Actions []SubscriptionAction `json:"actions,omitempty"`
 }

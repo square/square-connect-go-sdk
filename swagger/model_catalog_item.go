@@ -48,6 +48,8 @@ type CatalogItem struct {
 	EcomAvailable bool `json:"ecom_available,omitempty"`
 	// hidden field
 	EcomVisibility string `json:"ecom_visibility,omitempty"`
+	// The IDs of images associated with this `CatalogItem` instance. These images will be shown to customers in Square Online Store. The first image will show up as the icon for this item in POS.
+	ImageIds []string `json:"image_ids,omitempty"`
 	// A name to sort the item by. If this name is unspecified, namely, the `sort_name` field is absent, the regular `name` field is used for sorting.  It is currently supported for sellers of the Japanese locale only.
 	SortName string `json:"sort_name,omitempty"`
 }

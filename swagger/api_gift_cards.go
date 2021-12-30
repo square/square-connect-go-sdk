@@ -117,12 +117,12 @@ func (a *GiftCardsApiService) CreateGiftCard(ctx context.Context, body CreateGif
 
 /*
 GiftCardsApiService LinkCustomerToGiftCard
-Links a customer to a gift card
+Links a customer to a gift card, which is also referred to as adding a card on file.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param giftCardId The ID of the gift card to link.
+ * @param giftCardId The ID of the gift card to be linked.
 @return LinkCustomerToGiftCardResponse
 */
 func (a *GiftCardsApiService) LinkCustomerToGiftCard(ctx context.Context, body LinkCustomerToGiftCardRequest, giftCardId string) (LinkCustomerToGiftCardResponse, *http.Response, error) {
@@ -211,11 +211,11 @@ GiftCardsApiService ListGiftCards
 Lists all gift cards. You can specify optional filters to retrieve  a subset of the gift cards.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GiftCardsApiListGiftCardsOpts - Optional Parameters:
-     * @param "Type_" (optional.String) -  If a type is provided, gift cards of this type are returned  (see [GiftCardType](entity:GiftCardType)). If no type is provided, it returns gift cards of all types.
-     * @param "State" (optional.String) -  If the state is provided, it returns the gift cards in the specified state  (see [GiftCardStatus](entity:GiftCardStatus)). Otherwise, it returns the gift cards of all states.
-     * @param "Limit" (optional.Int32) -  If a value is provided, it returns only that number of results per page. The maximum number of results allowed per page is 50. The default value is 30.
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, it returns the first page of the results.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
-     * @param "CustomerId" (optional.String) -  If a value is provided, returns only the gift cards linked to the specified customer
+     * @param "Type_" (optional.String) -  If a [type](entity:GiftCardType) is provided, the endpoint returns gift cards of the specified type. Otherwise, the endpoint returns gift cards of all types.
+     * @param "State" (optional.String) -  If a [state](entity:GiftCardStatus) is provided, the endpoint returns the gift cards in the specified state. Otherwise, the endpoint returns the gift cards of all states.
+     * @param "Limit" (optional.Int32) -  If a limit is provided, the endpoint returns only the specified number of results per page. The maximum value is 50. The default value is 30. For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, the endpoint returns the first page of the results.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+     * @param "CustomerId" (optional.String) -  If a customer ID is provided, the endpoint returns only the gift cards linked to the specified customer.
 @return ListGiftCardsResponse
 */
 
@@ -497,7 +497,7 @@ func (a *GiftCardsApiService) RetrieveGiftCardFromGAN(ctx context.Context, body 
 
 /*
 GiftCardsApiService RetrieveGiftCardFromNonce
-Retrieves a gift card using a nonce (a secure token) that represents the gift card.
+Retrieves a gift card using a secure payment token that represents the gift card.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -586,12 +586,12 @@ func (a *GiftCardsApiService) RetrieveGiftCardFromNonce(ctx context.Context, bod
 
 /*
 GiftCardsApiService UnlinkCustomerFromGiftCard
-Unlinks a customer from a gift card
+Unlinks a customer from a gift card, which is also referred to as removing a card on file.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param giftCardId
+ * @param giftCardId The ID of the gift card to be unlinked.
 @return UnlinkCustomerFromGiftCardResponse
 */
 func (a *GiftCardsApiService) UnlinkCustomerFromGiftCard(ctx context.Context, body UnlinkCustomerFromGiftCardRequest, giftCardId string) (UnlinkCustomerFromGiftCardResponse, *http.Response, error) {

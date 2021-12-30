@@ -207,6 +207,125 @@ func (a *BookingsApiService) CreateBooking(ctx context.Context, body CreateBooki
 }
 
 /*
+BookingsApiService ListBookings
+Retrieve a collection of bookings.
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *BookingsApiListBookingsOpts - Optional Parameters:
+     * @param "Limit" (optional.Int32) -  The maximum number of results per page to return in a paged response.
+     * @param "Cursor" (optional.String) -  The pagination cursor from the preceding response to return the next page of the results. Do not set this when retrieving the first page of the results.
+     * @param "TeamMemberId" (optional.String) -  The team member for whom to retrieve bookings. If this is not set, bookings of all members are retrieved.
+     * @param "LocationId" (optional.String) -  The location for which to retrieve bookings. If this is not set, all locations&#x27; bookings are retrieved.
+     * @param "StartAtMin" (optional.String) -  The RFC 3339 timestamp specifying the earliest of the start time. If this is not set, the current time is used.
+     * @param "StartAtMax" (optional.String) -  The RFC 3339 timestamp specifying the latest of the start time. If this is not set, the time of 31 days after &#x60;start_at_min&#x60; is used.
+@return ListBookingsResponse
+*/
+
+type BookingsApiListBookingsOpts struct {
+	Limit        optional.Int32
+	Cursor       optional.String
+	TeamMemberId optional.String
+	LocationId   optional.String
+	StartAtMin   optional.String
+	StartAtMax   optional.String
+}
+
+func (a *BookingsApiService) ListBookings(ctx context.Context, localVarOptionals *BookingsApiListBookingsOpts) (ListBookingsResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ListBookingsResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/v2/bookings"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
+		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Cursor.IsSet() {
+		localVarQueryParams.Add("cursor", parameterToString(localVarOptionals.Cursor.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.TeamMemberId.IsSet() {
+		localVarQueryParams.Add("team_member_id", parameterToString(localVarOptionals.TeamMemberId.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.LocationId.IsSet() {
+		localVarQueryParams.Add("location_id", parameterToString(localVarOptionals.LocationId.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartAtMin.IsSet() {
+		localVarQueryParams.Add("start_at_min", parameterToString(localVarOptionals.StartAtMin.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartAtMax.IsSet() {
+		localVarQueryParams.Add("start_at_max", parameterToString(localVarOptionals.StartAtMax.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v ListBookingsResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
 BookingsApiService ListTeamMemberBookingProfiles
 Lists booking profiles for team members.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

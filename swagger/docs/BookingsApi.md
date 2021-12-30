@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelBooking**](BookingsApi.md#CancelBooking) | **Post** /v2/bookings/{booking_id}/cancel | CancelBooking
 [**CreateBooking**](BookingsApi.md#CreateBooking) | **Post** /v2/bookings | CreateBooking
+[**ListBookings**](BookingsApi.md#ListBookings) | **Get** /v2/bookings | ListBookings
 [**ListTeamMemberBookingProfiles**](BookingsApi.md#ListTeamMemberBookingProfiles) | **Get** /v2/bookings/team-member-booking-profiles | ListTeamMemberBookingProfiles
 [**RetrieveBooking**](BookingsApi.md#RetrieveBooking) | **Get** /v2/bookings/{booking_id} | RetrieveBooking
 [**RetrieveBusinessBookingProfile**](BookingsApi.md#RetrieveBusinessBookingProfile) | **Get** /v2/bookings/business-booking-profile | RetrieveBusinessBookingProfile
@@ -70,6 +71,45 @@ See the corresponding object definition for field details. |
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ListBookings**
+> ListBookingsResponse ListBookings(ctx, optional)
+ListBookings
+
+Retrieve a collection of bookings.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***BookingsApiListBookingsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a BookingsApiListBookingsOpts struct
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **optional.Int32**| The maximum number of results per page to return in a paged response. | 
+ **cursor** | **optional.String**| The pagination cursor from the preceding response to return the next page of the results. Do not set this when retrieving the first page of the results. | 
+ **teamMemberId** | **optional.String**| The team member for whom to retrieve bookings. If this is not set, bookings of all members are retrieved. | 
+ **locationId** | **optional.String**| The location for which to retrieve bookings. If this is not set, all locations&#x27; bookings are retrieved. | 
+ **startAtMin** | **optional.String**| The RFC 3339 timestamp specifying the earliest of the start time. If this is not set, the current time is used. | 
+ **startAtMax** | **optional.String**| The RFC 3339 timestamp specifying the latest of the start time. If this is not set, the time of 31 days after &#x60;start_at_min&#x60; is used. | 
+
+### Return type
+
+[**ListBookingsResponse**](ListBookingsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

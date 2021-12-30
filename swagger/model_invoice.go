@@ -23,11 +23,11 @@ type Invoice struct {
 	// The payment schedule for the invoice, represented by one or more payment requests that define payment settings, such as amount due and due date. An invoice supports the following payment request combinations: - One balance - One deposit with one balance - 2–12 installments  - One deposit with 2–12 installments  This field is required when creating an invoice. It must contain at least one payment request.  All payment requests for the invoice must equal the total order amount. For more information, see  [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).  Adding `INSTALLMENT` payment requests to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).
 	PaymentRequests []InvoicePaymentRequest `json:"payment_requests,omitempty"`
 	DeliveryMethod  *InvoiceDeliveryMethod  `json:"delivery_method,omitempty"`
-	// A user-friendly invoice number. The value is unique within a location. If not provided when creating an invoice, Square assigns a value. It increments from 1 and padded with zeros making it 7 characters long (for example, 0000001 and 0000002).
+	// A user-friendly invoice number that is displayed on the invoice. The value is unique within a location. If not provided when creating an invoice, Square assigns a value. It increments from 1 and is padded with zeros making it 7 characters long (for example, 0000001 and 0000002).
 	InvoiceNumber string `json:"invoice_number,omitempty"`
-	// The title of the invoice.
+	// The title of the invoice, which is displayed on the invoice.
 	Title string `json:"title,omitempty"`
-	// The description of the invoice. This is visible to the customer receiving the invoice.
+	// The description of the invoice, which is displayed on the invoice.
 	Description string `json:"description,omitempty"`
 	// The timestamp when the invoice is scheduled for processing, in RFC 3339 format. After the invoice is published, Square processes the invoice on the specified date, according to the delivery method and payment request settings.  If the field is not set, Square processes the invoice immediately after it is published.
 	ScheduledAt string `json:"scheduled_at,omitempty"`
@@ -42,10 +42,12 @@ type Invoice struct {
 	// The timestamp when the invoice was last updated, in RFC 3339 format.
 	UpdatedAt              string                         `json:"updated_at,omitempty"`
 	AcceptedPaymentMethods *InvoiceAcceptedPaymentMethods `json:"accepted_payment_methods,omitempty"`
-	// Additional seller-defined fields to render on the invoice. These fields are visible to sellers and buyers on the Square-hosted invoice page and in emailed or PDF copies of invoices. For more information, see [Custom fields](https://developer.squareup.com/docs/invoices-api/overview#custom-fields).  Adding custom fields to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).  Max: 2 custom fields
+	// Additional seller-defined fields that are displayed on the invoice. For more information, see [Custom fields](https://developer.squareup.com/docs/invoices-api/overview#custom-fields).  Adding custom fields to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).  Max: 2 custom fields
 	CustomFields []InvoiceCustomField `json:"custom_fields,omitempty"`
 	// The ID of the [subscription](entity:Subscription) associated with the invoice. This field is present only on subscription billing invoices.
 	SubscriptionId string `json:"subscription_id,omitempty"`
 	// The date of the sale or the date that the service is rendered, in `YYYY-MM-DD` format. This field can be used to specify a past or future date which is displayed on the invoice.
 	SaleOrServiceDate string `json:"sale_or_service_date,omitempty"`
+	// **France only.** The payment terms and conditions that are displayed on the invoice. For more information,  see [Payment conditions](https://developer.squareup.com/docs/invoices-api/overview#payment-conditions).  For countries other than France, Square returns an `INVALID_REQUEST_ERROR` with a `BAD_REQUEST` code and  \"Payment conditions are not supported for this location's country\" detail if this field is included in `CreateInvoice` or `UpdateInvoice` requests.
+	PaymentConditions string `json:"payment_conditions,omitempty"`
 }

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **ItemOptionValues** | [**[]CatalogItemOptionValueForItemVariation**](CatalogItemOptionValueForItemVariation.md) | List of item option values associated with this item variation. Listed in the same order as the item options of the parent item. | [optional] [default to null]
 **MeasurementUnitId** | **string** | ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities. | [optional] [default to null]
 **Stockable** | **bool** | Whether stock is counted directly on this variation (TRUE) or only on its components (FALSE). For backward compatibility missing values will be interpreted as TRUE. | [optional] [default to null]
+**ImageIds** | **[]string** | The IDs of images associated with this &#x60;CatalogItemVariation&#x60; instance. These images will be shown to customers in Square Online Store. | [optional] [default to null]
 **TeamMemberIds** | **[]string** | Tokens of employees that can perform the service represented by this variation. Only valid for variations of type &#x60;APPOINTMENTS_SERVICE&#x60;. | [optional] [default to null]
 **StockableConversion** | [***CatalogStockConversion**](CatalogStockConversion.md) |  | [optional] [default to null]
 

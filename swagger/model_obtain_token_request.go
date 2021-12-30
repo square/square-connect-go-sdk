@@ -10,22 +10,22 @@
 package swagger
 
 type ObtainTokenRequest struct {
-	// The Square-issued ID of your application, available from the OAuth page  for your application on the Developer Dashboard.
+	// The Square-issued ID of your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps).
 	ClientId string `json:"client_id"`
-	// The Square-issued application secret for your application, available from the OAuth page for your application on the Developer Dashboard.
+	// The Square-issued application secret for your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps).
 	ClientSecret string `json:"client_secret"`
-	// The authorization code to exchange. This is required if `grant_type` is set to `authorization_code`, to indicate that the application wants to exchange an authorization code for an OAuth access token.
+	// The authorization code to exchange. This code is required if `grant_type` is set to `authorization_code` to indicate that the application wants to exchange an authorization code for an OAuth access token.
 	Code string `json:"code,omitempty"`
-	// The redirect URL assigned in the OAuth page for your application on the Developer Dashboard.
+	// The redirect URL assigned in the OAuth page for your application in the [Developer Dashboard](https://developer.squareup.com/apps).
 	RedirectUri string `json:"redirect_uri,omitempty"`
-	// Specifies the method to request an OAuth access token. Valid values are: `authorization_code`, `refresh_token`, and `migration_token`
+	// Specifies the method to request an OAuth access token. Valid values are `authorization_code`, `refresh_token`, and `migration_token`.
 	GrantType string `json:"grant_type"`
-	// A valid refresh token for generating a new OAuth access token. A valid refresh token is required if `grant_type` is set to `refresh_token` , to indicate the application wants a replacement for an expired OAuth access token.
+	// A valid refresh token for generating a new OAuth access token.  A valid refresh token is required if `grant_type` is set to `refresh_token` to indicate that the application wants a replacement for an expired OAuth access token.
 	RefreshToken string `json:"refresh_token,omitempty"`
-	// Legacy OAuth access token obtained using a Connect API version prior to 2019-03-13. This parameter is required if `grant_type` is set to `migration_token` to indicate that the application wants to get a replacement OAuth access token. The response also returns a refresh token. For more information, see [Migrate to Using Refresh Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).
+	// A legacy OAuth access token obtained using a Connect API version prior to 2019-03-13. This parameter is required if `grant_type` is set to `migration_token` to indicate that the application wants to get a replacement OAuth access token. The response also returns a refresh token. For more information, see [Migrate to Using Refresh Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).
 	MigrationToken string `json:"migration_token,omitempty"`
-	// A JSON list of strings representing the permissions the application is requesting. For example: \"`[\"MERCHANT_PROFILE_READ\",\"PAYMENTS_READ\",\"BANK_ACCOUNTS_READ\"]`\" The access token returned in the response is granted the permissions that comprise the intersection between the requested list of permissions, and those that belong to the provided refresh token.
+	// A JSON list of strings representing the permissions that the application is requesting. For example, \"`[\"MERCHANT_PROFILE_READ\",\"PAYMENTS_READ\",\"BANK_ACCOUNTS_READ\"]`\".  The access token returned in the response is granted the permissions that comprise the intersection between the requested list of permissions and those that belong to the provided refresh token.
 	Scopes []string `json:"scopes,omitempty"`
-	// A boolean indicating a request for a short-lived access token. The short-lived access token returned in the response expires in 24 hours.
+	// A Boolean indicating a request for a short-lived access token.  The short-lived access token returned in the response expires in 24 hours.
 	ShortLived bool `json:"short_lived,omitempty"`
 }

@@ -18,4 +18,6 @@ type CatalogModifierList struct {
 	SelectionType *CatalogModifierListSelectionType `json:"selection_type,omitempty"`
 	// The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each CatalogObject must have type `MODIFIER` and contain `CatalogModifier` data.
 	Modifiers []CatalogObject `json:"modifiers,omitempty"`
+	// The IDs of images associated with this `CatalogModifierList` instance. Currently these images are not displayed by Square, but are free to be displayed in 3rd party applications.
+	ImageIds []string `json:"image_ids,omitempty"`
 }

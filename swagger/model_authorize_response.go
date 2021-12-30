@@ -10,7 +10,7 @@
 package swagger
 
 type AuthorizeResponse struct {
-	// A valid authorization code. Authorization codes are exchanged for OAuth access tokens with the ObtainToken endpoint.
+	// A valid authorization code. Authorization codes are exchanged for OAuth access tokens with the `ObtainToken` endpoint.
 	Code string `json:"code,omitempty"`
 	// The same value specified in the request.
 	State string `json:"state,omitempty"`

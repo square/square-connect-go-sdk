@@ -12,12 +12,12 @@ package swagger
 type AuthorizeRequest struct {
 	// The Square-issued ID for your application, available from  the OAuth page for your application on the Developer Dashboard.
 	ClientId string `json:"client_id"`
-	// A space-separated list of the permissions the application is requesting. Default: \"`MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ`\" See [OAuthPermission](#type-oauthpermission) for possible values
+	// A space-separated list of the permissions that the application is requesting. Default: \"`MERCHANT_PROFILE_READ PAYMENTS_READ SETTLEMENTS_READ BANK_ACCOUNTS_READ`\" See [OAuthPermission](#type-oauthpermission) for possible values
 	Scope []OAuthPermission `json:"scope,omitempty"`
-	// The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: `en-IE`, `en-US`, `en-CA`, `es-US`, `fr-CA`, `ja-JP`.
+	// The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: `en-IE`, `en-US`, `en-CA`, `es-US`, `fr-CA`, and `ja-JP`.
 	Locale string `json:"locale,omitempty"`
 	// If `false`, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. This value has no effect in Sandbox. Default: `true`
 	Session bool `json:"session,omitempty"`
-	// When provided, `state` is passed along to the configured Redirect URL after the Permission Request form is submitted. You can include state and verify its value to help protect against cross-site request forgery.
+	// When provided, `state` is passed to the configured redirect URL after the Permission Request form is submitted. You can include `state` and verify its value to help protect against cross-site request forgery.
 	State string `json:"state,omitempty"`
 }

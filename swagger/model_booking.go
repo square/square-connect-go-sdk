@@ -24,7 +24,7 @@ type Booking struct {
 	StartAt string `json:"start_at,omitempty"`
 	// The ID of the [Location](entity:Location) object representing the location where the booked service is provided.
 	LocationId string `json:"location_id,omitempty"`
-	// The ID of the [Customer](entity:Customer) object representing the customer attending this booking
+	// The ID of the [Customer](entity:Customer) object representing the customer receiving the booked service.
 	CustomerId string `json:"customer_id,omitempty"`
 	// The free-text field for the customer to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a relevant [CatalogObject](entity:CatalogObject) instance.
 	CustomerNote string `json:"customer_note,omitempty"`

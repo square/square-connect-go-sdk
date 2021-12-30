@@ -9,10 +9,10 @@
  */
 package swagger
 
-// Defines parameters in a [ListSubscriptionEvents](api-endpoint:Subscriptions-ListSubscriptionEvents) endpoint request.
+// Defines input parameters in a request to the  [ListSubscriptionEvents](api-endpoint:Subscriptions-ListSubscriptionEvents) endpoint.
 type ListSubscriptionEventsRequest struct {
-	// A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+	// When the total number of resulting subscription events exceeds the limit of a paged response,  specify the cursor returned from a preceding response here to fetch the next set of results. If the cursor is unset, the response contains the last page of the results.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 	Cursor string `json:"cursor,omitempty"`
-	// The upper limit on the number of subscription events to return in the response.  Default: `200`
+	// The upper limit on the number of subscription events to return in a paged response.
 	Limit int32 `json:"limit,omitempty"`
 }

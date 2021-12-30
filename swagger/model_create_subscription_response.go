@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Defines the fields that are included in the response from the [CreateSubscription](api-endpoint:Subscriptions-CreateSubscription) endpoint.
+// Defines output parameters in a response from the [CreateSubscription](api-endpoint:Subscriptions-CreateSubscription) endpoint.
 type CreateSubscriptionResponse struct {
-	// Information about errors encountered during the request.
+	// Errors encountered during the request.
 	Errors       []ModelError  `json:"errors,omitempty"`
 	Subscription *Subscription `json:"subscription,omitempty"`
 }

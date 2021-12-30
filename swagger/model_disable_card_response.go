@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [DisableCard](#endpoint-cards-disablecard) endpoint.  Note: if there are errors processing the request, the card field will not be present.
+// Defines the fields that are included in the response body of a request to the [DisableCard](api-endpoint:Cards-DisableCard) endpoint.  Note: if there are errors processing the request, the card field will not be present.
 type DisableCardResponse struct {
 	// Information on errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`

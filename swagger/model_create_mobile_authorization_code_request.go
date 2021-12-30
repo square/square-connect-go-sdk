@@ -9,8 +9,8 @@
  */
 package swagger
 
-// Defines the body parameters that can be provided in a request to the __CreateMobileAuthorizationCode__ endpoint.
+// Defines the body parameters that can be provided in a request to the `CreateMobileAuthorizationCode` endpoint.
 type CreateMobileAuthorizationCodeRequest struct {
-	// The Square location ID the authorization code should be tied to.
+	// The Square location ID that the authorization code should be tied to.
 	LocationId string `json:"location_id,omitempty"`
 }

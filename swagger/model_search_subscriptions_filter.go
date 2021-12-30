@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Represents a set of SearchSubscriptionsQuery filters used to limit the set of Subscriptions returned by SearchSubscriptions.
+// Represents a set of query expressions (filters) to narrow the scope of targeted subscriptions returned by  the [SearchSubscriptions](api-endpoint:Subscriptions-SearchSubscriptions) endpoint.
 type SearchSubscriptionsFilter struct {
-	// A filter to select subscriptions based on the customer.
+	// A filter to select subscriptions based on the subscribing customer IDs.
 	CustomerIds []string `json:"customer_ids,omitempty"`
-	// A filter to select subscriptions based the location.
+	// A filter to select subscriptions based on the location.
 	LocationIds []string `json:"location_ids,omitempty"`
 	// A filter to select subscriptions based on the source application.
 	SourceNames []string `json:"source_names,omitempty"`

@@ -9,12 +9,12 @@
  */
 package swagger
 
-// Defines the fields that are included in the response from the [ListSubscriptionEvents](api-endpoint:Subscriptions-ListSubscriptionEvents) endpoint.
+// Defines output parameters in a response from the [ListSubscriptionEvents](api-endpoint:Subscriptions-ListSubscriptionEvents).
 type ListSubscriptionEventsResponse struct {
-	// Information about errors encountered during the request.
+	// Errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// The `SubscriptionEvents` retrieved.
+	// The retrieved subscription events.
 	SubscriptionEvents []SubscriptionEvent `json:"subscription_events,omitempty"`
-	// When a response is truncated, it includes a cursor that you can use in a subsequent request to fetch the next set of events. If empty, this is the final response.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+	// When the total number of resulting subscription events exceeds the limit of a paged response,  the response includes a cursor for you to use in a subsequent request to fetch the next set of events. If the cursor is unset, the response contains the last page of the results.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

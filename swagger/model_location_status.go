@@ -9,7 +9,7 @@
  */
 package swagger
 
-// LocationStatus : The status of the location, whether a location is active or inactive.
+// LocationStatus : A location's status.
 type LocationStatus string
 
 // List of LocationStatus

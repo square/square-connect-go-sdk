@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > CreateLocationResponse CreateLocation(ctx, body)
 CreateLocation
 
-Creates a location.
+Creates a [location](https://developer.squareup.com/docs/locations-api). Creating new locations allows for separate configuration of receipt layouts, item prices,  and sales reports. Developers can use locations to separate sales activity via applications  that integrate with Square from sales activity elsewhere in a seller's account.  Locations created programmatically with the Locations API will last forever and  are visible to the seller for their own management, so ensure that  each location has a sensible and unique name.
 
 ### Required Parameters
 
@@ -43,7 +43,7 @@ See the corresponding object definition for field details. |
 > ListLocationsResponse ListLocations(ctx, )
 ListLocations
 
-Provides information of all locations of a business.  Many Square API endpoints require a `location_id` parameter. The `id` field of the [`Location`](entity:Location) objects returned by this endpoint correspond to that `location_id` parameter.
+Provides details about all of the seller's locations, including those with an inactive status.
 
 ### Required Parameters
 This endpoint does not need any parameter.
@@ -67,14 +67,14 @@ This endpoint does not need any parameter.
 > RetrieveLocationResponse RetrieveLocation(ctx, locationId)
 RetrieveLocation
 
-Retrieves details of a location. You can specify \"main\"  as the location ID to retrieve details of the  main location.
+Retrieves details of a single location. Specify \"main\" as the location ID to retrieve details of the [main location](https://developer.squareup.com/docs/locations-api#about-the-main-location).
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **locationId** | **string**| The ID of the location to retrieve. If you specify the string \&quot;main\&quot;, then the endpoint returns the main location. | 
+  **locationId** | **string**| The ID of the location to retrieve. Specify the string \&quot;main\&quot; to return the main location. | 
 
 ### Return type
 

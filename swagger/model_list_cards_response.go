@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the [ListCards](#endpoint-cards-listcards) endpoint.  Note: if there are errors processing the request, the card field will not be present.
+// Defines the fields that are included in the response body of a request to the [ListCards](api-endpoint:Cards-ListCards) endpoint.  Note: if there are errors processing the request, the card field will not be present.
 type ListCardsResponse struct {
 	// Information on errors encountered during the request.
 	Errors []ModelError `json:"errors,omitempty"`

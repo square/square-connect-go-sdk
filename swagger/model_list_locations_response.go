@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the fields that are included in the response body of a request to the __ListLocations__ endpoint.  One of `errors` or `locations` is present in a given response (never both).
+// Defines the fields that are included in the response body of a request to the [ListLocations](api-endpoint:Locations-ListLocations) endpoint.  One of `errors` or `locations` is present in a given response (never both).
 type ListLocationsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`

@@ -9,8 +9,8 @@
  */
 package swagger
 
-// A request to link a customer to a gift card
+// A request to link a customer to a gift card.
 type LinkCustomerToGiftCardRequest struct {
-	// The ID of the customer to be linked.
+	// The ID of the customer to link to the gift card.
 	CustomerId string `json:"customer_id"`
 }

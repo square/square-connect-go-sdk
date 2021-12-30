@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that are included in requests to the __ListLocations__ endpoint.
+// Defines the fields that are included in requests to the [ListLocations](api-endpoint:Locations-ListLocations) endpoint.
 type ListLocationsRequest struct {
 }

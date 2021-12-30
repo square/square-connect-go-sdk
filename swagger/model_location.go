@@ -9,14 +9,14 @@
  */
 package swagger
 
-// Represents one of a business's locations.
+// Represents one of a business's [locations](https://developer.squareup.com/docs/locations-api).
 type Location struct {
-	// The Square-issued ID of the location.
+	// A short, generated string of letters and numbers that uniquely identifies this location instance.
 	Id string `json:"id,omitempty"`
 	// The name of the location. This information appears in the dashboard as the nickname. A location name must be unique within a seller account.
 	Name    string   `json:"name,omitempty"`
 	Address *Address `json:"address,omitempty"`
-	// The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.
+	// The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location. For example, `\"America/Los_Angeles\"`.
 	Timezone string `json:"timezone,omitempty"`
 	// The Square features that are enabled for the location. See [LocationCapability](entity:LocationCapability) for possible values. See [LocationCapability](#type-locationcapability) for possible values
 	Capabilities []LocationCapability `json:"capabilities,omitempty"`
@@ -31,15 +31,15 @@ type Location struct {
 	Currency     *Currency `json:"currency,omitempty"`
 	// The phone number of the location in human readable format. For example, `+353 80 0 098 8099`.
 	PhoneNumber string `json:"phone_number,omitempty"`
-	// The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts.
+	// The business name of the location, visible to the location's customers.
 	BusinessName string        `json:"business_name,omitempty"`
 	Type_        *LocationType `json:"type,omitempty"`
 	// The website URL of the location.  For example, `https://squareup.com`.
 	WebsiteUrl    string         `json:"website_url,omitempty"`
 	BusinessHours *BusinessHours `json:"business_hours,omitempty"`
-	// The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts. For example, `help@squareup.com`.
+	// The email address of the location, visible to the location's customers.  This can be unique to the location, and is not always the email address for the business owner or admin.
 	BusinessEmail string `json:"business_email,omitempty"`
-	// The description of the location.
+	// The description of the location. For example, `Main Street location`.
 	Description string `json:"description,omitempty"`
 	// The Twitter username of the location without the '@' symbol. For example, `Square`.
 	TwitterUsername string `json:"twitter_username,omitempty"`
@@ -48,13 +48,13 @@ type Location struct {
 	// The Facebook profile URL of the location. The URL should begin with 'facebook.com/'. For example, `https://www.facebook.com/square`.
 	FacebookUrl string       `json:"facebook_url,omitempty"`
 	Coordinates *Coordinates `json:"coordinates,omitempty"`
-	// The URL of the logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image should have an aspect ratio close to 1:1 and is recommended to be at least 200x200 pixels.
+	// The URL of the logo image for the location. When configured in the Seller dashboard (Receipts section), the logo appears on transactions (such as receipts and invoices) that Square generates on behalf of the Seller. This image should have a roughly square (1:1) aspect ratio  and is recommended to be at least 200x200 pixels.
 	LogoUrl string `json:"logo_url,omitempty"`
 	// The URL of the Point of Sale background image for the location.
 	PosBackgroundUrl string `json:"pos_background_url,omitempty"`
-	// The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.
+	// A four-digit number that describes the kind of goods or services sold at the location. The merchant category code (MCC) of the location is standardized by ISO 18245. For example, `5045`.
 	Mcc string `json:"mcc,omitempty"`
-	// The URL of a full-format logo image for the location. The Seller must choose this logo in the Seller dashboard (Receipts section) for the logo to appear on transactions (such as receipts, invoices) that Square generates on behalf of the Seller. This image can have an aspect ratio of 2:1 or greater and is recommended to be at least 1280x648 pixels.
+	// The URL of a full-format logo image for the location. When configured in the Seller dashboard (Receipts section), the logo appears on transactions (such as receipts and invoices) that Square generates on behalf of the Seller. This image can be wider than it is tall, and is recommended to be at least 1280x648 pixels.
 	FullFormatLogoUrl string  `json:"full_format_logo_url,omitempty"`
 	TaxIds            *TaxIds `json:"tax_ids,omitempty"`
 }

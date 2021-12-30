@@ -380,7 +380,7 @@ func (a *CatalogApiService) CatalogInfo(ctx context.Context) (CatalogInfoRespons
 
 /*
 CatalogApiService CreateCatalogImage
-Uploads an image file to be represented by a [CatalogImage](entity:CatalogImage) object linked to an existing [CatalogObject](entity:CatalogObject) instance. A call to this endpoint can upload an image, link an image to a catalog object, or do both.  This &#x60;CreateCatalogImage&#x60; endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
+Uploads an image file to be represented by a [CatalogImage](entity:CatalogImage) object that can be linked to an existing [CatalogObject](entity:CatalogObject) instance. The resulting &#x60;CatalogImage&#x60; is unattached to any &#x60;CatalogObject&#x60; if the &#x60;object_id&#x60; is not specified.  This &#x60;CreateCatalogImage&#x60; endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param request
  * @param imageFile
@@ -560,12 +560,12 @@ func (a *CatalogApiService) DeleteCatalogObject(ctx context.Context, objectId st
 
 /*
 CatalogApiService ListCatalog
-Returns a list of [CatalogObject](entity:CatalogObject)s that includes all objects of a set of desired types (for example, all [CatalogItem](entity:CatalogItem) and [CatalogTax](entity:CatalogTax) objects) in the catalog. The &#x60;types&#x60; parameter is specified as a comma-separated list of valid [CatalogObject](entity:CatalogObject) types: &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;IMAGE&#x60;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects) and set the &#x60;include_deleted_objects&#x60; attribute value to &#x60;true&#x60;.
+Returns a list of all [CatalogObject](entity:CatalogObject)s of the specified types in the catalog.   The &#x60;types&#x60; parameter is specified as a comma-separated list of the [CatalogObjectType](entity:CatalogObjectType) values,  for example, \&quot;&#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;IMAGE&#x60;\&quot;.  __Important:__ ListCatalog does not return deleted catalog items. To retrieve deleted catalog items, use [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects) and set the &#x60;include_deleted_objects&#x60; attribute value to &#x60;true&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CatalogApiListCatalogOpts - Optional Parameters:
      * @param "Cursor" (optional.String) -  The pagination cursor returned in the previous response. Leave unset for an initial request. The page size is currently set to be 100. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
-     * @param "Types" (optional.String) -  An optional case-insensitive, comma-separated list of object types to retrieve.  The valid values are defined in the [CatalogObjectType](entity:CatalogObjectType) enum, including &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, or &#x60;IMAGE&#x60;.  If this is unspecified, the operation returns objects of all the types at the version of the Square API used to make the request.
-     * @param "CatalogVersion" (optional.Int64) -  The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](entity:CatalogObject)s&#x27; &#x60;version&#x60; attribute.
+     * @param "Types" (optional.String) -  An optional case-insensitive, comma-separated list of object types to retrieve.  The valid values are defined in the [CatalogObjectType](entity:CatalogObjectType) enum, for example, &#x60;ITEM&#x60;, &#x60;ITEM_VARIATION&#x60;, &#x60;CATEGORY&#x60;, &#x60;DISCOUNT&#x60;, &#x60;TAX&#x60;, &#x60;MODIFIER&#x60;, &#x60;MODIFIER_LIST&#x60;, &#x60;IMAGE&#x60;, etc.  If this is unspecified, the operation returns objects of all the top level types at the version of the Square API used to make the request. Object types that are nested onto other object types are not included in the defaults.  At the current API version the default object types are: ITEM, CATEGORY, TAX, DISCOUNT, MODIFIER_LIST, DINING_OPTION, TAX_EXEMPTION, SERVICE_CHARGE, PRICING_RULE, PRODUCT_SET, TIME_PERIOD, MEASUREMENT_UNIT, SUBSCRIPTION_PLAN, ITEM_OPTION, CUSTOM_ATTRIBUTE_DEFINITION, QUICK_AMOUNT_SETTINGS.
+     * @param "CatalogVersion" (optional.Int64) -  The specific version of the catalog objects to be included in the response.  This allows you to retrieve historical versions of objects. The specified version value is matched against the [CatalogObject](entity:CatalogObject)s&#x27; &#x60;version&#x60; attribute.  If not included, results will be from the current version of the catalog.
 @return ListCatalogResponse
 */
 
@@ -668,8 +668,8 @@ Returns a single [CatalogItem](entity:CatalogItem) as a [CatalogObject](entity:C
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param objectId The object ID of any type of catalog objects to be retrieved.
  * @param optional nil or *CatalogApiRetrieveCatalogObjectOpts - Optional Parameters:
-     * @param "IncludeRelatedObjects" (optional.Bool) -  If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItem&#x60;, its associated &#x60;CatalogCategory&#x60;, &#x60;CatalogTax&#x60;, &#x60;CatalogImage&#x60; and &#x60;CatalogModifierList&#x60; objects will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a &#x60;CatalogItemVariation&#x60;, its parent &#x60;CatalogItem&#x60; will be returned in the &#x60;related_objects&#x60; field of the response.  Default value: &#x60;false&#x60;
-     * @param "CatalogVersion" (optional.Int64) -  Requests objects as of a specific version of the catalog. This allows you to retrieve historical versions of objects. The value to retrieve a specific version of an object can be found in the version field of [CatalogObject](entity:CatalogObject)s.
+     * @param "IncludeRelatedObjects" (optional.Bool) -  If &#x60;true&#x60;, the response will include additional objects that are related to the requested objects. Related objects are defined as any objects referenced by ID by the results in the &#x60;objects&#x60; field of the response. These objects are put in the &#x60;related_objects&#x60; field. Setting this to &#x60;true&#x60; is helpful when the objects are needed for immediate display to a user. This process only goes one level deep. Objects referenced by the related objects will not be included. For example,  if the &#x60;objects&#x60; field of the response contains a CatalogItem, its associated CatalogCategory objects, CatalogTax objects, CatalogImage objects and CatalogModifierLists will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;objects&#x60; field of the response contains a CatalogItemVariation, its parent CatalogItem will be returned in the &#x60;related_objects&#x60; field of the response.  Default value: &#x60;false&#x60;
+     * @param "CatalogVersion" (optional.Int64) -  Requests objects as of a specific version of the catalog. This allows you to retrieve historical versions of objects. The value to retrieve a specific version of an object can be found in the version field of [CatalogObject](entity:CatalogObject)s. If not included, results will be from the current version of the catalog.
 @return RetrieveCatalogObjectResponse
 */
 
@@ -927,6 +927,102 @@ func (a *CatalogApiService) SearchCatalogObjects(ctx context.Context, body Searc
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v SearchCatalogObjectsResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+CatalogApiService UpdateCatalogImage
+Uploads a new image file to replace the existing one in the specified [CatalogImage](entity:CatalogImage) object.   This &#x60;UpdateCatalogImage&#x60; endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param request
+ * @param imageFile
+ * @param imageId The ID of the &#x60;CatalogImage&#x60; object to update the encapsulated image file.
+@return UpdateCatalogImageResponse
+*/
+func (a *CatalogApiService) UpdateCatalogImage(ctx context.Context, request UpdateCatalogImageRequest, imageFile *os.File, imageId string) (UpdateCatalogImageResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Put")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue UpdateCatalogImageResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/v2/catalog/images/{image_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"image_id"+"}", fmt.Sprintf("%v", imageId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	localVarFormParams.Add("request", parameterToString(request, ""))
+	localVarFile := imageFile
+	if localVarFile != nil {
+		fbs, _ := ioutil.ReadAll(localVarFile)
+		localVarFileBytes = fbs
+		localVarFileName = localVarFile.Name()
+		localVarFile.Close()
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		if err == nil {
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v UpdateCatalogImageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
