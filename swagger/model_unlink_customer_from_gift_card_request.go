@@ -9,7 +9,8 @@
  */
 package swagger
 
-// A request to unlink a customer to a gift card
+// A request to unlink a customer from a gift card.
 type UnlinkCustomerFromGiftCardRequest struct {
+	// The ID of the customer to unlink from the gift card.
 	CustomerId string `json:"customer_id"`
 }

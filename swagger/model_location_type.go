@@ -9,7 +9,7 @@
  */
 package swagger
 
-// LocationType : A location's physical or mobile type.
+// LocationType : A location's type.
 type LocationType string
 
 // List of LocationType

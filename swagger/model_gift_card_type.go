@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardType : Indicates the gift card type.
 type GiftCardType string
 
 // List of GiftCardType

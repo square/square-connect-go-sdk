@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Represents a query (including filtering criteria) used to search for subscriptions.
+// Represents a query, consisting of specified query expressions, used to search for subscriptions.
 type SearchSubscriptionsQuery struct {
 	Filter *SearchSubscriptionsFilter `json:"filter,omitempty"`
 }

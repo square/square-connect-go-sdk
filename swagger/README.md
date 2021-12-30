@@ -28,6 +28,7 @@ Class | Method | HTTP request | Description
 *BankAccountsApi* | [**ListBankAccounts**](docs/BankAccountsApi.md#listbankaccounts) | **Get** /v2/bank-accounts | ListBankAccounts
 *BookingsApi* | [**CancelBooking**](docs/BookingsApi.md#cancelbooking) | **Post** /v2/bookings/{booking_id}/cancel | CancelBooking
 *BookingsApi* | [**CreateBooking**](docs/BookingsApi.md#createbooking) | **Post** /v2/bookings | CreateBooking
+*BookingsApi* | [**ListBookings**](docs/BookingsApi.md#listbookings) | **Get** /v2/bookings | ListBookings
 *BookingsApi* | [**ListTeamMemberBookingProfiles**](docs/BookingsApi.md#listteammemberbookingprofiles) | **Get** /v2/bookings/team-member-booking-profiles | ListTeamMemberBookingProfiles
 *BookingsApi* | [**RetrieveBooking**](docs/BookingsApi.md#retrievebooking) | **Get** /v2/bookings/{booking_id} | RetrieveBooking
 *BookingsApi* | [**RetrieveBusinessBookingProfile**](docs/BookingsApi.md#retrievebusinessbookingprofile) | **Get** /v2/bookings/business-booking-profile | RetrieveBusinessBookingProfile
@@ -51,6 +52,7 @@ Class | Method | HTTP request | Description
 *CatalogApi* | [**RetrieveCatalogObject**](docs/CatalogApi.md#retrievecatalogobject) | **Get** /v2/catalog/object/{object_id} | RetrieveCatalogObject
 *CatalogApi* | [**SearchCatalogItems**](docs/CatalogApi.md#searchcatalogitems) | **Post** /v2/catalog/search-catalog-items | SearchCatalogItems
 *CatalogApi* | [**SearchCatalogObjects**](docs/CatalogApi.md#searchcatalogobjects) | **Post** /v2/catalog/search | SearchCatalogObjects
+*CatalogApi* | [**UpdateCatalogImage**](docs/CatalogApi.md#updatecatalogimage) | **Put** /v2/catalog/images/{image_id} | UpdateCatalogImage
 *CatalogApi* | [**UpdateItemModifierLists**](docs/CatalogApi.md#updateitemmodifierlists) | **Post** /v2/catalog/update-item-modifier-lists | UpdateItemModifierLists
 *CatalogApi* | [**UpdateItemTaxes**](docs/CatalogApi.md#updateitemtaxes) | **Post** /v2/catalog/update-item-taxes | UpdateItemTaxes
 *CatalogApi* | [**UpsertCatalogObject**](docs/CatalogApi.md#upsertcatalogobject) | **Post** /v2/catalog/object | UpsertCatalogObject
@@ -183,10 +185,13 @@ Class | Method | HTTP request | Description
 *SnippetsApi* | [**UpsertSnippet**](docs/SnippetsApi.md#upsertsnippet) | **Post** /v2/sites/{site_id}/snippet | UpsertSnippet
 *SubscriptionsApi* | [**CancelSubscription**](docs/SubscriptionsApi.md#cancelsubscription) | **Post** /v2/subscriptions/{subscription_id}/cancel | CancelSubscription
 *SubscriptionsApi* | [**CreateSubscription**](docs/SubscriptionsApi.md#createsubscription) | **Post** /v2/subscriptions | CreateSubscription
+*SubscriptionsApi* | [**DeleteSubscriptionAction**](docs/SubscriptionsApi.md#deletesubscriptionaction) | **Delete** /v2/subscriptions/{subscription_id}/actions/{action_id} | DeleteSubscriptionAction
 *SubscriptionsApi* | [**ListSubscriptionEvents**](docs/SubscriptionsApi.md#listsubscriptionevents) | **Get** /v2/subscriptions/{subscription_id}/events | ListSubscriptionEvents
+*SubscriptionsApi* | [**PauseSubscription**](docs/SubscriptionsApi.md#pausesubscription) | **Post** /v2/subscriptions/{subscription_id}/pause | PauseSubscription
 *SubscriptionsApi* | [**ResumeSubscription**](docs/SubscriptionsApi.md#resumesubscription) | **Post** /v2/subscriptions/{subscription_id}/resume | ResumeSubscription
 *SubscriptionsApi* | [**RetrieveSubscription**](docs/SubscriptionsApi.md#retrievesubscription) | **Get** /v2/subscriptions/{subscription_id} | RetrieveSubscription
 *SubscriptionsApi* | [**SearchSubscriptions**](docs/SubscriptionsApi.md#searchsubscriptions) | **Post** /v2/subscriptions/search | SearchSubscriptions
+*SubscriptionsApi* | [**SwapPlan**](docs/SubscriptionsApi.md#swapplan) | **Post** /v2/subscriptions/{subscription_id}/swap-plan | SwapPlan
 *SubscriptionsApi* | [**UpdateSubscription**](docs/SubscriptionsApi.md#updatesubscription) | **Put** /v2/subscriptions/{subscription_id} | UpdateSubscription
 *TeamApi* | [**BulkCreateTeamMembers**](docs/TeamApi.md#bulkcreateteammembers) | **Post** /v2/team-members/bulk-create | BulkCreateTeamMembers
 *TeamApi* | [**BulkUpdateTeamMembers**](docs/TeamApi.md#bulkupdateteammembers) | **Post** /v2/team-members/bulk-update | BulkUpdateTeamMembers
@@ -272,6 +277,7 @@ Class | Method | HTTP request | Description
  - [BatchUpsertCatalogObjectsResponse](docs/BatchUpsertCatalogObjectsResponse.md)
  - [Body](docs/Body.md)
  - [Body1](docs/Body1.md)
+ - [Body2](docs/Body2.md)
  - [Booking](docs/Booking.md)
  - [BookingCreatedWebhook](docs/BookingCreatedWebhook.md)
  - [BookingCreatedWebhookData](docs/BookingCreatedWebhookData.md)
@@ -407,6 +413,7 @@ Class | Method | HTTP request | Description
  - [CatalogVersionUpdatedWebhookCatalogVersion](docs/CatalogVersionUpdatedWebhookCatalogVersion.md)
  - [CatalogVersionUpdatedWebhookData](docs/CatalogVersionUpdatedWebhookData.md)
  - [CatalogVersionUpdatedWebhookObject](docs/CatalogVersionUpdatedWebhookObject.md)
+ - [ChangeTiming](docs/ChangeTiming.md)
  - [ChargeRequest](docs/ChargeRequest.md)
  - [ChargeRequestAdditionalRecipient](docs/ChargeRequestAdditionalRecipient.md)
  - [ChargeResponse](docs/ChargeResponse.md)
@@ -522,6 +529,8 @@ Class | Method | HTTP request | Description
  - [DeleteShiftResponse](docs/DeleteShiftResponse.md)
  - [DeleteSnippetRequest](docs/DeleteSnippetRequest.md)
  - [DeleteSnippetResponse](docs/DeleteSnippetResponse.md)
+ - [DeleteSubscriptionActionRequest](docs/DeleteSubscriptionActionRequest.md)
+ - [DeleteSubscriptionActionResponse](docs/DeleteSubscriptionActionResponse.md)
  - [DeprecatedCreateDisputeEvidenceFileRequest](docs/DeprecatedCreateDisputeEvidenceFileRequest.md)
  - [DeprecatedCreateDisputeEvidenceFileResponse](docs/DeprecatedCreateDisputeEvidenceFileResponse.md)
  - [DeprecatedCreateDisputeEvidenceTextRequest](docs/DeprecatedCreateDisputeEvidenceTextRequest.md)
@@ -710,6 +719,8 @@ Class | Method | HTTP request | Description
  - [ListAdditionalRecipientReceivablesResponse](docs/ListAdditionalRecipientReceivablesResponse.md)
  - [ListBankAccountsRequest](docs/ListBankAccountsRequest.md)
  - [ListBankAccountsResponse](docs/ListBankAccountsResponse.md)
+ - [ListBookingsRequest](docs/ListBookingsRequest.md)
+ - [ListBookingsResponse](docs/ListBookingsResponse.md)
  - [ListBreakTypesRequest](docs/ListBreakTypesRequest.md)
  - [ListBreakTypesResponse](docs/ListBreakTypesResponse.md)
  - [ListCardsRequest](docs/ListCardsRequest.md)
@@ -897,6 +908,8 @@ Class | Method | HTTP request | Description
  - [OrderUpdatedObject](docs/OrderUpdatedObject.md)
  - [OrderUpdatedWebhook](docs/OrderUpdatedWebhook.md)
  - [OrderUpdatedWebhookData](docs/OrderUpdatedWebhookData.md)
+ - [PauseSubscriptionRequest](docs/PauseSubscriptionRequest.md)
+ - [PauseSubscriptionResponse](docs/PauseSubscriptionResponse.md)
  - [PayOrderRequest](docs/PayOrderRequest.md)
  - [PayOrderResponse](docs/PayOrderResponse.md)
  - [Payment](docs/Payment.md)
@@ -1069,6 +1082,8 @@ Class | Method | HTTP request | Description
  - [SubmitEvidenceRequest](docs/SubmitEvidenceRequest.md)
  - [SubmitEvidenceResponse](docs/SubmitEvidenceResponse.md)
  - [Subscription](docs/Subscription.md)
+ - [SubscriptionAction](docs/SubscriptionAction.md)
+ - [SubscriptionActionType](docs/SubscriptionActionType.md)
  - [SubscriptionCadence](docs/SubscriptionCadence.md)
  - [SubscriptionCreatedWebhook](docs/SubscriptionCreatedWebhook.md)
  - [SubscriptionCreatedWebhookData](docs/SubscriptionCreatedWebhookData.md)
@@ -1083,6 +1098,8 @@ Class | Method | HTTP request | Description
  - [SubscriptionUpdatedWebhook](docs/SubscriptionUpdatedWebhook.md)
  - [SubscriptionUpdatedWebhookData](docs/SubscriptionUpdatedWebhookData.md)
  - [SubscriptionUpdatedWebhookObject](docs/SubscriptionUpdatedWebhookObject.md)
+ - [SwapPlanRequest](docs/SwapPlanRequest.md)
+ - [SwapPlanResponse](docs/SwapPlanResponse.md)
  - [TaxCalculationPhase](docs/TaxCalculationPhase.md)
  - [TaxIds](docs/TaxIds.md)
  - [TaxInclusionType](docs/TaxInclusionType.md)
@@ -1140,6 +1157,8 @@ Class | Method | HTTP request | Description
  - [UpdateBookingResponse](docs/UpdateBookingResponse.md)
  - [UpdateBreakTypeRequest](docs/UpdateBreakTypeRequest.md)
  - [UpdateBreakTypeResponse](docs/UpdateBreakTypeResponse.md)
+ - [UpdateCatalogImageRequest](docs/UpdateCatalogImageRequest.md)
+ - [UpdateCatalogImageResponse](docs/UpdateCatalogImageResponse.md)
  - [UpdateCustomerGroupRequest](docs/UpdateCustomerGroupRequest.md)
  - [UpdateCustomerGroupResponse](docs/UpdateCustomerGroupResponse.md)
  - [UpdateCustomerRequest](docs/UpdateCustomerRequest.md)

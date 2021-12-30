@@ -9,6 +9,8 @@
  */
 package swagger
 
-// Defines parameters in a [RetrieveSubscription](api-endpoint:Subscriptions-RetrieveSubscription) endpoint request.
+// Defines input parameters in a request to the  [RetrieveSubscription](api-endpoint:Subscriptions-RetrieveSubscription) endpoint.
 type RetrieveSubscriptionRequest struct {
+	// A query parameter to specify related information to be included in the response.   The supported query parameter values are:   - `actions`: to include scheduled actions on the targeted subscription.
+	Include string `json:"include,omitempty"`
 }

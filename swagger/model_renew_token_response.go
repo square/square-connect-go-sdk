@@ -14,12 +14,12 @@ type RenewTokenResponse struct {
 	AccessToken string `json:"access_token,omitempty"`
 	// This value is always _bearer_.
 	TokenType string `json:"token_type,omitempty"`
-	// The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format.
+	// The date when the `access_token` expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format.
 	ExpiresAt string `json:"expires_at,omitempty"`
 	// The ID of the authorizing merchant's business.
 	MerchantId string `json:"merchant_id,omitempty"`
-	// __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization..
+	// __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. The ID is only present if the merchant signed up for a subscription during authorization.
 	SubscriptionId string `json:"subscription_id,omitempty"`
-	// __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+	// __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. The ID is only present if the merchant signed up for a subscription plan during authorization.
 	PlanId string `json:"plan_id,omitempty"`
 }

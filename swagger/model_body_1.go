@@ -14,6 +14,6 @@ import (
 )
 
 type Body1 struct {
-	Request   *CreateDisputeEvidenceFileRequest `json:"request,omitempty"`
-	ImageFile **os.File                         `json:"image_file,omitempty"`
+	Request   *UpdateCatalogImageRequest `json:"request,omitempty"`
+	ImageFile **os.File                  `json:"image_file,omitempty"`
 }

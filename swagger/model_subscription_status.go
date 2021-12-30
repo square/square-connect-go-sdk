@@ -9,7 +9,7 @@
  */
 package swagger
 
-// SubscriptionStatus : Possible subscription status values.
+// SubscriptionStatus : Supported subscription statuses.
 type SubscriptionStatus string
 
 // List of SubscriptionStatus

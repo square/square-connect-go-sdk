@@ -9,6 +9,9 @@
  */
 package swagger
 
-// Defines parameters in a [ResumeSubscription](api-endpoint:Subscriptions-ResumeSubscription) endpoint request.
+// Defines input parameters in a request to the [ResumeSubscription](api-endpoint:Subscriptions-ResumeSubscription) endpoint.
 type ResumeSubscriptionRequest struct {
+	// The `YYYY-MM-DD`-formatted date when the subscription reactivated.
+	ResumeEffectiveDate string        `json:"resume_effective_date,omitempty"`
+	ResumeChangeTiming  *ChangeTiming `json:"resume_change_timing,omitempty"`
 }

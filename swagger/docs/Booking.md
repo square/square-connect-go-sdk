@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **UpdatedAt** | **string** | The timestamp specifying the most recent update time of this booking, in RFC 3339 format. | [optional] [default to null]
 **StartAt** | **string** | The timestamp specifying the starting time of this booking, in RFC 3339 format. | [optional] [default to null]
 **LocationId** | **string** | The ID of the [Location](entity:Location) object representing the location where the booked service is provided. | [optional] [default to null]
-**CustomerId** | **string** | The ID of the [Customer](entity:Customer) object representing the customer attending this booking | [optional] [default to null]
+**CustomerId** | **string** | The ID of the [Customer](entity:Customer) object representing the customer receiving the booked service. | [optional] [default to null]
 **CustomerNote** | **string** | The free-text field for the customer to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a relevant [CatalogObject](entity:CatalogObject) instance. | [optional] [default to null]
 **SellerNote** | **string** | The free-text field for the seller to supply notes about the booking. For example, the note can be preferences that cannot be expressed by supported attributes of a specific [CatalogObject](entity:CatalogObject) instance. This field should not be visible to customers. | [optional] [default to null]
 **AppointmentSegments** | [**[]AppointmentSegment**](AppointmentSegment.md) | A list of appointment segments for this booking. | [optional] [default to null]

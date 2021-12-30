@@ -20,4 +20,5 @@ const (
 	DEACTIVATED_GiftCardStatus       GiftCardStatus = "DEACTIVATED"
 	BLOCKED_GiftCardStatus           GiftCardStatus = "BLOCKED"
 	PENDING_GiftCardStatus           GiftCardStatus = "PENDING"
+	UNREGISTERED_GiftCardStatus      GiftCardStatus = "UNREGISTERED"
 )

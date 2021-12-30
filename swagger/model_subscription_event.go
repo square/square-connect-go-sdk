@@ -9,12 +9,12 @@
  */
 package swagger
 
-// Describes changes to subscription and billing states.
+// Describes changes to a subscription and the subscription status.
 type SubscriptionEvent struct {
 	// The ID of the subscription event.
 	Id                    string                                  `json:"id"`
 	SubscriptionEventType *SubscriptionEventSubscriptionEventType `json:"subscription_event_type"`
-	// The date, in YYYY-MM-DD format (for example, 2013-01-15), when the subscription event went into effect.
+	// The `YYYY-MM-DD`-formatted date (for example, 2013-01-15) when the subscription event occurred.
 	EffectiveDate string `json:"effective_date"`
 	// The ID of the subscription plan associated with the subscription.
 	PlanId string                 `json:"plan_id"`

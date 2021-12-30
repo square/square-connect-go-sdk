@@ -9,7 +9,7 @@
  */
 package swagger
 
-// SubscriptionEventSubscriptionEventType : The possible subscription event types.
+// SubscriptionEventSubscriptionEventType : Supported types of an event occurred to a subscription.
 type SubscriptionEventSubscriptionEventType string
 
 // List of SubscriptionEventSubscriptionEventType

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **BillingAddress** | [***Address**](Address.md) |  | [optional] [default to null]
 **Fingerprint** | **string** | Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application. | [optional] [default to null]
 **CustomerId** | **string** | The ID of a customer created using the Customers API to be associated with the card. | [optional] [default to null]
+**MerchantId** | **string** | The ID of the merchant associated with the card. | [optional] [default to null]
 **ReferenceId** | **string** | An optional user-defined reference ID that associates this card with another entity in an external system. For example, a customer ID from an external customer management system. | [optional] [default to null]
 **Enabled** | **bool** | Indicates whether or not a card can be used for payments. | [optional] [default to null]
 **CardType** | [***CardType**](CardType.md) |  | [optional] [default to null]

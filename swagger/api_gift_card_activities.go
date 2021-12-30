@@ -119,13 +119,13 @@ GiftCardActivitiesApiService ListGiftCardActivities
 Lists gift card activities. By default, you get gift card activities for all gift cards in the seller&#x27;s account. You can optionally specify query parameters to filter the list. For example, you can get a list of gift card activities for a gift card, for all gift cards in a specific region, or for activities within a time window.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GiftCardActivitiesApiListGiftCardActivitiesOpts - Optional Parameters:
-     * @param "GiftCardId" (optional.String) -  If you provide a gift card ID, the endpoint returns activities that belong  to the specified gift card. Otherwise, the endpoint returns all gift card activities for  the seller.
-     * @param "Type_" (optional.String) -  If you provide a type, the endpoint returns gift card activities of this type.  Otherwise, the endpoint returns all types of gift card activities.
-     * @param "LocationId" (optional.String) -  If you provide a location ID, the endpoint returns gift card activities for that location.  Otherwise, the endpoint returns gift card activities for all locations.
-     * @param "BeginTime" (optional.String) -  The timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year.
-     * @param "EndTime" (optional.String) -  The timestamp for the end of the reporting period, in RFC 3339 format. Inclusive. Default: The current time.
-     * @param "Limit" (optional.Int32) -  If you provide a limit value, the endpoint returns the specified number  of results (or less) per page. A maximum value is 100. The default value is 50.
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If you do not provide the cursor, the call returns the first page of the results.
+     * @param "GiftCardId" (optional.String) -  If a gift card ID is provided, the endpoint returns activities related  to the specified gift card. Otherwise, the endpoint returns all gift card activities for  the seller.
+     * @param "Type_" (optional.String) -  If a [type](entity:GiftCardActivityType) is provided, the endpoint returns gift card activities of the specified type.  Otherwise, the endpoint returns all types of gift card activities.
+     * @param "LocationId" (optional.String) -  If a location ID is provided, the endpoint returns gift card activities for the specified location.  Otherwise, the endpoint returns gift card activities for all locations.
+     * @param "BeginTime" (optional.String) -  The timestamp for the beginning of the reporting period, in RFC 3339 format. This start time is inclusive. The default value is the current time minus one year.
+     * @param "EndTime" (optional.String) -  The timestamp for the end of the reporting period, in RFC 3339 format. This end time is inclusive. The default value is the current time.
+     * @param "Limit" (optional.Int32) -  If a limit is provided, the endpoint returns the specified number  of results (or fewer) per page. The maximum value is 100. The default value is 50. For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, the endpoint returns the first page of the results. For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
      * @param "SortOrder" (optional.String) -  The order in which the endpoint returns the activities, based on &#x60;created_at&#x60;. - &#x60;ASC&#x60; - Oldest to newest. - &#x60;DESC&#x60; - Newest to oldest (default).
 @return ListGiftCardActivitiesResponse
 */

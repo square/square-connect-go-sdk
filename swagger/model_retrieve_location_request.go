@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Defines the fields that are included in the request body for the __RetrieveLocation__ endpoint.
+// Defines the fields that are included in the request body for the [RetrieveLocation](api-endpoint:Locations-RetrieveLocation) endpoint.
 type RetrieveLocationRequest struct {
 }

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// A response that contains one `GiftCard` that was linked. The response might contain a set of `Error` objects if the request resulted in errors.
+// A response that contains the linked `GiftCard` object. If the request resulted in errors,  the response contains a set of `Error` objects.
 type LinkCustomerToGiftCardResponse struct {
 	// Any errors that occurred during the request.
 	Errors   []ModelError `json:"errors,omitempty"`

@@ -17,4 +17,6 @@ type CatalogImage struct {
 	Url string `json:"url,omitempty"`
 	// A caption that describes what is shown in the image. Displayed in the Square Online Store. This is a searchable attribute for use in applicable query filters using the [SearchCatalogObjects](api-endpoint:Catalog-SearchCatalogObjects).
 	Caption string `json:"caption,omitempty"`
+	// The immutable order ID for this image object created by the Photo Studio service in Square Online Store.
+	PhotoStudioOrderId string `json:"photo_studio_order_id,omitempty"`
 }

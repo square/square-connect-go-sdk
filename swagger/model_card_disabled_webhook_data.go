@@ -13,6 +13,6 @@ type CardDisabledWebhookData struct {
 	// The type of the event data object. The value is `\"card\"`.
 	Type_ string `json:"type,omitempty"`
 	// The ID of the event data object.
-	Id     string `json:"id,omitempty"`
-	Object *Card  `json:"object,omitempty"`
+	Id     string                     `json:"id,omitempty"`
+	Object *CardDisabledWebhookObject `json:"object,omitempty"`
 }

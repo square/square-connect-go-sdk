@@ -23,4 +23,5 @@ const (
 	GIFT_CARD_CardSquareProduct              CardSquareProduct = "GIFT_CARD"
 	VIRTUAL_TERMINAL_CardSquareProduct       CardSquareProduct = "VIRTUAL_TERMINAL"
 	READER_SDK_CardSquareProduct             CardSquareProduct = "READER_SDK"
+	SQUARE_PROFILE_CardSquareProduct         CardSquareProduct = "SQUARE_PROFILE"
 )

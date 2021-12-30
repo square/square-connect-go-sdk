@@ -27,7 +27,7 @@ type LocationsApiService service
 
 /*
 LocationsApiService CreateLocation
-Creates a location.
+Creates a [location](https://developer.squareup.com/docs/locations-api). Creating new locations allows for separate configuration of receipt layouts, item prices,  and sales reports. Developers can use locations to separate sales activity via applications  that integrate with Square from sales activity elsewhere in a seller&#x27;s account.  Locations created programmatically with the Locations API will last forever and  are visible to the seller for their own management, so ensure that  each location has a sensible and unique name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -116,7 +116,7 @@ func (a *LocationsApiService) CreateLocation(ctx context.Context, body CreateLoc
 
 /*
 LocationsApiService ListLocations
-Provides information of all locations of a business.  Many Square API endpoints require a &#x60;location_id&#x60; parameter. The &#x60;id&#x60; field of the [&#x60;Location&#x60;](entity:Location) objects returned by this endpoint correspond to that &#x60;location_id&#x60; parameter.
+Provides details about all of the seller&#x27;s locations, including those with an inactive status.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return ListLocationsResponse
 */
@@ -200,9 +200,9 @@ func (a *LocationsApiService) ListLocations(ctx context.Context) (ListLocationsR
 
 /*
 LocationsApiService RetrieveLocation
-Retrieves details of a location. You can specify \&quot;main\&quot;  as the location ID to retrieve details of the  main location.
+Retrieves details of a single location. Specify \&quot;main\&quot; as the location ID to retrieve details of the [main location](https://developer.squareup.com/docs/locations-api#about-the-main-location).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param locationId The ID of the location to retrieve. If you specify the string \&quot;main\&quot;, then the endpoint returns the main location.
+ * @param locationId The ID of the location to retrieve. Specify the string \&quot;main\&quot; to return the main location.
 @return RetrieveLocationResponse
 */
 func (a *LocationsApiService) RetrieveLocation(ctx context.Context, locationId string) (RetrieveLocationResponse, *http.Response, error) {

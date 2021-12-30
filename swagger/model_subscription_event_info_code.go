@@ -9,7 +9,7 @@
  */
 package swagger
 
-// SubscriptionEventInfoCode : The possible subscription event info codes.
+// SubscriptionEventInfoCode : Supported info codes of a subscription event.
 type SubscriptionEventInfoCode string
 
 // List of SubscriptionEventInfoCode

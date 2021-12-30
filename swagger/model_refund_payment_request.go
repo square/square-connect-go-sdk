@@ -15,8 +15,8 @@ type RefundPaymentRequest struct {
 	IdempotencyKey string `json:"idempotency_key"`
 	AmountMoney    *Money `json:"amount_money"`
 	AppFeeMoney    *Money `json:"app_fee_money,omitempty"`
-	// The unique ID of the payment being refunded.
-	PaymentId string `json:"payment_id"`
+	// The unique ID of the payment being refunded. Must be provided and non-empty.
+	PaymentId string `json:"payment_id,omitempty"`
 	// A description of the reason for the refund.
 	Reason string `json:"reason,omitempty"`
 	//  Used for optimistic concurrency. This opaque token identifies the current `Payment`  version that the caller expects. If the server has a different version of the Payment,  the update fails and a response with a VERSION_MISMATCH error is returned.  If the versions match, or the field is not provided, the refund proceeds as normal.

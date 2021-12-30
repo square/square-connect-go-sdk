@@ -27,6 +27,8 @@ type Card struct {
 	Fingerprint string `json:"fingerprint,omitempty"`
 	// The ID of a customer created using the Customers API to be associated with the card.
 	CustomerId string `json:"customer_id,omitempty"`
+	// The ID of the merchant associated with the card.
+	MerchantId string `json:"merchant_id,omitempty"`
 	// An optional user-defined reference ID that associates this card with another entity in an external system. For example, a customer ID from an external customer management system.
 	ReferenceId string `json:"reference_id,omitempty"`
 	// Indicates whether or not a card can be used for payments.
