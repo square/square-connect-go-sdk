@@ -137,7 +137,7 @@ See the corresponding object definition for field details. |
 > PayOrderResponse PayOrder(ctx, body, orderId)
 PayOrder
 
-Pay for an [order](entity:Order) using one or more approved [payments](entity:Payment) or settle an order with a total of `0`.  The total of the `payment_ids` listed in the request must be equal to the order total. Orders with a total amount of `0` can be marked as paid by specifying an empty array of `payment_ids` in the request.  To be used with `PayOrder`, a payment must:  - Reference the order by specifying the `order_id` when [creating the payment](api-endpoint:Payments-CreatePayment). Any approved payments that reference the same `order_id` not specified in the `payment_ids` is canceled. - Be approved with [delayed capture](https://developer.squareup.com/docs/payments-api/take-payments#delayed-capture). Using a delayed capture payment with `PayOrder` completes the approved payment.
+Pay for an [order](entity:Order) using one or more approved [payments](entity:Payment) or settle an order with a total of `0`.  The total of the `payment_ids` listed in the request must be equal to the order total. Orders with a total amount of `0` can be marked as paid by specifying an empty array of `payment_ids` in the request.  To be used with `PayOrder`, a payment must:  - Reference the order by specifying the `order_id` when [creating the payment](api-endpoint:Payments-CreatePayment). Any approved payments that reference the same `order_id` not specified in the `payment_ids` is canceled. - Be approved with [delayed capture](https://developer.squareup.com/docs/payments-api/take-payments/card-payments/delayed-capture). Using a delayed capture payment with `PayOrder` completes the approved payment.
 
 ### Required Parameters
 

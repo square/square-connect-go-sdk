@@ -13,6 +13,6 @@ package swagger
 type CalculateLoyaltyPointsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// The points that the buyer can earn from a specified purchase.
+	// The points that the buyer can earn from a specified purchase. This value does not include additional points earned from a loyalty promotion.
 	Points int32 `json:"points,omitempty"`
 }

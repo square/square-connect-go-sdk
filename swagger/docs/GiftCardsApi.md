@@ -16,7 +16,7 @@ Method | HTTP request | Description
 > CreateGiftCardResponse CreateGiftCard(ctx, body)
 CreateGiftCard
 
-Creates a digital gift card or registers a physical (plastic) gift card. You must activate the gift card before  it can be used for payment. For more information, see  [Selling gift cards](https://developer.squareup.com/docs/gift-cards/using-gift-cards-api#selling-square-gift-cards).
+Creates a digital gift card or registers a physical (plastic) gift card. After the gift card  is created, you must call [CreateGiftCardActivity](api-endpoint:GiftCardActivities-CreateGiftCardActivity)  to activate the card with an initial balance before it can be used for payment.
 
 ### Required Parameters
 
@@ -77,7 +77,7 @@ See the corresponding object definition for field details. |
 > ListGiftCardsResponse ListGiftCards(ctx, optional)
 ListGiftCards
 
-Lists all gift cards. You can specify optional filters to retrieve  a subset of the gift cards.
+Lists all gift cards. You can specify optional filters to retrieve  a subset of the gift cards. Results are sorted by `created_at` in ascending order.
 
 ### Required Parameters
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 > RetrieveGiftCardResponse RetrieveGiftCard(ctx, id)
 RetrieveGiftCard
 
-Retrieves a gift card using its ID.
+Retrieves a gift card using the gift card ID.
 
 ### Required Parameters
 

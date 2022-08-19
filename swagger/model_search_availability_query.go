@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Query conditions to search for availabilities of bookings.
+// The query used to search for buyer-accessible availabilities of bookings.
 type SearchAvailabilityQuery struct {
 	Filter *SearchAvailabilityFilter `json:"filter"`
 }

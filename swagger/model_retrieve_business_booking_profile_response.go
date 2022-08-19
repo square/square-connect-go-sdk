@@ -11,6 +11,6 @@ package swagger
 
 type RetrieveBusinessBookingProfileResponse struct {
 	BusinessBookingProfile *BusinessBookingProfile `json:"business_booking_profile,omitempty"`
-	// Any errors that occurred during the request.
+	// Errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

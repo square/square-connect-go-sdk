@@ -12,9 +12,9 @@ package swagger
 // A [CatalogObject](entity:CatalogObject) instance of the `ITEM` type, also referred to as an item, in the catalog.
 type CatalogItem struct {
 	// The item's name. This is a searchable attribute for use in applicable query filters, its value must not be empty, and the length is of Unicode code points.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name,omitempty"`
 	// The item's description. This is a searchable attribute for use in applicable query filters, and its value length is of Unicode code points.
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 	// The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used. This attribute is searchable, and its value length is of Unicode code points.
 	Abbreviation string `json:"abbreviation,omitempty"`
 	// The color of the item's display label in the Square Point of Sale app. This must be a valid hex color code.

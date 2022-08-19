@@ -18,4 +18,6 @@ type CatalogModifier struct {
 	Ordinal int32 `json:"ordinal,omitempty"`
 	// The ID of the `CatalogModifierList` associated with this modifier.
 	ModifierListId string `json:"modifier_list_id,omitempty"`
+	// The IDs of images associated with this `CatalogModifier` instance. Currently these images are not displayed by Square, but are free to be displayed in 3rd party applications.
+	ImageIds []string `json:"image_ids,omitempty"`
 }

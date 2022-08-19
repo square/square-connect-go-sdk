@@ -22,7 +22,7 @@ type UpdateCustomerRequest struct {
 	// The email address associated with the customer profile.
 	EmailAddress string   `json:"email_address,omitempty"`
 	Address      *Address `json:"address,omitempty"`
-	// The 11-digit phone number associated with the customer profile.
+	// The phone number associated with the customer profile. A phone number can contain 9–16 digits, with an optional `+` prefix.
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// An optional second ID used to associate the customer profile with an entity in another system.
 	ReferenceId string `json:"reference_id,omitempty"`
@@ -30,7 +30,7 @@ type UpdateCustomerRequest struct {
 	Note string `json:"note,omitempty"`
 	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998. You can also specify this value in `YYYY-MM-DD` format.
 	Birthday string `json:"birthday,omitempty"`
-	// The current version of the customer profile.  As a best practice, you should include this field to enable [optimistic concurrency](https://developer.squareup.com/docs/working-with-apis/optimistic-concurrency) control. For more information, see [Update a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#update-a-customer-profile).
+	// The current version of the customer profile.  As a best practice, you should include this field to enable [optimistic concurrency](https://developer.squareup.com/docs/build-basics/common-api-patterns/optimistic-concurrency) control. For more information, see [Update a customer profile](https://developer.squareup.com/docs/customers-api/use-the-api/keep-records#update-a-customer-profile).
 	Version int64           `json:"version,omitempty"`
 	TaxIds  *CustomerTaxIds `json:"tax_ids,omitempty"`
 }

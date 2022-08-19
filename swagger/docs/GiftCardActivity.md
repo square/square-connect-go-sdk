@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The unique ID of the gift card activity. | [optional] [default to null]
+**Id** | **string** | The Square-assigned ID of the gift card activity. | [optional] [default to null]
 **Type_** | [***GiftCardActivityType**](GiftCardActivityType.md) |  | [default to null]
-**LocationId** | **string** | The ID of the location at which the activity occurred. | [default to null]
+**LocationId** | **string** | The ID of the [business location](entity:Location) where the activity occurred. | [default to null]
 **CreatedAt** | **string** | The timestamp when the gift card activity was created, in RFC 3339 format. | [optional] [default to null]
-**GiftCardId** | **string** | The gift card ID. The ID is not required if a GAN is present. | [optional] [default to null]
-**GiftCardGan** | **string** | The gift card GAN. The GAN is not required if &#x60;gift_card_id&#x60; is present. | [optional] [default to null]
+**GiftCardId** | **string** | The gift card ID. When creating a gift card activity, &#x60;gift_card_id&#x60; is not required if  &#x60;gift_card_gan&#x60; is specified. | [optional] [default to null]
+**GiftCardGan** | **string** | The gift card account number (GAN). When creating a gift card activity, &#x60;gift_card_gan&#x60;  is not required if &#x60;gift_card_id&#x60; is specified. | [optional] [default to null]
 **GiftCardBalanceMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **LoadActivityDetails** | [***GiftCardActivityLoad**](GiftCardActivityLoad.md) |  | [optional] [default to null]
 **ActivateActivityDetails** | [***GiftCardActivityActivate**](GiftCardActivityActivate.md) |  | [optional] [default to null]

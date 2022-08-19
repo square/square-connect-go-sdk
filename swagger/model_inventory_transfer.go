@@ -22,7 +22,7 @@ type InventoryTransfer struct {
 	ToLocationId string `json:"to_location_id,omitempty"`
 	// The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string `json:"catalog_object_type,omitempty"`
 	// The number of items affected by the transfer as a decimal string. Can support up to 5 digits after the decimal point.
 	Quantity string `json:"quantity,omitempty"`
@@ -33,4 +33,6 @@ type InventoryTransfer struct {
 	Source    *SourceApplication `json:"source,omitempty"`
 	// The Square-generated ID of the [Employee](entity:Employee) responsible for the inventory transfer.
 	EmployeeId string `json:"employee_id,omitempty"`
+	// The Square-generated ID of the [Team Member](entity:TeamMember) responsible for the inventory transfer.
+	TeamMemberId string `json:"team_member_id,omitempty"`
 }

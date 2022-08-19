@@ -9,11 +9,11 @@
  */
 package swagger
 
-// A request to create a gift card.
+// Represents a [CreateGiftCard](api-endpoint:GiftCards-CreateGiftCard) request.
 type CreateGiftCardRequest struct {
-	// A unique string that identifies the `CreateGiftCard` request.
+	// A unique identifier for this request, used to ensure idempotency. For more information,  see [Idempotency](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency).
 	IdempotencyKey string `json:"idempotency_key"`
-	// The location ID where the gift card that will be created should be registered.
+	// The ID of the [location](entity:Location) where the gift card should be registered for  reporting purposes. Gift cards can be redeemed at any of the seller's locations.
 	LocationId string    `json:"location_id"`
 	GiftCard   *GiftCard `json:"gift_card"`
 }

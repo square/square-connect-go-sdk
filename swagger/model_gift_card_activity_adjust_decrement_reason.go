@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardActivityAdjustDecrementReason : Indicates the reason for deducting money from a [gift card](entity:GiftCard).
 type GiftCardActivityAdjustDecrementReason string
 
 // List of GiftCardActivityAdjustDecrementReason

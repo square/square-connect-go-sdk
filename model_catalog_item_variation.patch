@@ -1,0 +1,8 @@
+--- original/model_catalog_item_variation.go	2022-08-11 11:33:48.000000000 -0700
++++ model_catalog_item_variation.go	2022-08-19 13:17:50.000000000 -0700
+@@ -49,4 +49,6 @@
+ 	// Tokens of employees that can perform the service represented by this variation. Only valid for variations of type `APPOINTMENTS_SERVICE`.
+ 	TeamMemberIds       []string                `json:"team_member_ids,omitempty"`
+ 	StockableConversion *CatalogStockConversion `json:"stockable_conversion,omitempty"`
++	// A list of IFM channel ids and Square Online site ids where the object can be published.
++	PresentAtChannelIDs []string `json:"present_at_channel_ids,omitempty"`

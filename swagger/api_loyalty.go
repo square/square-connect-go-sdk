@@ -27,7 +27,7 @@ type LoyaltyApiService service
 
 /*
 LoyaltyApiService AccumulateLoyaltyPoints
-Adds points to a loyalty account.  - If you are using the Orders API to manage orders, you only provide the &#x60;order_id&#x60;.  The endpoint reads the order to compute points to add to the buyer&#x27;s account. - If you are not using the Orders API to manage orders,  you first perform a client-side computation to compute the points.   For spend-based and visit-based programs, you can first call  [CalculateLoyaltyPoints](api-endpoint:Loyalty-CalculateLoyaltyPoints) to compute the points   that you provide to this endpoint.   __Note:__ The country of the seller&#x27;s Square account determines whether tax is included in the purchase amount when accruing points for spend-based and visit-based programs.  For more information, see [Availability of Square Loyalty](https://developer.squareup.com/docs/loyalty-api/overview#loyalty-market-availability).
+Adds points earned from the base loyalty program to a loyalty account.  - If you are using the Orders API to manage orders, you only provide the &#x60;order_id&#x60;.  The endpoint reads the order to compute points to add to the buyer&#x27;s account. - If you are not using the Orders API to manage orders,  you first perform a client-side computation to compute the points.   For spend-based and visit-based programs, you can first call  [CalculateLoyaltyPoints](api-endpoint:Loyalty-CalculateLoyaltyPoints) to compute the points   that you provide to this endpoint.   This endpoint excludes additional points earned from loyalty promotions.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -209,7 +209,7 @@ func (a *LoyaltyApiService) AdjustLoyaltyPoints(ctx context.Context, body Adjust
 
 /*
 LoyaltyApiService CalculateLoyaltyPoints
-Calculates the points a purchase earns.  - If you are using the Orders API to manage orders, you provide &#x60;order_id&#x60; in the request. The  endpoint calculates the points by reading the order. - If you are not using the Orders API to manage orders, you provide the purchase amount in  the request for the endpoint to calculate the points.  An application might call this endpoint to show the points that a buyer can earn with the  specific purchase.  __Note:__ The country of the seller&#x27;s Square account determines whether tax is included in the purchase amount when accruing points for spend-based and visit-based programs.  For more information, see [Availability of Square Loyalty](https://developer.squareup.com/docs/loyalty-api/overview#loyalty-market-availability).
+Calculates the points a purchase earns from the base loyalty program.  - If you are using the Orders API to manage orders, you provide the &#x60;order_id&#x60; in the request. The  endpoint calculates the points by reading the order. - If you are not using the Orders API to manage orders, you provide the purchase amount in  the request for the endpoint to calculate the points.  An application might call this endpoint to show the points that a buyer can earn with the  specific purchase.  For spend-based and visit-based programs, the &#x60;tax_mode&#x60; setting of the accrual rule indicates how taxes should be treated for loyalty points accrual.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -1175,7 +1175,7 @@ func (a *LoyaltyApiService) SearchLoyaltyEvents(ctx context.Context, body Search
 
 /*
 LoyaltyApiService SearchLoyaltyRewards
-Searches for loyalty rewards in a loyalty account.   In the current implementation, the endpoint supports search by the reward &#x60;status&#x60;.  If you know a reward ID, use the  [RetrieveLoyaltyReward](api-endpoint:Loyalty-RetrieveLoyaltyReward) endpoint.  Search results are sorted by &#x60;updated_at&#x60; in descending order.
+Searches for loyalty rewards. This endpoint accepts a request with no query filters and returns results for all loyalty accounts.  If you include a &#x60;query&#x60; object, &#x60;loyalty_account_id&#x60; is required and &#x60;status&#x60; is  optional.  If you know a reward ID, use the  [RetrieveLoyaltyReward](api-endpoint:Loyalty-RetrieveLoyaltyReward) endpoint.  Search results are sorted by &#x60;updated_at&#x60; in descending order.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

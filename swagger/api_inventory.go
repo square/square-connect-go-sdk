@@ -12,11 +12,12 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -295,7 +296,7 @@ func (a *InventoryApiService) BatchRetrieveInventoryCounts(ctx context.Context, 
 
 /*
 InventoryApiService DeprecatedBatchChangeInventory
-Deprecated version of [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory) after the endpoint URL is updated to conform to the standard convention.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -384,7 +385,7 @@ func (a *InventoryApiService) DeprecatedBatchChangeInventory(ctx context.Context
 
 /*
 InventoryApiService DeprecatedBatchRetrieveInventoryChanges
-Deprecated version of [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges) after the endpoint URL is updated to conform to the standard convention.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -473,7 +474,7 @@ func (a *InventoryApiService) DeprecatedBatchRetrieveInventoryChanges(ctx contex
 
 /*
 InventoryApiService DeprecatedBatchRetrieveInventoryCounts
-Deprecated version of [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts) after the endpoint URL is updated to conform to the standard convention.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -562,7 +563,7 @@ func (a *InventoryApiService) DeprecatedBatchRetrieveInventoryCounts(ctx context
 
 /*
 InventoryApiService DeprecatedRetrieveInventoryAdjustment
-Deprecated version of [RetrieveInventoryAdjustment](api-endpoint:Inventory-RetrieveInventoryAdjustment) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [RetrieveInventoryAdjustment](api-endpoint:Inventory-RetrieveInventoryAdjustment) after the endpoint URL is updated to conform to the standard convention.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param adjustmentId ID of the [InventoryAdjustment](entity:InventoryAdjustment) to retrieve.
 @return RetrieveInventoryAdjustmentResponse
@@ -648,7 +649,7 @@ func (a *InventoryApiService) DeprecatedRetrieveInventoryAdjustment(ctx context.
 
 /*
 InventoryApiService DeprecatedRetrieveInventoryPhysicalCount
-Deprecated version of [RetrieveInventoryPhysicalCount](api-endpoint:Inventory-RetrieveInventoryPhysicalCount) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [RetrieveInventoryPhysicalCount](api-endpoint:Inventory-RetrieveInventoryPhysicalCount) after the endpoint URL is updated to conform to the standard convention.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param physicalCountId ID of the [InventoryPhysicalCount](entity:InventoryPhysicalCount) to retrieve.
 @return RetrieveInventoryPhysicalCountResponse
@@ -820,7 +821,7 @@ func (a *InventoryApiService) RetrieveInventoryAdjustment(ctx context.Context, a
 
 /*
 InventoryApiService RetrieveInventoryChanges
-Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](entity:CatalogObject) at the requested [Location](entity:Location)s.   You can achieve the same result by calling [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges)  and having the &#x60;catalog_object_ids&#x60; list contain a single element of the &#x60;CatalogObject&#x60; ID.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be  used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
+Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](entity:CatalogObject) at the requested [Location](entity:Location)s.  You can achieve the same result by calling [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges) and having the &#x60;catalog_object_ids&#x60; list contain a single element of the &#x60;CatalogObject&#x60; ID.  Results are paginated and sorted in descending order according to their &#x60;occurred_at&#x60; timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param catalogObjectId ID of the [CatalogObject](entity:CatalogObject) to retrieve.
  * @param optional nil or *InventoryApiRetrieveInventoryChangesOpts - Optional Parameters:

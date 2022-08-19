@@ -20,6 +20,7 @@ type CatalogDiscount struct {
 	// Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment in the Square Point of Sale app.
 	PinRequired bool `json:"pin_required,omitempty"`
 	// The color of the discount display label in the Square Point of Sale app. This must be a valid hex color code.
-	LabelColor     string                         `json:"label_color,omitempty"`
-	ModifyTaxBasis *CatalogDiscountModifyTaxBasis `json:"modify_tax_basis,omitempty"`
+	LabelColor         string                         `json:"label_color,omitempty"`
+	ModifyTaxBasis     *CatalogDiscountModifyTaxBasis `json:"modify_tax_basis,omitempty"`
+	MaximumAmountMoney *Money                         `json:"maximum_amount_money,omitempty"`
 }

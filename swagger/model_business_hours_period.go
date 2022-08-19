@@ -12,8 +12,8 @@ package swagger
 // Represents a period of time during which a business location is open.
 type BusinessHoursPeriod struct {
 	DayOfWeek *DayOfWeek `json:"day_of_week,omitempty"`
-	// The start time of a business hours period, specified in local time using partial-time RFC 3339 format.
+	// The start time of a business hours period, specified in local time using partial-time RFC 3339 format. For example, `8:30:00` for a period starting at 8:30 in the morning. Note that the seconds value is always :00, but it is appended for conformance to the RFC.
 	StartLocalTime string `json:"start_local_time,omitempty"`
-	// The end time of a business hours period, specified in local time using partial-time RFC 3339 format.
+	// The end time of a business hours period, specified in local time using partial-time RFC 3339 format. For example, `21:00:00` for a period ending at 9:00 in the evening. Note that the seconds value is always :00, but it is appended for conformance to the RFC.
 	EndLocalTime string `json:"end_local_time,omitempty"`
 }

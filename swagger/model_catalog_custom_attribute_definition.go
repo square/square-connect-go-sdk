@@ -24,7 +24,7 @@ type CatalogCustomAttributeDefinition struct {
 	StringConfig       *CatalogCustomAttributeDefinitionStringConfig     `json:"string_config,omitempty"`
 	NumberConfig       *CatalogCustomAttributeDefinitionNumberConfig     `json:"number_config,omitempty"`
 	SelectionConfig    *CatalogCustomAttributeDefinitionSelectionConfig  `json:"selection_config,omitempty"`
-	// __Read-only.__ The number of custom attributes that reference this custom attribute definition. Set by the server in response to a ListCatalog request with `include_counts` set to `true`.  If the actual count is greater than 100, `custom_attribute_usage_count` will be set to `100`.
+	// The number of custom attributes that reference this custom attribute definition. Set by the server in response to a ListCatalog request with `include_counts` set to `true`.  If the actual count is greater than 100, `custom_attribute_usage_count` will be set to `100`.
 	CustomAttributeUsageCount int32 `json:"custom_attribute_usage_count,omitempty"`
 	// The name of the desired custom attribute key that can be used to access the custom attribute value on catalog objects. Cannot be modified after the custom attribute definition has been created. Must be between 1 and 60 characters, and may only contain the characters `[a-zA-Z0-9_-]`.
 	Key string `json:"key,omitempty"`

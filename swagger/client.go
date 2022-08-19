@@ -59,6 +59,8 @@ type APIClient struct {
 
 	CheckoutApi *CheckoutApiService
 
+	CustomerCustomAttributesApi *CustomerCustomAttributesApiService
+
 	CustomerGroupsApi *CustomerGroupsApiService
 
 	CustomerSegmentsApi *CustomerSegmentsApiService
@@ -95,9 +97,9 @@ type APIClient struct {
 
 	PaymentsApi *PaymentsApiService
 
-	RefundsApi *RefundsApiService
+	PayoutsApi *PayoutsApiService
 
-	ReportingApi *ReportingApiService
+	RefundsApi *RefundsApiService
 
 	SitesApi *SitesApiService
 
@@ -116,6 +118,8 @@ type APIClient struct {
 	V1TransactionsApi *V1TransactionsApiService
 
 	V1WebhooksApi *V1WebhooksApiService
+
+	VendorsApi *VendorsApiService
 }
 
 type service struct {
@@ -141,6 +145,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CashDrawersApi = (*CashDrawersApiService)(&c.common)
 	c.CatalogApi = (*CatalogApiService)(&c.common)
 	c.CheckoutApi = (*CheckoutApiService)(&c.common)
+	c.CustomerCustomAttributesApi = (*CustomerCustomAttributesApiService)(&c.common)
 	c.CustomerGroupsApi = (*CustomerGroupsApiService)(&c.common)
 	c.CustomerSegmentsApi = (*CustomerSegmentsApiService)(&c.common)
 	c.CustomersApi = (*CustomersApiService)(&c.common)
@@ -159,8 +164,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.OAuthApi = (*OAuthApiService)(&c.common)
 	c.OrdersApi = (*OrdersApiService)(&c.common)
 	c.PaymentsApi = (*PaymentsApiService)(&c.common)
+	c.PayoutsApi = (*PayoutsApiService)(&c.common)
 	c.RefundsApi = (*RefundsApiService)(&c.common)
-	c.ReportingApi = (*ReportingApiService)(&c.common)
 	c.SitesApi = (*SitesApiService)(&c.common)
 	c.SnippetsApi = (*SnippetsApiService)(&c.common)
 	c.SubscriptionsApi = (*SubscriptionsApiService)(&c.common)
@@ -170,6 +175,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.V1BatchingApi = (*V1BatchingApiService)(&c.common)
 	c.V1TransactionsApi = (*V1TransactionsApiService)(&c.common)
 	c.V1WebhooksApi = (*V1WebhooksApiService)(&c.common)
+	c.VendorsApi = (*VendorsApiService)(&c.common)
 
 	return c
 }

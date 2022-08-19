@@ -9,7 +9,7 @@
  */
 package swagger
 
-// BusinessAppointmentSettingsBookingLocationType : Types of location where service is provided.
+// BusinessAppointmentSettingsBookingLocationType : Supported types of location where service is provided.
 type BusinessAppointmentSettingsBookingLocationType string
 
 // List of BusinessAppointmentSettingsBookingLocationType

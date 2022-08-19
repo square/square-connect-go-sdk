@@ -10,10 +10,10 @@
 package swagger
 
 type ListTeamMemberBookingProfilesResponse struct {
-	// The list of team member booking profiles.
+	// The list of team member booking profiles. The results are returned in the ascending order of the time when the team member booking profiles were last updated. Multiple booking profiles updated at the same time are further sorted in the ascending order of their IDs.
 	TeamMemberBookingProfiles []TeamMemberBookingProfile `json:"team_member_booking_profiles,omitempty"`
-	// The cursor for paginating through the results.
+	// The pagination cursor to be used in the subsequent request to get the next page of the results. Stop retrieving the next page of the results when the cursor is not set.
 	Cursor string `json:"cursor,omitempty"`
-	// Any errors that occurred during the request.
+	// Errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

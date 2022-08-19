@@ -17,4 +17,6 @@ const (
 	SERVICE_CHARGE_CALCULATION_PHASE_DO_NOT_USE_OrderServiceChargeCalculationPhase OrderServiceChargeCalculationPhase = "SERVICE_CHARGE_CALCULATION_PHASE_DO_NOT_USE"
 	SUBTOTAL_PHASE_OrderServiceChargeCalculationPhase                              OrderServiceChargeCalculationPhase = "SUBTOTAL_PHASE"
 	TOTAL_PHASE_OrderServiceChargeCalculationPhase                                 OrderServiceChargeCalculationPhase = "TOTAL_PHASE"
+	APPORTIONED_PERCENTAGE_PHASE_OrderServiceChargeCalculationPhase                OrderServiceChargeCalculationPhase = "APPORTIONED_PERCENTAGE_PHASE"
+	APPORTIONED_AMOUNT_PHASE_OrderServiceChargeCalculationPhase                    OrderServiceChargeCalculationPhase = "APPORTIONED_AMOUNT_PHASE"
 )

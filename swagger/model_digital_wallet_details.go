@@ -13,4 +13,7 @@ package swagger
 type DigitalWalletDetails struct {
 	// The status of the `WALLET` payment. The status can be `AUTHORIZED`, `CAPTURED`, `VOIDED`, or `FAILED`.
 	Status string `json:"status,omitempty"`
+	// The brand used for the `WALLET` payment. The brand can be `CASH_APP` or `UNKNOWN`.
+	Brand          string          `json:"brand,omitempty"`
+	CashAppDetails *CashAppDetails `json:"cash_app_details,omitempty"`
 }

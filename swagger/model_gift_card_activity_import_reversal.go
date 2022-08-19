@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Present only when GiftCardActivityType is IMPORT_REVERSAL and GiftCardGANSource is OTHER
+// Represents details about an `IMPORT_REVERSAL` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityImportReversal struct {
 	AmountMoney *Money `json:"amount_money"`
 }

@@ -28,4 +28,6 @@ type ObtainTokenResponse struct {
 	RefreshToken string `json:"refresh_token,omitempty"`
 	// A Boolean indicating that the access token is a short-lived access token. The short-lived access token returned in the response expires in 24 hours.
 	ShortLived bool `json:"short_lived,omitempty"`
+	// Any errors that occurred during the request.
+	Errors []ModelError `json:"errors,omitempty"`
 }
