@@ -40,4 +40,5 @@ const (
 	RESOURCE_CatalogObjectType                       CatalogObjectType = "RESOURCE"
 	CHECKOUT_LINK_CatalogObjectType                  CatalogObjectType = "CHECKOUT_LINK"
 	ADDRESS_CatalogObjectType                        CatalogObjectType = "ADDRESS"
+	SUBSCRIPTION_PRODUCT_CatalogObjectType           CatalogObjectType = "SUBSCRIPTION_PRODUCT"
 )

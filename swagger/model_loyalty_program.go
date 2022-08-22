@@ -19,11 +19,11 @@ type LoyaltyProgram struct {
 	ExpirationPolicy *LoyaltyProgramExpirationPolicy `json:"expiration_policy,omitempty"`
 	Terminology      *LoyaltyProgramTerminology      `json:"terminology"`
 	// The [locations](entity:Location) at which the program is active.
-	LocationIds []string `json:"location_ids"`
+	LocationIds []string `json:"location_ids,omitempty"`
 	// The timestamp when the program was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at"`
 	// The timestamp when the reward was last updated, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at"`
-	// Defines how buyers can earn loyalty points.
+	// Defines how buyers can earn loyalty points from the base loyalty program. To check for associated [loyalty promotions](entity:LoyaltyPromotion) that enable buyers to earn extra points, call [ListLoyaltyPromotions](api-endpoint:Loyalty-ListLoyaltyPromotions).
 	AccrualRules []LoyaltyProgramAccrualRule `json:"accrual_rules"`
 }

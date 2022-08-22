@@ -16,6 +16,6 @@ type AdditionalRecipient struct {
 	// The description of the additional recipient.
 	Description string `json:"description,omitempty"`
 	AmountMoney *Money `json:"amount_money"`
-	// The unique ID for this [AdditionalRecipientReceivable](entity:AdditionalRecipientReceivable), assigned by the server.
+	// The unique ID for the RETIRED `AdditionalRecipientReceivable` object. This field should be empty for any `AdditionalRecipient` objects created after the retirement.
 	ReceivableId string `json:"receivable_id,omitempty"`
 }

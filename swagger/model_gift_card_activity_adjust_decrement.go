@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a gift card activity of the ADJUST_DECREMENT type.
+// Represents details about an `ADJUST_DECREMENT` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityAdjustDecrement struct {
 	AmountMoney *Money                                 `json:"amount_money"`
 	Reason      *GiftCardActivityAdjustDecrementReason `json:"reason"`

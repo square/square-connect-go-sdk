@@ -9,10 +9,12 @@
  */
 package swagger
 
-// A response that includes the points that the buyer can earn from  a specified purchase.
+// Represents a [CalculateLoyaltyPoints](api-endpoint:Loyalty-CalculateLoyaltyPoints) response.
 type CalculateLoyaltyPointsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
-	// The points that the buyer can earn from a specified purchase.
+	// The number of points that the buyer can earn from the base loyalty program.
 	Points int32 `json:"points,omitempty"`
+	// The number of points that the buyer can earn from a loyalty promotion. To be eligible to earn promotion points, the purchase must first qualify for program points. When `order_id` is not provided in the request, this value is always 0.
+	PromotionPoints int32 `json:"promotion_points,omitempty"`
 }

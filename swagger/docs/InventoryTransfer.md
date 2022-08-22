@@ -9,12 +9,13 @@ Name | Type | Description | Notes
 **FromLocationId** | **string** | The Square-generated ID of the [Location](entity:Location) where the related quantity of items was tracked before the transfer. | [optional] [default to null]
 **ToLocationId** | **string** | The Square-generated ID of the [Location](entity:Location) where the related quantity of items was tracked after the transfer. | [optional] [default to null]
 **CatalogObjectId** | **string** | The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked. | [optional] [default to null]
-**CatalogObjectType** | **string** | The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.Tracking is only supported for the &#x60;ITEM_VARIATION&#x60; type. | [optional] [default to null]
+**CatalogObjectType** | **string** | The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.   The Inventory API supports setting and reading the &#x60;\&quot;catalog_object_type\&quot;: \&quot;ITEM_VARIATION\&quot;&#x60; field value.  In addition, it can also read the &#x60;\&quot;catalog_object_type\&quot;: \&quot;ITEM\&quot;&#x60; field value that is set by the Square Restaurants app. | [optional] [default to null]
 **Quantity** | **string** | The number of items affected by the transfer as a decimal string. Can support up to 5 digits after the decimal point. | [optional] [default to null]
 **OccurredAt** | **string** | A client-generated RFC 3339-formatted timestamp that indicates when the transfer took place. For write actions, the &#x60;occurred_at&#x60; timestamp cannot be older than 24 hours or in the future relative to the time of the request. | [optional] [default to null]
 **CreatedAt** | **string** | An RFC 3339-formatted timestamp that indicates when Square received the transfer request. | [optional] [default to null]
 **Source** | [***SourceApplication**](SourceApplication.md) |  | [optional] [default to null]
 **EmployeeId** | **string** | The Square-generated ID of the [Employee](entity:Employee) responsible for the inventory transfer. | [optional] [default to null]
+**TeamMemberId** | **string** | The Square-generated ID of the [Team Member](entity:TeamMember) responsible for the inventory transfer. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

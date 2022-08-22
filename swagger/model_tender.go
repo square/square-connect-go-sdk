@@ -11,7 +11,7 @@ package swagger
 
 // Represents a tender (i.e., a method of payment) used in a Square transaction.
 type Tender struct {
-	// The tender's unique ID.
+	// The tender's unique ID. It is the associated payment ID.
 	Id string `json:"id,omitempty"`
 	// The ID of the transaction's associated location.
 	LocationId string `json:"location_id,omitempty"`

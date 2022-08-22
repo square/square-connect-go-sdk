@@ -9,13 +9,13 @@
  */
 package swagger
 
-// Present only when `GiftCardActivityType` is REFUND.
+// Represents details about a `REFUND` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityRefund struct {
-	// The ID for the Redeem activity that needs to be refunded. Hence, the activity it refers to has to be of the REDEEM type.
-	RedeemActivityId string `json:"redeem_activity_id"`
+	// The ID of the refunded `REDEEM` gift card activity. Square populates this field if the  `payment_id` in the corresponding [RefundPayment](api-endpoint:Refunds-RefundPayment) request  represents a redemption made by the same gift card. Note that you must use `RefundPayment`  to refund a gift card payment to the same gift card if the payment was processed by Square.  For applications that use a custom payment processing system, this field is required when creating a `REFUND` activity. The provided `REDEEM` activity ID must be linked to the same gift card.
+	RedeemActivityId string `json:"redeem_activity_id,omitempty"`
 	AmountMoney      *Money `json:"amount_money,omitempty"`
-	// A client-specified ID to associate an entity, in another system, with this gift card activity. This can be used to track the order or payment related information when the Square Orders API is not being used.
+	// A client-specified ID that associates the gift card activity with an entity in another system.
 	ReferenceId string `json:"reference_id,omitempty"`
-	// When the Square Payments API is used, Refund is not called on the Gift Cards API. However, when Square reads a Refund activity from the Gift Cards API, the developer needs to know the ID of the payment (made using this gift card) that is being refunded.
+	// The ID of the refunded payment. Square populates this field if the refund is for a  payment processed by Square and one of the following conditions is true:  - The Refunds API is used to refund a gift card payment to the same gift card. - A seller initiated the refund from Square Point of Sale or the Seller Dashboard. The payment source can be the  same gift card or a cross-tender payment from a credit card or a different gift card.
 	PaymentId string `json:"payment_id,omitempty"`
 }

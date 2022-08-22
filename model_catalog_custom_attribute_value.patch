@@ -1,14 +1,14 @@
---- original/model_catalog_custom_attribute_value.go	2021-03-25 16:53:52.000000000 -0700
-+++ model_catalog_custom_attribute_value.go	2021-03-25 16:54:18.000000000 -0700
+--- original/model_catalog_custom_attribute_value.go	2022-08-11 11:33:49.000000000 -0700
++++ model_catalog_custom_attribute_value.go	2022-08-19 12:48:21.000000000 -0700
 @@ -14,16 +14,16 @@
  	// The name of the custom attribute.
  	Name string `json:"name,omitempty"`
  	// The string value of the custom attribute.  Populated if `type` = `STRING`.
 -	StringValue string `json:"string_value,omitempty"`
 +	StringValue *string `json:"string_value,omitempty"`
- 	// __Read-only.__ The id of the [CatalogCustomAttributeDefinition](entity:CatalogCustomAttributeDefinition) this value belongs to.
- 	CustomAttributeDefinitionId string `json:"custom_attribute_definition_id,omitempty"`
- 	Type_ *CatalogCustomAttributeDefinitionType `json:"type,omitempty"`
+ 	// The id of the [CatalogCustomAttributeDefinition](entity:CatalogCustomAttributeDefinition) this value belongs to.
+ 	CustomAttributeDefinitionId string                                `json:"custom_attribute_definition_id,omitempty"`
+ 	Type_                       *CatalogCustomAttributeDefinitionType `json:"type,omitempty"`
  	// Populated if `type` = `NUMBER`. Contains a string representation of a decimal number, using a `.` as the decimal separator.
 -	NumberValue string `json:"number_value,omitempty"`
 +	NumberValue *string `json:"number_value,omitempty"`
@@ -18,6 +18,5 @@
  	// One or more choices from `allowed_selections`. Populated if `type` = `SELECTION`.
 -	SelectionUidValues []string `json:"selection_uid_values,omitempty"`
 +	SelectionUidValues *[]string `json:"selection_uid_values,omitempty"`
- 	// __Read-only.__ A copy of key from the associated `CatalogCustomAttributeDefinition`.
+ 	// A copy of key from the associated `CatalogCustomAttributeDefinition`.
  	Key string `json:"key,omitempty"`
- }

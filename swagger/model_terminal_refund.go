@@ -9,6 +9,7 @@
  */
 package swagger
 
+// Represents a payment refund processed by the Square Terminal. Only supports Interac (Canadian debit network) payment refunds.
 type TerminalRefund struct {
 	// A unique ID for this `TerminalRefund`.
 	Id string `json:"id,omitempty"`
@@ -19,13 +20,13 @@ type TerminalRefund struct {
 	// The reference to the Square order ID for the payment identified by the `payment_id`.
 	OrderId     string `json:"order_id,omitempty"`
 	AmountMoney *Money `json:"amount_money"`
-	// A description of the reason for the refund. Note: maximum 192 characters
-	Reason string `json:"reason,omitempty"`
+	// A description of the reason for the refund.
+	Reason string `json:"reason"`
 	// The unique ID of the device intended for this `TerminalRefund`. The Id can be retrieved from /v2/devices api.
-	DeviceId string `json:"device_id,omitempty"`
+	DeviceId string `json:"device_id"`
 	// The RFC 3339 duration, after which the refund is automatically canceled. A `TerminalRefund` that is `PENDING` is automatically `CANCELED` and has a cancellation reason of `TIMED_OUT`.  Default: 5 minutes from creation.  Maximum: 5 minutes
 	DeadlineDuration string `json:"deadline_duration,omitempty"`
-	// The status of the `TerminalRefund`. Options: `PENDING`, `IN_PROGRESS`, `CANCELED`, or `COMPLETED`.
+	// The status of the `TerminalRefund`. Options: `PENDING`, `IN_PROGRESS`, `CANCEL_REQUESTED`, `CANCELED`, or `COMPLETED`.
 	Status       string              `json:"status,omitempty"`
 	CancelReason *ActionCancelReason `json:"cancel_reason,omitempty"`
 	// The time when the `TerminalRefund` was created, as an RFC 3339 timestamp.

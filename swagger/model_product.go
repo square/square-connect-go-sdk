@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Product : Indicates the Square product used to generate an inventory change.
+// Product : Indicates the Square product used to generate a change.
 type Product string
 
 // List of Product
@@ -24,5 +24,8 @@ const (
 	PAYROLL_Product             Product = "PAYROLL"
 	DASHBOARD_Product           Product = "DASHBOARD"
 	ITEM_LIBRARY_IMPORT_Product Product = "ITEM_LIBRARY_IMPORT"
+	RETAIL_Product              Product = "RETAIL"
+	RESTAURANT_Product          Product = "RESTAURANT"
+	CUSTOMERS_DIRECTORY_Product Product = "CUSTOMERS_DIRECTORY"
 	OTHER_Product               Product = "OTHER"
 )

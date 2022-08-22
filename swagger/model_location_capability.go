@@ -9,7 +9,7 @@
  */
 package swagger
 
-// LocationCapability : The capabilities a location may have.
+// LocationCapability : The capabilities a location might have.
 type LocationCapability string
 
 // List of LocationCapability

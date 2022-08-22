@@ -9,7 +9,7 @@
  */
 package swagger
 
-// An object that contains the GiftCardActivity associated with the webhook event.
+// An object that contains the gift card activity associated with a  `gift_card.activity.created` webhook event.
 type GiftCardActivityCreatedWebhookObject struct {
 	GiftCardActivity *GiftCardActivity `json:"gift_card_activity,omitempty"`
 }

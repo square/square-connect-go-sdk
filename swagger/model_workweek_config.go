@@ -14,7 +14,7 @@ type WorkweekConfig struct {
 	// The UUID for this object.
 	Id          string   `json:"id,omitempty"`
 	StartOfWeek *Weekday `json:"start_of_week"`
-	// The local time at which a business week ends. Represented as a string in `HH:MM` format (`HH:MM:SS` is also accepted, but seconds are truncated).
+	// The local time at which a business week starts. Represented as a string in `HH:MM` format (`HH:MM:SS` is also accepted, but seconds are truncated).
 	StartOfDayLocalTime string `json:"start_of_day_local_time"`
 	// Used for resolving concurrency issues. The request fails if the version provided does not match the server version at the time of the request. If not provided, Square executes a blind write; potentially overwriting data from another write.
 	Version int32 `json:"version,omitempty"`

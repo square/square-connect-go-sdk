@@ -7,13 +7,17 @@ Method | HTTP request | Description
 [**AccumulateLoyaltyPoints**](LoyaltyApi.md#AccumulateLoyaltyPoints) | **Post** /v2/loyalty/accounts/{account_id}/accumulate | AccumulateLoyaltyPoints
 [**AdjustLoyaltyPoints**](LoyaltyApi.md#AdjustLoyaltyPoints) | **Post** /v2/loyalty/accounts/{account_id}/adjust | AdjustLoyaltyPoints
 [**CalculateLoyaltyPoints**](LoyaltyApi.md#CalculateLoyaltyPoints) | **Post** /v2/loyalty/programs/{program_id}/calculate | CalculateLoyaltyPoints
+[**CancelLoyaltyPromotion**](LoyaltyApi.md#CancelLoyaltyPromotion) | **Post** /v2/loyalty/programs/{program_id}/promotions/{promotion_id}/cancel | CancelLoyaltyPromotion
 [**CreateLoyaltyAccount**](LoyaltyApi.md#CreateLoyaltyAccount) | **Post** /v2/loyalty/accounts | CreateLoyaltyAccount
+[**CreateLoyaltyPromotion**](LoyaltyApi.md#CreateLoyaltyPromotion) | **Post** /v2/loyalty/programs/{program_id}/promotions | CreateLoyaltyPromotion
 [**CreateLoyaltyReward**](LoyaltyApi.md#CreateLoyaltyReward) | **Post** /v2/loyalty/rewards | CreateLoyaltyReward
 [**DeleteLoyaltyReward**](LoyaltyApi.md#DeleteLoyaltyReward) | **Delete** /v2/loyalty/rewards/{reward_id} | DeleteLoyaltyReward
 [**ListLoyaltyPrograms**](LoyaltyApi.md#ListLoyaltyPrograms) | **Get** /v2/loyalty/programs | ListLoyaltyPrograms
+[**ListLoyaltyPromotions**](LoyaltyApi.md#ListLoyaltyPromotions) | **Get** /v2/loyalty/programs/{program_id}/promotions | ListLoyaltyPromotions
 [**RedeemLoyaltyReward**](LoyaltyApi.md#RedeemLoyaltyReward) | **Post** /v2/loyalty/rewards/{reward_id}/redeem | RedeemLoyaltyReward
 [**RetrieveLoyaltyAccount**](LoyaltyApi.md#RetrieveLoyaltyAccount) | **Get** /v2/loyalty/accounts/{account_id} | RetrieveLoyaltyAccount
 [**RetrieveLoyaltyProgram**](LoyaltyApi.md#RetrieveLoyaltyProgram) | **Get** /v2/loyalty/programs/{program_id} | RetrieveLoyaltyProgram
+[**RetrieveLoyaltyPromotion**](LoyaltyApi.md#RetrieveLoyaltyPromotion) | **Get** /v2/loyalty/programs/{program_id}/promotions/{promotion_id} | RetrieveLoyaltyPromotion
 [**RetrieveLoyaltyReward**](LoyaltyApi.md#RetrieveLoyaltyReward) | **Get** /v2/loyalty/rewards/{reward_id} | RetrieveLoyaltyReward
 [**SearchLoyaltyAccounts**](LoyaltyApi.md#SearchLoyaltyAccounts) | **Post** /v2/loyalty/accounts/search | SearchLoyaltyAccounts
 [**SearchLoyaltyEvents**](LoyaltyApi.md#SearchLoyaltyEvents) | **Post** /v2/loyalty/events/search | SearchLoyaltyEvents
@@ -23,7 +27,7 @@ Method | HTTP request | Description
 > AccumulateLoyaltyPointsResponse AccumulateLoyaltyPoints(ctx, body, accountId)
 AccumulateLoyaltyPoints
 
-Adds points to a loyalty account.  - If you are using the Orders API to manage orders, you only provide the `order_id`.  The endpoint reads the order to compute points to add to the buyer's account. - If you are not using the Orders API to manage orders,  you first perform a client-side computation to compute the points.   For spend-based and visit-based programs, you can first call  [CalculateLoyaltyPoints](api-endpoint:Loyalty-CalculateLoyaltyPoints) to compute the points   that you provide to this endpoint.   __Note:__ The country of the seller's Square account determines whether tax is included in the purchase amount when accruing points for spend-based and visit-based programs.  For more information, see [Availability of Square Loyalty](https://developer.squareup.com/docs/loyalty-api/overview#loyalty-market-availability).
+Adds points earned from a purchase to a [loyalty account](entity:LoyaltyAccount).  - If you are using the Orders API to manage orders, provide the `order_id`. Square reads the order to compute the points earned from both the base loyalty program and an associated [loyalty promotion](entity:LoyaltyPromotion). For purchases that qualify for multiple accrual rules, Square computes points based on the accrual rule that grants the most points. For purchases that qualify for multiple promotions, Square computes points based on the most recently created promotion. A purchase must first qualify for program points to be eligible for promotion points.  - If you are not using the Orders API to manage orders, provide `points` with the number of points to add. You must first perform a client-side computation of the points earned from the loyalty program and loyalty promotion. For spend-based and visit-based programs, you can call [CalculateLoyaltyPoints](api-endpoint:Loyalty-CalculateLoyaltyPoints) to compute the points earned from the loyalty program (but not points earned from a loyalty promotion).
 
 ### Required Parameters
 
@@ -33,7 +37,7 @@ Name | Type | Description  | Notes
   **body** | [**AccumulateLoyaltyPointsRequest**](AccumulateLoyaltyPointsRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **accountId** | **string**| The [loyalty account](entity:LoyaltyAccount) ID to which to add the points. | 
+  **accountId** | **string**| The ID of the target [loyalty account](entity:LoyaltyAccount). | 
 
 ### Return type
 
@@ -64,7 +68,7 @@ Name | Type | Description  | Notes
   **body** | [**AdjustLoyaltyPointsRequest**](AdjustLoyaltyPointsRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **accountId** | **string**| The ID of the [loyalty account](entity:LoyaltyAccount) in which to adjust the points. | 
+  **accountId** | **string**| The ID of the target [loyalty account](entity:LoyaltyAccount). | 
 
 ### Return type
 
@@ -85,7 +89,7 @@ See the corresponding object definition for field details. |
 > CalculateLoyaltyPointsResponse CalculateLoyaltyPoints(ctx, body, programId)
 CalculateLoyaltyPoints
 
-Calculates the points a purchase earns.  - If you are using the Orders API to manage orders, you provide `order_id` in the request. The  endpoint calculates the points by reading the order. - If you are not using the Orders API to manage orders, you provide the purchase amount in  the request for the endpoint to calculate the points.  An application might call this endpoint to show the points that a buyer can earn with the  specific purchase.  __Note:__ The country of the seller's Square account determines whether tax is included in the purchase amount when accruing points for spend-based and visit-based programs.  For more information, see [Availability of Square Loyalty](https://developer.squareup.com/docs/loyalty-api/overview#loyalty-market-availability).
+Calculates the number of points a buyer can earn from a purchase. Applications might call this endpoint to display the points to the buyer.  - If you are using the Orders API to manage orders, provide the `order_id` and (optional) `loyalty_account_id`. Square reads the order to compute the points earned from the base loyalty program and an associated [loyalty promotion](entity:LoyaltyPromotion).  - If you are not using the Orders API to manage orders, provide `transaction_amount_money` with the purchase amount. Square uses this amount to calculate the points earned from the base loyalty program, but not points earned from a loyalty promotion. For spend-based and visit-based programs, the `tax_mode` setting of the accrual rule indicates how taxes should be treated for loyalty points accrual. If the purchase qualifies for program points, call [ListLoyaltyPromotions](api-endpoint:Loyalty-ListLoyaltyPromotions) and perform a client-side computation to calculate whether the purchase also qualifies for promotion points. For more information, see [Calculating promotion points](https://developer.squareup.com/docs/loyalty-api/loyalty-promotions#calculate-promotion-points).
 
 ### Required Parameters
 
@@ -95,7 +99,7 @@ Name | Type | Description  | Notes
   **body** | [**CalculateLoyaltyPointsRequest**](CalculateLoyaltyPointsRequest.md)| An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details. | 
-  **programId** | **string**| The [loyalty program](entity:LoyaltyProgram) ID, which defines the rules for accruing points. | 
+  **programId** | **string**| The ID of the [loyalty program](entity:LoyaltyProgram), which defines the rules for accruing points. | 
 
 ### Return type
 
@@ -108,6 +112,35 @@ See the corresponding object definition for field details. |
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CancelLoyaltyPromotion**
+> CancelLoyaltyPromotionResponse CancelLoyaltyPromotion(ctx, promotionId, programId)
+CancelLoyaltyPromotion
+
+Cancels a loyalty promotion. Use this endpoint to cancel an `ACTIVE` promotion earlier than the end date, cancel an `ACTIVE` promotion when an end date is not specified, or cancel a `SCHEDULED` promotion. Because updating a promotion is not supported, you can also use this endpoint to cancel a promotion before you create a new one.  This endpoint sets the loyalty promotion to the `CANCELED` state
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **promotionId** | **string**| The ID of the [loyalty promotion](entity:LoyaltyPromotion) to cancel. You can cancel a promotion that has an &#x60;ACTIVE&#x60; or &#x60;SCHEDULED&#x60; status. | 
+  **programId** | **string**| The ID of the base [loyalty program](entity:LoyaltyProgram). | 
+
+### Return type
+
+[**CancelLoyaltyPromotionResponse**](CancelLoyaltyPromotionResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -130,6 +163,37 @@ See the corresponding object definition for field details. |
 ### Return type
 
 [**CreateLoyaltyAccountResponse**](CreateLoyaltyAccountResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CreateLoyaltyPromotion**
+> CreateLoyaltyPromotionResponse CreateLoyaltyPromotion(ctx, body, programId)
+CreateLoyaltyPromotion
+
+Creates a loyalty promotion for a [loyalty program](entity:LoyaltyProgram). A loyalty promotion enables buyers to earn points in addition to those earned from the base loyalty program.  This endpoint sets the loyalty promotion to the `ACTIVE` or `SCHEDULED` status, depending on the `available_time` setting. A loyalty program can have a maximum of 10 loyalty promotions with an `ACTIVE` or `SCHEDULED` status.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**CreateLoyaltyPromotionRequest**](CreateLoyaltyPromotionRequest.md)| An object containing the fields to POST for the request.
+
+See the corresponding object definition for field details. | 
+  **programId** | **string**| The ID of the [loyalty program](entity:LoyaltyProgram) to associate with the promotion. To get the program ID, call [RetrieveLoyaltyProgram](api-endpoint:Loyalty-RetrieveLoyaltyProgram) using the &#x60;main&#x60; keyword. | 
+
+### Return type
+
+[**CreateLoyaltyPromotionResponse**](CreateLoyaltyPromotionResponse.md)
 
 ### Authorization
 
@@ -224,6 +288,44 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ListLoyaltyPromotions**
+> ListLoyaltyPromotionsResponse ListLoyaltyPromotions(ctx, programId, optional)
+ListLoyaltyPromotions
+
+Lists the loyalty promotions associated with a [loyalty program](entity:LoyaltyProgram). Results are sorted by the `created_at` date in descending order (newest to oldest).
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **programId** | **string**| The ID of the base [loyalty program](entity:LoyaltyProgram). To get the program ID, call [RetrieveLoyaltyProgram](api-endpoint:Loyalty-RetrieveLoyaltyProgram) using the &#x60;main&#x60; keyword. | 
+ **optional** | ***LoyaltyApiListLoyaltyPromotionsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a LoyaltyApiListLoyaltyPromotionsOpts struct
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **status** | [**optional.Interface of LoyaltyPromotionStatus**](.md)| The status to filter the results by. If a status is provided, only loyalty promotions with the specified status are returned. Otherwise, all loyalty promotions associated with the loyalty program are returned. | 
+ **cursor** | **optional.String**| The cursor returned in the paged response from the previous call to this endpoint. Provide this cursor to retrieve the next page of results for your original request. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). | 
+ **limit** | **optional.Int32**| The maximum number of results to return in a single paged response. The minimum value is 1 and the maximum value is 30. The default value is 30. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination). | 
+
+### Return type
+
+[**ListLoyaltyPromotionsResponse**](ListLoyaltyPromotionsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **RedeemLoyaltyReward**
 > RedeemLoyaltyRewardResponse RedeemLoyaltyReward(ctx, body, rewardId)
 RedeemLoyaltyReward
@@ -299,6 +401,35 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RetrieveLoyaltyProgramResponse**](RetrieveLoyaltyProgramResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **RetrieveLoyaltyPromotion**
+> RetrieveLoyaltyPromotionResponse RetrieveLoyaltyPromotion(ctx, promotionId, programId)
+RetrieveLoyaltyPromotion
+
+Retrieves a loyalty promotion.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **promotionId** | **string**| The ID of the [loyalty promotion](entity:LoyaltyPromotion) to retrieve. | 
+  **programId** | **string**| The ID of the base [loyalty program](entity:LoyaltyProgram). To get the program ID, call [RetrieveLoyaltyProgram](api-endpoint:Loyalty-RetrieveLoyaltyProgram) using the &#x60;main&#x60; keyword. | 
+
+### Return type
+
+[**RetrieveLoyaltyPromotionResponse**](RetrieveLoyaltyPromotionResponse.md)
 
 ### Authorization
 
@@ -403,7 +534,7 @@ See the corresponding object definition for field details. |
 > SearchLoyaltyRewardsResponse SearchLoyaltyRewards(ctx, body)
 SearchLoyaltyRewards
 
-Searches for loyalty rewards in a loyalty account.   In the current implementation, the endpoint supports search by the reward `status`.  If you know a reward ID, use the  [RetrieveLoyaltyReward](api-endpoint:Loyalty-RetrieveLoyaltyReward) endpoint.  Search results are sorted by `updated_at` in descending order.
+Searches for loyalty rewards. This endpoint accepts a request with no query filters and returns results for all loyalty accounts.  If you include a `query` object, `loyalty_account_id` is required and `status` is  optional.  If you know a reward ID, use the  [RetrieveLoyaltyReward](api-endpoint:Loyalty-RetrieveLoyaltyReward) endpoint.  Search results are sorted by `updated_at` in descending order.
 
 ### Required Parameters
 

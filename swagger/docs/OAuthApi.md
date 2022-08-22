@@ -32,6 +32,7 @@ Name | Type | Description  | Notes
  **locale** | **optional.String**| The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-IE&#x60;, &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, and &#x60;ja-JP&#x60;. | 
  **session** | **optional.Bool**| If &#x60;false&#x60;, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. This value has no effect in Sandbox. Default: &#x60;true&#x60; | [default to false]
  **state** | **optional.String**| When provided, &#x60;state&#x60; is passed to the configured redirect URL after the Permission Request form is submitted. You can include &#x60;state&#x60; and verify its value to help protect against cross-site request forgery. | 
+ **codeChallenge** | **optional.String**| When provided, the oauth flow will use PKCE to authorize. The &#x60;code_challenge&#x60; will be associated with the authorization_code and a &#x60;code_verifier&#x60; will need to passed in to obtain the access token. | 
 
 ### Return type
 

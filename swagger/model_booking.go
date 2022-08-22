@@ -16,13 +16,13 @@ type Booking struct {
 	// The revision number for the booking used for optimistic concurrency.
 	Version int32          `json:"version,omitempty"`
 	Status  *BookingStatus `json:"status,omitempty"`
-	// The timestamp specifying the creation time of this booking, in RFC 3339 format.
+	// The RFC 3339 timestamp specifying the creation time of this booking.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The timestamp specifying the most recent update time of this booking, in RFC 3339 format.
+	// The RFC 3339 timestamp specifying the most recent update time of this booking.
 	UpdatedAt string `json:"updated_at,omitempty"`
-	// The timestamp specifying the starting time of this booking, in RFC 3339 format.
+	// The RFC 3339 timestamp specifying the starting time of this booking.
 	StartAt string `json:"start_at,omitempty"`
-	// The ID of the [Location](entity:Location) object representing the location where the booked service is provided.
+	// The ID of the [Location](entity:Location) object representing the location where the booked service is provided. Once set when the booking is created, its value cannot be changed.
 	LocationId string `json:"location_id,omitempty"`
 	// The ID of the [Customer](entity:Customer) object representing the customer receiving the booked service.
 	CustomerId string `json:"customer_id,omitempty"`
@@ -32,4 +32,11 @@ type Booking struct {
 	SellerNote string `json:"seller_note,omitempty"`
 	// A list of appointment segments for this booking.
 	AppointmentSegments []AppointmentSegment `json:"appointment_segments,omitempty"`
+	// Additional time at the end of a booking. Applications should not make this field visible to customers of a seller.
+	TransitionTimeMinutes int32 `json:"transition_time_minutes,omitempty"`
+	// Whether the booking is of a full business day.
+	AllDay         bool                                            `json:"all_day,omitempty"`
+	LocationType   *BusinessAppointmentSettingsBookingLocationType `json:"location_type,omitempty"`
+	CreatorDetails *BookingCreatorDetails                          `json:"creator_details,omitempty"`
+	Source         *BookingBookingSource                           `json:"source,omitempty"`
 }

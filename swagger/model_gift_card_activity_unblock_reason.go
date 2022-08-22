@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardActivityUnblockReason : Indicates the reason for unblocking a [gift card](entity:GiftCard).
 type GiftCardActivityUnblockReason string
 
 // List of GiftCardActivityUnblockReason

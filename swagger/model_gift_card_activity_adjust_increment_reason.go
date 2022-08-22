@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardActivityAdjustIncrementReason : Indicates the reason for adding money to a [gift card](entity:GiftCard).
 type GiftCardActivityAdjustIncrementReason string
 
 // List of GiftCardActivityAdjustIncrementReason

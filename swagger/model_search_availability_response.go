@@ -10,8 +10,8 @@
 package swagger
 
 type SearchAvailabilityResponse struct {
-	// List of slots available for booking.
+	// List of appointment slots available for booking.
 	Availabilities []Availability `json:"availabilities,omitempty"`
-	// Any errors that occurred during the request.
+	// Errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

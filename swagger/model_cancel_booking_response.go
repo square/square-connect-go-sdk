@@ -11,6 +11,6 @@ package swagger
 
 type CancelBookingResponse struct {
 	Booking *Booking `json:"booking,omitempty"`
-	// Any errors that occurred during the request.
+	// Errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

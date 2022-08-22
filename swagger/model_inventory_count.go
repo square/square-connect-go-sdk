@@ -13,7 +13,7 @@ package swagger
 type InventoryCount struct {
 	// The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string          `json:"catalog_object_type,omitempty"`
 	Status            *InventoryState `json:"status,omitempty"`
 	State             *InventoryState `json:"state,omitempty"`
@@ -23,6 +23,6 @@ type InventoryCount struct {
 	Quantity string `json:"quantity,omitempty"`
 	// An RFC 3339-formatted timestamp that indicates when the most recent physical count or adjustment affecting the estimated count is received.
 	CalculatedAt string `json:"calculated_at,omitempty"`
-	// Whether the inventory count is for composed variation (TRUE) or not (FALSE). If true, the inventory count will not be present in the response of any of these endpoints: [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory),  [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges),  [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts), and  [RetrieveInventoryChanges](api-endpoint:Inventory-RetrieveInventoryChanges).
+	// Whether the inventory count is for composed variation (TRUE) or not (FALSE). If true, the inventory count will not be present in the response of any of these endpoints: [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory), [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges), [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts), and [RetrieveInventoryChanges](api-endpoint:Inventory-RetrieveInventoryChanges).
 	IsEstimated bool `json:"is_estimated,omitempty"`
 }
