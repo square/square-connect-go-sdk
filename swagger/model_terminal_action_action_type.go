@@ -25,4 +25,5 @@ const (
 	CONFIRMATION_TerminalActionActionType            TerminalActionActionType = "CONFIRMATION"
 	RECEIPT_TerminalActionActionType                 TerminalActionActionType = "RECEIPT"
 	DATA_COLLECTION_TerminalActionActionType         TerminalActionActionType = "DATA_COLLECTION"
+	SELECT__TerminalActionActionType                 TerminalActionActionType = "SELECT"
 )

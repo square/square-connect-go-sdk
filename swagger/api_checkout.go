@@ -298,8 +298,8 @@ CheckoutApiService ListPaymentLinks
 Lists all payment links.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CheckoutApiListPaymentLinksOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for the original query.  If a cursor is not provided, the endpoint returns the first page of the results.  For more  information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
-     * @param "Limit" (optional.Int32) -  A limit on the number of results to return per page. The limit is advisory and  the implementation might return more or less results. If the supplied limit is negative, zero, or greater than the maximum limit of 1000, it is ignored.  Default value: &#x60;100&#x60;
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, the endpoint returns the first page of the results. For more  information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
+     * @param "Limit" (optional.Int32) -  A limit on the number of results to return per page. The limit is advisory and the implementation might return more or less results. If the supplied limit is negative, zero, or greater than the maximum limit of 1000, it is ignored.  Default value: &#x60;100&#x60;
 @return ListPaymentLinksResponse
 */
 
@@ -480,7 +480,7 @@ func (a *CheckoutApiService) RetrievePaymentLink(ctx context.Context, id string)
 
 /*
 CheckoutApiService UpdatePaymentLink
-Updates a payment link. You can update the &#x60;payment_link&#x60; fields such as  &#x60;description&#x60;, &#x60;checkout_options&#x60;, and  &#x60;pre_populated_data&#x60;.  You cannot update other fields such as the &#x60;order_id&#x60;, &#x60;version&#x60;, &#x60;URL&#x60;, or &#x60;timestamp&#x60; field.
+Updates a payment link. You can update the &#x60;payment_link&#x60; fields such as &#x60;description&#x60;, &#x60;checkout_options&#x60;, and  &#x60;pre_populated_data&#x60;. You cannot update other fields such as the &#x60;order_id&#x60;, &#x60;version&#x60;, &#x60;URL&#x60;, or &#x60;timestamp&#x60; field.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

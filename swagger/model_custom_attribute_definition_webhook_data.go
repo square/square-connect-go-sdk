@@ -9,6 +9,7 @@
  */
 package swagger
 
+// Represents an object in the CustomAttributeDefintion event notification  payload that contains the affected custom attribute definition.
 type CustomAttributeDefinitionWebhookData struct {
 	// The type of the event data object. The value is `\"custom_attribute_definition\"`.
 	Type_ string `json:"type,omitempty"`

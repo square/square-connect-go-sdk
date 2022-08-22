@@ -13,6 +13,6 @@ type DeletePaymentLinkResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The ID of the link that is deleted.
 	Id string `json:"id,omitempty"`
-	// The ID of the order that is canceled. When a payment link is deleted, Square updates the  the `state` (of the order that the checkout link created) to CANCELED.
+	// The ID of the order that is canceled. When a payment link is deleted, Square updates the the `state` (of the order that the checkout link created) to CANCELED.
 	CancelledOrderId string `json:"cancelled_order_id,omitempty"`
 }

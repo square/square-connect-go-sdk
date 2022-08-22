@@ -117,8 +117,8 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a CheckoutApiListPaymentLinksOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint.  Provide this cursor to retrieve the next set of results for the original query.  If a cursor is not provided, the endpoint returns the first page of the results.  For more  information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination). | 
- **limit** | **optional.Int32**| A limit on the number of results to return per page. The limit is advisory and  the implementation might return more or less results. If the supplied limit is negative, zero, or greater than the maximum limit of 1000, it is ignored.  Default value: &#x60;100&#x60; | 
+ **cursor** | **optional.String**| A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. If a cursor is not provided, the endpoint returns the first page of the results. For more  information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination). | 
+ **limit** | **optional.Int32**| A limit on the number of results to return per page. The limit is advisory and the implementation might return more or less results. If the supplied limit is negative, zero, or greater than the maximum limit of 1000, it is ignored.  Default value: &#x60;100&#x60; | 
 
 ### Return type
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 > UpdatePaymentLinkResponse UpdatePaymentLink(ctx, body, id)
 UpdatePaymentLink
 
-Updates a payment link. You can update the `payment_link` fields such as  `description`, `checkout_options`, and  `pre_populated_data`.  You cannot update other fields such as the `order_id`, `version`, `URL`, or `timestamp` field.
+Updates a payment link. You can update the `payment_link` fields such as `description`, `checkout_options`, and  `pre_populated_data`. You cannot update other fields such as the `order_id`, `version`, `URL`, or `timestamp` field.
 
 ### Required Parameters
 

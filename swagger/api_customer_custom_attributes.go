@@ -29,7 +29,7 @@ type CustomerCustomAttributesApiService service
 
 /*
 CustomerCustomAttributesApiService BulkUpsertCustomerCustomAttributes
-Creates or updates custom attributes for customer profiles as a bulk operation.  Use this endpoint to set the value of one or more custom attributes for one or more customer profiles. A custom attribute is based on a custom attribute definition in a Square seller account, which is created using the [CreateCustomerCustomAttributeDefinition](api-endpoint:CustomerCustomAttributes-CreateCustomerCustomAttributeDefinition) endpoint.  This &#x60;BulkUpsertCustomerCustomAttributes&#x60; endpoint accepts a map of 1 to 25 individual upsert  requests and returns a map of individual upsert responses. Each upsert request has a unique ID  and provides a customer ID and custom attribute. Each upsert response is returned with the ID  of the corresponding request.  To create or update a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Creates or updates [custom attributes](entity:CustomAttribute) for customer profiles as a bulk operation.  Use this endpoint to set the value of one or more custom attributes for one or more customer profiles. A custom attribute is based on a custom attribute definition in a Square seller account, which is created using the [CreateCustomerCustomAttributeDefinition](api-endpoint:CustomerCustomAttributes-CreateCustomerCustomAttributeDefinition) endpoint.  This &#x60;BulkUpsertCustomerCustomAttributes&#x60; endpoint accepts a map of 1 to 25 individual upsert  requests and returns a map of individual upsert responses. Each upsert request has a unique ID  and provides a customer ID and custom attribute. Each upsert response is returned with the ID  of the corresponding request.  To create or update a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;. Note that seller-defined custom attributes (also known as custom fields) are always set to &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -118,7 +118,7 @@ func (a *CustomerCustomAttributesApiService) BulkUpsertCustomerCustomAttributes(
 
 /*
 CustomerCustomAttributesApiService CreateCustomerCustomAttributeDefinition
-Creates a customer-related custom attribute definition for a Square seller account. Use this endpoint to define a custom attribute that can be associated with customer profiles.  A custom attribute definition specifies the &#x60;key&#x60;, &#x60;visibility&#x60;, &#x60;schema&#x60;, and other properties for a custom attribute. After the definition is created, you can call [UpsertCustomerCustomAttribute](api-endpoint:CustomerCustomAttributes-UpsertCustomerCustomAttribute) or [BulkUpsertCustomerCustomAttributes](api-endpoint:CustomerCustomAttributes-BulkUpsertCustomerCustomAttributes) to set the custom attribute for customer profiles in the seller&#x27;s Customer Directory.  Sellers can view all custom attributes in exported customer data, including those set to &#x60;VISIBILITY_HIDDEN&#x60;.
+Creates a customer-related [custom attribute definition](entity:CustomAttributeDefinition) for a Square seller account. Use this endpoint to define a custom attribute that can be associated with customer profiles.  A custom attribute definition specifies the &#x60;key&#x60;, &#x60;visibility&#x60;, &#x60;schema&#x60;, and other properties for a custom attribute. After the definition is created, you can call [UpsertCustomerCustomAttribute](api-endpoint:CustomerCustomAttributes-UpsertCustomerCustomAttribute) or [BulkUpsertCustomerCustomAttributes](api-endpoint:CustomerCustomAttributes-BulkUpsertCustomerCustomAttributes) to set the custom attribute for customer profiles in the seller&#x27;s Customer Directory.  Sellers can view all custom attributes in exported customer data, including those set to &#x60;VISIBILITY_HIDDEN&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -207,7 +207,7 @@ func (a *CustomerCustomAttributesApiService) CreateCustomerCustomAttributeDefini
 
 /*
 CustomerCustomAttributesApiService DeleteCustomerCustomAttribute
-Deletes a custom attribute associated with a customer profile.  To delete a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Deletes a [custom attribute](entity:CustomAttribute) associated with a customer profile.  To delete a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;. Note that seller-defined custom attributes (also known as custom fields) are always set to &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the target [customer profile](entity:Customer).
  * @param key The key of the custom attribute to delete. This key must match the &#x60;key&#x60; of a custom attribute definition in the Square seller account. If the requesting application is not the definition owner, you must use the qualified key.
@@ -295,7 +295,7 @@ func (a *CustomerCustomAttributesApiService) DeleteCustomerCustomAttribute(ctx c
 
 /*
 CustomerCustomAttributesApiService DeleteCustomerCustomAttributeDefinition
-Deletes a customer-related custom attribute definition from a Square seller account.  Deleting a custom attribute definition also deletes the corresponding custom attribute from all customer profiles in the seller&#x27;s Customer Directory.  Only the definition owner can delete a custom attribute definition.
+Deletes a customer-related [custom attribute definition](entity:CustomAttributeDefinition) from a Square seller account.  Deleting a custom attribute definition also deletes the corresponding custom attribute from all customer profiles in the seller&#x27;s Customer Directory.  Only the definition owner can delete a custom attribute definition.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param key The key of the custom attribute definition to delete.
 @return DeleteCustomerCustomAttributeDefinitionResponse
@@ -381,7 +381,7 @@ func (a *CustomerCustomAttributesApiService) DeleteCustomerCustomAttributeDefini
 
 /*
 CustomerCustomAttributesApiService ListCustomerCustomAttributeDefinitions
-Lists the customer-related custom attribute definitions that belong to a Square seller account.  When all response pages are retrieved, the results include all custom attribute definitions that are visible to the requesting application, including those that are created by other applications and set to &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Lists the customer-related [custom attribute definitions](entity:CustomAttributeDefinition) that belong to a Square seller account.  When all response pages are retrieved, the results include all custom attribute definitions that are visible to the requesting application, including those that are created by other applications and set to &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;. Note that seller-defined custom attributes (also known as custom fields) are always set to &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CustomerCustomAttributesApiListCustomerCustomAttributeDefinitionsOpts - Optional Parameters:
      * @param "Limit" (optional.Int32) -  The maximum number of results to return in a single paged response. This limit is advisory. The response might contain more or fewer results. The minimum value is 1 and the maximum value is 100. The default value is 20. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
@@ -480,7 +480,7 @@ func (a *CustomerCustomAttributesApiService) ListCustomerCustomAttributeDefiniti
 
 /*
 CustomerCustomAttributesApiService ListCustomerCustomAttributes
-Lists the custom attributes associated with a customer profile.  You can use the &#x60;with_definitions&#x60; query parameter to also retrieve custom attribute definitions in the same call.  When all response pages are retrieved, the results include all custom attributes that are visible to the requesting application, including those that are owned by other applications and set to &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Lists the [custom attributes](entity:CustomAttribute) associated with a customer profile.  You can use the &#x60;with_definitions&#x60; query parameter to also retrieve custom attribute definitions in the same call.  When all response pages are retrieved, the results include all custom attributes that are visible to the requesting application, including those that are owned by other applications and set to &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the target [customer profile](entity:Customer).
  * @param optional nil or *CustomerCustomAttributesApiListCustomerCustomAttributesOpts - Optional Parameters:
@@ -586,7 +586,7 @@ func (a *CustomerCustomAttributesApiService) ListCustomerCustomAttributes(ctx co
 
 /*
 CustomerCustomAttributesApiService RetrieveCustomerCustomAttribute
-Retrieves a custom attribute associated with a customer profile.  You can use the &#x60;with_definition&#x60; query parameter to also retrieve the custom attribute definition in the same call.  To retrieve a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Retrieves a [custom attribute](entity:CustomAttribute) associated with a customer profile.  You can use the &#x60;with_definition&#x60; query parameter to also retrieve the custom attribute definition in the same call.  To retrieve a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;. Note that seller-defined custom attributes (also known as custom fields) are always set to &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param customerId The ID of the target [customer profile](entity:Customer).
  * @param key The key of the custom attribute to retrieve. This key must match the &#x60;key&#x60; of a custom attribute definition in the Square seller account. If the requesting application is not the definition owner, you must use the qualified key.
@@ -689,7 +689,7 @@ func (a *CustomerCustomAttributesApiService) RetrieveCustomerCustomAttribute(ctx
 
 /*
 CustomerCustomAttributesApiService RetrieveCustomerCustomAttributeDefinition
-Retrieves a customer-related custom attribute definition from a Square seller account.  To retrieve a custom attribute definition created by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Retrieves a customer-related [custom attribute definition](entity:CustomAttributeDefinition) from a Square seller account.  To retrieve a custom attribute definition created by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_ONLY&#x60; or &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;. Note that seller-defined custom attributes (also known as custom fields) are always set to &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param key The key of the custom attribute definition to retrieve. If the requesting application is not the definition owner, you must use the qualified key.
  * @param optional nil or *CustomerCustomAttributesApiRetrieveCustomerCustomAttributeDefinitionOpts - Optional Parameters:
@@ -785,7 +785,7 @@ func (a *CustomerCustomAttributesApiService) RetrieveCustomerCustomAttributeDefi
 
 /*
 CustomerCustomAttributesApiService UpdateCustomerCustomAttributeDefinition
-Updates a customer-related custom attribute definition for a Square seller account.  Use this endpoint to update the following fields: &#x60;name&#x60;, &#x60;description&#x60;, &#x60;visibility&#x60;, or the &#x60;schema&#x60; for a &#x60;Selection&#x60; data type.  Only the definition owner can update a custom attribute definition. Note that sellers can view all custom attributes in exported customer data, including those set to &#x60;VISIBILITY_HIDDEN&#x60;.
+Updates a customer-related [custom attribute definition](entity:CustomAttributeDefinition) for a Square seller account.  Use this endpoint to update the following fields: &#x60;name&#x60;, &#x60;description&#x60;, &#x60;visibility&#x60;, or the &#x60;schema&#x60; for a &#x60;Selection&#x60; data type.  Only the definition owner can update a custom attribute definition. Note that sellers can view all custom attributes in exported customer data, including those set to &#x60;VISIBILITY_HIDDEN&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -876,7 +876,7 @@ func (a *CustomerCustomAttributesApiService) UpdateCustomerCustomAttributeDefini
 
 /*
 CustomerCustomAttributesApiService UpsertCustomerCustomAttribute
-Creates or updates a custom attribute for a customer profile.  Use this endpoint to set the value of a custom attribute for a specified customer profile. A custom attribute is based on a custom attribute definition in a Square seller account, which is created using the [CreateCustomerCustomAttributeDefinition](api-endpoint:CustomerCustomAttributes-CreateCustomerCustomAttributeDefinition) endpoint.  To create or update a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
+Creates or updates a [custom attribute](entity:CustomAttribute) for a customer profile.  Use this endpoint to set the value of a custom attribute for a specified customer profile. A custom attribute is based on a custom attribute definition in a Square seller account, which is created using the [CreateCustomerCustomAttributeDefinition](api-endpoint:CustomerCustomAttributes-CreateCustomerCustomAttributeDefinition) endpoint.  To create or update a custom attribute owned by another application, the &#x60;visibility&#x60; setting must be &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;. Note that seller-defined custom attributes (also known as custom fields) are always set to &#x60;VISIBILITY_READ_WRITE_VALUES&#x60;.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

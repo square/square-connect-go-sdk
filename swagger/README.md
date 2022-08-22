@@ -156,13 +156,17 @@ Class | Method | HTTP request | Description
 *LoyaltyApi* | [**AccumulateLoyaltyPoints**](docs/LoyaltyApi.md#accumulateloyaltypoints) | **Post** /v2/loyalty/accounts/{account_id}/accumulate | AccumulateLoyaltyPoints
 *LoyaltyApi* | [**AdjustLoyaltyPoints**](docs/LoyaltyApi.md#adjustloyaltypoints) | **Post** /v2/loyalty/accounts/{account_id}/adjust | AdjustLoyaltyPoints
 *LoyaltyApi* | [**CalculateLoyaltyPoints**](docs/LoyaltyApi.md#calculateloyaltypoints) | **Post** /v2/loyalty/programs/{program_id}/calculate | CalculateLoyaltyPoints
+*LoyaltyApi* | [**CancelLoyaltyPromotion**](docs/LoyaltyApi.md#cancelloyaltypromotion) | **Post** /v2/loyalty/programs/{program_id}/promotions/{promotion_id}/cancel | CancelLoyaltyPromotion
 *LoyaltyApi* | [**CreateLoyaltyAccount**](docs/LoyaltyApi.md#createloyaltyaccount) | **Post** /v2/loyalty/accounts | CreateLoyaltyAccount
+*LoyaltyApi* | [**CreateLoyaltyPromotion**](docs/LoyaltyApi.md#createloyaltypromotion) | **Post** /v2/loyalty/programs/{program_id}/promotions | CreateLoyaltyPromotion
 *LoyaltyApi* | [**CreateLoyaltyReward**](docs/LoyaltyApi.md#createloyaltyreward) | **Post** /v2/loyalty/rewards | CreateLoyaltyReward
 *LoyaltyApi* | [**DeleteLoyaltyReward**](docs/LoyaltyApi.md#deleteloyaltyreward) | **Delete** /v2/loyalty/rewards/{reward_id} | DeleteLoyaltyReward
 *LoyaltyApi* | [**ListLoyaltyPrograms**](docs/LoyaltyApi.md#listloyaltyprograms) | **Get** /v2/loyalty/programs | ListLoyaltyPrograms
+*LoyaltyApi* | [**ListLoyaltyPromotions**](docs/LoyaltyApi.md#listloyaltypromotions) | **Get** /v2/loyalty/programs/{program_id}/promotions | ListLoyaltyPromotions
 *LoyaltyApi* | [**RedeemLoyaltyReward**](docs/LoyaltyApi.md#redeemloyaltyreward) | **Post** /v2/loyalty/rewards/{reward_id}/redeem | RedeemLoyaltyReward
 *LoyaltyApi* | [**RetrieveLoyaltyAccount**](docs/LoyaltyApi.md#retrieveloyaltyaccount) | **Get** /v2/loyalty/accounts/{account_id} | RetrieveLoyaltyAccount
 *LoyaltyApi* | [**RetrieveLoyaltyProgram**](docs/LoyaltyApi.md#retrieveloyaltyprogram) | **Get** /v2/loyalty/programs/{program_id} | RetrieveLoyaltyProgram
+*LoyaltyApi* | [**RetrieveLoyaltyPromotion**](docs/LoyaltyApi.md#retrieveloyaltypromotion) | **Get** /v2/loyalty/programs/{program_id}/promotions/{promotion_id} | RetrieveLoyaltyPromotion
 *LoyaltyApi* | [**RetrieveLoyaltyReward**](docs/LoyaltyApi.md#retrieveloyaltyreward) | **Get** /v2/loyalty/rewards/{reward_id} | RetrieveLoyaltyReward
 *LoyaltyApi* | [**SearchLoyaltyAccounts**](docs/LoyaltyApi.md#searchloyaltyaccounts) | **Post** /v2/loyalty/accounts/search | SearchLoyaltyAccounts
 *LoyaltyApi* | [**SearchLoyaltyEvents**](docs/LoyaltyApi.md#searchloyaltyevents) | **Post** /v2/loyalty/events/search | SearchLoyaltyEvents
@@ -249,6 +253,14 @@ Class | Method | HTTP request | Description
 *VendorsApi* | [**RetrieveVendor**](docs/VendorsApi.md#retrievevendor) | **Get** /v2/vendors/{vendor_id} | RetrieveVendor
 *VendorsApi* | [**SearchVendors**](docs/VendorsApi.md#searchvendors) | **Post** /v2/vendors/search | SearchVendors
 *VendorsApi* | [**UpdateVendor**](docs/VendorsApi.md#updatevendor) | **Put** /v2/vendors/{vendor_id} | UpdateVendor
+*WebhookSubscriptionsApi* | [**CreateWebhookSubscription**](docs/WebhookSubscriptionsApi.md#createwebhooksubscription) | **Post** /v2/webhooks/subscriptions | CreateWebhookSubscription
+*WebhookSubscriptionsApi* | [**DeleteWebhookSubscription**](docs/WebhookSubscriptionsApi.md#deletewebhooksubscription) | **Delete** /v2/webhooks/subscriptions/{subscription_id} | DeleteWebhookSubscription
+*WebhookSubscriptionsApi* | [**ListWebhookEventTypes**](docs/WebhookSubscriptionsApi.md#listwebhookeventtypes) | **Get** /v2/webhooks/event-types | ListWebhookEventTypes
+*WebhookSubscriptionsApi* | [**ListWebhookSubscriptions**](docs/WebhookSubscriptionsApi.md#listwebhooksubscriptions) | **Get** /v2/webhooks/subscriptions | ListWebhookSubscriptions
+*WebhookSubscriptionsApi* | [**RetrieveWebhookSubscription**](docs/WebhookSubscriptionsApi.md#retrievewebhooksubscription) | **Get** /v2/webhooks/subscriptions/{subscription_id} | RetrieveWebhookSubscription
+*WebhookSubscriptionsApi* | [**TestWebhookSubscription**](docs/WebhookSubscriptionsApi.md#testwebhooksubscription) | **Post** /v2/webhooks/subscriptions/{subscription_id}/test | TestWebhookSubscription
+*WebhookSubscriptionsApi* | [**UpdateWebhookSubscription**](docs/WebhookSubscriptionsApi.md#updatewebhooksubscription) | **Put** /v2/webhooks/subscriptions/{subscription_id} | UpdateWebhookSubscription
+*WebhookSubscriptionsApi* | [**UpdateWebhookSubscriptionSignatureKey**](docs/WebhookSubscriptionsApi.md#updatewebhooksubscriptionsignaturekey) | **Post** /v2/webhooks/subscriptions/{subscription_id}/signature-key | UpdateWebhookSubscriptionSignatureKey
 
 ## Documentation For Models
 
@@ -351,6 +363,8 @@ Class | Method | HTTP request | Description
  - [CancelBookingResponse](docs/CancelBookingResponse.md)
  - [CancelInvoiceRequest](docs/CancelInvoiceRequest.md)
  - [CancelInvoiceResponse](docs/CancelInvoiceResponse.md)
+ - [CancelLoyaltyPromotionRequest](docs/CancelLoyaltyPromotionRequest.md)
+ - [CancelLoyaltyPromotionResponse](docs/CancelLoyaltyPromotionResponse.md)
  - [CancelPaymentByIdempotencyKeyRequest](docs/CancelPaymentByIdempotencyKeyRequest.md)
  - [CancelPaymentByIdempotencyKeyResponse](docs/CancelPaymentByIdempotencyKeyResponse.md)
  - [CancelPaymentRequest](docs/CancelPaymentRequest.md)
@@ -384,7 +398,6 @@ Class | Method | HTTP request | Description
  - [CardPaymentDetails](docs/CardPaymentDetails.md)
  - [CardPaymentTimeline](docs/CardPaymentTimeline.md)
  - [CardPrepaidType](docs/CardPrepaidType.md)
- - [CardSquareProduct](docs/CardSquareProduct.md)
  - [CardType](docs/CardType.md)
  - [CardUpdatedWebhook](docs/CardUpdatedWebhook.md)
  - [CardUpdatedWebhookData](docs/CardUpdatedWebhookData.md)
@@ -506,6 +519,8 @@ Class | Method | HTTP request | Description
  - [CreateLocationResponse](docs/CreateLocationResponse.md)
  - [CreateLoyaltyAccountRequest](docs/CreateLoyaltyAccountRequest.md)
  - [CreateLoyaltyAccountResponse](docs/CreateLoyaltyAccountResponse.md)
+ - [CreateLoyaltyPromotionRequest](docs/CreateLoyaltyPromotionRequest.md)
+ - [CreateLoyaltyPromotionResponse](docs/CreateLoyaltyPromotionResponse.md)
  - [CreateLoyaltyRewardRequest](docs/CreateLoyaltyRewardRequest.md)
  - [CreateLoyaltyRewardResponse](docs/CreateLoyaltyRewardResponse.md)
  - [CreateMobileAuthorizationCodeRequest](docs/CreateMobileAuthorizationCodeRequest.md)
@@ -532,6 +547,8 @@ Class | Method | HTTP request | Description
  - [CreateTerminalRefundResponse](docs/CreateTerminalRefundResponse.md)
  - [CreateVendorRequest](docs/CreateVendorRequest.md)
  - [CreateVendorResponse](docs/CreateVendorResponse.md)
+ - [CreateWebhookSubscriptionRequest](docs/CreateWebhookSubscriptionRequest.md)
+ - [CreateWebhookSubscriptionResponse](docs/CreateWebhookSubscriptionResponse.md)
  - [Currency](docs/Currency.md)
  - [CustomAttribute](docs/CustomAttribute.md)
  - [CustomAttributeDefinition](docs/CustomAttributeDefinition.md)
@@ -543,6 +560,7 @@ Class | Method | HTTP request | Description
  - [CustomAttributeWebhookDataObject](docs/CustomAttributeWebhookDataObject.md)
  - [CustomField](docs/CustomField.md)
  - [Customer](docs/Customer.md)
+ - [CustomerAddressFilter](docs/CustomerAddressFilter.md)
  - [CustomerCreatedWebhook](docs/CustomerCreatedWebhook.md)
  - [CustomerCreatedWebhookData](docs/CustomerCreatedWebhookData.md)
  - [CustomerCreatedWebhookEventContext](docs/CustomerCreatedWebhookEventContext.md)
@@ -554,12 +572,25 @@ Class | Method | HTTP request | Description
  - [CustomerCustomAttributeDefinitionCreatedWebhook](docs/CustomerCustomAttributeDefinitionCreatedWebhook.md)
  - [CustomerCustomAttributeDefinitionDeletedPublicWebhook](docs/CustomerCustomAttributeDefinitionDeletedPublicWebhook.md)
  - [CustomerCustomAttributeDefinitionDeletedWebhook](docs/CustomerCustomAttributeDefinitionDeletedWebhook.md)
+ - [CustomerCustomAttributeDefinitionOwnedCreatedWebhook](docs/CustomerCustomAttributeDefinitionOwnedCreatedWebhook.md)
+ - [CustomerCustomAttributeDefinitionOwnedDeletedWebhook](docs/CustomerCustomAttributeDefinitionOwnedDeletedWebhook.md)
+ - [CustomerCustomAttributeDefinitionOwnedUpdatedWebhook](docs/CustomerCustomAttributeDefinitionOwnedUpdatedWebhook.md)
  - [CustomerCustomAttributeDefinitionUpdatedPublicWebhook](docs/CustomerCustomAttributeDefinitionUpdatedPublicWebhook.md)
  - [CustomerCustomAttributeDefinitionUpdatedWebhook](docs/CustomerCustomAttributeDefinitionUpdatedWebhook.md)
+ - [CustomerCustomAttributeDefinitionVisibleCreatedWebhook](docs/CustomerCustomAttributeDefinitionVisibleCreatedWebhook.md)
+ - [CustomerCustomAttributeDefinitionVisibleDeletedWebhook](docs/CustomerCustomAttributeDefinitionVisibleDeletedWebhook.md)
+ - [CustomerCustomAttributeDefinitionVisibleUpdatedWebhook](docs/CustomerCustomAttributeDefinitionVisibleUpdatedWebhook.md)
  - [CustomerCustomAttributeDeletedPublicWebhook](docs/CustomerCustomAttributeDeletedPublicWebhook.md)
  - [CustomerCustomAttributeDeletedWebhook](docs/CustomerCustomAttributeDeletedWebhook.md)
+ - [CustomerCustomAttributeFilter](docs/CustomerCustomAttributeFilter.md)
+ - [CustomerCustomAttributeFilterValue](docs/CustomerCustomAttributeFilterValue.md)
+ - [CustomerCustomAttributeFilters](docs/CustomerCustomAttributeFilters.md)
+ - [CustomerCustomAttributeOwnedDeletedWebhook](docs/CustomerCustomAttributeOwnedDeletedWebhook.md)
+ - [CustomerCustomAttributeOwnedUpdatedWebhook](docs/CustomerCustomAttributeOwnedUpdatedWebhook.md)
  - [CustomerCustomAttributeUpdatedPublicWebhook](docs/CustomerCustomAttributeUpdatedPublicWebhook.md)
  - [CustomerCustomAttributeUpdatedWebhook](docs/CustomerCustomAttributeUpdatedWebhook.md)
+ - [CustomerCustomAttributeVisibleDeletedWebhook](docs/CustomerCustomAttributeVisibleDeletedWebhook.md)
+ - [CustomerCustomAttributeVisibleUpdatedWebhook](docs/CustomerCustomAttributeVisibleUpdatedWebhook.md)
  - [CustomerDeletedWebhook](docs/CustomerDeletedWebhook.md)
  - [CustomerDeletedWebhookData](docs/CustomerDeletedWebhookData.md)
  - [CustomerDeletedWebhookEventContext](docs/CustomerDeletedWebhookEventContext.md)
@@ -609,6 +640,8 @@ Class | Method | HTTP request | Description
  - [DeleteSnippetResponse](docs/DeleteSnippetResponse.md)
  - [DeleteSubscriptionActionRequest](docs/DeleteSubscriptionActionRequest.md)
  - [DeleteSubscriptionActionResponse](docs/DeleteSubscriptionActionResponse.md)
+ - [DeleteWebhookSubscriptionRequest](docs/DeleteWebhookSubscriptionRequest.md)
+ - [DeleteWebhookSubscriptionResponse](docs/DeleteWebhookSubscriptionResponse.md)
  - [DeprecatedCreateDisputeEvidenceFileRequest](docs/DeprecatedCreateDisputeEvidenceFileRequest.md)
  - [DeprecatedCreateDisputeEvidenceFileResponse](docs/DeprecatedCreateDisputeEvidenceFileResponse.md)
  - [DeprecatedCreateDisputeEvidenceTextRequest](docs/DeprecatedCreateDisputeEvidenceTextRequest.md)
@@ -661,9 +694,11 @@ Class | Method | HTTP request | Description
  - [EmployeeWage](docs/EmployeeWage.md)
  - [ErrorCategory](docs/ErrorCategory.md)
  - [ErrorCode](docs/ErrorCode.md)
+ - [EventTypeMetadata](docs/EventTypeMetadata.md)
  - [ExcludeStrategy](docs/ExcludeStrategy.md)
  - [ExternalPaymentDetails](docs/ExternalPaymentDetails.md)
  - [FilterValue](docs/FilterValue.md)
+ - [FloatNumberRange](docs/FloatNumberRange.md)
  - [GetBankAccountByV1IdRequest](docs/GetBankAccountByV1IdRequest.md)
  - [GetBankAccountByV1IdResponse](docs/GetBankAccountByV1IdResponse.md)
  - [GetBankAccountRequest](docs/GetBankAccountRequest.md)
@@ -846,6 +881,8 @@ Class | Method | HTTP request | Description
  - [ListLocationsResponse](docs/ListLocationsResponse.md)
  - [ListLoyaltyProgramsRequest](docs/ListLoyaltyProgramsRequest.md)
  - [ListLoyaltyProgramsResponse](docs/ListLoyaltyProgramsResponse.md)
+ - [ListLoyaltyPromotionsRequest](docs/ListLoyaltyPromotionsRequest.md)
+ - [ListLoyaltyPromotionsResponse](docs/ListLoyaltyPromotionsResponse.md)
  - [ListMerchantsRequest](docs/ListMerchantsRequest.md)
  - [ListMerchantsResponse](docs/ListMerchantsResponse.md)
  - [ListPaymentLinksRequest](docs/ListPaymentLinksRequest.md)
@@ -870,6 +907,10 @@ Class | Method | HTTP request | Description
  - [ListTeamMemberWagesResponse](docs/ListTeamMemberWagesResponse.md)
  - [ListTransactionsRequest](docs/ListTransactionsRequest.md)
  - [ListTransactionsResponse](docs/ListTransactionsResponse.md)
+ - [ListWebhookEventTypesRequest](docs/ListWebhookEventTypesRequest.md)
+ - [ListWebhookEventTypesResponse](docs/ListWebhookEventTypesResponse.md)
+ - [ListWebhookSubscriptionsRequest](docs/ListWebhookSubscriptionsRequest.md)
+ - [ListWebhookSubscriptionsResponse](docs/ListWebhookSubscriptionsResponse.md)
  - [ListWorkweekConfigsRequest](docs/ListWorkweekConfigsRequest.md)
  - [ListWorkweekConfigsResponse](docs/ListWorkweekConfigsResponse.md)
  - [Location](docs/Location.md)
@@ -892,6 +933,7 @@ Class | Method | HTTP request | Description
  - [LoyaltyAccountUpdatedWebhookData](docs/LoyaltyAccountUpdatedWebhookData.md)
  - [LoyaltyEvent](docs/LoyaltyEvent.md)
  - [LoyaltyEventAccumulatePoints](docs/LoyaltyEventAccumulatePoints.md)
+ - [LoyaltyEventAccumulatePromotionPoints](docs/LoyaltyEventAccumulatePromotionPoints.md)
  - [LoyaltyEventAdjustPoints](docs/LoyaltyEventAdjustPoints.md)
  - [LoyaltyEventCreateReward](docs/LoyaltyEventCreateReward.md)
  - [LoyaltyEventCreatedWebhook](docs/LoyaltyEventCreatedWebhook.md)
@@ -929,6 +971,19 @@ Class | Method | HTTP request | Description
  - [LoyaltyProgramTerminology](docs/LoyaltyProgramTerminology.md)
  - [LoyaltyProgramUpdatedWebhook](docs/LoyaltyProgramUpdatedWebhook.md)
  - [LoyaltyProgramUpdatedWebhookData](docs/LoyaltyProgramUpdatedWebhookData.md)
+ - [LoyaltyPromotion](docs/LoyaltyPromotion.md)
+ - [LoyaltyPromotionAvailableTimeData](docs/LoyaltyPromotionAvailableTimeData.md)
+ - [LoyaltyPromotionCreatedWebhook](docs/LoyaltyPromotionCreatedWebhook.md)
+ - [LoyaltyPromotionCreatedWebhookData](docs/LoyaltyPromotionCreatedWebhookData.md)
+ - [LoyaltyPromotionIncentive](docs/LoyaltyPromotionIncentive.md)
+ - [LoyaltyPromotionIncentivePointsAdditionData](docs/LoyaltyPromotionIncentivePointsAdditionData.md)
+ - [LoyaltyPromotionIncentivePointsMultiplierData](docs/LoyaltyPromotionIncentivePointsMultiplierData.md)
+ - [LoyaltyPromotionIncentiveType](docs/LoyaltyPromotionIncentiveType.md)
+ - [LoyaltyPromotionStatus](docs/LoyaltyPromotionStatus.md)
+ - [LoyaltyPromotionTriggerLimit](docs/LoyaltyPromotionTriggerLimit.md)
+ - [LoyaltyPromotionTriggerLimitInterval](docs/LoyaltyPromotionTriggerLimitInterval.md)
+ - [LoyaltyPromotionUpdatedWebhook](docs/LoyaltyPromotionUpdatedWebhook.md)
+ - [LoyaltyPromotionUpdatedWebhookData](docs/LoyaltyPromotionUpdatedWebhookData.md)
  - [LoyaltyReward](docs/LoyaltyReward.md)
  - [LoyaltyRewardStatus](docs/LoyaltyRewardStatus.md)
  - [MeasurementUnit](docs/MeasurementUnit.md)
@@ -1038,6 +1093,7 @@ Class | Method | HTTP request | Description
  - [PaymentCreatedWebhookData](docs/PaymentCreatedWebhookData.md)
  - [PaymentCreatedWebhookObject](docs/PaymentCreatedWebhookObject.md)
  - [PaymentLink](docs/PaymentLink.md)
+ - [PaymentLinkRelatedResources](docs/PaymentLinkRelatedResources.md)
  - [PaymentOptions](docs/PaymentOptions.md)
  - [PaymentRefund](docs/PaymentRefund.md)
  - [PaymentUpdatedWebhook](docs/PaymentUpdatedWebhook.md)
@@ -1135,6 +1191,8 @@ Class | Method | HTTP request | Description
  - [RetrieveLoyaltyAccountResponse](docs/RetrieveLoyaltyAccountResponse.md)
  - [RetrieveLoyaltyProgramRequest](docs/RetrieveLoyaltyProgramRequest.md)
  - [RetrieveLoyaltyProgramResponse](docs/RetrieveLoyaltyProgramResponse.md)
+ - [RetrieveLoyaltyPromotionRequest](docs/RetrieveLoyaltyPromotionRequest.md)
+ - [RetrieveLoyaltyPromotionResponse](docs/RetrieveLoyaltyPromotionResponse.md)
  - [RetrieveLoyaltyRewardRequest](docs/RetrieveLoyaltyRewardRequest.md)
  - [RetrieveLoyaltyRewardResponse](docs/RetrieveLoyaltyRewardResponse.md)
  - [RetrieveMerchantRequest](docs/RetrieveMerchantRequest.md)
@@ -1157,6 +1215,8 @@ Class | Method | HTTP request | Description
  - [RetrieveVendorResponse](docs/RetrieveVendorResponse.md)
  - [RetrieveWageSettingRequest](docs/RetrieveWageSettingRequest.md)
  - [RetrieveWageSettingResponse](docs/RetrieveWageSettingResponse.md)
+ - [RetrieveWebhookSubscriptionRequest](docs/RetrieveWebhookSubscriptionRequest.md)
+ - [RetrieveWebhookSubscriptionResponse](docs/RetrieveWebhookSubscriptionResponse.md)
  - [RevokeTokenRequest](docs/RevokeTokenRequest.md)
  - [RevokeTokenResponse](docs/RevokeTokenResponse.md)
  - [RiskEvaluation](docs/RiskEvaluation.md)
@@ -1226,6 +1286,7 @@ Class | Method | HTTP request | Description
  - [ShiftWage](docs/ShiftWage.md)
  - [ShiftWorkday](docs/ShiftWorkday.md)
  - [ShiftWorkdayMatcher](docs/ShiftWorkdayMatcher.md)
+ - [ShippingFee](docs/ShippingFee.md)
  - [Site](docs/Site.md)
  - [Snippet](docs/Snippet.md)
  - [SnippetResponse](docs/SnippetResponse.md)
@@ -1249,6 +1310,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionPhase](docs/SubscriptionPhase.md)
  - [SubscriptionSource](docs/SubscriptionSource.md)
  - [SubscriptionStatus](docs/SubscriptionStatus.md)
+ - [SubscriptionTestResult](docs/SubscriptionTestResult.md)
  - [SubscriptionUpdatedWebhook](docs/SubscriptionUpdatedWebhook.md)
  - [SubscriptionUpdatedWebhookData](docs/SubscriptionUpdatedWebhookData.md)
  - [SubscriptionUpdatedWebhookObject](docs/SubscriptionUpdatedWebhookObject.md)
@@ -1310,6 +1372,8 @@ Class | Method | HTTP request | Description
  - [TerminalRefundUpdatedWebhook](docs/TerminalRefundUpdatedWebhook.md)
  - [TerminalRefundUpdatedWebhookData](docs/TerminalRefundUpdatedWebhookData.md)
  - [TerminalRefundUpdatedWebhookObject](docs/TerminalRefundUpdatedWebhookObject.md)
+ - [TestWebhookSubscriptionRequest](docs/TestWebhookSubscriptionRequest.md)
+ - [TestWebhookSubscriptionResponse](docs/TestWebhookSubscriptionResponse.md)
  - [TimeRange](docs/TimeRange.md)
  - [TipSettings](docs/TipSettings.md)
  - [Transaction](docs/Transaction.md)
@@ -1353,6 +1417,10 @@ Class | Method | HTTP request | Description
  - [UpdateVendorResponse](docs/UpdateVendorResponse.md)
  - [UpdateWageSettingRequest](docs/UpdateWageSettingRequest.md)
  - [UpdateWageSettingResponse](docs/UpdateWageSettingResponse.md)
+ - [UpdateWebhookSubscriptionRequest](docs/UpdateWebhookSubscriptionRequest.md)
+ - [UpdateWebhookSubscriptionResponse](docs/UpdateWebhookSubscriptionResponse.md)
+ - [UpdateWebhookSubscriptionSignatureKeyRequest](docs/UpdateWebhookSubscriptionSignatureKeyRequest.md)
+ - [UpdateWebhookSubscriptionSignatureKeyResponse](docs/UpdateWebhookSubscriptionSignatureKeyResponse.md)
  - [UpdateWorkweekConfigRequest](docs/UpdateWorkweekConfigRequest.md)
  - [UpdateWorkweekConfigResponse](docs/UpdateWorkweekConfigResponse.md)
  - [UpsertCatalogObjectRequest](docs/UpsertCatalogObjectRequest.md)
@@ -1421,6 +1489,7 @@ Class | Method | HTTP request | Description
  - [WageSetting](docs/WageSetting.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookData](docs/WebhookData.md)
+ - [WebhookSubscription](docs/WebhookSubscription.md)
  - [Weekday](docs/Weekday.md)
  - [WorkweekConfig](docs/WorkweekConfig.md)
 

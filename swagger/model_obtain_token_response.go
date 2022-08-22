@@ -30,4 +30,10 @@ type ObtainTokenResponse struct {
 	ShortLived bool `json:"short_lived,omitempty"`
 	// Any errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
+	// The date when the `refresh_token` expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format.
+	RefreshTokenExpiresAt string `json:"refresh_token_expires_at,omitempty"`
+	// The subscription id of a v2 subscription the merchant signed up for. The subscription id is only present if the merchant signed up for a subscription during authorization.
+	AppSubscriptionId string `json:"app_subscription_id,omitempty"`
+	// The plan id of a v2 subscription plan the merchant signed up for. The plan id is only present if the merchant signed up for a subscription plan during authorization.
+	AppPlanId string `json:"app_plan_id,omitempty"`
 }

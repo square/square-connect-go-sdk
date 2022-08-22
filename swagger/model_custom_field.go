@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a custom form field to add to the checkout page to collect more information from buyers during checkout. For more information,  see [Specify checkout options](https://developer.squareup.com/docs/checkout-api/optional-checkout-configurations#specify-checkout-options-1).
+// Describes a custom form field to add to the checkout page to collect more information from buyers during checkout. For more information, see [Specify checkout options](https://developer.squareup.com/docs/checkout-api/optional-checkout-configurations#specify-checkout-options-1).
 type CustomField struct {
 	// The title of the custom field.
 	Title string `json:"title"`

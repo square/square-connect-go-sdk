@@ -9,7 +9,7 @@
  */
 package swagger
 
-// An object that contains the loyalty program.
+// An object that contains the loyalty program associated with a `loyalty.program.created` webhook event.
 type LoyaltyProgramCreatedWebhookObject struct {
 	LoyaltyProgram *LoyaltyProgram `json:"loyalty_program,omitempty"`
 }

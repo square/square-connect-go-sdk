@@ -29,6 +29,6 @@ type OrderLineItemDiscount struct {
 	Scope    *OrderLineItemDiscountScope `json:"scope,omitempty"`
 	// The reward IDs corresponding to this discount. The application and specification of discounts that have `reward_ids` are completely controlled by the backing criteria corresponding to the reward tiers of the rewards that are added to the order through the Loyalty API. To manually unapply discounts that are the result of added rewards, the rewards must be removed from the order through the Loyalty API.
 	RewardIds []string `json:"reward_ids,omitempty"`
-	// The object ID of a [pricing rule](entity:CatalogPricingRule) to be applied  automatically to this discount. The specification and application of the discounts, to  which a `pricing_rule_id` is assigned, are completely controlled by the corresponding  pricing rule.
+	// The object ID of a [pricing rule](entity:CatalogPricingRule) to be applied automatically to this discount. The specification and application of the discounts, to which a `pricing_rule_id` is assigned, are completely controlled by the corresponding pricing rule.
 	PricingRuleId string `json:"pricing_rule_id,omitempty"`
 }

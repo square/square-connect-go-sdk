@@ -14,7 +14,7 @@ type CheckoutOptions struct {
 	AllowTipping bool `json:"allow_tipping,omitempty"`
 	// The custom fields requesting information from the buyer.
 	CustomFields []CustomField `json:"custom_fields,omitempty"`
-	// The ID of the subscription plan for the buyer to pay and subscribe.  For more information, see [Subscription Plan Checkout](https://developer.squareup.com/docs/checkout-api/subscription-plan-checkout).
+	// The ID of the subscription plan for the buyer to pay and subscribe. For more information, see [Subscription Plan Checkout](https://developer.squareup.com/docs/checkout-api/subscription-plan-checkout).
 	SubscriptionPlanId string `json:"subscription_plan_id,omitempty"`
 	// The confirmation page URL to redirect the buyer to after Square processes the payment.
 	RedirectUrl string `json:"redirect_url,omitempty"`
@@ -23,4 +23,6 @@ type CheckoutOptions struct {
 	// Indicates whether to include the address fields in the payment form.
 	AskForShippingAddress  bool                    `json:"ask_for_shipping_address,omitempty"`
 	AcceptedPaymentMethods *AcceptedPaymentMethods `json:"accepted_payment_methods,omitempty"`
+	AppFeeMoney            *Money                  `json:"app_fee_money,omitempty"`
+	ShippingFee            *ShippingFee            `json:"shipping_fee,omitempty"`
 }

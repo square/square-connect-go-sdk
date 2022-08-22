@@ -20,4 +20,6 @@ type AuthorizeRequest struct {
 	Session bool `json:"session,omitempty"`
 	// When provided, `state` is passed to the configured redirect URL after the Permission Request form is submitted. You can include `state` and verify its value to help protect against cross-site request forgery.
 	State string `json:"state,omitempty"`
+	// When provided, the oauth flow will use PKCE to authorize. The `code_challenge` will be associated with the authorization_code and a `code_verifier` will need to passed in to obtain the access token.
+	CodeChallenge string `json:"code_challenge,omitempty"`
 }

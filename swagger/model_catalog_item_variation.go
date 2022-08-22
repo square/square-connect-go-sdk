@@ -38,6 +38,8 @@ type CatalogItemVariation struct {
 	AvailableForBooking bool `json:"available_for_booking,omitempty"`
 	// List of item option values associated with this item variation. Listed in the same order as the item options of the parent item.
 	ItemOptionValues []CatalogItemOptionValueForItemVariation `json:"item_option_values,omitempty"`
+	// A list of IFM channel ids and Square Online site ids where the object can be published.
+	PresentAtChannelIDs []string `json:"present_at_channel_ids,omitempty"`
 	// ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
 	MeasurementUnitId string `json:"measurement_unit_id,omitempty"`
 	// Whether this variation can be sold. The inventory count of a sellable variation indicates  the number of units available for sale. When a variation is both stockable and sellable,  its sellable inventory count can be smaller than or equal to its stockable count.

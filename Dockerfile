@@ -18,6 +18,7 @@ RUN apk add curl jq go && \
     patch < ../model_catalog_custom_attribute_value.patch && \
     patch < ../model_catalog_item.patch && \
     patch < ../model_catalog_item_variation.patch
+
 ## fix some issues with Swagger. TODO: file an issue
 RUN cd build/square-connect-sdk && \
     gofmt -s -w . && \

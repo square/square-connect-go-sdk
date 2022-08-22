@@ -60,4 +60,6 @@ const (
 	VENDOR_READ_OAuthPermission                          OAuthPermission = "VENDOR_READ"
 	VENDOR_WRITE_OAuthPermission                         OAuthPermission = "VENDOR_WRITE"
 	PAYOUTS_READ_OAuthPermission                         OAuthPermission = "PAYOUTS_READ"
+	RESERVATIONS_READ_OAuthPermission                    OAuthPermission = "RESERVATIONS_READ"
+	RESERVATIONS_WRITE_OAuthPermission                   OAuthPermission = "RESERVATIONS_WRITE"
 )

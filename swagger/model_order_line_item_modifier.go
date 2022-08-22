@@ -19,7 +19,7 @@ type OrderLineItemModifier struct {
 	CatalogVersion int64 `json:"catalog_version,omitempty"`
 	// The name of the item modifier.
 	Name string `json:"name,omitempty"`
-	// The quantity of the line item modifier. The modifier quantity can be 0 or more.  For example, suppose a restaurant offers a cheeseburger on the menu. When a buyer orders  this item, the restaurant records the purchase by creating an `Order` object with a line item  for a burger. The line item includes a line item modifier: the name is cheese and the quantity  is 1. The buyer has the option to order extra cheese (or no cheese). If the buyer chooses  the extra cheese option, the modifier quantity increases to 2. If the buyer does not want  any cheese, the modifier quantity is set to 0.
+	// The quantity of the line item modifier. The modifier quantity can be 0 or more. For example, suppose a restaurant offers a cheeseburger on the menu. When a buyer orders this item, the restaurant records the purchase by creating an `Order` object with a line item for a burger. The line item includes a line item modifier: the name is cheese and the quantity is 1. The buyer has the option to order extra cheese (or no cheese). If the buyer chooses the extra cheese option, the modifier quantity increases to 2. If the buyer does not want any cheese, the modifier quantity is set to 0.
 	Quantity        string `json:"quantity,omitempty"`
 	BasePriceMoney  *Money `json:"base_price_money,omitempty"`
 	TotalPriceMoney *Money `json:"total_price_money,omitempty"`

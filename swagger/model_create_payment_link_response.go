@@ -11,6 +11,7 @@ package swagger
 
 type CreatePaymentLinkResponse struct {
 	// Any errors that occurred during the request.
-	Errors      []ModelError `json:"errors,omitempty"`
-	PaymentLink *PaymentLink `json:"payment_link,omitempty"`
+	Errors           []ModelError                 `json:"errors,omitempty"`
+	PaymentLink      *PaymentLink                 `json:"payment_link,omitempty"`
+	RelatedResources *PaymentLinkRelatedResources `json:"related_resources,omitempty"`
 }

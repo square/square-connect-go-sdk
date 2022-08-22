@@ -14,6 +14,6 @@ type ListPaymentLinksResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The list of payment links.
 	PaymentLinks []PaymentLink `json:"payment_links,omitempty"`
-	//   When a response is truncated, it includes a cursor that you can use in a subsequent request  to retrieve the next set of gift cards. If a cursor is not present, this is the final response.  For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
+	//   When a response is truncated, it includes a cursor that you can use in a subsequent request to retrieve the next set of gift cards. If a cursor is not present, this is the final response. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

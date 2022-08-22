@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **RefreshToken** | **string** | A refresh token. OAuth refresh tokens are 64 bytes long. For more information, see [Refresh, Revoke, and Limit the Scope of OAuth Tokens](https://developer.squareup.com/docs/oauth-api/refresh-revoke-limit-scope). | [optional] [default to null]
 **ShortLived** | **bool** | A Boolean indicating that the access token is a short-lived access token. The short-lived access token returned in the response expires in 24 hours. | [optional] [default to null]
 **Errors** | [**[]ModelError**](Error.md) | Any errors that occurred during the request. | [optional] [default to null]
+**RefreshTokenExpiresAt** | **string** | The date when the &#x60;refresh_token&#x60; expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format. | [optional] [default to null]
+**AppSubscriptionId** | **string** | The subscription id of a v2 subscription the merchant signed up for. The subscription id is only present if the merchant signed up for a subscription during authorization. | [optional] [default to null]
+**AppPlanId** | **string** | The plan id of a v2 subscription plan the merchant signed up for. The plan id is only present if the merchant signed up for a subscription plan during authorization. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

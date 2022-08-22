@@ -9,7 +9,7 @@
  */
 package swagger
 
-// CustomAttributeDefinitionVisibility : The level of permission that a seller or other applications requires to  view this custom attribute definition.  The `Visibility` field controls who can read and write the custom attribute values  and custom attribute definition.
+// CustomAttributeDefinitionVisibility : The level of permission that a seller or other applications requires to view this custom attribute definition. The `Visibility` field controls who can read and write the custom attribute values and custom attribute definition.
 type CustomAttributeDefinitionVisibility string
 
 // List of CustomAttributeDefinitionVisibility

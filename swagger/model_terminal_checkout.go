@@ -18,7 +18,7 @@ type TerminalCheckout struct {
 	ReferenceId string `json:"reference_id,omitempty"`
 	// An optional note to associate with the checkout, as well as with any payments used to complete the checkout. Note: maximum 500 characters
 	Note string `json:"note,omitempty"`
-	// The reference to the Square order ID for the checkout request.
+	// The reference to the Square order ID for the checkout request. Supported only in the US.
 	OrderId        string                 `json:"order_id,omitempty"`
 	PaymentOptions *PaymentOptions        `json:"payment_options,omitempty"`
 	DeviceOptions  *DeviceCheckoutOptions `json:"device_options"`

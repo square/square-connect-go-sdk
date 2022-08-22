@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **CreatedAt** | **string** | The time when the location was created, in RFC 3339 format. For more information, see [Working with Dates](https://developer.squareup.com/docs/build-basics/working-with-dates). | [optional] [default to null]
 **MerchantId** | **string** | The ID of the merchant that owns the location. | [optional] [default to null]
 **Country** | [***Country**](Country.md) |  | [optional] [default to null]
-**LanguageCode** | **string** | The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A). For more information, see [Location language code](https://developer.squareup.com/docs/locations-api#location-language-code). | [optional] [default to null]
+**LanguageCode** | **string** | The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A). For more information, see [Language Preferences](https://developer.squareup.com/docs/build-basics/general-considerations/language-preferences). | [optional] [default to null]
 **Currency** | [***Currency**](Currency.md) |  | [optional] [default to null]
 **PhoneNumber** | **string** | The phone number of the location. For example, &#x60;+1 855-700-6000&#x60;. | [optional] [default to null]
 **BusinessName** | **string** | The name of the location&#x27;s overall business. This name is present on receipts and other customer-facing branding. | [optional] [default to null]

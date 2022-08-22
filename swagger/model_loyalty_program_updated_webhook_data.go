@@ -9,10 +9,11 @@
  */
 package swagger
 
+// The data associated with a `loyalty.program.updated` webhook event.
 type LoyaltyProgramUpdatedWebhookData struct {
-	// Name of the affected object’s type, `\"loyalty.program\"`.
+	// The type of object affected by the event. For this event, the value is `loyalty.program`.
 	Type_ string `json:"type,omitempty"`
-	// ID of the affected loyalty program.
+	// The ID of the affected loyalty program.
 	Id     string          `json:"id,omitempty"`
 	Object *LoyaltyProgram `json:"object,omitempty"`
 }

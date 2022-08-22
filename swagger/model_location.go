@@ -26,7 +26,7 @@ type Location struct {
 	// The ID of the merchant that owns the location.
 	MerchantId string   `json:"merchant_id,omitempty"`
 	Country    *Country `json:"country,omitempty"`
-	// The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A). For more information, see [Location language code](https://developer.squareup.com/docs/locations-api#location-language-code).
+	// The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A). For more information, see [Language Preferences](https://developer.squareup.com/docs/build-basics/general-considerations/language-preferences).
 	LanguageCode string    `json:"language_code,omitempty"`
 	Currency     *Currency `json:"currency,omitempty"`
 	// The phone number of the location. For example, `+1 855-700-6000`.

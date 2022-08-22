@@ -120,6 +120,8 @@ type APIClient struct {
 	V1WebhooksApi *V1WebhooksApiService
 
 	VendorsApi *VendorsApiService
+
+	WebhookSubscriptionsApi *WebhookSubscriptionsApiService
 }
 
 type service struct {
@@ -176,6 +178,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.V1TransactionsApi = (*V1TransactionsApiService)(&c.common)
 	c.V1WebhooksApi = (*V1WebhooksApiService)(&c.common)
 	c.VendorsApi = (*VendorsApiService)(&c.common)
+	c.WebhookSubscriptionsApi = (*WebhookSubscriptionsApiService)(&c.common)
 
 	return c
 }

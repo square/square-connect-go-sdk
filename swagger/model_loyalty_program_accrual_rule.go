@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines an accrual rule, which is how buyers can earn points.
+// Represents an accrual rule, which defines how buyers can earn points from the base [loyalty program](entity:LoyaltyProgram).
 type LoyaltyProgramAccrualRule struct {
 	AccrualType *LoyaltyProgramAccrualRuleType `json:"accrual_type"`
 	// The number of points that  buyers earn based on the `accrual_type`.

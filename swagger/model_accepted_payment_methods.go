@@ -10,12 +10,12 @@
 package swagger
 
 type AcceptedPaymentMethods struct {
-	// Whether Apple Pay is accepted at checkout
+	// Whether Apple Pay is accepted at checkout.
 	ApplePay bool `json:"apple_pay,omitempty"`
-	// Whether Google Pay is accepted at checkout
+	// Whether Google Pay is accepted at checkout.
 	GooglePay bool `json:"google_pay,omitempty"`
-	// Whether Cash App Pay is accepted at checkout
+	// Whether Cash App Pay is accepted at checkout.
 	CashAppPay bool `json:"cash_app_pay,omitempty"`
-	// Whether Afterpay/Clearpay is accepted at checkout
+	// Whether Afterpay/Clearpay is accepted at checkout.
 	AfterpayClearpay bool `json:"afterpay_clearpay,omitempty"`
 }

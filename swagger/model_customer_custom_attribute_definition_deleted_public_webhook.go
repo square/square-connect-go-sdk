@@ -9,15 +9,15 @@
  */
 package swagger
 
-// Published when a customer [custom attribute definition](entity:CustomAttributeDefinition) that is visible to the subscribing app is deleted.
+// Published when a customer [custom attribute definition](entity:CustomAttributeDefinition) that is visible to all applications is deleted. A notification is sent when any application deletes a custom attribute definition whose `visibility` is `VISIBILITY_READ_ONLY` or `VISIBILITY_READ_WRITE_VALUES`.  This event is replaced by  [customer.custom_attribute_definition.visible.deleted](webhook:customer.custom_attribute_definition.visible.deleted), which applies to custom attribute definitions that are visible to the subscribing application.
 type CustomerCustomAttributeDefinitionDeletedPublicWebhook struct {
-	// The ID of the target seller associated with the event.
+	// The ID of the seller associated with the event that triggered the event notification.
 	MerchantId string `json:"merchant_id,omitempty"`
 	// The type of this event. The value is `\"customer.custom_attribute_definition.public.deleted\"`.
 	Type_ string `json:"type,omitempty"`
-	// A unique ID for the webhook event.
+	// A unique ID for the event notification.
 	EventId string `json:"event_id,omitempty"`
-	// The timestamp of when the webhook event was created, in RFC 3339 format.
+	// The timestamp that indicates when the event notification was created, in RFC 3339 format.
 	CreatedAt string                                `json:"created_at,omitempty"`
 	Data      *CustomAttributeDefinitionWebhookData `json:"data,omitempty"`
 }

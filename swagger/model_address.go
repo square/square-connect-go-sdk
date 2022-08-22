@@ -21,9 +21,21 @@ type Address struct {
 	Locality string `json:"locality,omitempty"`
 	// A civil region within the address's `locality`, if any.
 	Sublocality string `json:"sublocality,omitempty"`
+	// A civil region within the address's `sublocality`, if any.
+	Sublocality2 string `json:"sublocality_2,omitempty"`
+	// A civil region within the address's `sublocality_2`, if any.
+	Sublocality3 string `json:"sublocality_3,omitempty"`
 	// A civil entity within the address's country. In the US, this is the state. For a full list of field meanings by country, see [Working with Addresses](https://developer.squareup.com/docs/build-basics/working-with-addresses).
 	AdministrativeDistrictLevel1 string `json:"administrative_district_level_1,omitempty"`
+	// A civil entity within the address's `administrative_district_level_1`. In the US, this is the county.
+	AdministrativeDistrictLevel2 string `json:"administrative_district_level_2,omitempty"`
+	// A civil entity within the address's `administrative_district_level_2`, if any.
+	AdministrativeDistrictLevel3 string `json:"administrative_district_level_3,omitempty"`
 	// The address's postal code. For a full list of field meanings by country, see [Working with Addresses](https://developer.squareup.com/docs/build-basics/working-with-addresses).
 	PostalCode string   `json:"postal_code,omitempty"`
 	Country    *Country `json:"country,omitempty"`
+	// Optional first name when it's representing recipient.
+	FirstName string `json:"first_name,omitempty"`
+	// Optional last name when it's representing recipient.
+	LastName string `json:"last_name,omitempty"`
 }
