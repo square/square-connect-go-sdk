@@ -1,6 +1,6 @@
 --- original/square-connect-openapi.json	2021-12-29 16:13:24.000000000 -0800
 +++ square-connect-openapi.json	2021-12-29 16:23:22.000000000 -0800
-@@ -26468,6 +26468,25 @@
+@@ -30539,6 +30539,25 @@
              "description": "List of item options IDs for this item. Used to manage and group item\nvariations in a specified order.\n\nMaximum: 6 item options.",
              "x-release-status": "BETA"
            },
