@@ -479,6 +479,7 @@ Class | Method | HTTP request | Description
  - [Checkout](docs/Checkout.md)
  - [CheckoutOptions](docs/CheckoutOptions.md)
  - [CheckoutOptionsPaymentType](docs/CheckoutOptionsPaymentType.md)
+ - [ClearpayDetails](docs/ClearpayDetails.md)
  - [CloneOrderRequest](docs/CloneOrderRequest.md)
  - [CloneOrderResponse](docs/CloneOrderResponse.md)
  - [CompletePaymentRequest](docs/CompletePaymentRequest.md)

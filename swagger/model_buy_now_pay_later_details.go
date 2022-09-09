@@ -11,7 +11,8 @@ package swagger
 
 // Additional details about a Buy Now Pay Later payment type.
 type BuyNowPayLaterDetails struct {
-	// The brand used for the Buy Now Pay Later payment. The brand can be `AFTERPAY` or `UNKNOWN`.
+	// The brand used for the Buy Now Pay Later payment. The brand can be `AFTERPAY`, `CLEARPAY` or `UNKNOWN`.
 	Brand           string           `json:"brand,omitempty"`
 	AfterpayDetails *AfterpayDetails `json:"afterpay_details,omitempty"`
+	ClearpayDetails *ClearpayDetails `json:"clearpay_details,omitempty"`
 }

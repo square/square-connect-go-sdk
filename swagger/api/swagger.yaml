@@ -4469,7 +4469,7 @@ paths:
               segment_ids:
               - 1KB9JE5EGJXCW.REACHABLE
               version: 7
-            - id: JDKYHBWT1D4F8MFH63DBMEN8Y4
+            - id: A9641GZW2H7Z56YYSD41Q12HDW
               created_at: 2018-01-30T14:10:54.859Z
               updated_at: 2018-03-08T18:25:21.342Z
               given_name: Amelia
@@ -4482,7 +4482,7 @@ paths:
                 administrative_district_level_1: NY
                 postal_code: "10003"
                 country: US
-              phone_number: 1-212-555-4240
+              phone_number: 1-212-555-9238
               reference_id: YOUR_REFERENCE_ID_1
               note: a customer
               preferences:
@@ -10593,7 +10593,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
     post:
       tags:
       - Payments
@@ -10632,7 +10632,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-endpoint-errors:
       - error-code: ADDRESS_VERIFICATION_FAILURE
       - error-code: ALLOWABLE_PIN_TRIES_EXCEEDED
@@ -10662,6 +10662,7 @@ paths:
       - error-code: INVALID_POSTAL_CODE
       - error-code: MANUALLY_ENTERED_PAYMENT_NOT_SUPPORTED
       - error-code: PAN_FAILURE
+      - error-code: PAYMENT_AMOUNT_MISMATCH
       - error-code: PAYMENT_LIMIT_EXCEEDED
       - error-code: TEMPORARY_ERROR
       - error-code: TRANSACTION_LIMIT
@@ -10708,7 +10709,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
   /v2/payments/{payment_id}:
     get:
       tags:
@@ -10741,7 +10742,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
     put:
       tags:
       - Payments
@@ -10785,7 +10786,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-endpoint-errors:
       - error-code: AMOUNT_TOO_HIGH
       - error-code: CARDHOLDER_INSUFFICIENT_PERMISSIONS
@@ -10832,7 +10833,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
   /v2/payments/{payment_id}/complete:
     post:
       tags:
@@ -10879,7 +10880,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-endpoint-errors:
       - error-code: VERSION_MISMATCH
   /v2/payouts:
@@ -11206,7 +11207,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
     post:
       tags:
       - Refunds
@@ -11243,7 +11244,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-endpoint-errors:
       - error-code: AMOUNT_TOO_HIGH
       - error-code: CARD_TOKEN_USED
@@ -11285,7 +11286,7 @@ paths:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_service.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
   /v2/sites:
     get:
       tags:
@@ -13797,7 +13798,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ApplicationDetailsExternalSquareProduct
     BankAccountStatus:
       type: string
@@ -14256,7 +14257,7 @@ components:
       x-release-status: BETA
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /riskml-common/risk-evaluation-external/src/main/proto/squareup/riskevaluation/external/risk_evaluation.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: RiskEvaluationRiskLevel
     SubscriptionActionType:
       type: string
@@ -25849,7 +25850,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ACHDetails
     AcceptDisputeRequest:
       type: object
@@ -25912,7 +25913,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: AfterpayDetails
     ApplicationDetails:
       type: object
@@ -25936,7 +25937,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ApplicationDetails
     BankAccount:
       required:
@@ -26116,7 +26117,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: BankAccountPaymentDetails
     BatchRequest:
       required:
@@ -26214,9 +26215,11 @@ components:
           type: string
           description: |-
             The brand used for the Buy Now Pay Later payment.
-            The brand can be `AFTERPAY` or `UNKNOWN`.
+            The brand can be `AFTERPAY`, `CLEARPAY` or `UNKNOWN`.
         afterpay_details:
           $ref: '#/components/schemas/AfterpayDetails'
+        clearpay_details:
+          $ref: '#/components/schemas/ClearpayDetails'
       description: Additional details about a Buy Now Pay Later payment type.
       x-property-order:
       - brand
@@ -26225,7 +26228,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: BuyNowPayLaterDetails
     CancelPaymentByIdempotencyKeyRequest:
       required:
@@ -26245,7 +26248,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CancelPaymentByIdempotencyKeyRequest
     CancelPaymentByIdempotencyKeyResponse:
       type: object
@@ -26263,7 +26266,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CancelPaymentByIdempotencyKeyResponse
     CancelPaymentRequest:
       type: object
@@ -26276,7 +26279,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CancelPaymentRequest
     CancelPaymentResponse:
       type: object
@@ -26347,7 +26350,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CancelPaymentResponse
     CancelSubscriptionRequest:
       type: object
@@ -26659,7 +26662,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CardPaymentDetails
     CardPaymentTimeline:
       type: object
@@ -26682,7 +26685,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CardPaymentTimeline
     CashAppDetails:
       type: object
@@ -26714,7 +26717,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CashAppDetails
     CashPaymentDetails:
       required:
@@ -26733,8 +26736,23 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CashPaymentDetails
+    ClearpayDetails:
+      type: object
+      properties:
+        email_address:
+          maxLength: 255
+          type: string
+          description: Email address on the buyer's Clearpay account.
+      description: Additional details about Clearpay payments.
+      x-property-order:
+      - email_address
+      x-release-status: PUBLIC
+      x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
+      x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
+      x-object-name: ClearpayDetails
     CompletePaymentRequest:
       type: object
       properties:
@@ -26756,7 +26774,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CompletePaymentRequest
     CompletePaymentResponse:
       type: object
@@ -26830,7 +26848,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CompletePaymentResponse
     CreateDisputeEvidenceFileRequest:
       required:
@@ -27149,7 +27167,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CreatePaymentRequest
     CreatePaymentResponse:
       type: object
@@ -27228,7 +27246,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: CreatePaymentResponse
     CreateSubscriptionRequest:
       required:
@@ -27878,7 +27896,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: DeviceDetails
     DeviceMetadata:
       type: object
@@ -27984,7 +28002,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: DigitalWalletDetails
     Dispute:
       type: object
@@ -28215,7 +28233,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ExternalPaymentDetails
     GetBankAccountByV1IdRequest:
       type: object
@@ -28326,7 +28344,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: GetPaymentRefundRequest
     GetPaymentRefundResponse:
       type: object
@@ -28368,7 +28386,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: GetPaymentRefundResponse
     GetPaymentRequest:
       type: object
@@ -28379,7 +28397,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: GetPaymentRequest
     GetPaymentResponse:
       type: object
@@ -28453,7 +28471,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: GetPaymentResponse
     GetTerminalActionRequest:
       type: object
@@ -28930,7 +28948,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ListPaymentRefundsRequest
     ListPaymentRefundsResponse:
       type: object
@@ -28983,7 +29001,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ListPaymentRefundsResponse
     ListPaymentsRequest:
       type: object
@@ -29052,7 +29070,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ListPaymentsRequest
     ListPaymentsResponse:
       type: object
@@ -29137,7 +29155,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ListPaymentsResponse
     ListSubscriptionEventsRequest:
       type: object
@@ -29759,7 +29777,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: Payment
     PaymentOptions:
       type: object
@@ -29901,7 +29919,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: PaymentRefund
     ProcessingFee:
       type: object
@@ -29923,7 +29941,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_model.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: ProcessingFee
     RefundPaymentRequest:
       required:
@@ -29996,7 +30014,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: RefundPaymentRequest
     RefundPaymentResponse:
       type: object
@@ -30036,7 +30054,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/refunds_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: RefundPaymentResponse
     ResumeSubscriptionRequest:
       type: object
@@ -30282,7 +30300,7 @@ components:
       x-release-status: BETA
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /riskml-common/risk-evaluation-external/src/main/proto/squareup/riskevaluation/external/risk_evaluation.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: RiskEvaluation
     SaveCardOptions:
       required:
@@ -31695,10 +31713,11 @@ components:
       x-property-order:
       - payment
       - idempotency_key
+      - request_context_token
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: UpdatePaymentRequest
     UpdatePaymentResponse:
       type: object
@@ -31774,7 +31793,7 @@ components:
       x-release-status: PUBLIC
       x-proto-repo: https://git.sqcorp.co/projects/SQ/repos/java/browse
       x-proto-location: /pago/pago-proto/src/main/proto/squareup/pago/external/payments_api.proto
-      x-proto-sha: 37a248daa57829af8746626380f150be58b920b9
+      x-proto-sha: 495d56e2121254e62dae996ec2126fee007e4ecd
       x-object-name: UpdatePaymentResponse
     UpdateSubscriptionRequest:
       type: object
@@ -66201,37 +66220,56 @@ components:
       - name: Square-Version
         description: Square Connect API versions
         schema:
-          default: 2022-08-17
+          default: 2022-08-23
     oauth2ClientSecret:
       type: apiKey
       name: Authorization
       in: header
   x-apis:
-    Payouts:
-      name: Payouts
-      summary: Get a list of deposits and withdrawals from a seller's bank accounts.
-      description: |2-
+    Terminal:
+      name: Terminal
+      summary: Requests a checkout from a paired Square Terminal.
+      description: |2
 
-        The Payouts API allows you to see a complete list of payouts made to a seller's banking destination,
-        with a list of payout entries that describe the payments associated with each payout. It can be paired with the
-        Bank Accounts API to add detail about which bank account each payout was made to.
+        The Terminal API allows you to manage sending and receiving requests and responses from a paired Square Terminal. For a Terminal checkout, refund, or action, you can create a request, check its status, cancel the request, search for in-process requests, and get the results of the request after it is completed. In the current implementation, refunds are only supported for Interac debit cards in Canada.
       x-namespace: ""
       externalDocsList:
-      - description: Payouts
-        url: https://developer.squareup.com/docs/payouts/overview
-    ApplePay:
-      name: Apple Pay
-      summary: Apple Pay support APIs
+      - description: Terminal
+        url: https://developer.squareup.com/docs/terminal-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    MobileAuthorization:
+      name: Mobile Authorization
+      summary: Authorize Reader SDK applications to take in-person payments.
       description: |2-
 
-        The Apple Pay APIs provides an easy way for platform developers
-        to bulk activate Web Apple Pay with Square for merchants using their platform.
+        The Mobile Authorization API accepts an account credential (an OAuth token or a personal access token) and a
+        location ID and returns an authorization code that custom mobile applications can use to initialize Square mobile
+        solutions, like Reader SDK, to accept payments using Square hardware.
       x-namespace: ""
       externalDocsList:
-      - description: Web Payments SDK
-        url: https://developer.squareup.com/docs/web-payments/apple-pay
-      - description: In-App Payments SDK
-        url: https://developer.squareup.com/docs/in-app-payments-sdk/add-digital-wallets/apple-pay
+      - description: Mobile Authorization
+        url: https://developer.squareup.com/docs/mobile-authz/what-it-does
+    Vendors:
+      name: Vendors
+      summary: Manages a seller's suppliers.
+      description: The Vendors API allows applications to create, retrieve, and update
+        vendors as suppliers to a seller.
+      x-namespace: ""
+      externalDocsList:
+      - description: Vendors
+        url: https://developer.squareup.com/docs/vendors-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    WebhookSubscriptions:
+      name: Webhook Subscriptions
+      summary: Create and manage webhook subscriptions.
+      description: "\nThe Webhook Subscriptions API allows you to create, retrieve,\
+        \ update, and delete webhook subscriptions.   \n"
+      x-namespace: ""
+      externalDocsList:
+      - description: Webhook Subscriptions
+        url: https://developer.squareup.com/docs/webhooks/webhook-subscriptions-api
     BankAccounts:
       name: Bank Accounts
       summary: Get a list of a seller's bank accounts.
@@ -66246,96 +66284,70 @@ components:
         url: https://developer.squareup.com/docs/bank-accounts-api
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    Disputes:
-      name: Disputes
-      summary: Use the Disputes API to manage disputes (chargebacks).
-      description: |2-
-
-        A seller has the following options to process a dispute:
-
-        - Accept the dispute using the [AcceptDispute](/reference/square/disputes-api/accept-dispute) endpoint. Square returns the disputed amount from the account balance of the Square account.
-        - Challenge the dispute using the [SubmitEvidence](/reference/square/disputes-api/submit-evidence) endpoint. If the payment was valid, you can contest the disputed payment.
-        You submit supporting evidence you have about the transaction, such as receipts, invoices, email correspondence, proof of delivery, or photos.
-        You upload evidence using the [CreateDisputeEvidenceFile](/reference/square/disputes-api/create-dispute-evidence-file) endpoint.
-
-        The Disputes API also supports other endpoints useful in dispute management.
-      x-namespace: ""
-      externalDocsList:
-      - description: Disputes
-        url: https://developer.squareup.com/docs/disputes-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    Terminal:
-      name: Terminal
-      summary: Requests a checkout from a paired Square Terminal.
+    Snippets:
+      name: Snippets
+      summary: Manage snippets for Square Online sites.
       description: |2
 
-        The Terminal API allows you to manage sending and receiving requests and responses from a paired Square Terminal. For a Terminal checkout, refund, or action, you can create a request, check its status, cancel the request, search for in-process requests, and get the results of the request after it is completed. In the current implementation, refunds are only supported for Interac debit cards in Canada.
+        The Snippets API lets you manage snippets that add custom functionality to Square Online sites. A snippet is HTML, CSS, and JavaScript that is injected into the `head` element of all pages on a site, except for checkout pages. You can use the Snippets API to create applications that help meet the many needs of Square sellers.
+
+         __Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis).
       x-namespace: ""
       externalDocsList:
-      - description: Terminal
-        url: https://developer.squareup.com/docs/terminal-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    Settlements:
-      name: Settlements
+      - description: Snippets
+        url: https://developer.squareup.com/docs/snippets-api/overview
+    Payouts:
+      name: Payouts
       summary: Get a list of deposits and withdrawals from a seller's bank accounts.
       description: |2-
 
-        __The V1 Settlements API has been deprecated__. The Settlements API allows you to see a complete list of settlements made to a seller's bank account,
-        with a list of settlement entries that describe the payments associated with each settlement. It can be paired with the
-        Bank Accounts API to add detail about which bank account each settlement was made to.
-      x-namespace: ""
-    MobileAuthorization:
-      name: Mobile Authorization
-      summary: Authorize Reader SDK applications to take in-person payments.
-      description: |2-
-
-        The Mobile Authorization API accepts an account credential (an OAuth token or a personal access token) and a
-        location ID and returns an authorization code that custom mobile applications can use to initialize Square mobile
-        solutions, like Reader SDK, to accept payments using Square hardware.
+        The Payouts API allows you to see a complete list of payouts made to a seller's banking destination,
+        with a list of payout entries that describe the payments associated with each payout. It can be paired with the
+        Bank Accounts API to add detail about which bank account each payout was made to.
       x-namespace: ""
       externalDocsList:
-      - description: Mobile Authorization
-        url: https://developer.squareup.com/docs/mobile-authz/what-it-does
-    Team:
-      name: Team
-      summary: Pull employee data into accounting and payroll systems with the Team
-        API.
-      description: |2-
-
-        The Team API allows applications to retrieve a roster of team members registered in the Square Point
-        of Sale system, which can be useful in payroll and account contexts.
-
-        The Team API is best used in conjunction with the Labor API, where you provide team member IDs to
-        manage shifts, breaks, and wages.
-      x-namespace: ""
-      externalDocsList:
-      - description: Team
-        url: https://developer.squareup.com/docs/team/overview
-    Inventory:
-      name: Inventory
-      summary: Programmatically manages a Square seller’s inventory of catalog items.
-      description: |2+
-
-        The Inventory API allows you to programmatically manage inventory counts and inventory changes of products or services.
-
-      x-namespace: ""
-      externalDocsList:
-      - description: Inventory
-        url: https://developer.squareup.com/docs/inventory-api/what-it-does
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    Customers:
-      name: Customers
-      summary: Create and manage customer profiles and sync CRM systems with Square.
+      - description: Payouts
+        url: https://developer.squareup.com/docs/payouts/overview
+    Loyalty:
+      name: Loyalty
+      summary: Create and manage loyalty accounts for buyers.
       description: |2
 
-        The Customers API enables you to create and manage customer profiles, as well as search for customers based on various criteria (including customer group membership). You can also use the API to sync contacts between your CRM system and Square.
+        The Loyalty API lets you create and manage loyalty accounts in a Square loyalty program and allow buyers to earn points and redeem points for discounts.
       x-namespace: ""
       externalDocsList:
-      - description: Customers
-        url: https://developer.squareup.com/docs/customers-api/what-it-does
+      - description: Loyalty
+        url: https://developer.squareup.com/docs/loyalty-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    Sites:
+      name: Sites
+      summary: Get details about Square Online sites that belong to Square sellers.
+      description: |2-
+
+        Square sellers use Square Online to build eCommerce websites. The Sites API lets you get basic details about Square Online sites, such as the site ID, title, and domain. You can use the Sites API with the Snippets API to manage snippets that extend Square Online features.
+
+         __Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis).
+      x-namespace: ""
+      externalDocsList:
+      - description: Sites
+        url: https://developer.squareup.com/docs/sites-api/overview
+    Cards:
+      name: Cards
+      summary: Use the Cards API to save a credit or debit card on file.
+      description: |2-
+
+        You can use the [CreateCard](/reference/square/cards-api/create-card) endpoint to save a credit or debit card to a Square account.
+        Developers can integrate the Cards API in their application to let Square sellers:
+
+        - **Save a card that can be charged by any Square seller who uses your application.** Your application specifies the organization access token in the `CreateCard` request.
+        - **Save a card that can be charged by a single Square seller.**  Your application specifies the access token of the specific seller account in the `CreateCard` request.
+
+        The Cards API also supports other endpoints to manage the cards.
+      x-namespace: ""
+      externalDocsList:
+      - description: Cards
+        url: https://developer.squareup.com/docs/cards-api/overview
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
     Locations:
@@ -66351,27 +66363,78 @@ components:
         url: https://developer.squareup.com/docs/locations-api
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    Snippets:
-      name: Snippets
-      summary: Manage snippets for Square Online sites.
+    Checkout:
+      name: Checkout
+      summary: Accept payments through a pre-built, Square-hosted checkout page. No
+        frontend required.
+      description: "\nWith the Square Checkout API, your customers can pay for a purchase\
+        \ through a simple, Square-hosted checkout page. It can be integrated into\
+        \ any payments workflow with minimal coding. \n\nYou can create and configure\
+        \ your checkout page through a `CreatePaymentLink` request, specifying the\
+        \ accepted payment methods and checkout options like tipping and custom fields.\
+        \  You can also configure a URL for customers to be redirected to once they\
+        \ complete their purchase. \n\nFirst time Square developers should utilize\
+        \ the payment link endpoints to create, update, retrieve, and list checkout\
+        \ pages. "
+      x-namespace: ""
+      externalDocsList:
+      - description: Checkout
+        url: https://developer.squareup.com/docs/checkout-api-overview
+    Bookings:
+      name: Bookings
+      displayName: Bookings
+      summary: Create and manage bookings for Square sellers.
+      description: "\nThe Bookings API allows you to create, retrieve, update, and\
+        \ cancel appointments online. When used with other Square APIs (such as the\
+        \ Locations API, Team API, Catalog API, and Customers API), the Bookings API\
+        \ lets you create online-booking applications for users to book services provided\
+        \ by Square sellers.   \n"
+      x-namespace: ""
+      externalDocsList:
+      - description: Bookings
+        url: https://developer.squareup.com/docs/bookings-api/what-it-is
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    CustomerCustomAttributes:
+      name: Customer Custom Attributes
+      summary: Create and manage customer-related custom attribute definitions and
+        custom attributes.
       description: |2
 
-        The Snippets API lets you manage snippets that add custom functionality to Square Online sites. A snippet is HTML, CSS, and JavaScript that is injected into the `head` element of all pages on a site, except for checkout pages. You can use the Snippets API to create applications that help meet the many needs of Square sellers.
+        Use the Customer Custom Attributes API to create and manage custom attributes for customer profiles. Custom attributes can be used to store properties or metadata that simplify integration, synchronization, and personalization workflows. After a custom attribute definition is created in a Square seller account, the custom attribute value can be set for customer profiles in the seller's Customer Directory.
+      x-namespace: ""
+      externalDocsList:
+      - description: Customer Custom Attributes
+        url: https://developer.squareup.com/docs/customer-custom-attributes-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    OAuth:
+      name: OAuth
+      summary: Allow your application to gain programmatic access to other seller
+        accounts.
+      description: |2-
 
-         __Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis).
+        The Square OAuth API lets applications request and obtain permission from a Square account to make API
+        calls on behalf of that account. Applications can request individual permissions so that users do not need
+        to grant full access to their Square accounts.
       x-namespace: ""
       externalDocsList:
-      - description: Snippets
-        url: https://developer.squareup.com/docs/snippets-api/overview
-    Vendors:
-      name: Vendors
-      summary: Manages a seller's suppliers.
-      description: The Vendors API allows applications to create, retrieve, and update
-        vendors as suppliers to a seller.
+      - description: OAuth
+        url: https://developer.squareup.com/docs/oauth-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    Subscriptions:
+      name: Subscriptions
+      summary: Create and manage subscriptions.
+      description: "\nSubscriptions enable sellers to generate a reliable cash flow\
+        \ and recurring revenue to grow their businesses. Square offers the Subscriptions\
+        \ API for developers to embed subscription functionality in their applications.\
+        \ You first create a subscription plan using the Catalog API and then use\
+        \ the Subscriptions API to create and manage subscriptions. \n\n"
       x-namespace: ""
       externalDocsList:
-      - description: Vendors
-        url: https://developer.squareup.com/docs/vendors-api/overview
+      - description: Subscriptions
+        url: https://developer.squareup.com/docs/subscriptions/overview
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
     Refunds:
@@ -66393,85 +66456,43 @@ components:
         url: https://developer.squareup.com/docs/payments-api/overview
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    CustomerSegments:
-      name: Customer Segments
-      summary: Retrieve customer segments (also called smart groups) in a business
-        account.
-      description: "\nThe Customer Segments API lets you retrieve information about\
-        \ the segments defined for a business. Square sellers can create customer\
-        \ segments in the Seller Dashboard or Point of Sale by defining filters for\
-        \ the segment. For example, a segment can include customers who have visited\
-        \ more than 10 times. Customers are automatically added to and removed from\
-        \ the segment over time based on this criterion. \n\nYou can inspect the customer's\
-        \ `segment_ids` property to determine which segments a customer belongs to.\
-        \ Then, you can use the Customer Segments API to retrieve basic details about\
-        \ each segment, such as the segment name and the time when it was created."
-      x-namespace: ""
-      externalDocsList:
-      - description: Customer Segments
-        url: https://developer.squareup.com/docs/customer-segments-api/what-it-does
-    Devices:
-      name: Devices
-      summary: Manages a pairing between a third-party Point of Sale application and
-        a Square Terminal in a seller location.
-      description: ""
-      x-namespace: ""
-      externalDocsList:
-      - description: Devices
-        url: https://developer.squareup.com/docs/terminal-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    Catalog:
-      name: Catalog
-      summary: Programmatically catalogs a Square seller’s products for sale and services
-        for hire.
+    Labor:
+      name: Labor
+      summary: Manage shifts, breaks, and wages for employees in Square Point of Sale.
       description: |2-
 
-        The Catalog API allows you to programmatically catalog products or services, including items, variations, categories, discounts, taxes, modifiers, and more.
+        The Labor API allows you to see when employees clocked in and out, how much they worked during different
+        periods, and how many breaks they took. You can also call the API to register a past break, adjust a shift,
+        or update a wage.
+
+        This API is best used in conjunction with the Team API.
       x-namespace: ""
       externalDocsList:
-      - description: Catalog
-        url: https://developer.squareup.com/docs/catalog-api/what-it-does
+      - description: Labor
+        url: https://developer.squareup.com/docs/labor-api/what-it-does
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    GiftCardActivities:
-      name: Gift Card Activities
-      summary: Create and retrieve gift card activities.
+    Webhooks:
+      name: Webhooks
+      summary: Subscribe to V1 Webhook events for a seller.
+      description: |2-
+
+        If you are working with V1 webhooks, you use the Webhooks API to subscribe to events for each seller you are interested in receiving events for. Learn how to subscribe to [V1 webhooks](/docs/webhooks-api/subscribe-to-events-v1).
+
+        If you are working with V2 webhooks, you do not need to use this API. instead, you subscribe to events using the [Developer Dashboard](/apps). Learn how to subscribe to [V2 webhooks](/docs/webhooks-api/subscribe-to-events).
+      x-namespace: ""
+    Customers:
+      name: Customers
+      summary: Create and manage customer profiles and sync CRM systems with Square.
       description: |2
 
-        Developers can use the Gift Cards API to create and access gift cards and use the Gift Card Activities API to create gift card activities, such as activate a gift card, add funds to a gift card, and redeem a gift card.
+        The Customers API enables you to create and manage customer profiles, as well as search for customers based on various criteria (including customer group membership). You can also use the API to sync contacts between your CRM system and Square.
       x-namespace: ""
       externalDocsList:
-      - description: Gift Card Activities
-        url: https://developer.squareup.com/docs/gift-cards/using-gift-cards-api
+      - description: Customers
+        url: https://developer.squareup.com/docs/customers-api/what-it-does
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    Checkout:
-      name: Checkout
-      summary: Accept payments through a pre-built, Square-hosted checkout page. No
-        frontend required.
-      description: "\nWith the Square Checkout API, your customers can pay for a purchase\
-        \ through a simple, Square-hosted checkout page. It can be integrated into\
-        \ any payments workflow with minimal coding. \n\nYou can create and configure\
-        \ your checkout page through a `CreatePaymentLink` request, specifying the\
-        \ accepted payment methods and checkout options like tipping and custom fields.\
-        \  You can also configure a URL for customers to be redirected to once they\
-        \ complete their purchase. \n\nFirst time Square developers should utilize\
-        \ the payment link endpoints to create, update, retrieve, and list checkout\
-        \ pages. "
-      x-namespace: ""
-      externalDocsList:
-      - description: Checkout
-        url: https://developer.squareup.com/docs/checkout-api-overview
-    WebhookSubscriptions:
-      name: Webhook Subscriptions
-      summary: Create and manage webhook subscriptions.
-      description: "\nThe Webhook Subscriptions API allows you to create, retrieve,\
-        \ update, and delete webhook subscriptions.   \n"
-      x-namespace: ""
-      externalDocsList:
-      - description: Webhook Subscriptions
-        url: https://developer.squareup.com/docs/webhooks/webhook-subscriptions-api
     Reporting:
       name: Reporting
       summary: Deprecated - Use the Orders and Payments APIs instead.
@@ -66480,30 +66501,52 @@ components:
         Prior to 2019/08/15, the Reporting API was the way to review multi-party payments taken with the Transactions
         API. The Payments API now includes an "application fee" parameter you can use to replace this functionality.
       x-namespace: ""
-    Invoices:
-      name: Invoices
-      summary: Create and manage invoices.
-      description: |2
-
-        The Invoices API lets you create and manage invoices for orders that were created using the Orders API. After you create the invoice and configure its delivery method, payment schedule, and other invoice settings, you can publish the invoice. Depending on the invoice settings, Square sends the invoice to the customer or automatically charges a card on file. Square also hosts each invoice on a web page where customers can easily pay for it.
+    GiftCards:
+      name: Gift Cards
+      summary: Create and access gift cards and link customers to gift cards.
+      description: "\nSquare gift cards enable sellers to boost sales and attract\
+        \ new customers. Sellers can easily sell, redeem, track, and reload Square\
+        \ gift cards. \n\nDevelopers can use the Gift Cards API to integrate Square\
+        \ gift cards into third-party applications. In addition, developers can use\
+        \ the Gift Card Activities API to create gift card activities, such as activate\
+        \ a gift card, add funds to a gift card, and redeem a gift card."
       x-namespace: ""
       externalDocsList:
-      - description: Invoices
-        url: https://developer.squareup.com/docs/invoices-api/overview
+      - description: Gift Cards
+        url: https://developer.squareup.com/docs/gift-cards/using-gift-cards-api
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    Loyalty:
-      name: Loyalty
-      summary: Create and manage loyalty accounts for buyers.
-      description: |2
+    Transactions:
+      name: Transactions
+      summary: Deprecated - Use the Orders and Payments APIs instead.
+      description: "\nPrior to 2019/08/15, the Transactions API was the way to take\
+        \ online payments. Going forward, the Payments API \nand Refunds API (together\
+        \ with the Orders API) replace the Transactions API."
+      x-namespace: ""
+    Employees:
+      name: Employees
+      summary: Pull employee data into accounting and payroll systems with the Employees
+        API.
+      description: |2-
 
-        The Loyalty API lets you create and manage loyalty accounts in a Square loyalty program and allow buyers to earn points and redeem points for discounts.
+        The Employees API allows applications to retrieve a roster of employees registered in the Square Point
+        of Sale system, which can be useful in payroll and account contexts.
+
+        The Employees API is best used in conjunction with the Labor API, where you provide employee IDs to
+        manage shifts, breaks, and wages.
+      x-namespace: ""
+    CashDrawers:
+      name: Cash Drawers
+      summary: Get details about cash drawer shifts.
+      description: |2-
+
+        Cash drawer shifts track cash transactions so that the total money in the cash drawers can be reconciled for a
+        specific period of time (a cash drawer shift), for a particular device, in a particular location. The Cash Drawer Shifts API
+        enables you to list and retrieve information about cash drawer shifts.
       x-namespace: ""
       externalDocsList:
-      - description: Loyalty
-        url: https://developer.squareup.com/docs/loyalty-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
+      - description: Cash Drawer Shifts
+        url: https://developer.squareup.com/docs/cashdrawershift-api/reporting
     Orders:
       name: Orders
       summary: Get sales data for a Square seller, itemize payments, push orders to
@@ -66524,50 +66567,60 @@ components:
         url: https://developer.squareup.com/docs/orders-api/what-it-does
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    Subscriptions:
-      name: Subscriptions
-      summary: Create and manage subscriptions.
-      description: "\nSubscriptions enable sellers to generate a reliable cash flow\
-        \ and recurring revenue to grow their businesses. Square offers the Subscriptions\
-        \ API for developers to embed subscription functionality in their applications.\
-        \ You first create a subscription plan using the Catalog API and then use\
-        \ the Subscriptions API to create and manage subscriptions. \n\n"
+    CustomerGroups:
+      name: Customer Groups
+      summary: Create and manage customer groups to streamline and automate workflows
+        and help personalize customer interactions.
+      description: "\nThe Customer Groups API lets you create and manage customer\
+        \ groups to provide targeted promotions or take other customized actions based\
+        \ on group membership. For example, you can create Weekly, Monthly, and Quarterly\
+        \ customer groups and add customers to them based on their preferences to\
+        \ receive marketing promotions on a weekly, monthly, and quarterly basis.\
+        \ You can then use the information to manage your marketing email schedule.\
+        \ \n\nYou can use the Customer Groups API to retrieve and manage customer\
+        \ groups. You can use the Customers API to add customers to and remove customers\
+        \ from groups and search for customers based on group membership.\n\n"
       x-namespace: ""
       externalDocsList:
-      - description: Subscriptions
-        url: https://developer.squareup.com/docs/subscriptions/overview
+      - description: Customer Groups
+        url: https://developer.squareup.com/docs/customer-groups-api/what-it-does
+    Inventory:
+      name: Inventory
+      summary: Programmatically manages a Square seller’s inventory of catalog items.
+      description: |2+
+
+        The Inventory API allows you to programmatically manage inventory counts and inventory changes of products or services.
+
+      x-namespace: ""
+      externalDocsList:
+      - description: Inventory
+        url: https://developer.squareup.com/docs/inventory-api/what-it-does
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    Cards:
-      name: Cards
-      summary: Use the Cards API to save a credit or debit card on file.
+    Team:
+      name: Team
+      summary: Pull employee data into accounting and payroll systems with the Team
+        API.
       description: |2-
 
-        You can use the [CreateCard](/reference/square/cards-api/create-card) endpoint to save a credit or debit card to a Square account.
-        Developers can integrate the Cards API in their application to let Square sellers:
+        The Team API allows applications to retrieve a roster of team members registered in the Square Point
+        of Sale system, which can be useful in payroll and account contexts.
 
-        - **Save a card that can be charged by any Square seller who uses your application.** Your application specifies the organization access token in the `CreateCard` request.
-        - **Save a card that can be charged by a single Square seller.**  Your application specifies the access token of the specific seller account in the `CreateCard` request.
-
-        The Cards API also supports other endpoints to manage the cards.
+        The Team API is best used in conjunction with the Labor API, where you provide team member IDs to
+        manage shifts, breaks, and wages.
       x-namespace: ""
       externalDocsList:
-      - description: Cards
-        url: https://developer.squareup.com/docs/cards-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    CashDrawers:
-      name: Cash Drawers
-      summary: Get details about cash drawer shifts.
+      - description: Team
+        url: https://developer.squareup.com/docs/team/overview
+    Settlements:
+      name: Settlements
+      summary: Get a list of deposits and withdrawals from a seller's bank accounts.
       description: |2-
 
-        Cash drawer shifts track cash transactions so that the total money in the cash drawers can be reconciled for a
-        specific period of time (a cash drawer shift), for a particular device, in a particular location. The Cash Drawer Shifts API
-        enables you to list and retrieve information about cash drawer shifts.
+        __The V1 Settlements API has been deprecated__. The Settlements API allows you to see a complete list of settlements made to a seller's bank account,
+        with a list of settlement entries that describe the payments associated with each settlement. It can be paired with the
+        Bank Accounts API to add detail about which bank account each settlement was made to.
       x-namespace: ""
-      externalDocsList:
-      - description: Cash Drawer Shifts
-        url: https://developer.squareup.com/docs/cashdrawershift-api/reporting
     Payments:
       name: Payments
       summary: The Payments API lets developers take and manage payments.
@@ -66586,122 +66639,30 @@ components:
         url: https://developer.squareup.com/docs/payments-api/overview
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    GiftCards:
-      name: Gift Cards
-      summary: Create and access gift cards and link customers to gift cards.
-      description: "\nSquare gift cards enable sellers to boost sales and attract\
-        \ new customers. Sellers can easily sell, redeem, track, and reload Square\
-        \ gift cards. \n\nDevelopers can use the Gift Cards API to integrate Square\
-        \ gift cards into third-party applications. In addition, developers can use\
-        \ the Gift Card Activities API to create gift card activities, such as activate\
-        \ a gift card, add funds to a gift card, and redeem a gift card."
+    Invoices:
+      name: Invoices
+      summary: Create and manage invoices.
+      description: |2
+
+        The Invoices API lets you create and manage invoices for orders that were created using the Orders API. After you create the invoice and configure its delivery method, payment schedule, and other invoice settings, you can publish the invoice. Depending on the invoice settings, Square sends the invoice to the customer or automatically charges a card on file. Square also hosts each invoice on a web page where customers can easily pay for it.
       x-namespace: ""
       externalDocsList:
-      - description: Gift Cards
+      - description: Invoices
+        url: https://developer.squareup.com/docs/invoices-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    GiftCardActivities:
+      name: Gift Card Activities
+      summary: Create and retrieve gift card activities.
+      description: |2
+
+        Developers can use the Gift Cards API to create and access gift cards and use the Gift Card Activities API to create gift card activities, such as activate a gift card, add funds to a gift card, and redeem a gift card.
+      x-namespace: ""
+      externalDocsList:
+      - description: Gift Card Activities
         url: https://developer.squareup.com/docs/gift-cards/using-gift-cards-api
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
-    CustomerCustomAttributes:
-      name: Customer Custom Attributes
-      summary: Create and manage customer-related custom attribute definitions and
-        custom attributes.
-      description: |2
-
-        Use the Customer Custom Attributes API to create and manage custom attributes for customer profiles. Custom attributes can be used to store properties or metadata that simplify integration, synchronization, and personalization workflows. After a custom attribute definition is created in a Square seller account, the custom attribute value can be set for customer profiles in the seller's Customer Directory.
-      x-namespace: ""
-      externalDocsList:
-      - description: Customer Custom Attributes
-        url: https://developer.squareup.com/docs/customer-custom-attributes-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    Transactions:
-      name: Transactions
-      summary: Deprecated - Use the Orders and Payments APIs instead.
-      description: "\nPrior to 2019/08/15, the Transactions API was the way to take\
-        \ online payments. Going forward, the Payments API \nand Refunds API (together\
-        \ with the Orders API) replace the Transactions API."
-      x-namespace: ""
-    Labor:
-      name: Labor
-      summary: Manage shifts, breaks, and wages for employees in Square Point of Sale.
-      description: |2-
-
-        The Labor API allows you to see when employees clocked in and out, how much they worked during different
-        periods, and how many breaks they took. You can also call the API to register a past break, adjust a shift,
-        or update a wage.
-
-        This API is best used in conjunction with the Team API.
-      x-namespace: ""
-      externalDocsList:
-      - description: Labor
-        url: https://developer.squareup.com/docs/labor-api/what-it-does
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    CustomerGroups:
-      name: Customer Groups
-      summary: Create and manage customer groups to streamline and automate workflows
-        and help personalize customer interactions.
-      description: "\nThe Customer Groups API lets you create and manage customer\
-        \ groups to provide targeted promotions or take other customized actions based\
-        \ on group membership. For example, you can create Weekly, Monthly, and Quarterly\
-        \ customer groups and add customers to them based on their preferences to\
-        \ receive marketing promotions on a weekly, monthly, and quarterly basis.\
-        \ You can then use the information to manage your marketing email schedule.\
-        \ \n\nYou can use the Customer Groups API to retrieve and manage customer\
-        \ groups. You can use the Customers API to add customers to and remove customers\
-        \ from groups and search for customers based on group membership.\n\n"
-      x-namespace: ""
-      externalDocsList:
-      - description: Customer Groups
-        url: https://developer.squareup.com/docs/customer-groups-api/what-it-does
-    OAuth:
-      name: OAuth
-      summary: Allow your application to gain programmatic access to other seller
-        accounts.
-      description: |2-
-
-        The Square OAuth API lets applications request and obtain permission from a Square account to make API
-        calls on behalf of that account. Applications can request individual permissions so that users do not need
-        to grant full access to their Square accounts.
-      x-namespace: ""
-      externalDocsList:
-      - description: OAuth
-        url: https://developer.squareup.com/docs/oauth-api/overview
-      - description: Webhooks
-        url: https://developer.squareup.com/docs/webhooks-overview
-    Webhooks:
-      name: Webhooks
-      summary: Subscribe to V1 Webhook events for a seller.
-      description: |2-
-
-        If you are working with V1 webhooks, you use the Webhooks API to subscribe to events for each seller you are interested in receiving events for. Learn how to subscribe to [V1 webhooks](/docs/webhooks-api/subscribe-to-events-v1).
-
-        If you are working with V2 webhooks, you do not need to use this API. instead, you subscribe to events using the [Developer Dashboard](/apps). Learn how to subscribe to [V2 webhooks](/docs/webhooks-api/subscribe-to-events).
-      x-namespace: ""
-    Employees:
-      name: Employees
-      summary: Pull employee data into accounting and payroll systems with the Employees
-        API.
-      description: |2-
-
-        The Employees API allows applications to retrieve a roster of employees registered in the Square Point
-        of Sale system, which can be useful in payroll and account contexts.
-
-        The Employees API is best used in conjunction with the Labor API, where you provide employee IDs to
-        manage shifts, breaks, and wages.
-      x-namespace: ""
-    Sites:
-      name: Sites
-      summary: Get details about Square Online sites that belong to Square sellers.
-      description: |2-
-
-        Square sellers use Square Online to build eCommerce websites. The Sites API lets you get basic details about Square Online sites, such as the site ID, title, and domain. You can use the Sites API with the Snippets API to manage snippets that extend Square Online features.
-
-         __Note:__ Square Online APIs are publicly available as part of an early access program. For more information, see [Early access program for Square Online APIs](https://developer.squareup.com/docs/online-api#early-access-program-for-square-online-apis).
-      x-namespace: ""
-      externalDocsList:
-      - description: Sites
-        url: https://developer.squareup.com/docs/sites-api/overview
     Merchants:
       name: Merchants
       summary: Retrieve information about an organization that sells with Square.
@@ -66712,21 +66673,79 @@ components:
       externalDocsList:
       - description: Merchants
         url: https://developer.squareup.com/docs/merchants-api
-    Bookings:
-      name: Bookings
-      displayName: Bookings
-      summary: Create and manage bookings for Square sellers.
-      description: "\nThe Bookings API allows you to create, retrieve, update, and\
-        \ cancel appointments online. When used with other Square APIs (such as the\
-        \ Locations API, Team API, Catalog API, and Customers API), the Bookings API\
-        \ lets you create online-booking applications for users to book services provided\
-        \ by Square sellers.   \n"
+    ApplePay:
+      name: Apple Pay
+      summary: Apple Pay support APIs
+      description: |2-
+
+        The Apple Pay APIs provides an easy way for platform developers
+        to bulk activate Web Apple Pay with Square for merchants using their platform.
       x-namespace: ""
       externalDocsList:
-      - description: Bookings
-        url: https://developer.squareup.com/docs/bookings-api/what-it-is
+      - description: Web Payments SDK
+        url: https://developer.squareup.com/docs/web-payments/apple-pay
+      - description: In-App Payments SDK
+        url: https://developer.squareup.com/docs/in-app-payments-sdk/add-digital-wallets/apple-pay
+    Catalog:
+      name: Catalog
+      summary: Programmatically catalogs a Square seller’s products for sale and services
+        for hire.
+      description: |2-
+
+        The Catalog API allows you to programmatically catalog products or services, including items, variations, categories, discounts, taxes, modifiers, and more.
+      x-namespace: ""
+      externalDocsList:
+      - description: Catalog
+        url: https://developer.squareup.com/docs/catalog-api/what-it-does
       - description: Webhooks
         url: https://developer.squareup.com/docs/webhooks-overview
+    Disputes:
+      name: Disputes
+      summary: Use the Disputes API to manage disputes (chargebacks).
+      description: |2-
+
+        A seller has the following options to process a dispute:
+
+        - Accept the dispute using the [AcceptDispute](/reference/square/disputes-api/accept-dispute) endpoint. Square returns the disputed amount from the account balance of the Square account.
+        - Challenge the dispute using the [SubmitEvidence](/reference/square/disputes-api/submit-evidence) endpoint. If the payment was valid, you can contest the disputed payment.
+        You submit supporting evidence you have about the transaction, such as receipts, invoices, email correspondence, proof of delivery, or photos.
+        You upload evidence using the [CreateDisputeEvidenceFile](/reference/square/disputes-api/create-dispute-evidence-file) endpoint.
+
+        The Disputes API also supports other endpoints useful in dispute management.
+      x-namespace: ""
+      externalDocsList:
+      - description: Disputes
+        url: https://developer.squareup.com/docs/disputes-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    Devices:
+      name: Devices
+      summary: Manages a pairing between a third-party Point of Sale application and
+        a Square Terminal in a seller location.
+      description: ""
+      x-namespace: ""
+      externalDocsList:
+      - description: Devices
+        url: https://developer.squareup.com/docs/terminal-api/overview
+      - description: Webhooks
+        url: https://developer.squareup.com/docs/webhooks-overview
+    CustomerSegments:
+      name: Customer Segments
+      summary: Retrieve customer segments (also called smart groups) in a business
+        account.
+      description: "\nThe Customer Segments API lets you retrieve information about\
+        \ the segments defined for a business. Square sellers can create customer\
+        \ segments in the Seller Dashboard or Point of Sale by defining filters for\
+        \ the segment. For example, a segment can include customers who have visited\
+        \ more than 10 times. Customers are automatically added to and removed from\
+        \ the segment over time based on this criterion. \n\nYou can inspect the customer's\
+        \ `segment_ids` property to determine which segments a customer belongs to.\
+        \ Then, you can use the Customer Segments API to retrieve basic details about\
+        \ each segment, such as the segment name and the time when it was created."
+      x-namespace: ""
+      externalDocsList:
+      - description: Customer Segments
+        url: https://developer.squareup.com/docs/customer-segments-api/what-it-does
   x-categories:
     Terminal:
       name: Terminal
@@ -66737,15 +66756,6 @@ components:
       x-namespace: ""
       apis:
       - '#/components/x-apis/Terminal'
-    Online:
-      name: Online
-      summary: Manage snippets for Square Online sites.
-      description: " \nUse the Snippets API and Sites API to insert snippets into\
-        \ Square Online sites."
-      x-namespace: ""
-      apis:
-      - '#/components/x-apis/Sites'
-      - '#/components/x-apis/Snippets'
     Business:
       name: Business
       summary: Manage a seller's core business information, devices used for business,
@@ -66762,27 +66772,42 @@ components:
       - '#/components/x-apis/Devices'
       - '#/components/x-apis/Cash Drawers'
       - '#/components/x-apis/Vendors'
-    Team:
-      name: Team
-      summary: Manage your team of employees.
+    Webhook Subscriptions:
+      name: Webhook Subscriptions
+      summary: Create and manage webhook subscriptions.
       description: |2-
 
-        Use the Team and Labor APIs to keep track of who works at your business and
-        when they clock in and clock out.
+        The Webhook Subscriptions API allows you to create, retrieve, update, and delete webhook subscriptions.
       x-namespace: ""
       apis:
-      - '#/components/x-apis/Team'
-      - '#/components/x-apis/Labor'
-    Inventory:
-      name: Inventory
-      summary: The Square Inventory API lets you programmatically manage the product
-        inventory for a Square seller.
-      description: "\nWith the Square Inventory API, you can create an application\
-        \ to keep track of quantities of salable product items, inspect inventory\
-        \ changes, and update the inventory states for Square sellers. "
+      - '#/components/x-apis/WebhookSubscriptions'
+    Loyalty:
+      name: Loyalty
+      summary: 'Create and manage loyalty accounts in Square loyalty programs. '
+      description: |2-
+
+        Use the Loyalty API to create and manage loyalty accounts for buyers, which includes allowing buyers to earn points and redeem points for discounts.
       x-namespace: ""
       apis:
-      - '#/components/x-apis/Inventory'
+      - '#/components/x-apis/Loyalty'
+    Bookings:
+      name: Bookings
+      summary: 'Create and manage bookings for Square sellers.  '
+      description: "\nCreate and manage bookings for Square sellers.\n\n "
+      x-namespace: ""
+      apis:
+      - '#/components/x-apis/Bookings'
+    Subscriptions:
+      name: Subscriptions
+      summary: 'Create and manage subscriptions. '
+      description: "\nSubscriptions enable sellers to generate a reliable cash flow\
+        \ and recurring revenue to grow their businesses. Square offers the Subscriptions\
+        \ API for developers to embed subscription functionality in their applications.\
+        \ You first create a subscription plan using the Catalog API and then use\
+        \ the Subscriptions API to create and manage subscriptions. "
+      x-namespace: ""
+      apis:
+      - '#/components/x-apis/Subscriptions'
     Customers:
       name: Customers
       summary: Work with customer profiles, customer-related custom attributes, customer
@@ -66796,6 +66821,25 @@ components:
       - '#/components/x-apis/CustomerCustomAttributes'
       - '#/components/x-apis/CustomerGroups'
       - '#/components/x-apis/CustomerSegments'
+    Gift Cards:
+      name: Gift Cards
+      summary: 'Create and access gift cards and link  customers to gift cards. '
+      description: |2+
+
+      x-namespace: ""
+      apis:
+      - '#/components/x-apis/GiftCards'
+      - '#/components/x-apis/GiftCardActivities'
+    Orders:
+      name: Orders
+      summary: Itemize payments, issue refunds, and push orders into Square of Sale
+      description: |2-
+
+        Square's Payment APIs make it easy for you to take itemize payments, fulfill
+        orders at physical locations, and report on a merchant's sales.
+      x-namespace: ""
+      apis:
+      - '#/components/x-apis/Orders'
     Financials:
       name: Financials
       summary: Get details about the deposits and bank accounts for your business.
@@ -66804,16 +66848,16 @@ components:
       apis:
       - '#/components/x-apis/BankAccounts'
       - '#/components/x-apis/Settlements'
-    Catalog:
-      name: Catalog
-      summary: 'The Square Catalog API lets you programmatically catalog product items
-        for sale or services for hire for a Square seller. '
-      description: |2-
-
-        With the Square Catalog API, you can build an application to catalog products or services for a Square seller, search for the resulting catalog, and retrieve specified catalog objects.
+    Inventory:
+      name: Inventory
+      summary: The Square Inventory API lets you programmatically manage the product
+        inventory for a Square seller.
+      description: "\nWith the Square Inventory API, you can create an application\
+        \ to keep track of quantities of salable product items, inspect inventory\
+        \ changes, and update the inventory states for Square sellers. "
       x-namespace: ""
       apis:
-      - '#/components/x-apis/Catalog'
+      - '#/components/x-apis/Inventory'
     Auth:
       name: Auth
       summary: Manage access to Square seller accounts.
@@ -66825,53 +66869,17 @@ components:
       apis:
       - '#/components/x-apis/OAuth'
       - '#/components/x-apis/MobileAuthorization'
-    Webhook Subscriptions:
-      name: Webhook Subscriptions
-      summary: Create and manage webhook subscriptions.
+    Team:
+      name: Team
+      summary: Manage your team of employees.
       description: |2-
 
-        The Webhook Subscriptions API allows you to create, retrieve, update, and delete webhook subscriptions.
+        Use the Team and Labor APIs to keep track of who works at your business and
+        when they clock in and clock out.
       x-namespace: ""
       apis:
-      - '#/components/x-apis/WebhookSubscriptions'
-    Invoices:
-      name: Invoices
-      summary: Create and manage invoices.
-      description: " \nUse the Invoices API to create, configure, and publish invoices\
-        \ for orders that were created using the Orders API."
-      x-namespace: ""
-      apis:
-      - '#/components/x-apis/Invoices'
-    Loyalty:
-      name: Loyalty
-      summary: 'Create and manage loyalty accounts in Square loyalty programs. '
-      description: |2-
-
-        Use the Loyalty API to create and manage loyalty accounts for buyers, which includes allowing buyers to earn points and redeem points for discounts.
-      x-namespace: ""
-      apis:
-      - '#/components/x-apis/Loyalty'
-    Orders:
-      name: Orders
-      summary: Itemize payments, issue refunds, and push orders into Square of Sale
-      description: |2-
-
-        Square's Payment APIs make it easy for you to take itemize payments, fulfill
-        orders at physical locations, and report on a merchant's sales.
-      x-namespace: ""
-      apis:
-      - '#/components/x-apis/Orders'
-    Subscriptions:
-      name: Subscriptions
-      summary: 'Create and manage subscriptions. '
-      description: "\nSubscriptions enable sellers to generate a reliable cash flow\
-        \ and recurring revenue to grow their businesses. Square offers the Subscriptions\
-        \ API for developers to embed subscription functionality in their applications.\
-        \ You first create a subscription plan using the Catalog API and then use\
-        \ the Subscriptions API to create and manage subscriptions. "
-      x-namespace: ""
-      apis:
-      - '#/components/x-apis/Subscriptions'
+      - '#/components/x-apis/Team'
+      - '#/components/x-apis/Labor'
     Payments:
       name: Payments
       summary: Take payments and issue refunds.
@@ -66890,22 +66898,33 @@ components:
       - '#/components/x-apis/Transactions'
       - '#/components/x-apis/Cards'
       - '#/components/x-apis/Payouts'
-    Gift Cards:
-      name: Gift Cards
-      summary: 'Create and access gift cards and link  customers to gift cards. '
-      description: |2+
+    Invoices:
+      name: Invoices
+      summary: Create and manage invoices.
+      description: " \nUse the Invoices API to create, configure, and publish invoices\
+        \ for orders that were created using the Orders API."
+      x-namespace: ""
+      apis:
+      - '#/components/x-apis/Invoices'
+    Online:
+      name: Online
+      summary: Manage snippets for Square Online sites.
+      description: " \nUse the Snippets API and Sites API to insert snippets into\
+        \ Square Online sites."
+      x-namespace: ""
+      apis:
+      - '#/components/x-apis/Sites'
+      - '#/components/x-apis/Snippets'
+    Catalog:
+      name: Catalog
+      summary: 'The Square Catalog API lets you programmatically catalog product items
+        for sale or services for hire for a Square seller. '
+      description: |2-
 
+        With the Square Catalog API, you can build an application to catalog products or services for a Square seller, search for the resulting catalog, and retrieve specified catalog objects.
       x-namespace: ""
       apis:
-      - '#/components/x-apis/GiftCards'
-      - '#/components/x-apis/GiftCardActivities'
-    Bookings:
-      name: Bookings
-      summary: 'Create and manage bookings for Square sellers.  '
-      description: "\nCreate and manage bookings for Square sellers.\n\n "
-      x-namespace: ""
-      apis:
-      - '#/components/x-apis/Bookings'
+      - '#/components/x-apis/Catalog'
   x-categories-order:
   - Payments
   - Terminal
