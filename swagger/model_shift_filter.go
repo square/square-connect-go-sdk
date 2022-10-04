@@ -12,7 +12,7 @@ package swagger
 // Defines a filter used in a search for `Shift` records. `AND` logic is used by Square's servers to apply each filter property specified.
 type ShiftFilter struct {
 	// Fetch shifts for the specified location.
-	LocationIds []string `json:"location_ids"`
+	LocationIds []string `json:"location_ids,omitempty"`
 	// Fetch shifts for the specified employees. DEPRECATED at version 2020-08-26. Use `team_member_ids` instead.
 	EmployeeIds []string           `json:"employee_ids,omitempty"`
 	Status      *ShiftFilterStatus `json:"status,omitempty"`
@@ -20,5 +20,5 @@ type ShiftFilter struct {
 	End         *TimeRange         `json:"end,omitempty"`
 	Workday     *ShiftWorkday      `json:"workday,omitempty"`
 	// Fetch shifts for the specified team members. Replaced `employee_ids` at version \"2020-08-26\".
-	TeamMemberIds []string `json:"team_member_ids"`
+	TeamMemberIds []string `json:"team_member_ids,omitempty"`
 }

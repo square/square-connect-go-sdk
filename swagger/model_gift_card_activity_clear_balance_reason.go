@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardActivityClearBalanceReason : Indicates the reason for clearing the balance of a [gift card](entity:GiftCard).
 type GiftCardActivityClearBalanceReason string
 
 // List of GiftCardActivityClearBalanceReason

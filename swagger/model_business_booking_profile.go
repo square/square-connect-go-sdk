@@ -21,4 +21,6 @@ type BusinessBookingProfile struct {
 	// Indicates whether customers can cancel or reschedule their own bookings (`true`) or not (`false`).
 	AllowUserCancel             bool                         `json:"allow_user_cancel,omitempty"`
 	BusinessAppointmentSettings *BusinessAppointmentSettings `json:"business_appointment_settings,omitempty"`
+	// Indicates whether the seller's subscription to Square Appointments supports creating, updating or canceling an appointment through the API (`true`) or not (`false`) using seller permission.
+	SupportSellerLevelWrites bool `json:"support_seller_level_writes,omitempty"`
 }

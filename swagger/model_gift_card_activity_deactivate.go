@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a gift card activity of the DEACTIVATE type.
+// Represents details about a `DEACTIVATE` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityDeactivate struct {
 	Reason *GiftCardActivityDeactivateReason `json:"reason"`
 }

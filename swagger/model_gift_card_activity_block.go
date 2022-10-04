@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a gift card activity of the BLOCK type.
+// Represents details about a `BLOCK` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityBlock struct {
 	Reason *GiftCardActivityBlockReason `json:"reason"`
 }

@@ -9,11 +9,11 @@
  */
 package swagger
 
-// Present only when `GiftCardActivityType` is UNLINKED_ACTIVITY_REFUND.
+// Represents details about an `UNLINKED_ACTIVITY_REFUND` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityUnlinkedActivityRefund struct {
 	AmountMoney *Money `json:"amount_money"`
-	// A client-specified ID to associate an entity, in another system, with this gift card activity. This can be used to track the order or payment related information when the Square Payments API is not being used.
+	// A client-specified ID that associates the gift card activity with an entity in another system.
 	ReferenceId string `json:"reference_id,omitempty"`
-	// When using the Square Payments API, the ID of the payment that was refunded to this gift card.
+	// The ID of the refunded payment. This field is not used starting in Square version 2022-06-16.
 	PaymentId string `json:"payment_id,omitempty"`
 }

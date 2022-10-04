@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Stores information about an invoice. You use the Invoices API to create and manage invoices. For more information, see [Manage Invoices Using the Invoices API](https://developer.squareup.com/docs/invoices-api/overview).
+// Stores information about an invoice. You use the Invoices API to create and manage invoices. For more information, see [Invoices API Overview](https://developer.squareup.com/docs/invoices-api/overview).
 type Invoice struct {
 	// The Square-assigned ID of the invoice.
 	Id string `json:"id,omitempty"`
@@ -20,7 +20,7 @@ type Invoice struct {
 	// The ID of the [order](entity:Order) for which the invoice is created.  This field is required when creating an invoice, and the order must be in the `OPEN` state.  To view the line items and other information for the associated order, call the  [RetrieveOrder](api-endpoint:Orders-RetrieveOrder) endpoint using the order ID.
 	OrderId          string            `json:"order_id,omitempty"`
 	PrimaryRecipient *InvoiceRecipient `json:"primary_recipient,omitempty"`
-	// The payment schedule for the invoice, represented by one or more payment requests that define payment settings, such as amount due and due date. An invoice supports the following payment request combinations: - One balance - One deposit with one balance - 2–12 installments  - One deposit with 2–12 installments  This field is required when creating an invoice. It must contain at least one payment request.  All payment requests for the invoice must equal the total order amount. For more information, see  [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).  Adding `INSTALLMENT` payment requests to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).
+	// The payment schedule for the invoice, represented by one or more payment requests that define payment settings, such as amount due and due date. An invoice supports the following payment request combinations: - One balance - One deposit with one balance - 2–12 installments  - One deposit with 2–12 installments  This field is required when creating an invoice. It must contain at least one payment request.  All payment requests for the invoice must equal the total order amount. For more information, see  [Configuring payment requests](https://developer.squareup.com/docs/invoices-api/create-publish-invoices#payment-requests).  Adding `INSTALLMENT` payment requests to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).
 	PaymentRequests []InvoicePaymentRequest `json:"payment_requests,omitempty"`
 	DeliveryMethod  *InvoiceDeliveryMethod  `json:"delivery_method,omitempty"`
 	// A user-friendly invoice number that is displayed on the invoice. The value is unique within a location. If not provided when creating an invoice, Square assigns a value. It increments from 1 and is padded with zeros making it 7 characters long (for example, 0000001 and 0000002).
@@ -50,4 +50,6 @@ type Invoice struct {
 	SaleOrServiceDate string `json:"sale_or_service_date,omitempty"`
 	// **France only.** The payment terms and conditions that are displayed on the invoice. For more information,  see [Payment conditions](https://developer.squareup.com/docs/invoices-api/overview#payment-conditions).  For countries other than France, Square returns an `INVALID_REQUEST_ERROR` with a `BAD_REQUEST` code and  \"Payment conditions are not supported for this location's country\" detail if this field is included in `CreateInvoice` or `UpdateInvoice` requests.
 	PaymentConditions string `json:"payment_conditions,omitempty"`
+	// Indicates whether to allow a customer to save a credit or debit card as a card on file or a bank transfer as a bank account on file. If `true`, Square displays a __Save my card on file__ or __Save my bank on file__ checkbox on the invoice payment page. Stored payment information can be used for future automatic payments. The default value is `false`.
+	StorePaymentMethodEnabled bool `json:"store_payment_method_enabled,omitempty"`
 }

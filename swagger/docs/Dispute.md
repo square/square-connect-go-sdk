@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AmountMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **Reason** | [***DisputeReason**](DisputeReason.md) |  | [optional] [default to null]
 **State** | [***DisputeState**](DisputeState.md) |  | [optional] [default to null]
-**DueAt** | **string** | The time when the next action is due, in RFC 3339 format. | [optional] [default to null]
+**DueAt** | **string** | The deadline by which the seller must respond to the dispute, in [RFC 3339 format](https://developer.squareup.com/docs/build-basics/common-data-types/working-with-dates). | [optional] [default to null]
 **DisputedPayment** | [***DisputedPayment**](DisputedPayment.md) |  | [optional] [default to null]
 **EvidenceIds** | **[]string** | The IDs of the evidence associated with the dispute. | [optional] [default to null]
 **CardBrand** | [***CardBrand**](CardBrand.md) |  | [optional] [default to null]

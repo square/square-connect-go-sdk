@@ -14,13 +14,14 @@ type LoyaltyEventType string
 
 // List of LoyaltyEventType
 const (
-	TYPE_DO_NOT_USE_LoyaltyEventType   LoyaltyEventType = "TYPE_DO_NOT_USE"
-	CREATE_ACCOUNT_LoyaltyEventType    LoyaltyEventType = "CREATE_ACCOUNT"
-	ACCUMULATE_POINTS_LoyaltyEventType LoyaltyEventType = "ACCUMULATE_POINTS"
-	CREATE_REWARD_LoyaltyEventType     LoyaltyEventType = "CREATE_REWARD"
-	REDEEM_REWARD_LoyaltyEventType     LoyaltyEventType = "REDEEM_REWARD"
-	DELETE_REWARD_LoyaltyEventType     LoyaltyEventType = "DELETE_REWARD"
-	ADJUST_POINTS_LoyaltyEventType     LoyaltyEventType = "ADJUST_POINTS"
-	EXPIRE_POINTS_LoyaltyEventType     LoyaltyEventType = "EXPIRE_POINTS"
-	OTHER_LoyaltyEventType             LoyaltyEventType = "OTHER"
+	TYPE_DO_NOT_USE_LoyaltyEventType             LoyaltyEventType = "TYPE_DO_NOT_USE"
+	CREATE_ACCOUNT_LoyaltyEventType              LoyaltyEventType = "CREATE_ACCOUNT"
+	ACCUMULATE_POINTS_LoyaltyEventType           LoyaltyEventType = "ACCUMULATE_POINTS"
+	CREATE_REWARD_LoyaltyEventType               LoyaltyEventType = "CREATE_REWARD"
+	REDEEM_REWARD_LoyaltyEventType               LoyaltyEventType = "REDEEM_REWARD"
+	DELETE_REWARD_LoyaltyEventType               LoyaltyEventType = "DELETE_REWARD"
+	ADJUST_POINTS_LoyaltyEventType               LoyaltyEventType = "ADJUST_POINTS"
+	EXPIRE_POINTS_LoyaltyEventType               LoyaltyEventType = "EXPIRE_POINTS"
+	OTHER_LoyaltyEventType                       LoyaltyEventType = "OTHER"
+	ACCUMULATE_PROMOTION_POINTS_LoyaltyEventType LoyaltyEventType = "ACCUMULATE_PROMOTION_POINTS"
 )

@@ -21,4 +21,5 @@ const (
 	SHIPMENT_OrderFulfillmentType                    OrderFulfillmentType = "SHIPMENT"
 	DIGITAL_OrderFulfillmentType                     OrderFulfillmentType = "DIGITAL"
 	DELIVERY_OrderFulfillmentType                    OrderFulfillmentType = "DELIVERY"
+	SIMPLE_OrderFulfillmentType                      OrderFulfillmentType = "SIMPLE"
 )

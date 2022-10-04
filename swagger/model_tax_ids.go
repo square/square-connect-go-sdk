@@ -9,12 +9,14 @@
  */
 package swagger
 
-// The tax IDs that a Location is operating under.
+// Identifiers for the location used by various governments for tax purposes.
 type TaxIds struct {
-	// The EU VAT number for this location. For example, \"IE3426675K\". If the EU VAT number is present, it is well-formed and has been validated with VIES, the VAT Information Exchange System.
+	// The EU VAT number for this location. For example, `IE3426675K`. If the EU VAT number is present, it is well-formed and has been validated with VIES, the VAT Information Exchange System.
 	EuVat string `json:"eu_vat,omitempty"`
-	// The SIRET (Système d'Identification du Répertoire des Entreprises et de leurs Etablissements) number is a 14 digits code issued by the French INSEE. For example, \"39922799000021\".
+	// The SIRET (Système d'Identification du Répertoire des Entreprises et de leurs Etablissements) number is a 14-digit code issued by the French INSEE. For example, `39922799000021`.
 	FrSiret string `json:"fr_siret,omitempty"`
-	// The French government uses the NAF (Nomenclature des Activités Françaises) to display and track economic statistical data. This is also called the APE (Activite Principale de l’Entreprise) code. For example, 6910Z.
+	// The French government uses the NAF (Nomenclature des Activités Françaises) to display and track economic statistical data. This is also called the APE (Activite Principale de l’Entreprise) code. For example, `6910Z`.
 	FrNaf string `json:"fr_naf,omitempty"`
+	// The NIF (Numero de Identificacion Fiscal) number is a nine-character tax identifier used in Spain. If it is present, it has been validated. For example, `73628495A`.
+	EsNif string `json:"es_nif,omitempty"`
 }

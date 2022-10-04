@@ -28,7 +28,7 @@ type Subscription struct {
 	Status             *SubscriptionStatus `json:"status,omitempty"`
 	// The tax amount applied when billing the subscription. The percentage is expressed in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. For example, a value of `7.5` corresponds to 7.5%.
 	TaxPercentage string `json:"tax_percentage,omitempty"`
-	// The IDs of the [invoices](entity:Invoice) created for the subscription, listed in order when the invoices were created (oldest invoices appear first).
+	// The IDs of the [invoices](entity:Invoice) created for the subscription, listed in order when the invoices were created (newest invoices appear first).
 	InvoiceIds         []string `json:"invoice_ids,omitempty"`
 	PriceOverrideMoney *Money   `json:"price_override_money,omitempty"`
 	// The version of the object. When updating an object, the version supplied must match the version in the database, otherwise the write will be rejected as conflicting.

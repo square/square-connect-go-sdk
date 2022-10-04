@@ -9,9 +9,11 @@
  */
 package swagger
 
-// A request to adjust (add or subtract) points manually.
+// Represents an [AdjustLoyaltyPoints](api-endpoint:Loyalty-AdjustLoyaltyPoints) request.
 type AdjustLoyaltyPointsRequest struct {
 	// A unique string that identifies this `AdjustLoyaltyPoints` request.  Keys can be any valid string, but must be unique for every request.
 	IdempotencyKey string                    `json:"idempotency_key"`
 	AdjustPoints   *LoyaltyEventAdjustPoints `json:"adjust_points"`
+	// Indicates whether to allow a negative adjustment to result in a negative balance. If `true`, a negative balance is allowed when subtracting points. If `false`, Square returns a `BAD_REQUEST` error when subtracting the specified number of points would result in a negative balance. The default value is `false`.
+	AllowNegativeBalance bool `json:"allow_negative_balance,omitempty"`
 }

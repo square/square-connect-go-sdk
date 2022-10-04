@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Provides information about a loyalty event.  For more information, see [Loyalty events](https://developer.squareup.com/docs/loyalty-api/overview/#loyalty-events).
+// Provides information about a loyalty event.  For more information, see [Search for Balance-Changing Loyalty Events](https://developer.squareup.com/docs/loyalty-api/loyalty-events).
 type LoyaltyEvent struct {
 	// The Square-assigned ID of the loyalty event.
 	Id    string            `json:"id"`
@@ -21,11 +21,12 @@ type LoyaltyEvent struct {
 	RedeemReward     *LoyaltyEventRedeemReward     `json:"redeem_reward,omitempty"`
 	DeleteReward     *LoyaltyEventDeleteReward     `json:"delete_reward,omitempty"`
 	AdjustPoints     *LoyaltyEventAdjustPoints     `json:"adjust_points,omitempty"`
-	// The ID of the [loyalty account](entity:LoyaltyAccount) in which the event occurred.
+	// The ID of the [loyalty account](entity:LoyaltyAccount) associated with the event.
 	LoyaltyAccountId string `json:"loyalty_account_id"`
 	// The ID of the [location](entity:Location) where the event occurred.
-	LocationId   string                    `json:"location_id,omitempty"`
-	Source       *LoyaltyEventSource       `json:"source"`
-	ExpirePoints *LoyaltyEventExpirePoints `json:"expire_points,omitempty"`
-	OtherEvent   *LoyaltyEventOther        `json:"other_event,omitempty"`
+	LocationId                string                                 `json:"location_id,omitempty"`
+	Source                    *LoyaltyEventSource                    `json:"source"`
+	ExpirePoints              *LoyaltyEventExpirePoints              `json:"expire_points,omitempty"`
+	OtherEvent                *LoyaltyEventOther                     `json:"other_event,omitempty"`
+	AccumulatePromotionPoints *LoyaltyEventAccumulatePromotionPoints `json:"accumulate_promotion_points,omitempty"`
 }

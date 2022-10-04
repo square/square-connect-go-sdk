@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines an accrual rule, which is how buyers can earn points.
+// Represents an accrual rule, which defines how buyers can earn points from the base [loyalty program](entity:LoyaltyProgram).
 type LoyaltyProgramAccrualRule struct {
 	AccrualType *LoyaltyProgramAccrualRuleType `json:"accrual_type"`
 	// The number of points that  buyers earn based on the `accrual_type`.
@@ -21,5 +21,9 @@ type LoyaltyProgramAccrualRule struct {
 	// When the accrual rule is spend-based (`accrual_type` is `SPEND`), this field  lists the IDs of any `CATEGORY` catalog objects that are excluded from points accrual.   You can use the [BatchRetrieveCatalogObjects](api-endpoint:Catalog-BatchRetrieveCatalogObjects)  endpoint to retrieve information about the excluded categories.
 	ExcludedCategoryIds []string `json:"excluded_category_ids,omitempty"`
 	// When the accrual rule is spend-based (`accrual_type` is `SPEND`), this field  lists the IDs of any `ITEM_VARIATION` catalog objects that are excluded from points accrual.   You can use the [BatchRetrieveCatalogObjects](api-endpoint:Catalog-BatchRetrieveCatalogObjects)  endpoint to retrieve information about the excluded item variations.
-	ExcludedItemVariationIds []string `json:"excluded_item_variation_ids,omitempty"`
+	ExcludedItemVariationIds []string                                    `json:"excluded_item_variation_ids,omitempty"`
+	VisitData                *LoyaltyProgramAccrualRuleVisitData         `json:"visit_data,omitempty"`
+	SpendData                *LoyaltyProgramAccrualRuleSpendData         `json:"spend_data,omitempty"`
+	ItemVariationData        *LoyaltyProgramAccrualRuleItemVariationData `json:"item_variation_data,omitempty"`
+	CategoryData             *LoyaltyProgramAccrualRuleCategoryData      `json:"category_data,omitempty"`
 }

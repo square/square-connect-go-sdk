@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Response object returned by the [CreateLocation](api-endpoint:Locations-CreateLocation) endpoint.
+// The response object returned by the [CreateLocation](api-endpoint:Locations-CreateLocation) endpoint.
 type CreateLocationResponse struct {
-	// Information on [errors](https://developer.squareup.com/docs/build-basics/handling-errors) encountered during the request.
+	// Information about [errors](https://developer.squareup.com/docs/build-basics/handling-errors) encountered during the request.
 	Errors   []ModelError `json:"errors,omitempty"`
 	Location *Location    `json:"location,omitempty"`
 }

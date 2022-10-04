@@ -9,13 +9,13 @@
  */
 package swagger
 
-// Represents a payment request for an [invoice](entity:Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types. For more information,  see [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).  Adding `INSTALLMENT` payment requests to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).
+// Represents a payment request for an [invoice](entity:Invoice). Invoices can specify a maximum of 13 payment requests, with up to 12 `INSTALLMENT` request types. For more information,  see [Configuring payment requests](https://developer.squareup.com/docs/invoices-api/create-publish-invoices#payment-requests).  Adding `INSTALLMENT` payment requests to an invoice requires an  [Invoices Plus subscription](https://developer.squareup.com/docs/invoices-api/overview#invoices-plus-subscription).
 type InvoicePaymentRequest struct {
 	// The Square-generated ID of the payment request in an [invoice](entity:Invoice).
 	Uid           string                `json:"uid,omitempty"`
 	RequestMethod *InvoiceRequestMethod `json:"request_method,omitempty"`
 	RequestType   *InvoiceRequestType   `json:"request_type,omitempty"`
-	// The due date (in the invoice's time zone) for the payment request, in `YYYY-MM-DD` format. This field is required to create a payment request.  After this date, the invoice becomes overdue. For example, a payment `due_date` of 2021-03-09 with a `timezone` of America/Los\\_Angeles becomes overdue at midnight on March 9 in America/Los\\_Angeles (which equals a UTC timestamp of 2021-03-10T08:00:00Z).
+	// The due date (in the invoice's time zone) for the payment request, in `YYYY-MM-DD` format. This field is required to create a payment request. If an `automatic_payment_source` is defined for the request, Square charges the payment source on this date.  After this date, the invoice becomes overdue. For example, a payment `due_date` of 2021-03-09 with a `timezone` of America/Los\\_Angeles becomes overdue at midnight on March 9 in America/Los\\_Angeles (which equals a UTC timestamp of 2021-03-10T08:00:00Z).
 	DueDate                   string `json:"due_date,omitempty"`
 	FixedAmountRequestedMoney *Money `json:"fixed_amount_requested_money,omitempty"`
 	// Specifies the amount for the payment request in percentage:  - When the payment `request_type` is `DEPOSIT`, it is the percentage of the order's total amount. - When the payment `request_type` is `INSTALLMENT`, it is the percentage of the order's total less  the deposit, if requested. The sum of the `percentage_requested` in all installment  payment requests must be equal to 100.  You cannot specify this when the payment `request_type` is `BALANCE` or when the  payment request specifies the `fixed_amount_requested_money` field.

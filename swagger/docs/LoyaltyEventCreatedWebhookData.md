@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type_** | **string** | Name of the affected object’s type, &#x60;\&quot;loyalty.event\&quot;&#x60;. | [optional] [default to null]
+**Type_** | **string** | The type of object affected by the event. For this event, the value is &#x60;loyalty.event&#x60;. | [optional] [default to null]
 **Id** | **string** | ID of the affected loyalty event. | [optional] [default to null]
 **Object** | [***LoyaltyEvent**](LoyaltyEvent.md) |  | [optional] [default to null]
 

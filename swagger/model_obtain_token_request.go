@@ -12,8 +12,8 @@ package swagger
 type ObtainTokenRequest struct {
 	// The Square-issued ID of your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps).
 	ClientId string `json:"client_id"`
-	// The Square-issued application secret for your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps).
-	ClientSecret string `json:"client_secret"`
+	// The Square-issued application secret for your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps). This parameter is only required when you are not using the [OAuth PKCE (Proof Key for Code Exchange) flow](https://developer.squareup.com/docs/oauth-api/overview#pkce-flow).  The PKCE flow requires a `code_verifier` instead of a `client_secret`.
+	ClientSecret string `json:"client_secret,omitempty"`
 	// The authorization code to exchange. This code is required if `grant_type` is set to `authorization_code` to indicate that the application wants to exchange an authorization code for an OAuth access token.
 	Code string `json:"code,omitempty"`
 	// The redirect URL assigned in the OAuth page for your application in the [Developer Dashboard](https://developer.squareup.com/apps).
@@ -28,4 +28,6 @@ type ObtainTokenRequest struct {
 	Scopes []string `json:"scopes,omitempty"`
 	// A Boolean indicating a request for a short-lived access token.  The short-lived access token returned in the response expires in 24 hours.
 	ShortLived bool `json:"short_lived,omitempty"`
+	// Must be provided when using PKCE OAuth flow. The `code_verifier` will be used to verify against the `code_challenge` associated with the `authorization_code`.
+	CodeVerifier string `json:"code_verifier,omitempty"`
 }

@@ -9,7 +9,7 @@
  */
 package swagger
 
-// A request to accumulate points for a purchase.
+// Represents an [AccumulateLoyaltyPoints](api-endpoint:Loyalty-AccumulateLoyaltyPoints) request.
 type AccumulateLoyaltyPointsRequest struct {
 	AccumulatePoints *LoyaltyEventAccumulatePoints `json:"accumulate_points"`
 	// A unique string that identifies the `AccumulateLoyaltyPoints` request.  Keys can be any valid string but must be unique for every request.

@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardActivityDeactivateReason : Indicates the reason for deactivating a [gift card](entity:GiftCard).
 type GiftCardActivityDeactivateReason string
 
 // List of GiftCardActivityDeactivateReason

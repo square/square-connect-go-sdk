@@ -17,7 +17,7 @@ type InventoryPhysicalCount struct {
 	ReferenceId string `json:"reference_id,omitempty"`
 	// The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string          `json:"catalog_object_type,omitempty"`
 	Status            *InventoryState `json:"status,omitempty"`
 	State             *InventoryState `json:"state,omitempty"`
@@ -28,6 +28,8 @@ type InventoryPhysicalCount struct {
 	Source   *SourceApplication `json:"source,omitempty"`
 	// The Square-generated ID of the [Employee](entity:Employee) responsible for the physical count.
 	EmployeeId string `json:"employee_id,omitempty"`
+	// The Square-generated ID of the [Team Member](entity:TeamMember) responsible for the physical count.
+	TeamMemberId string `json:"team_member_id,omitempty"`
 	// A client-generated RFC 3339-formatted timestamp that indicates when the physical count was examined. For physical count updates, the `occurred_at` timestamp cannot be older than 24 hours or in the future relative to the time of the request.
 	OccurredAt string `json:"occurred_at,omitempty"`
 	// An RFC 3339-formatted timestamp that indicates when the physical count is received.

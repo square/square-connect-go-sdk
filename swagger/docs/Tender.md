@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The tender&#x27;s unique ID. | [optional] [default to null]
+**Id** | **string** | The tender&#x27;s unique ID. It is the associated payment ID. | [optional] [default to null]
 **LocationId** | **string** | The ID of the transaction&#x27;s associated location. | [optional] [default to null]
 **TransactionId** | **string** | The ID of the tender&#x27;s associated transaction. | [optional] [default to null]
 **CreatedAt** | **string** | The timestamp for when the tender was created, in RFC 3339 format. | [optional] [default to null]

@@ -11,6 +11,6 @@ package swagger
 
 type RetrieveTeamMemberBookingProfileResponse struct {
 	TeamMemberBookingProfile *TeamMemberBookingProfile `json:"team_member_booking_profile,omitempty"`
-	// Any errors that occurred during the request.
+	// Errors that occurred during the request.
 	Errors []ModelError `json:"errors,omitempty"`
 }

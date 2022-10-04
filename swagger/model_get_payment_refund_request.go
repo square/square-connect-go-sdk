@@ -9,6 +9,6 @@
  */
 package swagger
 
-// Describes a request to retrieve a refund using  [GetPaymentRefund](api-endpoint:Refunds-GetPaymentRefund).
+// Describes a request to retrieve a refund using [GetPaymentRefund](api-endpoint:Refunds-GetPaymentRefund).
 type GetPaymentRefundRequest struct {
 }

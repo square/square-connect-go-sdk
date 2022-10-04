@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a loyalty account. For more information, see [Manage Loyalty Accounts Using the Loyalty API](https://developer.squareup.com/docs/loyalty-api/overview).
+// Describes a loyalty account in a [loyalty program](entity:LoyaltyProgram). For more information, see [Create and Retrieve Loyalty Accounts](https://developer.squareup.com/docs/loyalty-api/loyalty-accounts).
 type LoyaltyAccount struct {
 	// The Square-assigned ID of the loyalty account.
 	Id string `json:"id,omitempty"`
@@ -23,7 +23,7 @@ type LoyaltyAccount struct {
 	LifetimePoints int32 `json:"lifetime_points,omitempty"`
 	// The Square-assigned ID of the [customer](entity:Customer) that is associated with the account.
 	CustomerId string `json:"customer_id,omitempty"`
-	// The timestamp when enrollment occurred, in RFC 3339 format.
+	// The timestamp when the buyer joined the loyalty program, in RFC 3339 format. This field is used to display the **Enrolled On** or **Member Since** date in first-party Square products.  If this field is not set in a `CreateLoyaltyAccount` request, Square populates it after the buyer's first action on their account  (when `AccumulateLoyaltyPoints` or `CreateLoyaltyReward` is called). In first-party flows, Square populates the field when the buyer agrees to the terms of service in Square Point of Sale.   This field is typically specified in a `CreateLoyaltyAccount` request when creating a loyalty account for a buyer who already interacted with their account.  For example, you would set this field when migrating accounts from an external system. The timestamp in the request can represent a current or previous date and time, but it cannot be set for the future.
 	EnrolledAt string `json:"enrolled_at,omitempty"`
 	// The timestamp when the loyalty account was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`

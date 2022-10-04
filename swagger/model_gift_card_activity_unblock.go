@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Present only when `GiftCardActivityType` is UNBLOCK.
+// Represents details about an `UNBLOCK` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityUnblock struct {
 	Reason *GiftCardActivityUnblockReason `json:"reason"`
 }

@@ -25,7 +25,7 @@ type Card struct {
 	BillingAddress *Address `json:"billing_address,omitempty"`
 	// Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.
 	Fingerprint string `json:"fingerprint,omitempty"`
-	// The ID of a customer created using the Customers API to be associated with the card.
+	// **Required** The ID of a customer created using the Customers API to be associated with the card.
 	CustomerId string `json:"customer_id,omitempty"`
 	// The ID of the merchant associated with the card.
 	MerchantId string `json:"merchant_id,omitempty"`
@@ -38,5 +38,6 @@ type Card struct {
 	// The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field.
 	Bin string `json:"bin,omitempty"`
 	// Current version number of the card. Increments with each card update. Requests to update an existing Card object will be rejected unless the version in the request matches the current version for the Card.
-	Version int64 `json:"version,omitempty"`
+	Version     int64        `json:"version,omitempty"`
+	CardCoBrand *CardCoBrand `json:"card_co_brand,omitempty"`
 }

@@ -27,7 +27,7 @@ type InventoryAdjustment struct {
 	LocationId string `json:"location_id,omitempty"`
 	// The Square-generated ID of the [CatalogObject](entity:CatalogObject) being tracked.
 	CatalogObjectId string `json:"catalog_object_id,omitempty"`
-	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked. Tracking is only supported for the `ITEM_VARIATION` type.
+	// The [type](entity:CatalogObjectType) of the [CatalogObject](entity:CatalogObject) being tracked.   The Inventory API supports setting and reading the `\"catalog_object_type\": \"ITEM_VARIATION\"` field value.  In addition, it can also read the `\"catalog_object_type\": \"ITEM\"` field value that is set by the Square Restaurants app.
 	CatalogObjectType string `json:"catalog_object_type,omitempty"`
 	// The number of items affected by the adjustment as a decimal string. Can support up to 5 digits after the decimal point.
 	Quantity        string `json:"quantity,omitempty"`
@@ -39,9 +39,11 @@ type InventoryAdjustment struct {
 	Source    *SourceApplication `json:"source,omitempty"`
 	// The Square-generated ID of the [Employee](entity:Employee) responsible for the inventory adjustment.
 	EmployeeId string `json:"employee_id,omitempty"`
-	// The Square-generated ID of the [Transaction][#type-transaction] that caused the adjustment. Only relevant for payment-related state transitions.
+	// The Square-generated ID of the [Team Member](entity:TeamMember) responsible for the inventory adjustment.
+	TeamMemberId string `json:"team_member_id,omitempty"`
+	// The Square-generated ID of the [Transaction](entity:Transaction) that caused the adjustment. Only relevant for payment-related state transitions.
 	TransactionId string `json:"transaction_id,omitempty"`
-	// The Square-generated ID of the [Refund][#type-refund] that caused the adjustment. Only relevant for refund-related state transitions.
+	// The Square-generated ID of the [Refund](entity:Refund) that caused the adjustment. Only relevant for refund-related state transitions.
 	RefundId string `json:"refund_id,omitempty"`
 	// The Square-generated ID of the purchase order that caused the adjustment. Only relevant for state transitions from the Square for Retail app.
 	PurchaseOrderId string `json:"purchase_order_id,omitempty"`

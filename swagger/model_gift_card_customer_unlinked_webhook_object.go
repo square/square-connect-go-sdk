@@ -9,9 +9,9 @@
  */
 package swagger
 
-// An object that contains the GiftCard and customer ID associated with the webhook event.
+// An object that contains the gift card and the customer ID associated with a  `gift_card.customer_linked` webhook event.
 type GiftCardCustomerUnlinkedWebhookObject struct {
 	GiftCard *GiftCard `json:"gift_card,omitempty"`
-	// The ID of the Customer that was unlinked.
+	// The ID of the unlinked [customer](entity:Customer).
 	UnlinkedCustomerId string `json:"unlinked_customer_id,omitempty"`
 }

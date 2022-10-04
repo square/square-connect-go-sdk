@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a [customer](entity:Customer) is created.  For more information, see [Use Customer Webhooks](https://developer.squareup.com/docs/customers-api/use-the-api/customer-webhooks).  The `customer` object in the event notification does not include the following fields: `cards` (deprecated) and `segment_ids`.
+// Published when a [customer](entity:Customer) is created. Subscribe to this event to track customer profiles affected by a merge operation. For more information, see [Use Customer Webhooks](https://developer.squareup.com/docs/customers-api/use-the-api/customer-webhooks).  The `customer` object in the event notification does not include the following fields: `cards` (deprecated) and `segment_ids`.
 type CustomerCreatedWebhook struct {
 	// The ID of the seller associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

@@ -11,11 +11,12 @@ Name | Type | Description | Notes
 **RedeemReward** | [***LoyaltyEventRedeemReward**](LoyaltyEventRedeemReward.md) |  | [optional] [default to null]
 **DeleteReward** | [***LoyaltyEventDeleteReward**](LoyaltyEventDeleteReward.md) |  | [optional] [default to null]
 **AdjustPoints** | [***LoyaltyEventAdjustPoints**](LoyaltyEventAdjustPoints.md) |  | [optional] [default to null]
-**LoyaltyAccountId** | **string** | The ID of the [loyalty account](entity:LoyaltyAccount) in which the event occurred. | [default to null]
+**LoyaltyAccountId** | **string** | The ID of the [loyalty account](entity:LoyaltyAccount) associated with the event. | [default to null]
 **LocationId** | **string** | The ID of the [location](entity:Location) where the event occurred. | [optional] [default to null]
 **Source** | [***LoyaltyEventSource**](LoyaltyEventSource.md) |  | [default to null]
 **ExpirePoints** | [***LoyaltyEventExpirePoints**](LoyaltyEventExpirePoints.md) |  | [optional] [default to null]
 **OtherEvent** | [***LoyaltyEventOther**](LoyaltyEventOther.md) |  | [optional] [default to null]
+**AccumulatePromotionPoints** | [***LoyaltyEventAccumulatePromotionPoints**](LoyaltyEventAccumulatePromotionPoints.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

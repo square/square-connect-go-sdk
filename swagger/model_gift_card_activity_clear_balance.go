@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Describes a gift card activity of the CLEAR_BALANCE type.
+// Represents details about a `CLEAR_BALANCE` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityClearBalance struct {
 	Reason *GiftCardActivityClearBalanceReason `json:"reason"`
 }

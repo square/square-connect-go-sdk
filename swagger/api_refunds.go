@@ -12,11 +12,12 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -123,7 +124,7 @@ Retrieves a list of refunds for the account making the request.  Results are eve
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query.  For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
      * @param "LocationId" (optional.String) -  Limit results to the location supplied. By default, results are returned for all locations associated with the seller.
      * @param "Status" (optional.String) -  If provided, only refunds with the given status are returned. For a list of refund status values, see [PaymentRefund](entity:PaymentRefund).  Default: If omitted, refunds are returned regardless of their status.
-     * @param "SourceType" (optional.String) -  If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where &#x60;CARD&#x60; was specified as the payment source.  Default: If omitted, refunds are returned regardless of the source type.
+     * @param "SourceType" (optional.String) -  If provided, only returns refunds whose payments have the indicated source type. Current values include &#x60;CARD&#x60;, &#x60;BANK_ACCOUNT&#x60;, &#x60;WALLET&#x60;, &#x60;CASH&#x60;, and &#x60;EXTERNAL&#x60;. For information about these payment source types, see [Take Payments](https://developer.squareup.com/docs/payments-api/take-payments).  Default: If omitted, refunds are returned regardless of the source type.
      * @param "Limit" (optional.Int32) -  The maximum number of results to be returned in a single page.  It is possible to receive fewer results than the specified limit on a given page.  If the supplied value is greater than 100, no more than 100 results are returned.  Default: 100
 @return ListPaymentRefundsResponse
 */
