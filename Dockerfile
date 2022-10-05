@@ -15,8 +15,7 @@ RUN apk add curl jq go && \
     mkdir square-connect-sdk && \
     java -jar ./swagger-codegen-cli.jar generate -i square-connect-openapi.json -l go -o square-connect-sdk && \
     cd square-connect-sdk && \
-#    && \
-#    patch < ../model_catalog_custom_attribute_value.patch  && \
+    patch < ../model_catalog_custom_attribute_value.patch  && \
     patch < ../model_catalog_item.patch && \
     patch < ../model_catalog_item_variation.patch
 

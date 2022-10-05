@@ -1,8 +1,0 @@
---- original/model_item_variation_location_overrides.go	2021-10-27 17:38:28.000000000 -0700
-+++ model_item_variation_location_overrides.go	2021-10-27 17:39:24.000000000 -0700
-@@ -20,4 +20,5 @@
- 	InventoryAlertType *InventoryAlertType `json:"inventory_alert_type,omitempty"`
- 	// If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type` is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.  This value is always an integer.
- 	InventoryAlertThreshold int64 `json:"inventory_alert_threshold,omitempty"`
-+	SoldOut                 bool  `json:"sold_out,omitempty"`
- }
