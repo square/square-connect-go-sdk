@@ -3,7 +3,7 @@ FROM swaggerapi/swagger-codegen-cli:2.4.15
 COPY square_connect_openapi.patch build/
 COPY model_catalog_custom_attribute_value.patch build/
 COPY model_catalog_item.patch build/
-COPY model_item_variation_location_overrides.patch build/
+COPY model_catalog_item_variation.patch build/
 COPY open-api-3_square build/
 
 # Download swagger-codegen-cli 3.0.21 since I didn't find any Docker image
@@ -17,8 +17,8 @@ RUN apk add curl jq go && \
     cd square-connect-sdk && \
 #    && \
 #    patch < ../model_catalog_custom_attribute_value.patch  && \
-    patch < ../model_catalog_item.patch
-#    patch < ../model_item_variation_location_overrides.patch
+    patch < ../model_catalog_item.patch && \
+    patch < ../model_catalog_item_variation.patch
 
 # fix some issues with Swagger. TODO: file an issue
 RUN cd build/square-connect-sdk && \
