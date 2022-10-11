@@ -19,7 +19,7 @@ type DisputeEvidence struct {
 	EvidenceFile *DisputeEvidenceFile `json:"evidence_file,omitempty"`
 	// Raw text
 	EvidenceText string `json:"evidence_text,omitempty"`
-	// The time when the next action is due, in RFC 3339 format.
+	// The time when the evidence was uploaded, in RFC 3339 format.
 	UploadedAt   string               `json:"uploaded_at,omitempty"`
 	EvidenceType *DisputeEvidenceType `json:"evidence_type,omitempty"`
 }

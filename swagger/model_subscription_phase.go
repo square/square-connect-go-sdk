@@ -16,7 +16,7 @@ type SubscriptionPhase struct {
 	Cadence *SubscriptionCadence `json:"cadence"`
 	// The number of `cadence`s the phase lasts. If not set, the phase never ends. Only the last phase can be indefinite. This field cannot be changed after a `SubscriptionPhase` is created.
 	Periods             int32  `json:"periods,omitempty"`
-	RecurringPriceMoney *Money `json:"recurring_price_money"`
+	RecurringPriceMoney *Money `json:"recurring_price_money,omitempty"`
 	// The position this phase appears in the sequence of phases defined for the plan, indexed from 0. This field cannot be changed after a `SubscriptionPhase` is created.
 	Ordinal int64 `json:"ordinal,omitempty"`
 }

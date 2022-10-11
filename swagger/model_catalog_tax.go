@@ -15,7 +15,7 @@ type CatalogTax struct {
 	Name             string               `json:"name,omitempty"`
 	CalculationPhase *TaxCalculationPhase `json:"calculation_phase,omitempty"`
 	InclusionType    *TaxInclusionType    `json:"inclusion_type,omitempty"`
-	// The percentage of the tax in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. A value of `7.5` corresponds to 7.5%.
+	// The percentage of the tax in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. A value of `7.5` corresponds to 7.5%. For a location-specific tax rate, contact the tax authority of the location or a tax consultant.
 	Percentage string `json:"percentage,omitempty"`
 	// If `true`, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular `CatalogItem`.
 	AppliesToCustomAmounts bool `json:"applies_to_custom_amounts,omitempty"`

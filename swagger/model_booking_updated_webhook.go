@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Published when a booking is updated.
+// Published when a booking is updated or cancelled.  To receive this event with buyer-level permissions, you must have `APPOINTMENTS_READ` set for the OAuth scope.   To receive this event with seller-level permissions, you must have `APPOINTMENTS_ALL_READ` and `APPOINTMENTS_READ` set for the OAuth scope.
 type BookingUpdatedWebhook struct {
 	// The ID of the target seller associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`

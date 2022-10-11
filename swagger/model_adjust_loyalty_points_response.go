@@ -9,7 +9,7 @@
  */
 package swagger
 
-// A response that includes the loyalty event that  resulted from the successful API call.
+// Represents an [AdjustLoyaltyPoints](api-endpoint:Loyalty-AdjustLoyaltyPoints) request.
 type AdjustLoyaltyPointsResponse struct {
 	// Any errors that occurred during the request.
 	Errors []ModelError  `json:"errors,omitempty"`

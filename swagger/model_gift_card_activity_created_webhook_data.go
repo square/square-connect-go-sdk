@@ -9,10 +9,11 @@
  */
 package swagger
 
+// Represents the data associated with a `gift_card.activity.created` webhook event.
 type GiftCardActivityCreatedWebhookData struct {
-	// The type of the event data object. The value is `\"gift_card.activity\"`.
+	// The type of object affected by the event. For this event, the value is `gift_card.activity`.
 	Type_ string `json:"type,omitempty"`
-	// The ID of the GiftCardActivity.
+	// The ID of the new gift card activity.
 	Id     string                                `json:"id,omitempty"`
 	Object *GiftCardActivityCreatedWebhookObject `json:"object,omitempty"`
 }

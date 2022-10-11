@@ -12,9 +12,9 @@ package swagger
 type ListTeamMemberBookingProfilesRequest struct {
 	// Indicates whether to include only bookable team members in the returned result (`true`) or not (`false`).
 	BookableOnly bool `json:"bookable_only,omitempty"`
-	// The maximum number of results to return.
+	// The maximum number of results to return in a paged response.
 	Limit int32 `json:"limit,omitempty"`
-	// The cursor for paginating through the results.
+	// The pagination cursor from the preceding response to return the next page of the results. Do not set this when retrieving the first page of the results.
 	Cursor string `json:"cursor,omitempty"`
 	// Indicates whether to include only team members enabled at the given location in the returned result.
 	LocationId string `json:"location_id,omitempty"`

@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 > ListSubscriptionEventsResponse ListSubscriptionEvents(ctx, subscriptionId, optional)
 ListSubscriptionEvents
 
-Lists all events for a specific subscription. In the current implementation, only `START_SUBSCRIPTION` and `STOP_SUBSCRIPTION` (when the subscription was canceled) events are returned.
+Lists all events for a specific subscription.
 
 ### Required Parameters
 

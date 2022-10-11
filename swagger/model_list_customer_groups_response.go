@@ -15,6 +15,6 @@ type ListCustomerGroupsResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// A list of customer groups belonging to the current seller.
 	Groups []CustomerGroup `json:"groups,omitempty"`
-	// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+	// A pagination cursor to retrieve the next set of results for your original query to the endpoint. This value is present only if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

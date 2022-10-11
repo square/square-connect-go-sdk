@@ -9,7 +9,7 @@
  */
 package swagger
 
-// Defines the response returned by  [RefundPayment](api-endpoint:Refunds-RefundPayment).  If there are errors processing the request, the `refund` field might not be present, or it might be present with a status of `FAILED`.
+// Defines the response returned by [RefundPayment](api-endpoint:Refunds-RefundPayment).  If there are errors processing the request, the `refund` field might not be present, or it might be present with a status of `FAILED`.
 type RefundPaymentResponse struct {
 	// Information about errors encountered during the request.
 	Errors []ModelError   `json:"errors,omitempty"`

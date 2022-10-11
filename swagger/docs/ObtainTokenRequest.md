@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientId** | **string** | The Square-issued ID of your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps). | [default to null]
-**ClientSecret** | **string** | The Square-issued application secret for your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps). | [default to null]
+**ClientSecret** | **string** | The Square-issued application secret for your application, which is available in the OAuth page in the [Developer Dashboard](https://developer.squareup.com/apps). This parameter is only required when you are not using the [OAuth PKCE (Proof Key for Code Exchange) flow](https://developer.squareup.com/docs/oauth-api/overview#pkce-flow).  The PKCE flow requires a &#x60;code_verifier&#x60; instead of a &#x60;client_secret&#x60;. | [optional] [default to null]
 **Code** | **string** | The authorization code to exchange. This code is required if &#x60;grant_type&#x60; is set to &#x60;authorization_code&#x60; to indicate that the application wants to exchange an authorization code for an OAuth access token. | [optional] [default to null]
 **RedirectUri** | **string** | The redirect URL assigned in the OAuth page for your application in the [Developer Dashboard](https://developer.squareup.com/apps). | [optional] [default to null]
 **GrantType** | **string** | Specifies the method to request an OAuth access token. Valid values are &#x60;authorization_code&#x60;, &#x60;refresh_token&#x60;, and &#x60;migration_token&#x60;. | [default to null]
@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **MigrationToken** | **string** | A legacy OAuth access token obtained using a Connect API version prior to 2019-03-13. This parameter is required if &#x60;grant_type&#x60; is set to &#x60;migration_token&#x60; to indicate that the application wants to get a replacement OAuth access token. The response also returns a refresh token. For more information, see [Migrate to Using Refresh Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens). | [optional] [default to null]
 **Scopes** | **[]string** | A JSON list of strings representing the permissions that the application is requesting. For example, \&quot;&#x60;[\&quot;MERCHANT_PROFILE_READ\&quot;,\&quot;PAYMENTS_READ\&quot;,\&quot;BANK_ACCOUNTS_READ\&quot;]&#x60;\&quot;.  The access token returned in the response is granted the permissions that comprise the intersection between the requested list of permissions and those that belong to the provided refresh token. | [optional] [default to null]
 **ShortLived** | **bool** | A Boolean indicating a request for a short-lived access token.  The short-lived access token returned in the response expires in 24 hours. | [optional] [default to null]
+**CodeVerifier** | **string** | Must be provided when using PKCE OAuth flow. The &#x60;code_verifier&#x60; will be used to verify against the &#x60;code_challenge&#x60; associated with the &#x60;authorization_code&#x60;. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

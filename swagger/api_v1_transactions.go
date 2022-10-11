@@ -12,11 +12,12 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -27,7 +28,7 @@ var (
 type V1TransactionsApiService service
 
 /*
-V1TransactionsApiService CreateRefund
+V1TransactionsApiService V1CreateRefund
 Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
@@ -36,7 +37,7 @@ See the corresponding object definition for field details.
  * @param locationId The ID of the original payment&#x27;s associated location.
 @return V1Refund
 */
-func (a *V1TransactionsApiService) CreateRefund(ctx context.Context, body V1CreateRefundRequest, locationId string) (V1Refund, *http.Response, error) {
+func (a *V1TransactionsApiService) V1CreateRefund(ctx context.Context, body V1CreateRefundRequest, locationId string) (V1Refund, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -118,11 +119,11 @@ func (a *V1TransactionsApiService) CreateRefund(ctx context.Context, body V1Crea
 }
 
 /*
-V1TransactionsApiService ListPayments
+V1TransactionsApiService V1ListPayments
 Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a &#x60;created_at&#x60; value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#x27;s locations.
- * @param optional nil or *V1TransactionsApiListPaymentsOpts - Optional Parameters:
+ * @param optional nil or *V1TransactionsApiV1ListPaymentsOpts - Optional Parameters:
      * @param "Order" (optional.Interface of SortOrder) -  The order in which payments are listed in the response.
      * @param "BeginTime" (optional.String) -  The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
      * @param "EndTime" (optional.String) -  The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
@@ -132,7 +133,7 @@ Provides summary information for all payments taken for a given Square account d
 @return []V1Payment
 */
 
-type V1TransactionsApiListPaymentsOpts struct {
+type V1TransactionsApiV1ListPaymentsOpts struct {
 	Order          optional.Interface
 	BeginTime      optional.String
 	EndTime        optional.String
@@ -141,7 +142,7 @@ type V1TransactionsApiListPaymentsOpts struct {
 	IncludePartial optional.Bool
 }
 
-func (a *V1TransactionsApiService) ListPayments(ctx context.Context, locationId string, localVarOptionals *V1TransactionsApiListPaymentsOpts) ([]V1Payment, *http.Response, error) {
+func (a *V1TransactionsApiService) V1ListPayments(ctx context.Context, locationId string, localVarOptionals *V1TransactionsApiV1ListPaymentsOpts) ([]V1Payment, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -239,11 +240,11 @@ func (a *V1TransactionsApiService) ListPayments(ctx context.Context, locationId 
 }
 
 /*
-V1TransactionsApiService ListRefunds
+V1TransactionsApiService V1ListRefunds
 Provides the details for all refunds initiated by a merchant or any of the merchant&#x27;s mobile staff during a date range. Date ranges cannot exceed one year in length.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location to list refunds for.
- * @param optional nil or *V1TransactionsApiListRefundsOpts - Optional Parameters:
+ * @param optional nil or *V1TransactionsApiV1ListRefundsOpts - Optional Parameters:
      * @param "Order" (optional.Interface of SortOrder) -  The order in which payments are listed in the response.
      * @param "BeginTime" (optional.String) -  The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
      * @param "EndTime" (optional.String) -  The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
@@ -252,7 +253,7 @@ Provides the details for all refunds initiated by a merchant or any of the merch
 @return []V1Refund
 */
 
-type V1TransactionsApiListRefundsOpts struct {
+type V1TransactionsApiV1ListRefundsOpts struct {
 	Order      optional.Interface
 	BeginTime  optional.String
 	EndTime    optional.String
@@ -260,7 +261,7 @@ type V1TransactionsApiListRefundsOpts struct {
 	BatchToken optional.String
 }
 
-func (a *V1TransactionsApiService) ListRefunds(ctx context.Context, locationId string, localVarOptionals *V1TransactionsApiListRefundsOpts) ([]V1Refund, *http.Response, error) {
+func (a *V1TransactionsApiService) V1ListRefunds(ctx context.Context, locationId string, localVarOptionals *V1TransactionsApiV1ListRefundsOpts) ([]V1Refund, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -355,11 +356,11 @@ func (a *V1TransactionsApiService) ListRefunds(ctx context.Context, locationId s
 }
 
 /*
-V1TransactionsApiService ListSettlements
+V1TransactionsApiService V1ListSettlements
 Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the location to list settlements for. If you specify me, this endpoint returns settlements aggregated from all of the business&#x27;s locations.
- * @param optional nil or *V1TransactionsApiListSettlementsOpts - Optional Parameters:
+ * @param optional nil or *V1TransactionsApiV1ListSettlementsOpts - Optional Parameters:
      * @param "Order" (optional.Interface of SortOrder) -  The order in which settlements are listed in the response.
      * @param "BeginTime" (optional.String) -  The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
      * @param "EndTime" (optional.String) -  The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
@@ -369,7 +370,7 @@ Provides summary information for all deposits and withdrawals initiated by Squar
 @return []V1Settlement
 */
 
-type V1TransactionsApiListSettlementsOpts struct {
+type V1TransactionsApiV1ListSettlementsOpts struct {
 	Order      optional.Interface
 	BeginTime  optional.String
 	EndTime    optional.String
@@ -378,7 +379,7 @@ type V1TransactionsApiListSettlementsOpts struct {
 	BatchToken optional.String
 }
 
-func (a *V1TransactionsApiService) ListSettlements(ctx context.Context, locationId string, localVarOptionals *V1TransactionsApiListSettlementsOpts) ([]V1Settlement, *http.Response, error) {
+func (a *V1TransactionsApiService) V1ListSettlements(ctx context.Context, locationId string, localVarOptionals *V1TransactionsApiV1ListSettlementsOpts) ([]V1Settlement, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -476,14 +477,14 @@ func (a *V1TransactionsApiService) ListSettlements(ctx context.Context, location
 }
 
 /*
-V1TransactionsApiService RetrievePayment
+V1TransactionsApiService V1RetrievePayment
 Provides comprehensive information for a single payment.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the payment&#x27;s associated location.
  * @param paymentId The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.
 @return V1Payment
 */
-func (a *V1TransactionsApiService) RetrievePayment(ctx context.Context, locationId string, paymentId string) (V1Payment, *http.Response, error) {
+func (a *V1TransactionsApiService) V1RetrievePayment(ctx context.Context, locationId string, paymentId string) (V1Payment, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -564,14 +565,14 @@ func (a *V1TransactionsApiService) RetrievePayment(ctx context.Context, location
 }
 
 /*
-V1TransactionsApiService RetrieveSettlement
+V1TransactionsApiService V1RetrieveSettlement
 Provides comprehensive information for a single settlement.  The returned &#x60;Settlement&#x60; objects include an &#x60;entries&#x60; field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param locationId The ID of the settlements&#x27;s associated location.
  * @param settlementId The settlement&#x27;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint.
 @return V1Settlement
 */
-func (a *V1TransactionsApiService) RetrieveSettlement(ctx context.Context, locationId string, settlementId string) (V1Settlement, *http.Response, error) {
+func (a *V1TransactionsApiService) V1RetrieveSettlement(ctx context.Context, locationId string, settlementId string) (V1Settlement, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}

@@ -9,6 +9,7 @@
  */
 package swagger
 
+// GiftCardActivityAdjustDecrementReason : Indicates the reason for deducting money from a [gift card](entity:GiftCard).
 type GiftCardActivityAdjustDecrementReason string
 
 // List of GiftCardActivityAdjustDecrementReason
@@ -17,4 +18,5 @@ const (
 	SUSPICIOUS_ACTIVITY_GiftCardActivityAdjustDecrementReason            GiftCardActivityAdjustDecrementReason = "SUSPICIOUS_ACTIVITY"
 	BALANCE_ACCIDENTALLY_INCREASED_GiftCardActivityAdjustDecrementReason GiftCardActivityAdjustDecrementReason = "BALANCE_ACCIDENTALLY_INCREASED"
 	SUPPORT_ISSUE_GiftCardActivityAdjustDecrementReason                  GiftCardActivityAdjustDecrementReason = "SUPPORT_ISSUE"
+	PURCHASE_WAS_REFUNDED_GiftCardActivityAdjustDecrementReason          GiftCardActivityAdjustDecrementReason = "PURCHASE_WAS_REFUNDED"
 )

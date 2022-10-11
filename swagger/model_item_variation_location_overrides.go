@@ -20,5 +20,8 @@ type ItemVariationLocationOverrides struct {
 	InventoryAlertType *InventoryAlertType `json:"inventory_alert_type,omitempty"`
 	// If the inventory quantity for the variation is less than or equal to this value and `inventory_alert_type` is `LOW_QUANTITY`, the variation displays an alert in the merchant dashboard.  This value is always an integer.
 	InventoryAlertThreshold int64 `json:"inventory_alert_threshold,omitempty"`
-	SoldOut                 bool  `json:"sold_out,omitempty"`
+	// Indicates whether the overridden item variation is sold out at the specified location.  When inventory tracking is enabled on the item variation either globally or at the specified location, the item variation is automatically marked as sold out when its inventory count reaches zero. The seller can manually set the item variation as sold out even when the inventory count is greater than zero. Attempts by an application to set this attribute are ignored. Regardless how the sold-out status is set, applications should treat its inventory count as zero when this attribute value is `true`.
+	SoldOut bool `json:"sold_out,omitempty"`
+	// The seller-assigned timestamp, of the RFC 3339 format, to indicate when this sold-out variation becomes available again at the specified location. Attempts by an application to set this attribute are ignored. When the current time is later than this attribute value, the affected item variation is no longer sold out.
+	SoldOutValidUntil string `json:"sold_out_valid_until,omitempty"`
 }

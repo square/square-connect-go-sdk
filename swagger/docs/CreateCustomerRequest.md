@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IdempotencyKey** | **string** | The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency). | [optional] [default to null]
+**IdempotencyKey** | **string** | The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency). | [optional] [default to null]
 **GivenName** | **string** | The given name (that is, the first name) associated with the customer profile. | [optional] [default to null]
 **FamilyName** | **string** | The family name (that is, the last name) associated with the customer profile. | [optional] [default to null]
 **CompanyName** | **string** | A business name associated with the customer profile. | [optional] [default to null]
 **Nickname** | **string** | A nickname for the customer profile. | [optional] [default to null]
 **EmailAddress** | **string** | The email address associated with the customer profile. | [optional] [default to null]
 **Address** | [***Address**](Address.md) |  | [optional] [default to null]
-**PhoneNumber** | **string** | The 11-digit phone number associated with the customer profile. | [optional] [default to null]
+**PhoneNumber** | **string** | The phone number associated with the customer profile. A phone number can contain 9–16 digits, with an optional &#x60;+&#x60; prefix. | [optional] [default to null]
 **ReferenceId** | **string** | An optional second ID used to associate the customer profile with an entity in another system. | [optional] [default to null]
 **Note** | **string** | A custom note associated with the customer profile. | [optional] [default to null]
 **Birthday** | **string** | The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, &#x60;0000-09-21T00:00:00-00:00&#x60; represents a birthday on September 21 and &#x60;1998-09-21T00:00:00-00:00&#x60; represents a birthday on September 21, 1998. You can also specify this value in &#x60;YYYY-MM-DD&#x60; format. | [optional] [default to null]

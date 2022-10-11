@@ -112,7 +112,7 @@ See the corresponding object definition for field details. |
 > BatchChangeInventoryResponse DeprecatedBatchChangeInventory(ctx, body)
 DeprecatedBatchChangeInventory
 
-Deprecated version of [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [BatchChangeInventory](api-endpoint:Inventory-BatchChangeInventory) after the endpoint URL is updated to conform to the standard convention.
 
 ### Required Parameters
 
@@ -142,7 +142,7 @@ See the corresponding object definition for field details. |
 > BatchRetrieveInventoryChangesResponse DeprecatedBatchRetrieveInventoryChanges(ctx, body)
 DeprecatedBatchRetrieveInventoryChanges
 
-Deprecated version of [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges) after the endpoint URL is updated to conform to the standard convention.
 
 ### Required Parameters
 
@@ -172,7 +172,7 @@ See the corresponding object definition for field details. |
 > BatchRetrieveInventoryCountsResponse DeprecatedBatchRetrieveInventoryCounts(ctx, body)
 DeprecatedBatchRetrieveInventoryCounts
 
-Deprecated version of [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [BatchRetrieveInventoryCounts](api-endpoint:Inventory-BatchRetrieveInventoryCounts) after the endpoint URL is updated to conform to the standard convention.
 
 ### Required Parameters
 
@@ -202,7 +202,7 @@ See the corresponding object definition for field details. |
 > RetrieveInventoryAdjustmentResponse DeprecatedRetrieveInventoryAdjustment(ctx, adjustmentId)
 DeprecatedRetrieveInventoryAdjustment
 
-Deprecated version of [RetrieveInventoryAdjustment](api-endpoint:Inventory-RetrieveInventoryAdjustment) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [RetrieveInventoryAdjustment](api-endpoint:Inventory-RetrieveInventoryAdjustment) after the endpoint URL is updated to conform to the standard convention.
 
 ### Required Parameters
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 > RetrieveInventoryPhysicalCountResponse DeprecatedRetrieveInventoryPhysicalCount(ctx, physicalCountId)
 DeprecatedRetrieveInventoryPhysicalCount
 
-Deprecated version of [RetrieveInventoryPhysicalCount](api-endpoint:Inventory-RetrieveInventoryPhysicalCount) after the endpoint URL  is updated to conform to the standard convention.
+Deprecated version of [RetrieveInventoryPhysicalCount](api-endpoint:Inventory-RetrieveInventoryPhysicalCount) after the endpoint URL is updated to conform to the standard convention.
 
 ### Required Parameters
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 > RetrieveInventoryChangesResponse RetrieveInventoryChanges(ctx, catalogObjectId, optional)
 RetrieveInventoryChanges
 
-Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](entity:CatalogObject) at the requested [Location](entity:Location)s.   You can achieve the same result by calling [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges)  and having the `catalog_object_ids` list contain a single element of the `CatalogObject` ID.  Results are paginated and sorted in descending order according to their `occurred_at` timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be  used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
+Returns a set of physical counts and inventory adjustments for the provided [CatalogObject](entity:CatalogObject) at the requested [Location](entity:Location)s.  You can achieve the same result by calling [BatchRetrieveInventoryChanges](api-endpoint:Inventory-BatchRetrieveInventoryChanges) and having the `catalog_object_ids` list contain a single element of the `CatalogObject` ID.  Results are paginated and sorted in descending order according to their `occurred_at` timestamp (newest first).  There are no limits on how far back the caller can page. This endpoint can be used to display recent changes for a specific item. For more sophisticated queries, use a batch endpoint.
 
 ### Required Parameters
 

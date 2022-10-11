@@ -12,12 +12,13 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -119,7 +120,7 @@ Uploads a file to use as evidence in a dispute challenge. The endpoint accepts H
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param request
  * @param imageFile
- * @param disputeId The ID of the dispute you want to upload evidence for.
+ * @param disputeId The ID of the dispute for which you want to upload evidence.
 @return CreateDisputeEvidenceFileResponse
 */
 func (a *DisputesApiService) CreateDisputeEvidenceFile(ctx context.Context, request CreateDisputeEvidenceFileRequest, imageFile *os.File, disputeId string) (CreateDisputeEvidenceFileResponse, *http.Response, error) {
@@ -216,7 +217,7 @@ Uploads text to use as evidence for a dispute challenge.
  * @param body An object containing the fields to POST for the request.
 
 See the corresponding object definition for field details.
- * @param disputeId The ID of the dispute you want to upload evidence for.
+ * @param disputeId The ID of the dispute for which you want to upload evidence.
 @return CreateDisputeEvidenceTextResponse
 */
 func (a *DisputesApiService) CreateDisputeEvidenceText(ctx context.Context, body CreateDisputeEvidenceTextRequest, disputeId string) (CreateDisputeEvidenceTextResponse, *http.Response, error) {
@@ -302,9 +303,9 @@ func (a *DisputesApiService) CreateDisputeEvidenceText(ctx context.Context, body
 
 /*
 DisputesApiService DeleteDisputeEvidence
-Removes specified evidence from a dispute.  Square does not send the bank any evidence that is removed. Also, you cannot remove evidence after submitting it to the bank using [SubmitEvidence](api-endpoint:Disputes-SubmitEvidence).
+Removes specified evidence from a dispute. Square does not send the bank any evidence that is removed.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param disputeId The ID of the dispute you want to remove evidence from.
+ * @param disputeId The ID of the dispute from which you want to remove evidence.
  * @param evidenceId The ID of the evidence you want to remove.
 @return DeleteDisputeEvidenceResponse
 */
@@ -394,7 +395,7 @@ Returns a list of evidence associated with a dispute.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param disputeId The ID of the dispute.
  * @param optional nil or *DisputesApiListDisputeEvidenceOpts - Optional Parameters:
-     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
+     * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 @return ListDisputeEvidenceResponse
 */
 
@@ -490,8 +491,8 @@ Returns a list of disputes associated with a particular account.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DisputesApiListDisputesOpts - Optional Parameters:
      * @param "Cursor" (optional.String) -  A pagination cursor returned by a previous call to this endpoint. Provide this cursor to retrieve the next set of results for the original query. For more information, see [Pagination](https://developer.squareup.com/docs/basics/api101/pagination).
-     * @param "States" (optional.Interface of DisputeState) -  The dispute states to filter the result. If not specified, the endpoint returns all open disputes (the dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;).
-     * @param "LocationId" (optional.String) -  The ID of the location for which to return a list of disputes. If not specified, the endpoint returns all open disputes (the dispute status is not &#x60;INQUIRY_CLOSED&#x60;, &#x60;WON&#x60;, or &#x60;LOST&#x60;) associated with all locations.
+     * @param "States" (optional.Interface of DisputeState) -  The dispute states used to filter the result. If not specified, the endpoint returns all disputes.
+     * @param "LocationId" (optional.String) -  The ID of the location for which to return a list of disputes. If not specified, the endpoint returns disputes associated with all locations.
 @return ListDisputesResponse
 */
 
@@ -676,9 +677,9 @@ func (a *DisputesApiService) RetrieveDispute(ctx context.Context, disputeId stri
 
 /*
 DisputesApiService RetrieveDisputeEvidence
-Returns the evidence metadata specified by the evidence ID in the request URL path  You must maintain a copy of the evidence you upload if you want to reference it later. You cannot download the evidence after you upload it.
+Returns the metadata for the evidence specified in the request URL path.  You must maintain a copy of any evidence uploaded if you want to reference it later. Evidence cannot be downloaded after you upload it.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param disputeId The ID of the dispute that you want to retrieve evidence from.
+ * @param disputeId The ID of the dispute from which you want to retrieve evidence metadata.
  * @param evidenceId The ID of the evidence to retrieve.
 @return RetrieveDisputeEvidenceResponse
 */
@@ -764,9 +765,9 @@ func (a *DisputesApiService) RetrieveDisputeEvidence(ctx context.Context, disput
 
 /*
 DisputesApiService SubmitEvidence
-Submits evidence to the cardholder&#x27;s bank.  Before submitting evidence, Square compiles all available evidence. This includes evidence uploaded using the [CreateDisputeEvidenceFile](api-endpoint:Disputes-CreateDisputeEvidenceFile) and [CreateDisputeEvidenceText](api-endpoint:Disputes-CreateDisputeEvidenceText) endpoints and evidence automatically provided by Square, when available.
+Submits evidence to the cardholder&#x27;s bank.  The evidence submitted by this endpoint includes evidence uploaded using the [CreateDisputeEvidenceFile](api-endpoint:Disputes-CreateDisputeEvidenceFile) and [CreateDisputeEvidenceText](api-endpoint:Disputes-CreateDisputeEvidenceText) endpoints and evidence automatically provided by Square, when available. Evidence cannot be removed from a dispute after submission.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param disputeId The ID of the dispute that you want to submit evidence for.
+ * @param disputeId The ID of the dispute for which you want to submit evidence.
 @return SubmitEvidenceResponse
 */
 func (a *DisputesApiService) SubmitEvidence(ctx context.Context, disputeId string) (SubmitEvidenceResponse, *http.Response, error) {

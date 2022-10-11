@@ -9,15 +9,15 @@
  */
 package swagger
 
-// Published when a Customer is linked to a GiftCard.
+// Published when a [customer](entity:Customer) is linked to a [gift card](entity:GiftCard).
 type GiftCardCustomerLinkedWebhook struct {
-	// The ID of the target merchant associated with the event.
+	// The ID of the Square seller associated with the event.
 	MerchantId string `json:"merchant_id,omitempty"`
-	// The type of this event. The value is `\"gift_card.customer_linked\"`.
+	// The type of event. For this event, the value is `gift_card.customer_linked`.
 	Type_ string `json:"type,omitempty"`
-	// A unique ID for the webhook event.
+	// The unique ID of the event, which is used for  [idempotency support](https://developer.squareup.com/docs/webhooks/step4manage#webhooks-best-practices).
 	EventId string `json:"event_id,omitempty"`
-	// The timestamp of when the webhook event was created, in RFC 3339 format.
+	// The timestamp of when the event was created, in RFC 3339 format.
 	CreatedAt string                             `json:"created_at,omitempty"`
 	Data      *GiftCardCustomerLinkedWebhookData `json:"data,omitempty"`
 }

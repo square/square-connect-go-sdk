@@ -9,18 +9,18 @@
  */
 package swagger
 
-// Represents an action performed on a gift card that affects its state or balance.
+// Represents an action performed on a [gift card](entity:GiftCard) that affects its state or balance.  A gift card activity contains information about a specific activity type. For example, a `REDEEM` activity includes a `redeem_activity_details` field that contains information about the redemption.
 type GiftCardActivity struct {
-	// The unique ID of the gift card activity.
+	// The Square-assigned ID of the gift card activity.
 	Id    string                `json:"id,omitempty"`
 	Type_ *GiftCardActivityType `json:"type"`
-	// The ID of the location at which the activity occurred.
+	// The ID of the [business location](entity:Location) where the activity occurred.
 	LocationId string `json:"location_id"`
 	// The timestamp when the gift card activity was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
-	// The gift card ID. The ID is not required if a GAN is present.
+	// The gift card ID. When creating a gift card activity, `gift_card_id` is not required if  `gift_card_gan` is specified.
 	GiftCardId string `json:"gift_card_id,omitempty"`
-	// The gift card GAN. The GAN is not required if `gift_card_id` is present.
+	// The gift card account number (GAN). When creating a gift card activity, `gift_card_gan`  is not required if `gift_card_id` is specified.
 	GiftCardGan                           string                                  `json:"gift_card_gan,omitempty"`
 	GiftCardBalanceMoney                  *Money                                  `json:"gift_card_balance_money,omitempty"`
 	LoadActivityDetails                   *GiftCardActivityLoad                   `json:"load_activity_details,omitempty"`

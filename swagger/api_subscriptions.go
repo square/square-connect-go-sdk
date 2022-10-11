@@ -12,11 +12,12 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -291,7 +292,7 @@ func (a *SubscriptionsApiService) DeleteSubscriptionAction(ctx context.Context, 
 
 /*
 SubscriptionsApiService ListSubscriptionEvents
-Lists all events for a specific subscription. In the current implementation, only &#x60;START_SUBSCRIPTION&#x60; and &#x60;STOP_SUBSCRIPTION&#x60; (when the subscription was canceled) events are returned.
+Lists all events for a specific subscription.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param subscriptionId The ID of the subscription to retrieve the events for.
  * @param optional nil or *SubscriptionsApiListSubscriptionEventsOpts - Optional Parameters:

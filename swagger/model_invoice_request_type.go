@@ -9,7 +9,7 @@
  */
 package swagger
 
-// InvoiceRequestType : Indicates the type of the payment request. For more information, see  [Payment requests](https://developer.squareup.com/docs/invoices-api/overview#payment-requests).
+// InvoiceRequestType : Indicates the type of the payment request. For more information, see  [Configuring payment requests](https://developer.squareup.com/docs/invoices-api/create-publish-invoices#payment-requests).
 type InvoiceRequestType string
 
 // List of InvoiceRequestType

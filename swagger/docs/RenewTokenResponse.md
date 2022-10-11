@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **MerchantId** | **string** | The ID of the authorizing merchant&#x27;s business. | [optional] [default to null]
 **SubscriptionId** | **string** | __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. The ID is only present if the merchant signed up for a subscription during authorization. | [optional] [default to null]
 **PlanId** | **string** | __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. The ID is only present if the merchant signed up for a subscription plan during authorization. | [optional] [default to null]
+**Errors** | [**[]ModelError**](Error.md) | Any errors that occurred during the request. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

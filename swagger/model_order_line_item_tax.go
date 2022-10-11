@@ -26,6 +26,6 @@ type OrderLineItemTax struct {
 	Metadata     map[string]string      `json:"metadata,omitempty"`
 	AppliedMoney *Money                 `json:"applied_money,omitempty"`
 	Scope        *OrderLineItemTaxScope `json:"scope,omitempty"`
-	// Determines whether the tax was automatically applied to the order based on the catalog configuration. For an example, see  [Automatically Apply Taxes to an Order](https://developer.squareup.com/docs/orders-api/apply-taxes-and-discounts/auto-apply-taxes).
+	// Determines whether the tax was automatically applied to the order based on the catalog configuration. For an example, see [Automatically Apply Taxes to an Order](https://developer.squareup.com/docs/orders-api/apply-taxes-and-discounts/auto-apply-taxes).
 	AutoApplied bool `json:"auto_applied,omitempty"`
 }

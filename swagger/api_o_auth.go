@@ -12,11 +12,12 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -36,14 +37,16 @@ As part of a URL sent to a seller to authorize permissions for  the developer, &
      * @param "Locale" (optional.String) -  The locale to present the permission request form in. Square detects the appropriate locale automatically. Only provide this value if the application can definitively determine the preferred locale.  Currently supported values: &#x60;en-IE&#x60;, &#x60;en-US&#x60;, &#x60;en-CA&#x60;, &#x60;es-US&#x60;, &#x60;fr-CA&#x60;, and &#x60;ja-JP&#x60;.
      * @param "Session" (optional.Bool) -  If &#x60;false&#x60;, the user must log in to their Square account to view the Permission Request form, even if they already have a valid user session. This value has no effect in Sandbox. Default: &#x60;true&#x60;
      * @param "State" (optional.String) -  When provided, &#x60;state&#x60; is passed to the configured redirect URL after the Permission Request form is submitted. You can include &#x60;state&#x60; and verify its value to help protect against cross-site request forgery.
+     * @param "CodeChallenge" (optional.String) -  When provided, the oauth flow will use PKCE to authorize. The &#x60;code_challenge&#x60; will be associated with the authorization_code and a &#x60;code_verifier&#x60; will need to passed in to obtain the access token.
 @return AuthorizeResponse
 */
 
 type OAuthApiAuthorizeOpts struct {
-	Scope   optional.Interface
-	Locale  optional.String
-	Session optional.Bool
-	State   optional.String
+	Scope         optional.Interface
+	Locale        optional.String
+	Session       optional.Bool
+	State         optional.String
+	CodeChallenge optional.String
 }
 
 func (a *OAuthApiService) Authorize(ctx context.Context, clientId string, localVarOptionals *OAuthApiAuthorizeOpts) (AuthorizeResponse, *http.Response, error) {
@@ -74,6 +77,9 @@ func (a *OAuthApiService) Authorize(ctx context.Context, clientId string, localV
 	}
 	if localVarOptionals != nil && localVarOptionals.State.IsSet() {
 		localVarQueryParams.Add("state", parameterToString(localVarOptionals.State.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.CodeChallenge.IsSet() {
+		localVarQueryParams.Add("code_challenge", parameterToString(localVarOptionals.CodeChallenge.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}

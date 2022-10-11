@@ -17,4 +17,5 @@ const (
 	REGULAR_CatalogItemProductType              CatalogItemProductType = "REGULAR"
 	GIFT_CARD_CatalogItemProductType            CatalogItemProductType = "GIFT_CARD"
 	APPOINTMENTS_SERVICE_CatalogItemProductType CatalogItemProductType = "APPOINTMENTS_SERVICE"
+	CLASS_TICKET_CatalogItemProductType         CatalogItemProductType = "CLASS_TICKET"
 )

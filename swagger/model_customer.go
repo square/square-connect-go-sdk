@@ -11,17 +11,17 @@ package swagger
 
 // Represents a Square customer profile in the Customer Directory of a Square seller.
 type Customer struct {
-	// A unique Square-assigned ID for the customer profile.
+	// A unique Square-assigned ID for the customer profile.  If you need this ID for an API request, use the ID returned when you created the customer profile or call the [SearchCustomers](api-endpoint:Customers-SearchCustomers)  or [ListCustomers](api-endpoint:Customers-ListCustomers) endpoint.
 	Id string `json:"id,omitempty"`
 	// The timestamp when the customer profile was created, in RFC 3339 format.
 	CreatedAt string `json:"created_at,omitempty"`
 	// The timestamp when the customer profile was last updated, in RFC 3339 format.
 	UpdatedAt string `json:"updated_at,omitempty"`
-	// Payment details of the credit, debit, and gift cards stored on file for the customer profile.   DEPRECATED at version 2021-06-16. Replaced by calling [ListCards](api-endpoint:Cards-ListCards) (for credit and debit cards on file)  or [ListGiftCards](api-endpoint:GiftCards-ListGiftCards) (for gift cards on file) and including the `customer_id` query parameter.  For more information, see [Migrate to the Cards API and Gift Cards API](https://developer.squareup.com/docs/customers-api/use-the-api/integrate-with-other-services#migrate-customer-cards).
+	// Payment details of the credit, debit, and gift cards stored on file for the customer profile.   DEPRECATED at version 2021-06-16. Replaced by calling [ListCards](api-endpoint:Cards-ListCards) (for credit and debit cards on file)  or [ListGiftCards](api-endpoint:GiftCards-ListGiftCards) (for gift cards on file) and including the `customer_id` query parameter.  For more information, see [Migration notes](https://developer.squareup.com/docs/customers-api/what-it-does#migrate-customer-cards).
 	Cards []Card `json:"cards,omitempty"`
-	// The given (i.e., first) name associated with the customer profile.
+	// The given name (that is, the first name) associated with the customer profile.
 	GivenName string `json:"given_name,omitempty"`
-	// The family (i.e., last) name associated with the customer profile.
+	// The family name (that is, the last name) associated with the customer profile.
 	FamilyName string `json:"family_name,omitempty"`
 	// A nickname for the customer profile.
 	Nickname string `json:"nickname,omitempty"`
@@ -30,7 +30,7 @@ type Customer struct {
 	// The email address associated with the customer profile.
 	EmailAddress string   `json:"email_address,omitempty"`
 	Address      *Address `json:"address,omitempty"`
-	// The 11-digit phone number associated with the customer profile.
+	// The phone number associated with the customer profile. A phone number can contain 9–16 digits, with an optional `+` prefix.
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// The birthday associated with the customer profile, in RFC 3339 format. The year is optional. The timezone and time are not allowed. For example, `0000-09-21T00:00:00-00:00` represents a birthday on September 21 and `1998-09-21T00:00:00-00:00` represents a birthday on September 21, 1998.
 	Birthday string `json:"birthday,omitempty"`

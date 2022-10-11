@@ -15,6 +15,6 @@ type ListCustomerSegmentsResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// The list of customer segments belonging to the associated Square account.
 	Segments []CustomerSegment `json:"segments,omitempty"`
-	// A pagination cursor to be used in subsequent calls to `ListCustomerSegments` to retrieve the next set of query results. The cursor is only present if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+	// A pagination cursor to be used in subsequent calls to `ListCustomerSegments` to retrieve the next set of query results. The cursor is only present if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

@@ -25,5 +25,6 @@ const (
 	BANK_ACCOUNT_TenderType        TenderType = "BANK_ACCOUNT"
 	WALLET_TenderType              TenderType = "WALLET"
 	BUY_NOW_PAY_LATER_TenderType   TenderType = "BUY_NOW_PAY_LATER"
+	SQUARE_ACCOUNT_TenderType      TenderType = "SQUARE_ACCOUNT"
 	OTHER_TenderType               TenderType = "OTHER"
 )

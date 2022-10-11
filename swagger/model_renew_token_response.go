@@ -22,4 +22,6 @@ type RenewTokenResponse struct {
 	SubscriptionId string `json:"subscription_id,omitempty"`
 	// __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. The ID is only present if the merchant signed up for a subscription plan during authorization.
 	PlanId string `json:"plan_id,omitempty"`
+	// Any errors that occurred during the request.
+	Errors []ModelError `json:"errors,omitempty"`
 }

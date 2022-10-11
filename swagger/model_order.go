@@ -18,7 +18,7 @@ type Order struct {
 	// A client-specified ID to associate an entity in another system with this order.
 	ReferenceId string       `json:"reference_id,omitempty"`
 	Source      *OrderSource `json:"source,omitempty"`
-	// The ID of the [customer](entity:Customer) associated with the order.  __IMPORTANT:__ You should specify a `customer_id` if you want the corresponding payment transactions to be explicitly linked to the customer in the Seller Dashboard. If this field is omitted, the  `customer_id` assigned to any underlying `Payment` objects is ignored and might result in the  creation of new [instant profiles](https://developer.squareup.com/docs/customers-api/what-it-does#instant-profiles).
+	// The ID of the [customer](entity:Customer) associated with the order.  __IMPORTANT:__ You should specify a `customer_id` if you want the corresponding payment transactions to be explicitly linked to the customer in the Seller Dashboard. If this field is omitted, the `customer_id` assigned to any underlying `Payment` objects is ignored and might result in the creation of new [instant profiles](https://developer.squareup.com/docs/customers-api/what-it-does#instant-profiles).
 	CustomerId string `json:"customer_id,omitempty"`
 	// The line items included in the order.
 	LineItems []OrderLineItem `json:"line_items,omitempty"`
@@ -55,9 +55,10 @@ type Order struct {
 	TotalDiscountMoney      *Money `json:"total_discount_money,omitempty"`
 	TotalTipMoney           *Money `json:"total_tip_money,omitempty"`
 	TotalServiceChargeMoney *Money `json:"total_service_charge_money,omitempty"`
-	// A short-term identifier for the order (such as a customer first name, table number, or auto-generated order number that resets daily). For orders created in Square Point of Sale, the `ticket_name` is printed on in-person tickets and stubs. It converts to the `kitchen_printing.name` field in the bill cart feature details.
+	// A short-term identifier for the order (such as a customer first name,  table number, or auto-generated order number that resets daily).
 	TicketName     string               `json:"ticket_name,omitempty"`
 	PricingOptions *OrderPricingOptions `json:"pricing_options,omitempty"`
 	// A set-like list of Rewards that have been added to the Order.
-	Rewards []OrderReward `json:"rewards,omitempty"`
+	Rewards           []OrderReward `json:"rewards,omitempty"`
+	NetAmountDueMoney *Money        `json:"net_amount_due_money,omitempty"`
 }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **PinRequired** | **bool** | Indicates whether a mobile staff member needs to enter their PIN to apply the discount to a payment in the Square Point of Sale app. | [optional] [default to null]
 **LabelColor** | **string** | The color of the discount display label in the Square Point of Sale app. This must be a valid hex color code. | [optional] [default to null]
 **ModifyTaxBasis** | [***CatalogDiscountModifyTaxBasis**](CatalogDiscountModifyTaxBasis.md) |  | [optional] [default to null]
+**MaximumAmountMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

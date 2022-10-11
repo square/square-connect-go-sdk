@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **IdToken** | **string** | The OpenID token belonging to this person. This token is only present if the OPENID scope is included in the authorization request. | [optional] [default to null]
 **RefreshToken** | **string** | A refresh token. OAuth refresh tokens are 64 bytes long. For more information, see [Refresh, Revoke, and Limit the Scope of OAuth Tokens](https://developer.squareup.com/docs/oauth-api/refresh-revoke-limit-scope). | [optional] [default to null]
 **ShortLived** | **bool** | A Boolean indicating that the access token is a short-lived access token. The short-lived access token returned in the response expires in 24 hours. | [optional] [default to null]
+**Errors** | [**[]ModelError**](Error.md) | Any errors that occurred during the request. | [optional] [default to null]
+**RefreshTokenExpiresAt** | **string** | The date when the &#x60;refresh_token&#x60; expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

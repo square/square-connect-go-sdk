@@ -54,4 +54,12 @@ const (
 	ONLINE_STORE_SNIPPETS_READ_OAuthPermission           OAuthPermission = "ONLINE_STORE_SNIPPETS_READ"
 	ONLINE_STORE_SITE_READ_OAuthPermission               OAuthPermission = "ONLINE_STORE_SITE_READ"
 	PAYMENTS_WRITE_SHARED_ONFILE_OAuthPermission         OAuthPermission = "PAYMENTS_WRITE_SHARED_ONFILE"
+	APPOINTMENTS_ALL_READ_OAuthPermission                OAuthPermission = "APPOINTMENTS_ALL_READ"
+	APPOINTMENTS_ALL_WRITE_OAuthPermission               OAuthPermission = "APPOINTMENTS_ALL_WRITE"
+	MERCHANT_PROFILE_WRITE_OAuthPermission               OAuthPermission = "MERCHANT_PROFILE_WRITE"
+	VENDOR_READ_OAuthPermission                          OAuthPermission = "VENDOR_READ"
+	VENDOR_WRITE_OAuthPermission                         OAuthPermission = "VENDOR_WRITE"
+	PAYOUTS_READ_OAuthPermission                         OAuthPermission = "PAYOUTS_READ"
+	RESERVATIONS_READ_OAuthPermission                    OAuthPermission = "RESERVATIONS_READ"
+	RESERVATIONS_WRITE_OAuthPermission                   OAuthPermission = "RESERVATIONS_WRITE"
 )

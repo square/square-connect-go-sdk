@@ -12,11 +12,12 @@ package swagger
 import (
 	"context"
 	"fmt"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -28,7 +29,7 @@ type GiftCardsApiService service
 
 /*
 GiftCardsApiService CreateGiftCard
-Creates a digital gift card or registers a physical (plastic) gift card. You must activate the gift card before  it can be used for payment. For more information, see  [Selling gift cards](https://developer.squareup.com/docs/gift-cards/using-gift-cards-api#selling-square-gift-cards).
+Creates a digital gift card or registers a physical (plastic) gift card. After the gift card  is created, you must call [CreateGiftCardActivity](api-endpoint:GiftCardActivities-CreateGiftCardActivity)  to activate the card with an initial balance before it can be used for payment.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -208,7 +209,7 @@ func (a *GiftCardsApiService) LinkCustomerToGiftCard(ctx context.Context, body L
 
 /*
 GiftCardsApiService ListGiftCards
-Lists all gift cards. You can specify optional filters to retrieve  a subset of the gift cards.
+Lists all gift cards. You can specify optional filters to retrieve  a subset of the gift cards. Results are sorted by &#x60;created_at&#x60; in ascending order.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GiftCardsApiListGiftCardsOpts - Optional Parameters:
      * @param "Type_" (optional.String) -  If a [type](entity:GiftCardType) is provided, the endpoint returns gift cards of the specified type. Otherwise, the endpoint returns gift cards of all types.
@@ -322,7 +323,7 @@ func (a *GiftCardsApiService) ListGiftCards(ctx context.Context, localVarOptiona
 
 /*
 GiftCardsApiService RetrieveGiftCard
-Retrieves a gift card using its ID.
+Retrieves a gift card using the gift card ID.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The ID of the gift card to retrieve.
 @return RetrieveGiftCardResponse

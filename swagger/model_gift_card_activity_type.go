@@ -9,7 +9,7 @@
  */
 package swagger
 
-// GiftCardActivityType : Indicates the gift card activity type.
+// GiftCardActivityType : Indicates the type of [gift card activity](entity:GiftCardActivity).
 type GiftCardActivityType string
 
 // List of GiftCardActivityType

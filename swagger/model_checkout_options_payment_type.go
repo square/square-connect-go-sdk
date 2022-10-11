@@ -20,4 +20,5 @@ const (
 	FELICA_QUICPAY_CheckoutOptionsPaymentType              CheckoutOptionsPaymentType = "FELICA_QUICPAY"
 	FELICA_TRANSPORTATION_GROUP_CheckoutOptionsPaymentType CheckoutOptionsPaymentType = "FELICA_TRANSPORTATION_GROUP"
 	FELICA_ALL_CheckoutOptionsPaymentType                  CheckoutOptionsPaymentType = "FELICA_ALL"
+	PAYPAY_CheckoutOptionsPaymentType                      CheckoutOptionsPaymentType = "PAYPAY"
 )

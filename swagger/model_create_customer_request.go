@@ -11,7 +11,7 @@ package swagger
 
 // Defines the body parameters that can be included in a request to the `CreateCustomer` endpoint.
 type CreateCustomerRequest struct {
-	// The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency).
+	// The idempotency key for the request. For more information, see [Idempotency](https://developer.squareup.com/docs/build-basics/common-api-patterns/idempotency).
 	IdempotencyKey string `json:"idempotency_key,omitempty"`
 	// The given name (that is, the first name) associated with the customer profile.
 	GivenName string `json:"given_name,omitempty"`
@@ -24,7 +24,7 @@ type CreateCustomerRequest struct {
 	// The email address associated with the customer profile.
 	EmailAddress string   `json:"email_address,omitempty"`
 	Address      *Address `json:"address,omitempty"`
-	// The 11-digit phone number associated with the customer profile.
+	// The phone number associated with the customer profile. A phone number can contain 9–16 digits, with an optional `+` prefix.
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// An optional second ID used to associate the customer profile with an entity in another system.
 	ReferenceId string `json:"reference_id,omitempty"`

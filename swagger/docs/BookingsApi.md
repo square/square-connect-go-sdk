@@ -18,7 +18,7 @@ Method | HTTP request | Description
 > CancelBookingResponse CancelBooking(ctx, body, bookingId)
 CancelBooking
 
-Cancels an existing booking.
+Cancels an existing booking.  To call this endpoint with buyer-level permissions, set `APPOINTMENTS_WRITE` for the OAuth scope. To call this endpoint with seller-level permissions, set `APPOINTMENTS_ALL_WRITE` and `APPOINTMENTS_WRITE` for the OAuth scope.  For calls to this endpoint with seller-level permissions to succeed, the seller must have subscribed to *Appointments Plus* or *Appointments Premium*.
 
 ### Required Parameters
 
@@ -49,7 +49,7 @@ See the corresponding object definition for field details. |
 > CreateBookingResponse CreateBooking(ctx, body)
 CreateBooking
 
-Creates a booking.
+Creates a booking.  To call this endpoint with buyer-level permissions, set `APPOINTMENTS_WRITE` for the OAuth scope. To call this endpoint with seller-level permissions, set `APPOINTMENTS_ALL_WRITE` and `APPOINTMENTS_WRITE` for the OAuth scope.  For calls to this endpoint with seller-level permissions to succeed, the seller must have subscribed to *Appointments Plus* or *Appointments Premium*.
 
 ### Required Parameters
 
@@ -79,7 +79,7 @@ See the corresponding object definition for field details. |
 > ListBookingsResponse ListBookings(ctx, optional)
 ListBookings
 
-Retrieve a collection of bookings.
+Retrieve a collection of bookings.  To call this endpoint with buyer-level permissions, set `APPOINTMENTS_READ` for the OAuth scope. To call this endpoint with seller-level permissions, set `APPOINTMENTS_ALL_READ` and `APPOINTMENTS_READ` for the OAuth scope.
 
 ### Required Parameters
 
@@ -132,8 +132,8 @@ Optional parameters are passed through a pointer to a BookingsApiListTeamMemberB
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bookableOnly** | **optional.Bool**| Indicates whether to include only bookable team members in the returned result (&#x60;true&#x60;) or not (&#x60;false&#x60;). | [default to false]
- **limit** | **optional.Int32**| The maximum number of results to return. | 
- **cursor** | **optional.String**| The cursor for paginating through the results. | 
+ **limit** | **optional.Int32**| The maximum number of results to return in a paged response. | 
+ **cursor** | **optional.String**| The pagination cursor from the preceding response to return the next page of the results. Do not set this when retrieving the first page of the results. | 
  **locationId** | **optional.String**| Indicates whether to include only team members enabled at the given location in the returned result. | 
 
 ### Return type
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 > RetrieveBookingResponse RetrieveBooking(ctx, bookingId)
 RetrieveBooking
 
-Retrieves a booking.
+Retrieves a booking.  To call this endpoint with buyer-level permissions, set `APPOINTMENTS_READ` for the OAuth scope. To call this endpoint with seller-level permissions, set `APPOINTMENTS_ALL_READ` and `APPOINTMENTS_READ` for the OAuth scope.
 
 ### Required Parameters
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 > SearchAvailabilityResponse SearchAvailability(ctx, body)
 SearchAvailability
 
-Searches for availabilities for booking.
+Searches for availabilities for booking.  To call this endpoint with buyer-level permissions, set `APPOINTMENTS_READ` for the OAuth scope. To call this endpoint with seller-level permissions, set `APPOINTMENTS_ALL_READ` and `APPOINTMENTS_READ` for the OAuth scope.
 
 ### Required Parameters
 
@@ -265,7 +265,7 @@ See the corresponding object definition for field details. |
 > UpdateBookingResponse UpdateBooking(ctx, body, bookingId)
 UpdateBooking
 
-Updates a booking.
+Updates a booking.  To call this endpoint with buyer-level permissions, set `APPOINTMENTS_WRITE` for the OAuth scope. To call this endpoint with seller-level permissions, set `APPOINTMENTS_ALL_WRITE` and `APPOINTMENTS_WRITE` for the OAuth scope.  For calls to this endpoint with seller-level permissions to succeed, the seller must have subscribed to *Appointments Plus* or *Appointments Premium*.
 
 ### Required Parameters
 

@@ -27,7 +27,7 @@ type LocationsApiService service
 
 /*
 LocationsApiService CreateLocation
-Creates a [location](https://developer.squareup.com/docs/locations-api). Creating new locations allows for separate configuration of receipt layouts, item prices,  and sales reports. Developers can use locations to separate sales activity via applications  that integrate with Square from sales activity elsewhere in a seller&#x27;s account.  Locations created programmatically with the Locations API will last forever and  are visible to the seller for their own management, so ensure that  each location has a sensible and unique name.
+Creates a [location](https://developer.squareup.com/docs/locations-api). Creating new locations allows for separate configuration of receipt layouts, item prices, and sales reports. Developers can use locations to separate sales activity through applications that integrate with Square from sales activity elsewhere in a seller&#x27;s account. Locations created programmatically with the Locations API last forever and are visible to the seller for their own management. Therefore, ensure that each location has a sensible and unique name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 
@@ -116,7 +116,7 @@ func (a *LocationsApiService) CreateLocation(ctx context.Context, body CreateLoc
 
 /*
 LocationsApiService ListLocations
-Provides details about all of the seller&#x27;s locations, including those with an inactive status.
+Provides details about all of the seller&#x27;s [locations](https://developer.squareup.com/docs/locations-api), including those with an inactive status.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return ListLocationsResponse
 */
@@ -286,7 +286,7 @@ func (a *LocationsApiService) RetrieveLocation(ctx context.Context, locationId s
 
 /*
 LocationsApiService UpdateLocation
-Updates a location.
+Updates a [location](https://developer.squareup.com/docs/locations-api).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body An object containing the fields to POST for the request.
 

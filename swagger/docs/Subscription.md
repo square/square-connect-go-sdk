@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ChargedThroughDate** | **string** | The &#x60;YYYY-MM-DD&#x60;-formatted date up to when the subscriber is invoiced for the subscription.  After the invoice is sent for a given billing period, this date will be the last day of the billing period. For example, suppose for the month of May a subscriber gets an invoice (or charged the card) on May 1. For the monthly billing scenario, this date is then set to May 31. | [optional] [default to null]
 **Status** | [***SubscriptionStatus**](SubscriptionStatus.md) |  | [optional] [default to null]
 **TaxPercentage** | **string** | The tax amount applied when billing the subscription. The percentage is expressed in decimal form, using a &#x60;&#x27;.&#x27;&#x60; as the decimal separator and without a &#x60;&#x27;%&#x27;&#x60; sign. For example, a value of &#x60;7.5&#x60; corresponds to 7.5%. | [optional] [default to null]
-**InvoiceIds** | **[]string** | The IDs of the [invoices](entity:Invoice) created for the subscription, listed in order when the invoices were created (oldest invoices appear first). | [optional] [default to null]
+**InvoiceIds** | **[]string** | The IDs of the [invoices](entity:Invoice) created for the subscription, listed in order when the invoices were created (newest invoices appear first). | [optional] [default to null]
 **PriceOverrideMoney** | [***Money**](Money.md) |  | [optional] [default to null]
 **Version** | **int64** | The version of the object. When updating an object, the version supplied must match the version in the database, otherwise the write will be rejected as conflicting. | [optional] [default to null]
 **CreatedAt** | **string** | The timestamp when the subscription was created, in RFC 3339 format. | [optional] [default to null]

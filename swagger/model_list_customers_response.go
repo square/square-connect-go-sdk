@@ -15,6 +15,6 @@ type ListCustomersResponse struct {
 	Errors []ModelError `json:"errors,omitempty"`
 	// An array of `Customer` objects that match the provided query.
 	Customers []Customer `json:"customers,omitempty"`
-	// A pagination cursor to retrieve the next set of results for the original query. A cursor is only present if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/working-with-apis/pagination).
+	// A pagination cursor to retrieve the next set of results for the original query. A cursor is only present if the request succeeded and additional results are available.  For more information, see [Pagination](https://developer.squareup.com/docs/build-basics/common-api-patterns/pagination).
 	Cursor string `json:"cursor,omitempty"`
 }

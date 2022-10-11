@@ -9,11 +9,12 @@
  */
 package swagger
 
-// Present only when `GiftCardActivityType` is REDEEM.
+// Represents details about a `REDEEM` [gift card activity type](entity:GiftCardActivityType).
 type GiftCardActivityRedeem struct {
 	AmountMoney *Money `json:"amount_money"`
-	// When the Square Payments API is used, Redeem is not called on the Gift Cards API. However, when Square reads a Redeem activity from the Gift Cards API, developers need to know the associated `payment_id`.
+	// The ID of the payment that represents the gift card redemption. Square populates this field  if the payment was processed by Square.
 	PaymentId string `json:"payment_id,omitempty"`
-	// A client-specified ID to associate an entity, in another system, with this gift card activity. This can be used to track the order or payment related information when the Square Orders API is not being used.
-	ReferenceId string `json:"reference_id,omitempty"`
+	// A client-specified ID that associates the gift card activity with an entity in another system.   Applications that use a custom payment processing system can use this field to track information related to an order or payment.
+	ReferenceId string                        `json:"reference_id,omitempty"`
+	Status      *GiftCardActivityRedeemStatus `json:"status,omitempty"`
 }

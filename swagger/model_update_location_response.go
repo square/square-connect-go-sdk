@@ -9,9 +9,9 @@
  */
 package swagger
 
-// Response object returned by the [UpdateLocation](api-endpoint:Locations-UpdateLocation) endpoint.
+// The response object returned by the [UpdateLocation](api-endpoint:Locations-UpdateLocation) endpoint.
 type UpdateLocationResponse struct {
-	// Information on errors encountered during the request.
+	// Information about errors encountered during the request.
 	Errors   []ModelError `json:"errors,omitempty"`
 	Location *Location    `json:"location,omitempty"`
 }

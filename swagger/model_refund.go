@@ -16,7 +16,7 @@ type Refund struct {
 	// The ID of the refund's associated location.
 	LocationId string `json:"location_id"`
 	// The ID of the transaction that the refunded tender is part of.
-	TransactionId string `json:"transaction_id"`
+	TransactionId string `json:"transaction_id,omitempty"`
 	// The ID of the refunded tender.
 	TenderId string `json:"tender_id"`
 	// The timestamp for when the refund was created, in RFC 3339 format.
