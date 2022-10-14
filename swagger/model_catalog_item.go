@@ -57,5 +57,5 @@ type CatalogItem struct {
 	// A server-generated plaintext version of the `description_html` field, without formatting tags.
 	DescriptionPlaintext string `json:"description_plaintext,omitempty"`
 	// A list of IFM channel ids and Square Online site ids where the object can be published.
-	Channels []string `json:"channels,omitempty"`
+	Channels []string `json:"channels,omitempty"`  
 }
